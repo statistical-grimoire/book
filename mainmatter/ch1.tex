@@ -4,7 +4,7 @@ To begin with ...
 
 \section[What the f**k is R?]{What the f**k is R?\footnote{It's not technically swearing if you use asterisks.}}
 
-\lettrine{R}{ } is a \gls{programming language}. A programming language is simply a language humans use to give instructions to computers. Humans are featherless bipedal primates called \textit{Homo sapiens}. Computers are machines that follow fixed rules, with no authority to deviate from those rules \parencite{Turing1950}. Contrary to the belief of many, what constitutes a human and what constitutes a computer are not mutually exclusive. In the past, computation was largely a biological endeavor, with humans relying on other subordinate humans to perform the tedious work of innumerable mathematical calculations. These human computers required no strict programming language, \textit{per se}, but instead relied on the grunts and scribbles of primates in the upper tiers of their hierarchy to dictate their tasks.  In the modern day, human computers are largely a relic of the past.  A product of a bygone era where mathematics and other concepts foreign to modern students, such as reading and writing, were commonplace within school curricula. 
+\lettrine{R}{ } is a \gls{programming language}. A programming language is simply a language humans use to give instructions to computers. Humans are featherless bipedal primates called \textit{Homo sapiens}. Computers are machines that follow fixed rules, with no authority to deviate from those rules \parencite{Turing1950}. Contrary to the belief of many, what constitutes a human and what constitutes a computer are not mutually exclusive. In the past, computation was a biological endeavor, with humans relying on other humans to carry out the laborious task of performing countless mathematical calculations. These human computers required no strict programming language, \textit{per se}, but instead relied on the grunts and scribbles of primates in the upper tiers of their hierarchy to dictate their tasks.  In the modern day, human computers are largely a relic of the past.  A product of a bygone era where mathematics and other concepts foreign to modern students, such as reading and writing, were commonplace within school curricula. 
 
 Today the electronic digital computer reigns supreme.  This is a machine, largely silicone based, and similar in many respects to its primate precursor - with the notable exception that it is considerably more logical (some even go so far as to call these devices ``smart'' - which perhaps says more about the users than the devices themselves). It is therefore no longer deemed necessary to subject children to the cruelties associated with a well rounded education, particularly in the domain of mathematics, where the largest amounts physical and psychological turmoil were often inflicted.
 
@@ -113,15 +113,11 @@ Once opened, you can type R code into this new window and save it in the convent
 
 You can now place your cursor at a line of your choosing and run that line individually.  To do this in the base R environment you select \textit{Edit $\rightarrow$ Run Line or Selection}.  In RStudio you select \textit{Code $\rightarrow$ Run Selected Line(s)} or click the ``run'' icon in the upper right of the script window. If you highlight all the lines of code, or just a subset of them, you can then run that highlighted section in a similar manner.
 
-\vspace{1em}
-
 \subsection{Keyboard Shortcuts}
-
-\vspace{1em}
 
 It is at this juncture that a handy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All good programming environments will provide their users with the ability to do every conceivable task via their keyboard in some way. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, can make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{table:keyShorts}\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}.
 
-\medskip
+\vspace{1em}
 
 \input{tables/Ch1/keyShorts}
 
@@ -238,7 +234,7 @@ Given that we are on the topic of basic arithmetic, it is perhaps worth consider
 \end{outR}
 
 \noindent
-You can see that R produces a result of \R{Inf} and \R{-Inf} which is an abbreviated way of referring to \gls{infinity} in the positive and negative directions respectively.\footnote{This will also be generated if a number is too large for a computer to cope with. For example, the code \R{.Machine\$double.xmax} will produce the largest number your computer can handle. Now, R will technically still let you \textit{add} values to this number, but the number won't change from R's perspective because the amount you would have to add to alter what is shown is excessively large. However, if you \textit{multiply} it by 2, you should get \R{Inf}: \\ 
+You can see that R produces a result of \R{Inf} and \R{-Inf} which is an abbreviated way of referring to \gls{infinity} in the positive and negative directions respectively.\footnote{This will also be generated if a number is too large for a computer to cope with. For example, the code \R{.Machine\$double.xmax} will produce the largest number your computer can handle. Now, R will technically still let you \textit{add} values to this number, but the number won't change from R's perspective because the amount you would have to add to alter what is shown is excessively large. However, if you \textit{multiply} it by 2, you should get \R{Inf}: 
 \R{.Machine\$double.xmax * 2}}.
 
 What happens if you take the square root of a negative number? 

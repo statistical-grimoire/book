@@ -168,7 +168,7 @@ Now, what would you do if you wanted to load a Microsoft Excel spreadsheet file 
 In the output for \R{mm\_df} (and the \R{msleep} data from chapter 2) you can see that the output printed to the console specifies that we are looking at something called a \gls{tibble}: \R{\# A tibble: 48 x 9}. The output also helpfully displays the dataset's dimensions and the class of object contained within each column. This is in contrast to the data frame created in chapter 1, which did not do any of that for us. In the \textit{tidyverse's} own words, a tibble is a ...
 
 \begin{displayquote}
-%\fontfamily{artemisia}\selectfont
+\headingfont
 %\large
 modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. Tibbles are data.frames that are lazy and surly: they do less (i.e. they don’t change variable names or types, and don’t do partial matching) and complain more (e.g. when a variable does not exist). This forces you to confront problems earlier, typically leading to cleaner, more expressive code. Tibbles also have an enhanced print( ) method which makes them easier to use with large datasets containing complex objects.
 
@@ -633,7 +633,7 @@ Its worth emphasizing the utility of the pipe operator here: It allowed us to ge
 
 Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe (amoung other things) we want to know the mean amount of each type of M\&M. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from the \textit{dplyr} package in the \textit{tidyverse}. 
 
-\begin{figure}[b]
+\begin{figure}[h]
     \centering
 \begin{mdframed}[style = miscFrame, frametitle = Box 3.1: Why is it called \textit{dplyr}?]
 
@@ -641,7 +641,7 @@ Generally, the names of R packages are relatively intuitive or are based on an i
 
 \vspace{1em}
 
-Any readers who have used Python as a data analysis tool probably appreciate that ``for-loops'' are employed to do much of the grunt work. While for-loops can be used, R users prefer to take a different, more efficient and elegant, ``vectorized'' approach. i.e., The goal is to use what are called \glspl{functional}. These are functions that accept another function as an input and produce a vector as output. That is precisely what the \R{apply()} function and its relatives like \R{lapply}, \R{sapply}, \R{vapply} do. R is incredibly adept at working with vectors, matrices, and arrays, and \textit{dplyr's} functions are all based around a strategy of using functionals for data manipulation.
+A common go-to strategy of programmers generally is to use for-loops to do much of the computational grunt work. For-loops just repeatedly execute a set of code until some condition has been satisfied. While for-loops can be used in R, its users often prefer to take a different, more efficient, ``vectorized'' approach. i.e., The goal is to use what are called \glspl{functional}. These are functions that accept another function as an input and produce a vector as output. That is precisely what the \R{apply()} function and its relatives like \R{lapply}, \R{sapply}, \R{vapply} do. R is incredibly adept at working with vectors, matrices, and arrays, and \textit{dplyr's} functions are all based around a strategy of using functionals for data manipulation.
 
 \end{mdframed}
 \end{figure}
