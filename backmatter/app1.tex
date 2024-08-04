@@ -1,0 +1,104 @@
+%Appendix 1
+\chapter{\texttt{<-} vs. \texttt{=}}
+\label{sec:AppendixOperator}
+The original assignment operator of the S programming language was \R{<-}. The use of \R{=} to assign names to objects was a more recent development in S's history. This was doubtlessly motivated by 1) the intuitive appeal of \R{=} (you are setting something \textit{equal} to something else), 2) its cleaner look, 3) its correspondence with other modern programming languages, and 4) the basic fact that it requires one less key to type. It also has the added benefit of not resulting in confusion when dealing with inequalities. For instance, something like \R{x<-1} could be read as either assigning a value of $1$ to \R{x} or could be evaluating whether \R{x} is \textit{less} than $-1$.  As written here, the statement will result in the former unless appropriate spacing is applied; i.e., \R{x < -1}.  
+
+Despite the obvious benefits of using \R{=}, much of R's core user-base has held as steadfastly to \R{<-} as a child would to a teddy bear. To understand the reluctance towards using \R{=}, it is helpful to know that, prior to its use as an assignment operator, the \R{=} was used to designate values to \textit{arguments} inside a \textit{function} (see section \ref{sec:functions}) and, to this day, it still serves this purpose. Consequently, when it was granted the coveted position of ``assignment operator'' it now had dual syntactic roles within the language but with a particular limitation.  Specifically, you cannot use it to assign a name to an object within an R function's argument. i.e., you cannot use \R{=} to set an argument and assign an name simultaneously. However, you can do this using the \R{<-}.
+
+For example, if we use R's \R{sum()} function to calculate the sum of the numbers one through five using \R{=} to set the function's main \textit{argument}. We can see that, while the function works as intended (producing a value of 15), there is no new variable generated that stored the values one through five:
+
+\begin{inR}
+sum(x = 1:5)
+x
+\end{inR}
+
+\begin{outR}
+[1] 15
+Error: object 'x' not found
+\end{outR}
+
+\noindent
+However, if we run the same code, but use the \R{<-} to set the argument, we can see that the numbers 1 through 5 are stored.
+
+\begin{inR}
+sum(x <- 1:5)
+x
+\end{inR}
+
+\begin{outR}
+[1] 15
+[1] 1 2 3 4 5
+\end{outR}
+
+The \R{<-} also has an advantage in that a simple variant of it, \R{{<}<-}, allows you to create variables within your own custom-made functions that are executable outside the scope of that function. Admittedly, this is a more advanced usage than readers of this text are likely to need, but it is an useful feature to know about as skills with R develop.
+
+As a basic illustration, suppose we created a function, \R{rational\_pi()}, that rounds $\pi$ to 3 like so...
+
+\begin{inR}
+rational_pi = function() {
+  rat_pi <- round(pi)
+  return(rat_pi)
+}
+\end{inR}
+
+\medskip
+
+\noindent
+When we run the function, it straightforwardly spits out a 3
+
+\begin{inR}
+rational_pi()
+\end{inR}
+
+\begin{outR}
+[1] 3
+\end{outR}
+
+\noindent
+But when we run object \R{rat\_pi} we get an error message saying the object cannot be found:
+
+\begin{inR}
+rat_pi
+\end{inR}
+
+\begin{outR}
+Error: object 'rat_pi' not found
+\end{outR}
+
+\noindent
+At face value this is odd behaviour because, to be able to run the line \R{return(rat\_pi)}, the object \R{rat\_pi} must have been stored at some point.  And it was stored, but only \textit{within the scope of the function}. To make \R{rat\_pi} available outside the function's scope, we can employ \R{{<}<-} when we define the function:
+
+\begin{inR}
+rational_pi = function() {
+  rat_pi <<- round(pi)
+  return(rat_pi)
+}
+
+rational_pi()
+rat_pi
+\end{inR}
+
+\begin{outR}
+[1] 3
+[1] 3
+\end{outR}
+
+\noindent
+Now we have a ``rational'' version of $\pi$ stored as \R{rat\_pi}.  However, one other intriguing feature of \R{{<}<-} needs to be mentioned in this context: \R{{<}<-} only assigns a value within the function's scope, \textit{if} the object you are creating does not already exist inside the function. However, the value will still get assigned globally (i.e., outside of the function's scope).  This is easiest to comprehend with a simple example:
+
+\begin{inR}
+rational_pi = function() {
+  rat_pi <- 10
+  rat_pi <<- round(pi)
+  return(rat_pi)
+}
+
+rational_pi() #Notice the function produces 10
+rat_pi #However, the object stores 3
+\end{inR}
+\begin{outR}
+[1] 10
+[1] 3
+\end{outR}
+
+A couple of other final points in favour of  \R{<-} is its reversibility (i.e., being able to write it as \R{->} and \R{->{>}}) and the fact that most of the example code inside R's help documentation is written using \R{<-}. Thus, in theory, using \R{<-} consistently is likely to make this documentation more intelligible at a quick glance for a user than constantly using \R{=} would.

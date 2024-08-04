@@ -1,0 +1,76 @@
+\section{Understanding Different Data Classes}
+
+\subsection{Lists}
+
+Data frames (or tibbles) do not represent the only means of handling data with R. A \textit{list}, for instance, is a particularly versatile option not only because it permits the handling of multiple vectors like a data frame does, but also because there is no restriction on the amount of elements each vector needs to contain. With data frames, each column needs to contain the same amount of elements as every other column, not only is this not true for lists, you can nest lists within lists, you can even nest data frames and other object classes within lists. For instance, you can nest tables within lists, matrices within lists, and arrays within lists. Ultimately, what this means is you can create extraordinarily complex hierarchical data structures, but that level of flexibility comes with the drawback of making analysis (particularly quantitative analyses) more difficult. Lists tend to be the most useful when a conventional data frame, matrix, or table will not suffice. While lists are not the focus of this chapter, they occur often enough in everyday R usage that knowing one when you see it will be helpful.
+
+\begin{inR}
+my_list <- list(
+  numbers = 1:5,
+  alphabet = letters,
+  df = data.frame(
+    col_1 = c(TRUE, FALSE, FALSE),
+    col_2 = 1:3
+  )
+)
+\end{inR}
+
+\vspace{1em}
+
+The above code creates a simple list with a numeric vector, character vector, and data frame. Running the object \R{my\_list} will output all of this information.
+
+\begin{inR}
+my_list
+\end{inR}
+\begin{outR}
+$numbers
+[1] 1 2 3 4 5
+
+$alphabet
+ [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"
+[14] "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"
+
+$df
+  col_1 col_2
+1  TRUE     1
+2 FALSE     2
+3 FALSE     3
+\end{outR}
+
+\noindent
+The \R{\$} can be used isolate any of this information. E.g., 
+
+\begin{inR}
+my_list$alphabet[1:10]
+\end{inR}
+\begin{outR}
+ [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j"
+\end{outR}
+
+\begin{inR}
+my_list$df
+\end{inR}
+\begin{outR}
+  col_1 col_2
+1  TRUE     1
+2 FALSE     2
+3 FALSE     3
+\end{outR}
+
+\begin{inR}
+my_list$df$col_1
+\end{inR}
+\begin{outR}
+[1]  TRUE FALSE FALSE
+\end{outR}
+
+\begin{inR}
+my_list$df$col_1[1]
+\end{inR}
+\begin{outR}
+[1]  TRUE
+\end{outR}
+
+% note use of str()
+
+%It can store numbers as integers, doubles, and complex numbers. Integers are numbers (in R's memory) that have no 

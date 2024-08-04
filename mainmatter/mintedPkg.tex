@@ -1,0 +1,31 @@
+\usepackage{minted}
+%\setminted{fontfamily = courier, fontsize = \small}
+\setminted{fontsize = \small}
+\newcommand{\mintAdj}{\vspace{-1.5cm}}
+%\newcommand{\R}{\texttt}
+\definecolor{mint-bg-in}{rgb}{0.95,0.95,0.92}
+\newcommand{\R}[1]{\colorbox{mint-bg-in}{\texttt{#1}}}
+
+\newenvironment{inR}
+ {\VerbatimEnvironment
+  \begin{minted}[
+    bgcolor=backcolourIN,
+    linenos]{R}}
+ {\end{minted}\vspace{-1.5cm}}
+
+\newenvironment{outR}
+ {\VerbatimEnvironment
+  \begin{minted}[
+    frame=leftline, 
+    style = bw]{R}}
+ {\end{minted}}
+
+ \newenvironment{raw}
+ {\VerbatimEnvironment
+  \begin{minted}[
+    %frame=leftline,
+    bgcolor = codegray,
+    style = bw,
+    fontfamily = helvetica,
+    fontsize = \footnotesize]{R}}
+ {\end{minted}}
