@@ -10,9 +10,9 @@ This book was created to give students a solid, practical, and free introduction
 [https://statistical-grimoire.neocities.org/](https://statistical-grimoire.neocities.org/)
 
 ## Releases
-- [Latest Release](https://github.com/statistical-grimoire/book/releases)
+- [Latest Release](https://github.com/statistical-grimoire/book/releases/tag/v1.0.3)
 
-- [All Releases](https://github.com/statistical-grimoire/book/releases/tag/v1.0.1)
+- [All Releases](https://github.com/statistical-grimoire/book/releases/)
 
 ## License
 *The Statistical Grimoire: Statistics for the Natural Sciences Using R* by Jeffrey
