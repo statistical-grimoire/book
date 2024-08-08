@@ -456,7 +456,7 @@ Thus far, we have demonstrated three basic categories of object: \textit{numeric
 \subsubsection{Naming Objects}
 \label{sec:namingObjects}
 
-Often times we will run into circumstances where other people are required to read, run, and modify the code we write.  Still other times, we may need to look at, and make sense of, code we have written in the past and largely forgotten. These considerations make it of the utmost importance that all of the code we write is intelligible to other people and our future selves. Among the best way to achieve this is by naming objects appropriately. Ideally, the name of an object should be concise and descriptive. Generally, you can name objects almost anything you like, as long as the name begins with a letter, contains no spaces, avoids special characters (except underscores \R{\_}), and does not use any of R's \gls{reserved words} such as \R{TRUE}, \R{Inf}, \R{NaN}, \R{function}, etc.
+Oftentimes we will run into circumstances where other people are required to read, run, and modify the code we write.  Still other times, we may need to look at, and make sense of, code we have written in the past and largely forgotten. These considerations make it of the utmost importance that all of the code we write is intelligible to other people and our future selves. Among the best way to achieve this is by naming objects appropriately. Ideally, the name of an object should be concise and descriptive. Generally, you can name objects almost anything you like, as long as the name begins with a letter, contains no spaces, avoids special characters (except underscores \R{\_}), and does not use any of R's \gls{reserved words} such as \R{TRUE}, \R{Inf}, \R{NaN}, \R{function}, etc.
 
 Given that spaces are not permitted in the naming of objects, programmers have developed certain conventions to promote readability. One such convention is \textit{snake case}, which separates lowercase lettered words with an underscore:
 
@@ -466,7 +466,7 @@ snake_case <- 1
 \medskip
 
 \noindent
-Another, referred to as \textit{camel case}, denotes separate words by capitalizing the first letter of each:
+Another, referred to as \textit{camel case}, denotes separate words by capitalizing the first letter of each new word:
 
 \begin{inR}
 camelCase <- 2
@@ -496,7 +496,7 @@ ANGRYCASE <- 5
 
 Apart from the last two, R programmers tend to use all of these with seeming abandon. It is worth noting that different style guides for R have been developed and altered over the years with varying degrees of adoption. Presently there is no consensus on which style-guide should act in an official capacity for R; however, the most popular, and widely respected, is the Tidyverse Style Guide\footnote{The \textit{tidyverse} will be explained in the next chapter, just know that all the code written in this book will (do its best) to adhere to its standards.} (\url{https://style.tidyverse.org}) which advocates the strict and concise use of \textit{snake\_case} only.
 
-When it comes to naming objects, all of the rules just laid out only apply to what are referred to as \glspl{syntactic name}; however, if you are a psychopath, you can ignore all of those rules and create what are called \glspl{non-syntactic name} by simply enclosing the name within backticks.
+When it comes to naming objects, all of the rules just laid out only apply to what are referred to as \glspl{syntactic name}; however, if you choose to be a psychopath, you can ignore all of those rules and create what are called \glspl{non-syntactic name} by simply enclosing the name within backticks.
 
 \begin{inR}
 `420 * 69` <- "PARTY TIME!"
@@ -505,7 +505,7 @@ When it comes to naming objects, all of the rules just laid out only apply to wh
 
 \subsection{Vectors}
 
-It is not the case that an object need only store a single value, as we have been doing above. Particularly when conducting statistical analyses, you are almost always working with variables that contain more than one value (i.e. multiple observations). In view of this, R objects can store as many values as you require.\footnote{Obviously, this statement is only true given the memory limitations of your computer's hardware and software.} For instance, if we want \R{x} to be equal to the numbers 1 through 5, we need only type: 
+It is not the case that an object need store only a single value, as we have been doing above. Particularly when conducting statistical analyses, you are almost always working with variables that contain more than one value (i.e. multiple observations). In view of this, R objects can store as many values as you require.\footnote{Obviously, this statement is only true given the memory limitations of your computer's hardware and software.} For instance, if we want \R{x} to be equal to the numbers 1 through 5, we need only type: 
 
 \begin{inR}
 x <- c(1, 2, 3, 4, 5)
@@ -516,7 +516,7 @@ x
 [1] 1 2 3 4 5
 \end{outR}
 
-The lower case \R{c} is short for \textit{concatenate}, which is just a fancy word meaning ``combine'' or ``connect''.  By combining the numbers 1 through 5 in this way we have created what is technically known as a \gls{vector}\footnote{More specifically, we are speaking of \textit{atomic vectors} here, though most people just call them \textit{vectors.}}.  We can further use this concatenate function, \R{c}, to combine vectors with other vectors. In the example below, we create two vectors, \R{x} and \R{y}, and concatenate them to create an object called \R{z}.
+The lower case \R{c} is short for \textit{combine}. By combining the numbers 1 through 5 in this way we have created what is technically known as a \gls{vector}\footnote{More specifically, we are speaking of \textit{atomic vectors} here, though most people just call them \textit{vectors.}}.  We can further use this combine function, \R{c()}, to combine vectors with other vectors. In the example below, we create two vectors, \R{x} and \R{y}, and combine them to create an object called \R{z}.
 
 \begin{inR}
 x <- c(1, 2, 3, 4, 5)
@@ -532,7 +532,7 @@ z
     \centering
 \begin{mdframed}[style = miscFrame, frametitle = Box 1.2: How to Use Your Colon Effectively \R{:}]
 
-In the previous examples, we used R's concatenate function to create a basic set of ascending numbers. The need to generate regular sequences of integers is a common occurrence in data analyses, so R provides users with a convenient means to create them using the \gls{colon operator} (\R{:}).
+In the previous examples, we used R's combine function to create a basic set of ascending numbers. The need to generate regular sequences of integers is a common occurrence in data analyses, so R provides users with a convenient means to create them using the \gls{colon operator} (\R{:}).
 
 \begin{inR}
 x <- 1:5
@@ -585,7 +585,7 @@ x^2
 [1]  1  4  9 16 25
 \end{outR}
 
-A similarly logical process is seen when we perform mathematical operations on two or more vectors of the same size.  For instance, adding them together results in the the first element of one being added to the first element of the other.  The second element of one being added to the second element of the other, and so on.
+A similarly logical process is seen when we perform mathematical operations on two or more vectors of the same size.  For instance, adding them together results in the first element of one being added to the first element of the other.  The second element of one being added to the second element of the other, and so on.
 
 \begin{inR}
 x <- c(1,2,3,4,5)
@@ -718,7 +718,7 @@ LETTERS[c(1,2,3,4,5)]
 \end{outR}
 
 \noindent
-By contrast, if we want to list out all of the letters, except the first five (i.e., exclude the first five), we can include a minus sign in front of the concatenate symbol.
+By contrast, if we want to list out all of the letters, except the first five (i.e., exclude the first five), we can include a minus sign in front of the combine symbol.
 
 \begin{inR}
 LETTERS[-c(1,2,3,4,5)]
