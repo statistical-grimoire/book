@@ -39,7 +39,9 @@ A program is free software if the program's users have the four essential freedo
 }
 %\rmfamily
 
-This is a philosophy that extends as much to the software's various file types and help documentation as it does to the software itself.  A major barrier to the dissemination of scientific findings, for many years, has been the tendency of various proprietary tools used in research to rely on exclusive file formats to handle data.  For instance, many types of paid software used for building, running, and analyzing computer-based experiments will, by default, output results using restrictive file formats that require the original software with a valid license to be read. This not only makes it difficult to provide free access of the data to other researchers, but makes it that much more difficult to load the data into other types of software (which are also likely to contain their own proprietary formatting schemes) for more in-depth analyses than what the original program affords the researcher.  Obviously, in a by-gone pre-internet era, when statistical computing was both a complex and expensive endeavour, and the use of any given computer and its software was restricted to a small coterie of researchers, a company may be forgiven for utilizing proprietary formatting schemes in this manner.  However, in an age where the internet is ubiquitous and there is rarely any need to ration computing power, there is little justification for such practices. A generic .CSV (comma-separated values)\footnote{A ``comma-separated values'' spreadsheet is a universal file format for spreadsheets. It is readable by any competent spreadsheet software and, in fact, spreadsheet software is not even necessary to read a .CSV file - a basic text editor will suffice. Moreover, .CSV files can contain large amounts of information with comparatively small file sizes.} spreadsheet file will be sufficient as an output for most research endeavors. It is clear to any reasonable person that locking information away in this manner is not done in the best interest of scientific progress; rather, it is done simply to tether researchers to a branded ecosystem of overpriced software. Consequently, we can easily label the continued adoption of these practices for what they are: unscrupulous. In practical terms, what this means is that, if for no other reason, we should use R just to give the middle finger to these companies.
+This philosophy applies not only to the software itself but also to its various file types and help documentation. For many years, a significant barrier to the dissemination of scientific findings has been the reliance on exclusive file formats by proprietary research tools. Clearly, locking information in this manner is not in the best interest of scientific progress; rather, it serves to tether researchers to an overpriced, branded ecosystem. Consequently, we can rightly label the continued adoption of these practices as unscrupulous. In practical terms, what this means is that, if for no other reason, we should use R just to give the middle finger to these companies.
+
+%For instance, many types of paid software used for building, running, and analyzing computer-based experiments will, by default, output results using restrictive file formats that require the original software with a valid license to be read. This not only makes it difficult to provide free access of the data to other researchers, but makes it that much more difficult to load the data into other types of software (which are also likely to contain their own proprietary formatting schemes) for more in-depth analyses than what the original program affords the researcher.  Obviously, in a by-gone pre-internet era, when statistical computing was both a complex and expensive endeavour, and the use of any given computer and its software was restricted to a small coterie of researchers, a company may be forgiven for utilizing proprietary formatting schemes in this manner.  However, in an age where the internet is ubiquitous and there is rarely any need to ration computing power, there is little justification for such practices. A generic .CSV (comma-separated values)\footnote{A ``comma-separated values'' spreadsheet is a universal file format for spreadsheets. It is readable by any competent spreadsheet software and, in fact, spreadsheet software is not even necessary to read a .CSV file - a basic text editor will suffice. Moreover, .CSV files can contain large amounts of information with comparatively small file sizes.} spreadsheet file will be sufficient as an output for most research endeavors. It is clear to any reasonable person that locking information away in this manner is not done in the best interest of scientific progress; rather, it is done simply to tether researchers to a branded ecosystem of overpriced software. Consequently, we can easily label the continued adoption of these practices for what they are: unscrupulous. In practical terms, what this means is that, if for no other reason, we should use R just to give the middle finger to these companies.
 
 \section{Installing and Running R on Your Computer}
 
@@ -48,7 +50,7 @@ This is a philosophy that extends as much to the software's various file types a
 
 R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux; however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you can use to communicate instructions to your computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply ``understanding'' the language is not sufficient.  For this reason, most operating systems come equipped with a basic way of interfacing with the user via a \gls{command console}\footnote{A windowed application that allows you to type instructions (a.k.a. ``commands'') to your computer.} of some kind. On computers using the Windows operating system, this is referred to as the \textit{Command Prompt} application, on Macintosh computers this is the \textit{Terminal} application. Relying on your operating system's basic command console as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing. The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an ``\textbf{environment}'' or, more garrulously, an ``\gls{integrated development environment} (\acrshort{IDE})''.  This is simply a software application providing the user with a more elegant visual workspace and feature set to make programming a smoother experience. 
 
-The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Mackintosh operating system.  However, while this environment is preferable to the operating system's basic command console, most R users still find it lacking and opt to install a different environment called \href{https://posit.co/}{\gls{RStudio}}, which has an open-source (free) version for non commercial use.
+The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Mackintosh operating system.  However, while this environment is preferable to the operating system's basic command console, most R users still find it lacking and opt to install a different environment called \href{https://posit.co/}{\gls{RStudio}}, which has an open-source (free) version for non-commercial use.
 
 \subsection{Installation}
 \label{sec:install}
@@ -60,7 +62,7 @@ To install R - both the language and the environment simultaneously - simply go 
 \end{center}
 
 \noindent
-Somewhere on the front-page of this website should be a link labelled ``\acrshort{CRAN}''. This stands for \gls{Comprehensive R Archive Network} and is a set of servers around the world that distribute R alongside packages associated with R.  The servers are ``mirrored'', meaning they all provide the same content.  So there is no need to worry about one server providing incomplete, out-of-date, or unofficial versions of R.  Technically speaking, the server closest to your home location is the one you should opt to download from; however, the topmost link labeled ``0-Cloud'' will be sufficient for most users.  The install file is only about 80 megabytes large, so unless you live in all but the remotest areas of Earth, download speed, and thus choice of server, is probably not a concern.
+Somewhere on the front-page of this website should be a link labelled ``\acrshort{CRAN}''. This stands for \gls{Comprehensive R Archive Network} and is a set of servers around the world that distribute R alongside packages associated with R.  The servers are ``mirrored'', meaning they all provide the same content.  So there is no need to worry about one server providing incomplete, out-of-date, or unofficial versions of R.  Technically speaking, the server closest to your home location is the one you should opt to download from; however, the topmost link labeled ``0-Cloud'' will be sufficient for most users.  The install file is only about 80 megabytes large, so unless you live in the remotest areas of Earth, download speed, and thus choice of server, is probably not a concern.
 
 Once you have chosen a suitable server, you will need select your operating system and choose the appropriate installation file. If you are using Windows, opt to download the ``base'' version of R.  If you are using a Macintosh operating system, you will need to select the option relevant to your computer.  At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed ``Apple silicon''); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting \textit{About This Mac} via the small little apple logo in the top left corner of the desktop screen. Machines using Apple silicon, will display a row called ``Chip'' and state something akin to ``Apple M1''. Machines using Intel processors will display a row reading ``Processor'' followed by the make and model of the processor.
 
@@ -78,11 +80,11 @@ Installing RStudio is not strictly necessary to work through this book's content
 
 There are updates made to R about 2-3 times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R, but the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.\footnote{Packages (also called ``libraries'') will be explained later.} If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio allows you to easily switch between installed versions on your computer.
 
-At the time of writing, R is on version 4.4.1, nicknamed the ``Race for Your Life'' version.  Each new release of R is given a nickname that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.
+At the time of writing, R is on version 4.4.1, nicknamed the ``Race for Your Life'' version.  New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.
 
 \subsection{Consoles and Scripts}
 
-Upon opening the base R environment you will be shown a pane labelled \textit{R Console}.  Opening RStudio environment will show a similar pane simply labelled \textit{Console} alongside a couple of others.  The console pane functions as the command console described earlier (see section \ref{sec:LangAndEnv}).  Inside it you will see a ``$>$''. This symbol denotes the command line's prompt.  In other words, it denotes the space in which you type commands, using R code, to your computer.  The term ``code'' here is just a shorthand way of referring to ``computer code'' which another way of expressing the fact that we are typing commands using a programming language. The presence of $>$ also indicates that the computer is awaiting your command.
+Upon opening the base R environment you will be shown a pane labelled \textit{R Console}.  Opening RStudio environment will show a similar pane simply labelled \textit{Console} alongside a couple of others.  The console pane functions as the command console described earlier (see section \ref{sec:LangAndEnv}).  Inside it you will see a ``$>$''. This symbol denotes the command line's prompt.  In other words, it denotes the space in which you type commands, using R code, to your computer.  The term ``code'' here is just a shorthand way of referring to ``computer code'' which is another way of expressing the fact that we are typing commands using a programming language. The presence of $>$ also indicates that the computer is awaiting your command.
 
 If you type $1 + 1$ on this line and the press ``enter/return'' on your keyboard, you should see a 2 display as an output almost instantaneously beneath it.  In this case the expression ``$1 + 1$'' is a \textit{line of R code}.  Pressing enter/return, \textit{runs} or \textit{executes} this R code. And ``$2$'' is the computer's resulting \textit{output}.
 
@@ -116,6 +118,7 @@ Once opened, you can type R code into this new window and save it in the convent
 You can now place your cursor at a line of your choosing and run that line individually.  To do this in the base R environment you select \textit{Edit $\rightarrow$ Run Line or Selection}.  In RStudio you select \textit{Code $\rightarrow$ Run Selected Line(s)} or click the ``run'' icon in the upper right of the script window. If you highlight all the lines of code, or just a subset of them, you can then run that highlighted section in a similar manner.
 
 \subsection{Keyboard Shortcuts}
+\label{sec:key_short}
 
 It is at this juncture that a handy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All good programming environments will provide their users with the ability to do every conceivable task via their keyboard in some way. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, can make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{table:keyShorts}\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}.
 
@@ -123,11 +126,21 @@ It is at this juncture that a handy feature of programming environments be menti
 
 \input{tables/Ch1/keyShorts}
 
-When utilizing these shortcuts, it is worth remembering that standard QWERTY-style keyboards are symmetrically designed. Modifier keys like the \textit{shift} key, \textit{control} key, and \textit{alt} key are located on both the left and right side of the board.  This is not by accident.  A basic skill primary education tends to neglect is that of touch typing. Consequently, most people - even those who have grown up with unprecedented access to computers and the internet - have never learned to appreciate the utility of this layout or use it appropriately. As an example, to type capital letters you should always depress the shift key on the opposite side of the keyboard to the letter. So, if you desired to type the capital letter Q, you would depress the right shift key with your right hand, and type Q with your left hand.  A similar logic applies to the other modifier keys. To use keyboard shortcut \#9 in Table \ref{table:keyShorts}, you would depress the right control key (with your right hand) and use your left hand to press the 2 key.  You should not be trying to press both keys with a single hand.  Such advice might seem obvious but, given the sheer number of people who contort their wrists and fingers in grotesquely strange and painful ways, it is clearly far from being so.
+\begin{figure*}[!b]
+    \centering
+\begin{mdframed}[style = miscFrame, frametitle = Box 1.1: Are you using your keyboard properly?]
+
+When utilizing the keyboard shortcuts mentioned in section \ref{sec:key_short}, it is worth remembering that standard QWERTY-style keyboards are symmetrically designed. Modifier keys like the \textit{shift} key, \textit{control} key, and \textit{alt} key are located on both the left and right side of the board.  This is not by accident and many people - even those who have grown up with unprecedented access to computers and the internet - have never learned to appreciate the utility of this layout or use it appropriately. \\
+
+As an example, to type capital letters you should always depress the shift key on the opposite side of the keyboard to the letter. So, if you desired to type the capital letter Q, you would depress the right shift key with your right hand, and type Q with your left hand.  A similar logic applies to the other modifier keys. To use keyboard shortcut \#9 in Table \ref{table:keyShorts}, you would depress the right control key (with your right hand) and use your left hand to press the 2 key.  You should not be trying to press both keys with a single hand.  Such advice might seem obvious but, given the sheer number of people who contort their wrists and fingers in grotesquely strange and painful ways, it is clearly far from being so.
+
+\end{mdframed}
+\end{figure*}
+
 
 \section{How To Code Using R: The Fundamentals}
 
-With the formalities of installation, console, and scripting window out of the way, we can now start to learn how to write (i.e. code) using the language called R.  Though, it is at this juncture that some advise to novice programmers be offered.  Nothing that will be discussed in this section, or any section of this text concerning R code, is material you need to go out of your way to memorize.  R is a language, and the basic act of trying to use the language consistently will result in a natural and effortless memorization over time. Along these lines, there are some basic recommendations novice programmers can follow to expedite this:
+With the formalities of installation, console, and scripting window out of the way, we can now start to learn how to write (i.e. code) using the language called R.  Though, it is at this juncture that some advice to novice programmers be offered.  Nothing that will be discussed in this section, or any section of this text concerning R code, is material you need to go out of your way to memorize.  R is a language, and the basic act of trying to use the language consistently will result in a natural and effortless memorization over time. Along these lines, there are some basic recommendations novice programmers can follow to expedite this:
 
 \begin{itemize}
     \item Do not use your computer's copy and paste functions.  Type all code yourself.
@@ -261,7 +274,7 @@ pi
 
 \subsection{Understanding Scientific Notation}
 
-On occasion values will either be excessively large or excessively small. In such cases R will often display the values using what is referred to as \gls{scientific notation}.  For instance, dividing the number $2$ by $100000$ will result in scientific notation being employed:
+On occasion values will be either excessively large or excessively small. In such cases R will often display the values using what is referred to as \gls{scientific notation}.  For instance, dividing the number $2$ by $100000$ will result in scientific notation being employed:
 
 \begin{inR}
 2 / 100000
@@ -278,7 +291,7 @@ Remember that positive powers move the decimal right (in the positive direction)
 
 
 \subsection{Commenting Out Lines}
-In the course of writing R code, there will be occasions where you would like to run a script you have typed up, but not necessarily run every single line on that script.  There might be certain lines that you would, at least tentatively, like to keep for one reason or another.  You can accomplish this by ``commenting out'' your code.  If you type a \R{\#} symbol, any code that follows that symbol and is on the same line as that symbol will not be run.
+In the course of writing R code, there will be occasions where you would like to run a script you have typed up, but not necessarily run every single line on that script.  There might be certain lines that you would, at least tentatively, like to keep for one reason or another but not necessarily run.  You can accomplish this by ``commenting out'' your code.  If you type a \R{\#} symbol, any code that follows that symbol and is on the same line as that symbol will not be run.
 
 \begin{inR}
 1 + 1
@@ -390,7 +403,7 @@ x
 \end{outR}
 
 \noindent
-Both single or double quotation marks can be used to define a character object; however, you are not permitted to mix and match.
+Both single or double quotation marks can be used to define a character object. For instance, running ...
 
 \begin{inR}
 y <- 'SPAM'
@@ -402,7 +415,7 @@ y
 \end{outR}
 
 \noindent
-If you accidentally mix and match quotation styles and attempt to run the code you will find the console stuck in a loop that constantly expects some additional piece of code. If this happens you need only press the escape, (\textit{esc}), key with your cursor inside the console window.
+works just fine, but if you were to mix and match the two types of quotation marks (e.g., try to run \R{y <- "SPAM'}), you will find that no actual output is produced, and the console just displays the code you tried to run with a small \R{+} appended to it. The \R{+} indicates that the line of code is incomplete and more is expected before an output can be returned. If this happens you need only press the escape key (\textit{esc}) with your cursor inside the console window.
 
 A key consideration about character objects, which will probably seem obvious, is that you cannot perform standard mathematical operations on them.
 
@@ -517,7 +530,7 @@ z
 
 \begin{figure*}[!b]
     \centering
-\begin{mdframed}[style = miscFrame, frametitle = Box 1.1: How to Use Your Colon Effectively \R{:}]
+\begin{mdframed}[style = miscFrame, frametitle = Box 1.2: How to Use Your Colon Effectively \R{:}]
 
 In the previous examples, we used R's concatenate function to create a basic set of ascending numbers. The need to generate regular sequences of integers is a common occurrence in data analyses, so R provides users with a convenient means to create them using the \gls{colon operator} (\R{:}).
 
