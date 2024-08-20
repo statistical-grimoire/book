@@ -1,4 +1,5 @@
-\chapter{The Basics of Loading and Manipulating Data}
+%\chapter{The Basics of Loading and Manipulating Data}
+\chapter{The Invocation and Metamorphosis of Data}
 
 \lettrine{C}{hapter} 1 stated that data frames are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present as a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, as should be apparent, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data, as a list, matrix, array, or table. Though, a data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
 
@@ -260,7 +261,7 @@ df
 
 Given the limited screen space and the large size of most datasets, tibbles are designed to display only the first 10 rows when printed to the console, making it easier for users to work with their data.
 
-Generally, if you want to view an entire data set, the best practice is not to display it in the console but rather use R's \R{View()} function which opens it in a spreadsheet style viewer. That being said, many people will still find the amount of rows dispyed by a tibble within the console lacking, particularly if you are working on anything other than a small laptop. For this reason, the 10 row limit is a behaviour which can be circumvented in various ways. One simple way is to make use of the \R{print()} function. For instance, if we want to display the first 20 rows we can simply run ...
+Generally, if you want to view an entire data set, the best practice is not to display it in the console but rather use R's \R{View()} function which opens it in a spreadsheet style viewer. That being said, many people will still find the amount of rows displayed by a tibble within the console lacking, particularly if you are working on anything other than a small laptop. For this reason, the 10 row limit is a behaviour which can be circumvented in various ways. One simple way is to make use of the \R{print()} function. For instance, if we want to display the first 20 rows we can simply run ...
 
 \begin{inR}
 print(mm_df, n = 20)
@@ -294,7 +295,7 @@ mm_df
 
 \vspace{1em}
 
-What about columns though? Well, interestingly tibbles will actually conform to the size of your console screen.  So if you can only fit five columns on screen, the tibble will only display those five and notify you of the others not displayed beneath the output. This is done to preserve the ``rectangleness'' of the data so it can be visualized appropriately. This also stands in stark contrast to how base R's data frames behave which will stack columns on top of each other, with no consideration of column or row space. Admittedly, its nice to have all that information displayed, but it comes at the cost of being difficult for a human to visually parse. That being said, if you wanted your tibbles to behave like this and always display all columns, you can just add an additional argument, \R{pillar.width = Inf}, to the \R{options()} function:
+What about columns though? Well, interestingly tibbles will actually conform to the size of your console screen.  So if you can only fit five columns on screen, the tibble will only display those five and notify you of the others not displayed beneath the output. This is done to preserve the ``rectangleness'' of the data so it can be visualized appropriately. This also stands in stark contrast to how base R's data frames behave, which will stack columns on top of each other with no consideration of column or row space. Admittedly, its nice to have all that information displayed, but it comes at the cost of being difficult for a human to visually parse. That being said, if you wanted your tibbles to behave like this and always display all columns, you can just add an additional argument, \R{pillar.width = Inf}, to the \R{options()} function:
 
 \begin{inR}
 options(
@@ -357,7 +358,7 @@ pi_df$pie[1]
 \end{outR}
 
 \noindent
-It is important to understand that tibbles do not strictly control the handling of decimals. Instead, they work with \textit{significant digits}.  This allows the tibble to preserve its desired ``rectangleness'' by giving it cleaner looking columns. Since tibbles default to three significant digits, $\pi$ will only display as 3.14. 
+It is important to understand that tibbles do not strictly control the handling of decimals. Instead, they work with \textit{significant digits}.  This allows the tibble to preserve its desired ``rectangleness'', giving it cleaner looking columns. Since tibbles default to three significant digits, $\pi$ will only display as 3.14. 
 
 As a refresher of primary school math, with significant digits, everything in front of the decimal point is always displayed, but each number in front of that decimal point uses up a significant digit (a.k.a. a ``sig dig''). For instance, if you had a number like 666.13.  Displaying that to two sig digs would give you 666.  Displayed to three sig digs would again be 666. Displayed to four sig digs would be 666.1. Five sig digs would be 666.13. Six sig digs would be 666.130. Seven would be 666.1300, and so on.
 

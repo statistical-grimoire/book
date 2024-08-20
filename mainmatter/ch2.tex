@@ -1,4 +1,5 @@
-\chapter{The tidyverse and the Basics of Plotting Data with R}
+%\chapter{The tidyverse and the Basics of Plotting Data}
+\chapter{Harnessing the Tidyverse: The Basics of Plotting Data with R}
 
 \lettrine{T}{he} history of R can be split into two epochs. There was the time before the tidyverse, a period of primordial chaos that involved much personal sacrifice and necessary violence. Then there was the time of the tidyverse. The tidyverse is a set of mystical, yet cohesive, R packages brought forth by the sorcery of Hadley Wickham and his coven of arcane programmers \parencite{Wickham2019}. 
 
@@ -32,18 +33,31 @@ install.packages("tidyverse")
 library(tidyverse)
 \end{inR}
 
+% \begin{outR}
+% -- Attaching core tidyverse packages -- tidyverse 2.0.0 --
+%  dplyr     1.1.4      readr     2.1.5
+%  forcats   1.0.0      stringr   1.5.1
+%  ggplot2   3.5.1      tibble    3.2.1
+%  lubridate 1.9.3      tidyr     1.3.1
+%  purrr     1.0.2     
+% -- Conflicts -------------------- tidyverse_conflicts() --
+%  dplyr::filter() masks stats::filter()
+%  dplyr::lag()    masks stats::lag()
+%  Use the conflicted package to force all conflicts to
+%  become errors
+% \end{outR}
+
 \begin{outR}
--- Attaching core tidyverse packages -- tidyverse 2.0.0 --
- dplyr     1.1.4      readr     2.1.5
- forcats   1.0.0      stringr   1.5.1
- ggplot2   3.5.1      tibble    3.2.1
- lubridate 1.9.3      tidyr     1.3.1
- purrr     1.0.2     
--- Conflicts -------------------- tidyverse_conflicts() --
- dplyr::filter() masks stats::filter()
- dplyr::lag()    masks stats::lag()
- Use the conflicted package to force all conflicts to
- become errors
+── Attaching core tidyverse packages ─────────────────────────────────────── tidyverse 2.0.0 ──
+dplyr     1.1.4     readr     2.1.5
+forcats   1.0.0     stringr   1.5.1
+ggplot2   3.5.1     tibble    3.2.1
+lubridate 1.9.3     tidyr     1.3.1
+purrr     1.0.2     
+── Conflicts ───────────────────────────────────────────────────────── tidyverse_conflicts() ──
+dplyr::filter() masks stats::filter()
+dplyr::lag()    masks stats::lag()
+Use the conflicted package to force all conflicts to become errors
 \end{outR}
 
 While the above code installs all the packages, running \R{library(tidyverse)} only loads the the nine ``core'' packages:  \textit{ggplot2}, \textit{dplyr}, \textit{tidyr}, \textit{readr}, \textit{purr}, \textit{tibble}, \textit{stringr}, \textit{forcats}. Other tidyverse packages, such as \textit{readxl}, will need to be loaded separately using the \R{library()} function.
