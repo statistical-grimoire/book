@@ -92,7 +92,17 @@ R's base plotting functions offer a convenient means of producing simple quality
 
 The \textit{``gg''} in \textit{ggplot2} stands for ``grammar of graphics'' and provides users with a logical framework for the construction of plots within R.  The term ``grammar'' here is likely to conjure up long forgotten traumas of boring English and Language Arts lessons, but do not fear, the use of the term grammar is really just to emphasize that \textit{ggplot2} is constructed in a way that allows users to build plots of various kinds in a consistent and efficient manner that is easily tailored to their specific needs.  This is in contrast to how plotting in software works generally, where you are frequently stuck trying to fit a square peg (your data) into a circular hole (the software's narrow conception of how data should be presented).
 
-The easiest way to understand how \textit{ggplot2} works is to simply dive in an use it. Along the way, we will also learn a little bit more about R and data manipulation. The first thing to do will be to ensure that \textit{ggplot2} has been installed into our computer's library of packages and loaded so we can access its functions. As mentioned in section \ref{sec:tidyverse}, if you have installed and loaded the tidyverse, this is already done, but if you chose not to do that,\footnote{Shame on you.} \textit{ggplot2} can be installed and loaded as a standalone package as well.
+The easiest way to understand how \textit{ggplot2} works is to simply dive in an use it. Along the way, we will also learn a little bit more about R and data manipulation. However, a disclaimer is perhaps useful here:
+
+\begin{center}
+    {\Huge\warning}
+\end{center}
+
+\begin{displayquote}
+This chapter contains a large variety of functions and strategies for plotting data with \textit{ggplot2}. If you are under the impression that you need to memorize all of this, you are approaching this whole endeavor from the wrong angle. Programming is a skill you develop, not a collection of facts you remember (though you can foolishly treat it as such). With time and practice, your skill will improve, and you will naturally remember the various functions and methods employed in R. Eventually, you will find yourself needing to reference examples less frequently. The goal of this chapter is to help you \textbf{experience} how \textit{ggplot2} and R work. Focus on understanding the logic behind the code rather than trying to memorize it. Dive in, get your hands dirty, make mistakes, and experiment — that is how you will truly learn.
+\end{displayquote}
+
+The first thing to do will be to ensure that \textit{ggplot2} has been installed into our computer's library of packages and loaded so we can access its functions. As mentioned in section \ref{sec:tidyverse}, if you have installed and loaded the tidyverse, this is already done, but if you chose not to do that,\footnote{Shame on you.} \textit{ggplot2} can be installed and loaded as a standalone package as well.
 
 \begin{inR}
 install.packages("ggplot2")
