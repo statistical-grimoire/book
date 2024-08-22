@@ -1,16 +1,16 @@
 %\chapter{The Basics of Loading and Manipulating Data}
 \chapter{The Invocation and Metamorphosis of Data}
 
-\lettrine{C}{hapter} 1 stated that data frames are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present as a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, as should be apparent, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data, as a list, matrix, array, or table. Though, a data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
+\lettrine{C}{hapter} 1 stated that data frames are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present as a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data, as a list, matrix, array, or table. A data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
 
 Data can come in all kinds of different layouts and file formats and, in this respect, R has the ability to handle pretty much any scenario that might arise. This chapter will, for the most part, work under the assumption that the  kind of data that you need to work with is in a conventional ``spreadsheet-style'' of format. That is to say, like the \R{msleep} data used in Chapter 2, you have a bunch of rows and a bunch of columns, and each cell contains just a single value.
 
 \section{Spreadsheet Software}
 \label{sec:spreadsheet_soft}
 
-When it comes to spreadsheets, there are many different file formats they could be saved as.  Pretty much every spreadsheet application has its own specific file type that is tailored to its unique purpose and platform. For instance, \textit{Microsoft's Excel} spreadsheet application has its own proprietary format called the \texttt{.XLSX} file format. The stock spreadsheet application on Macintosh computers, called \textit{Numbers}, use the \texttt{.NUMBERS} file format. And if you use an open-source spreadsheet software like \textit{Libre Office's Calc} application, you may be familiar with the \texttt{.ODS} file format.
+When it comes to spreadsheets, there are many different file formats.  Pretty much every spreadsheet application has its own specific file type that is tailored to its unique purpose and platform. For instance, \textit{Microsoft's Excel} spreadsheet application has its own proprietary format called the \texttt{.XLSX} file format. The stock spreadsheet application on Macintosh computers, called \textit{Numbers}, use the \texttt{.NUMBERS} file format. And if you use an open-source spreadsheet software like \textit{Libre Office's Calc} application, you may be familiar with the \texttt{.ODS} file format.
 
-As everyone who is reading this doubtlessly appreciates, spreadsheet applications like, Microsoft's Excel, Numbers, Libre Office's Calc, etc., do more than just structure your data in a big table (which is all a spreadsheet is).  They allow you to do things like perform calculations, adjust cell colours, add images, insert comments, etc. And all of this extra stuff is saved, in one form or another, inside the specific file associated with that software. These features make applications like Microsoft's Excel, for instance, a great tool for basic tasks like balancing the household budget.  However, for serious data analysis that requires the use of large data sets and complex or heavy calculations, this kind of software is going to be more of a hindrance than a help. Adding in all of those layers of additional functionality is going to increase your file sizes, inflate your load times, create restrictions on how much information can be contained within your spreadsheet, and will increase the chance of a glitch occurring. Additionally, and most importantly, both the analyses and the data are all contained within the same file, which makes it very easy to irrevocably fuck up your original data set, often without even realizing it. The fact is, we should care about analyzing our data efficiently and safely, not making it look pretty in what amounts to a fancy table, and this is one of the key benefits of using R.
+As everyone who is reading this doubtlessly appreciates, spreadsheet applications like Microsoft's Excel, Numbers, Libre Office's Calc, etc., do more than just structure your data in a big table (which is all a spreadsheet is).  They allow you to do things like perform calculations, adjust cell colours, add images, insert comments, etc. And all of this extra stuff is saved, in one form or another, inside the specific file associated with that software. These features make applications like Microsoft's Excel, for instance, a great tool for basic tasks like balancing the household budget.  However, for serious data analysis that requires the use of large data sets and complex or heavy calculations, this kind of software is going to be more of a hindrance than a help. Adding in all of those layers of additional functionality is going to increase your file sizes, inflate your load times, create restrictions on how much information can be contained within your spreadsheet, and will increase the chance of a glitch occurring. Additionally, and most importantly, both the analyses and the data are all contained within the same file, which makes it very easy to irrevocably damage your original data set, often without even realizing it. The fact is, we should care about analyzing our data efficiently and safely, not making it look pretty in what amounts to a fancy table, and this is one of the key benefits of using R.
 
 From the point of view of R, a spreadsheet is just a way of displaying the raw information it is analysing, and nothing more. The analysis of that information is what R does. Technically then, we should not be referring to something as a ``spreadsheet file,'' but rather a ``data file.'' The spreadsheet aspect of all of this is more about how the data is structured for our viewing. However, data does not necessarily need to be viewed as a spreadsheet - it can be viewed in all kinds of different ways. It is just that a spreadsheet is usually the most convenient and intuitive way to view it and talk about it.
 
@@ -21,14 +21,14 @@ As noted above, there are a variety of different spreadsheet file types data cou
 
 \section{The .CSV Format}
 
-``CSV'' stands for ``comma separated values.'' It gets its name from the fact that it is, quite literally, nothing more than a generic text document that uses commas to denote a tabular (spreadsheet structure) in the data.\footnote{``Tabular'' and ``spreadsheet'' mean the same thing here.} This is easiest to see with an example. The GitHub repository for this book contains a file called \R{MM\_Madison\_wide.csv}. The GitHub repo can be accessed at the following URL: 
+``CSV'' stands for ``comma separated values.'' It gets its name from the fact that it is, quite literally, nothing more than a generic text document that uses commas to denote a tabular (spreadsheet structure) in the data.\footnote{``Tabular'' and ``spreadsheet'' mean the same thing here.} This is easiest to see with an example. The GitHub repository for this book contains a file called \R{MM\_Madison\_wide.csv}. The file is located within the \R{data} directory at \R{./data/ch-3/MM-candy/}. The GitHub repo can be accessed at the following URL: 
 
 \begin{center}
 \url{https://github.com/statistical-grimoire/book/}
 \end{center}
 
 \noindent
-The file is located within the \R{data} directory at \R{./data/ch-3/MM-candy/}. It contains measurements of the colour distribution of M\&M Milk Chocolate candies, collected by Josh Madison for his blog \parencite{Madison2007}. Josh purchased a case of Milk Chocolate M\&M's (which is 48 separate packages of M\&M's) and counted how many of each M\&M colour (blue, brown, green, orange, red, yellow) were contained in each pack. He did this, ostensibly, to evaluate a theory he had about the manufacturing process of the candies.\footnote{Or, more realistically, he just wanted a excuse to purchase and eat Milk Chocolate M\&M's guilt free.}
+It contains measurements of the colour distribution of M\&M Milk Chocolate candies, collected by Josh Madison for his blog \parencite{Madison2007}. Josh purchased a case of Milk Chocolate M\&M's (which is 48 separate packages of M\&M's) and counted how many of each M\&M colour (blue, brown, green, orange, red, yellow) were contained in each pack. He did this, ostensibly, to evaluate a theory he had about the manufacturing process of the candies.\footnote{Or, more realistically, he just wanted a excuse to purchase and eat Milk Chocolate M\&M's guilt free.}
 
 Upon opening the file within GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/ch-3/MM-candy/MM_Madison_wide.csv}} you will see that it displays the file's contents in a fairly typical spreadsheet layout (see Table \ref{table:mm_madison} for an example displaying the first 6 rows).
 
@@ -88,7 +88,7 @@ Notice that the tabular separation gives the file a much more grid-like aestheti
 
 \section{Reading a CSV File into R}
 
-Now that we have a good sense of what a \texttt{.CSV} file is we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{MM\_Madison\_wide.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``Download raw file.'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}}
+Now that we have a good sense of what a \texttt{.CSV} file is we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{MM\_Madison\_wide.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``Download raw file.'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}} Depending on the browser you are using you may have to hunt around for the download option. For instance, if you are using Safari, you may have to select ``more file actions.''
 
 With the file in its appropriate location you can simply run the function \R{read\_csv()} and give it the full name (with extension) of your file. This will create a data frame object in R. However, \R{read\_csv()} is a function that belongs to the \textit{readr} package which is part of the \textit{tidyverse}, so if you do not have the \textit{tidyverse} loaded, this will not work. In order to easily call our loaded data, we will assign it the name \R{mm\_df}.
 
@@ -162,7 +162,7 @@ If your text document was separated by semicolons you would just include \R{deli
 
 One thing that is worth appreciating about delimited files is that their file extension (e.g., the \texttt{.CSV} or \texttt{.TSV} at the end of the file name) is irrelevant to how R reads the file. As has been previously emphasized, \texttt{.CSV} files and \texttt{.TSV} files for instance, are just generic text documents, nothing more. This means you may see them with the file extension \texttt{.TXT}, but that will not impact how any of the above functions operate.
 
-Now, what would you do if you wanted to load a Microsoft Excel spreadsheet file (i.e., a \texttt{.XLSX} file) into R directly? Well as per the discussion on spreadsheets and ethical file formats (see section \ref{sec:spreadsheet_soft} and \ref{sec:ethical_file}), the best practice is to save it as a \texttt{.CSV} using Excel and load that new file directly into R. However, should you wish to eschew this advice, the \textit{tidyverse} does have a package called \textit{readxl} with functions that will allow you to do this. This is not part of the nine core packages, so it will need to be loaded using the \R{library()} function. A word of warning is in order though. As well made as the \textit{readxl} package is, reading \texttt{.XLSX} files directly will, almost certainly, cause more problems than it solves. These files are not intended to be read by anything other than Excel and Microsoft does not want them read by anything other than Excel. Thus, by loading the \texttt{.XLSX} file directly into R, you are (computationally speaking) picking an unnecessary fight with Microsoft. 9 times out of 10 you will win that fight, thanks to \textit{readxl}, but you will still probably end up with some nasty bruises and scars.
+Now, what would you do if you wanted to load a Microsoft Excel spreadsheet file (i.e., a \texttt{.XLSX} file) into R directly? Well as per the discussion on spreadsheets and ethical file formats (see section \ref{sec:spreadsheet_soft} and \ref{sec:ethical_file}), the best practice is to save it as a \texttt{.CSV} using Excel and load that new file directly into R. However, should you wish to eschew this advice, the \textit{tidyverse} does have a package called \textit{readxl} with functions that will allow you to do this. This is not part of the nine core packages, so it will need to be loaded using the \R{library()} function. A word of warning is in order though. As well made as the \textit{readxl} package is, reading \texttt{.XLSX} files directly will, almost certainly, cause more problems than it solves. These files are not intended to be read by anything other than Excel and Microsoft does not want them read by anything other than Excel. Thus, by loading the \texttt{.XLSX} file directly into R, you are (computationally speaking) picking an unnecessary fight with Microsoft. Nine times out of ten, you will win that fight thanks to \textit{readxl}, but you will still probably end up with some nasty bruises and scars.
 
 \section{Tibbles vs. Data Frames}
 
@@ -261,7 +261,7 @@ df
 
 Given the limited screen space and the large size of most datasets, tibbles are designed to display only the first 10 rows when printed to the console, making it easier for users to work with their data.
 
-Generally, if you want to view an entire data set, the best practice is not to display it in the console but rather use R's \R{View()} function which opens it in a spreadsheet style viewer. That being said, many people will still find the amount of rows displayed by a tibble within the console lacking, particularly if you are working on anything other than a small laptop. For this reason, the 10 row limit is a behaviour which can be circumvented in various ways. One simple way is to make use of the \R{print()} function. For instance, if we want to display the first 20 rows we can simply run ...
+Generally, if you want to view an entire data set, the best practice is not to display it in the console but rather use R's \R{View()} function which opens it in a spreadsheet style viewer. That being said, many people will still find the number of rows displayed by a tibble within the console lacking, particularly if you are working on anything other than a small laptop. For this reason, the 10 row limit is a behaviour which can be circumvented in various ways. One simple way is to make use of the \R{print()} function. For instance, if we want to display the first 20 rows we can simply run ...
 
 \begin{inR}
 print(mm_df, n = 20)
@@ -269,7 +269,7 @@ print(mm_df, n = 20)
 
 \vspace{1em}
 
-An alternative method is to change R's default display behaviour by setting the amount using the \R{options()} function. You can set both a minimum and maximum number of rows to display.
+An alternative method is to change R's default display behaviour by setting the number using the \R{options()} function. You can set both a minimum and maximum number of rows to display.
 
 \begin{inR}
 options(
@@ -283,7 +283,7 @@ mm_df
 \vspace{1em}
 
 \noindent
-If that method is your preference, then it is usually advisable to place the \R{options()} code at the top of your R script because it only needs to be run once.
+If that method is your preference, then it is usually advisable to place the \R{options()} code at the top of your R script because it only needs to be run once.\footnote{If you are wondering why we specify \R{pillar...} to set rows, it's because \textit{pillar} is a package in the tidyverse.}
 
 What if you wanted to display every single row each time you print a tibble? Well, recall that R represents infinity in the positive direction as (\R{Inf}). We can use that to our advantage here:
 
@@ -331,7 +331,7 @@ pi
 \end{outR}
 
 \noindent
-Lets create a simple data frame that repeats $\pi$ four times within a single column.
+Using that, we will create a simple data frame that repeats $\pi$ four times within a single column.
 
 \begin{inR}
 pi_df <- tibble(pie = rep(pi, 4))
@@ -362,7 +362,7 @@ It is important to understand that tibbles do not strictly control the handling 
 
 As a refresher of primary school math, with significant digits, everything in front of the decimal point is always displayed, but each number in front of that decimal point uses up a significant digit (a.k.a. a ``sig dig''). For instance, if you had a number like 666.13.  Displaying that to two sig digs would give you 666.  Displayed to three sig digs would again be 666. Displayed to four sig digs would be 666.1. Five sig digs would be 666.13. Six sig digs would be 666.130. Seven would be 666.1300, and so on.
 
-To increase the amount of sig digs shown within a tibble we can simply add another argument to the \R{options()} function:
+To increase the number of sig digs shown within a tibble we can simply add another argument to the \R{options()} function:
 
 \begin{inR}
 options(pillar.sigfig = 16)
@@ -446,7 +446,7 @@ apply(mm_df[, 4:9], MARGIN = 1, FUN = sum)
 [25] 53 54 54 57 56 57 55 54 54 57 56 56 55 55 55 53 55 54 54 53 54 54 55 55
 \end{outR}
 
-At a superficial glance, you can see that R makes it fairly easy to work with data in this kind of layout. However, we have not attempted anything fairly complicated here. The reality is that this layout, which we will refer to in this book as \gls{wide data}, is \textit{not} optimal for most types of analyses and plotting. Additionally, until you are actually in a position to do those kinds of analyses, it will be difficult to convince you of the truth of this - so you will just have to take that point on faith. Wide data spreads variables across multiple columns. In this case, you can treat of the colour of the M\&Ms here (blue, brown, green etc.) as a variable in its own right. We might call this variable simply ``type.'' That is to say, there is a ``blue'' \textit{type} of  M\&M, a ``brown'' \textit{type} of  M\&M, and so on.\footnote{A better variable name would be ``colour,'' but colour is also a plotting aesthetic and, later in the chapter, we will be plotting this data.  So to keep the plot's code a bit more intelligible, I'm refraining from using ``colour'' as the variable name.} There is also a second variable, which we could refer to as the ``amount'' of M\&M's, within each of the six colour type columns.
+At a superficial glance, you can see that R makes it fairly easy to work with data in this kind of layout. However, we have not attempted anything fairly complicated here. The reality is that this layout, which we will refer to in this book as \gls{wide data}, is \textit{not} optimal for most types of analyses and plotting. Additionally, until you are actually in a position to do those kinds of analyses, it will be difficult to convince you of the truth of this - so you will just have to take that point on faith. Wide data spreads variables across multiple columns. In this case, you can treat of the colour of the M\&Ms here (blue, brown, green etc.) as a variable in its own right. We might call this variable simply ``type.'' That is to say, there is a ``blue'' \textit{type} of  M\&M, a ``brown'' \textit{type} of  M\&M, and so on.\footnote{A better variable name would be ``colour,'' but colour is also a plotting aesthetic and, later in the chapter, we will be plotting these data.  So to keep the plot's code a bit more intelligible, I'm refraining from using ``colour'' as the variable name.} There is also a second variable, which we could refer to as the ``amount'' of M\&M's, within each of the six colour type columns.
 
 When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable ``type'' is being spread across six column headers. And the variable ``amount'' is spread within those six columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
 
@@ -504,7 +504,7 @@ It can be seen that the M\&M data now satisfies these three standards, as did th
 
 \section{Laying Pipe (The \texttt{|>} and \texttt{\%>\%} Operators)}
 
-One of the biggest contributions of the \textit{tidyverse} to R has been its ability to utilize what is known as a ``piping'' syntax with an almost otherworldly efficiency. This is not to say that the concept of piping was something conjured by the \textit{tidyverse} out of nothing. It is more that the \textit{tidyverse's} relentless invocation of it unearthed its abilities to such a degree that the R community has, for the most part, adopted it as common usage. There is no better truth of this than the fact that, as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0} released in 2021, piping has been integrated into base R.\footnote{Officially, I have no direct evidence that the pipe update to base R was motivated by the influence of the \textit{tidyverse}, but given the ubiquity of \R{\%>\%} and the \textit{dplyr} package, it seems unreasonable to think otherwise.} But what is this curious thing called ``piping?''
+One of the biggest contributions of the \textit{tidyverse} to R has been its ability to utilize what is known as a ``piping'' syntax with an almost otherworldly efficiency. This is not to say that the concept of piping was something conjured by the \textit{tidyverse} out of nothing. It is more that the \textit{tidyverse's} relentless invocation of it unearthed its abilities to such a degree that the R community has, for the most part, adopted it as common usage. There is no better truth of this than the fact that, as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0} released in 2021, piping has been integrated into base R.\footnote{Officially, I have no direct evidence that the pipe update to base R was motivated by the influence of the \textit{tidyverse}, but given the ubiquity of \R{\%>\%} and the \textit{dplyr} package, it seems unreasonable to think otherwise.} But what is this curious thing called ``piping''?
 
 The essence of piping is that you are transferring the output of one thing to another. For instance, suppose we wanted to know the mean amount of different M\&M colours. We could of course insert the \R{\$amount} column into the mean function like so ...
 
@@ -593,7 +593,7 @@ mm_tidy |>
 # 38 more rows
 \end{outR}
 
-Now that the logic of piping is clear, it is worth reiterating that the \R{|>} operator is a relatively new arrival in base R. Prior to this, the convention would be to use the \textit{tidyverse's} pipe operator \R{\%>\%} instead. This comes from a package called \textit{magrittr}, which contains a variety of pipes for different purposes, but the most significant of these is \R{\%>\%}. Before R version  4.1.0, \R{\%>\%} was the de facto pipe used by the R community at large. However, the recommend wisdom now (even by the keepers of the \textit{tidyverse}) is to use base R's pipe and not \textit{magrittr's}. That being said, many are unaware of this update to base R and much of the help documentation on websites like \href{https://stackoverflow.com/}{stack overflow} still use \textit{magrittr's} \R{\%>\%}.
+Now that the logic of piping is clear, it is worth reiterating that the \R{|>} operator is a relatively new arrival in base R. Prior to this, the convention would be to use the \textit{tidyverse's} pipe operator \R{\%>\%} instead. This comes from a package called \textit{magrittr}, which contains a variety of pipes for different purposes, but the most significant of these is \R{\%>\%}. Before R version  4.1.0, \R{\%>\%} was the de facto pipe used by the R community at large. However, the recommended wisdom now (even by the keepers of the \textit{tidyverse}) is to use base R's pipe and not \textit{magrittr's}. That being said, many are unaware of this update to base R and much of the help documentation on websites like \href{https://stackoverflow.com/}{stack overflow} still use \textit{magrittr's} \R{\%>\%}.
 
 In terms of functionality, there is little meaningful difference between \R{|>} and \R{\%>\%} and all of the above code could have been written using \R{\%>\%}.
 
@@ -630,19 +630,19 @@ mm_data
 # 278 more rows
 \end{outR}
 
-Its worth emphasizing the utility of the pipe operator here: It allowed us to get our data into the form we wanted without creating and calling multiple different objects in memory. Only one object was created, \R{mm\_data}. Moreover, the ``arrow-like'' notation of the pipe \R{|>} nicely shows the workflow, i.e., logic, of our code.
+It is worth emphasizing the utility of the pipe operator here: It allowed us to get our data into the form we wanted without creating and calling multiple different objects in memory. Only one object was created, \R{mm\_data}. Moreover, the ``arrow-like'' notation of the pipe \R{|>} nicely shows the workflow, i.e., logic, of our code.
 
-Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe (amoung other things) we want to know the mean amount of each type of M\&M. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from the \textit{dplyr} package in the \textit{tidyverse}. 
+Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe we want to know the mean amount of each type of M\&M. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from the \textit{dplyr} package in the \textit{tidyverse}. 
 
 \begin{figure}[h]
     \centering
 \begin{mdframed}[style = miscFrame, frametitle = Box 3.1: Why is it called \textit{dplyr}?]
 
-Generally, the names of R packages are relatively intuitive or are based on an initialism of some kind. The \textit{dplyr} package is an exception to that. The package's strange name is a reference to both pliers (the tool) and a family of functions based around the \R{apply()} function that we briefly used in section \ref{sec:wide_data}. The ``d'' refers to data frames. i.e., its as if you are taking a pair of pliers to data frames.
+Generally, the names of R packages are relatively intuitive or are based on an initialism of some kind. The \textit{dplyr} package is an exception to that. The package's strange name is a reference to both pliers (the tool) and a family of functions based around the \R{apply()} function that we briefly used in section \ref{sec:wide_data}. The ``d'' refers to data frames. i.e., it is as if you are taking a pair of pliers to data frames.
 
 \vspace{1em}
 
-A common go-to strategy of programmers generally is to use for-loops to do much of the computational grunt work. For-loops just repeatedly execute a set of code until some condition has been satisfied. While for-loops can be used in R, its users often prefer to take a different, more efficient, ``vectorized'' approach. i.e., The goal is to use what are called \glspl{functional}. These are functions that accept another function as an input and produce a vector as output. That is precisely what the \R{apply()} function and its relatives like \R{lapply}, \R{sapply}, \R{vapply} do. R is incredibly adept at working with vectors, matrices, and arrays, and \textit{dplyr's} functions are all based around a strategy of using functionals for data manipulation.
+A common go-to strategy of programmers generally is to use for-loops to do much of the computational grunt work. For-loops just repeatedly execute a set of code until some condition has been satisfied. While for-loops can be used in R, its users often prefer to take a different, more efficient, ``vectorized'' approach. The goal is to use what are called \glspl{functional}. These are functions that accept another function as an input and produce a vector as output. That is precisely what the \R{apply()} function and its relatives like \R{lapply}, \R{sapply}, \R{vapply} do. R is incredibly adept at working with vectors, matrices, and arrays, and \textit{dplyr's} functions are all based around a strategy of using functionals for data manipulation.
 
 \end{mdframed}
 \end{figure}
@@ -792,7 +792,7 @@ mm_summary
 
 \subsubsection{Plotting the Summarised Data}
 
-Now that we have all of these summary statistics in a nice convent data frame, we can plot them. In our case, the M\&M data contains six discrete categories in the \R{\$type} column. This lends itself nicely to a bar plot, so that is what we shall make.
+Now that we have all of these summary statistics in a nice convenient data frame, we can plot them. In our case, the M\&M data contains six discrete categories in the \R{\$type} column. This lends itself nicely to a bar plot, so that is what we shall make.
 
 The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the x and y axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with.\footnote{However, I should emphasize that just because everyone jumps off of a bridge, it doesn't mean you should.} Though, it is worth remembering that any of the other numeric columns could be used as well.
 
@@ -890,7 +890,7 @@ Having read both chapter 2 and now this current chapter, there is one key aspect
 
 \section{Factors}
 
-In statistics you often speak of a variable as something called a \gls{factor}, and factors have different \glspl{level}.  For instance, in our tidy data (\R{mm\_data}) the variable \R{\$type} is what is known as a factor. Each specified colour in that column is a level of that factor: blue is its own  level, brown is its own level, green is its own level, and so on. In other words, in the M\&M data, the ``type'' factor has 6 levels.
+In statistics we often refer to a categorical variable as a \gls{factor},\footnote{Independent, manipulated, and predictor variables are given this label when they have a fixed set of categories or are continuous but only take on a limited number of discrete values. If this is unclear now, don't worry — variable types will be explained in more detail in a later chapter.} and factors have different \glspl{level}.  For instance, in our tidy data (\R{mm\_data}) the variable \R{\$type} could be considered a factor. Each specified colour in that column is a level of that factor: blue is its own  level, brown is its own level, green is its own level, and so on. In other words, in the M\&M data, the ``type'' factor has 6 levels.
 
 To summarise, you can treat the term ``factor'' as synonymous with the terms ``column'' or ``variable.'' And you can treat the term ``level'' as synonymous with the term ``category.'' Though, this only applies to tidy data, not wide data.
 {
@@ -968,7 +968,7 @@ Levels: blue brown green orange red yellow
 \end{outR}
 
 \noindent
-You can see at the bottom of the output, the six levels of our factor have been specified. Generally speaking, to view the levels of a factor, a better practice is to use the \R{levels()} function.
+You can see at the bottom of the output, that the six levels of our factor have been specified. Generally speaking, to view the levels of a factor, a better practice is to use the \R{levels()} function.
 
 \begin{inR}
 levels(mm_data$type)

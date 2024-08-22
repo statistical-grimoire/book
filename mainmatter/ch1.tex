@@ -748,7 +748,7 @@ LETTERS[primes]
 
 Symbols in R such as \R{<-}, \R{+}, \R{-}, and so on are referred to as operators because they are used to perform ``operations'' such as assigning a name to an object, adding numbers together, etc.  Table \ref{table:operators} shows a list of some common operators in R that we have seen before and some new ones called \glspl{relational operator}.  These are operators that evaluate a comparison of some kind.  For instance, you can evaluate whether one value is \textit{greater than} or \textit{less than} another value.
 
-\input{tables/Ch1/OperatorTable}
+%\input{tables/Ch1/OperatorTable}
 
 \begin{inR}
 3 > pi
@@ -801,6 +801,7 @@ pi != (22/7) #testing if NOT (!) equivalent
 [1] TRUE
 \end{outR}
 
+\input{tables/Ch1/OperatorTable}
 
 \subsection{Functions}
 \label{sec:functions}
@@ -812,7 +813,7 @@ f(\text{input}) = \text{output}
 \end{equation}
 
 \noindent
-When you place something inside the left parentheses, and there is a corresponding output. The use of $f$ here to denote the function is just a formality mathematicians have adopted.  A function can be named or symbolized with anything.  
+When you place something inside the left parentheses, there is a corresponding output. The use of $f$ here to denote the function is just a formality mathematicians have adopted.  A function can be named or symbolized with anything.  
 
 As an example of a function's use, we could create one that outputs the square root of a number.
 
@@ -851,7 +852,7 @@ x
 \end{outR}
 
 
-As you might expect, given its lineage as a tool for data analysis, R has many such functions.  Examples of some of the more common, self-explanatory, ones can be seen below. For each we will insert a vector containing the values one through five.\footnote{It's perhaps worth pointing out that the small \R{c} we use to combine values into a vector is also a function, which is why it is always followed with parentheses, \R{c()}}
+As you might expect, given its lineage as a tool for data analysis, R has many such functions.  Examples of some of the more common, self-explanatory ones can be seen below. For each we will insert a vector containing the values one through five.\footnote{It's perhaps worth pointing out that the small \R{c} we use to combine values into a vector is also a function, which is why it is always followed with parentheses, \R{c()}}
 
 \begin{inR}
 x <- c(1, 2, 3, 4, 5)
@@ -990,7 +991,7 @@ seq(0, 100, 2)
 \noindent
 To determine the correct ordering of arguments you will need to consult the function's \textit{R documentation}.
 
-\subsection{R (i.e., Help) Documentation}
+\subsection{R (Help) Documentation}
 
 There are many more functions built into R, some of which do very complex things; consequently, when reading R code you will often encounter functions whose process and use seems mysterious.  For this reason, it is often necessary to access R's help documentation. Each function in the base version of R has corresponding documentation that describes its purpose, arguments, and has associated references.\footnote{For common functions in base R, the documented references tend not to be too useful as they usually just reference a guide on the S programming language, which (if you look up the guide) often does little more than show you how the function is used without providing any theoretical background.} Admittedly, the R documentation can often be a bit tricky to decipher for novice R users, but it should always be the first starting point whenever you are confused about how a function should be used or what it is doing.  Only after you have consulted it should you branch out to other resources (e.g., an internet search).
 
@@ -1000,6 +1001,9 @@ To access the R documentation of any function you need only precede the name of 
 ?sqrt
 \end{inR}
 
+\vspace{1em}
+
+\noindent If you are using RStudio, the documentation will likely appear in the lower right quadrant of RStudio's display. If you are using the base R environment, you can expect the documentation to appear in your default web browser.
 
 \subsection{Missing Values}
 
@@ -1032,7 +1036,6 @@ There is no one-size-fits-all answer here; however, in those instances where sim
 mean(x, na.rm = TRUE)
 \end{inR}
 \begin{outR}
-[1] 2771
 [1] 692.75
 \end{outR}
 
@@ -1075,7 +1078,7 @@ mean(x[!is.na(x)])
 [1] 692.75
 \end{outR}
 
-...in lieu of using or not having a \R{na.rm} style argument to remove missing values.  To novice users of R, techniques like this may seem cumbersome initially.  This is especially the case when you are dealing with so few values and can immediately see what is and is not missing within the data. For instance, noting that the fourth value is missing from \R{x}, you could simply create a new vector of the form \R{y <- c(710, 633, 786, 642)} and insert that into your functions. However, many (if not most) data sets are too large to ``eyeball'' and manually rebuild in this way. Consequently, automated solutions like those shown with the negation operator are not only necessary to save time, but are also less prone to error.
+...in lieu of using or not having a \R{na.rm} style argument to remove missing values.  To novice users of R, techniques like this may seem cumbersome initially.  This is especially the case when you are dealing with so few values and can immediately see what is and is not missing within the data. For instance, noting that the fourth value is missing from \R{x}, you could simply create a new vector of the form \R{y <- c(710, 633, 786, 642)} and insert that into your functions. However, many (if not most) data sets are too large to ``eyeball'' and manually rebuild in this way. Automated solutions like those shown with the negation operator are not only necessary to save time, but are also less prone to error.
 
 
 
@@ -1120,15 +1123,9 @@ df
 \end{outR}
 
 \noindent
-Alternatively, if you have the variables \textit{Subject}, \textit{Group}, and \textit{Value} already stored as vectors, you could build your data frame in the following way:
+Alternatively, if you have the variables \textit{Subject}, \textit{Group}, and \textit{Value} already stored as individual vectors, you could build your data frame in the following way:
 
 \begin{inR}
-Subject <- 1:10
-Group <- c("Exp", "Cont", "Exp", "Cont", "Exp", "Exp", 
-           "Cont", "Exp", "Cont", "Cont")
-Value <- c(-0.36,  0.28,  1.54,  0.51, -1.28,  1.15,
-           -2.22, -0.51,  NA, -1.04)
-
 df <- data.frame(Subject, Group, Value)
 df
 \end{inR}
@@ -1146,7 +1143,9 @@ sapply(df, FUN = mode)
   "numeric" "character"   "numeric"    
 \end{outR}
 
-In this example, the \R{sapply()} function has, quite literally, \textit{applied} the function \R{mode()} to each of the columns of our data frame, thereby telling us what each column's mode is. This is important because columns behave like vectors insofar as mixing and matching object types will potentially change the entire column.  As an example, if we had coded ... 
+In this example, the \R{sapply()} function has, quite literally, \textit{applied} the function \R{mode()} to each of the columns of our data frame, thereby telling us what each column's mode is. The argument \R{FUN} is just short for ``function'' and is telling \R{sapply()} what function you want to \textit{apply} to the columns. In this case we are applying the \R{mode()} function. 
+
+Knowing the mode of a column is very important because columns behave like vectors insofar as trying to mix and match different object types within a single column will potentially change that entire column.  As an example, if we had coded ... 
 
 \begin{inR}
 Value = c("-0.36", 0.28, 1.54, 0.51, -1.28, 1.15, -2.22, -0.51, NA, -1.04)
@@ -1284,7 +1283,7 @@ df[[3]]
 
 Neither method of extracting a column is intrinsically better than the other.  It really boils down to whether you prefer to reference your columns by names or numbers. The former is often easier to read at the expense of writing more code, whereas the latter, while harder to discern at a quick glance, requires less writing and can produce, superficially, a tidier looking script.
 
-If you want to extract a column, but still preserve it's classification as a data frame instead of \textit{dropping} it to a vector you can include the argument \R{drop = FALSE} inside your indexing brackets.
+If you want to extract a column, but still preserve its classification as a data frame instead of \textit{dropping} it to a vector you can include the argument \R{drop = FALSE} inside your indexing brackets. This is useful for situations where you want to preserve the name of the column you have indexed.
 
 \begin{inR}
 df[ , 3, drop = FALSE]
@@ -1345,7 +1344,7 @@ df
 10      10  Cont -1.04     j    -104
 \end{outR}
 
-To remove a column, there are a few options. Assuming you want to remove the \textit{Alpha} (third) column, you can just set that column equal to a \gls{null value}, which just means that something is undefined and therefore does not exist as an object in the R language.
+To remove a column, there are a few options. Assuming you want to remove the \textit{Alpha} (fourth) column, you can just set that column equal to a \gls{null value}, which just means that something is undefined and therefore does not exist as an object in the R language.
 
 \begin{inR}
 df$Alpha <- NULL
@@ -1387,7 +1386,7 @@ df
 
 \subsubsection{Adding and Removing Rows}
 
-To add a row to an existing data frame, the conventional strategy is to use the \R{rbind()} function. ``rbind'' is short for ``row bind'' and does more or less what it says one the box: it binds (i.e., combines) objects by rows. For instance, if we create a new dataframe that contains a row (or rows) we want to add, we can then use the \R{rbind()} function to append it to the original dataframe.
+To add a row to an existing data frame, the conventional strategy is to use the \R{rbind()} function. ``rbind'' is short for ``row bind'' and does more or less what it says on the box: it binds (i.e., combines) objects by rows. For instance, if we create a new dataframe that contains a row (or rows) we want to add, we can then use the \R{rbind()} function to append it to the original dataframe.
 
 \begin{inR}
 new_row <- data.frame(
@@ -1486,7 +1485,7 @@ September  Cont -1.04
 
 Generally speaking though, this is not something you should be doing.  If you wanted to label each row with a name of the month, you would be better off creating a new column called \textit{Month}, and keeping the row names as ascending integers.
 
-Column names can be renamed in a similar fashion using the \R{colnames()} function. Though, for \textit{syntactic} column names you are not permitted to name them solely with numeric values, nor can you include spaces or any special characters other than an underscore.
+Column names can be renamed in a similar fashion using the \R{colnames()} function. Though, R's syntax does not permit you to name them solely with numeric values, nor are you allowed to include spaces or any type of special characters other than an underscore.
 
 \begin{inR}
 colnames(df) <- c("1st_Col", "2nd_Col")
@@ -1554,7 +1553,7 @@ df$`Col 2`
 
 \section{Packages}
 
-As a standalone piece of software, (base) R has an excellent toolbox of functions and operations for most data analysis/science scenarios; however, it is by no means a complete toolbox. Like any statistical software, there are scenarios for which it is simply not equipped to handle on its own.  But R being a language means it is adaptable to these scenarios.  R users can program their own sets of functions to suit a specific purpose and \gls{package} these functions with appropriate documentation and data for other R users to install into their own personal library of packages. 
+As a standalone piece of software, R has an excellent toolbox of functions and operations for most data analysis/science scenarios; however, it is by no means a complete toolbox. Like any statistical software, there are scenarios for which it is simply not equipped to handle on its own.  But R being a language means it is adaptable to these scenarios.  R users can program their own sets of functions to suit a specific purpose and \gls{package} these functions with appropriate documentation and data for other R users to install into their own personal library of packages. 
 
 The packages R users make publicly available are downloaded from online \textit{repositories} (often called ``repos'').  The \textit{Comprehensive R Archive Network} (CRAN) discussed in section \ref{sec:install} is one such repository, another well known one would be \textit{GitHub}.\footnote{This textbook actually has its own GitHub repo: \url{https://github.com/statistical-grimoire/book}}  The CRAN repository is easily the most frequented by R users and is likely to be the only R repository you will ever need. It is special in that the packages it provides are curated by the \textit{The R Project for Statistical Computing}.
 
@@ -1572,7 +1571,7 @@ install.packages("praise")
 \end{inR}
 \medskip
 
-In order to access the functions contained in these packages we need only execute the line \R{library()} with the with the package name inside the parentheses (quotation marks are not necessary here).
+In order to access the functions contained in these packages we need only execute the line \R{library()} with the package name inside the parentheses (quotation marks are not used here).
 
 \begin{inR}
 library(cowsay)
@@ -1600,11 +1599,11 @@ Each package downloaded from the CRAN repository has documentation associated fo
 
 Most users are familiar with the fact that computers store a multitude of files, each serving different purposes. We encounter various types of files daily: image files, text files, audio files, and much more. Within these broad categories lie even more specific file types, each with unique characteristics and uses. For example, image files can be distinguished into formats such as GIF, PNG, and TIFF, each catering to different needs in terms of quality, compression, and usage.
 
-Historically, the way in which users could distinguish different file types was by looking at the \gls{file extension} appended to the file's name. For instance, when looking at an image file, you might see a \texttt{.png} at the end of the name (e.g., \texttt{grandma\textbf{.png}}) indicating that it is a portable network graphics file. The file extension dictates which programs can read the file and how they read them.\footnote{I apologize if this is obvious to many of you reading this, but experience teaching has taught me that this is no longer common knowledge and needs to be explained to modern audiences.} This is in contrast to \textit{directories} which have no extension (directories will be discussed next in section \ref{sec:dir}).
+Historically, the way in which users could distinguish different file types was by looking at the \gls{file extension} appended to the file's name. For instance, when looking at an image file, you might see a \texttt{.png} at the end of the name (e.g., \texttt{grandma\textbf{.png}}) indicating that it is a portable network graphics file. The file extension dictates which programs can read the file and how they read them.\footnote{I apologize if this is obvious to many of you reading this, but experience teaching has taught me that this is no longer common knowledge and needs to be explained to younger audiences.} This is in contrast to \textit{directories} which have no extension (directories will be discussed next in section \ref{sec:dir}).
 
 Unfortunately, most modern operating systems are configured in such a way that they do NOT display file extensions and, if a (conventional) user needs to identify a file type, they are expected to determine it on the basis of how the file's icon looks, which is often unreliable. Microsoft's Windows operating system began adopting this practice of hiding extensions around 2015 with Windows 10, and Macintosh computers had been doing it even longer than that.
 
-The reasons why this change took place are not altogether clear, but the main justification seems to be that there is an inherent danger in users accidentally deleting or altering an extension when renaming a file. At face value this makes a certain amount of sense, but not when you consider the problems that it creates. In particular, this compromises a computer's (and by extension network's) security much more. Seeing an unfamiliar file extension and knowing not to click on it (because it is unfamiliar) is one of the most effective ways of preventing malicious software from attacking your computer. Seeing unfamiliar file extensions also means the user is less likely to mess about with file types on their system they do not understand and are integral for the running of their system and its applications. However, with no file extension displayed there is no obvious way of distinguishing familiar file types from unfamiliar ones.
+The reasons why this change took place are not altogether clear, but the main justification seems to be that there is an inherent danger in users accidentally deleting or altering an extension when renaming a file, thereby causing it not to run. At face value this makes a certain amount of sense, but not when you consider the problems that it creates. In particular, this compromises a computer's (and by extension a network's) security much more. Seeing an unfamiliar file extension and knowing not to click on it (because it is unfamiliar) is one of the most effective ways of preventing malicious software from attacking your computer. Seeing unfamiliar file extensions also means the user is less likely to move, delete, or open file types on their system they do not understand and are integral for the running of their system and its applications. However, with no file extension displayed there is no obvious way of distinguishing familiar file types from unfamiliar ones.
 
 Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing \texttt{grandma.png.exe} on a system that is configured to hide extensions will display for the user as \texttt{grandma.png}, leading someone (a child perhaps) to believe they are clicking an innocent image of their grandma, when in fact their computer is about to be devoured by grandma.\footnote{Once upon a time users were expected to be the ``smart'' ones, not their devices.}
 
@@ -1616,7 +1615,7 @@ Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing
 \caption{From the National Gallery of Victoria, Melbourne: Gustave Doré's illustration of the ``\textit{penultimate moment, just before the triumphant, and satiated, wolf bites off Little Red Riding Hood’s head}'' in Charles Perrault's version of the classic fairy tale \parencite{Dore1862}.}
 \end{figure}
 
-For both security and everyday use, it is important for users to understand that different types of files exist and they can easily identify them. The relatively modern practice of hiding file extensions prevents new users from gaining the essential experience needed to learn this and tends to make programming a more cumbersome process than it needs to be. The reality is that file extensions are essential pieces of information for any programmer working with or creating files. Fortunately, operating systems still make it possible to display extensions and it is highly recommend that readers of this book enable that feature on their respective system:
+For both security and everyday use, it is important for users to understand that different types of files exist and that they can easily identify them. The relatively modern practice of hiding file extensions prevents new users from gaining the essential experience needed to learn this and tends to make programming a more cumbersome process than it needs to be. The reality is that file extensions are essential pieces of information for any programmer working with or creating files. Fortunately, operating systems still make it possible to display extensions and it is highly recommend that readers of this book enable that feature on their respective system:
 
 \begin{itemize}
     \item \textbf{Windows 11:} 
@@ -1651,9 +1650,11 @@ A \gls{directory} is what most people refer to as a file folder on their compute
 As an example, if you right click the icon of a file on your desktop (control-click on a Mac) and select ``properties'' (or ``get info'' on a Mac), among the various pieces of information it lists is ``Location'' (or ``Where'') information.  For instance, on your computer you might see something similar to these:
 
 \begin{itemize}
-    \item \textit{Location:} C:\textbackslash Users\textbackslash Your Name\textbackslash Desktop
-    \item \textit{Where:} Macintosh HD > Users > Your Name > Desktop
+    \item \textit{Location:} \texttt{C:\textbackslash Users\textbackslash Your Name\textbackslash Desktop}
+    \item \textit{Where:} \texttt{Macintosh HD > Users > Your Name > Desktop}
 \end{itemize}
+
+\noindent This indicates that the file is located within the \texttt{Desktop} directory; which itself is located within the \texttt{Your Name} directory, which is located within the \texttt{Users} directory; which is located on the hard drive named \texttt{C} or \texttt{Macintosh HD}.
 
 \subsection{The Working Directory}
 
@@ -1669,9 +1670,9 @@ getwd()
 [1] "C:/Users/Acheron/Documents"
 \end{outR}
 
-\noindent the R output in this case will likely vary between different computers, so you should not expect to see the exact same output, but it should be relatively similar.
+\noindent The R output in this case will likely vary between different computers, so you should not expect to see the exact same output on your computer, but it should be relatively similar.
 
-The way to interpret what we are seeing here is as as a path, or route to get to the directory called \R{Documents}. \R{C:/} represents the hard drive and many computers will have more than one of these, so it is vital to know which one you are working in. Within the hard drive is the directory called \R{Users}. We can tell that \R{Users} is a directory here and not a file because it is bounded by forward slashes, \R{/}, and has no file extension. Then we have a subdirectory of that called (on my computer) \R{Acheron}.  From this subdirectory \R{Acheron}, we have another subdirectory, which is called \R{Documents}.
+The way to interpret what we are seeing here is as as a \textit{path}, or route to get to the directory called \R{Documents}. \R{C:/} represents the hard drive and many computers will have more than one of these, so it is vital to know which one you are working in. Within the hard drive is the directory called \R{Users}. We can tell that \R{Users} is a directory here and not a file because it is bounded by forward slashes, \R{/}, and has no file extension.\footnote{When it comes to directory paths, it is not uncommon to also see them written using backslashes (\textbackslash), particularly on Windows. The reasons for this difference in convention boil down to the development history of various types of software. All you need to know is that R will always use a forward slash /.} Then we have a subdirectory of that called (on my computer) \R{Acheron}.  From this subdirectory \R{Acheron}, we have another subdirectory, which is called \R{Documents}.
 
 To change working directory you can simply use the function \R{setwd()} and specify the full address. As an example, to change the working directory to the desktop you would type something akin to ...
 
@@ -1702,7 +1703,7 @@ write.csv(df, file = "letters_1.csv")
 
 \vspace{1em}
 
-Running this function will save a file on our computer called \R{"letters\_1.csv"}, but where has it saved it? As you have hopefully realized, it has saved it to our working directory. Thus, if your working directory is set to your desktop, you should see the file \R{"letters\_1.csv"} located there. You can have R list the files (and subdirectories) in your working directory by running
+Running this function will save a file on our computer called \R{letters\_1.csv}, but where has it saved it? As you have hopefully realized, it has saved it to our working directory. Thus, if your working directory is set to your desktop, you should see the file \R{letters\_1.csv} located there. You can have R list the files (and subdirectories) in your working directory by running
 
 \begin{inR}
 list.files(path = ".")
@@ -1712,7 +1713,9 @@ list.files(path = ".")
 [1] letters_1.csv
 \end{outR}
 
-Alternatively we could have saved the file by specifying the complete file path followed by the file name we want our spreadsheet to have.
+\noindent A word of warning: If your working directory contains many files, this command may produce a long list of them, with \R{letters\_1.csv} being just one among many.
+
+Alternatively, we could have saved the file by specifying the complete file path followed by the file name we want our spreadsheet to have.
 
 \begin{inR}
 write.csv(df, file = "C:/Users/Acheron/Desktop/letters_1.csv")
@@ -1783,7 +1786,7 @@ setwd("./Directory A/Directory B/Directory C")
 
 \medskip
 
-Further suppose we wanted to save the spreadsheet in \R{Directory B}.  To do this we would just represent moving ``up'' one directory with two periods (\R{..}).
+\noindent Further suppose we wanted to save the spreadsheet in \R{Directory B}.  To do this we would just represent moving ``up'' one directory with two periods (\R{".."}).
 
 \begin{inR}
 write.csv(df, file = "../letters_4.csv")
@@ -1818,13 +1821,21 @@ write.csv(df, file = "../../letters_5.csv")
 }
 
 \noindent
-And you can use the same logic reset the working directory back to the Desktop.
+And you can use the same logic reset the working directory back to the \R{Desktop}.
 
 \begin{inR}
 setwd("../../..")
 \end{inR}
 
 \medskip
+
+\noindent We end up back at the Desktop because ...
+
+\begin{itemize}
+    \item \R{".." } moves us from \R{Directory C} up to \R{Directory B}.
+    \item \R{"../.."} moves us from \R{Directory C} up to \R{Directory A}.
+    \item \R{"../../.."} moves us from \R{Directory C} up to the \R{Desktop}, which is where \R{Directory A} is located in this case.
+\end{itemize}
 
 It has to be said that, even if you are specifying a locations relative to the working directory, path addresses can still get quite long, for this reason it is often helpful to store directories as character strings that are easier to type and combine as needed. If we run ...
 
