@@ -1185,7 +1185,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     size = 3, stroke = 1, colour = "black",
     aes(fill = vore, shape = vore)
   ) +
-  scale_shape_manual(values = c(21:24, 13)) +
+  scale_shape_manual(values = c(21:24), na.value = 13) +
   scale_fill_discrete(type = palette.colors(n = NULL, "R4")) +
   labs(
     shape = "Diet",
