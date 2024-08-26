@@ -2,7 +2,7 @@
 
 ## Description
 
-Data files containing information about the colour distribution of *M&M Milk Chocolate candies* sampled by Josh Madison.
+A data file containing information about the colour distribution of *M&M Milk Chocolate candies* sampled by Josh Madison.
 
 <br>
 <br>
