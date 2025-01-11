@@ -504,7 +504,7 @@ It can be seen that the M\&M data now satisfies these three standards, as did th
 
 \section{Laying Pipe (The \texttt{|>} and \texttt{\%>\%} Operators)}
 
-One of the biggest contributions of the \textit{tidyverse} to R has been its ability to utilize what is known as a ``piping'' syntax with an almost otherworldly efficiency. This is not to say that the concept of piping was something conjured by the \textit{tidyverse} out of nothing. It is more that the \textit{tidyverse's} relentless invocation of it unearthed its abilities to such a degree that the R community has, for the most part, adopted it as common usage. There is no better truth of this than the fact that, as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0} released in 2021, piping has been integrated into base R.\footnote{Officially, I have no direct evidence that the pipe update to base R was motivated by the influence of the \textit{tidyverse}, but given the ubiquity of \R{\%>\%} and the \textit{dplyr} package, it seems unreasonable to think otherwise.} But what is this curious thing called ``piping''?
+One of the most significant contributions of the \textit{tidyverse} to R has been its seamless implementation of what is known as `piping' syntax, which allows for an almost otherworldly level of efficiency. However, this is not to say that piping was a concept invented entirely by the \textit{tidyverse}. Rather, the \textit{tidyverse}'s consistent and innovative use of it brought its potential to light, leading to widespread adoption within the R community. The best evidence of this influence is the integration of piping into base R as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0}, released in 2021.\footnote{Although I have no direct evidence that the \textit{tidyverse} directly motivated the addition of the pipe operator to base R, it seems unlikely to be a coincidence given the ubiquity of \R{\%>\%} and the popularity of the \textit{dplyr} package.} But what exactly is 'piping'?
 
 The essence of piping is that you are transferring the output of one thing to another. For instance, suppose we wanted to know the mean amount of different M\&M colours. We could of course insert the \R{\$amount} column into the mean function like so ...
 
@@ -515,13 +515,24 @@ mean(mm_tidy$amount)
 [1] 9.097222
 \end{outR}
 
-Alternatively, we could ``pipe'' (i.e., transfer) the \R{\$amount} column in our tidy data to the \R{mean()} function using R's pipe operator \R{|>}.
+Alternatively, we could ``pipe'' (i.e., transfer) the \R{\$amount} column in our tidy data to the \R{mean()} function using R's pipe operator \R{|>}
 
 \begin{inR}
 mm_tidy$amount |> mean()
 \end{inR}
 \begin{outR}
 [1] 9.097222
+\end{outR}
+
+\noindent We could then send that output to something like the \R{round()} function.
+
+\begin{inR}
+mm_tidy$amount |> 
+    mean() |> 
+    round(3)
+\end{inR}
+\begin{outR}
+[1] 9.097
 \end{outR}
 
 As another example, suppose we wanted a tidy data frame that only contained the red M\&M type. The standard methodology would be to specify the data frame within the \R{filter()} function, like so ...
@@ -593,10 +604,7 @@ mm_tidy |>
 # 38 more rows
 \end{outR}
 
-Now that the logic of piping is clear, it is worth reiterating that the \R{|>} operator is a relatively new arrival in base R. Prior to this, the convention would be to use the \textit{tidyverse's} pipe operator \R{\%>\%} instead. This comes from a package called \textit{magrittr}, which contains a variety of pipes for different purposes, but the most significant of these is \R{\%>\%}. Before R version  4.1.0, \R{\%>\%} was the de facto pipe used by the R community at large. However, the recommended wisdom now (even by the keepers of the \textit{tidyverse}) is to use base R's pipe and not \textit{magrittr's}. That being said, many are unaware of this update to base R and much of the help documentation on websites like \href{https://stackoverflow.com/}{stack overflow} still use \textit{magrittr's} \R{\%>\%}.
-
-In terms of functionality, there is little meaningful difference between \R{|>} and \R{\%>\%} and all of the above code could have been written using \R{\%>\%}.
-
+Now that the logic of piping is clear, it is worth reiterating that the \R{|>} operator is a relatively new arrival in base R. Prior to this, the convention would be to use the \textit{tidyverse's} pipe operator \R{\%>\%} instead. This comes from a package called \textit{magrittr}, which contains a variety of pipes for different purposes, but the most significant of these is \R{\%>\%}. Before R version  4.1.0, \R{\%>\%} was the de facto pipe used by the R community at large. However, the recommended wisdom now (even by the keepers of the \textit{tidyverse}) is to use base R's pipe and not \textit{magrittr's}. That being said, many are unaware of this update to base R and much of the help documentation on websites like \href{https://stackoverflow.com/}{stack overflow} still use \textit{magrittr's} \R{\%>\%}. In terms of functionality, there is little meaningful difference between \R{|>} and \R{\%>\%} and all of the above code could have been written using \R{\%>\%}.
 
 The above examples nicely show how the pipe operator works, but we should consider a more realistic use case to illustrate its versatility. 
 

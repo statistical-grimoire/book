@@ -10,6 +10,7 @@
 
 \setlength{\footnotesep}{\baselineskip}
 \raggedbottom
+\usepackage[bottom]{footmisc}
 
 \usepackage{amsmath, amssymb, amsfonts}
 
@@ -49,6 +50,20 @@
     ItalicFont=*-Italic,
     %BoldItalicFont=*-Italic
     ]{IMFellEnglish}
+
+
+\titleclass{\part}{top} % make part like a chapter
+\titleformat{\part}
+[display]
+{\centering\headingfont\Huge}
+%{\titlerule[5pt]\vspace{3pt}\titlerule[2pt]\vspace{3pt}\MakeUppercase{\partname} \thepart}
+{\MakeUppercase{\partname} \thepart}
+{0pt}
+{\titlerule[2pt]\vspace{1pc}\huge}
+%
+\titlespacing*{\part}{0pt}{0pt}{20pt}
+
+
 
 \titleformat{\chapter}[display]
   {\headingfont\huge}
@@ -170,6 +185,7 @@
 \pagestyle{fancy}
 \onehalfspacing
 
+\include{mainmatter/part_1}
 \include{mainmatter/ch1}
 \include{mainmatter/ch2}
 \include{mainmatter/ch3}
@@ -197,5 +213,3 @@
 %\include{backmatter/postface}
 
 \end{document}
-
-%https://www.youtube.com/watch?v=TyTx-BuLFh0

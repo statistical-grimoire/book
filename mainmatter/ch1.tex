@@ -1,5 +1,5 @@
 %\chapter{An Introduction to R}
-\chapter{R Programming: An Initiation}
+\chapter[Summoning Basics: An Introduction to R]{Summoning Basics:\\ \huge An Introduction to R}
 
 To begin with ...
 
@@ -162,7 +162,7 @@ With the formalities of installation, console, and scripting window out of the w
 \begin{itemize}
     \item Do not use your computer's copy and paste functions.  Type all code yourself.
     \item Run all the examples in this textbook and try and produce the same results.
-    \item If you do not know how to do some particular thing, then look up how to do it each time you need to do it.
+    \item If you do not know how to do some particular thing, then look up how to do it each time you need to do it. Memorization will happen effortlessly over time.
     \item Stay organized - this applies to the code you write and the files you save.
     \item Pledge to do all your stats from this point forward using R. Immerse yourself in the language.
 \end{itemize}
@@ -380,6 +380,8 @@ y
 [1] 2
 [1] 1
 \end{outR}
+
+The ``Environment'' pane in R studio will show you the complete list of objects presently loaded in memory. The pane can be displayed by selecting the ``View'' menu and selecting ``Show Environment'' or pressing Ctrl + 8 on your keyboard.
 
 To assign the names \R{x} and \R{y} we typed an arrow, \R{<-}. Alternatively, we could have assigned the names using an equal sign (\R{=}) instead.
 
@@ -714,7 +716,7 @@ month.abb
 
 Notice in the previous example's output that the numbers within brackets indicate the position number of a element in the vector.  For example, in the vector \R{LETTERS}, \R{"N"} is located in the 14\textsuperscript{th} position.  In the vector \R{month.name},  \R{"May"} is in the 5\textsuperscript{th} position. Every new line written to the console screen gives the position number of the first element on the line - meaning that the size of your console screen will effect which position numbers get displayed (so you might have different values that what is shown above).
 
-It is not by accident that these positions are demarcated using square brackets.  Square brackets serve a special purpose in R.  They allow us to index specific values.  For instance, if we want to know what the 17\textsuperscript{th} letter of the English alphabet is, we need only type...
+It is not by accident that these positions are demarcated using square brackets.  Square brackets serve a special purpose in R.  They allow us to subset values by referencing their position in the vector.  For instance, if we want to know what the 17\textsuperscript{th} letter of the English alphabet is, we need only type...
 
 \begin{inR}
 LETTERS[17]
@@ -757,6 +759,24 @@ LETTERS[primes]
 \begin{outR}
 [1] "B" "C" "E" "G" "K" "M" "Q" "S" "W"
 \end{outR}
+
+Somewhat uniquely, within the R programming language every \textit{single} basic data object—such as a number, character string, or logical value—is inherently a vector. For example, the number \R{666} is a vector, the character string \R{"SPAM"} is a vector, and the logical value \R{FALSE} is also a vector. These are simply vectors with a single element, or a length of 1. As such, all of these can be indexed just like any other vector with a length greater than 1.
+
+\begin{inR}
+666[1]
+666[2]
+"SPAM"[1]
+FALSE[1]
+\end{inR}
+
+\begin{outR}
+[1] 666
+[1] NA
+[1] "SPAM"
+[1] FALSE
+\end{outR}
+
+Notice in the second line above that when \R{666} was indexed at position 2, R returned \R{NA} because no value exists at that position. The moral of the story is that, when the combine function,\R{c()}, is used, you are not creating a vector, but rather combining vectors.
 
 
 \subsection{Operators And Comparison Statements}
@@ -970,6 +990,8 @@ round(x, digits = 0)
 \begin{outR}
 [1] 3 1
 \end{outR}
+
+Critically, in the above two examples, we have specified the \R{digits} argument using an \R{=} sign. Generally speaking, this is the best practice and original purpose of \R{=} because, while you are permitted to use the assignment operator \R{<-} in place of this, doing so will store an object called \R{digits} unnecessarily, wasting your computers resources and cluttering R's working environment. 
 
 The \R{round()} function only takes one argument but many functions take multiple arguments.  A good example of this is the sequence function, \R{seq()}, which generates regular number sequences.  For instance, if you wanted to generate a sequence from 0 to 100, counting by 2's, there are three arguments you will need to set: \R{from}, \R{to}, and \R{by}:
 
