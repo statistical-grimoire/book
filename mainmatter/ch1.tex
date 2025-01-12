@@ -1051,17 +1051,45 @@ To determine the correct ordering of arguments you will need to consult the func
 
 \subsection{R (Help) Documentation}
 
-There are many more functions built into R, some of which do very complex things; consequently, when reading R code you will often encounter functions whose process and use seems mysterious.  For this reason, it is often necessary to access R's help documentation. Each function in the base version of R has corresponding documentation that describes its purpose, arguments, and has associated references.\footnote{For common functions in base R, the documented references tend not to be too useful as they usually just reference a guide on the S programming language, which (if you look up the guide) often does little more than show you how the function is used without providing any theoretical background.} Admittedly, the R documentation can often be a bit tricky to decipher for novice R users, but it should always be the first starting point whenever you are confused about how a function should be used or what it is doing.  Only after you have consulted it should you branch out to other resources (e.g., an internet search).
+R includes a vast array of built-in functions, some of which perform highly complex tasks. Consequently, when reading R code, you will often encounter functions whose purpose and usage seem mysterious. To demystify these functions, it is often necessary to consult R's help documentation. Each function in the base version of R comes with corresponding documentation that outlines its purpose, explains its arguments, and provides references. While R's documentation can often be challenging to interpret for novice users, it should always be your first resource when you are unsure about how a function works or what it does. Only after consulting the help documentation should you turn to additional resources, such as internet searches or forums.
 
-To access the R documentation of any function you need only precede the name of the function with a question mark and run it.
+To access the documentation for any function in R, simply precede the function name with a question mark and run it in the R console. For example, running \R{?mean} will bring up the documentation for the arithmetic mean function.
 
 \begin{inR}
-?sqrt
+?mean
 \end{inR}
 
 \vspace{1em}
 
 \noindent If you are using RStudio, the documentation will likely appear in the lower right quadrant of RStudio's display. If you are using the base R environment, you can expect the documentation to appear in your default web browser.
+
+All R documentation follows a consistent structure, designed to provide users with a comprehensive understanding of each function. At the top, you will find the name of the function along with the name of the package it belongs to, enclosed in braces. For example, consulting the documentation for the \R{mean()} function displays ``\textit{mean \{base\}}'' at the top, indicating that this function is part of base R. Similarly, for other common functions like \R{sd()}, you might see ``\textit{\{stats\}}'' listed. The \textit{stats} package, included with R, contains functions for statistical calculations and random number generation, provided by the R Core Team alongside base R functions.
+
+Beneath the function name and package, you will find a brief \textit{Description} section outlining the function’s purpose. This is typically followed by a \textit{Usage} section, which includes a code block demonstrating how the function is used and detailing its arguments. For instance, documentation for the \R{mean()} function includes the following usage:
+
+\begin{inR}
+mean(x, ...)
+
+## Default S3 method:
+mean(x, trim = 0, na.rm = FALSE, ...)
+\end{inR}
+
+\vspace{1em}
+\noindent The topmost line of the code block, \R{mean(x, ...)}, represents the minimal working example for the function. This indicates that, at a minimum, the argument \R{x} must be provided for the function to work. The \textit{Arguments} section below the code block provides further details about \R{x}. Specifically, it states that \R{x} is ``\textit{an R object. Currently, there are methods for numeric/logical vectors and date, date-time, and time interval objects...}'' In simpler terms, this is saying that \R{x} should be a numeric or logical object and not, for instance, a character object. For example:
+
+\begin{inR}
+nums <- 0:666
+mean(x = nums)
+\end{inR}
+\begin{outR}
+[1] 333
+\end{outR}
+
+\noindent In this case, \R{nums}, a numeric vector, is the R object provided to the argument \R{x}. 
+
+Beneath the minimal working example in the \textit{Usage} block is a line of code displaying the various additional arguments the function has: \R{trim} and \R{na.rm}. These arguments are optional because they come with default values, meaning they do not need to be explicitly set by the user, unlike the required argument \R{x}.
+
+Further down, the documentation includes a \textit{Value} section, which describes the output of the function based on the arguments provided and the data types used. Finally, the documentation concludes with additional details references, supplemental links, and practical examples to demonstrate the function's usage in real-world scenarios.
 
 \subsection{Missing Values}
 
