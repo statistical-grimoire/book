@@ -67,7 +67,15 @@ This philosophy applies not only to the software itself but also to its various 
 
 R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux; however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you can use to communicate instructions to your computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply ``understanding'' the language is not sufficient.  For this reason, most operating systems come equipped with a basic way of interfacing with the user via a \gls{command console}\footnote{A windowed application that allows you to type instructions (a.k.a. ``commands'') to your computer.} of some kind. On computers using the Windows operating system, this is referred to as the \textit{Command Prompt} application, on Macintosh computers this is the \textit{Terminal} application. Relying on your operating system's basic command console as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing. The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an ``\textbf{environment}'' or, more garrulously, an ``\gls{integrated development environment} (\acrshort{IDE}).''  This is simply a software application providing the user with a more elegant visual workspace and feature set to make programming a smoother experience. 
 
-The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Macintosh operating system.  However, while this environment is preferable to the operating system's basic command console, most R users still find it lacking and opt to install a different environment called \href{https://posit.co/}{\gls{RStudio}}, which has an open-source (free) version for non-commercial use.
+\begin{wrapfigure}[11]{r}{0.4\textwidth}
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{graphics/ch1Figs/base_R_env.pdf}
+  \end{center}
+    \caption{Base R installation environment, featuring the default console interface for running R code and viewing outputs (left) and the default scripting window (right) for writing, running, and saving R code.}
+    \label{fig:base_R}
+\end{wrapfigure}
+
+The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Macintosh operating system (see Figure \ref{fig:base_R}.  However, while this environment is preferable to the operating system's basic command console, most R users still find it lacking and opt to install a different environment called \href{https://posit.co/}{\gls{RStudio}}, which has an open-source (free) version for non-commercial use. An image of the RStudio environment can be seen in Figure \ref{fig:Rstudio}. RStudio is highly customisable in both appearance and function and, consequently, can be tailored to each users personal preferences. Figure \ref{fig:Rstudio} shows the default appearance upon first installation.
 
 \subsection{Installation}
 \label{sec:install}
@@ -116,6 +124,13 @@ If you type $1 + 1$ on this line and the press ``enter/return'' on your keyboard
 \begin{outR}
 [1] 2
 \end{outR}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = \textwidth]{graphics/ch1Figs/R_studio.pdf}
+\caption{Layout of RStudio. Each pane serves a specific purpose in writing, running, and managing R code. By default the scripting pane (top left) is not shown and can be accessed by selecting \textit{File $\rightarrow$ New File $\rightarrow$ R Script}.}
+\label{fig:Rstudio}
+\end{figure}
 
 
 If you close R or RStudio, you will find that any history of this calculation is gone when you re-open the environment.  Consequently, typing commands into the console offers us a quick way to perform simple tasks that we are not necessarily concerned with preserving.  However, in most cases we will be typing R code that we do want to preserve, run, edit, and add to at later date.  This is where the concept of a \gls{script} becomes important.
@@ -266,8 +281,7 @@ Given that we are on the topic of basic arithmetic, it is perhaps worth consider
 \end{outR}
 
 \noindent
-You can see that R produces a result of \R{Inf} and \R{-Inf} which is an abbreviated way of referring to \gls{infinity} in the positive and negative directions respectively.\footnote{This will also be generated if a number is too large for a computer to cope with. For example, the code \R{.Machine\$double.xmax} will produce the largest number your computer can handle. R will technically still let you \textit{add} values to this number, but the number won't change from R's perspective because the amount you would have to add to alter what is shown is excessively large. However, if you \textit{multiply} it by 2, you should get \R{Inf}: 
-\R{2 * .Machine\$double.xmax}}
+You can see that R produces a result of \R{Inf} and \R{-Inf} which is an abbreviated way of referring to \gls{infinity} in the positive and negative directions respectively.\footnote{This will also be generated if a number is too large for a computer to cope with. For example, the code \R{.Machine\$double.xmax} will produce the largest number your computer can handle. R will technically still let you \textit{add} values to this number, but the number won't change from R's perspective because the amount you would have to add to alter what is shown is excessively large. However, if you \textit{multiply} it by 2, you should get \R{Inf}.}
 
 What happens if you take the square root of a negative number? 
 
