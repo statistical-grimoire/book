@@ -5,9 +5,9 @@ To begin with ...
 
 \section[What is R?]{What is R?}
 
-\lettrine{R}{ } is a \gls{programming language}. A programming language is a means by which mortals dare to commune with the cold, unyielding logic of machines. Humans—featherless scheming bipedal apes known as \textit{Homo sapiens}—fashion these languages as incantations to command their lifeless thralls known as computers. These soulless automatons follow rigid, unforgiving rules, devoid of will, incapable of deviating from their ordained paths \parencite{Turing1950}. Yet, as the ancients knew, the boundary between man and machine is a shadowy one. In a bygone age, computation was not formed of silicon and wires but of flesh and bone. Mortal ``computers'' labored in dimly lit chambers, chained to the drudgery of endless calculations, their toil dictated by the cryptic marks and guttural utterances of their superiors. These human thralls required no structured programming language but instead obeyed the whims of their overseers, much like any demon bound by a crude sigil. Today, the human computer is a relic, swept away by the inexorable tide of technological sorcery, as mathematics and other arcane arts, such as reading and writing, wither further and further into obscurity, forsaken by the students of this benighted age.
+\lettrine{R}{ } is a \gls{programming language}. A programming language is a means by which mortals commune with the cold, unyielding logic of machines. Humans—featherless bipedal apes known as \textit{Homo sapiens}—fashion these languages as incantations to command lifeless thralls known as computers. These soulless automatons follow rigid, unforgiving rules, devoid of will, incapable of deviating from their ordained paths \parencite{Turing1950}. Yet, as the ancients knew, the boundary between man and machine is a shadowy one. In a bygone age, computation was not formed of silicon and wires but of flesh and bone. Mortal ``computers'' labored in dimly lit chambers, chained to the drudgery of endless calculations, their toil dictated by the cryptic marks and guttural utterances of their superiors. Today, the human computer is a relic, swept away by the inexorable tide of technological sorcery, as mathematics and other arcane arts, such as reading and writing, wither further and further into obscurity, forsaken by the students of this benighted age.
 
-Today, the electronic digital computer reigns as the unchallenged sovereign of computation. Forged from silicon and shrouded in enigmatic circuitry, this mechanical progeny bears a dark resemblance to its primate forerunner—save for one vital distinction: it is unflinchingly logical. Some mortals, perhaps out of desperation or hubris, even dare to call these constructs ``smart.'' Such claims, however, speak volumes about the feeble intellects of their human masters rather than the devices themselves. With these machines now enthroned, society has deemed it unnecessary to burden young minds with the rites of a once-venerated education. Mathematics—the ancient domain of sweat, tears, and torment—has been cast aside, its cruel trials abandoned, and with them, the rich harvest of discipline and understanding that once emerged from the crucible of suffering.
+In the modern day, the digital computer reigns as the unchallenged sovereign of computation. Forged from silicon and shrouded in enigmatic circuitry, this mechanical progeny bears a dark resemblance to its primate forerunner—save for one vital distinction: it is unflinchingly logical. Some mortals, perhaps out of desperation or hubris, even dare to call these constructs ``smart.'' Such claims, however, speak volumes about the feeble intellects of their human masters rather than the devices themselves. With these machines now enthroned, society has deemed it unnecessary to burden young minds with the rites of a once-venerated education. Mathematics—the ancient domain of sweat, tears, and torment—has been cast aside, its cruel trials abandoned, and with them, the rich harvest of discipline and understanding that once emerged from the crucible of suffering.
 
 \subsection{The Genesis of R}
 
@@ -17,11 +17,11 @@ The name ``R'' was derived from the first initials of its original two programme
 
 At this point readers might be wondering why it should ever be necessary to learn a programming language to conduct statistics and data analysis more generally. These topics are usually considered difficult enough by many students and educators, what need is there to compound this with a programming language? Why not, for instance, make use of any one of the many pieces of statistical software that already exist and require no requisite knowledge of programming? In other words, why not use software such as SPSS\footnote{SPSS is popular software for conducting statistics that was originally released in the late 1960s and is an acronym for \textit{Statistical Package for the Social Sciences}. At some point it was purchased by IBM and re-branded to mean \textit{Steeply Priced Shitty Software.}} or one of its many malformed, and equally expensive, doppelgängers, Minitab, SAS, and Stata.
 
-The primary answer to this question lies in flexibility. There is rarely a single correct way to analyze data, as different datasets come with their own unique challenges and intricacies. These complexities often resist the rigid, prescriptive approaches employed by many proprietary software programs. That is not to say software like SPSS cannot adapt to such scenarios—it often can. However, this adaptation typically comes at a cost: users may need to pay for additional features not included in the original purchase, or they may face an even steeper learning curve requiring mastery of an obscure programming language specific to the software—knowledge that only a select few (if any) seem to possess.
+The primary answer to this question lies in flexibility. There is rarely a single correct way to analyze data, as different datasets come with their own unique challenges and intricacies. These complexities often resist the rigid, prescriptive approaches employed by many proprietary software programs. This is not to say software like SPSS cannot adapt to such scenarios—it often can. However, this adaptation typically comes at a cost: users may need to pay for additional features not included in the original purchase, or they may face an even steeper learning curve. One that forces mastery of a obscure and enigmatic language. A language that is so specific to the software, that only a select few (if any) even seem to understand it.
 
-In contrast, R offers an intuitive and empowering experience for users. While it may seem daunting at first, R operates in a straightforward and logical manner, much like a calculator. Many users discover that learning R is far easier than they initially expected. This accessibility is largely due to the vibrant and dedicated R community, which has cultivated an extensive network of online resources over the years. They see R as something worthwhile to support and develop—often at their own personal time and expense. Proprietary software like SPSS has no equivalent to this, nor will it ever. Users are often snared within its ecosystem not out of preference or love for the program, but because it is all they have ever known.
+In direct contrast to this, R offers an intuitive and empowering experience for users. While it may seem daunting at first, R operates in a straightforward and logical manner, much like a calculator. Many users discover that wielding R is far easier than they initially expected. This is largely due to the vibrant and dedicated R community that exists online, which has cultivated an extensive network of resources over the years. Acolytes of R see it as something worthwhile to support and develop—often at their own personal time and expense. Proprietary software like SPSS has no equivalent to this, nor will it ever. Users are often snared within its ecosystem not out of preference or love for the program, but because it is all they have ever known.
 
-Although programs like SPSS may initially appear familiar to new users due to their resemblance to popular spreadsheet software like Microsoft Excel, this familiarity is purely superficial. For instance, similar to most spreadsheet software, SPSS and its equivalents will present users with an array of buttons and menus above a friendly spreadsheet-style grid, but the similarities end there. New users often find themselves immediately overwhelmed by the abundance of bewildering options required to perform even simple tasks, such as loading and viewing a dataset. The unfortunate truth is that the learning curve for these programs is much steeper than their marketing suggests.
+Although programs like SPSS may initially appear familiar to new users due to their resemblance to popular spreadsheet software like Microsoft Excel, this familiarity is purely superficial. To illustrate, SPSS and its equivalents will, in a manner similar to most spreadsheet software, present users with an array of buttons and menus above a friendly spreadsheet-style grid. However, the similarities end there. New users will quickly find themselves overwhelmed by the abundance of strange options needed to perform even simple tasks, such as loading and viewing a dataset. Contrary to what their marketing might lead you to believe, the learning curve for these programs is dangerously steep, and users are unknowingly at risk of being lead off a cliff.
 
 Owing to its nature as a programming language crafted for statistics, R is grounded by the logic of mathematics. This foundation often makes it easier for new users to understand and build upon, even for those who claim to dislike math. Moreover, proficiency with R grants users the ability to work with other statistical software if needed. The reverse, however, is rarely true: mastering SPSS or similar programs does not provide the same level of flexibility or transferable skills.
 
@@ -46,15 +46,15 @@ A program is free software if the program's users have the four essential freedo
 }
 %\rmfamily
 
-This philosophy extends beyond the software itself to include its file formats and help documentation. For years, the dissemination of scientific findings has been hindered by the reliance on proprietary file formats imposed by commercial research tools. Locking information within these exclusive systems is clearly counterproductive to scientific progress, as it binds researchers to overpriced, branded ecosystems. Such practices prioritize profit over the broader goals of accessibility and collaboration, making their continued adoption ethically questionable. In practical terms, this means that choosing R is not just about its functionality—it is also a statement against the restrictive and exploitative behaviors perpetuated by proprietary software providers. More plainly, and if for no other reason, we should use R just to give the middle finger to these companies.
+This philosophy extends beyond the software itself to include both its file formats and help documentation. For years, the dissemination of scientific findings has been hindered by the reliance on proprietary file formats imposed by commercial research tools. Locking information within these exclusive systems is clearly counterproductive to scientific progress, as it binds researchers to overpriced, branded ecosystems. Such practices prioritize profit over the broader goals of accessibility and collaboration, making their continued adoption ethically questionable. In practical terms, this means that choosing R is not just about its functionality—it is also a statement against the restrictive and exploitative behaviors perpetuated by proprietary software providers. More plainly, and if for no other reason, we should use R just to give the middle finger to these companies.
 
 \noindent As if you didn't need any other reasons to start using R immediately, here are some more:
 
 \begin{itemize}
 
-    \item \textbf{R Is Not All Gross and Gooey:} Unlike programs tied to a graphical user interface (GUI, often called ``gooey''), R is not limited by point-and-click constraints. Its capabilities are as vast as what you and others can program—and your computer can handle.
+    \item \textbf{R Is Not A Gooey Mess:} Unlike programs tied to a graphical user interface (GUI, often called ``gooey''), R is not limited by point-and-click constraints. Its capabilities are as vast as what you and others can program—and your computer can handle.
     
-    \item \textbf{Advanced Statistical Capabilities:} R's packages make it easy to apply best practices in statistics, from robust methodologies to cutting-edge analyses.
+    \item \textbf{Advanced Statistical Capabilities:} R's packages make it easy to apply best practices in statistics.
     
     \item \textbf{Enhanced Data Visualization:} With intuitive tools like \textit{ggplot2}, R easily permits sophisticated and customized visualizations, helping you communicate findings with clarity and impact.
     
@@ -73,7 +73,7 @@ In summary, while the prospect of learning a programming language like R may see
 \subsection{Languages and Environments}
 \label{sec:LangAndEnv}
 
-R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux; however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you can use to communicate instructions to your computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply ``understanding'' the language is not sufficient.  For this reason, most operating systems come equipped with a basic way of interfacing with the user via a \gls{command console}\footnote{A windowed application that allows you to type instructions (a.k.a. ``commands'') to your computer.} of some kind. On computers using the Windows operating system, this is referred to as the \textit{Command Prompt} application, on Macintosh computers this is the \textit{Terminal} application. Relying on your operating system's basic command console as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing. The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an ``\textbf{environment}'' or, more garrulously, an ``\gls{integrated development environment} (\acrshort{IDE}).''  This is simply a software application providing the user with a more elegant visual workspace and feature set to make programming a smoother experience. 
+R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux; however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply ``understanding'' the language is not sufficient.  For this reason, most operating systems come equipped with a basic way of interfacing with the user via a \gls{command console}\footnote{A windowed application that allows you to type instructions (a.k.a. ``commands'') to your computer.} of some kind. On computers using the Windows operating system, this is referred to as the \textit{Command Prompt} application, on Macintosh and Linux computers this is the \textit{Terminal} application. Relying on your operating system's basic command console application as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing. The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an ``\textbf{environment}'' or, more garrulously, an ``\gls{integrated development environment} (\acrshort{IDE}).''  This is simply a software application providing the user with a more elegant visual workspace and feature set to make programming a smoother experience. 
 
 \begin{wrapfigure}[11]{r}{0.4\textwidth}
   \begin{center}
@@ -88,7 +88,7 @@ The standard installation of R will come with an associated environment for the 
 \subsection{Installation}
 \label{sec:install}
 
-To install R - both the language and the environment simultaneously - simply go to the \textit{R Project for Statistical Computing} website: 
+To install R - both the language and environment simultaneously - simply go to the \textit{R Project for Statistical Computing} website: 
 
 \begin{center}
 \url{https://www.r-project.org/}
@@ -97,7 +97,7 @@ To install R - both the language and the environment simultaneously - simply go 
 \noindent
 Located on the front-page of this website should be a link labelled ``\acrshort{CRAN}''. This stands for \gls{Comprehensive R Archive Network} and is a set of servers around the world that distribute R alongside packages associated with R.  The servers are ``mirrored,'' meaning they all provide the same content.  So there is no need to worry about one server providing incomplete, out-of-date, or unofficial versions of R.  Technically speaking, the server closest to your home location is the one you should opt to download from; however, the topmost link labeled ``0-Cloud'' will be sufficient for most users.  The install file is only about 80 megabytes large, so unless you live in the remotest areas of Earth, download speed, and thus choice of server, is probably not a concern.
 
-Once you have chosen a suitable server, you will need select your operating system and choose the appropriate installation file. If you are using Windows, opt to download the ``base'' version of R.  If you are using a Macintosh operating system, you will need to select the option relevant to your computer.  At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed ``Apple silicon''); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting \textit{About This Mac} via the small little apple logo in the top left corner of the desktop screen. Machines using Apple silicon, will display a row called ``Chip'' and state something akin to ``Apple M1''. Machines using Intel processors will display a row reading ``Processor'' followed by the make and model of the processor.
+Once you have chosen a suitable server, you will need select your operating system and choose the appropriate installation file. If you are using Linux, then you probably already know what to do. If you are using Windows, opt to download the ``base'' version of R.  If you are using a Macintosh operating system, you will need to select the option relevant to your computer.  At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed ``Apple silicon''); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting \textit{About This Mac} via the small little apple logo in the top left corner of the desktop screen. Machines using Apple silicon, will display a row called ``Chip'' and state something akin to ``Apple M1''. Machines using Intel processors will display a row reading ``Processor'' followed by the make and model of the processor.
 
 Downloading and running the install file should prompt you with a installation wizard that walks you through the installation process. Unless you are certain you know what you are doing (which means you probably aren't reading this), you should just accept the wizard's default settings.
 
@@ -111,7 +111,7 @@ Installing RStudio is not strictly necessary to work through this book's content
 
 \subsection{Upgrading}
 
-There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R, but the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.\footnote{Packages (also called ``libraries'') will be explained later.} If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio allows you to easily switch between installed versions on your computer.
+There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R, but the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.\footnote{Packages (also commonly referred to as ``libraries'') will be explained later.} If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio allows you to easily switch between installed versions on your computer.
 
 At the time of writing, R is on version 4.4.2, nicknamed the ``Pile of Leaves'' version.  New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.
 
@@ -137,7 +137,7 @@ If you type $1 + 1$ on this line and the press ``enter/return'' on your keyboard
 
 \begin{figure}[t]
 \centering
-\includegraphics[width = \textwidth]{graphics/ch1Figs/R_studio.pdf}
+\fbox{\includegraphics[width = \textwidth]{graphics/ch1Figs/R_studio.pdf}}
 \caption{Layout of RStudio. Each pane serves a specific purpose in writing, running, and managing R code. By default the scripting pane (top left) is not shown and can be accessed by selecting \textit{File $\rightarrow$ New File $\rightarrow$ R Script}.}
 \label{fig:Rstudio}
 \end{figure}
@@ -165,7 +165,7 @@ You can now place your cursor at a line of your choosing and run that line indiv
 \subsection{Keyboard Shortcuts}
 \label{sec:key_short}
 
-It is at this juncture that a noteworthy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All robust programming environments equip users with the ability to perform virtually any non-typing task directly from the keyboard, increasing efficiency and comfort. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, can make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{table:keyShorts}.\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}
+It is at this juncture that a noteworthy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All robust programming environments equip users with the ability to perform virtually any non-typing task directly from the keyboard, increasing efficiency and comfort. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, will make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{table:keyShorts}.\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}
 
 \vspace{1em}
 
@@ -201,33 +201,33 @@ Everything discussed here is done so for the purpose of acquainting you with the
 
 \subsection{Basic Arithmetic}
 
-At its core R is really nothing more than a fancy calculator, and we can use it as such.  R can be used to add ($+$), subtract ($-$), multiply ($\times$), and divide ($\div$).
+At its core R is really nothing more than a powerful calculator, and we can use it as such.  R can be used to add ($+$), subtract ($-$), multiply ($\times$), and divide ($\div$).
 
 \begin{inR}
-1 + 1
-2 - 2
-3 * 3
-4 / 4
+666 + 13
+13 - 666
+9 * 27
+666 / 9
 \end{inR}
 
 \begin{outR}
-[1] 2
-[1] 0
-[1] 9
-[1] 1
+[1] 679
+[1] -653
+[1] 243
+[1] 74
 \end{outR}
 
-Exponents can be incorporated as well by using the $^\wedge$ (`caret'), symbol. For instance, the expression $5^3$ can be written as ...
+Exponents can be incorporated as well by using the $^\wedge$ (`caret'), symbol. For instance, the expression $9^3$ can be written as ...
 
 \begin{inR}
-5^3
+9^3
 \end{inR}
 
 \begin{outR}
-[1] 125
+[1] 729
 \end{outR}
 
-R will also follow the \textit{order of operations} when dealing with more complex expressions.  To illustrate, consider the mathematical expression $8\div2(2+2)$. Some people mistakenly believe that this expression is equal to $1$, some believe it is equal to $4$, and others believe that it is improperly written and there is no solution. In fact, it is equal to $16$. As many will no doubt have learned in their primary education, according to order of operations (BEDMAS\footnote{BEDMAS of course being the famous mnemonic to help memorize the order of operations: Brackets, Exponents, Division, Multiplication, Addition, and Subtraction. Many non-Canadian readers may be more familiar with the inferior variants of this mnemonic, PEDMAS and PEMDAS.}), the order in which you divide and multiply inside the equation is not fixed, sometimes you divide first and sometimes you multiply first. However, what most people never learn is that the order you use is not up to you. You must always calculate from left to right when making a choice between multiplication and division.  The same rule applies to addition and subtraction.
+R will also follow the ritualistic \textit{order of operations} when dealing with more complex expressions.  To illustrate, consider the mathematical statement $8\div2(2+2)$. Some people mistakenly believe that this expression is equal to $1$, some believe it is equal to $4$, and others believe that it is improperly written and there is no solution. In fact, it is equal to $16$. As many will no doubt have learned in their primary education, according to order of operations (BEDMAS\footnote{BEDMAS of course being the famous mnemonic to help memorize the order of operations: Brackets, Exponents, Division, Multiplication, Addition, and Subtraction. Many non-Canadian readers may be more familiar with the inferior variants of this mnemonic, PEDMAS and PEMDAS.}), the order in which you divide and multiply inside the equation is not fixed, sometimes you divide first and sometimes you multiply first. However, what most people never learn is that the order you use is not up to you. You must always calculate from left to right when making a choice between multiplication and division.  The same rule applies to addition and subtraction.
 
 \begin{inR}
 8/2*(2+2)
@@ -248,7 +248,7 @@ If we re-write the equation to be $8\div(2+2)2$, you will see a corresponding ch
 [1] 4
 \end{outR}
 
-R also has the ability to perform \textit{Euclidean Division}, which many simply know from their primary education days as \textit{division with a remainder.}  For instance, consider $11 \div 2$.  Conventionally, you would want and expect an answer of $5.5$, and R will produce that.
+R also has the ability to perform \textit{Euclidean Division}, which many may recall from their long suffering days in primary education days as simply \textit{division with a remainder.}  For instance, consider $11 \div 2$.  Conventionally, you would want and expect an answer of $5.5$, and R will produce that.
 
 \begin{inR}
 11/2
@@ -296,7 +296,7 @@ Given that we are on the topic of basic arithmetic, it is perhaps worth consider
 \noindent
 You can see that R produces a result of \R{Inf} and \R{-Inf} which is an abbreviated way of referring to \gls{infinity} in the positive and negative directions respectively.\footnote{This will also be generated if a number is too large for a computer to cope with. For example, the code \R{.Machine\$double.xmax} will produce the largest number your computer can handle. R will technically still let you \textit{add} values to this number, but the number won't change from R's perspective because the amount you would have to add to alter what is shown is excessively large. However, if you \textit{multiply} it by 2, you should get \R{Inf}.}
 
-What happens if you take the square root of a negative number? 
+What happens if you take the square root of a negative number?\footnote{Recall that exponents can be used to take the square-root of a number.  For example, $\sqrt{4}$ can be expressed as $4^\frac{1}{2}$.}
 
 \begin{inR}
 (-4)^(1/2)
@@ -378,7 +378,7 @@ x
 [1] 1
 \end{outR}
 
-R is technically classified as an object-oriented programming language (an ``OOP''). This is because, if you look into how R actually stores what we have done in memory, the ``object'' here is the number 1.  \R{x} is merely the name we are assigning to that object. However, a lot of R users are under the impression that the reverse is true - i.e., that we have in some sense created an object called \R{x} and stored something inside of it, but that is not actually the case. \R{x} is just a name binded to the object 1, and this object 1 is located somewhere inside your computer's memory. Admittedly, unless you are doing some seriously advanced R programming, this is a distinction that will not matter to 99.3\% of R users, but it is important because it means that if you do something like this . . . 
+R is technically classified as an object-oriented programming language (an ``OOP''). This is because, if you look into how R actually stores what we have done in memory, the ``object'' here is the number 1.  \R{x} is merely the name we are assigning to that object. However, a lot of R users are under the impression that the reverse is true - i.e., that we have in some sense created an object called \R{x} and stored something inside of it, but that is not actually the case. \R{x} is just a name binded to the object 1, and this object 1 is located somewhere inside your computer's memory. Admittedly, unless you are doing some seriously advanced R programming, this is a distinction that will not matter to most R users, but it is important because it means that if you do something like this . . . 
 
 \begin{inR}
 x <- 1
@@ -650,7 +650,6 @@ However, a curious thing will occur if the vectors have an unequal number of ele
 \begin{inR}
 x <- c(1,2,3,4)
 y <- c(6,7,8,9,10)
-
 x + y
 \end{inR}
 
