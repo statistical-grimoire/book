@@ -4,7 +4,7 @@
 
 This repository contains datasets with measurements of male Egyptian skulls originally collected and published by Arthur Thomson and David Randall-MacIver in their 1905 work, Ancient Races of the Thebaid. The data were later compiled and republished in Multivariate Statistical Methods: A Primer by Bryan F.J. Manly, which serves as the immediate source for the current datasets.
 
-- `Thomson_Randall-Maciver_1905.csv`: Full dataset compiled from Manly's work.
+- `Thomson_Randall-MacIver_1905.csv`: Full dataset compiled from Manly's work.
 
 - `Max_Breadth_TRM_1905.csv`: Subset containing only maximal breadth measurements (in wide format).
 
