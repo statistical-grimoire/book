@@ -44,7 +44,7 @@ Measurements were taken from male Egyptian skulls excavated in the Thebes region
 
 Manly, B. F. J. (1984). *Multivariate statistical methods: A primer*. Chapman and Hall.
 
-Thomson, A., & Randall-MacIver, D. (1905). *Ancient races of the Thebaid*.
+Thomson, A., & Randall-MacIver, D. (1905). *Ancient races of the Thebaid*. Oxford University Press.
 
 
 
