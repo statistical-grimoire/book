@@ -28,11 +28,6 @@ ggsave('graphics/ggEx_2.pdf', units = 'cm', width = 9.5, height = 7)
 
 #-------------------------------------------------------------------------------
 
-elephants <- filter(msleep, bodywt > 2000)
-print(xtable(elephants[, 1:6], type = "latex"))
-
-#-------------------------------------------------------------------------------
-
 msleep$bodywt_log10 <- log10(msleep$bodywt)
 
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +

@@ -1,30 +1,41 @@
-\documentclass[10pt, a4paper]{book}
-%\usepackage[top = 1in, bottom = 1in, left = 3.2cm, right = 2.6cm]{geometry}
-\usepackage{geometry}
- \geometry{
- a4paper,
- total = {170mm,257mm},
- left = 20mm,
- top = 20mm,
- }
+%==============================================================================
+% Document Class and Basic Settings
+%==============================================================================
+\documentclass[11pt,a4paper]{book}
 
+%==============================================================================
+% Page Geometry and Spacing
+%==============================================================================
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  total = {170mm,257mm},
+  left = 20mm,
+  top = 20mm,
+}
 \setlength{\footnotesep}{\baselineskip}
 \raggedbottom
 \usepackage[bottom]{footmisc}
 
-\usepackage{amsmath, amssymb, amsfonts}
+%==============================================================================
+% Math Packages
+%==============================================================================
+\usepackage{amsmath,amssymb,amsfonts}
 
+%==============================================================================
+% Font Setup and Custom Fonts
+%==============================================================================
 \usepackage{fontspec}
 
+% Uncomment to use CourierPrime
 % \setmonofont{CourierPrime}[
 %     Path=./fonts/Courier_Prime/,
-%     %Scale=0.85,
 %     Extension = .ttf,
 %     UprightFont=*-Regular,
 %     BoldFont=*-Bold,
 %     ItalicFont=*-Italic,
 %     BoldItalicFont=*-BoldItalic
-%     ]
+% ]
 
 \setmonofont{SourceCodePro}[
     Path=./fonts/SourceCodePro/,
@@ -34,72 +45,88 @@
     BoldFont=*-Bold,
     ItalicFont=*-Italic,
     BoldItalicFont=*-BoldItalic
-    ]
+]
 
-%\setmonofont{Courier New}
-
+%==============================================================================
+% Section and Title Formatting
+%==============================================================================
 \usepackage{titlesec}
 \usepackage{titling}
 
-% Specify different font for section headings
+% Define a custom font for headings
 \newfontfamily\headingfont[
     Path=./fonts/IMFellEnglish/,
     Extension = .ttf,
     UprightFont=*-Regular,
-    %BoldFont=*-Regular,
-    ItalicFont=*-Italic,
-    %BoldItalicFont=*-Italic
-    ]{IMFellEnglish}
+    ItalicFont=*-Italic
+]{IMFellEnglish}
 
-
-\titleclass{\part}{top} % make part like a chapter
-\titleformat{\part}
-[display]
-{\centering\headingfont\Huge}
-%{\titlerule[5pt]\vspace{3pt}\titlerule[2pt]\vspace{3pt}\MakeUppercase{\partname} \thepart}
-{\MakeUppercase{\partname} \thepart}
-{0pt}
-{\titlerule[2pt]\vspace{1pc}\huge}
-%
+% Format Part titles to be similar to chapters
+\titleclass{\part}{top}
+\titleformat{\part}[display]
+  {\centering\headingfont\Huge}
+  {\MakeUppercase{\partname} \thepart}
+  {0pt}
+  {\titlerule[2pt]\vspace{1pc}\huge}
 \titlespacing*{\part}{0pt}{0pt}{20pt}
 
-
-
+% Format Chapter titles
 \titleformat{\chapter}[display]
   {\headingfont\huge}
-  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+  {\chaptertitlename\ \thechapter}
+  {20pt}
+  {\Huge}
 
+% Format Sections and Subsections
 \titleformat*{\section}{\LARGE\headingfont}
 \titleformat*{\subsection}{\Large\headingfont}
 \titleformat*{\subsubsection}{\large\headingfont}
 
-\usepackage{graphicx}\graphicspath{{graphics/}}
+%==============================================================================
+% Graphics, Figures, and Captions
+%==============================================================================
+\usepackage{graphicx}
+\graphicspath{{graphics/}}
 \usepackage{svg}
 \usepackage{wrapfig}
 \usepackage{caption}
-\captionsetup[figure]{font = footnotesize, labelfont = footnotesize}
-\captionsetup[table]{font = footnotesize, labelfont = footnotesize}
-\captionsetup[listing]{font = footnotesize, labelfont = footnotesize}
+\captionsetup[figure]{font=footnotesize, labelfont=footnotesize}
+\captionsetup[table]{font=footnotesize, labelfont=footnotesize}
+\captionsetup[listing]{font=footnotesize, labelfont=footnotesize}
 
+%==============================================================================
+% Spacing, Lists, and Tables
+%==============================================================================
 \usepackage{setspace}
 \usepackage[skip=10pt plus1pt, indent=1cm]{parskip}
 \usepackage{booktabs}
+\usepackage{enumitem}
+
+%==============================================================================
+% Bibliography and Citations
+%==============================================================================
 %\usepackage[square, sort&compress]{natbib}
 \usepackage[style=apa,sortcites=true,sorting=nyt,backend=biber]{biblatex}
 \addbibresource{backmatter/bib.bib}
 \AtBeginBibliography{\small}
 
-
-\usepackage{fancyhdr}\pagestyle{fancy}
+%==============================================================================
+% Page Headers and Footers
+%==============================================================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter.~#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancyhf{}
-\fancyhead[RE, LO]{\thepage}
+\fancyhead[RE,LO]{\thepage}
 \fancyhead[LE]{\nouppercase{\leftmark}}
 \fancyhead[RO]{\nouppercase{\rightmark}}
-%\renewcommand{\headrulewidth}{0.5pt}
+% Uncomment to adjust header rule
+% \renewcommand{\headrulewidth}{0.5pt}
 
-%\usepackage{lmodern}
+%==============================================================================
+% Decorative and Additional Font Packages
+%==============================================================================
 \usepackage{lettrine}
 \usepackage{GoudyIn}
 \usepackage{xcolor, colortbl}
@@ -109,32 +136,41 @@
 \LettrineTextFont{\itshape}
 \setcounter{DefaultLines}{3}%
 
+%==============================================================================
+% Hyperlinks
+%==============================================================================
 \usepackage[hidelinks]{hyperref}
 
-%\usepackage{accanthis}
-\usepackage{booktabs}
-\usepackage{makeidx}\makeindex
+%==============================================================================
+% Index and Glossaries
+%==============================================================================
+\usepackage{makeidx}
+\makeindex
 \usepackage[toc, nopostdot]{glossaries}
-
 \renewcommand*{\glstextformat}{\textbf}
 \makeglossaries
 \input{backmatter/glossary}
 
-
+%==============================================================================
+% Other Useful Packages
+%==============================================================================
 \usepackage[nottoc]{tocbibind}
 \usepackage{emptypage}
 \usepackage{lipsum}
-%\usepackage{tcolorbox}
+% Uncomment if you want to use colored boxes
+% \usepackage{tcolorbox}
 
-%Code Colours
+% Code Colors Definition
 \definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{RGB}{236, 236, 236}
+\definecolor{codegray}{RGB}{236,236,236}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolourIN}{rgb}{0.95,0.95,0.92}
 \definecolor{backcolourOUT}{RGB}{255,255,255}
 
+% Include minted configuration for code listings
 \input{mainmatter/mintedPkg}
 
+% mdframed settings for custom frames
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfdefinestyle{miscFrame}{%
     frametitleaboveskip = 25pt,
@@ -147,25 +183,27 @@
     innerleftmargin = 20pt,
     backgroundcolor = codegray,
     skipabove = 20pt,
-    skipbelow = 20pt}
-%    nobreak = true}
+    skipbelow = 20pt
+    % nobreak = true
+}
 
 \usepackage{float}
-%\usepackage{dblfloatfix} %%%%%%%%%%%%%%%%%%
+%\usepackage{dblfloatfix} % Uncomment if needed
 \usepackage{csquotes}
 \usepackage{dirtree}
-\usepackage{csquotes}
 \usepackage{fontawesome5}
 \usepackage{fourier-orns}
-\usepackage{enumitem}
 \usepackage{tikzsymbols}
 \usepackage[style=iso]{datetime2}
 
-
-
+%==============================================================================
+% Begin Document
+%==============================================================================
 \begin{document}
 
-%FRONTMATTER: half title, frontispiece, title page, colophon (copyright page), dedication, toc, preface, acknowledgements.
+%----------------------------------------------------------------------------
+% FRONTMATTER: title pages, preface, table of contents, etc.
+%----------------------------------------------------------------------------
 \frontmatter
 \pagestyle{empty}
 \singlespacing
@@ -180,7 +218,9 @@
 \include{frontmatter/preface}
 \tableofcontents
 
-%MAINMATTER
+%----------------------------------------------------------------------------
+% MAINMATTER: the main content of the textbook
+%----------------------------------------------------------------------------
 \mainmatter
 \pagestyle{fancy}
 \onehalfspacing
@@ -189,27 +229,30 @@
 \include{mainmatter/ch1}
 \include{mainmatter/ch2}
 \include{mainmatter/ch3}
-%\include{mainmatter/ch4}
+% \include{mainmatter/ch4}  % Uncomment when ready
 
 \printglossary[type=main, nonumberlist]
+
+%----------------------------------------------------------------------------
+% APPENDIX
+%----------------------------------------------------------------------------
 \appendix
 \include{backmatter/app1}
 \include{backmatter/app2}
 
-%BACKMATTER: appendix, bibliography, index, postface
+%----------------------------------------------------------------------------
+% BACKMATTER: bibliography, index, postface, etc.
+%----------------------------------------------------------------------------
 \backmatter
 \pagestyle{fancy}
 \singlespacing
 
-%\bibliographystyle{apalike}
-%\bibliography{backmatter/bib}
 \setlength\bibitemsep{1em}
 \printbibliography[heading=bibintoc, title={References}]
 
 \cleardoublepage
 \phantomsection
-%\printindex
-%\onehalfspacing
-%\include{backmatter/postface}
+% \printindex  % Uncomment if index is needed
+% \include{backmatter/postface}  % Uncomment if you have a postface
 
 \end{document}

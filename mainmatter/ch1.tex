@@ -163,21 +163,21 @@ Once opened, you can type R code into this new pane and save it in the conventio
 You can now place your cursor at a line of your choosing and run that line individually.  To do this in the base R environment you select \textit{Edit $\rightarrow$ Run Line or Selection}.  In RStudio you select \textit{Code $\rightarrow$ Run Selected Line(s)} or click the ``run'' icon in the upper right of the script window. If you highlight all the lines of code, or just a subset of them, you can then run that highlighted section in a similar manner.
 
 \subsection{Keyboard Shortcuts}
-\label{sec:key_short}
+\label{sec:key_shortcuts}
 
-It is at this juncture that a noteworthy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All robust programming environments equip users with the ability to perform virtually any non-typing task directly from the keyboard, increasing efficiency and comfort. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, will make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{table:keyShorts}.\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}
+It is at this juncture that a noteworthy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All robust programming environments equip users with the ability to perform virtually any non-typing task directly from the keyboard, increasing efficiency and comfort. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, will make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{tab:key_shortcuts}.\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}
 
 \vspace{1em}
 
-\input{tables/Ch1/keyShorts}
+\input{tables/ch-1/key_shortcuts.tex}
 
 \begin{figure*}[!b]
     \centering
 \begin{mdframed}[style = miscFrame, frametitle = Box 1.1: Are you using your keyboard properly?]
 
-When utilizing the keyboard shortcuts mentioned in section \ref{sec:key_short}, it is worth remembering that standard QWERTY-style keyboards are symmetrically designed. Modifier keys like the \textit{shift} key, \textit{control} key, and \textit{alt} key are located on both the left and right side of the board.  This is not by accident and many people - even those who have grown up with unprecedented access to computers and the internet - have never learned to appreciate the utility of this layout or use it appropriately. \\
+When utilizing the keyboard shortcuts mentioned in section \ref{sec:key_shortcuts}, it is worth remembering that standard QWERTY-style keyboards are symmetrically designed. Modifier keys like the \textit{shift} key, \textit{control} key, and \textit{alt} key are located on both the left and right side of the board.  This is not by accident and many people - even those who have grown up with unprecedented access to computers and the internet - have never learned to appreciate the utility of this layout or use it appropriately. \\
 
-As an example, to type capital letters you should always depress the shift key on the opposite side of the keyboard to the letter. So, if you desired to type the capital letter Q, you would depress the right shift key with your right hand, and type Q with your left hand.  A similar logic applies to the other modifier keys. To use keyboard shortcut \#9 in Table \ref{table:keyShorts}, you would depress the right control key (with your right hand) and use your left hand to press the 2 key.  You should not be trying to press both keys with a single hand.  Such advice might seem obvious but, given the sheer number of people who contort their wrists and fingers in grotesquely strange and painful ways, it is clearly far from being so.
+As an example, to type capital letters you should always depress the shift key on the opposite side of the keyboard to the letter. So, if you desired to type the capital letter Q, you would depress the right shift key with your right hand, and type Q with your left hand.  A similar logic applies to the other modifier keys. To use keyboard shortcut \#9 in Table \ref{tab:key_shortcuts}, you would depress the right control key (with your right hand) and use your left hand to press the 2 key.  You should not be trying to press both keys with a single hand.  Such advice might seem obvious but, given the sheer number of people who contort their wrists and fingers in grotesquely strange and painful ways, it is clearly far from being so.
 
 \end{mdframed}
 \end{figure*}
@@ -808,9 +808,9 @@ Notice in the second line above that when \R{666} was indexed at position 2, R r
 \subsection{Operators And Comparison Statements}
 \label{sec:operatorsAndCompair}
 
-Symbols in R such as \R{<-}, \R{+}, \R{-}, and so on are referred to as operators because they are used to perform ``operations'' such as assigning a name to an object, adding numbers together, etc.  Table \ref{table:operators} shows a list of some common operators in R that we have seen before and some new ones called \glspl{relational operator}.  These are operators that evaluate a comparison of some kind.  For instance, you can evaluate whether one value is \textit{greater than} or \textit{less than} another value.
+Symbols in R such as \R{<-}, \R{+}, \R{-}, and so on are referred to as operators because they are used to perform ``operations'' such as assigning a name to an object, adding numbers together, etc.  Table \ref{tab:operator_tab} shows a list of some common operators in R that we have seen before and some new ones called \glspl{relational operator}.  These are operators that evaluate a comparison of some kind.  For instance, you can evaluate whether one value is \textit{greater than} or \textit{less than} another value.
 
-%\input{tables/Ch1/OperatorTable}
+%\input{tables/ch-1/operator_tab}
 
 \begin{inR}
 3 > pi
@@ -863,7 +863,7 @@ pi != (22/7) #testing if NOT (!) equivalent
 [1] TRUE
 \end{outR}
 
-\input{tables/Ch1/OperatorTable}
+\input{tables/ch-1/operator_tab.tex}
 
 \subsection{Functions}
 \label{sec:functions}
@@ -1172,19 +1172,16 @@ mean(x[!is.na(x)])
 
 ...in lieu of using or not having a \R{na.rm} style argument to remove missing values.  To novice users of R, techniques like this may seem cumbersome initially.  This is especially the case when you are dealing with so few values and can immediately see what is and is not missing within the data. For instance, noting that the fourth value is missing from \R{x}, you could simply create a new vector of the form \R{y <- c(710, 633, 786, 642)} and insert that into your functions. However, many (if not most) data sets are too large to ``eyeball'' and manually rebuild in this way. Automated solutions like those shown with the negation operator are not only necessary to save time, but are also less prone to error.
 
-
-
-
 \subsection{Data Frames}
 \label{sec:data_frames}
 
 While there are situations where a single vector constitutes the only data that needs to be analyzed, it is more often the case that you are working with ``sets'' of data.  That is to say, typically your data consists of observations across a range of different variables.  Consequently, for the purposes of organization, it is helpful to keep all of this data stored as a single object.  In R, there are a number of ways you could do this.  You could store data as a \textit{table}, a \textit{list}, or a \textit{matrix} which are all unique \textit{classes} of objects R recognizes. However, for most uses cases, a \gls{data frame} is going to be the preferred method of data storage in R.
 
-In its simplest terms a data frame is simply a spreadsheet, where rows represent observations and columns represent variables. Consider a hypothetical experiment with two groups, a control and experimental group, and 10 observations, one of which is missing for some reason. Visually, the data might look like Table \ref{table:dfExample}: 
+In its simplest terms a data frame is simply a spreadsheet, where rows represent observations and columns represent variables. Consider a hypothetical experiment with two groups, a control and experimental group, and 10 observations, one of which is missing for some reason. Visually, the data might look like Table \ref{tab:data_frame_ex}: 
 
 \medskip
 
-\input{tables/Ch1/dfExample}
+\input{tables/ch-1/data_frame_ex.tex}
 
 \noindent
 We can easily recreate this in R using the \R{data.frame()} function. Inside the function, we specify our desired columns as \textit{arguments}.
