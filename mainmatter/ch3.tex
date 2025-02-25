@@ -3,14 +3,14 @@
 
 \lettrine{T}{hey} say knowledge is power, but data—data is something else entirely. It’s the ghost in the machine, the thing lurking beneath the surface, waiting for you to look too close. Heed this warning: The data frame, and its accursed successor the tibble, are your most loyal servants \ldots{} and your most treacherous foes. Treat them with reverence, for a single misstep may awaken errors best left entombed. 
 
-Chapter 1 had stated that \glspl{data frame} are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present as a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data and what needs to be done with it, as a list, matrix, array, or table. Though, a data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
+Chapter 1 had stated that \glspl{data frame} are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present information in a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data and what needs to be done with it, as a list, matrix, array, or table. Though, a data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
 
 Data can come in all manner of different layouts and file formats and, in this respect, R has the ability to handle pretty much any scenario that might arise. This chapter will be working under the assumption that the kind of data that you need to work with is in a conventional ``spreadsheet-style'' of format. That is to say, like the \R{msleep} data used in Chapter 2, there are sets of rows and columns, with each cell containing just a single value.
 
 \section{Spreadsheet Software}
 \label{sec:spreadsheet_soft}
 
-Most spreadsheet applications have their own specific file type that is tailored to its unique purpose and platform. For instance, \textit{Microsoft's Excel} spreadsheet application has its own proprietary format called the \texttt{.xlsx} file format. The stock spreadsheet application on Macintosh computers, called \textit{Numbers}, use the \texttt{.NUMBERS} file format. And if you use an open-source spreadsheet software like \textit{Libre Office's Calc} application, you may be familiar with the \texttt{.ods} file format.
+Given the ubiquity of spreadsheet software, it is important to discuss its use and why R offers a preferable alternative for data analysis. Most spreadsheet applications have their own specific file type that is tailored to its unique purpose and platform. For instance, \textit{Microsoft's Excel} spreadsheet application has its own proprietary format called the \texttt{.xlsx} file format. The awful stock spreadsheet application on Macintosh computers, called \textit{Numbers}, uses the \texttt{.NUMBERS} file format. And if you use an open-source spreadsheet software like \textit{Libre Office's Calc} application, you may be familiar with the \texttt{.ods} file format.
 
 As everyone who is reading this doubtlessly appreciates, spreadsheet applications like Microsoft's Excel, Numbers, Libre Office's Calc, etc., do more than just structure your data in a big table (which is all a spreadsheet is).  They allow you to do things like perform calculations, adjust cell colours, add images, insert comments, etc. And all of this is saved, in one form or another, as information inside the specific file associated with that software. These features make applications like Microsoft's Excel, for instance, a great tool for basic tasks like balancing the household budget.  However, for serious data analysis that requires the use of large data sets and complex or heavy calculations, this kind of software is going to be more of a hindrance than a help. Incorporating all those layers of additional functionality is going to boost file sizes, inflate load times, limit the amount of information the spreadsheet can hold, and increase the chance of a glitch occurring. Additionally, and most importantly, both the analyses and the data are all contained within the same file, which makes it very easy to irrevocably damage your original data set, often without even realizing it. The fact is, we should care about analysing our data efficiently and safely, not making it look pretty in what amounts to a fancy table, and this is one of the key benefits of using R.
 
@@ -19,7 +19,7 @@ From the point of view of R, a spreadsheet is just a way of displaying the raw i
 \section{Using an Ethical File Format}
 \label{sec:ethical_file}
 
-As noted above, there are a variety of different spreadsheet file types data could be formatted as (\texttt{.xlsx}, \texttt{.ods}, etc). To remain consistent with open-science principles \parencite{UNESCO_open_sci}, best practice dictates that you work with your data in a file format that is both universally recognized across applications and will also stand the test of time in terms of compatibility.  In other words, we want to (ideally) work with a file format that has no immediate risk of becoming obsolete and can be read by multiple computers on multiple platforms without forcing the user to pay for some proprietary application. Along these lines, the most widely used and recognized format is the \texttt{.csv} file format.
+As noted above, there are a variety of different spreadsheet file types data could be formatted as (\texttt{.xlsx}, \texttt{.ods}, \texttt{.wks}, etc.). To remain consistent with open-science principles \parencite{UNESCO_open_sci}, best practice dictates that you work with your data in a file format that is both universally recognized across applications and will also stand the test of time in terms of compatibility.  In other words, we want to (ideally) work with a file format that has no immediate risk of becoming obsolete and can be read by multiple computers on multiple platforms without forcing the user to pay for some proprietary application. Along these lines, the most widely used and recognized format is the \texttt{.csv} file format.
 
 \section{The .CSV Format}
 
@@ -30,11 +30,9 @@ As noted above, there are a variety of different spreadsheet file types data cou
 \end{center}
 
 \noindent
-It includes measurements of 150 ancient Egyptian skulls spanning five distinct historical periods: the Early Pre-Dynastic Period (\textit{circa} 4000 BCE), the Early Dynastic Period (\textit{circa} 3300 BCE), the Middle Kingdom (\textit{circa} 1850 BCE), the Ptolemaic Period (\textit{circa} 200 BCE), and the Roman Period (\textit{circa} 150 CE).
+It includes measurements of 150 ancient Egyptian skulls spanning five distinct historical periods: the Early Pre-Dynastic Period (\textit{circa} 4000 BCE), the Early Dynastic Period (\textit{circa} 3300 BCE), the Middle Kingdom (\textit{circa} 1850 BCE), the Ptolemaic Period (\textit{circa} 200 BCE), and the Roman Period (\textit{circa} 150 CE). The measurements, taken in millimetres\footnote{For any Americans reading this, 1 millimetre is 0.118 barleycorns.} (mm), represent the maximal breadth of the skull.\footnote{This is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. }
 
-It contains measurements of the colour distribution of M\&M Milk Chocolate candies, collected by Josh Madison for his blog \parencite{Madison2007}. Josh purchased a case of Milk Chocolate M\&M's (which is 48 separate packages of M\&M's) and counted how many of each M\&M colour (blue, brown, green, orange, red, yellow) were contained in each pack. He did this, ostensibly, to evaluate a theory he had about the manufacturing process of the candies.\footnote{Or, more realistically, he just wanted a excuse to purchase and eat Milk Chocolate M\&M's guilt free.}
-
-Upon opening the file within GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/ch-3/MM-candy/MM_Madison_wide.csv}} you will see that it displays the file's contents in a fairly typical spreadsheet layout (see Table \ref{tab:skulls} for an example displaying the first 10 rows).
+Upon opening the file within GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/ch-3/Egyptian-skulls/Max_Breadth_TRM_1905.csv}} you will see that it displays the file's contents in a fairly typical spreadsheet layout (see Table \ref{tab:skulls} for an example displaying the first 10 rows).
 
 \vspace{1em}
 
@@ -43,102 +41,109 @@ Upon opening the file within GitHub,\footnote{\url{https://github.com/statistica
 \vspace{1em}
 
 \noindent
-However, this is just how GitHub presents \texttt{.csv} files. The actual raw data is a basic text document that separates individual values with a comma. We can see this more clearly if we click the button labelled ``Raw'' which will present the file in its unaltered (i.e., raw) text format. The first 6 rows can be seen below
+However, this is just how GitHub presents \texttt{.csv} files. The actual raw data is a basic text document that separates individual values with a comma. We can see this more clearly if we click the button on GitHub labelled ``Raw'' which will present the file in its unaltered (i.e., raw) text format. The first 10 rows can be seen below:
 
 \vspace{1em}
 \begin{listing}[H]
 \begin{raw}
-pkg,weight_oz,year,blue,brown,green,orange,red,yellow
-1,1.69,2007,13,7,12,9,7,8
-2,1.69,2007,8,3,13,13,10,6
-3,1.69,2007,8,10,11,10,5,10
-4,1.69,2007,14,4,6,14,7,9
-5,1.69,2007,6,8,10,12,8,8
-6,1.69,2007,7,11,13,7,4,13
+skull,c4000_BCE,c3300_BCE,c1850_BCE,c200_BCE,c150_CE
+1,131,124,137,137,137
+2,125,133,129,141,136
+3,131,138,132,141,128
+4,119,148,130,135,130
+5,136,126,134,133,138
+6,138,135,140,131,126
+7,139,132,138,140,136
+8,125,133,136,139,126
+9,131,131,136,140,132
+10,134,133,126,138,139
 ...
 \end{raw}
-\caption*{Example of the \R{MM\_Madison\_wide.csv} data file displayed in its raw text format. Only the first six rows are shown.}
+\caption*{Example of the \R{Max\_Breadth\_TRM\_1905.csv} data file displayed in its raw text format. Only the first ten rows are shown.}
 \end{listing}
 
 \vspace{1em}
 
-Comparing the two versions it can readily be seen how the commas are functioning. They separate individual cells/columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, they will always have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 (Comma delimited)''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV... }
+Comparing the two versions it can readily be seen how the commas are functioning. They separate individual columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, they will always have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 Comma delimited''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV... }
 
 \section{Delimiters}
 
-In the case of the \R{MM\_Madison\_wide.csv} file, the comma is functioning as a \gls{delimiter}; which is to say it is a character that defines the limits of (i.e., it ``delimits'') individual values. Commas are not the only characters that can be used to delimit, any character can technically be used. Other common delimiters include semicolons (;) and tab-key spaces. Semicolons are often used when the data is logged with commas representing decimal points instead of periods (e.g., 13.666 = 13,666), which is a frequent practice in many countries. Oddly, when a delimited file uses semicolons, it is still often given a \texttt{.csv} file extension despite it being a completely different character.  In R, to avoid confusion, the convention is to refer to these semicolon delimited files as \R{csv2} files in function names (e.g., \R{write\_csv()} would use a comma to delimit whereas \R{write\_csv2()} would use a semicolon).
+In the case of the \R{Max\_Breadth\_TRM\_1905.csv} file, the comma is functioning as a \gls{delimiter}; which is to say it is a character that defines the limits of (i.e., it ``delimits'') individual values. Commas are not the only characters that can be used to delimit, any character can technically be used. Other common delimiters include semicolons (;) and tab-key spaces. Semicolons are often used when the data is logged with commas representing decimal points instead of periods (e.g., 13.666 = 13,666), which is a frequent practice in many countries. Oddly, when a delimited file uses semicolons, it is still often given a \texttt{.csv} file extension despite it being a completely different character.  In R, to avoid confusion, the convention is to refer to these semicolon delimited files as \R{csv2} files in function names (e.g., \R{write\_csv()} would use a comma to delimit whereas \R{write\_csv2()} would use a semicolon).
 
-Tab spaces (i.e., pressing ``tab'' on your keyboard), are also frequently employed as a delimiter, but these are usually denoted as .TSV files (i.e., tab separated values). In fact, the name for the keyboard key ``tab'' comes from the the verb ``tabulate'' because the key facilitated easier generation of tables when working on a typewriter. Prior to the tab key's development, the space bar had to be repeatedly pressed to advance the typewriter's carriage to align columns appropriately. 
+Tab spaces (i.e., pressing ``tab'' on your keyboard), are also frequently employed as a delimiter, but these are usually denoted as \texttt{.tsv} files (i.e., tab separated values). In fact, the name for the keyboard key ``tab'' comes from the the verb ``tabulate'' because the key facilitated easier generation of tables when working on a typewriter. Prior to the tab key's development, the space bar had to be repeatedly pressed to advance the typewriter's carriage to align columns appropriately. 
 
-If you were to save the \R{MM\_Madison\_wide} data set as a \texttt{.tsv} file and open it within a generic text editor, you would see something very similar to the following ...
+If you were to save the \R{Max\_Breadth\_TRM\_1905} data set as a \texttt{.tsv} file and open it within a generic text editor, you would see something very similar to the following ...
 
 \vspace{1em}
 \begin{listing}[H]
 \begin{raw}
-pkg	weight_oz	year	blue	brown	green	orange	red	yellow
-1	1.69	2007	13	7	12	9	7	8
-2	1.69	2007	8	3	13	13	10	6
-3	1.69	2007	8	10	11	10	5	10
-4	1.69	2007	14	4	6	14	7	9
-5	1.69	2007	6	8	10	12	8	8
-6	1.69	2007	7	11	13	7	4	13
+skull	c4000_BCE	c3300_BCE	c1850_BCE	c200_BCE	c150_CE
+1	131	124	137	137	137
+2	125	133	129	141	136
+3	131	138	132	141	128
+4	119	148	130	135	130
+5	136	126	134	133	138
+6	138	135	140	131	126
+7	139	132	138	140	136
+8	125	133	136	139	126
+9	131	131	136	140	132
+10	134	133	126	138	139
 ...
 \end{raw}
-\caption*{Example of the \R{MM\_Madison\_wide.csv} data file displayed in its raw text format if it were a .TSV file. Only the first six rows are shown.}
+\caption*{Example of the \R{Max\_Breadth\_TRM\_1905.csv} data file displayed in its raw text format if it were a .TSV file. Only the first ten rows are shown.}
 \end{listing}
 \vspace{1em}
 
-Notice that the tabular separation gives the file a much more grid-like aesthetic that is easier to read. Incorporating spaces into the text file can be used to further refine the alignment.
+\noindent Notice that the tabular separation gives the file a much more grid-like aesthetic that is easier to read. Incorporating spaces into the text file can be used to further refine the alignment.
 
 \section{Reading a CSV File into R}
 
-Now that we have a good sense of what a \texttt{.csv} file is we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{MM\_Madison\_wide.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``Download raw file.'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}} Depending on the browser you are using you may have to hunt around for the download option. For instance, if you are using Safari, you may have to select ``more file actions.''
+Now that we have a good sense of what a \texttt{.csv} file is we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{Max\_Breadth\_TRM\_1905.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``Download raw file.'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}} Depending on the browser you are using you may have to hunt around for the download option. For instance, if you are using Safari, you may have to select ``more file actions.''
 
 With the file in its appropriate location you can simply run the function \R{read\_csv()} and give it the full name (with extension) of your file. This will create a data frame object in R. However, \R{read\_csv()} is a function that belongs to the \textit{readr} package which is part of the \textit{tidyverse}, so if you do not have the \textit{tidyverse} loaded, this will not work. In order to easily call our loaded data, we will assign it the name \R{mm\_df}.
 
 \begin{inR}
 library(tidyverse)
-mm_df <- read_csv("MM_Madison_wide.csv")
+skulls <- read_csv("Max_Breadth_TRM_1905.csv")
 \end{inR}
 
 \begin{outR}
-Rows: 48 Columns: 9                                                                                                      
-Column specification 
-
+Rows: 30 Columns: 6                                                                          
+── Column specification ─────────────────────────────────────────────────────────────────────
 Delimiter: ","
-dbl (9): pkg, weight_oz, year, blue, brown, green, orange, red, yellow
+dbl (6): skull, c4000_BCE, c3300_BCE, c1850_BCE, c200_BCE, c150_CE
 
-Use `spec()` to retrieve the full column specification for this data.
-Specify the column types or set `show_col_types = FALSE` to quiet this message.
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{outR}
 
-Running the above code presents us with some useful information about the data set we have loaded.  We can see that it has 48 rows and 9 columns, uses a \R{,} as a delimiter, and the 9 columns all consist of \R{dbl} values, which is a shorthand way of referring to \textit{double-precision number}. To simplify a complex story, R has multiple types of \textit{numeric} objects; i.e., it has multiple ways of representing a number. A \textit{double}, as its often referred to, is one such representation. If that is confusing, do not worry, what is important to take away from the output is that \R{dbl} means the 9 columns all contain numeric values.
+Running the above code presents us with some useful information about the data set we have loaded.  We can see that it has 30 rows and 6 columns, uses a \R{,} as a delimiter, and the 6 columns all consist of \R{dbl} values, which is a shorthand way of referring to \textit{double-precision number}. To simplify a complex story, R has multiple types of \textit{numeric} objects; i.e., it has multiple ways of representing a number. A \textit{double}, as its often referred to, is one such representation. If that is confusing, do not worry, what is important to take away from the output is that \R{dbl} means the 6 columns all contain numeric values.
 
-Running \R{mm\_df} will print the data frame to the console.
+Running \R{skulls} will print the data frame to the console.
 
 \begin{inR}
-mm_df
+skulls
 \end{inR}
 
 \begin{outR}
-# A tibble: 48 × 9
-     pkg weight_oz  year  blue brown green orange   red yellow
-   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl>  <dbl>
- 1     1      1.69  2007    13     7    12      9     7      8
- 2     2      1.69  2007     8     3    13     13    10      6
- 3     3      1.69  2007     8    10    11     10     5     10
- 4     4      1.69  2007    14     4     6     14     7      9
- 5     5      1.69  2007     6     8    10     12     8      8
- 6     6      1.69  2007     7    11    13      7     4     13
- 7     7      1.69  2007     8     7    13      8     7      9
- 8     8      1.69  2007    12    10     6      8     8      9
- 9     9      1.69  2007     6     9    12     14     8      6
-10    10      1.69  2007     7     8    12     10    11      7
-# 38 more rows
-# Use `print(n = ...)` to see more rows
+# A tibble: 30 × 6
+   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
+   <dbl>     <dbl>     <dbl>     <dbl>    <dbl>   <dbl>
+ 1     1       131       124       137      137     137
+ 2     2       125       133       129      141     136
+ 3     3       131       138       132      141     128
+ 4     4       119       148       130      135     130
+ 5     5       136       126       134      133     138
+ 6     6       138       135       140      131     126
+ 7     7       139       132       138      140     136
+ 8     8       125       133       136      139     126
+ 9     9       131       131       136      140     132
+10    10       134       133       126      138     139
+# ℹ 20 more rows
+# ℹ Use `print(n = ...)` to see more rows
 \end{outR}
 
-You can now subset and manipulate \R{mm\_df} like we did in Chapter 1 when we first discussed data frames (see section \ref{sec:data_frames}). For instance, if we wanted to look at the mean number of green M\&M's across all the packages we could simply run:
+You can now subset and manipulate the data frame \R{skulls} like was done in Chapter 1 when we first discussing data frames (see section \ref{sec:data_frames}). For instance, if we wanted to look at the mean number of green M\&M's across all the packages we could simply run:
 
 \begin{inR}
 mean(mm_df$green)
