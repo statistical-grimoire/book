@@ -1,7 +1,7 @@
 %\chapter{The Basics of Loading and Manipulating Data}
 \chapter{The Invocation and Metamorphosis of Data}
 
-\lettrine{T}{hey} say knowledge is power, but data—data is something else entirely. It’s the ghost in the machine, the thing lurking beneath the surface, waiting for you to look too close. Heed this warning: The data frame, and its accursed successor the tibble, are your most loyal servants \ldots{} and your most treacherous foes. Treat them with reverence, for a single misstep may awaken errors best left entombed. 
+\lettrine{T}{hey} say knowledge is power, but data—data is something else entirely. It is the ghost in the machine, the thing lurking beneath the surface, waiting for you to look too close. Heed this warning: The data frame, and its accursed successor the tibble, are your most loyal servants \ldots{} and your most treacherous foes. Treat them with reverence, for a single misstep may awaken errors best left entombed. 
 
 Chapter 1 had stated that \glspl{data frame} are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present information in a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data and what needs to be done with it, as a list, matrix, array, or table. Though, a data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
 
@@ -12,9 +12,9 @@ Data can come in all manner of different layouts and file formats and, in this r
 
 Given the ubiquity of spreadsheet software, it is important to discuss its use and why R offers a preferable alternative for data analysis. Most spreadsheet applications have their own specific file type that is tailored to its unique purpose and platform. For instance, \textit{Microsoft's Excel} spreadsheet application has its own proprietary format called the \texttt{.xlsx} file format. The awful stock spreadsheet application on Macintosh computers, called \textit{Numbers}, uses the \texttt{.NUMBERS} file format. And if you use an open-source spreadsheet software like \textit{Libre Office's Calc} application, you may be familiar with the \texttt{.ods} file format.
 
-As everyone who is reading this doubtlessly appreciates, spreadsheet applications like Microsoft's Excel, Numbers, Libre Office's Calc, etc., do more than just structure your data in a big table (which is all a spreadsheet is).  They allow you to do things like perform calculations, adjust cell colours, add images, insert comments, etc. And all of this is saved, in one form or another, as information inside the specific file associated with that software. These features make applications like Microsoft's Excel, for instance, a great tool for basic tasks like balancing the household budget.  However, for serious data analysis that requires the use of large data sets and complex or heavy calculations, this kind of software is going to be more of a hindrance than a help. Incorporating all those layers of additional functionality is going to boost file sizes, inflate load times, limit the amount of information the spreadsheet can hold, and increase the chance of a glitch occurring. Additionally, and most importantly, both the analyses and the data are all contained within the same file, which makes it very easy to irrevocably damage your original data set, often without even realizing it. The fact is, we should care about analysing our data efficiently and safely, not making it look pretty in what amounts to a fancy table, and this is one of the key benefits of using R.
+As everyone who is reading this doubtlessly appreciates, spreadsheet applications like Microsoft's Excel, Numbers, Libre Office's Calc, etc., do more than just structure your data in a big table.  They allow you to do things like perform calculations, adjust cell colours, add images, insert comments, etc. And all of this is saved, in one form or another, as information inside the specific file associated with that software. These features make applications like Microsoft's Excel, for instance, a great tool for basic tasks like balancing the household budget.  However, for serious data analysis that requires the use of large data sets and complex or heavy calculations, this kind of software is going to be more of a hindrance than a help. Incorporating all those layers of additional functionality is going to boost file sizes, inflate load times, limit the amount of information the spreadsheet can hold, and increase the chance of a glitch occurring. Additionally, and most importantly, both the analyses and the data are all contained within the same file, which makes it very easy to irrevocably damage your original data set, often without even realizing it. The fact is, we should care about analysing our data efficiently and safely, not making it look pretty in what amounts to a fancy table, and this is one of the key benefits of using R.
 
-From the point of view of R, a spreadsheet is just a way of displaying the raw information to be analysed, and nothing more. The analysis of that information is what R does. Technically then, we should not be referring to something as a ``spreadsheet file,'' but rather a ``data file.'' The spreadsheet aspect of all of this is more about how the data is structured for our viewing as humans. However, data does not necessarily need to be viewed as a spreadsheet - it can be viewed in all kinds of different ways. It is just that a spreadsheet is usually the most convenient and intuitive way to view it and talk about it.
+From the point of view of R, a spreadsheet is just a way of displaying the raw information to be analysed and nothing more. The analysis of that information is what R does. Technically then, we should not be referring to something as a ``spreadsheet file,'' but rather a ``data file.'' The spreadsheet aspect of all of this is more about how the data is structured for our viewing as humans. However, data does not necessarily need to be viewed as a spreadsheet - it can be viewed in all kinds of different ways. It is just that a spreadsheet is usually the most convenient and intuitive way to view it and talk about it.
 
 \section{Using an Ethical File Format}
 \label{sec:ethical_file}
@@ -23,14 +23,14 @@ As noted above, there are a variety of different spreadsheet file types data cou
 
 \section{The .CSV Format}
 
-``CSV'' stands for ``comma separated values.'' It gets its name from the fact that it is, quite literally, nothing more than a generic text document that uses commas to denote a tabular (spreadsheet structure) in the data.\footnote{``Tabular'' and ``spreadsheet'' mean the same thing here.} This is easiest to see with an example. The GitHub repository for this book contains a file called \R{Max\_Breadth\_TRM\_1905.csv}. It is located in the \R{./data} directory at the following URL:
+``CSV'' stands for ``comma separated values.'' It gets its name from the fact that it is, quite literally, nothing more than a generic text document that uses commas to denote a tabular (spreadsheet) structure in the data.\footnote{``Tabular'' and ``spreadsheet'' mean the same thing here.} This is easiest to see with an example. The GitHub repository for this book contains a file called \R{Max\_Breadth\_TRM\_1905.csv}. It is located in the \R{./data} directory at the following URL:
 
 \begin{center}
 \url{https://github.com/statistical-grimoire/book/tree/main/data/ch-3/Egyptian-skulls}
 \end{center}
 
 \noindent
-It includes measurements of 150 ancient Egyptian skulls spanning five distinct historical periods: the Early Pre-Dynastic Period (\textit{circa} 4000 BCE), the Early Dynastic Period (\textit{circa} 3300 BCE), the Middle Kingdom (\textit{circa} 1850 BCE), the Ptolemaic Period (\textit{circa} 200 BCE), and the Roman Period (\textit{circa} 150 CE). The measurements, taken in millimetres\footnote{For any Americans reading this, 1 millimetre is 0.118 barleycorns.} (mm), represent the maximal breadth of the skull.\footnote{This is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. }
+It includes measurements of 150 ancient Egyptian skulls spanning five distinct historical periods: the Early Pre-Dynastic Period (\textit{circa} 4000 BCE), the Early Dynastic Period (\textit{circa} 3300 BCE), the Middle Kingdom (\textit{circa} 1850 BCE), the Ptolemaic Period (\textit{circa} 200 BCE), and the Roman Period (\textit{circa} 150 CE). The measurements, collected by \textcite{Thomson1905}, and republished by \textcite{Manly1984}, represent the maximal breadth of the skull taken in millimetres.\footnote{This is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. Also, for any Americans reading this, 1 millimetre is 0.118 barleycorns.}
 
 Upon opening the file within GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/ch-3/Egyptian-skulls/Max_Breadth_TRM_1905.csv}} you will see that it displays the file's contents in a fairly typical spreadsheet layout (see Table \ref{tab:skulls} for an example displaying the first 10 rows).
 
@@ -98,7 +98,7 @@ skull	c4000_BCE	c3300_BCE	c1850_BCE	c200_BCE	c150_CE
 
 \section{Reading a CSV File into R}
 
-Now that we have a good sense of what a \texttt{.csv} file is we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{Max\_Breadth\_TRM\_1905.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``Download raw file.'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}} Depending on the browser you are using you may have to hunt around for the download option. For instance, if you are using Safari, you may have to select ``more file actions.''
+Now that we have a good sense of what a \texttt{.csv} file is we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{Max\_Breadth\_TRM\_1905.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``\textit{Download raw file.}'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}} Depending on the browser you are using you may have to hunt around for the download option. For instance, if you are using Safari, you may have to select ``more file actions.''
 
 With the file in its appropriate location you can simply run the function \R{read\_csv()} and give it the full name (with extension) of your file. This will create a data frame object in R. However, \R{read\_csv()} is a function that belongs to the \textit{readr} package which is part of the \textit{tidyverse}, so if you do not have the \textit{tidyverse} loaded, this will not work. In order to easily call our loaded data, we will assign it the name \R{mm\_df}.
 
@@ -113,11 +113,11 @@ Rows: 30 Columns: 6
 Delimiter: ","
 dbl (6): skull, c4000_BCE, c3300_BCE, c1850_BCE, c200_BCE, c150_CE
 
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{outR}
 
-Running the above code presents us with some useful information about the data set we have loaded.  We can see that it has 30 rows and 6 columns, uses a \R{,} as a delimiter, and the 6 columns all consist of \R{dbl} values, which is a shorthand way of referring to \textit{double-precision number}. To simplify a complex story, R has multiple types of \textit{numeric} objects; i.e., it has multiple ways of representing a number. A \textit{double}, as its often referred to, is one such representation. If that is confusing, do not worry, what is important to take away from the output is that \R{dbl} means the 6 columns all contain numeric values.
+Running the above code presents us with some useful information about the data set we have loaded.  We can see that it has 30 rows and 6 columns, uses a \R{,} as a delimiter, and the 6 columns all consist of \R{dbl} values, which is a shorthand way of referring to \textit{double-precision number}. To simplify a complex story, R has multiple types of \textit{numeric} objects; i.e., it has multiple ways of representing a number. A \textit{double}, as its often referred to, is one such representation. If that is confusing, don't worry, what is important to take away from the output is that \R{dbl} means the 6 columns all contain numeric values (i.e., we can use them to do mathematics).
 
 Running \R{skulls} will print the data frame to the console.
 
@@ -139,29 +139,29 @@ skulls
  8     8       125       133       136      139     126
  9     9       131       131       136      140     132
 10    10       134       133       126      138     139
-# ℹ 20 more rows
-# ℹ Use `print(n = ...)` to see more rows
+# i 20 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
-You can now subset and manipulate the data frame \R{skulls} like was done in Chapter 1 when we first discussing data frames (see section \ref{sec:data_frames}). For instance, if we wanted to look at the mean number of green M\&M's across all the packages we could simply run:
+You can now subset and manipulate the data frame \R{skulls} like was done in Chapter 1 when we first discussing data frames (see section \ref{sec:data_frames}). For instance, if we wanted to look at the mean breadth of skulls from the Early Dynastic Period (\textit{circa} 3300 BCE) we could simply run:
 
 \begin{inR}
-mean(mm_df$green)
+mean(skulls$c3300_BCE)
 \end{inR}
 \begin{outR}
-[1] 10.0625
+[1] 132.3667
 \end{outR}
 
 \subsubsection{\texttt{read.csv()} vs. \texttt{read\_csv()}}
 
-To load the M\&M data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R as similar function, \R{read.csv()}, that will do essentially the same thing - it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other, but if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some big advantages. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, it stores the data as a \textit{tibble} which will be discussed later.
+To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing - it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other, but if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some big advantages. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, it stores the data as a \textit{tibble} which will be discussed later.
 
 \subsection{Reading Other File Types into R}
 
-If your data is delimited by some character other than a comma (e.g., a semicolon, tab, backslash, etc.), there is a more general function that can be employed called \R{read\_delim()} which allows you to specify any delimiter (i.e., separator) using the argument \R{delim}. For instance, we could have loaded the M\&M data in the following way:
+If your data is delimited by some character other than a comma (e.g., a semicolon, tab, backslash, etc.), there is a more general function that can be employed called \R{read\_delim()} which allows you to specify any delimiter (i.e., separator) using the argument \R{delim}. For instance, we could have loaded the \R{skulls} data in the following way:
 
 \begin{inR}
-mm_df <- read_delim("MM_Madison_wide.csv", delim = ",")
+skulls <- read_delim("Max_Breadth_TRM_1905.csv", delim = ",")
 \end{inR}
 
 \vspace{1em}
@@ -175,7 +175,7 @@ Now, what would you do if you wanted to load a Microsoft Excel spreadsheet file 
 
 \section{Tibbles vs. Data Frames}
 
-In the output for \R{mm\_df} (and the \R{msleep} data from chapter 2) you can see that the output printed to the console specifies that we are looking at something called a \gls{tibble}: \R{\# A tibble: 48 x 9}. The output also helpfully displays the dataset's dimensions and the class of object contained within each column. This is in contrast to the data frame created in chapter 1, which did not do any of that for us. In the \textit{tidyverse's} own words, a tibble is a ...
+In the output for \R{skulls} (and the \R{msleep} data from chapter 2) you can see that the output printed to the console specifies that we are looking at something called a \gls{tibble}: \R{\# A tibble: 30 x 6}. The output also helpfully displays the dataset's dimensions and the class of object contained within each column. This is in contrast to the data frame created in chapter 1, which did not do any of that for us. In the \textit{tidyverse's} own words, a tibble is a ...
 
 \begin{displayquote}
 \headingfont
@@ -220,48 +220,105 @@ df
 \end{outR}
 
 \noindent
-There are a number of interesting differences between tibbles and data frames, but nothing that merits any in depth discussion for a beginner with R. What is perhaps worth noting is that it is easy to switch between the two should the need arise. For example, to convert our tibble \R{df} to a data frame, we can simply use the \R{as.data.frame()} function in R.
+There are a number of interesting differences between tibbles and data frames, but nothing that merits any in depth discussion for a beginner with R. For the most part they behave identically. However, one difference that is worth mentioning is that, for tibbles, indexing a single column by specifying row and column values outputs a tibble.
+
+\begin{inR}
+skulls[1:5, 3]
+\end{inR}
+
+\begin{outR}
+# A tibble: 5 × 1
+  c3300_BCE
+      <dbl>
+1       124
+2       133
+3       138
+4       148
+5       126
+\end{outR}
+
+\noindent This is in contrast to the traditional behaviour of a data frame which will output a vector, unless more than one column is selected.
+
+\begin{inR}
+skulls_df <- read.csv("Max_Breadth_TRM_1905.csv")
+
+skulls_df[1:5, 3]
+\end{inR}
+
+\begin{outR}
+[1] 124 133 138 148 126
+\end{outR}
+
+This may seem to be a trivial distinction; however, operations such as computing the mean of a column are common and often require inserting a numeric vector. Consequently, when the output is a tibble rather than a numeric or logical vector, attempting such operations results in an error.
+
+\begin{inR}
+mean(skulls[1:5, 3])
+\end{inR}
+
+\begin{outR}
+[1] NA
+Warning message:
+In mean.default(skulls[1:5, 3]) :
+  argument is not numeric or logical: returning NA
+\end{outR}
+
+\noindent However, you can set the argument \R{drop = TRUE} inside the indexing brackets to coerce the output into a vector.
+
+\begin{inR}
+skulls[1:5, 3, drop = TRUE]
+mean(skulls[1:5, 3, drop = TRUE])
+\end{inR}
+
+\begin{outR}
+[1] 124 133 138 148 126
+[1] 133.8
+\end{outR}
+
+Should the need arise, switching between tibbles and data frames is a simple matter. For example, to convert our tibble \R{skulls} to a data frame, we can simply use the \R{as.data.frame()} function in R.
 
 \begin{inR}
 # tibble to data frame
-df <- as.data.frame(df)
-df
+skulls <- as.data.frame(skulls)
+skulls
 \end{inR}
 \begin{outR}
-   Subject Group Value
-1        1   Exp -0.36
-2        2  Cont  0.28
-3        3   Exp  1.54
-4        4  Cont  0.51
-5        5   Exp -1.28
-6        6   Exp  1.15
-7        7  Cont -2.22
-8        8   Exp -0.51
-9        9  Cont    NA
-10      10  Cont -1.04
+   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
+1      1       131       124       137      137     137
+2      2       125       133       129      141     136
+3      3       131       138       132      141     128
+4      4       119       148       130      135     130
+5      5       136       126       134      133     138
+6      6       138       135       140      131     126
+7      7       139       132       138      140     136
+8      8       125       133       136      139     126
+9      9       131       131       136      140     132
+10    10       134       133       126      138     139
+...
 \end{outR}
 
 \noindent
-To convert it back to a tibble ...
+To convert it back to a tibble:
 \begin{inR}
 # data frame to tibble
-df <- as_tibble(df)
-df
+skulls <- as_tibble(skulls)
+skulls
 \end{inR}
 \begin{outR}
-# A tibble: 10 × 3
-   Subject Group Value
-     <int> <chr> <dbl>
- 1       1 Exp   -0.36
- 2       2 Cont   0.28
- 3       3 Exp    1.54
- 4       4 Cont   0.51
- 5       5 Exp   -1.28
- 6       6 Exp    1.15
- 7       7 Cont  -2.22
- 8       8 Exp   -0.51
- 9       9 Cont  NA   
-10      10 Cont  -1.04
+# A tibble: 30 × 6
+   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
+   <dbl>     <dbl>     <dbl>     <dbl>    <dbl>   <dbl>
+ 1     1       131       124       137      137     137
+ 2     2       125       133       129      141     136
+ 3     3       131       138       132      141     128
+ 4     4       119       148       130      135     130
+ 5     5       136       126       134      133     138
+ 6     6       138       135       140      131     126
+ 7     7       139       132       138      140     136
+ 8     8       125       133       136      139     126
+ 9     9       131       131       136      140     132
+10    10       134       133       126      138     139
+# i 20 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
 \subsection{Displaying Tibbles in the Console}
@@ -270,29 +327,26 @@ df
 
 Given the limited screen space and the large size of most datasets, tibbles are designed to display only the first 10 rows when printed to the console, making it easier for users to work with their data.
 
-Generally, if you want to view an entire data set, the best practice is not to display it in the console but rather use R's \R{View()} function which opens it in a spreadsheet style viewer. That being said, many people will still find the number of rows displayed by a tibble within the console lacking, particularly if you are working on anything other than a small laptop. For this reason, the 10 row limit is a behaviour which can be circumvented in various ways. One simple way is to make use of the \R{print()} function. For instance, if we want to display the first 20 rows we can simply run ...
+Generally, if you want to view an entire data set, the best practice is not to display it in the console but rather use R's \R{View()} function which opens it in a spreadsheet-style window. That being said, many people will still find the number of rows displayed by a tibble within the console lacking, particularly if you are working on anything other than a small laptop. For this reason, the 10 row limit is a behaviour which can be circumvented in various ways. One simple way is to make use of the \R{print()} function. For instance, if we want to display the first 20 rows we can simply run ...
 
 \begin{inR}
-print(mm_df, n = 20)
+print(skulls, n = 20)
 \end{inR}
 
 \vspace{1em}
 
-An alternative method is to change R's default display behaviour by setting the number using the \R{options()} function. You can set both a minimum and maximum number of rows to display.
+An alternative method is to change R's default display behaviour by setting the minimum number of rows to output using the \R{options()} function.
 
 \begin{inR}
-options(
-  pillar.print_min = 30,
-  pillar.print_max = 30
-)
+options(pillar.print_min = 20)
 
-mm_df
+skulls
 \end{inR}
 
 \vspace{1em}
 
 \noindent
-If that method is your preference, then it is usually advisable to place the \R{options()} code at the top of your R script because it only needs to be run once.\footnote{If you are wondering why we specify \R{pillar...} to set rows, it's because \textit{pillar} is a package in the tidyverse.}
+If that method is your preference, then it is usually advisable to place the \R{options()} code at the top of your R script because it only needs to be run once.\footnote{If you are wondering why we specify \R{pillar...} to set rows, it's because \textit{pillar} is a package in the \textit{tidyverse}.}
 
 What if you wanted to display every single row each time you print a tibble? Well, recall that R represents infinity in the positive direction as (\R{Inf}). We can use that to our advantage here:
 
@@ -308,26 +362,25 @@ What about columns though? Well, interestingly tibbles will actually conform to 
 
 \begin{inR}
 options(
-  pillar.print_min = 30,
-  pillar.print_max = 30,
+  pillar.print_min = 20,
   pillar.width = Inf
 )
 
-mm_df
+skulls
 \end{inR}
 
 \vspace{1em}
 
 \noindent
-However, if you wanted a more temporary solution, you can just add a \R{width} argument to the \R{print()} function. E.g., 
+However, if you prefer a more temporary solution, you can just add a \R{width} argument to the \R{print()} function. E.g., 
 
 \begin{inR}
-print(mm_df, n = 30, width = Inf)
+print(skulls, n = 20, width = Inf)
 \end{inR}
 
 \vspace{1em}
 
-\subsubsection{Understanding Significant Digits}
+\subsubsection{The Precision and Display of Decimals in Tibbles}
 \label{sec:sig_digs}
 
 To save space and facilitate easier reading, both tibbles and data frames will round values with many decimal values. Though, in the case of tibbles, they do not just simply round to a preset number of digits.  To illustrate what tibbles are doing in this respect, recall that R has a built-in constant for $\pi$.
@@ -367,11 +420,11 @@ pi_df$pie[1]
 \end{outR}
 
 \noindent
-It is important to understand that tibbles do not strictly control the handling of decimals. Instead, they work with \textit{significant digits}.  This allows the tibble to preserve its desired ``rectangleness,'' giving it cleaner looking columns. Since tibbles default to three significant digits, $\pi$ will only display as 3.14. 
+It is important to understand that tibbles do not strictly control the handling of decimals. Instead, they work with \gls{significant figures}, also known as \textit{significant digits}.  This allows the tibble to preserve its desired ``rectangleness,'' giving it cleaner looking columns. Since tibbles default to three significant figures, $\pi$ will only display as 3.14. 
 
-As a refresher of primary school math, with significant digits, everything in front of the decimal point is always displayed, but each number in front of that decimal point uses up a significant digit (a.k.a. a ``sig dig''). For instance, if you had a number like 666.13.  Displaying that to two sig digs would give you 666.  Displayed to three sig digs would again be 666. Displayed to four sig digs would be 666.1. Five sig digs would be 666.13. Six sig digs would be 666.130. Seven would be 666.1300, and so on.
+As a refresher of primary school math, with significant figures, everything in front of the decimal point is always displayed, but each number in front of that decimal point uses up a significant figure (a.k.a. a ``sig fig'' or ``sig dig''). For instance, if you had a number like 666.13.  Displaying that to two sig figs would give you 666.  Displayed to three sig figs would again be 666. Displayed to four sig figs would be 666.1. Five sig digs would be 666.13. Six sig figs would be 666.130. Seven would be 666.1300, and so on.
 
-To increase the number of sig digs shown within a tibble we can simply add another argument to the \R{options()} function:
+To increase the number of sig figs shown within a tibble we can simply add another argument to the \R{options()} function:
 
 \begin{inR}
 options(pillar.sigfig = 16)
@@ -387,77 +440,76 @@ pi_df
  4 3.141592653589793e0
 \end{outR}
 
-Because of limitations of 64-bit computing, a tibble is not going let you exceed 16 sig digs and in certain cases will display results in scientific notation. In this case we see some scientific notation, but it is to the power of 0, so it can be ignored.
+Because of limitations of 64-bit computing, a tibble is not going let you exceed 16 sig figs and in certain cases will display results in scientific notation. In this case we see some scientific notation, but it is to the power of 0, so it can be ignored.
 
 \section{Wide Data vs. Tidy Data}
 
 \subsection{Wide Data}
 \label{sec:wide_data}
 
-Looking at the \R{MM\_Madison\_wide.csv} loaded at the outset of this chapter, you can see that the data is laid out in a fairly logical manner. Each row corresponds to a different package of M\&Ms and we can clearly see how many M\&Ms of a particular colour are in each package by examining the columns named, blue, brown, green, etc.
+Examining the \R{Max\_Breadth\_TRM\_1905.csv} file loaded at the beginning of this chapter, we see that the data is structured logically. Each column represents skull measurements from a distinct period in Egypt’s history. By examining the rows (or the values provided in column 1), we can see that each period includes measurements from 30 skulls. Thus, with five periods, this totals 150 measured skulls.
 
 \begin{inR}
-mm_df
+skulls
 \end{inR}
 
 \begin{outR}
-# A tibble: 48 × 9
-     pkg weight_oz  year  blue brown green orange   red yellow
-   <dbl>     <dbl> <dbl> <dbl> <dbl> <dbl>  <dbl> <dbl>  <dbl>
- 1     1      1.69  2007    13     7    12      9     7      8
- 2     2      1.69  2007     8     3    13     13    10      6
- 3     3      1.69  2007     8    10    11     10     5     10
- 4     4      1.69  2007    14     4     6     14     7      9
- 5     5      1.69  2007     6     8    10     12     8      8
- 6     6      1.69  2007     7    11    13      7     4     13
- 7     7      1.69  2007     8     7    13      8     7      9
- 8     8      1.69  2007    12    10     6      8     8      9
- 9     9      1.69  2007     6     9    12     14     8      6
-10    10      1.69  2007     7     8    12     10    11      7
-# 38 more rows
-# Use `print(n = ...)` to see more rows
+# A tibble: 30 × 6
+   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
+   <dbl>     <dbl>     <dbl>     <dbl>    <dbl>   <dbl>
+ 1     1       131       124       137      137     137
+ 2     2       125       133       129      141     136
+ 3     3       131       138       132      141     128
+ 4     4       119       148       130      135     130
+ 5     5       136       126       134      133     138
+ 6     6       138       135       140      131     126
+ 7     7       139       132       138      140     136
+ 8     8       125       133       136      139     126
+ 9     9       131       131       136      140     132
+10    10       134       133       126      138     139
+# i 20 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
-This style of layout makes it easy to do certain things with the data. For instance, if we wanted to know the mean number of red M\&Ms we could just run 
+This style of layout makes it easy to do certain things with the data. For instance, if we wanted to know the mean breadth of skulls \textit{circa} 4000 BCE, we could just run 
 
 \begin{inR}
-mean(mm_df$red)
+mean(skulls$c4000_BCE)
 \end{inR}
 
 \begin{outR}
-[1] 7.75
+[1] 131.3667
 \end{outR}
 
 If we wanted to obtain the mean of every column, we could use the \R{apply()} function. This function literally \textit{applies} a function of your choosing to either the columns or rows. So we could, for instance, apply the \R{mean()} function to each \textit{column}.
 
 \begin{inR}
-apply(mm_df, MARGIN = 2, FUN = mean)
+apply(skulls, MARGIN = 2, FUN = mean)
 \end{inR}
 
 \begin{outR}
-        pkg   weight_oz        year        blue       brown       green 
-  24.500000    1.690000 2007.000000   10.020833    7.729167   10.062500 
-     orange         red      yellow 
-  11.333333    7.750000    7.687500 
+    skull c4000_BCE c3300_BCE c1850_BCE  c200_BCE   c150_CE 
+  15.5000  131.3667  132.3667  134.4667  135.5000  136.1667 
 \end{outR}
 
 \noindent
 The argument \R{FUN} specifies what function is applied. The argument \R{MARGIN} specifies whether that function is applied to the rows (\R{1}) or columns (\R{2}). In this case we are applying it to columns, so we specified \R{2}.
 
-If you wanted to count how many M\&Ms are in each individual package, you could \textit{apply} the \R{sum()} function to the \textit{rows} - though, keep in mind that we would want to ignore \R{pkg}, \R{weight\_oz}, and \R{year} values when doing this. Luckily we can use what we learned about indexing in chapter 1 to ignore these columns (see section \ref{sec:df_Index}).
+If you wanted to know the sum of each row ignoring the first column \R{$skull$}, you could \textit{apply} the \R{sum()} function to the \textit{rows}. We can use what we learned about indexing in chapter 1 to ignore that first column (see section \ref{sec:df_Index}).
 
 \begin{inR}
-apply(mm_df[, 4:9], MARGIN = 1, FUN = sum)
+apply(skulls[, 2:6], MARGIN = 1, FUN = sum)
 \end{inR}
 
 \begin{outR}
- [1] 56 53 54 54 52 55 52 53 55 55 54 54 52 55 55 53 55 56 54 57 55 54 55 57
-[25] 53 54 54 57 56 57 55 54 54 57 56 56 55 55 55 53 55 54 54 53 54 54 55 55
+ [1] 666 664 670 662 667 670 685 659 670 670 674 677 663 677
+[15] 678 670 671 655 676 678 672 669 691 651 665 678 656 666
+[29] 683 663
 \end{outR}
 
-At a superficial glance, you can see that R makes it fairly easy to work with data in this kind of layout. However, we have not attempted anything fairly complicated here. The reality is that this layout, which we will refer to in this book as \gls{wide data}, is \textit{not} optimal for most types of analyses and plotting. Additionally, until you are actually in a position to do those kinds of analyses, it will be difficult to convince you of the truth of this - so you will just have to take that point on faith. Wide data spreads variables across multiple columns. In this case, you can treat of the colour of the M\&Ms here (blue, brown, green etc.) as a variable in its own right. We might call this variable simply ``type.'' That is to say, there is a ``blue'' \textit{type} of  M\&M, a ``brown'' \textit{type} of  M\&M, and so on.\footnote{A better variable name would be ``colour,'' but colour is also a plotting aesthetic and, later in the chapter, we will be plotting these data.  So to keep the plot's code a bit more intelligible, I'm refraining from using ``colour'' as the variable name.} There is also a second variable, which we could refer to as the ``amount'' of M\&M's, within each of the six colour type columns.
+At a superficial glance, you can see that R makes it fairly easy to work with data in this kind of layout. However, we have not attempted anything terribly complicated here and all our columns are (conveniently) numeric. The reality is that this layout, which we will refer to in this book as \gls{wide data}, is \textit{not} optimal for most types of analyses and plotting. Additionally, until you are actually in a position to do those kinds of analyses, it will be difficult to convince you of the truth of this - so you will just have to take that point on faith. \textit{Wide data} spreads variables across multiple columns. In this case, you can treat of the different historical periods of the skulls (c4000\_BCE, c3300\_BCE, etc.) as a single variable in its own right. We might call this variable simply ``period.'' That is to say, c4000\_BCE is a \textit{period}, c3300\_BCE is a \textit{period}, c1850\_BCE is a \textit{period}, and so on. There is also a second variable, which we could refer to as the ``maximal breadth'' of the skulls.
 
-When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable ``type'' is being spread across six column headers. And the variable ``amount'' is spread within those six columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
+When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable ``period'' is being spread across five columns. And the variable ``maximal breadth'' is found within each of those five columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
 
 \begin{inR}
 mm_tidy <- pivot_longer(mm_df,
