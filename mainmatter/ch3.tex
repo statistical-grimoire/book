@@ -1,9 +1,12 @@
 %\chapter{The Basics of Loading and Manipulating Data}
 \chapter{The Invocation and Metamorphosis of Data}
 
-\lettrine{T}{hey} say knowledge is power, but data—data is something else entirely. It is the ghost in the machine, the thing lurking beneath the surface, waiting for you to look too close. Heed this warning: The data frame, and its accursed successor the tibble, are your most loyal servants \ldots{} and your most treacherous foes. Treat them with reverence, for a single misstep may awaken errors best left entombed. 
+\IMFellEnglish
+\lettrine[lines=5, realheight]{K}{NOWLEDGE} is power as they say, but data—data is something else entirely. It is the ghost in the machine, the thing lurking beneath the surface, waiting for you to look too close. Heed this warning: The data frame, and its accursed successor the tibble, are your most loyal servants \ldots{} and your most treacherous foes. Treat them with reverence, for a single misstep may awaken errors best left entombed.
 
-Chapter 1 had stated that \glspl{data frame} are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present information in a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data and what needs to be done with it, as a list, matrix, array, or table. Though, a data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
+\normalfont
+
+Chapter 1 ``had'' stated that \glspl{data frame} are essential for keeping a host of related information stored in a well organized manner that is easy to manipulate. When printed to the console, data frames present information in a familiar spreadsheet-like structure that can be created, subset, and altered in various ways (see section \ref{sec:data_frames} for details). Moreover, in chapter 1, we saw how a data frame can be constructed by manually entering values with R code. And, for all but the smallest of data sets, this method is time-consuming and highly prone to error. A better strategy is to take an existing file of information and import that directly into R as a data frame or, depending on the nature of the data and what needs to be done with it, as a list, matrix, array, or table. Though, a data frame is usually going to be the optimal choice and will be the primary focus of this chapter.
 
 Data can come in all manner of different layouts and file formats and, in this respect, R has the ability to handle pretty much any scenario that might arise. This chapter will be working under the assumption that the kind of data that you need to work with is in a conventional ``spreadsheet-style'' of format. That is to say, like the \R{msleep} data used in Chapter 2, there are sets of rows and columns, with each cell containing just a single value.
 
@@ -339,7 +342,6 @@ An alternative method is to change R's default display behaviour by setting the 
 
 \begin{inR}
 options(pillar.print_min = 20)
-
 skulls
 \end{inR}
 
@@ -352,8 +354,7 @@ What if you wanted to display every single row each time you print a tibble? Wel
 
 \begin{inR}
 options(pillar.print_min = Inf)
-
-mm_df
+skulls
 \end{inR}
 
 \vspace{1em}
@@ -493,9 +494,9 @@ apply(skulls, MARGIN = 2, FUN = mean)
 \end{outR}
 
 \noindent
-The argument \R{FUN} specifies what function is applied. The argument \R{MARGIN} specifies whether that function is applied to the rows (\R{1}) or columns (\R{2}). In this case we are applying it to columns, so we specified \R{2}.
+The argument \R{FUN} specifies what function is applied. The argument \R{MARGIN} specifies whether that function is applied to the rows (\R{1}) or columns (\R{2}). In this case we are applying it to columns, so we specified \R{MARGIN = 2}.
 
-If you wanted to know the sum of each row ignoring the first column \R{$skull$}, you could \textit{apply} the \R{sum()} function to the \textit{rows}. We can use what we learned about indexing in chapter 1 to ignore that first column (see section \ref{sec:df_Index}).
+If you wanted to know the sum of each row ignoring the first column \R{\$skull}, you could \textit{apply} the \R{sum()} function to the \textit{rows}. We can use what we learned about indexing in chapter 1 to ignore that first column (see section \ref{sec:df_Index}).
 
 \begin{inR}
 apply(skulls[, 2:6], MARGIN = 1, FUN = sum)
@@ -512,36 +513,47 @@ At a superficial glance, you can see that R makes it fairly easy to work with da
 When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable ``period'' is being spread across five columns. And the variable ``maximal breadth'' is found within each of those five columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
 
 \begin{inR}
-mm_tidy <- pivot_longer(mm_df,
-  cols = blue:yellow,
-  names_to = "type", values_to = "amount"
+skulls_tidy <- pivot_longer(skulls,
+  cols = c4000_BCE:c150_CE,
+  names_to = "period",
+  values_to = "max_breadth"
 )
 
-mm_tidy
+skulls_tidy
 \end{inR}
 \begin{outR}
-# A tibble: 288 × 5
-     pkg weight_oz  year type   amount
-   <dbl>     <dbl> <dbl> <chr>   <dbl>
- 1     1      1.69  2007 blue       13
- 2     1      1.69  2007 brown       7
- 3     1      1.69  2007 green      12
- 4     1      1.69  2007 orange      9
- 5     1      1.69  2007 red         7
- 6     1      1.69  2007 yellow      8
- 7     2      1.69  2007 blue        8
- 8     2      1.69  2007 brown       3
- 9     2      1.69  2007 green      13
-10     2      1.69  2007 orange     13
-11     2      1.69  2007 red        10
-12     2      1.69  2007 yellow      6
-# 276 more rows
+# A tibble: 150 × 3
+   skull period    max_breadth
+   <dbl> <chr>           <dbl>
+ 1     1 c4000_BCE         131
+ 2     1 c3300_BCE         124
+ 3     1 c1850_BCE         137
+ 4     1 c200_BCE          137
+ 5     1 c150_CE           137
+ 6     2 c4000_BCE         125
+ 7     2 c3300_BCE         133
+ 8     2 c1850_BCE         129
+ 9     2 c200_BCE          141
+10     2 c150_CE           136
+# i 140 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
-Notice a few differences with this pivoted data. There are now considerably more rows in the data, 288 vs. 48, and there are two new columns, \R{\$type} and \R{\$amount} which have replaced the six different colour type columns. In terms of the \R{pivot\_longer()} function we used, the most important argument we specified is the argument \R{cols}, as this defines which columns are going to be collapsed into a single column. Using the \R{:}, we specified a range of columns (i.e., from blue to yellow), but we could have also given it a vector of column names like so: \R{cols = c(blue, brown, green, orange, red, yellow)}.\footnote{The \textit{tidyverse} has numerous methods for selecting multiple columns that don't exist in base R.  For a rundown of each see the R documentation: \R{?tidyr\_tidy\_select}}
+Notice a few differences with this pivoted data. There are now considerably more rows in the data, 150 vs. 30, and there are two new columns, \R{\$period} and \R{\$max\_breadth} which have replaced the five different time period columns. In terms of the \R{pivot\_longer()} function we used, the most important argument we specified is the argument \R{cols}, as this defines which columns are going to be collapsed into a single column. The arguments \R{names\_to} and \R{values\_to} just specify the name of the new columns and are not strictly required, but are good practice to include.
 
-The arguments \R{names\_to} and \R{values\_to} just specify the name of the new columns and are not strictly required, but are good practice to include.
+In the above code, we used \R{:} to specify a range of columns (e.g., from c4000\_BCE to c150\_CE), but we could have instead provided a vector of column names, as shown below:
 
+\begin{inR}
+cols = c(c4000_BCE, c3300_BCE, c1850_BCE, c200_BCE, c150_CE)
+\end{inR}
+\vspace{1em}
+
+\noindent It is worth noting that the \textit{tidyverse} has numerous methods for selecting multiple columns that don't exist as part of base R. For a rundown of each see the R documentation: \R{?tidyr\_tidy\_select}. Additionally, analogous base R functions, in contrast to the \textit{tidyverse}, will usually require column names to be entered as character strings. E.g.,
+
+\begin{inR}
+cols = c("c4000_BCE", "c3300_BCE", "c1850_BCE", "c200_BCE", "c150_CE")
+\end{inR}
+\vspace{1em}
 
 \subsection{Tidy data}
 

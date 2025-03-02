@@ -47,6 +47,13 @@
     BoldItalicFont=*-BoldItalic
 ]
 
+\newfontfamily\IMFellEnglish[
+    Path=./fonts/IMFellEnglish/,
+    Extension = .ttf,
+    UprightFont=*-Regular,
+    ItalicFont=*-Italic
+]{IMFellEnglish}
+
 %==============================================================================
 % Section and Title Formatting
 %==============================================================================
@@ -127,12 +134,15 @@
 %==============================================================================
 % Decorative and Additional Font Packages
 %==============================================================================
-\usepackage{lettrine}
+\usepackage{Zallman, lettrine}
 \usepackage{GoudyIn}
 \usepackage{xcolor, colortbl}
 \usepackage{soul}
 \definecolor{crimson}{RGB}{86,8,24}
-\renewcommand{\LettrineFontHook}{\color{crimson}\GoudyInfamily{}}
+\definecolor{black}{RGB}{0,0,0}
+%\renewcommand{\LettrineFontHook}{\color{black}\GoudyInfamily{}}
+%https://tex.stackexchange.com/questions/250474/how-to-use-fancy-dropcaps-with-pdflatex
+\renewcommand{\LettrineFontHook}{\color{black}\Zallmanfamily{}}
 \LettrineTextFont{\itshape}
 \setcounter{DefaultLines}{3}%
 
