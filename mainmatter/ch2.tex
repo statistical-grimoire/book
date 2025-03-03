@@ -48,13 +48,13 @@ library(tidyverse)
 % \end{outR}
 
 \begin{outR}
-── Attaching core tidyverse packages ─────────────────────────────────────── tidyverse 2.0.0 ──
+── Attaching core tidyverse packages ──────────────────────────────── tidyverse 2.0.0 ──
 dplyr     1.1.4     readr     2.1.5
 forcats   1.0.0     stringr   1.5.1
 ggplot2   3.5.1     tibble    3.2.1
 lubridate 1.9.3     tidyr     1.3.1
 purrr     1.0.2     
-── Conflicts ───────────────────────────────────────────────────────── tidyverse_conflicts() ──
+── Conflicts ────────────────────────────────────────────────── tidyverse_conflicts() ──
 dplyr::filter() masks stats::filter()
 dplyr::lag()    masks stats::lag()
 Use the conflicted package to force all conflicts to become errors
@@ -95,6 +95,7 @@ The \textit{``gg''} in \textit{ggplot2} stands for ``grammar of graphics'' and p
 The easiest way to understand how \textit{ggplot2} works is to simply dive in and use it. Along the way, we will also learn a little bit more about R and data manipulation. However, a disclaimer is perhaps useful here:
 
 \begin{displayquote}
+\centering
 \headingfont
    This chapter contains a large variety of functions and strategies for plotting data with \textit{ggplot2}. The reader would do well to head the advice provided on page 1.
 \end{displayquote}
@@ -296,32 +297,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \label{fig:ggEx_3.pdf}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-\begin{mdframed}[style = miscFrame, frametitle = Box 2.1: An alternative way to scale]
-
-In the previous example, the logarithm was applied by creating a new column of x-axis values and plotting that. However, this means that, if you want to interpret the numbers in their original units, you need to calculate  $10^x$, which can be annoying.  
-
-\vspace{1em}
-
-An alternative strategy would be to keep the \R{\$bodywt} column as is and just scale the plot's axis itself to increment logarithmically which \R{ggplot2} will do straightforwardly.
-
-\begin{inR}
-ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
-  geom_point() +
-  scale_x_continuous(trans = "log10")
-\end{inR}
-
-\vspace{4em}
-\includegraphics[scale = 0.7]{graphics/ch2Figs/ggEx_4.pdf}
-
-\vspace{1em}
-
-The advantage of this method is you can look at a point's value on the x-axis and know immediately that it corresponds to a weight of $x$ kg. The drawback is you may end up with excessively small or large values on the axis, hence the \href{https://www.mathsisfun.com/numbers/scientific-notation.html}{\textit{scientific notation}} you see in the plot.
-
-\end{mdframed}
-\end{figure}
-
 \section{Aesthetics}
 
 Geometric objects in \textit{ggplot2}, like the point geom, all have various traits, like their size, shape, and colour that can be customized.  In the language of \textit{ggplot2}, these are referred to as \gls{aesthetics}.  For example, we can customize the points in the following way ...
@@ -339,6 +314,31 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \begin{figure}[H]
 \includegraphics[scale = 0.75]{graphics/ch2Figs/ggEx_5.pdf}
 \end{figure}
+
+\bigskip
+
+\begin{mdframed}[nobreak=true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 2.1: An alternative way to scale]
+\IMFellEnglish
+
+In the previous example, the logarithm was applied by creating a new column of x-axis values and plotting that. However, this means that, if you want to interpret the numbers in their original units, you need to calculate 10\textsuperscript{\textit{x}}, which can be annoying.  
+
+\noindent An alternative strategy would be to keep the \R{\$bodywt} column as is and just scale the plot's axis itself to increment logarithmically, which \textit{ggplot2} will do straightforwardly.
+
+\begin{inR}
+ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
+  geom_point() +
+  scale_x_continuous(trans = "log10")
+\end{inR}
+
+\vspace{1em}
+
+\includegraphics[scale = 0.7]{graphics/ch2Figs/ggEx_4.pdf}
+
+\noindent The advantage of this method is you can look at a point's value on the x-axis and know immediately that it corresponds to a weight of \textit{x} kg. The drawback is you may end up with excessively small or large values on the axis, hence the \href{https://www.mathsisfun.com/numbers/scientific-notation.html}{\textit{scientific notation}} you see in the plot.
+
+\end{mdframed}
+
+\clearpage
 
 With a bit of experimentation, it should be apparent how the arguments \R{size} and \R{stroke} work in the above example; however, the \R{shape} and \R{colour} arguments are slightly less intuitive.\footnote{If you accidentally omit the ``u'' when typing ``colour,'' \textit{ggplot2} will still understand what you mean, even though it isn't correct English.} R comes with a variety of point shapes (technically called ``plotting characters'' or ``\gls{pch}'' symbols for short) that are denoted by numbers. The various possibilities are depicted in Figure \ref{fig:points.pdf}.  In this case, number 4 is an $\times$.  Notably, the last five plotting characters (21 through 25) incorporate both a \R{colour} aesthetic for their edges and a \R{fill} aesthetic. All the other symbols only require a \R{colour} aesthetic to be specified.
 
@@ -362,25 +362,24 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \noindent
 The plotting characters shown in Figure \ref{fig:points.pdf} are just a few of the options available. For instance, by using values ranging between 32 and 127, you can display a variety of ASCII characters. Additionally, you can specify a particular character instead of providing a numeric value, e.g., \R{shape = "\&"}.
 
-\vspace{2em}
+\bigskip
 
-\begin{figure}[h]
+\begin{figure}[htbp]
 \centering
-\includegraphics[scale = 0.75]{graphics/ch2Figs/points.pdf}
+\includegraphics[scale = 0.5]{graphics/ch2Figs/pch.pdf}
 \caption{R Plotting Characters}
 \label{fig:points.pdf}
 \end{figure}
 
-\vspace{2em}
+\bigskip
 
 \noindent
 In the above examples we specified a desired colour by typing the name of a primary colour, but we are not limited to just using primary colours. R comes with a built in set of 657 differently named colours.  You can obtain the full list of colour names by running \R{colors()}.  R also has a built-in demo of these colours you can run to get a visual representation of each.  Simply run the command \R{demo("colors")}. 
 
 Alternatively, instead of typing a colour name, you can use a hexadecimal value (also referred to as a ``hex code'' or ``hex value'') that represents a specific colour. For example, the hex value \R{"\#FFC0CB"} represents the colour pink. Hexadecimal values offer the user a lot of nuance when it comes to colour selection and, in most cases, the simplest way of finding an appropriate hex value is to consult one of the many websites devoted to colour codes and colour theory (i.e., do an internet search). However, if you would like to understand the theory behind hex codes and why they are used, see Box 2.2.
 
-\begin{figure}
-    \centering
-\begin{mdframed}[style = miscFrame, frametitle = Box 2.2: Hexadecimal Notation for Colours]
+\begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 2.2: Hexadecimal Notation for Colours]
+\IMFellEnglish
 
 Hexadecimal values are simply numbers that use a base-16 counting method. In other words, in the world of hexadecimals, there are 16 different numbers that are used to count with, instead of the typical 10 numbers (0:9), you were probably raised to use. These are 
 
@@ -388,6 +387,7 @@ Hexadecimal values are simply numbers that use a base-16 counting method. In oth
 
 \begin{table}[H]
 \centering
+\IMFellEnglish
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
 \hline
 \textbf{Decimal}     & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 \\ \hline
@@ -395,16 +395,11 @@ Hexadecimal values are simply numbers that use a base-16 counting method. In oth
 \end{tabular}
 \end{table}
 
-\vspace{1em}
-
 \noindent
-Because of their larger base, a single hexadecimal digit can store more information than a conventional base-10 digit can.  For instance, if a computer stores various gradations of the colour red using just two digits, that only allows for 100 ($10 \times 10$) different reds. Using hexadecimals you can have 256 ($16 \times 16$) reds, with just two digits.  Thus, if a colour is some combination of red, green, and blue, and each is stored using two hexadecimal digits that gives you $256^3 = 16,777,216$ colours as opposed to the meagre $100^3 = 1,000,000$ you would have using the inferior base-10 counting method.
+Because of their larger base, a single hexadecimal digit can store more information than a conventional base-10 digit can.  For instance, if a computer stores various gradations of the colour red using just two digits, that only allows for 100 (10 x 10) different reds. Using hexadecimals you can have 256 (16 x 16) reds, with just two digits.  Thus, if a colour is some combination of red, green, and blue, and each is stored using two hexadecimal digits that gives you 256\textsuperscript{3} = 16,777,216 colours as opposed to the meagre 100\textsuperscript{3} = 1,000,000 you would have using the inferior base-10 counting method.
 
-\vspace{1em}
-
-To use hexadecimals to represent colour, two digits are assigned to red (RR), green (GG) and blue (BB), in that order like so \R{"\#RRGGBB"}.  Smaller values are darker, and larger values are brighter.  Consequently, black is represented as \R{"\#000000"} and white is represented as \R{"\#FFFFFF"}. Thus, if you want the ``purest'' red, you would input \R{"\#FF0000"}, the purest green would be \R{"\#00FF00"}, and the purest blue would be \R{"\#0000FF"}.
+\noindent To use hexadecimals to represent colour, two digits are assigned to red (RR), green (GG) and blue (BB), in that order like so \R{"\#RRGGBB"}.  Smaller values are darker, and larger values are brighter.  Consequently, black is represented as \R{"\#000000"} and white is represented as \R{"\#FFFFFF"}. Thus, if you want the \enquote{purest} red, you would input \R{"\#FF0000"}, the purest green would be \R{"\#00FF00"}, and the purest blue would be \R{"\#0000FF"}.
 \end{mdframed}
-\end{figure}
 
 \subsection{Aesthetics by variable}
 

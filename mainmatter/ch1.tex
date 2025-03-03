@@ -7,7 +7,7 @@ To begin with ...
 
 \section[What is R?]{What is R?}
 
-\lettrine[lines=5, realheight]{R} is a \gls{programming language}. A programming language is a means by which mortals commune with the cold, unyielding logic of machines. Humans—featherless bipedal apes known as \textit{Homo sapiens}—fashion these languages as incantations to command lifeless thralls known as computers. These soulless automatons follow rigid, unforgiving rules, devoid of will, incapable of deviating from their ordained paths \parencite{Turing1950}. Yet, as the ancients knew, the boundary between man and machine is a shadowy one. In a bygone age, computation was not formed of silicon and wires but of flesh and bone. Mortal ``computers'' labored in dimly lit chambers, chained to the drudgery of endless calculations, their toil dictated by the cryptic marks and guttural utterances of their superiors. Today, the human computer is a relic, swept away by the inexorable tide of technological sorcery, as mathematics and other arcane arts, such as reading and writing, wither further and further into obscurity, forsaken by the students of this benighted age.
+\lettrine[lines=5, realheight]{R} is a \gls{programming language}. A programming language is a means by which mortals commune with the cold, unyielding logic of machines. Humans—featherless bipedal apes known as \textit{Homo sapiens}—fashion these languages as incantations to command lifeless thralls known as computers. These soulless automatons follow rigid, unforgiving rules, devoid of will, incapable of deviating from their ordained paths \parencite{Turing1950}. Yet, as the ancients knew, the boundary between man and machine is a shadowy one. In a bygone age, computation was not formed of silicon and wires but of flesh and bone. Mortal ``computers'' laboured in dimly lit chambers, chained to the drudgery of endless calculations, their toil dictated by the cryptic marks and guttural utterances of their superiors. Today, the human computer is a relic, swept away by the inexorable tide of technological sorcery, as mathematics and other arcane arts, such as reading and writing, wither further and further into obscurity, forsaken by the students of this benighted age.
 
 In the modern day, the digital computer reigns as the unchallenged sovereign of computation. Forged from silicon and shrouded in enigmatic circuitry, this mechanical progeny bears a dark resemblance to its primate forerunner—save for one vital distinction: it is unflinchingly logical. Some mortals, perhaps out of desperation or hubris, even dare to call these constructs ``smart.'' Such claims, however, speak volumes about the feeble intellects of their human masters rather than the devices themselves. With these machines now enthroned, society has deemed it unnecessary to burden young minds with the rites of a once-venerated education. Mathematics—the ancient domain of sweat, tears, and torment—has been cast aside, its cruel trials abandoned, and with them, the rich harvest of discipline and understanding that once emerged from the crucible of suffering.
 
@@ -127,6 +127,8 @@ Upon opening the base R environment you will be shown a pane labelled \textit{R 
 
 If you type $1 + 1$ on this line and the press ``enter/return'' on your keyboard, you should see a 2 display as an output almost instantaneously beneath it.  In this case the expression ``$1 + 1$'' is a \textit{line of R code}.  Pressing enter/return, \textit{runs} or \textit{executes} this R code. The ``$2$'' is the computer's resulting \textit{output}.
 
+\clearpage
+
 \textbf{Input:}
 \begin{inR}
 1 + 1
@@ -171,21 +173,9 @@ You can now place your cursor at a line of your choosing and run that line indiv
 
 It is at this juncture that a noteworthy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All robust programming environments equip users with the ability to perform virtually any non-typing task directly from the keyboard, increasing efficiency and comfort. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, will make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{tab:key_shortcuts}.\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}
 
-\vspace{1em}
+\bigskip
 
 \input{tables/ch-1/key_shortcuts.tex}
-
-\begin{figure*}[!b]
-    \centering
-\begin{mdframed}[style = miscFrame, frametitle = Box 1.1: Are you using your keyboard properly?]
-
-When utilizing the keyboard shortcuts mentioned in section \ref{sec:key_shortcuts}, it is worth remembering that standard QWERTY-style keyboards are symmetrically designed. Modifier keys like the \textit{shift} key, \textit{control} key, and \textit{alt} key are located on both the left and right side of the board.  This is not by accident and many people - even those who have grown up with unprecedented access to computers and the internet - have never learned to appreciate the utility of this layout or use it appropriately. \\
-
-As an example, to type capital letters you should always depress the shift key on the opposite side of the keyboard to the letter. So, if you desired to type the capital letter Q, you would depress the right shift key with your right hand, and type Q with your left hand.  A similar logic applies to the other modifier keys. To use keyboard shortcut \#9 in Table \ref{tab:key_shortcuts}, you would depress the right control key (with your right hand) and use your left hand to press the 2 key.  You should not be trying to press both keys with a single hand.  Such advice might seem obvious but, given the sheer number of people who contort their wrists and fingers in grotesquely strange and painful ways, it is clearly far from being so.
-
-\end{mdframed}
-\end{figure*}
-
 
 \section{How To Code Using R: The Fundamentals}
 
@@ -202,6 +192,13 @@ With the formalities of installation, console, and scripting window out of the w
 \noindent
 Everything discussed here is done so for the purpose of acquainting you with the R language so that, when you see some R code, you are not compelled into some manner of zombiesque torpor.  As you move through the text, you will learn more advanced things and have much of this material repeated and re-explained.  Your goal in this chapter is not to become an R expert, but rather to get an intuitive grasp of R's underlying syntax and logic.
 
+\begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\bfseries\IMFellEnglish Box 1.1: Are you using your keyboard properly?]
+\IMFellEnglish
+
+When utilizing the keyboard shortcuts mentioned in section \ref{sec:key_shortcuts}, it is worth remembering that standard QWERTY-style keyboards are symmetrically designed. Modifier keys like the \textit{shift} key, \textit{control} key, and \textit{alt} key are located on both the left and right side of the board.  This is not by accident and many people - even those who have grown up with unprecedented access to computers and the internet - have never learned to appreciate the utility of this layout or use it appropriately.
+
+As an example, to type capital letters you should always depress the shift key on the opposite side of the keyboard to the letter. So, if you desired to type the capital letter Q, you would depress the right shift key with your right hand, and type Q with your left hand.  A similar logic applies to the other modifier keys. To use keyboard shortcut \#9 in Table \ref{tab:key_shortcuts}, you would depress the right control key (with your right hand) and use your left hand to press the 2 key.  You should not be trying to press both keys with a single hand.  Such advice might seem obvious but, given the sheer number of people who contort their wrists and fingers in grotesquely strange and painful ways, it is clearly far from being so.
+\end{mdframed}
 
 \subsection{Basic Arithmetic}
 
@@ -578,9 +575,7 @@ z
 [1]  1  2  3  4  5  6  7  8  9 10
 \end{outR}
 
-\begin{figure*}[!b]
-    \centering
-\begin{mdframed}[style = miscFrame, frametitle = Box 1.2: How to Use Your Colon Effectively \R{:}]
+\begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 1.2: How to Use Your Colon Effectively]
 
 In the previous examples, we used R's combine function to create a basic set of ascending numbers. The need to generate regular sequences of integers is a common occurrence in data analyses, so R provides users with a convenient means to create them using the \gls{colon operator} (\R{:}).
 
@@ -588,25 +583,19 @@ In the previous examples, we used R's combine function to create a basic set of 
 x <- 1:5
 x
 \end{inR}
-\vspace{1cm}
 \begin{outR}
 [1] 1 2 3 4 5
 \end{outR} 
 
-\vspace{\baselineskip}
-
-This can also be used in reverse and with negative values.
+\noindent This can also be used in reverse and with negative values.
 
 \begin{inR}
 3 : -5
 \end{inR}
-\vspace{1cm}
 \begin{outR}
 [1] 3  2  1  0 -1 -2 -3 -4 -5
 \end{outR}
-
 \end{mdframed}
-\end{figure*}
 
 The concept of a vector is one which will have relevance to people with a fondness of linear and matrix algebra\footnote{While I assume such people must exist, their existence is about as well-confirmed as that of the Sasquatch.} since it amounts to little more than a one-dimensional array/matrix. We can see how R handles vectors for these purposes by simply performing some mathematical operations on them.  For instance, if we add a single number to our vector, we can see that R straightforwardly adds that number to each element (i.e. position) in the vector.
 
@@ -1710,11 +1699,13 @@ Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing
 
 For both security and everyday use, it is important for users to understand that different types of files exist and that they can easily identify them. The relatively modern practice of hiding file extensions prevents new users from gaining the essential experience needed to learn this and tends to make programming a more cumbersome process than it needs to be. The reality is that file extensions are essential pieces of information for any programmer working with or creating files. Fortunately, operating systems still make it possible to display extensions and it is highly recommend that readers of this book enable that feature on their respective system:
 
+\clearpage
+
 \begin{itemize}
     \item \textbf{Windows 11:} 
     \begin{enumerate}
-    \sffamily\setlength\itemsep{-1em}
-        \item In the Windows search bar type ``File Explorer Options''
+    \ttfamily\setlength\itemsep{-1em}
+        \item In the Windows search bar type \enquote{File Explorer Options.}
         \item Open the \textit{File Explorer Options} menu. 
         \item Select the \textit{View} tab. 
         \item In the \textit{Advanced Settings} scroll area, uncheck the box labelled \textit{Hide extensions for known file types}.
@@ -1722,10 +1713,10 @@ For both security and everyday use, it is important for users to understand that
 
     \item \textbf{Macintosh:} 
     \begin{enumerate}
-    \sffamily\setlength\itemsep{-1em}
+    \ttfamily\setlength\itemsep{-1em}
         \item In a Finder window on your Mac
         \item Select \textit{Finder} at the top of the screen.
-        \item Open \textit{Settings} (``\textit{Preferences}'' on older Macs)
+        \item Open \textit{Settings} (\enquote{\textit{Preferences}} on older Macs)
         \item Select \textit{Advanced}. 
         \item Choose select \textit{Show all filename extensions}.
     \end{enumerate}

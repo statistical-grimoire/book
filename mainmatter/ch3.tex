@@ -715,18 +715,14 @@ It is worth emphasizing the utility of the pipe operator here: It allowed us to 
 
 Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe we want to know the mean amount of each type of M\&M. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from the \textit{dplyr} package in the \textit{tidyverse}. 
 
-\begin{figure}[h]
-    \centering
-\begin{mdframed}[style = miscFrame, frametitle = Box 3.1: Why is it called \textit{dplyr}?]
+\begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 3.1: Why is it called \textit{dplyr}?]
+\color{darkgray}
+\IMFellEnglish
 
-Generally, the names of R packages are relatively intuitive or are based on an initialism of some kind. The \textit{dplyr} package is an exception to that. The package's strange name is a reference to both pliers (the tool) and a family of functions based around the \R{apply()} function that we briefly used in section \ref{sec:wide_data}. The ``d'' refers to data frames. i.e., it is as if you are taking a pair of pliers to data frames.
+Generally, the names of R packages are relatively intuitive or are based on an initialism of some kind. The \textit{dplyr} package is an exception to that. The package's strange name is a reference to both pliers (the tool) and a family of functions based around the \R{apply()} function that we briefly used in section \ref{sec:wide_data}. The \enquote{d} refers to data frames. i.e., it is as if you are taking a pair of pliers to data frames.
 
-\vspace{1em}
-
-A common go-to strategy of programmers generally is to use for-loops to do much of the computational grunt work. For-loops just repeatedly execute a set of code until some condition has been satisfied. While for-loops can be used in R, its users often prefer to take a different, more efficient, ``vectorized'' approach. The goal is to use what are called \glspl{functional}. These are functions that accept another function as an input and produce a vector as output. That is precisely what the \R{apply()} function and its relatives like \R{lapply}, \R{sapply}, \R{vapply} do. R is incredibly adept at working with vectors, matrices, and arrays, and \textit{dplyr's} functions are all based around a strategy of using functionals for data manipulation.
-
+A common go-to strategy of programmers generally is to use for-loops to do much of the computational grunt work. For-loops just repeatedly execute a set of code until some condition has been satisfied. While for-loops can be used in R, its users often prefer to take a different, more efficient, \enquote{vectorized} approach. The goal is to use what are called \glspl{functional}. These are functions that accept another function as an input and produce a vector as output. That is precisely what the \R{apply()} function and its relatives like \R{lapply}, \R{sapply}, \R{vapply} do. R is incredibly adept at working with vectors, matrices, and arrays, and \textit{dplyr's} functions are all based around a strategy of using functionals for data manipulation.
 \end{mdframed}
-\end{figure}
 
 We will begin with the \R{summarise()} function which is used to create a data frame based on columns/variables in your data.
 

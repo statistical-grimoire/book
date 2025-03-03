@@ -166,6 +166,7 @@
 %==============================================================================
 \usepackage[nottoc]{tocbibind}
 \usepackage{emptypage}
+\usepackage{adjustbox}
 \usepackage{lipsum}
 % Uncomment if you want to use colored boxes
 % \usepackage{tcolorbox}
@@ -176,6 +177,9 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolourIN}{rgb}{0.95,0.95,0.92}
 \definecolor{backcolourOUT}{RGB}{255,255,255}
+\definecolor{darkgray}{RGB}{30,30,30}       % Dark gray background
+\definecolor{deepred}{RGB}{150,0,0}    % Deep red border
+\definecolor{white}{RGB}{255,255,255}  % White text
 
 % Include minted configuration for code listings
 \input{mainmatter/mintedPkg}
@@ -183,17 +187,17 @@
 % mdframed settings for custom frames
 \usepackage[framemethod=TikZ]{mdframed}
 \mdfdefinestyle{miscFrame}{%
-    frametitleaboveskip = 25pt,
-    linecolor = black,
+    frametitleaboveskip = 20pt,
+    linecolor = darkgray,
     outerlinewidth = 1pt,
-    roundcorner = 20pt,
+    roundcorner = 2pt,
     innertopmargin = \baselineskip,
     innerbottommargin = \baselineskip,
     innerrightmargin = 20pt,
     innerleftmargin = 20pt,
-    backgroundcolor = codegray,
-    skipabove = 20pt,
-    skipbelow = 20pt
+    backgroundcolor = backcolourIN,
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip
     % nobreak = true
 }
 
