@@ -72,6 +72,25 @@ ggsave('graphics/ggEx_6.pdf', units = 'cm', width = 9.5, height = 7)
 
 #-------------------------------------------------------------------------------
 
+pch_df <- tibble(points = as.character(0:25),
+       x = rep(1:13, 2),
+       y = c(rep(1, 13), rep(2, 13)))
+
+pch_df$points <- fct(pch_df$points)
+
+ggplot(pch_df, aes(x = x, y = y, shape = points, label = points)) +
+  geom_point(size = 15, stroke = 2, fill = "#2369bd") +
+  geom_text(vjust = -2, size = 8, ) +
+  scale_shape_manual(values = 0:25) +
+  # scale_y_continuous(limits = c(0, 3)) +
+  scale_y_reverse(limits = c(2.25, .65)) +
+  theme_void() +
+  theme(legend.position = "none")
+
+ggsave('pch.pdf', units = 'cm', width = 28, height = 10)
+
+#-------------------------------------------------------------------------------
+
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore))
 
