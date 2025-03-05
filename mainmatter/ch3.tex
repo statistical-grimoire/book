@@ -29,13 +29,13 @@ As noted above, there are a variety of different spreadsheet file types data cou
 ``CSV'' stands for ``comma separated values.'' It gets its name from the fact that it is, quite literally, nothing more than a generic text document that uses commas to denote a tabular (spreadsheet) structure in the data.\footnote{``Tabular'' and ``spreadsheet'' mean the same thing here.} This is easiest to see with an example. The GitHub repository for this book contains a file called \R{Max\_Breadth\_TRM\_1905.csv}. It is located in the \R{./data} directory at the following URL:
 
 \begin{center}
-\url{https://github.com/statistical-grimoire/book/tree/main/data/ch-3/Egyptian-skulls}
+\url{https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls}
 \end{center}
 
 \noindent
-It includes measurements of 150 ancient Egyptian skulls spanning five distinct historical periods: the Early Pre-Dynastic Period (\textit{circa} 4000 BCE), the Early Dynastic Period (\textit{circa} 3300 BCE), the Middle Kingdom (\textit{circa} 1850 BCE), the Ptolemaic Period (\textit{circa} 200 BCE), and the Roman Period (\textit{circa} 150 CE). The measurements, collected by \textcite{Thomson1905}, and republished by \textcite{Manly1984}, represent the maximal breadth of the skull taken in millimetres.\footnote{This is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. Also, for any Americans reading this, 1 millimetre is 0.118 barleycorns.}
+It includes measurements of 150 ancient Egyptian skulls spanning five distinct historical periods: the Early Pre-Dynastic Period (\textit{circa} 4000 BCE), the Early Dynastic Period (\textit{circa} 3300 BCE), the Middle Kingdom (\textit{circa} 1850 BCE), the Ptolemaic Period (\textit{circa} 200 BCE), and the Roman Period (\textit{circa} 150 CE). Collected by \textcite{Thomson1905} and republished by \textcite{Manly1984}, the measurements represent the skull's maximum breadth in millimetres.\footnote{Maximum breadth is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. Also, for any Americans reading this, 1 millimetre is equal to 0.118 barleycorns.}
 
-Upon opening the file within GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/ch-3/Egyptian-skulls/Max_Breadth_TRM_1905.csv}} you will see that it displays the file's contents in a fairly typical spreadsheet layout (see Table \ref{tab:skulls} for an example displaying the first 10 rows).
+Upon opening the file within GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Max_Breadth_TRM_1905.csv}} you will see that it displays the file's contents in a fairly typical spreadsheet layout (see Table \ref{tab:skulls} for an example displaying the first 10 rows).
 
 \vspace{1em}
 
@@ -60,14 +60,13 @@ skull,c4000_BCE,c3300_BCE,c1850_BCE,c200_BCE,c150_CE
 8,125,133,136,139,126
 9,131,131,136,140,132
 10,134,133,126,138,139
-...
 \end{raw}
 \caption*{Example of the \R{Max\_Breadth\_TRM\_1905.csv} data file displayed in its raw text format. Only the first ten rows are shown.}
 \end{listing}
 
 \vspace{1em}
 
-Comparing the two versions it can readily be seen how the commas are functioning. They separate individual columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, they will always have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 Comma delimited''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV... }
+Comparing the two versions it can readily be seen how the commas are functioning. They separate individual columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, they will always have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 Comma delimited''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV.}
 
 \section{Delimiters}
 
@@ -91,9 +90,8 @@ skull	c4000_BCE	c3300_BCE	c1850_BCE	c200_BCE	c150_CE
 8	125	133	136	139	126
 9	131	131	136	140	132
 10	134	133	126	138	139
-...
 \end{raw}
-\caption*{Example of the \R{Max\_Breadth\_TRM\_1905.csv} data file displayed in its raw text format if it were a .TSV file. Only the first ten rows are shown.}
+\caption*{Example of the \R{Max\_Breadth\_TRM\_1905.csv} data file displayed in its raw text format if it were a \texttt{.tsv} file. Only the first ten rows are shown.}
 \end{listing}
 \vspace{1em}
 
@@ -157,7 +155,7 @@ mean(skulls$c3300_BCE)
 
 \subsubsection{\texttt{read.csv()} vs. \texttt{read\_csv()}}
 
-To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing - it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other, but if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some big advantages. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, it stores the data as a \textit{tibble} which will be discussed later.
+To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing - it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other, but if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some big advantages. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, instead of a data frame, it stores the data as a \textit{tibble}, which will be discussed later.
 
 \subsection{Reading Other File Types into R}
 
@@ -223,7 +221,7 @@ df
 \end{outR}
 
 \noindent
-There are a number of interesting differences between tibbles and data frames, but nothing that merits any in depth discussion for a beginner with R. For the most part they behave identically. However, one difference that is worth mentioning is that, for tibbles, indexing a single column by specifying row and column values outputs a tibble.
+There are a number of interesting differences between tibbles and data frames, but nothing that merits any in depth discussion for a beginner with R. For the most part they behave identically. However, there is one difference worth mentioning: for tibbles, indexing a single column by specifying row and column values outputs a tibble. For example, suppose we use our index brackets, \R{[ ]}, to isolate the first 5 rows of column 3 in the \R{skulls} data.
 
 \begin{inR}
 skulls[1:5, 3]
@@ -240,7 +238,7 @@ skulls[1:5, 3]
 5       126
 \end{outR}
 
-\noindent This is in contrast to the traditional behaviour of a data frame which will output a vector, unless more than one column is selected.
+\noindent This seems sensible enough behaviour, but is in contrast to the traditional behaviour of R's data frame which will output a vector unless more than one column is selected.
 
 \begin{inR}
 skulls_df <- read.csv("Max_Breadth_TRM_1905.csv")
@@ -414,10 +412,10 @@ pi_df
 One thing that will be noticed is that the tibble is only displaying $\pi$ to two decimal places. However, all of the digits still exist in R's memory and any calculations you do will take those unseen digits into account. For instance, if we isolate the first row's value you can see that all the digits of $\pi$ are displayed.
 
 \begin{inR}
-pi_df$pie[1]
+print(pi_df$pie[1], digits = 16)
 \end{inR}
 \begin{outR}
-[1] 3.141593
+[1] 3.141592653589793
 \end{outR}
 
 \noindent
@@ -508,9 +506,11 @@ apply(skulls[, 2:6], MARGIN = 1, FUN = sum)
 [29] 683 663
 \end{outR}
 
-At a superficial glance, you can see that R makes it fairly easy to work with data in this kind of layout. However, we have not attempted anything terribly complicated here and all our columns are (conveniently) numeric. The reality is that this layout, which we will refer to in this book as \gls{wide data}, is \textit{not} optimal for most types of analyses and plotting. Additionally, until you are actually in a position to do those kinds of analyses, it will be difficult to convince you of the truth of this - so you will just have to take that point on faith. \textit{Wide data} spreads variables across multiple columns. In this case, you can treat of the different historical periods of the skulls (c4000\_BCE, c3300\_BCE, etc.) as a single variable in its own right. We might call this variable simply ``period.'' That is to say, c4000\_BCE is a \textit{period}, c3300\_BCE is a \textit{period}, c1850\_BCE is a \textit{period}, and so on. There is also a second variable, which we could refer to as the ``maximal breadth'' of the skulls.
+At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet, and all our columns are conveniently numeric. In reality, this layout—referred to in this book as \gls{wide data}—is not ideal for most types of analysis or visualization. That may not be immediately obvious, and until you attempt more advanced analyses, you might not be fully convinced of the truth of that. For now, you will just have to take that point on faith. 
 
-When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable ``period'' is being spread across five columns. And the variable ``maximal breadth'' is found within each of those five columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
+\textit{Wide data} spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (c4000\_BCE, c3300\_BCE, etc.) as a single variable in its own right. We might call this variable simply ``period.'' That is to say, c4000\_BCE is a \textit{period}, c3300\_BCE is a \textit{period}, c1850\_BCE is a \textit{period}, and so on. There is also a second variable, which we could refer to as the ``maximum breadth'' of the skulls.
+
+When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable ``period'' is being spread across five columns. And the variable ``maximum breadth'' is found within each of those five columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
 
 \begin{inR}
 skulls_tidy <- pivot_longer(skulls,
@@ -539,7 +539,7 @@ skulls_tidy
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
-Notice a few differences with this pivoted data. There are now considerably more rows in the data, 150 vs. 30, and there are two new columns, \R{\$period} and \R{\$max\_breadth} which have replaced the five different time period columns. In terms of the \R{pivot\_longer()} function we used, the most important argument we specified is the argument \R{cols}, as this defines which columns are going to be collapsed into a single column. The arguments \R{names\_to} and \R{values\_to} just specify the name of the new columns and are not strictly required, but are good practice to include.
+Notice a few differences with this pivoted data. There are now considerably more rows in the data, 150 vs. 30, and there are two new columns, \R{\$period} and \R{\$max\_breadth} which have replaced the five different time period columns. In terms of the \R{pivot\_longer()} function we used, the most important argument we specified is \R{cols}, as this defines which columns are going to be collapsed into a single column. The arguments \R{names\_to} and \R{values\_to} just specify the name of the new columns and are not strictly required, but are good practice to include.
 
 In the above code, we used \R{:} to specify a range of columns (e.g., from c4000\_BCE to c150\_CE), but we could have instead provided a vector of column names, as shown below:
 
@@ -548,7 +548,7 @@ cols = c(c4000_BCE, c3300_BCE, c1850_BCE, c200_BCE, c150_CE)
 \end{inR}
 \vspace{1em}
 
-\noindent It is worth noting that the \textit{tidyverse} has numerous methods for selecting multiple columns that don't exist as part of base R. For a rundown of each see the R documentation: \R{?tidyr\_tidy\_select}. Additionally, analogous base R functions, in contrast to the \textit{tidyverse}, will usually require column names to be entered as character strings. E.g.,
+\noindent It is worth noting that the \textit{tidyverse} has numerous methods for selecting multiple columns that do not exist as part of base R. For a rundown of each see the R documentation: \R{?tidyr\_tidy\_select}. Additionally, if you are operating outside of the \textit{tidyverse}, analogous base R functions, will usually require column names to be entered as character strings. E.g.,
 
 \begin{inR}
 cols = c("c4000_BCE", "c3300_BCE", "c1850_BCE", "c200_BCE", "c150_CE")
@@ -562,7 +562,7 @@ By collapsing the six colour columns into one, the data has ascended into a sacr
 \begin{minipage}{\textwidth}
 
 \begin{enumerate}[label=\Roman*.]
-\fontfamily{artemisia}\selectfont
+\IMFellEnglish
     %\setlength\itemsep{-1em}
     %\large
     \item Each variable is a column; each column is a variable.
@@ -577,104 +577,107 @@ It can be seen that the M\&M data now satisfies these three standards, as did th
 
 \section{Laying Pipe (The \texttt{|>} and \texttt{\%>\%} Operators)}
 
-One of the most significant contributions of the \textit{tidyverse} to R has been its seamless implementation of what is known as `piping' syntax, which allows for an almost otherworldly level of efficiency. However, this is not to say that piping was a concept invented entirely by the \textit{tidyverse}. Rather, the \textit{tidyverse}'s consistent and innovative use of it brought its potential to light, leading to widespread adoption within the R community. The best evidence of this influence is the integration of piping into base R as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0}, released in 2021.\footnote{Although I have no direct evidence that the \textit{tidyverse} directly motivated the addition of the pipe operator to base R, it seems unlikely to be a coincidence given the ubiquity of \R{\%>\%} and the popularity of the \textit{dplyr} package.} But what exactly is 'piping'?
+One of the most significant contributions of the \textit{tidyverse} to R has been its seamless implementation of what is known as `piping' syntax, which allows for an almost otherworldly level of efficiency. However, this is not to say that piping was a concept invented entirely by the \textit{tidyverse}. Rather, the \textit{tidyverse}'s consistent and innovative use of it brought its potential to light, leading to widespread adoption within the R community. The best evidence of this influence is the integration of piping into base R as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0}, released in 2021.\footnote{Although I have no direct evidence that the \textit{tidyverse} directly motivated the addition of the pipe operator to base R, it seems unlikely to be a coincidence given the ubiquity of \R{\%>\%} and the popularity of the \textit{dplyr} package.} But what exactly is `piping'?
 
-The essence of piping is that you are transferring the output of one thing to another. For instance, suppose we wanted to know the mean amount of different M\&M colours. We could of course insert the \R{\$amount} column into the mean function like so ...
+The essence of piping is that you are transferring the output of one thing to another. For instance, suppose we wanted to know the mean maximum breadth across all periods of skulls. We could of course insert the \R{\$max\_breadth} column into the mean function like so ...
 
 \begin{inR}
-mean(mm_tidy$amount)
+mean(skulls_tidy$max_breadth)
 \end{inR}
 \begin{outR}
-[1] 9.097222
+[1] 133.9733
 \end{outR}
 
-Alternatively, we could ``pipe'' (i.e., transfer) the \R{\$amount} column in our tidy data to the \R{mean()} function using R's pipe operator \R{|>}
+Alternatively, we could ``pipe'' (i.e., transfer) the \R{\$max\_breadth} column in our tidy data to the \R{mean()} function using R's pipe operator \R{|>}
 
 \begin{inR}
-mm_tidy$amount |> mean()
+skulls_tidy$max_breadth |> mean()
 \end{inR}
 \begin{outR}
-[1] 9.097222
+[1] 133.9733
 \end{outR}
 
 \noindent We could then send that output to something like the \R{round()} function.
 
 \begin{inR}
-mm_tidy$amount |> 
+skulls_tidy$max_breadth |>
     mean() |> 
-    round(3)
+    round(2)
 \end{inR}
 \begin{outR}
-[1] 9.097
+[1] 133.97
 \end{outR}
 
-As another example, suppose we wanted a tidy data frame that only contained the red M\&M type. The standard methodology would be to specify the data frame within the \R{filter()} function, like so ...
+As another example, suppose we wanted a tidy data frame that only contained skulls from the Middle Kingdom (circa 1850 BCE). The standard methodology would be to specify the data frame within the \R{filter()} function, like so ...
 
 \begin{inR}
-filter(mm_tidy, type == "red")
+filter(skulls_tidy, period == "c1850_BCE")
 \end{inR}
 \begin{outR}
-# A tibble: 48 × 5
-     pkg weight_oz  year type  amount
-   <dbl>     <dbl> <dbl> <chr>  <dbl>
- 1     1      1.69  2007 red        7
- 2     2      1.69  2007 red       10
- 3     3      1.69  2007 red        5
- 4     4      1.69  2007 red        7
- 5     5      1.69  2007 red        8
- 6     6      1.69  2007 red        4
- 7     7      1.69  2007 red        7
- 8     8      1.69  2007 red        8
- 9     9      1.69  2007 red        8
-10    10      1.69  2007 red       11
-# 38 more rows
+# A tibble: 30 × 3
+   skull period    max_breadth
+   <dbl> <chr>           <dbl>
+ 1     1 c1850_BCE         137
+ 2     2 c1850_BCE         129
+ 3     3 c1850_BCE         132
+ 4     4 c1850_BCE         130
+ 5     5 c1850_BCE         134
+ 6     6 c1850_BCE         140
+ 7     7 c1850_BCE         138
+ 8     8 c1850_BCE         136
+ 9     9 c1850_BCE         136
+10    10 c1850_BCE         126
+# i 20 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
 \noindent
 Alternatively, we could pipe the data into the \R{filter()} function.
 
 \begin{inR}
-mm_tidy |> filter(type == "red")
+skulls_tidy |> filter(period == "c1850_BCE")
 \end{inR}
 \begin{outR}
-# A tibble: 48 × 5
-     pkg weight_oz  year type  amount
-   <dbl>     <dbl> <dbl> <chr>  <dbl>
- 1     1      1.69  2007 red        7
- 2     2      1.69  2007 red       10
- 3     3      1.69  2007 red        5
- 4     4      1.69  2007 red        7
- 5     5      1.69  2007 red        8
- 6     6      1.69  2007 red        4
- 7     7      1.69  2007 red        7
- 8     8      1.69  2007 red        8
- 9     9      1.69  2007 red        8
-10    10      1.69  2007 red       11
-# 38 more rows
+# A tibble: 30 × 3
+   skull period    max_breadth
+   <dbl> <chr>           <dbl>
+ 1     1 c1850_BCE         137
+ 2     2 c1850_BCE         129
+ 3     3 c1850_BCE         132
+ 4     4 c1850_BCE         130
+ 5     5 c1850_BCE         134
+ 6     6 c1850_BCE         140
+ 7     7 c1850_BCE         138
+ 8     8 c1850_BCE         136
+ 9     9 c1850_BCE         136
+10    10 c1850_BCE         126
+# i 20 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
-In addition to this, suppose you did not want the \R{\$weight\_oz} or \R{\$year} column in the output. To achieve this, this output could be further piped into the \textit{tidyverse's} \R{select()} function which allows you to grab specific columns.
+In addition to this, suppose you did not want the \R{\$skull} column in the output. To achieve this, this output could be further piped into the \textit{tidyverse's} \R{select()} function which allows you to grab specific columns.
 
 \begin{inR}
-mm_tidy |> 
-  filter(type == "red") |>
-  select(pkg, type, amount)
+skulls_tidy |> 
+  filter(period == "c1850_BCE") |> 
+  select(period, max_breadth)
 \end{inR}
 \begin{outR}
-# A tibble: 48 × 3
-     pkg type  amount
-   <dbl> <chr>  <dbl>
- 1     1 red        7
- 2     2 red       10
- 3     3 red        5
- 4     4 red        7
- 5     5 red        8
- 6     6 red        4
- 7     7 red        7
- 8     8 red        8
- 9     9 red        8
-10    10 red       11
-# 38 more rows
+# A tibble: 30 × 2
+   period    max_breadth
+   <chr>           <dbl>
+ 1 c1850_BCE         137
+ 2 c1850_BCE         129
+ 3 c1850_BCE         132
+ 4 c1850_BCE         130
+ 5 c1850_BCE         134
+ 6 c1850_BCE         140
+ 7 c1850_BCE         138
+ 8 c1850_BCE         136
+ 9 c1850_BCE         136
+10 c1850_BCE         126
+# i 20 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
 Now that the logic of piping is clear, it is worth reiterating that the \R{|>} operator is a relatively new arrival in base R. Prior to this, the convention would be to use the \textit{tidyverse's} pipe operator \R{\%>\%} instead. This comes from a package called \textit{magrittr}, which contains a variety of pipes for different purposes, but the most significant of these is \R{\%>\%}. Before R version  4.1.0, \R{\%>\%} was the de facto pipe used by the R community at large. However, the recommended wisdom now (even by the keepers of the \textit{tidyverse}) is to use base R's pipe and not \textit{magrittr's}. That being said, many are unaware of this update to base R and much of the help documentation on websites like \href{https://stackoverflow.com/}{stack overflow} still use \textit{magrittr's} \R{\%>\%}. In terms of functionality, there is little meaningful difference between \R{|>} and \R{\%>\%} and all of the above code could have been written using \R{\%>\%}.
@@ -685,35 +688,40 @@ The above examples nicely show how the pipe operator works, but we should consid
 
 \subsubsection{Summarising the Data}
 
-The M\&M data we loaded earlier was of course in the wide format originally, which is rarely needed. So what we could have done instead is loaded that data in to R using \R{read\_csv}, then pipe it to the \R{pivot\_longer()} function and, if we wanted to, pipe that to the \R{select()} function to avoid keeping irrelevant columns.
+The \R{Max\_Breadth\_TRM\_1905.csv} data we loaded earlier was of course in the wide format originally, which is rarely needed. So what we could have done instead is loaded that data in to R using \R{read\_csv}, then pipe it to the \R{pivot\_longer()} function and, if we wanted to, pipe that to the \R{select()} function to avoid keeping irrelevant columns.
 
 \begin{inR}
-mm_data <- read_csv("MM_Madison_wide.csv") |>
-  pivot_longer(cols = blue:yellow, names_to = "type", values_to = "amount") |>
-  select(pkg, type, amount)
+skulls <- read_csv("Max_Breadth_TRM_1905.csv") |>
+  pivot_longer(
+    cols = c4000_BCE:c150_CE,
+    names_to = "period",
+    values_to = "max_breadth"
+  ) |>
+  select(period, max_breadth)
 
-mm_data
+skulls
 \end{inR}
 \begin{outR}
-# A tibble: 288 × 3
-     pkg type   amount
-   <dbl> <chr>   <dbl>
- 1     1 blue       13
- 2     1 brown       7
- 3     1 green      12
- 4     1 orange      9
- 5     1 red         7
- 6     1 yellow      8
- 7     2 blue        8
- 8     2 brown       3
- 9     2 green      13
-10     2 orange     13
-# 278 more rows
+# A tibble: 150 × 2
+   period    max_breadth
+   <chr>           <dbl>
+ 1 c4000_BCE         131
+ 2 c3300_BCE         124
+ 3 c1850_BCE         137
+ 4 c200_BCE          137
+ 5 c150_CE           137
+ 6 c4000_BCE         125
+ 7 c3300_BCE         133
+ 8 c1850_BCE         129
+ 9 c200_BCE          141
+10 c150_CE           136
+# i 140 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
-It is worth emphasizing the utility of the pipe operator here: It allowed us to get our data into the form we wanted without creating and calling multiple different objects in memory. Only one object was created, \R{mm\_data}. Moreover, the ``arrow-like'' notation of the pipe \R{|>} nicely shows the workflow, i.e., logic, of our code.
+It is worth emphasizing the utility of the pipe operator here: It allowed us to get our data into the form we wanted without creating and calling multiple different objects in memory. Only one object was created, \R{skulls}. Moreover, the ``arrow-like'' notation of the pipe \R{|>} nicely shows the workflow, i.e., logic, of our code.
 
-Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe we want to know the mean amount of each type of M\&M. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from the \textit{dplyr} package in the \textit{tidyverse}. 
+Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe we want to know the mean maximum breadth of each period. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from a very influential \textit{tidyverse} package called \textit{dplyr}. 
 
 \begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 3.1: Why is it called \textit{dplyr}?]
 \color{darkgray}
@@ -727,91 +735,88 @@ A common go-to strategy of programmers generally is to use for-loops to do much 
 We will begin with the \R{summarise()} function which is used to create a data frame based on columns/variables in your data.
 
 \begin{inR}
-mm_data |> 
-  summarise(m = mean(amount))
+skulls |> 
+  summarise(m = mean(max_breadth))
 \end{inR}
 
 \begin{outR}
 # A tibble: 1 × 1
       m
   <dbl>
-1  9.10
+1  134.
 \end{outR}
 
-The code we have written is telling the \R{summarise()} function to apply the \R{mean()} function to the \R{\$amount} column. When it did this, it also created a new data frame and stored that calculation as a column called \R{\$m} (though, we could have named the column whatever we wanted).\footnote{If you are obtaining a giant value like \R{9.09722222222222e0} you probably forgot to reset the significant digits back to something reasonable. See section \ref{sec:sig_digs}.}
+The code we have written is telling the \R{summarise()} function to apply the \R{mean()} function to the \R{\$max\_breadth} column. When it did this, it also created a new data frame and stored that calculation as a column called \R{\$m} (though, we could have named the column whatever we wanted).
 
-At present, none of this may not seem terribly useful; however, we can make it more useful by including the \R{group\_by()} function which will tell R to literally ``group by'' categories found in a different column or set of columns. Specifically, we can tell it to group by \R{\$type} and then summarise the data.
+At present, none of this may seem terribly useful; however, we can make it more useful by including the \R{group\_by()} function which will tell R to literally ``group by'' categories found in a different column or set of columns. Specifically, we can tell it to group by \R{\$period} and then summarise the data.
 
 \begin{inR}
-mm_data |> 
-  group_by(type) |>
-  summarise(m = mean(amount))
+skulls |> 
+  group_by(period) |> 
+  summarise(m = mean(max_breadth))
 \end{inR}
 \begin{outR}
-# A tibble: 6 × 2
-  type       m
-  <chr>  <dbl>
-1 blue   10.0 
-2 brown   7.73
-3 green  10.1 
-4 orange 11.3 
-5 red     7.75
-6 yellow  7.69
+# A tibble: 5 × 2
+  period        m
+  <chr>     <dbl>
+1 c150_CE    136.
+2 c1850_BCE  134.
+3 c200_BCE   136.
+4 c3300_BCE  132.
+5 c4000_BCE  131.
 \end{outR}
 
-We can now see the mean of each type in the data set and if we wanted, we could create another column showing how many M\&M's of each type there are in total by taking the sum of all the blue M\&M's, the sum of all the brown M\&M's and so on.
+We can now see the mean of each period in the data set and if we wanted, we could create another column, \R{\$n}, showing how many skulls there are in each period total by using the \R{length()} function to count the skulls.
 
 \begin{inR}
-mm_data |>
-  group_by(type) |>
+skulls |> 
+  group_by(period) |> 
   summarise(
-    m = mean(amount),
-    tot_type = sum(amount)
-  )
+    m = mean(max_breadth),
+    n = length(max_breadth)
+    )
 \end{inR}
 \begin{outR}
-# A tibble: 6 × 3
-  type       m tot_type
-  <chr>  <dbl>    <dbl>
-1 blue   10.0       481
-2 brown   7.73      371
-3 green  10.1       483
-4 orange 11.3       544
-5 red     7.75      372
-6 yellow  7.69      369
+# A tibble: 5 × 3
+  period        m     n
+  <chr>     <dbl> <int>
+1 c150_CE    136.    30
+2 c1850_BCE  134.    30
+3 c200_BCE   136.    30
+4 c3300_BCE  132.    30
+5 c4000_BCE  131.    30
 \end{outR}
 
-If we wanted to add in a column that represented the total amount of M\&M's across all the packages (ignoring type) we could take the sum of the entire amount column ...
+If we wanted to add in a column, \R{\$N}, that represented the total amount of skulls across all the periods we could count the number of rows in \R{\$skulls}...
 
 \begin{inR}
-sum(mm_data$amount)
+nrow(skulls)
 \end{inR}
 \begin{outR}
-[1] 2620
+[1] 150
 \end{outR}
 
 \noindent
-and include that in the \R{summarise()} function.
+... and include that in the \R{summarise()} function.
 
 \begin{inR}
-mm_data |>
-  group_by(type) |>
+skulls |> 
+  group_by(period) |> 
   summarise(
-    m = mean(amount),
-    tot_type = sum(amount),
-    tot_overall = sum(mm_data$amount)
-  )
+    m = mean(max_breadth),
+    n = length(max_breadth),
+    N = nrow(skulls)
+    )
 \end{inR}
 \begin{outR}
-# A tibble: 6 × 4
-  type       m tot_type tot_overall
-  <chr>  <dbl>    <dbl>       <dbl>
-1 blue   10.0       481        2620
-2 brown   7.73      371        2620
-3 green  10.1       483        2620
-4 orange 11.3       544        2620
-5 red     7.75      372        2620
-6 yellow  7.69      369        2620
+# A tibble: 5 × 4
+  period        m     n     N
+  <chr>     <dbl> <int> <int>
+1 c150_CE    136.    30   150
+2 c1850_BCE  134.    30   150
+3 c200_BCE   136.    30   150
+4 c3300_BCE  132.    30   150
+5 c4000_BCE  131.    30   150
 \end{outR}
 
 With the columns \R{\$tot\_type} and \R{\$tot\_overall} we could determine the percentage of each M\&M type by just doing the math inside the \R{summarise()} function.
