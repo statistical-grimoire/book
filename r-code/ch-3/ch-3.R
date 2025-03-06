@@ -39,9 +39,9 @@ skulls
 pi_df <- tibble(pie = rep(pi, 4))
 pi_df
 
-pi_df$pie[1]
+print(pi_df$pie[1], digits = 16)
 
-#options(pillar.sigfig = 16)
+# options(pillar.sigfig = 16)
 pi_df
 
 mean(skulls$c4000_BCE)
@@ -49,6 +49,92 @@ mean(skulls$c4000_BCE)
 apply(skulls, MARGIN = 2, FUN = mean)
 
 apply(skulls[, 2:6], MARGIN = 1, FUN = sum)
+
+skulls_tidy <- pivot_longer(skulls,
+  cols = c4000_BCE:c150_CE,
+  names_to = "period",
+  values_to = "max_breadth"
+)
+skulls_tidy
+
+mean(skulls_tidy$max_breadth)
+
+skulls_tidy$max_breadth |>
+  mean() |>
+  round(2)
+
+skulls_tidy |> 
+  filter(period == "c1850_BCE") |> 
+  select(period, max_breadth)
+
+skulls <- read_csv("Max_Breadth_TRM_1905.csv") |>
+  pivot_longer(
+    cols = c4000_BCE:c150_CE,
+    names_to = "period",
+    values_to = "max_breadth"
+  ) |>
+  select(period, max_breadth)
+
+skulls
+
+skull_summary <- skulls |>
+  group_by(period) |>
+  summarise(
+    m = mean(max_breadth),
+    n = length(max_breadth),
+    N = nrow(skulls),
+    m_cm = m / 10,
+    min = min(max_breadth),
+    max = max(max_breadth)
+  )
+
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity")
+
+ggsave('bar_1.pdf', units = 'cm', width = 12, height = 9)
+
+#------------------------------------------------------------------------------
+egypt_pal <- c("#E3C9A8", "#0C2C84", "#D4AF37", "#20603D", "#A23E0E")
+
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  scale_fill_discrete(type = egypt_pal)
+
+ggsave('bar_2.pdf', units = 'cm', width = 16, height = 9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

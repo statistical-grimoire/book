@@ -819,67 +819,67 @@ skulls |>
 5 c4000_BCE  131.    30   150
 \end{outR}
 
-With the columns \R{\$tot\_type} and \R{\$tot\_overall} we could determine the percentage of each M\&M type by just doing the math inside the \R{summarise()} function.
+Mathematical expressions can also be applied to columns created within the \R{summarise()} function. For example, the mean maximum breadth is calculated in millimetres, but it can be easily converted to another unit, such as centimetres, by referencing the column and performing a simple mathematical operation.
 
 \begin{inR}
-mm_data |>
-  group_by(type) |>
+skulls |> 
+  group_by(period) |> 
   summarise(
-    m = mean(amount),
-    tot_type = sum(amount),
-    tot_overall = sum(mm_data$amount),
-    percent = tot_type / tot_overall * 100
-  )
+    m = mean(max_breadth),
+    n = length(max_breadth),
+    N = nrow(skulls),
+    m_cm = m / 10
+    )
 \end{inR}
+
 \begin{outR}
-# A tibble: 6 × 5
-  type       m tot_type tot_overall percent
-  <chr>  <dbl>    <dbl>       <dbl>   <dbl>
-1 blue   10.0       481        2620    18.4
-2 brown   7.73      371        2620    14.2
-3 green  10.1       483        2620    18.4
-4 orange 11.3       544        2620    20.8
-5 red     7.75      372        2620    14.2
-6 yellow  7.69      369        2620    14.1
+# A tibble: 5 × 5
+  period        m     n     N  m_cm
+  <chr>     <dbl> <int> <int> <dbl>
+1 c150_CE    136.    30   150  13.6
+2 c1850_BCE  134.    30   150  13.4
+3 c200_BCE   136.    30   150  13.6
+4 c3300_BCE  132.    30   150  13.2
+5 c4000_BCE  131.    30   150  13.1
 \end{outR}
 
-To finish up, lets also include the maximum and minimum number of each M\&M type and store this data frame as an object called \R{mm\_summary}.
+
+To finish up, lets include the maximum and minimum size found in each period. We will also store this as an tibble called \R{skull\_summary}.
 
 \begin{inR}
-mm_summary <- mm_data |>
-  group_by(type) |>
+skull_summary <- skulls |>
+  group_by(period) |>
   summarise(
-    m = mean(amount),
-    tot_type = sum(amount),
-    tot_overall = sum(mm_data$amount),
-    percent = tot_type / tot_overall * 100,
-    min = min(amount),
-    max = max(amount)
-  )
+    m = mean(max_breadth),
+    n = length(max_breadth),
+    N = nrow(skulls),
+    m_cm = m / 10,
+    min = min(max_breadth),
+    max = max(max_breadth)
+  )\textbf{}
 
-mm_summary
+skull_summary
 \end{inR}
 
 \begin{outR}
-# A tibble: 6 × 7
-  type       m tot_type tot_overall percent   min   max
-  <chr>  <dbl>    <dbl>       <dbl>   <dbl> <dbl> <dbl>
-1 blue   10.0       481        2620    18.4     5    16
-2 brown   7.73      371        2620    14.2     3    12
-3 green  10.1       483        2620    18.4     5    17
-4 orange 11.3       544        2620    20.8     7    17
-5 red     7.75      372        2620    14.2     2    12
-6 yellow  7.69      369        2620    14.1     2    14
+# A tibble: 5 × 7
+  period        m     n     N  m_cm   min   max
+  <chr>     <dbl> <int> <int> <dbl> <dbl> <dbl>
+1 c150_CE    136.    30   150  13.6   126   147
+2 c1850_BCE  134.    30   150  13.4   126   140
+3 c200_BCE   136.    30   150  13.6   129   144
+4 c3300_BCE  132.    30   150  13.2   123   148
+5 c4000_BCE  131.    30   150  13.1   119   141
 \end{outR}
 
 \subsubsection{Plotting the Summarised Data}
 
-Now that we have all of these summary statistics in a nice convenient data frame, we can plot them. In our case, the M\&M data contains six discrete categories in the \R{\$type} column. This lends itself nicely to a bar plot, so that is what we shall make.
+Now that we have neatly organized these summary statistics in a tibble, we can visualize them. Since the \R{\$period} column contains five discrete categories, a bar plot is a natural choice for representing these data, so that is what we will create.
 
-The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the x and y axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with.\footnote{However, I should emphasize that just because everyone jumps off of a bridge, it doesn't mean you should.} Though, it is worth remembering that any of the other numeric columns could be used as well.
+The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the x and y axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with. Though, it is worth remembering that any of the other numeric columns could be used as well.
 
 \begin{inR}
-ggplot(mm_summary, aes(x = type, y = m)) +
+ggplot(skull_summary, aes(x = period, y = m)) +
   geom_bar(stat = "identity")
 \end{inR}
 
@@ -889,28 +889,30 @@ ggplot(mm_summary, aes(x = type, y = m)) +
 \includegraphics[scale = .75]{graphics/ch3Figs/bar_1.pdf}
 \end{figure}
 
-The argument \R{stat = "identity"} is simply telling \textit{ggplot2} to use the values within the \R{mm\_summary} data frame to create the bars.  We needed to specify this because \textit{ggplot2} has the ability to take the raw data directly (e.g., \R{mm\_data}) and perform its own summary calculations. However, we do not need it to do that in this particular case, hence why we included this argument.
+The argument \R{stat = "identity"} is simply telling \textit{ggplot2} to use the values within the \R{skull\_summary} tibble to create the bars.  We needed to specify this because \textit{ggplot2} has the ability to take the raw data directly (e.g., \R{skulls}) and perform its own summary calculations. However, we do not need it to do that in this particular case, hence why we included this argument.
 
-You can see that what results is a bar graph representing the mean of each M\&M type. To make this look a bit nicer, we could change the fill colour of the bars to correspond to the respective colour types.\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the x-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
+The resulting bar graph displays the mean maximum breadth for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively (see Table \ref{tab:egypt_colour}).\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the x-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
 
-First we will define our colour palette. To do this we could just specify the names of primary colours: blue, brown, green and so on. However, the actual colour of M\&M candies are slightly different than their naming scheme would suggest. The hex codes used below are much more colour accurate.
+\input{tables/ch-3/egypt_colour.tex}
+
+First we will define our colour palette.
 
 \begin{inR}
-mm_palette <- c("#2f9fd7", "#603a34", "#31ac55", "#f26f22", "#b11224", "#fff200")
+egypt_pal <- c("#E3C9A8", "#0C2C84", "#D4AF37", "#20603D", "#A23E0E")
 \end{inR}
 
 \vspace{1em}
 
-Once \R{my\_palette} has been created we can use it to adjust the colour of our bar graph.
+Once \R{egypt\_pal} has been created we can use it to adjust the colour of the bar graph.
 
 \begin{inR}
-ggplot(mm_summary, aes(x = type, y = m)) +
+ggplot(skull_summary, aes(x = period, y = m)) +
   geom_bar(
     stat = "identity",
     colour = "black",
-    aes(fill = type)
+    aes(fill = period)
   ) +
-  scale_fill_discrete(type = mm_palette)
+  scale_fill_discrete(type = egypt_pal)
 \end{inR}
 
 \vspace{2em}
@@ -919,7 +921,7 @@ ggplot(mm_summary, aes(x = type, y = m)) +
 \includegraphics[scale = .75]{graphics/ch3Figs/bar_2.pdf}
 \end{figure}
 
-Now, in addition to the mean of each M\&M type, our data frame also has information pertaining to the minimum and maximum number of M\&M's (these are columns \R{\$min} and \R{\$max} respectively). We could incorporate that information in our graph with the use of \textit{errorbars}.  Errorbars are a visual representation of our data's \textit{spread}, and the difference between the minimum and maximum represent a measure of spread called the \textit{range}.\footnote{If that isn't entirely clear, don't worry. The concept of spread as a statistical term will be explained in more detail in later chapters.}
+Now, in addition to the mean maximum breadth of each period, our data frame also has information pertaining to the minimum and maximum number of M\&M's (these are columns \R{\$min} and \R{\$max} respectively). We could incorporate that information in our graph with the use of \textit{errorbars}.  Errorbars are a visual representation of our data's \textit{spread}, and the difference between the minimum and maximum represent a measure of spread called the \textit{range}.\footnote{If that isn't entirely clear, don't worry. The concept of spread as a statistical term will be explained in more detail in later chapters.}
 
 To create errorbars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bar (\R{ymin}) and which column corresponds to the top of the errorbar (\R{ymax}).
 
