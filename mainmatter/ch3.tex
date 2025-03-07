@@ -921,9 +921,9 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \includegraphics[scale = .75]{graphics/ch3Figs/bar_2.pdf}
 \end{figure}
 
-Now, in addition to the mean maximum breadth of each period, our data frame also has information pertaining to the minimum and maximum number of M\&M's (these are columns \R{\$min} and \R{\$max} respectively). We could incorporate that information in our graph with the use of \textit{errorbars}.  Errorbars are a visual representation of our data's \textit{spread}, and the difference between the minimum and maximum represent a measure of spread called the \textit{range}.\footnote{If that isn't entirely clear, don't worry. The concept of spread as a statistical term will be explained in more detail in later chapters.}
+Now, in addition to the mean maximum breadth of each period, \R{skull\_summary} also has information pertaining to the smallest and largest measured skull (these are columns \R{\$min} and \R{\$max} respectively). We could incorporate that information in our graph with the use of \glspl{error bar}. Error bars are a visual representation of our data's \textit{spread}, and the difference between the minimum and maximum represent a classic measure of spread called the \textit{range}.\footnote{If that isn't entirely clear, don't worry. The concept of spread as a statistical term will be explained in more detail in later chapters.}
 
-To create errorbars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bar (\R{ymin}) and which column corresponds to the top of the errorbar (\R{ymax}).
+To create error bars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bar (\R{ymin}) and which column corresponds to the top of the errorbar (\R{ymax}).
 
 \begin{inR}
 ggplot(mm_summary, aes(x = type, y = m)) +
@@ -942,26 +942,26 @@ ggplot(mm_summary, aes(x = type, y = m)) +
 \includegraphics[scale = .75]{graphics/ch3Figs/bar_3.pdf}
 \end{figure}
 
-All that remains is to give the plot some new labelling. In other words, we should add a better x and y axis title and we should also put the x-axis labels in Title Case. The legend can be removed as well since it is redundant with the labels on the x-axis.
+All that remains is to update the plot’s labelling. Specifically, we should provide clearer titles for the $x$- and $y$-axes and remove the underscore (\_) in the $x$-axis labels. The legend can also be removed as it is redundant with the labelling.
 
-To change the current labels ``blue'', ``brown'', ``green'' and so on to Title Case, we can use the function \R{scale\_x\_discrete()} and use its \R{labels} argument. We just have to give it a character vector containing the new labelling (FYI: make sure you specify them in the correct order).
+To change the current labels ``c150\_CE'', ``c1850\_BCE'', ``c200\_BCE'' and so on, we can use the function \R{scale\_x\_discrete()} and use its \R{labels} argument. We just have to give it a character vector containing the new labelling in the correct order.
 
 To remove the legend, there are different methods you could employ. In this case, since we only have the fill aesthetic mapped, it is easy enough to just add \R{guide = "none"} to the \R{scale\_fill\_discrete()} function.
 
 \begin{inR}
-ggplot(mm_summary, aes(x = type, y = m)) +
+ggplot(skull_summary, aes(x = period, y = m)) +
   geom_bar(
     stat = "identity",
     colour = "black",
-    aes(fill = type)
+    aes(fill = period)
   ) +
-  scale_fill_discrete(type = mm_palette, guide = "none") +
+  scale_fill_discrete(type = egypt_pal, guide = "none") +
   geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
   scale_x_discrete(
-    labels = c("Blue", "Brown", "Green", "Orange", "Red", "Yellow")
+    labels = c("c150 CE", "c1850 BCE", "c200 BCE", "c3300 BCE", "c4000 BCE")
   ) +
-  xlab("M&M Colour") +
-  ylab("M&M Amount")
+  xlab("Period") +
+  ylab("Maximum Breadth (mm)")
 \end{inR}
 
 \vspace{2em}
@@ -970,11 +970,11 @@ ggplot(mm_summary, aes(x = type, y = m)) +
 \includegraphics[scale = .75]{graphics/ch3Figs/bar_4.pdf}
 \end{figure}
 
-Having read both chapter 2 and now this current chapter, there is one key aspect of plotting that has not been dealt with yet. Specifically, how do you adjust the order of the categories? Suppose we wanted the the colours, going from left to right, to be ``red'', ``orange'', ``yellow'', ``green'', ``blue'', and ``brown''. How would we make that happen? That is where the concept of factors becomes important.
+After reading Chapter 2 and this chapter, one key aspect of plotting remains unaddressed: how to adjust the order of categories. Currently, the time periods are not arranged chronologically (left to right) as one might expect. How can we fix this? This is where the concept of factors becomes important.
 
 \section{Factors}
 
-In statistics we often refer to a categorical variable as a \gls{factor},\footnote{Independent, manipulated, and predictor variables are given this label when they have a fixed set of categories or are continuous but only take on a limited number of discrete values. If this is unclear now, don't worry — variable types will be explained in more detail in a later chapter.} and factors have different \glspl{level}.  For instance, in our tidy data (\R{mm\_data}) the variable \R{\$type} could be considered a factor. Each specified colour in that column is a level of that factor: blue is its own  level, brown is its own level, green is its own level, and so on. In other words, in the M\&M data, the ``type'' factor has 6 levels.
+In statistics we often refer to a categorical variable as a \gls{factor},\footnote{Independent, manipulated, and predictor variables are often given this label when they have a fixed set of categories or are continuous but only take on a limited number of discrete values. If this is unclear now, don't worry — variable types will be explained in more detail in a later chapter.} and factors have different \glspl{level}.  For instance, in our tidy data (\R{skulls\_tidy}) the variable \R{\$period} could be considered a factor. The individual periods (e.g., c4000 BCE, c3300 BCE, etc.) in that column are each a level of that factor: c4000 BCE is its own level, c3300 BCE is its own level, c1850 BCE is its own level, and so on. In other words, in the \R{skulls\_tidy} data, the factor named ``period'' has 5 levels.
 
 To summarise, you can treat the term ``factor'' as synonymous with the terms ``column'' or ``variable.'' And you can treat the term ``level'' as synonymous with the term ``category.'' Though, this only applies to tidy data, not wide data.
 {
@@ -985,80 +985,78 @@ To summarise, you can treat the term ``factor'' as synonymous with the terms ``c
 \end{itemize}
 }
 
-If we examine \R{mm\_data}:
+If we examine \R{skulls\_tidy}:
 
 \begin{inR}
 mm_data
 \end{inR}
 \begin{outR}
-# A tibble: 288 × 3
-     pkg type   amount
-   <dbl> <chr>   <dbl>
- 1     1 blue       13
- 2     1 brown       7
- 3     1 green      12
- 4     1 orange      9
- 5     1 red         7
- 6     1 yellow      8
- 7     2 blue        8
- 8     2 brown       3
- 9     2 green      13
-10     2 orange     13
-# 278 more rows
+# A tibble: 150 × 3
+   skull period    max_breadth
+   <dbl> <chr>           <dbl>
+ 1     1 c4000_BCE         131
+ 2     1 c3300_BCE         124
+ 3     1 c1850_BCE         137
+ 4     1 c200_BCE          137
+ 5     1 c150_CE           137
+ 6     2 c4000_BCE         125
+ 7     2 c3300_BCE         133
+ 8     2 c1850_BCE         129
+ 9     2 c200_BCE          141
+10     2 c150_CE           136
+# i 140 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
 \noindent
-You can see that the output is telling us that the \R{\$type} column is a character vector (notice the \R{<chr>}). In other words, R does not know that ``blue'', ``brown'', ``green'', etc. are categories. It just sees 278 individual character values in that particular column.
-
-\subsection{Factoring a Column}
-
-For the purpose of plotting and analyses, it is important that R understands ``blue'', ``brown'', ``green'', etc. are levels of a factor (i.e., it is important that it treats these as categories). We can easily tell R that a particular column is a factor using the function \R{factor()}.\footnote{Technically, when we use this function we are replacing an existing column with a new column that happens to be a factor. We are not really ``telling'' R it is a factor, we are ``creating'' a factor - but that's just a nitpicky semantic issue.}
+You can see that the output is telling us that the \R{\$period} column is a character vector (notice the \R{<chr>}). In other words, R does not know that \R{c4000\_BCE}, \R{c3300\_BCE}, \R{c1850\_BCE}, etc. are categories. It just sees 150 individual character values in that particular column. For the purpose of plotting and analyses, it is important that R understands that these are levels of a factor (i.e., it is important that it treats these as categories). We can easily tell R that a particular column is a factor using the function \R{factor()}.\footnote{Technically, when we use this function we are replacing an existing column with a new column that happens to be a factor. We are not really ``telling'' R it is a factor, we are ``creating'' a factor - but that's just a nitpicky semantic issue.}
 
 \begin{inR}
-mm_data$type <- factor(mm_data$type)
+skulls_tidy$period <- factor(skulls_tidy$period)
 
-mm_data
+skulls_tidy
 \end{inR}
 \begin{outR}
-# A tibble: 288 × 3
-     pkg type   amount
-   <dbl> <fct>   <dbl>
- 1     1 blue       13
- 2     1 brown       7
- 3     1 green      12
- 4     1 orange      9
- 5     1 red         7
- 6     1 yellow      8
- 7     2 blue        8
- 8     2 brown       3
- 9     2 green      13
-10     2 orange     13
-# 278 more rows
+# A tibble: 150 × 3
+   skull period    max_breadth
+   <dbl> <fct>           <dbl>
+ 1     1 c4000_BCE         131
+ 2     1 c3300_BCE         124
+ 3     1 c1850_BCE         137
+ 4     1 c200_BCE          137
+ 5     1 c150_CE           137
+ 6     2 c4000_BCE         125
+ 7     2 c3300_BCE         133
+ 8     2 c1850_BCE         129
+ 9     2 c200_BCE          141
+10     2 c150_CE           136
+# i 140 more rows
+# i Use `print(n = ...)` to see more rows
 \end{outR}
 
 
 \noindent
-Notice that now the column \R{\$type} is now listed as \R{<fct>}, which stands for ``factor.''  Moreover, if we isolate the column after doing this ...
+Notice that now the column \R{\$period} is now listed as \R{<fct>}, which stands for ``factor.''  Moreover, if we isolate the column after doing this ...
 
 \begin{inR}
-mm_data$type
+skulls_tidy$period
 \end{inR}
 \begin{outR}
 ...
-[261] green  orange red    yellow blue   brown  green  orange red    yellow
-[271] blue   brown  green  orange red    yellow blue   brown  green  orange
-[281] red    yellow blue   brown  green  orange red    yellow
-Levels: blue brown green orange red yellow
+[136] c4000_BCE c3300_BCE c1850_BCE c200_BCE  c150_CE  
+[141] c4000_BCE c3300_BCE c1850_BCE c200_BCE  c150_CE  
+[146] c4000_BCE c3300_BCE c1850_BCE c200_BCE  c150_CE  
+Levels: c150_CE c1850_BCE c200_BCE c3300_BCE c4000_BCE
 \end{outR}
 
 \noindent
-You can see at the bottom of the output, that the six levels of our factor have been specified. Generally speaking, to view the levels of a factor, a better practice is to use the \R{levels()} function.
+You can see at the bottom of the output, that the five levels of our factor have been specified. Generally speaking, to view the levels of a factor, a better practice is to use the \R{levels()} function.
 
 \begin{inR}
-levels(mm_data$type)
+levels(skulls_tidy$period)
 \end{inR}
 \begin{outR}
-[1] "blue"   "brown"  "green"  "orange" "red"    "yellow"
+[1] "c150_CE" "c1850_BCE" "c200_BCE" "c3300_BCE" "c4000_BCE"
 \end{outR}
 
 \subsection{Ordering Levels}

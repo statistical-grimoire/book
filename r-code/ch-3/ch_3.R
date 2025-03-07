@@ -106,12 +106,40 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 
 ggsave('bar_2.pdf', units = 'cm', width = 16, height = 9)
 
+#------------------------------------------------------------------------------
 
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  scale_fill_discrete(type = egypt_pal) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25)
 
+ggsave('bar_3.pdf', units = 'cm', width = 16, height = 9)
 
+#------------------------------------------------------------------------------
 
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  scale_fill_discrete(type = egypt_pal, guide = "none") +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  scale_x_discrete(
+    labels = c("c150 CE", "c1850 BCE", "c200 BCE", "c3300 BCE", "c4000 BCE")
+  ) +
+  xlab("Period") +
+  ylab("Maximum Breadth (mm)")
 
+ggsave("bar_4.pdf", units = "cm", width = 16, height = 9)
 
+skulls_tidy$period <- factor(skulls_tidy$period)
+
+levels(skulls_tidy$period)
 
 
 
