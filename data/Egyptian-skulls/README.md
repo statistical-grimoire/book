@@ -126,6 +126,8 @@ Due to the fragile nature of the specimens, Thomson and Randall-MacIver note tha
 
 $$\frac{\text{Max. length} \times \text{Max. Breadth} \times \text{Basi-bregmatic Height}}{2} \div 1175$$
 
+Although units are not explicitly stated, the scale of the values suggests they are intended to represent cubic centimetres.
+
 For further explanation of the remaining measurements, see Thomson and Randall-MacIver (1905).
 
 It is important to emphasize that Thomson and Randall-MacIver’s work reflects 19th-century anthropological standards and assumptions, which differ substantially from contemporary knowledge and best practices. Users should be mindful of this historical context and remain aware of potential biases or limitations in the sampling strategies, measurement techniques, and interpretive frameworks used in the original study.
