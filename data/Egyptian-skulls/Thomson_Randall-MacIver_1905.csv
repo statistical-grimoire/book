@@ -1,151 +1,1566 @@
-year,year_numeric,mb,bh,bl,nh
-c4000 BCE,-4000,131,138,89,49
-c4000 BCE,-4000,125,131,92,48
-c4000 BCE,-4000,131,132,99,50
-c4000 BCE,-4000,119,132,96,44
-c4000 BCE,-4000,136,143,100,54
-c4000 BCE,-4000,138,137,89,56
-c4000 BCE,-4000,139,130,108,48
-c4000 BCE,-4000,125,136,93,48
-c4000 BCE,-4000,131,134,102,51
-c4000 BCE,-4000,134,134,99,51
-c4000 BCE,-4000,129,138,95,50
-c4000 BCE,-4000,134,121,95,53
-c4000 BCE,-4000,126,129,109,51
-c4000 BCE,-4000,132,136,100,50
-c4000 BCE,-4000,141,140,100,51
-c4000 BCE,-4000,131,134,97,54
-c4000 BCE,-4000,135,137,103,50
-c4000 BCE,-4000,132,133,93,53
-c4000 BCE,-4000,139,136,96,50
-c4000 BCE,-4000,132,131,101,49
-c4000 BCE,-4000,126,133,102,51
-c4000 BCE,-4000,135,135,103,47
-c4000 BCE,-4000,134,124,93,53
-c4000 BCE,-4000,128,134,103,50
-c4000 BCE,-4000,130,130,104,49
-c4000 BCE,-4000,138,135,100,55
-c4000 BCE,-4000,128,132,93,53
-c4000 BCE,-4000,127,129,106,48
-c4000 BCE,-4000,131,136,114,54
-c4000 BCE,-4000,124,138,101,46
-c3300 BCE,-3300,124,138,101,48
-c3300 BCE,-3300,133,134,97,48
-c3300 BCE,-3300,138,134,98,45
-c3300 BCE,-3300,148,129,104,51
-c3300 BCE,-3300,126,124,95,45
-c3300 BCE,-3300,135,136,98,52
-c3300 BCE,-3300,132,145,100,54
-c3300 BCE,-3300,133,130,102,48
-c3300 BCE,-3300,131,134,96,50
-c3300 BCE,-3300,133,125,94,46
-c3300 BCE,-3300,133,136,103,53
-c3300 BCE,-3300,131,139,98,51
-c3300 BCE,-3300,131,136,99,56
-c3300 BCE,-3300,138,134,98,49
-c3300 BCE,-3300,130,136,104,53
-c3300 BCE,-3300,131,128,98,45
-c3300 BCE,-3300,138,129,107,53
-c3300 BCE,-3300,123,131,101,51
-c3300 BCE,-3300,130,129,105,47
-c3300 BCE,-3300,134,130,93,54
-c3300 BCE,-3300,137,136,106,49
-c3300 BCE,-3300,126,131,100,48
-c3300 BCE,-3300,135,136,97,52
-c3300 BCE,-3300,129,126,91,50
-c3300 BCE,-3300,134,139,101,49
-c3300 BCE,-3300,131,134,90,53
-c3300 BCE,-3300,132,130,104,50
-c3300 BCE,-3300,130,132,93,52
-c3300 BCE,-3300,135,132,98,54
-c3300 BCE,-3300,130,128,101,51
-c1850 BCE,-1850,137,141,96,52
-c1850 BCE,-1850,129,133,93,47
-c1850 BCE,-1850,132,138,87,48
-c1850 BCE,-1850,130,134,106,50
-c1850 BCE,-1850,134,134,96,45
-c1850 BCE,-1850,140,133,98,50
-c1850 BCE,-1850,138,138,95,47
-c1850 BCE,-1850,136,145,99,55
-c1850 BCE,-1850,136,131,92,46
-c1850 BCE,-1850,126,136,95,56
-c1850 BCE,-1850,137,129,100,53
-c1850 BCE,-1850,137,139,97,50
-c1850 BCE,-1850,136,126,101,50
-c1850 BCE,-1850,137,133,90,49
-c1850 BCE,-1850,129,142,104,47
-c1850 BCE,-1850,135,138,102,55
-c1850 BCE,-1850,129,135,92,50
-c1850 BCE,-1850,134,125,90,60
-c1850 BCE,-1850,138,134,96,51
-c1850 BCE,-1850,136,135,94,53
-c1850 BCE,-1850,132,130,91,52
-c1850 BCE,-1850,133,131,100,50
-c1850 BCE,-1850,138,137,94,51
-c1850 BCE,-1850,130,127,99,45
-c1850 BCE,-1850,136,133,91,49
-c1850 BCE,-1850,134,123,95,52
-c1850 BCE,-1850,136,137,101,54
-c1850 BCE,-1850,133,131,96,49
-c1850 BCE,-1850,138,133,100,55
-c1850 BCE,-1850,138,133,91,46
-c200 BCE,-200,137,134,107,54
-c200 BCE,-200,141,128,95,53
-c200 BCE,-200,141,130,87,49
-c200 BCE,-200,135,131,99,51
-c200 BCE,-200,133,120,91,46
-c200 BCE,-200,131,135,90,50
-c200 BCE,-200,140,137,94,60
-c200 BCE,-200,139,130,90,48
-c200 BCE,-200,140,134,90,51
-c200 BCE,-200,138,140,100,52
-c200 BCE,-200,132,133,90,53
-c200 BCE,-200,134,134,97,54
-c200 BCE,-200,135,135,99,50
-c200 BCE,-200,133,136,95,52
-c200 BCE,-200,136,130,99,55
-c200 BCE,-200,134,137,93,52
-c200 BCE,-200,131,141,99,55
-c200 BCE,-200,129,135,95,47
-c200 BCE,-200,136,128,93,54
-c200 BCE,-200,131,125,88,48
-c200 BCE,-200,139,130,94,53
-c200 BCE,-200,144,124,86,50
-c200 BCE,-200,141,131,97,53
-c200 BCE,-200,130,131,98,53
-c200 BCE,-200,133,128,92,51
-c200 BCE,-200,138,126,97,54
-c200 BCE,-200,131,142,95,53
-c200 BCE,-200,136,138,94,55
-c200 BCE,-200,132,136,92,52
-c200 BCE,-200,135,130,100,51
-c150 CE,150,137,123,91,50
-c150 CE,150,136,131,95,49
-c150 CE,150,128,126,91,57
-c150 CE,150,130,134,92,52
-c150 CE,150,138,127,86,47
-c150 CE,150,126,138,101,52
-c150 CE,150,136,138,97,58
-c150 CE,150,126,126,92,45
-c150 CE,150,132,132,99,55
-c150 CE,150,139,135,92,54
-c150 CE,150,143,120,95,51
-c150 CE,150,141,136,101,54
-c150 CE,150,135,135,95,56
-c150 CE,150,137,134,93,53
-c150 CE,150,142,135,96,52
-c150 CE,150,139,134,95,47
-c150 CE,150,138,125,99,51
-c150 CE,150,137,135,96,54
-c150 CE,150,133,125,92,50
-c150 CE,150,145,129,89,47
-c150 CE,150,138,136,92,46
-c150 CE,150,131,129,97,44
-c150 CE,150,143,126,88,54
-c150 CE,150,134,124,91,55
-c150 CE,150,132,127,97,52
-c150 CE,150,137,125,85,57
-c150 CE,150,129,128,81,52
-c150 CE,150,140,135,103,48
-c150 CE,150,147,129,87,48
-c150 CE,150,136,133,97,51
+table,start_date,end_date,start_era,end_era,dynasty,location,sex,gol,ool,bbh,mb,biaurb,bizygb,bnl,bal,nah,nh,nw,fai,ga,po,cc
+1,,,BC,BC,Early Predynastic,Abydos,Male,178,177,138,131,113,120,98,89,68,49,23,91,76,A,1370
+1,,,BC,BC,Early Predynastic,Abydos,Male,179,179,131,125,111,121,97,92,67,48,23,95,73,B,1250
+1,,,BC,BC,Early Predynastic,Abydos,Male,185,185,134,136,112,116,,,68,47,24,,,,1430
+1,,,BC,BC,Early Predynastic,Abydos,Male,183,180,132,131,112,122,103,99,64,50,26,96,74.5,C,1350
+1,,,BC,BC,Early Predynastic,Abydos,Male,169,169,132,119,106,119,100,96,64,44,25,96,74,B C,1130
+1,,,BC,BC,Early Predynastic,Abydos,Male,202,202,143,136,119,130,107,100,75,54,24,93,73.5,A,1670
+1,,,BC,BC,Early Predynastic,Abydos,Male,185,185,,114,,,,,68,47,23,,,,
+1,,,BC,BC,Early Predynastic,Abydos,Male,175,175,,128,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,Abydos,Male,190,190,,146,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,Abydos,Male,188,188,,127,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,Abydos,Male,177,177,122,130,,,,,,,,,,,1195
+1,,,BC,BC,Early Predynastic,Abydos,Male,192,189,,136,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,Abydos,Male,187,187,137,138,114,123,96,89,76,56,25,93,70.5,A,1500
+1,,,BC,BC,Early Predynastic,Abydos,Male,176,174,134,132,100,,98,86,65,,,88,79.5,- A,1325
+1,,,BC,BC,Early Predynastic,Abydos,Male,192,192,130,139,115,125,103,108,72,48,28,105,66,E F,1480
+1,,,BC,BC,Early Predynastic,Abydos,Male,187,187,,132,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,Abydos,Male,187,185,136,125,105,119,101,93,66,48,25,92,76,A,1350
+1,,,BC,BC,Early Predynastic,Abydos,Male,181,177,134,131,112,125,102,102,76,51,25,100,68,C,1350
+1,,,BC,BC,Early Predynastic,Abydos,Male,194,191,134,134,127,,109,99,72,51,26,91,77.5,A,1480
+1,,,BC,BC,Early Predynastic,Abydos,Male,191,189,,130,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,161,161,,129,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,181,180,138,129,,123,106,95,65,50,24,90,80,A,1370
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,188,188,138,135,,113,,,67,47,26,,,,1490
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,169,,,140,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,189,188,,138,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,189,189,,125,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,182,184,,128,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,195,193,,,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,193,191,140.5,131,,128,,,,,,,,,1495
+1,,,BC,BC,Early Predynastic,EL Amrah,Male,190,188,,125,,,,,,,,,,,
+1,,,BC,BC,Early Predynastic,Hou,Male,177,176,121,134,116,125,96,95,72,53,25,99,68,B C,1220
+1,,,BC,BC,Early Predynastic,Hou,Male,189,188,129,126,111,126,105,109,68,51,26,104,68,F,1305
+1,,,BC,BC,Early Predynastic,Hou,Male,190,188,142,133,114,,106,107,64,,,101,71,E,1525
+1,,,BC,BC,Early Predynastic,Hou,Male,180,179,136,132,121,129,102,100,66,50,27,98,72,C D,1375
+1,,,BC,BC,Early Predynastic,Hou,Male,181,179,140,141,114,125,102,100,72,51,27,98,70,C,1520
+1,,,BC,BC,Early Predynastic,Hou,Male,174,171,134,131,116,130,99,97,69,54,22,98,71,C,1300
+1,,,BC,BC,Early Predynastic,Hou,Male,178,178,137,135,112,122,109,103,74,50,24,94.5,74,A B,1400
+1,,,BC,BC,Early Predynastic,Hou,Male,176,173,133,132,112,126,98,93,72,53,26,95,71.5,A B,1315
+1,,,BC,BC,Early Predynastic,Hou,Male,181,179,136,139,116,,98,96,70,50,27,98,70,,1460
+1,,,BC,BC,Early Predynastic,Hou,Male,185,183,131,132,111,124,104,101,68,49,26,97,73,C,1360
+1,,,BC,BC,Early Predynastic,Hou,Male,184,184,133,126,114,125,103,102,66,51,28,99,72,D,1310
+2,,,BC,BC,Early Predynastic,Hou,Male,186,185,135,135,116,125,105,103,66,47,26,98,73,D,1440
+2,,,BC,BC,Early Predynastic,Hou,Male,176,175,124,134,110,123,96,93,74,53,23,97,69,A B,1245
+2,,,BC,BC,Early Predynastic,Hou,Male,187,186,134,128,,,110,103,67,50,27,94,77,B C,1360
+2,,,BC,BC,Early Predynastic,Hou,Male,181,181,130,130,117,129,103,104,69,49,25,101,69.5,D E,1300
+2,,,BC,BC,Early Predynastic,Hou,Male,185,182,135,138,121,136,104,100,78,55,27,96,70,A B,1470
+2,,,BC,BC,Early Predynastic,Hou,Male,184,184,132,128,106,117,97,93,72,53,25,96,70.5,A B,1320
+2,,,BC,BC,Early Predynastic,Hou,Male,184,184,129,127,116,131,102,106,63,48,28,104,68.5,F,1290
+2,,,BC,BC,Early Predynastic,Hou,Male,185,183,136,131,117,129,111,114,73,54,27,103,68.5,E F,1400
+2,,,BC,BC,Early Predynastic,Hou,Male,180,179,138,124,114,120,101,101,62,46,25,100,71.5,D E,1310
+2,,,BC,BC,Early Predynastic,Hou,Male,181,180,139,131,113,121,98,92,71,53,24,94,73,A,1400
+2,,,BC,BC,Early Predynastic,Hou,Male,183,182,138,131,111,126,102,98,73,49,24,96,71,B,1410
+2,,,BC,BC,Early Predynastic,Hou,Male,183,180,140,137,127,133,103,103,74,52,22,100,69,C,1495
+2,,,BC,BC,Early Predynastic,Hou,Male,184,180,125,128,112,121,98,95,64,44,24,97,72.5,C,1250
+2,,,BC,BC,Late Predynastic,El Amrah,Male,185,185,138,124,115,122,102,101,67,48,26,99,71,D,1350
+2,,,BC,BC,Late Predynastic,El Amrah,Male,178,176,,138,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,189,187,134,133,,129,99,97,65,48,30,98,72,C D,1430
+2,,,BC,BC,Late Predynastic,El Amrah,Male,183,182,,142,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,183,183,,141,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,194,194,,134,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,189,189,134,138,,120,100,98,67,45,26,98,71,C,1490
+2,,,BC,BC,Late Predynastic,El Amrah,Male,190,190,,132,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,190,186,129,148,130,134,100,104,69,51,24,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,172,171,124,126,110,117,98,95,61,45,27,97,74,C D,1140
+2,,,BC,BC,Late Predynastic,El Amrah,Male,191,187,136,135,115,128,104,98,71,52,25,94,74,A B,1490
+2,,,BC,BC,Late Predynastic,El Amrah,Male,185,184,145,132,119,130,102,100,71,54,23,98,70.5,C,1505
+2,,,BC,BC,Late Predynastic,El Amrah,Male,187,185,,134,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,187,189,130,133,,132,103,102,71,48,25,99,70,C D,1375
+2,,,BC,BC,Late Predynastic,El Amrah,Male,176,176,134,131,112,119,103,96,71,50,25,93,74.5,A B,1315
+2,,,BC,BC,Late Predynastic,El Amrah,Male,189,186,137,133,,,102,,,,,,,,1465
+2,,,BC,BC,Late Predynastic,El Amrah,Male,191,189,,134,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,171,172,,120,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,173,173,125,133,111,119,95,94,70,46,24,99,69,C,1220
+2,,,BC,BC,Late Predynastic,El Amrah,Male,191,190,120,144,,,99,,,,,,,,1400
+2,,,BC,BC,Late Predynastic,El Amrah,Male,196,195,,132,,,,,,,,,,,
+2,,,BC,BC,Late Predynastic,El Amrah,Male,183,183,136,136,,,,,,,,,,,1440
+2,,,BC,BC,Late Predynastic,El Amrah,Male,185,182,131,131,,127,104,98,67,,,94,75,B,1350
+2,,,BC,BC,Late Predynastic,El Amrah,Male,187,187,130,122,,118.5,103,91,66.5,49,25,88,79.5,- A,1260
+2,,,BC,BC,Late Predynastic,El Amrah,Male,194.5,192,133,132,,124,104,104,74,48,23.5,100,69,C,1450
+2,,,BC,BC,Late Predynastic,El Amrah,Male,193,193,128,131,,,,,,,,,,,1380
+2,,,BC,BC,Late Predynastic,El Amrah,Male,196,194,132,136,,126,,,,,,,,,1500
+2,,,BC,BC,Late Predynastic,El Amrah,Male,188,187,134,129,,,,,,,,,,,1380
+2,,,BC,BC,Late Predynastic,Hou,Male,179,178,,132,111,119,101,96,66,50,23,95,74,B,
+2,,,BC,BC,Late Predynastic,Hou,Male,186,184,136,133,116,127,107,103,72,53,27,96,72.5,B C,1430
+2,,,BC,BC,Late Predynastic,Hou,Male,185,183,139,131,118,127,105,98,70,51,26,93,75,A B,1430
+2,,,BC,BC,Late Predynastic,Hou,Male,187,185,136,131,114,124,102,99,77,56,25,97,69,A B,1420
+2,,,BC,BC,Late Predynastic,Hou,Male,194,194,134,138,109,116,100,98,68,49,24,98,71,C,1525
+2,,,BC,BC,Late Predynastic,Hou,Male,190,189,136,130,116,127,107,104,75,53,25,97,71,B C,1430
+2,,,BC,BC,Late Predynastic,Hou,Male,182,180,128,131,111,126,99,98,63,45,25,99,71,D,1300
+3,,,BC,BC,Late Predynastic,Hou,Male,183,182,129,138,116,126,105,107,73,53,25,103,68,E F,1385
+3,,,BC,BC,Late Predynastic,Hou,Male,181,179,131,123,,125,101,101,74,51,22,100,68,C,1240
+3,,,BC,BC,Late Predynastic,Hou,Male,182,180,129,130,115,126,102,105,67,47,25,103,68,E F,1300
+3,,,BC,BC,Late Predynastic,Hou,Male,182,179,,132,,,,,,48,24,,,,
+3,,,BC,BC,Late Predynastic,Hou,Male,181,179,130,134,117,127,101,93,70,54,20,92,74.5,A,1340
+3,,,BC,BC,Late Predynastic,Hou,Male,182,181,136,137,113,,99,106,69,49,24,107,64.5,F G,1440
+3,,,BC,BC,Late Predynastic,Hou,Male,183,183,131,126,115,124,103,100,70,48,27,97,71.5,B C,1285
+3,,,BC,BC,Late Predynastic,Hou,Male,189,187,136,135,119,,107,97,67,52,25,91,79,A,1475
+3,,,BC,BC,Late Predynastic,Hou,Male,196,193,,134,,,,,,,,,,,
+3,,,BC,BC,Late Predynastic,Hou,Male,185,184,126,129,113,125,94,91,70,50,25,97,69.5,B,1280
+3,,,BC,BC,Late Predynastic,Hou,Male,193,192,139,134,119,131,103,101,69,49,29,98,71.5,C D,1530
+3,,,BC,BC,Late Predynastic,Hou,Male,179,177,134,131,119,134,99,90,74,53,27,91,73,- A,1340
+3,,,BC,BC,Late Predynastic,Hou,Male,188,187,,131,116,125,,,,49,27,,,,
+3,,,BC,BC,Late Predynastic,Hou,Male,173,172,130,132,111,121,100,104,69,50,21,104,66.5,E,1260
+3,,,BC,BC,Late Predynastic,Hou,Male,188,187,129,135,115,129,,,,,,,,,1390
+3,,,BC,BC,Late Predynastic,Hou,Male,185,182,132,130,116,128,99,93,77,52,23,94,70,A,1350
+3,,,BC,BC,Late Predynastic,Hou,Male,183,179,,134,,,,,,51,29,,,,
+3,,,BC,BC,Late Predynastic,Hou,Male,178,175,132,135,121,135,102,98,68,54,26,96,72.5,B C,1350
+3,,,BC,BC,Late Predynastic,Hou,Male,181,181,128,130,118,124,101,101,72,51,27,100,68.5,C,1280
+3,,,BC,BC,Late Predynastic,Hou,Male,185,182,129,128,114,122,101,97,71,53,30,96,71.5,B,1300
+3,,,BC,BC,Late Predynastic,Hou,Male,185,183,129,135,,,102,97,66,49,27,95,74.5,B C,1370
+3,,,BC,BC,Late Predynastic,Hou,Male,199,196,135,138,123,135,104,106,70,51,25,102,68.5,D E,1580
+3,,,BC,BC,Late Predynastic,Hou,Male,191,190,137,135,116,127,105,100,77,54,26,95,71,A B,1500
+3,,,BC,BC,Late Predynastic,Hou,Male,185,184,140,133,117,133,109,103,72,53,28,94.5,74.5,A B,1465
+3,,,BC,BC,Late Predynastic,Hou,Male,179,176,128,131,118,131,99,98,77,51,25,99,67,B,1280
+3,,,BC,BC,Late Predynastic,Hou,Male,187,185,130,131,119,128,105,95,73,54,23,90.5,75.5,- A,1350
+3,,,BC,BC,Late Predynastic,Hou,Male,173,173,122,130,101,114,95,96,66,47,26,101,69,D E,1170
+3,,,BC,BC,Late Predynastic,Hou,Male,182,180,130,135,114,124,97,92,77,52,23,95,69,A,1360
+3,,,BC,BC,Late Predynastic,Hou,Male,180,179,133,137,124,136,100,97,75,52,25,97,69,A B,1395
+3,,,BC,BC,Late Predynastic,Hou,Male,183,180,137,135,112,132,102,98,69,49,24,96,72.5,B C,1440
+3,,,BC,BC,Late Predynastic,Hou,Male,194,193,136,138,122,131,101,91,74,55,25,90,74,- A,1550
+3,,,BC,BC,Late Predynastic,Hou,Male,190,188,138,,,,108,101,68,52,25,93.5,76.5,B,
+3,,,BC,BC,Late Predynastic,Hou,Male,187,186,,134,,,,,,,,,,,
+3,,,BC,BC,Late Predynastic,Hou,Male,183,182,137,130,119,129,104,103,72,52,26,99,70,C D,1385
+3,,,BC,BC,Late Predynastic,Hou,Male,187,186,139,139,122,133,109,101,71,51,25,93,76.5,B,1535
+3,,,BC,BC,Late Predynastic,Hou,Male,183,182,131,129,,,105,98,72,53,27,93,74,A B,1315
+3,,,BC,BC,Late Predynastic,Hou,Male,179,176,125,128,119,,97,97,68,47,28,100,69,C,1220
+3,,,BC,BC,Late Predynastic,Hou,Male,179,176,132,131,118,,99,97,63,48,23,98,72.5,D,1320
+3,,,BC,BC,Late Predynastic,Hou,Male,186,183,131,135,115,,107,97,68,50,27,92.5,77,A,1400
+3,,,BC,BC,Late Predynastic,Hou,Male,182,177,134,129,114,,,,,,,,,,1340
+3,,,BC,BC,Late Predynastic,Hou,Male,179,179,135,136,109,117,102,97,65,48,23,95,75,B C,1400
+3,,,BC,BC,Late Predynastic,Hou,Male,189,188,131,135,117,129,102,98,70,50,28,96,72,B C,1420
+3,,,BC,BC,Late Predynastic,Hou,Male,183,179,126,132,,,99,100,69,,,101,68.5,D,1295
+3,,,BC,BC,Late Predynastic,Hou,Male,188,186,128,135,118,130,102,94,69,52,27,92,75.2,A,1380
+3,,,BC,BC,Late Predynastic,Hou,Male,174,169,132,129,112,124,106,101,65,49,26,95,76,B C,1260
+3,,,BC,BC,Late Predynastic,Hou,Male,191,190,124,146,122,131,99,95,68,53,26,96,72,B C,1470
+3,,,BC,BC,Late Predynastic,Hou,Male,180,178,134,127,112,124,102,99,62,48,25,97,74,C D,1300
+3,,,BC,BC,Late Predynastic,Hou,Male,180,178,130,137,116,128,98,97,70,50,23,99,69.5,C,1360
+3,,,BC,BC,Late Predynastic,Hou,Male,187,184,130,135,,,106,103,66,51,27,97,74,C D,1400
+3,,,BC,BC,Late Predynastic,Hou,Male,183,183,136,131,118,125,104,95,71,49,26,91,76,A,1390
+3,,,BC,BC,Late Predynastic,Hou,Male,175,175,128,141,109,115,91,89,64,46,26,98,70,C,1345
+3,,,BC,BC,Late Predynastic,Hou,Male,187,186,139,136,116,127,100,97,78,57,26,97,68.5,A B,1500
+3,,,BC,BC,Late Predynastic,Hou,Male,189,187,133,138,115,131,101,100,67,45,26,99,70,C D,1475
+4,,,BC,BC,Late Predynastic,Hou,Male,195,193,138,136,116,,99,89,66,50,26,90,77.5,A,1560
+4,,,BC,BC,Late Predynastic,Hou,Male,174,172,133,128,,,,,,53,26,,,,1260
+4,,,BC,BC,Late Predynastic,Hou,Male,188,186,127,126,112,122,100,96,69,54,22,96,72,B C,1280
+4,,,BC,BC,Late Predynastic,Hou,Male,196,194,135,143,122,133,102,99,76,53,27,97,69.5,B,1610
+4,,,BC,BC,Late Predynastic,Hou,Male,187,187,132,124,105,113,98,93,72,52,23,95,71.5,A B,1300
+4,,,BC,BC,Late Predynastic,Hou,Male,174,173,130,136,108,117,98,103,72,50,22,105,65,D E,1310
+4,,,BC,BC,Late Predynastic,Hou,Male,191,189,131,142,122,134,97,106,71,49,26,109,62.5,F G,1510
+4,,,BC,BC,Late Predynastic,Hou,Male,175,171,130,126,116,130,104,98,57,48,28,94,78.5,C,1220
+4,,,BC,BC,Late Predynastic,Hou,Male,184,182,131,137,114,129,,,,44,25,,,,1400
+4,,,BC,BC,Late Predynastic,Hou,Male,191,186,137,136,124,132,102,102,69,50,27,100,70,C D,1510
+4,,,BC,BC,Late Predynastic,Hou,Male,187,185,138,136,122,132,104,100,66,51,24,96,74,B C,1495
+4,,,BC,BC,Late Predynastic,Hou,Male,188,185,136,141,123,,106,101,80,55,25,95,70,A,1535
+4,,,BC,BC,Late Predynastic,Hou,Male,186,186,135,131,111,115,96,89,68,50,23,96,73.5,A B,1400
+4,,,BC,BC,Late Predynastic,Hou,Male,184,182,142,129,117,,104,102,66,48,24,98,72.5,D,1435
+4,,,BC,BC,Late Predynastic,Hou,Male,175,173,131,134,121,129,100,95,69,52,23,95,72.5,A B,1305
+4,,,BC,BC,Late Predynastic,Hou,Male,192,191,135,135,119,133,102,103,72,49,29,101,68.5,D,1490
+4,,,BC,BC,Late Predynastic,Hou,Male,188,185,136,142,122,131,105,100,76,54,26,95,72,A B,1545
+4,,,BC,BC,Late Predynastic,Hou,Male,182,181,,125,107,120,98,101,67,48,27,103,67.5,E F,
+4,,,BC,BC,Late Predynastic,Hou,Male,185,182,,135,119,133,,,,53,25,,,,
+4,,,BC,BC,Late Predynastic,Hou,Male,182,179,126,131,,,102,95,69,49,20,93,74.5,A B,1280
+4,,,BC,BC,Late Predynastic,Hou,Male,190,190,134,142,127,137,103,91,74,56,29,88,76,- A,1540
+4,,,BC,BC,Late Predynastic,Hou,Male,184,181,131,121,105,124,102,99,67,49,26,97,72.5,C,1240
+4,,,BC,BC,Late Predynastic,Hou,Male,191,190,139,144,127,136,105,105,76,57,31,100,68.5,C,1625
+4,,,BC,BC,Late Predynastic,Hou,Male,189,187,138,128,118,128,103,100,71,49,26,97,71.5,B C,1420
+4,,,BC,BC,Late Predynastic,Hou,Male,188,187,135,133,113,127,102,94,72,54,26,92,74,A,1435
+4,,,BC,BC,Late Predynastic,Hou,Male,183,181,135,134,114,123,101,101,67,48,25,100,70,C D,1410
+4,,,BC,BC,Late Predynastic,Hou,Male,194,192,136,135,122,137,107,107,80,58,29,100,68,C,1515
+4,,,BC,BC,Late Predynastic,Hou,Male,199,198,143,141,117,132,106,99,75,56,26,93,73.5,A B,1710
+4,,,BC,BC,Late Predynastic,Hou,Male,185,183,125,135,123,137,103,101,68,51,28,98,71.5,C D,1325
+4,,,BC,BC,Late Predynastic,Hou,Male,190,188,138,143,122,,,,,,,,,,1600
+4,,,BC,BC,Late Predynastic,Hou,Male,180,179,136,142,122,131,102,93,71,52,24,91,75,A,1480
+4,,,BC,BC,Late Predynastic,Hou,Male,179,177,126,127,,,,,,,,,,,1220
+4,,,BC,BC,Late Predynastic,Hou,Male,191,189,,139,,,,,,50,25,,,,
+4,,,BC,BC,Late Predynastic,Hou,Male,173,172,126,,,,94,90,66,49,26,96,72,B C,
+4,,,BC,BC,Late Predynastic,Hou,Male,184,183,133,131,116,127,94,95,70,51,27,101,67,C D,1365
+4,,,BC,BC,Late Predynastic,Hou,Male,181,180,,131,,,,,,,,,,,
+4,,,BC,BC,Late Predynastic,Hou,Male,193,190,142,143,122,133,105,100,74,55,29,95,72,A B,1670
+4,,,BC,BC,Late Predynastic,Hou,Male,173,171,132,130,117,128,99,95,71,53,27,96,71,B,1260
+4,,,BC,BC,Late Predynastic,Hou,Male,185,184,,131,,,,,,,,,,,
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,189,185,135,130,113,,99,93,72,53,24,94,72,A,1410
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,181,181,138,136,120,134,,,,,,,,,1445
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,188,188,135,133,124,,,,,,,,,,1440
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,176,175,136,132,121,131,100,99,65,44,27,99,69,C,1340
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,184,182,,127,,,,,,,,,,,
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,183,180,138,133,117,129,102,98,68,49,27,96,72.5,B C,1460
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,178,177,135,126,114,131,95,93,71,51,24,98,69,B C,1290
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,184,183,130,127,115,128,100,95,70,51,22,95,72,A B,1290
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,179,175,,127,113,,,,,,,,,,
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,171,171,135,,,,,,,,,,,,
+4,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,182,178,139,129,113,,,,,,,,,,1385
+5,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,181,176,131,128,,,,,,,,,,,1290
+5,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,179,179,130,,,,,,,,,,,,
+5,-4800,-4500,BC,BC,First Dynasty,Abydos,Male,185,184,141,141,108,124,101,94,72,52,26,93,73,A,1565
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,173,173,125,130,111,120,99,92,68,47,24,93,74,,1195
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,184,184,138,134,119,128,100,106,72,54,26,106,64.5,,1450
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,188,188,134,138,128,137,99,101,68,50,24,102,68,D E,1480
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,191,191,141,134,,,104,,,,,,,,1530
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,192,192,138,134,119,133,107,103,73,55,26,96,72,B C,1510
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,189,187,141,136,,,111,105,73,55,28,95,74,B,1540
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,195,195,,135,,,,,,,,,,,
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,202,199,132,138,,135,108,105,70,54,27,97,73,C,1565
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,189,188,133,141,,137,102,98,69,50,24,96,72.5,B C,1510
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,175,174,132,130,,125,98,95,68,49,24,97,71,B C,1275
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,,,,,,,,,,,,,,,
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,182,181,133,134,,126,94,91,65,50,27,97,72,B C,1380
+5,-4800,-4500,BC,BC,First Dynasty,El Amrah,Male,188.5,188,141.5,136.5,,,112,105,70.5,52,27,94,76,B,1550
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,182,181,136,136,123,,106,106,68,53,27,100,71,D,1430
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,183,182,133,132,,113,,,,,,,,,1365
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,177,177,,134,,,,,,,,,,,
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,174,173,136,143,122,128,99,90,64,51,25,91,77.5,A,1435
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,174,172,133,128,,,,,,53,26,,,,
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,180,179,131,136,125,139,102,102,71,52,28,100,69,C,1360
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,184,182,136,139,128,138,103,96,74,51,27,93,73,A,1480
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,184,182,139,132,117,136,100,92,71,54,25,92,74,A,1435
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,186,184,129,131,116,130,98,100,62,44,27,102,69.5,E,1340
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,188,185,135,140,117,126,104,104,70,50,25,100,70,C D,1510
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,191,189,130,134,,,100,96,76,51,28,96,69.5,A B,1415
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,185,185,,131,,,,,,,,,,,
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,189,189,132,136,122,132,103,98,73,51,26,95,72,A B,1440
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,182,181,139,134,117,130,103,99,72,48,24,96,71.5,B,1440
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,197,194,143,137,120,133,109,109,81,60,29,100,68,C,1640
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,182,180,134,132,120,135,106,98,73,53,26,92.5,75,,1370
+5,-4800,-4500,BC,BC,First Dynasty,Hou,Male,175,174,137,136,117,127,104,95,77,54,25,91,73.5,- A,1390
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,191,190,134,146,116,,102,101,70,52,26,99,70,C D,1590
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,186,183,,134,,,,,,50,25,,,,
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,189,186,129,140,119,127,101,103,74,55,25,102,67,D E,1450
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,179,179,136,134,114,120,102,95,75,53,25,93,72.5,A,1390
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,186,183,138,136,119,128,103,98,75,52,25,95,72,A B,1485
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,,,,,,,,,,,,,,,
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,185,183,,141,,,,,70,50,25.5,,,,
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,188,186,137,139,,,,,,,,,,,1520
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,174,173,134,137,118,130,94,87,71,51,24,93,72,A,1360
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,185,185,123,137,116,126,91,91,65,50,25,100,69,C,1325
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,183,180,129,131,116,,99,94,68,48,25,95,73,B,1315
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,180,177,126,139,122,126,96,91,69,53,23,95,72,A B,1340
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,179,175,132,134,120,128,97,95,74,51,23,98,68.5,B,1350
+5,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,189,186,141,142,125,141,106,102,75,54,27,96,,,
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,189,186,132,139,122,133,97,91,72,51,29.5,94,72,A,1475
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,185,181,133,132,123,132,105,108,82,56,24,103,65,D,1380
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,184,182,130,140,125,134,98,92,72,53,26,94,72,A,1425
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,190,188,,133,,,,,,,,,,,
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,183,181,132,146,,,,,,,,,,,1500
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,186,183,141,143,,,,,,,,,,,1600
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,186,182,135,136,121,134,104,98,75,52,24,94,72.5,A,1450
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,187,184,134,136,120,131,102,90,71,52,22,88,77.5,- A,1450
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,186,182,135,144,,,,,,,,,,,1540
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,185,185,133,136,,,98,98,72,52,27,100,68,C,1425
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,187,183,135,138,118,134,102,97,74,53,24,95,71.5,A B,1480
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,177,171,130,,,,,,,,,,,,
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,189,187,132,134,116,129,103,106,71,53,28,103,68,E F,1420
+6,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Male,182,178,125,132,118,126,102,97,69,49,27,95,73,B,1280
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,177,174,130,135,116,121,99,101,68,44,24,102,68,D E,1320
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,196,193,134,140,127,139,103,101,87,59,29,98,66,A B,1565
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,196,193,142,135,122,129,102,100,75,52,25,98,69,B C,1600
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,184,180,132,141,116,124,96,90,76,52,27,94,69.5,- A,1460
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,185,182,136,142,125,132,103,94,72,53,27,91,74,A,1520
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,183,181,140,132,111,123,98,92,67,48,25,94,74,A B,1440
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,197,191,144,144,121,132,104,98,79,54,28,94,71,A,1740
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,187,184,132,134,115,127,104,93,69,52,29,89,77.5,- A,1410
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,182,178,139,140,120,132,103,95,74,56,26,92,73,- A,1510
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,190,188,135,142,115,125,99,91,69,49,26,92,74,A,1550
+6,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Male,184,180,136,139,116,126,101,96,77,55,23.5,95,70,A,1480
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,181,180,135,139,121,,100,90,,47,26,90,,,1445
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,189,184,137,140,125,,105,101,,58,25,96,,,1540
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,191,185,132,146,125,,102,97,,56,28,95,,,1565
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,195,190,142,145,125,,105,103,,58,26,98,,,1710
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,194,190,144,142,123,,109,92,,53,24,84,,,1690
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,200,194,141,148,115,,105,97,,52,27,92,,,1775
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,182,180,129,139,114,,101,96,,51,26,95,,,1390
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,189,187,146,138,126,,105,97,,56,27,92,,,1620
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,191,185,133,139,116,,102,,,,,,,,1500
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,187,179,,137,,,,,,,,,,,
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,179,176,125,132,113,,97,91,,49,26,94,,,1255
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,186,181,136,131,116,,100,91,,50,24,91,,,1410
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,185,185,,137,,,,,,,,,,,
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,186,184,139,142,121,,101,95,,55,22,94,,,1560
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,183,181,142,130,114,,103,97,,50,24,94,,,1440
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,181,181,133,142,114,,102,94,,50,26,92,,,1450
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,190,185,141,143,120,,103,96,,55,25,93,,,1630
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,188,182,139,150,132,,,,,,,,,,1670
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,195,193,142,127,121,,115,103,,56,30,90,,,1495
+6,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,187,182,132,140,124,,101,97,,54,25,96,,,1470
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,187,182,,141,118,,,,,,,,,,
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,182,180,140,137,113,,97,93,,50,25,96,,,1480
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,188,183,130,142,115,,94,92,,48,24,98,,,1475
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,185,178,143,143,123,,109,104,,52,27,95,,,1610
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,177,175,141,132,115,,98,88,,49,22,90,,,1400
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,175,168,135,147,123,,101,102,,53,25,101,,,1475
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,193,191,136,141,122,,101,93,,51,25,92,,,1570
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,183,179,137,139,116,,105,94,,50,24,90,,,1485
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,191,189,136,141,117,,,,,,,,,,1560
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Deshasheh,Male,186,181,139,143,114,,99,87,,53,24,88,,,1570
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,184,,142,141,122,132,101,97,75,56,25,96,71,B,1570
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,182,,138,137,126,136,102,,73,53,27,,,,1465
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,186,,135,144,122,130,107,106,76,56,24,99,69.5,C,1540
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,185,,136,140,121,130,105,97,71,55,31,92,75,A,1495
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,186,,140,137,121,,106,95,77,58,24,90,76,- A,1520
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,171,,131,135,113,,,94,,,,,,,1290
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,177,,140,136,116,125,109,102,73,53,23,94,74.5,A B,1430
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,190,,134,140,120,124,101,92,64,49,24,91,78,A,1515
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,180,,136,135,115,,102,98,74,48,24,96,71,B,1405
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,173,,130,132,115,122,100,95,70,51,25,95,72,A B,1260
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,195,,139,150,121,128,101,103,70,47,28,102,68,D E,1730
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,186,,135,136,119,,103,102,71,48,22,99,70,C D,1450
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,185,,137,138,118,118,103,101,70,51,27,98,71,C,1490
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,179,,139,140,120,131,102,99,72,52,23,97,71,B C,1480
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,190,,128,138,111,122,98,95,66,45,23,97,71.5,B C,1430
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,178,,130,143,113,,92,,,47,,,,,1400
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,181,,127,132,111,122,96,95,67,47,23,99,70,C,1290
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,180,,137,149,124,,97,92,75,55,24,95,70,A,1560
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,180,,126,139,125,,99,,,,,,,,1340
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,178,,123,133,113,131,99,90,70,55,26,91,74,A,1235
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,187,,138,140,,,,,,,,,,,1535
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,176,,,135,114,127,,,,,,,,,
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,184,,139,141,120,129,101,91,70,52,24,91,75.5,A,1530
+7,-4000,-3500,BC,BC,Fourth and Fifth Dynasties,Medum,Male,188,,137,140,118,126,106,106,71,53,24,100,69.5,C D,1535
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,198,193,138,,126,131,109,107,76,58,26,98,71,C,
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,187,186,137,128,115,125,100,99,70,49,26,99,69.5,C,1395
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,182,138,132,117,126,106,98,59,51,27,92,80,A B,1420
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,179,136,132,106,116,97,89,65,52,22,92,76,A,1380
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,177,131,127,119,129,99,101,58,51,28,102,,,1260
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,172,126,136,111,120,101,99,72,53,25,98,70,C,1285
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,187,187,134,141,116,124,97,101,63,42,23,104,68,F,1505
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,177,123,132,113,120,91,89,72,49,26,98,67.5,B,1230
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,174,171,133,127,109,123,99,96,70,52,25,97,71,B C,1250
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,175,132,133,112,116,94,86,66,47,24,91,74.5,A,1315
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,183,129,133,116,127,104,96,69,52,29,92,76,A,1360
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,172,171,133,130,109,117,101,98,72,51,26,97,70,B,1270
+7,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,173,131,137,105,111,98,98,72,54,28,98,69.5,B C,1335
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,182,137,136,115,13,108,101,73,57,25,93,74.5,A B,1460
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,178,132,126,108,121,106,104,74,50,26,98,70,C,1265
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,175,127,128,115,122,98,92,66,50,26,94,74.5,A B,1220
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,191,191,131,135,116,,105,99,69,63,25.5,94,,,1440
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,187,186,141,140,114,121,105,97,72,54,24,92,75,A,1570
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,184,131,136,110,,97,92,73,52,,95,71,A B,1400
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,183,139,132,104,111,96,98,68,47,23,102,68,D E,1430
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,184,135,138.5,116,130,103,96,73,55,26,93,73.5,A B,1470
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,183,138,140,120,124,108,102,68,52,26,94,76,B,1520
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,175,,138,,,,,,,,,,,
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,168,165,135,140,116,125,97,87,73,52,26,90,74,- A,1350
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,172,172,129,131,114,123,93,90,64,45,23,97,71.5,B C,1240
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,181,128,127,112,124,98,108,71,56,26,110,62,F G,1275
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,190,187,134,136,,123,,,,,,,,,1475
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,180,140,126,114,123,103,95,71,51,26,92,75,A,1360
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,189,187,,129,115,125,103,97,68,53,37,94,74.5,A B,
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,174,130,134,110,120,97,93,59,45,23,96,75,C,1300
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,182,137,127,109,116,99,95,65,47,26,96,73.5,B C,1355
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,171,171,131,130,107,117,95,90,65,47,24,95,73,B,1235
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,174,134,139,117,126,103,95,66,,,92,77,A,1390
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,174,,126,110,115,,,64,49,24,,,,
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,182,134,133,115,121,103,105,80,55,24,102,66,C,1405
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,183,136,135,119,135,103,98,79,55,25,95,70,A,1445
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,183,139,134,113,122,100,96,71,49,25,96,71,B,1465
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,188,185,125,138,119,129,105,99,71,58,23,94,74,A B,
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,179,135,132,123,133,102,91,61,50,27,89,81,,1370
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,181,127,129,111,124,102,98,66,45,25,96,74,B C,1290
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,177,174,134,132,112,125,100,101,74,54,28,101,67,C D,1330
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,177,125,127,105,,96,83,61,48,25,,,,1200
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,188,184,138,158,122,133,99,91,73,57,23,92,73,- A,1740
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,182,181,138,142,117,126,101,102,75,52,27,101,67.5,C D,1515
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183.5,182,133,136,121,,,,,,,,,,1405
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,179,133,132,111,120,91,88,72,50,24,97,68,A B,1335
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,172,129,132,114,119,85,83,71,48,23,97,66,A,1275
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,167,167,126,133,110,115,98,97,65,48,23,99,71,D,1190
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,180,133,133,114,119,95.5,,66,45,25,,,,1355
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,178,132,134,118,127,97,91,59,45,26,94,77,B C,1360
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,182,181,135,140,110,119,100,97,70,50,25,97,71,B C,1460
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,190,187,145,139,116,124,105,101,80,55,26,96,69.5,A B,1630
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,177,172,132,131,112,121.5,104,99,69,52,25,95,74,B,1305
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,182,180,135,135,114,127,103,108,73,52.5,26,105,66,E F,1410
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,185,140,141,113,125,99,98.5,67,50,28,100,70,C D,1550
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,173,136,130,112,120,99,90,75,53,23,91,73,- A,1315
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,186,141,139,111,119,100,100,61,46,25.5,100,71.5,D E,1550
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,176,142,133,115.5,122,100,99,70,50.5,27,99,69.5,C,1415
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,194,190.5,138,128,111,,110.5,104,73,53,24,94,75,B,1460
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,188,186,140,132,111,123.5,107,109,75,55.5,26,102,68,D E,1480
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,174.5,132,125,119,126,98,101,66,48,25,103,68,E F,1230
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,182,137,137,119,128,99,92,71,50,23,93,73.5,A B,1480
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,176,127,131,115,123,99,97,66,48,22,98,72,C D,1260
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,187,186,138,182,114,131,102,100,70,54,31,98,71,C,1450
+8,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,176,133,141,115,127,98,93,72,51,25,95,71.5,A B,1430
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,175.5,141,140,123,131,100,95,70,52,25,95,72,A B,1490
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,198,195,,,,,,,73,57,26,,,,
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,182,136,133,112,121,99,95,68,52,22,96,72,B C,1410
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,197,197,140,132,112,124,102,89,59.5,49,27,,84,,1550
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,187,185,134,136,117,134,105.5,101,70,52,27,96,73.5,B C,1450
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,181,139,134,114.5,127,104,101,74,55,27,97,71,B C,1460
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,181,138,132,116,127,103,97,74,55,29,94,72.5,A,1400
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,182,134,137.5,115,128,100,97.5,81,58,24,97.5,66.5,A,1440
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,184,136,138,120,125,94,95,65,49,32,101,68.5,,1470
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,179,123,123,114,120,99,92,69,51.5,28,93,74,A B,1160
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,182,135,138,114.5,122,102,100,70,50,25,98,71,C,1460
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,177,176,135,135,114,128,102,94,66,47,26.5,92,77,,1370
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,179,131.5,134,112,127,103,98,70,50.5,26.5,95,73,B,1350
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,180,137,144,,125,98,98,69,51,26,100,69,C,1510
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,189,188,135,135,123,134,109,101,57,53.5,29,93,75,A B,1465
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,181.5,139,131,113,126,106,98,74,57,26,93,,,1440
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,193,192,138.5,133.5,120,129,107,100,76,56,25.5,94,73,A,1510
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,179.5,137.5,129,112,,99.5,98.5,69,49,26,99,70,C D,1360
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,177,137.5,136,117,129,100,99,71.5,52,26,99,69,C,1420
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,196,194.5,142,136,122,,111,99,65.5,51,30,90,,,1610
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,182,179,134,130,115,127,104,101,69.5,54,27,97,72,B C,1345
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,188,186,138,137,117,128,104,103,70,52,26,99,71,D,1510
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,189.5,188.5,137.5,136,116,122.5,103,97,72,49.5,25,94,73,A,1500
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,174,142,134,112,125,108.5,101,72,51.5,25,93,75.5,A B,1440
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,183,134,129.5,113,125,104,101,68,54,29,97,73,,1360
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,187,185,135,134,111,122,104,99,72,52,26,95,73,B,1440
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,186,143,141,115.5,128,105,102,70,53,25.5,97,72.5,C,1595
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,176,136,136,119,125,98,94,57,46,25,96,76,C D,1400
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,175,133,125.5,113,126,99,100,65,47,24,101,69.5,D E,1245
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,190,191,140,139,111,122,100,93,72,52,25,93,73,A,1575
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,185,128,137,111,115,99,99.5,73,51,26,101,68,D,1390
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,186,137.5,136,120,127,104,103,73,52,26,99,70,C D,1470
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,199,196,145,140,118,,108,98,79.5,55,26,91,74,A,1720
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,173,173,133,130,112,122,95,91,70,51.5,26,96,70.5,B,1270
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,180,131,129,,,104,98,72,51,27,94,73.5,A B,1300
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,180,135,127,115,127,106,103,75,56,27,97,71,B C,1320
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,171,132,137,113,127.5,99,98,67,49,26,99,70,C D,1345
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,190,189,142,142,113,127,105,98,78,53.5,27.5,93,72,A,1630
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,175,132,135,116,129,99,91,62,51,25.5,92,78,,1330
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,174,137,136,113,,,,,,,,,,1395
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,191,190,134,126,114,125,100.5,99.5,78,55,26,99,67,B,1370
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,171,171,140,143,108,,,,,,,,,,1455
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,174,132,132,112,120,98,92,66,47,24,94,74.5,A B,1300
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,179,135,139,113,129,102,97,69,53,27,95,73,B,1430
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,191.5,192,134,136,118,125,99,92,72,51,27,93,73,A,1480
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,173,172,130,137,108,122,95,94,72.5,50.5,25,99,68,B C,1310
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,180,135,133.5,112.5,126,100.5,97,71,52,25.5,97,71,B C,1400
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,190,187,137,146,118,183,105,96,68,44.5,28.5,91,77,A,1615
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,182,179,136,139,116,131,99,100,71.5,47.5,25.5,101,68,D,1465
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,179,135,136,111,,96,91,70.5,49,25,95,71.5,A B,1400
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,178,128,132,107,112,96,86,73,52,26,90,73,- A,1280
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,177,135,128,110,122,99,95,70,51,26,96,71.5,B,1310
+9,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,181,135.5,138.5,121,130.5,108,104,75,53,25.5,96,72,,1450
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,177,139,139,109,124,99,94,70,51,26,95,72,A B,1470
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,176,133,138,114,129,101,95,81,55,25,94,69,A,1400
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,178,140,130,123,131,104,99,75,50,25,95,72,A B,1395
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,180,132,130,107,123,108,115,79,54,26,107,64,F,1345
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,189,189,144,141,122,132,111,101,72,52,24,91,77,,1630
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,195,193,142,149.5,121,128,108,106,71,51,27,98,72,C D,1760
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,182,133,127,109,123,99,94,68,48,26,95,73,B,1315
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,173,170,127,134,116,122,96,89,62,51,22,93,76,A B,1250
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,185,133,130,107,116,99,92,71.5,48,26,93,73,A,1360
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,191,190,139,145,116,127,102,95,71.5,47,25,93,74,A B,1640
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,201.5,200.5,132,145,118,123,106,97,72,54,25,92,76,A,1635
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,197,192.5,138,140,121,136,105,98,72,50,30,93,74,A B,1620
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,178,127,127,112,121,97,92,66,49,26,95,74,B,1230
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,177,175,120,138.5,112,125,98,101,72.5,53,25,103,66,E,1250
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,182,123,132,112,123,95,91,67.5,49.5,24,96,71.5,B,1265
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,177,175.5,142,138,112,120,103,96,65.5,53,25,93,76.5,B,1475
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,188,187,138,133,113,124,102,92,67,51,24,90,78,A,1465
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,176,174,138.5,131.5,112,119,97,94,70,46,23,97,70.5,B C,1350
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,190.5,187,135,127,114.5,127,106,97,76,56,26,92,74,A,1385
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,192,189,139.5,139,125,135,104,99,67,50.5,28,95,74.5,B C,1580
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,183,138,141,122,131,99,91,71,52,26,92,74,A,1540
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,191,189,137.5,139,109,124,103,97,68.5,53,22,94,74.5,A B,1550
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,177,140,133,110,123,104,96,76,55,27,92,73.5,- A,1430
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,190,186,137,136,119,131,104,92,75,55.5,26,88,76,- A,1510
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,181,131,124,110.5,120,99,93,67,45,25,94,74,A B,1260
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,180,139.5,140,113,124,98,93,67.5,53,26,95,65.5,- A,1500
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,184,139,139,115,124,104,103,64.5,47,27,99,72.5,D E,1520
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,183,137,138,116,130,104,101,73,52,26.5,97,71,B C,1480
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,183,131,132,111,121,100,96,68,51,26,96,72.5,B C,1350
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,175,174,127,130,109,116,90,86,67,52.5,24,96,70.5,B,1230
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,176,132,128,113,125,105,96,70,51.5,21,91,76.5,A,1285
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,177,129.5,130,115,128.5,103,94,70,49,27,91,76,,1285
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,183,,131,109,117,102,95,74,51.5,26,93,73,A,1345
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,181,177,141,125,110,121,101,94,65,48,26,93,76,,1360
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,181,141,136,108,,100,98,68,49,23,98,71,C,1495
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,193,190,141,137,120,131,109,106,77,55,29,97,71,B C,1585
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,174,172,135,133.5,112,,95,91,68,46,26,96,71,B,1330
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,176,125,138,115,124,94,92,70,49,25,98,69,B C,1320
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,184,136,134.5,118,128,100,96,75,55,28,96,70,A B,1440
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,184,183,142,134,120,130,102,106,72,51,28,104,66.5,E,1490
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,182,181,138,140,109,119,100,96,71,49,26,96,71,E,1495
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,177,135,128,110,123,99,95,70,52,27,96,71.5,B,1310
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,182,141,135,111,122,103,97,67,51,30,94,75,B,1500
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,184,140,135,118,129.5,100,96,69,50,26,96,72,B C,1500
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,186,184,133,133.5,120,127.5,99,97,66,46,25,98,72,C D,1400
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,179,130,131,112,129,99,86,65,52,25,87,,,1305
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,185,183,138,134,117,126,99,96,70,54,26,97,71,B C,1455
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,192,191,135,131,116,127,107,100,75,56,29,94,73.5,A B,1444
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,177,176,134,141,110,119,101,88,72,52,25,87,77,- A,1420
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,171,171,136,131,114,121,96,92,70,52,25,96,71.5,B,1300
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,183,181,134,136,113,122,100,96,68,49,30,96,72.5,B C,1420
+10,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,180,178,142,133,116,125,105,99,76,52,24.5,94,72,A,1500
+11,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,188,185,136,133,123,132,106,102,69,51,27,96,73.5,B C,1450
+11,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,177,129,133,,,,,,,,,,,1300
+11,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,178,178,128,132,113,,97,86,62.5,50,30,89,79.5,- A,1280
+11,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,174,174,123,132,107,119,94,85,70,51,25,91,73.5,,1200
+11,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Male,179,178,143,133,120,126,102,94,73,55,25,92,74,A,1450
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,179,178,131,143,115,129,98,92,71,53,23,94,73,A,1425
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,183,138,140,113,119,102,95,70,53,25,93,74,A B,1505
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,181,131,133,114,123,98,92,71,51,24,94,73,A,1360
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,184,182,133,133,111,121,106,100,74,55,25,94,73,A,1385
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,185,182,128,134,120,128,101,103,73,51,24,102,67,D E,1350
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,186,185,134,136,123,133,106,104,81,55,25,98,68,B,1440
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,186,186,134,132,110,123,98,91,69,51,24,93,74,A B,1400
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,176,176,129,130,107,118,99,99,70,49,26,100,69,C,1255
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,186,184,131,140,120,133,102,100,69,50,26,98,71,C,1450
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,184,183,130,129,117,130,95,91,72,57,22,96,69.5,A B,1310
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,191,190,138,143,118,132,99,96,68,50,23,97,69.5,B,1600
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,191,189,126,132,120,131,101,100,67,49,24,99,70,C D,1350
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,181,137,146,119,126,99,94,69,52,25,95,72.5,A B,1560
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,182,143,142,,,104,96,76,49,23,92,74,A,1575
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,174,172,131,130,117,124,100,93,73,54,25,93,72,A,1260
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,185,184,140,134,120,132,105,100,75,54,27,95,71.5,A B,1475
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,189,187,131,129,113,127,103,96,76,57,28,93,72,A,1360
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,179,177,124,138,117,126,103,106,66,49,24,103,69,F G,1300
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,182,180,134,136,120,135,102,94,71,51,27,92,74.5,A,1245
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,174,173,122,130,114,117,97,90,69,52,21,93,73,A,1175
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,190,189,136,122,,,106,99,69,49,25,93,75,A B,1340
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,173,172,126,125,110,121,98,97,68,49,26,99,70,C D,1160
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,177,175,134,124,112,127,98,94,63,46,27,96,74,B C,1250
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,178,175,132,137,122,130,102,99,70,49,26,97,71.5,B C,1370
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,185,185,129,138,116,127,101,106,71,47,25,105,66,E F,1400
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,179,135,133,120,127,98,94,74,54,23,96,70,A B,1400
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,184,181,132,129,123,133,104,98,71,53,26,94,73.5,A B,1330
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,182,134,132,114,123,100,100,66,48,27,100,70,C D,1375
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,184,181,135,129,117,132,100,101,78,57,26,101,66,C D,1365
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,173,173,134,132,117,127,99,90,68,50,25,91,75.5,A,1300
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,182,182,128,129,115,126,102,94,70,49,25,92,75,,1280
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,181,179,131,135,116,126,101,90,73,54,25,89,75,,1360
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,180,130,138,118,128,97,96,74,48,23,99,68,B C,1400
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,192,192,144,136,117,128,99,87,75,55,24,88,75,- A,1600
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,178,177,136,131,115,125,95,95,75,52,24,100,66.5,B C,1350
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,185,185,136,134,114,124,97,93,72,54,24,96,70.5,B,1435
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,177,176,124,136,112,124,98,96,68,47,21,98,71,C,1270
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,188,186,132,132,121,126,100,98,78,53,24,98,69,B C,1390
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,176,176,131,129,115,124,101,95,76,54,22,94,71,A,1265
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,186,185,130,130,108,120,103,107,72,49,23,104,66.5,E,1340
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,191,188,136,138,123,133,105,97,74,54,27,92,74,A,1525
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,188,184,127,,,,107,102,69,53,26,95,74,B,
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,174,174,134,120,112,122,99,94,69,52,23,95,72.5,A B,1190
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,184,181,133,136,121,134,101,97,73,53,26,96,71,B,1415
+11,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,182,180,135,141,115,127,106,99,76,56,28,93,73,A,1475
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,180,176,136,130,110,123,95,94,68,49,24,99,69,C,1355
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,182,181,132,131,110,121,100,97,77,55,25,97,69,A B,1340
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,180,179,129,132,117,127,99,105,65,47,27,106,66,G,1300
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,185,183,132,137,114,127,96,91,69,50,28,95,72,A B,1420
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,183,182,132,143,119,128,98,96,75,53,25,98,68.5,B,1470
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,184,184,135,128,,,113,113,75,51,27,100,70,C D,1355
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,187,186,140,135,,,106,107,70,50,27,101,69.5,D E,1505
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,181,180,136,127,116,129,98,106,68,45,32,108,63.5,G,1330
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,184,184,134,133,111,122,101,99,66,48,27,98,71.5,C D,1395
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,192,191,,136,,,,,,,,,,,
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,182,181,133,124,114,123,103,103,65,48,26,100,71,D E,1275
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Male,,,,,,,,,,44,25,,,,
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,191,187,128,140,124,134,102,98,80,57,28,96,69,A B,1460
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,184,181,140,135,125,136,105,90,80,56,27,86,76,,1480
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,176,175,128,132,111,121,96,83,67,51,22,86,79,- A,1265
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,,,,,,,,,,,,,,,
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,192,187,139,133,116,125,103,95,67,50,24,92,76.5,A,1510
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,195,190,135,144,124,132,104,90,73,51,25,86.5,78,- A,1610
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,176,176,134,137,115,124,103,98,68,50,24,95,74,B,1375
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,177,172,131,131,108,116,94,92,64,49,26,98,71,C,1290
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,176,174,127,126,110,118,95,90,69,49,25,95,71.5,A B,1200
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,188,185,147,141,115,129,100,95,71,51,25,95,72,,1660
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,180,180,133,140,119,128,97,94,68,49,24,97,71,B C,1425
+12,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Male,184,183,140,141,118,124,99,95,67,52,23,96,72.5,B C,1545
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,184,183,136,135,113,,102,94,69,49,25,92,75.5,A,1440
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,183,181,133,131,113,,103,95,69,54,25,92,75.5,A,1355
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,192,190,135,135,119,133,107,104,77,53,27,97,70,B,1490
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,180,177,137,136,111,122,98,98,69,53,20,100,69,C,1425
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,189,187,132,130,116,127,101,90,67,49,23,89,78,- A,1380
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,195,194,137,131,115,127,104,102,76,53,23,98,69.5,B C,1490
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,184,181,130,136,121,135,99,95,66,51,24,96,,,1385
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,175,173,131,130,114,125,96,99,70,51,23,103,66,D E,1270
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,185,185,139,145,109,117,100,87,64,46,23,87,,,1585
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,178,178,127,138,116,128,94,93,63,46,23,99,70.5,C D,1330
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,186,185,133,129,111,124,103,101,65,49,25,98,72.5,D,1360
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,175,171,124,133,112,120,105,105,68,49,24.5,100,71,D E,1230
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,183,183,139,147,,,98,81,69,,,83,81,- A,1590
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,185,183,140,133,118,126,100,95,71,54,24,95,72,A B,1465
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,181,181,128,127,113,118,98,93,65,49,23,95,74,B,1250
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,174,174,134,134,120,126,105,101,72,56,24,96,72,B C,1330
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,183,182,134,131,118,128,95,97,66,47,27,102,68,D E,1365
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,183,181,130,135,115,128,98,91,69,49,26,93,74,A B,1365
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,188,186,137,138,116,128,107,102,74,53,25,95,72.5,A B,1510
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,184,181,128,133,122,127,100,97,81,60,24,97,67.5,A B,1330
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,182,180,132,132,112,128,100,97,72,55,26,97,70,B,1350
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,183,181,133,134,117,128,106,92,70,52,26,87,80,- A,1390
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,185,184,140,134,112,122,110,103,71,53,26,94,76,B,1475
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,184,181,140,134,111,123,100,97,68,51,24,97,72,B C,1465
+12,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,184,181,138,137,116,132,102,91,76,53,24,89,74,- A,1480
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,186,183,128,123,110,123,101,95,66,50,27,94,74,A B,1245
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,189,187,126,137,116,,,,,,,,,,1390
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,187,186,138,133,115,125,103,99,73,54,24,96,71,B,1460
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,181,180,130,131,114,121,100,100,71,48,23,100,69,C,1310
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,187,182,127,127,112,119,100,99,67,51,21,99,70.5,C D,1280
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,182,178,132,132,115,124,96,91,70,53,25,95,71.5,A B,1350
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,175,174,133,136,113,121,102,93,67,45,25,91,76,A,1345
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,181,177,125,129,116,119,98,90,69,51,24,92,74.5,A,1240
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,174,173,126,138,116,124,96,100,66,51,24,104,66.5,E,1285
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,191,187,138,131,,129,107,100,68,52,23,93,76,A B,1470
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,184,181,125,134,123,130,94,96,65,48,24,102,68,D E,1310
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,180,175,130,137,116,127,99,93,71,52,27,94,72,A,1360
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,186,185,130,131,108,119,96,91,61,46,25,95,75,B C,1345
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,170,168,135,140,108,123,94,92,66,49,25,98,70.5,C,1365
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,175,174,131,140,113,127,102,99,69,50,25,97,72,B C,1365
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Male,177,175,127,127,111,127,98,95,64,48,25,97,72.5,C,1210
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,184,180,128,133,117,123,102,97,74,53,25,95,71.5,A B,1330
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,183,182,133,140,121,131,102,97,75,54,22,95,71,A B,1450
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,179,178,133,134,108,124,100,93,71,51,24,93,73,A,1355
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,182,178,132,138,118,129,91,84,76,55,27,92,68.5,- A,1410
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,193,191,132,139,120,129,105,96,76,55,26,91,73.5,- A,1505
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,173,172,133,125,111,119,100,94,68,49,24,94,73.5,A B,1225
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,187,186,137,136,121,130,99,91,70,49,27,92,,,1480
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,182,179,140,135,114,122,97,97,69,49,25,100,69,C,1460
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,182,180,129,136,124,134,102,95,78,56,28,93,71,A,1355
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,192,191,134,138,116,128,108,99,70,51,27,92,76.5,A,1510
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,184,181,130,137,122,129,104,97,73,52,27,93,73.5,A,1395
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,190,186,135,143,125,134,105,98,74,55,26,93,73,A,1560
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,196,192,137,139,122,134,105,98,73,54,26,93,74,A B,1590
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,179,177,129,129,117,122,96,85,67,53,26,89,,,1265
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,183,180,137,142,121,129,101,96,74,54,27,95,71.5,A B,1515
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,188,184,143,141,123,131,103,95,78,56,30,92,72,- A,1615
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,182,181,131,138,116,124,96,95,72,52,26,99,68,B C,1400
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,191,190,135,146,121,127,103,94,69,51,26,91,76,A,1600
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,183,180,120,130,108,123,96,96,64,49,29,100,70,C D,1215
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,197,195,136,139,121,130,98,87,73,53,25,89,74.5,- A,1585
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,200,199,137,138,118,130,112,102,71,53,26,91,77.5,A,1610
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,184,182,143,140,122,132,107,99,73,58,26,93,75,A B,1565
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,187,180,132,140,124,136,103,99,74,51,29,96,71,B,1470
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,197,196,138,136,121,133,107,107,71,53,26,100,,,1570
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,185,185,144,147,122,,103,89,67,55,26,86,,,1665
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,183,180,126,141,119,128,102,93,74,66,26,91,74,A,1385
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,177,172,137,138,118,127,98,99,74,54,25,101,67,C D,1425
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,187,182,140,140,127,131,103,96,71,52,25,93,74.5,A B,1560
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,181,178,129,137,120,134,110,103,69,52,26,94,76,B,1360
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,189,187,137,135,122,136,105,98,72,52,23,93,74,A B,1485
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,185,182,128,134,113,121,93,89,67,50,22,96,71,B,1350
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,187,186,141,136,123,131,96,83,74,58,26,86,75,- A,1525
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,186,182,138,136,120,133,101,95,74,54,23,94,72,A,1485
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,187,186,135,137,126,131,108,101,68,51,25,94,76.5,B,1470
+13,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,185,183,141,134,118,124,100,101,70,50,26,101,68,D,1485
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,186,184,131,138,115,125,97,89,70,54,24,92,73,- A,1430
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,179,178,131,134,114,125,98,94,72,53,27,96,71,B,1335
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,189,187,132,132,116,124,104,97,73,50,23,93,73.5,A,1400
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,193,187,141,139,128,136,100,92,71,50,27,92,74,A,1610
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,190,185,140,138,122,130,105,97,69,51,26,92,76,A,1560
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,178,175,129,131,114,125,99,95,68,50,27,96,72,B C,1280
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,187,183,122,137,119,134,107,99,72,54,27,93,75.5,A B,1330
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,191,188,130,138,123,135,107,101,76,57,27,94,72.5,A,1460
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,183,179,130,129,112,123,101,99,68,52,26,98,71,C,1305
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,184,182,140,144,121,131,99,99,72,54,29,100,68.5,C,1580
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,180,177,131,136,119,129,98,95,67,51,23,97,71.5,B C,1365
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,182,177,134,137,125,132,103,100,79,57,24,97,69,A,1420
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,189,189,134,146,119,132,98,99,74,54,27,101,,,1570
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,190,187,141,140,119,129,101,92,71,52,24,91,74.5,A,1595
+14,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Male,177,176,132,139,112,126,96,91,67,48,26,95,72.5,A B,1380
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,175,173,138,132,113,124,99,91,69,49,27,92,74,A,1310
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,185,185,135,131,113,121,100,95,74,53,25,95,71,A B,1395
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,181,178,126,140,116,129,100,97,72,56,26,97,70,B,1360
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,186,184,138,136,119,126,105,94,72,54,26,90,76.5,- A,1485
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,186,184,131,132,115,125,108,95,73,53,25,88,78.5,- A,1365
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,179,178,124,129,118,129,96,90,62,48,24,94,75.5,B,1220
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,177,176,123,129,116,126,100,93,65,51,23,93,,,1195
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,186,183,135,132,121,133,101,90,68,52,27,89,78,- A,1410
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,179,175,131,137,122,132,100,99,68,55,26,99,70,C D,1370
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,180,180,134,133,113,125,99,90,67,53,27,91,76,A,1365
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,181,175,131,132,125,135,105,100,79,55,26,95,70.5,A,1330
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,185,185,125,129,118,135,99,99,70,55,26,100,,,1270
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,186,185,135,145,115,128,101,92,73,55,26,91,74,A,1550
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,185,183,130,130,121,127,104,98,69,51,28,94,74,A B,1330
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,185,181,131,133,119,136,103,98,74,55,25,95,72,A B,1370
+14,-378,-342,BC,BC,Thirtieth Dynasty,Abydos,Male,175,172,125,128,112,120,99,95,66,49,24,96,73,B C,1190
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,186,185,134,137,123,133,109,107,77,54,29,98,70,C,1450
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,190,189,128,141,123.5,132,104,95,72,53,25,,75,,1460
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,174,174,130,141,116,122,93,87,66,49.5,24,94,73,A,1360
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,182,,130,112,124,,,,56,28,,,,
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,187,185,131,135,120,130,103,99,74,51.5,24,96,71,B,1410
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,179,178,120,133,115,123,97.5,92,63,46,25,94,75,B,1215
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,176,175,135,131,115,122,98,90,72,50,26,92,73,- A,1320
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,190,189,137,140,125,138,108,94,81,60,25.5,87,75.5,- A,1550
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,172,172,130,139,117,123,95,90,63,48,23,95,74,B,1320
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,183,134,140,116,125,97,90,67.5,51,24,93,74,,1460
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,190,188,140,138,124,133,104,100,69,52,25,96,73,B C,1560
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,192,188,133,132,117,127,102,90.5,65,53,25,89,80,- A,1435
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,183,134,134.5,121,135,107,97,71,54,25,91,77.5,,1400
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,184,179,135,135,120,131,102,99,73,50.5,27,97,70.5,B C,1425
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,179,179,136.5,133,120,129,98,95,73,52,25,97,69.5,B,1375
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,184,182,130,136,118,133,106,99,74,55,32,93,74,A B,
+14,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,181,137,134,120,128,103,93,73,52,23,90,75,- A,1430
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,188,187,141,131,119,132,110,99,71,55,27,90,78.5,A,1475
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,178,178,135,129,118,129,102,95,67,47,23,93,75.5,A B,1320
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,179,128,136,113,127,101,93.5,71,54.5,26,93,75.5,A B,1330
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,177,125,131,,,96,88,68,48,23,92,74.5,A,1255
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,178,130,139,121,131,100,94,76,53,26,94,71,A,1385
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,182,182,124,144,122,130,96,86,70,50,25,90,75,- A,1380
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,186,185,131,141,123,134,105,97,71,53.5,75.5,92,75.5,A,1460
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,192,191,131,130,119,134,105,98,73.5,53,26,93,74,A B,1390
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,181,128,133,115,130,101.5,93,70,51.5,24,92,75,A,1325
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,188,187,126,138,118,127,94,97,73.5,54,26,103,65,D,1390
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,180,142,131,118,132,106,95,67,53,26,90,79,A,1450
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,181,138,136,118,128,102,97,67,55,24,95,74,B,1460
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,191,189,136,132,114,123,100.5,92,68,52,23,92,76,A,1460
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,184,182,130,135,118,128,101,100,69,51,27,99,70,C D,1375
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,185,185,135,142,118,130,100,98,72,57,29,98,69.5,B C,1510
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,190,190,133,128,118,125,103,102,71.5,52,24,99,70,C D,1375
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,195,191,134.5,132,126,138,104,97,74,57,25,93,73.5,,1465
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,184,181,130,137,126,,94.5,95.5,70,51,26,101,67.5,C D,1390
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,192,192,136,133,123,134,110,95,74,53,26.5,86,80,- A,1475
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,181,179,128,133,112,122,107,103,77,57,26,96,71,B,1310
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,179,178,128.5,130.5,113,123.5,100.5,94.5,72,50.5,24,94,72,A,1265
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,189,189,131,136,117,126.5,102,93,65.5,46,25.5,91,78,A,1435
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,175,172,127,128,121,129,92,88,62,46,23,96,73,,1210
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,172,172,126,132,114,125,94,91.5,73,51,27,97,68,A B,1215
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,189,188,130,132,117,124,105,95,66,48,24,91,79,A,1380
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,177,176,130,143.5,117,126,99,97,70,51,28,98,70.5,C,1400
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,192,190,136,136,122,128,101,97,68,50,30.5,96,72.5,B C,1510
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,179,132.5,135,122,130,94,89,72,54,27,95,70,A,1365
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,190,189,134,133.5,120,130,98,93,69,53,24.5,95,72.5,A B,1440
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,,182,132,132.5,120,127,102,95,73,50.5,24,93,73,A,
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,178,173,128,140,125,136,103,95,72,53.5,24,92,74.5,A,1355
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,181.5,180.5,133,139,117.5,128.5,94,86.5,73,51,23.5,92,71,- A,1420
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,188,188,136,135,120,130,100,95,70,49,24,95,72,A B,1470
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,184,182,127,140,121,132,100,92,67,52,26,92,76,A,1390
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,179,136,139,120,132,99,96,73,54,29,97,70,B,1445
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,168,168,123,141,119,125,100,93,66.5,53,25,93,75,,1240
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,181,180,130,136,119,129,101,92.5,70,53,25,92,75,A,1360
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,185,181,130,127,117,129,98,93,71,50,26,95,72,A B,1300
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,173,172,126,134.5,117.5,123,97,91,71,51,29,94,72,A,1240
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,192,188,131,129,113.5,125.5,105,97,72.5,54,26,92,75,A,1380
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,186,184,132,140,123,136.5,103,103,76,55,25,100,68,C,1460
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,195,194,135,140,120,134,106,95.5,73,56,27,90,76.5,- A,1570
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,181,128,132,118,127,97,101,68,51,29,104,67,E F,1315
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,182,181,134,138,125,134,98,90,70,52,27.5,92,74,A,1430
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,185,184,128,141,125,130,97,84,64,53,26,,80,,1420
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,182,138,133,123,135,103,97,79,52.5,29,94,70.5,A,1430
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,171,171,127,129,110,120,96,98,69,49.5,21,102,67,D E,1190
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,190,188,136,140,125,132,100,92,75,53,26,92,72.5,A,1540
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,182,179,127,129,116,127,101,104,74,52,27,103,66,E,1270
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,171,170,121,131,110,120,93,98,66,46,25,100,69,C,1150
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,186,184,128,132,116,126,103,101,68.5,49,24,98,71.5,C D,1335
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,178,134,133,116,122,95,87,72,54,24,92,72,- A,1365
+15,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,188,183,132,132,116,124,102,93,68,49,24,91,76.5,A,1360
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,190,188,128,147,113,128,98,100,79,56,26,102,65,B C,1520
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,186,184,130,139,119,130,106,101,88,55,27,95,68,A,1430
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,188,187,129,137,119,126,98,96,67,49,23,98,71,C,1415
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,178,135,130,113,125,97,97,82,60,30,100,65,B,1345
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,183,176,130,137,121,132,106,98,68,55,27,93,76.5,B,1385
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,185,184,129,133,122,134,106,106,65,49.5,28,100,72,D E,1350
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,180,179,138,138,112,123,96,90,74,52,22,94,70,A,1460
+16,-331,,BC,Unknown or AD,Ptolemaic Period,Abydos,Male,186,183,131,141,,,,,,,,,,,
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,190,187,123,137,116,126,95,91.5,67,50,25,96,71,B,1360
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,187,185,131,136,110,119,99,95,66,49,26,96,73,B C,1415
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,180,174.5,126,128,111,122.5,105,91,70,57,27.5,87,80,- A,1235
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,189,187,134,130,118,130,103,92.5,75.5,52,26,90,74.5,- A,1400
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,179,177,127,138,117,133,97.5,86.5,62,47.5,25.5,89,80,- A,1335
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,189,186,138,126,114,128,110.5,101,68,52,25,91,78.5,A,1400
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,193,188,138,136,115,128,130.5,97,81,58,26,94,70,A,1540
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,171,167.5,126,126,116,124,94,92,65,45,24,98,71,C,1155
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,174,173,132,132,120,131,104,99,73,55,22,95,72,A B,1290
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,183.5,182,135,139,118,122,98,92,74,54,25,94,71,A,1460
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,183,181,120,143,118,126,100,95,70.5,51,23,95,72,,1340
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,181,180,136,141.5,120,128,100,101,72,54,28,101,68,C D,1475
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,184,181,135,135,118,130,106,95,73.5,56,26,90,76.5,A,1425
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,190,187,134,137.5,121,130,102,93,72,53,24,91,75,A,1485
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,182,181,135,142,109,120,102,96,73,52,24,94,72.5,A,1485
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,184,184,134.5,139,118,123,100,95,67,47.5,25.5,95,73,B,1460
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,182,181,125,138,120,130,100,99,72,51,27,99,69,C,1330
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,192,190,135,137,118,132.5,107,96,66,54,27,90,80,,1510
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,187,186,125,133,114,119,99,92,65,50,22,93,76,A B,1320
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,172,172,129,145,123,126,94,89,67,47,24.5,95,72,A B,1370
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,176,175,136,138,117,,99,92,64,46,25,93,76,A B,1400
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,184,183,129,131,115,125,100,97,64,44,38,97,73,B C,1320
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,169,166,126,143,118,125,92,88,80,54,22,96,66,A,1295
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,177,175,124,134,117,127,99,91,72,55,27,92,73.5,- A,1250
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,179,176,127,132,117.5,124,99,97,72,52,27,98,69.5,B C,1275
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,181,176,125,137,120,125,94,85,72,57,26,90,72.5,- A,1315
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,183,182,131,132,113,124,97,92,69,,,95,,,1345
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,174,173,128,129,116,128,91,81,70,52.5,23,89,73.5,- A,1220
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,190,189,135,140.5,109,,105,103,66,48,26,98,73,D,1530
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,176,174,129,147.5,125,134,95,87,67,48,26.5,92,74.5,A,1420
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,177,174,133,136,,,99,97,68,51,23,98,71,C,1360
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,183,181,133,145,115,127,103,102,69,49,24,99,70.5,C D,1500
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,183,183,138,141,126,140,108,99,72,50,25,92,76,A,1510
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,183,180,126,149,119,129,93,96,78,55,27,,,,1460
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,178,175,128,138,120,132,93,92,72,,,99,67.5,B,1335
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,192,188,130,138,120,128.5,104,96,66,47,28,92,77,A,1465
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,167,166,128,132,110,122,91.5,87,69,50,23,95,70,A,1200
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,171,170,132,132,120,124,97,88,67,51,25,91,76,A,1270
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,191,189,136,140,116,127.5,101,100,81,53.5,27,99,66.5,B,1550
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,180,178,128,140,,,102,102,69,53,23,100,70,C D,1370
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,187,183,125,127,123,131,104,95,69,52,25,91,76.5,A,1260
+16,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,184,181,131,133,111,125,99,98,71,48,26,99,69,C,1360
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,176,174,130,146,122,134,95,91,65,49,28,96,72.5,B C,1420
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,174,172,126,135,116,126,99,92,80,54.5,22,93,70,A,1260
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,183,180,127.5,134,118,126,98,95,76,54.5,24,97,69,A B,1325
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,181,180,133,129,115,125,103,95,70,56,26.5,92,75,A,1325
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,186,185,138,128,112,129,106,92,69,52.5,24,87,81,- A,1400
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,189,188,132,138,123,129,105,104,79,56,29,99,68,B C,1465
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,173,168,133,140,121,135,102,94,71,53,26,92,74.5,A,1370
+17,-331,,BC,Unknown or AD,Roman Period,Abydos,Male,172,171,139,137,124,133,102,95,69,52,25,93,74.5,A B,1390
+17,,,BC,BC,Early Predynastic,Abydos,Female,175,175,123,133,112,125,93,96,74,53,25,103,65,D,1220
+17,,,BC,BC,Early Predynastic,Abydos,Female,176,176,126,127,106,121,97,96,72,49,23,99,69,C,1200
+17,,,BC,BC,Early Predynastic,Abydos,Female,175,175,126,130,106,112,90,94,68,45,27,104,65,D,1220
+17,,,BC,BC,Early Predynastic,Abydos,Female,177,177,124,130,106,118,94,89,65,46,25,95,73.5,B,1215
+17,,,BC,BC,Early Predynastic,Abydos,Female,176,175,124,123,108,117,96,89,67,47,23,93,74,A B,1140
+17,,,BC,BC,Early Predynastic,Abydos,Female,183,183,132,137,109,118,110,95,68,49,25,86,83,- A,1410
+17,,,BC,BC,Early Predynastic,Abydos,Female,175,174,,114,,,,,,,,,,,
+17,,,BC,BC,Early Predynastic,Abydos,Female,181,179,136,127,108,116,106,101,71,50,25,95,73.5,B,1330
+17,,,BC,BC,Early Predynastic,Abydos,Female,181,181,128,133,113,117,98,98,64,44,23,100,70.5,D,1310
+17,,,BC,BC,Early Predynastic,Abydos,Female,178,178,,119,95,110,,,68,49,25,,,,
+17,,,BC,BC,Early Predynastic,Abydos,Female,169,167,126,120,105,112,94,88,66,48,23,94,73,,1090
+17,,,BC,BC,Early Predynastic,Abydos,Female,176,176,119,134,109,115,89,86,55,41,23,97,74,,1190
+17,,,BC,BC,Early Predynastic,Abydos,Female,181,180,136,124,109,122,101,94,70,49,22,93,74,A B,1300
+17,,,BC,BC,Early Predynastic,Abydos,Female,169,168,128,114,100,108,96,90,61,46,19,94,76,B,1050
+17,,,BC,BC,Early Predynastic,Abydos,Female,176,176,124,128,108,117,98,96,68,48,22,98,71,,1190
+17,,,BC,BC,Early Predynastic,Abydos,Female,178,175,136,128,108,,101,99,72,,,98,70,C,1320
+17,,,BC,BC,Early Predynastic,Abydos,Female,181,181,,137,,,,,,,,,,,
+17,,,BC,BC,Early Predynastic,Abydos,Female,184,183,,117,,,,,,,,,,,
+17,,,BC,BC,Early Predynastic,Abydos,Female,,,,132,110,117,103,99,65,48,25,96,74,B C,
+17,,,BC,BC,Early Predynastic,Abydos,Female,180,180,,126,106,113,,,,,,,,,
+17,,,BC,BC,Early Predynastic,Abydos,Female,186,185,,126,,,,,,,,,,,
+17,,,BC,BC,Early Predynastic,Abydos,Female,181,181,121,134,111,116,90,90,67,46,22,100,68,C,1250
+17,,,BC,BC,Early Predynastic,Abydos,Female,180,180,134,125,105,111,,,,,,,,,1280
+17,,,BC,BC,Early Predynastic,Abydos,Female,179,179,134,125,107,121,100,98,65,47,23,98,72,C D,1275
+17,,,BC,BC,Early Predynastic,Abydos,Female,180,180,134,122,,,,,,,,,,,1250
+17,,,BC,BC,Early Predynastic,Abydos,Female,178,178,130,137,119,131,94,93,67,49,24,99,69,C,1350
+17,,,BC,BC,Early Predynastic,Abydos,Female,187,186,,127,,,,,,,,,,,
+17,,,BC,BC,Early Predynastic,El Amrah,Female,184,184,,138,,,,,,,,,,,
+17,,,BC,BC,Early Predynastic,El Amrah,Female,191,,,131,,,,,,,,,,,
+17,,,BC,BC,Early Predynastic,El Amrah,Female,185,186,126,127,112,,97,93,62,49,26,96,74,,1250
+17,,,BC,BC,Early Predynastic,El Amrah,Female,180,179,,132,,,,,71,50,,,,,
+17,,,BC,BC,Early Predynastic,El Amrah,Female,184,185,131,125,,,103,104,67,44,24,101,70,D E,1280
+17,,,BC,BC,Early Predynastic,El Amrah,Female,175,174,137,118,,109,99,95,65,51,23,96,73.5,B C,1200
+17,,,BC,BC,Early Predynastic,El Amrah,Female,184.5,184.5,127,126.5,,,,,,,,,,,1260
+17,,,BC,BC,Early Predynastic,El Amrah,Female,192,191,132,131,,119,102.5,102,70,,,99.5,70,C D,1410
+18,,,BC,BC,Early Predynastic,Hou,Female,176,176,130,138,114,,95,97,65,45,24,102,68.5,D E,1345
+18,,,BC,BC,Early Predynastic,Hou,Female,174,174,127,128,111,121,95,93,62,45,23,98,71.5,C D,1205
+18,,,BC,BC,Early Predynastic,Hou,Female,167,167,125,126,115,124,86,94,66,45,25,109,61.5,,1120
+18,,,BC,BC,Early Predynastic,Hou,Female,179,179,131,136,107,116,97,91,65,48,24,94,74,A B,1355
+18,,,BC,BC,Early Predynastic,Hou,Female,177,177,132,133,113,120,97,91,62,45,23,94,76,B,1320
+18,,,BC,BC,Early Predynastic,Hou,Female,172,172,132,126,111,120,96,91,67,48,25,95,72.5,,1220
+18,,,BC,BC,Early Predynastic,Hou,Female,180,180,134,134,114,124,105,101,65,47,23,96,75,C,1375
+18,,,BC,BC,Early Predynastic,Hou,Female,180,180,131,136,116,129,100,96,71,53,30,96,71,B,1365
+18,,,BC,BC,Early Predynastic,Hou,Female,182,181,137,137,125,135,102,97,68,50,30,95,74,B,1450
+18,,,BC,BC,Early Predynastic,Hou,Female,170,170,121,132,,,,,,,,,,,1155
+18,,,BC,BC,Early Predynastic,Hou,Female,171,171,127,133,112,116,96,86,64,47,25,90,78,A,1230
+18,,,BC,BC,Early Predynastic,Hou,Female,168,166,129,129,109,119,97,99,63,45,25,102,69,E,1190
+18,,,BC,BC,Early Predynastic,Hou,Female,178,178,131,129,117,123,99,92,72,51,24,93,73,A,1280
+18,,,BC,BC,Early Predynastic,Hou,Female,176,176,129,129,113,124,101,96,74,52,24,95,71.5,A B,1245
+18,,,BC,BC,Early Predynastic,Hou,Female,180,179,121,127,107,117,96,93,70,49,24,97,70,B,1180
+18,,,BC,BC,Early Predynastic,Hou,Female,175,175,127,141,110,119,91,93,70,46,24,102,66,C,1330
+18,,,BC,BC,Early Predynastic,Hou,Female,175,174,129,126,111,119,96,95,72,51,25,99,68,B C,1210
+18,,,BC,BC,Early Predynastic,Hou,Female,184,183,,133,112,125,,,,,,,,,
+18,,,BC,BC,Early Predynastic,Hou,Female,179,179,130,138,113,122,98,100,65,50,23,102,69,E,1370
+18,,,BC,BC,Early Predynastic,Hou,Female,169,167,125,124,110,117,100,102,60,47,24,102,70.5,E F,1115
+18,,,BC,BC,Early Predynastic,Hou,Female,173,173,133,135,112,120,96,91,69,49,25,95,72,A B,1320
+18,,,BC,BC,Early Predynastic,Hou,Female,170,169,125,126,109,121,97,90,72,50,23,93,72,A,1140
+18,,,BC,BC,Early Predynastic,Hou,Female,184,182,134,128,110,117,103,100,68,47,25,97,72.5,C,1340
+18,,,BC,BC,Early Predynastic,Hou,Female,178,177,131,127,,,99,95,68,46,22,96,72,B C,1260
+18,,,BC,BC,Early Predynastic,Hou,Female,172,171,127,131,113,124,92,86,71,48,24,93,70.5,A,1220
+18,,,BC,BC,Early Predynastic,Hou,Female,164,164,123,124,102,114,99,99,61,46,24,100,71.5,D E,1065
+18,,,BC,BC,Late Predynastic,El Amrah,Female,177,177,138,128,,125,101,96,68,48,24,95,73,B,1330
+18,,,BC,BC,Late Predynastic,El Amrah,Female,188,188,,136,,,,,,,,,,,
+18,,,BC,BC,Late Predynastic,El Amrah,Female,188,188,,118,,,,,,,,,,,
+18,,,BC,BC,Late Predynastic,El Amrah,Female,176,176,131,124,,117,98,96,62,47,21,98,72.5,D,1220
+18,,,BC,BC,Late Predynastic,El Amrah,Female,180,179,129,123,114,120,100,108,69,46,26,108,64,G,1210
+18,,,BC,BC,Late Predynastic,El Amrah,Female,194,194,,128,,,,,,,,,,,
+18,,,BC,BC,Late Predynastic,El Amrah,Female,171,170,124,132,113,119,100,100,69,48,26,100,69,C,1190
+18,,,BC,BC,Late Predynastic,El Amrah,Female,187,188,,130,,,,,,,,,,,
+18,,,BC,BC,Late Predynastic,El Amrah,Female,176,176,126,125,,114,93,85,59,45,24,91,77.5,A,1180
+18,,,BC,BC,Late Predynastic,El Amrah,Female,176,175,128,128,121,,96,,,,,,,,1230
+18,,,BC,BC,Late Predynastic,El Amrah,Female,182,182,126,126,114,121,99,98,72,52,28,99,69,C,1230
+18,,,BC,BC,Late Predynastic,El Amrah,Female,178,178,130,135,,,97,,,,,,,,1330
+18,,,BC,BC,Late Predynastic,El Amrah,Female,178,179,128,129,114,,91,,,,,,,,1250
+18,,,BC,BC,Late Predynastic,El Amrah,Female,183,185,143,137,,,102,,,,,,,,1525
+18,,,BC,BC,Late Predynastic,El Amrah,Female,,,,,,,,,,,,,,,
+18,,,BC,BC,Late Predynastic,El Amrah,Female,173,173,,124,,,,,,,,,,,
+18,,,BC,BC,Late Predynastic,El Amrah,Female,178,176,124,132,,,,,,,,,,,1240
+18,,,BC,BC,Late Predynastic,El Amrah,Female,185,184,,130,,114,,,69,,,,,,
+18,,,BC,BC,Late Predynastic,El Amrah,Female,183,182,135,130,,120,105,98,61,,,93,78,B,1365
+18,,,BC,BC,Late Predynastic,El Amrah,Female,177,177,124,134,,118,92,92,62,44,20,100,70.5,D,1250
+18,,,BC,BC,Late Predynastic,El Amrah,Female,184.5,184,129,132,,121,98.5,90,,,,101.5,,,1340
+18,,,BC,BC,Late Predynastic,El Amrah,Female,176,176,138,125,,,98,98,68,,,100,69.5,C D,1290
+18,,,BC,BC,Late Predynastic,El Amrah,Female,181,181,131,132,,125.5,101,101,67,42,27.5,100,70,C D,1330
+19,,,BC,BC,Late Predynastic,El Amrah,Female,183,183,129.5,133,,128,100,92,70,52,25.5,92,74.5,A,1340
+19,,,BC,BC,Late Predynastic,El Amrah,Female,179,179,132,130,,126,102,103,65,46.5,27,101,70,D E,1310
+19,,,BC,BC,Late Predynastic,El Amrah,Female,182,179,,133,,,,,,,,,,,
+19,,,BC,BC,Late Predynastic,Hou,Female,177,176,130,138,112,117,93,91,68,45,25,98,69,B C,1350
+19,,,BC,BC,Late Predynastic,Hou,Female,179,179,134,131,112,119,99,95,58,44,23,96,76,C D,1340
+19,,,BC,BC,Late Predynastic,Hou,Female,173,170,124,132,108,114,95,95,64,51,25,100,70,C D,1200
+19,,,BC,BC,Late Predynastic,Hou,Female,177,177,131,135,113,124,94,96,65,45,28,102,68,D E,1330
+19,,,BC,BC,Late Predynastic,Hou,Female,175,175,132,139,116,121,92,92,67,48,25,100,68,C,1365
+19,,,BC,BC,Late Predynastic,Hou,Female,169,169,126,130,107,115,95,90,63,50,23,95,74,B,1190
+19,,,BC,BC,Late Predynastic,Hou,Female,179,179,129,137,115,,,,,,,,,,1350
+19,,,BC,BC,Late Predynastic,Hou,Female,178,177,131,128,112,122,103,103,70,47,24,100,70,C D,1265
+19,,,BC,BC,Late Predynastic,Hou,Female,172,172,118,131,111,,93,89,68,49,22,96,71,B,1130
+19,,,BC,BC,Late Predynastic,Hou,Female,170,170,126,124,109,120,96,93,64,46,24,97,72,B C,1130
+19,,,BC,BC,Late Predynastic,Hou,Female,176,175,122,125,112,119,88,89,61,45,21,101,68.5,D,1140
+19,,,BC,BC,Late Predynastic,Hou,Female,176,176,135,128,110,121,99,94,65,46,24,95,74,,1290
+19,,,BC,BC,Late Predynastic,Hou,Female,180,179,129,135,112,117,101,93,67,48,24,92,76,A,1330
+19,,,BC,BC,Late Predynastic,Hou,Female,177,177,126,127,,,97,100,69,50,25,103,67,E,1205
+19,,,BC,BC,Late Predynastic,Hou,Female,173,173,126,126,111,117,91,87,72,51,24,96,68.5,A B,1170
+19,,,BC,BC,Late Predynastic,Hou,Female,177,177,132,132,104,115,95,99,71,50,25,104,65,D,1315
+19,,,BC,BC,Late Predynastic,Hou,Female,171,171,122,135,,,,,,,,,,,1200
+19,,,BC,BC,Late Predynastic,Hou,Female,171,171,134,127,115,,101,97,63,47,25,96,74.5,C,1240
+19,,,BC,BC,Late Predynastic,Hou,Female,183,182,130,133,114,119,95,99,72,48,28,104,65,D,1350
+19,,,BC,BC,Late Predynastic,Hou,Female,182,182,128,139,108,113,90,90,64,46,25,100,68.5,,1380
+19,,,BC,BC,Late Predynastic,Hou,Female,173,173,134,120,109,122,102,96,73,53,23,94,72.5,A,1180
+19,,,BC,BC,Late Predynastic,Hou,Female,168,168,119,128,113,,89,87,67,47,23,98,69,B C,1090
+19,,,BC,BC,Late Predynastic,Hou,Female,191,190,137,128,,,,,,,,,,,1420
+19,,,BC,BC,Late Predynastic,Hou,Female,170,169,124,131,111,115,88,93,62,47,21,106,65,F,1175
+19,,,BC,BC,Late Predynastic,Hou,Female,174,174,128,134,115,122,95,90,67,46,22,95,72,A B,1270
+19,,,BC,BC,Late Predynastic,Hou,Female,165,165,121,131,115,,87,92,59,45,25,106,65,F,1110
+19,,,BC,BC,Late Predynastic,Hou,Female,177,177,130,134,116,,93,98,68,47,29,105,64.5,D E,1310
+19,,,BC,BC,Late Predynastic,Hou,Female,186,186,135,135,117,131,97,104,69,48,26,107,64,F,1440
+19,,,BC,BC,Late Predynastic,Hou,Female,185,185,130,132,109,,,,,,,,,,1350
+19,,,BC,BC,Late Predynastic,Hou,Female,184,184,139,144,116,122,102,98,67,50,26,96,73,B C,1570
+19,,,BC,BC,Late Predynastic,Hou,Female,174,173,135,125,111,124,101,98,68,48,26,97,72,B C,1250
+19,,,BC,BC,Late Predynastic,Hou,Female,183,183,132,129,114,120,103,98,,49,28,95,,,1330
+19,,,BC,BC,Late Predynastic,Hou,Female,177,177,131,136,115,,,,,46,25,,,,1340
+19,,,BC,BC,Late Predynastic,Hou,Female,180,180,128,132,112,119,96,102,64,49,23,106,65.5,F G,1295
+19,,,BC,BC,Late Predynastic,Hou,Female,183,183,122,137,114,123,94,93,68,50,26,99,69,C,1300
+19,,,BC,BC,Late Predynastic,Hou,Female,176,176,127,135,115,124,103,99,73,54,29,96,71,B,1280
+19,,,BC,BC,Late Predynastic,Hou,Female,184,184,131,128,,,105,102,69,47,22,97,72,B C,1310
+19,,,BC,BC,Late Predynastic,Hou,Female,181,181,139,136,116,128,104,101,73,50,28,97,71,B C,1455
+19,,,BC,BC,Late Predynastic,Hou,Female,180,180,128,129,106,111,99,92,60,44,24,93,78,B,1265
+19,,,BC,BC,Late Predynastic,Hou,Female,178,177,128,139,121,131,99,95,71,52,24,96,71,B,1350
+19,,,BC,BC,Late Predynastic,Hou,Female,181,181,126,136,112,,98,93,71,53,23,95,72,A B,1320
+19,,,BC,BC,Late Predynastic,Hou,Female,174,174,129,131,119,125,95,93,65,47,24,98,71,C,1250
+19,,,BC,BC,Late Predynastic,Hou,Female,187,187,,143,,,,,,,,,,,
+19,,,BC,BC,Late Predynastic,Hou,Female,185,185,137,137,,,,,,,,,,,1480
+19,,,BC,BC,Late Predynastic,Hou,Female,176,176,129,123,108,116,98,99,65,49,24,101,69.5,D E,1190
+19,,,BC,BC,Late Predynastic,Hou,Female,170,170,123,127,108,123,94,93,59,45,25,99,71.5,D,1130
+19,,,BC,BC,Late Predynastic,Hou,Female,178,178,,124,110,119,,,,49,24,,,,
+20,,,BC,BC,Late Predynastic,Hou,Female,170,169,129,135,118,126,98,94,70,51,27,96,71.5,B,1260
+20,,,BC,BC,Late Predynastic,Hou,Female,179,179,134,126,109,123,99,99,66,50,24,100,70,C D,1290
+20,,,BC,BC,Late Predynastic,Hou,Female,177,176,128,132,108,120,96,94,63,48,26,98,72,C D,1270
+20,,,BC,BC,Late Predynastic,Hou,Female,177,177,126,132,110,118,95,101,66,48,27,106,65,F,1250
+20,,,BC,BC,Late Predynastic,Hou,Female,170,170,129,126,111,121,97,96,68,50,23,99,69.5,C,1175
+20,,,BC,BC,Late Predynastic,Hou,Female,177,176,125,128,110,,100,94,69,48,26,94,73,A,1200
+20,,,BC,BC,Late Predynastic,Hou,Female,180,180,128,132,112,123,102,95,66,48,29,93,76,A B,1295
+20,,,BC,BC,Late Predynastic,Hou,Female,171,170,124,132,116,125,98,103,66,45,24,105,66.5,E F,1190
+20,,,BC,BC,Late Predynastic,Hou,Female,171,171,126,133,114,119,97,96,70,48,26,99,69,C,1220
+20,,,BC,BC,Late Predynastic,Hou,Female,182,182,126,138,121,126,101,96,71,51,24,95,72,A B,1345
+20,,,BC,BC,Late Predynastic,Hou,Female,179,178,127,127,113,,98,98,71,51,26,100,68.5,C,1230
+20,,,BC,BC,Late Predynastic,Hou,Female,170,169,129,133,104,116,96,92,69,48,23,96,71,B,1240
+20,,,BC,BC,Late Predynastic,Hou,Female,177,177,132,130,114,122,96,96,63,45,24,100,70,C D,1290
+20,,,BC,BC,Late Predynastic,Hou,Female,181,181,134,129,102,113,96,98,70,48,26,102,67,D E,1330
+20,,,BC,BC,Late Predynastic,Hou,Female,180,180,129,135,108,117,90,87,65,47,23,97,70.5,B C,1330
+20,,,BC,BC,Late Predynastic,Hou,Female,174,174,131,131,114,122,98,97,67,48,23,99,70,C D,1270
+20,,,BC,BC,Late Predynastic,Hou,Female,182,182,130,133,116,124,94,89,64,46,24,95,73,B,1340
+20,,,BC,BC,Late Predynastic,Hou,Female,176,176,133,133,112,122,100,97,67,49,24,97,72,B C,1325
+20,,,BC,BC,Late Predynastic,Hou,Female,179,179,131,125,108,117,101,93,62,46,22,92,77.5,A,1250
+20,,,BC,BC,Late Predynastic,Hou,Female,176,175,130,137,119,123,95,95,61,44,26,100,70.5,D,1330
+20,,,BC,BC,Late Predynastic,Hou,Female,173,172,129,129,110,118,99,95,66,45,22,96,73,B C,1225
+20,,,BC,BC,Late Predynastic,Hou,Female,176,176,130,131,107,120,93,95,65,44,27,102,68,D E,1275
+20,,,BC,BC,Late Predynastic,Hou,Female,180,180,129,124,110,118,99,99,72,52,26,100,68,C,1230
+20,,,BC,BC,Late Predynastic,Hou,Female,172,172,124,131,109,122,,,,,,,,,1190
+20,,,BC,BC,Late Predynastic,Hou,Female,175,175,128,129,113,121,95,90,69,48,27,95,71.5,A B,1230
+20,,,BC,BC,Late Predynastic,Hou,Female,172,172,119,132,115,,92,89,60,45,24,97,72.5,C,1145
+20,,,BC,BC,Late Predynastic,Hou,Female,173,173,123,127,108,118,96,93,65,47,24,97,72,B C,1145
+20,,,BC,BC,Late Predynastic,Hou,Female,179,178,126,131,110,122,94,96,66,47,25,102,68,D E,1260
+20,,,BC,BC,Late Predynastic,Hou,Female,170,170,123,124,108,117,,,,46,23,,,,1100
+20,,,BC,BC,Late Predynastic,Hou,Female,174,174,125,129,,,94,88,64,48,23,94,74,A B,1190
+20,,,BC,BC,Late Predynastic,Hou,Female,181,180,125,134,116,120,93,94,67,48,22,101,68,D,1290
+20,,,BC,BC,Late Predynastic,Hou,Female,175,174,129,126,109,121,103,95,66,50,25,92,77,A,1210
+20,,,BC,BC,Late Predynastic,Hou,Female,177,176,133,128,114,123,102,98,68,48,24,96,73,B C,1280
+20,,,BC,BC,Late Predynastic,Hou,Female,176,171,123,122,108,124,100,99,65,46,24,99,71,D,1120
+20,,,BC,BC,Late Predynastic,Hou,Female,177,176,131,125,,,91,100,70,54,23,110,61,,1230
+20,,,BC,BC,Late Predynastic,Hou,Female,186,185,127,131,119,,103,100,67,49,26,97,72.5,C,1315
+20,,,BC,BC,Late Predynastic,Hou,Female,181,181,129,135,114,118,101,96,69,47,22,95,73,B,1340
+20,,,BC,BC,Late Predynastic,Hou,Female,179,178,130,131,116,126,96,86,63,45,24,90,78,A,1300
+20,,,BC,BC,Late Predynastic,Hou,Female,171,170,120,129,113,119,88,85,66,47,23,97,69.5,B,1120
+20,,,BC,BC,Late Predynastic,Hou,Female,177,176,121,130,115,121,99,99,73,51,26,100,68,C,1185
+20,,,BC,BC,Late Predynastic,Hou,Female,179,179,131,135,111,119,95,90,67,46,26,95,72,A B,1345
+20,,,BC,BC,Late Predynastic,Hou,Female,169,169,126,125,108,118,99,95,67,50,23,96,72.5,B C,1130
+20,,,BC,BC,Late Predynastic,Hou,Female,169,169,129,137,106,118,94,98,62,46,27,104,67,E F,1270
+20,,,BC,BC,Late Predynastic,Hou,Female,177,177,128,136,109,116,93,88,70,51,23,95,70.5,A,1310
+20,,,BC,BC,Late Predynastic,Hou,Female,189,189,132,138,116,126,99,95,67,50,25,96,72.5,,1465
+20,,,BC,BC,Late Predynastic,Hou,Female,178,178,126,129,114,125,98,99,62,49,25,101,70,D E,1230
+20,,,BC,BC,Late Predynastic,Hou,Female,184,182,128,137,111,122,98,97,68,54,26,99,70,C D,1380
+20,,,BC,BC,Late Predynastic,Hou,Female,172,172,129,135,118,129,96,90,72,51,28,94,71,A,1270
+20,,,BC,BC,Late Predynastic,Hou,Female,184,184,124,128,111,124,95,91,66,44,27,96,72,B C,1240
+20,,,BC,BC,Late Predynastic,Hou,Female,178,177,124,130,110,,94,92,69,50,25,98,69,B C,1220
+20,,,BC,BC,Late Predynastic,Hou,Female,173,172,126,127,109,118,95,91,71,51,23,96,70,A B,1180
+20,,,BC,BC,Late Predynastic,Hou,Female,173,172,122,125,115,,97,94,66,45,23,97,72,B C,1120
+20,,,BC,BC,Late Predynastic,Hou,Female,175,175,129,132,119,126,96,95,67,49,27,99,69.5,C,1270
+21,,,BC,BC,Late Predynastic,Hou,Female,176,176,130,127,109,118,100,94,66,46,24,94,74,A B,1235
+21,,,BC,BC,Late Predynastic,Hou,Female,175,175,125,130,,,94,93,62,44,25,99,71,D,1210
+21,,,BC,BC,Late Predynastic,Hou,Female,179,179,119,,,,95,90,66,45,23,95,72.5,A B,
+21,,,BC,BC,Late Predynastic,Hou,Female,172,171,123,136,115,122,93,93,68,49,25,100,68,C,1220
+21,,,BC,BC,Late Predynastic,Hou,Female,173,173,128,127,111,121,96,98,67,47,24,102,68,D E,1195
+21,,,BC,BC,Late Predynastic,Hou,Female,176,176,126,134,117,123,102,98,73,54,21,96,71,B,1265
+21,,,BC,BC,Late Predynastic,Hou,Female,180,180,126,124,,,,,,,,,,,1195
+21,,,BC,BC,Late Predynastic,Hou,Female,176,176,126,131,112,119,91,90,66,46,26,99,69,C,1235
+21,,,BC,BC,Late Predynastic,Hou,Female,175,175,127,128,108,118,94,92,68,48,29,98,69.5,B C,1210
+21,,,BC,BC,Late Predynastic,Hou,Female,178,177,129,128,115,121,101,104,66,47,24,103,68,E F,1250
+21,,,BC,BC,Late Predynastic,Hou,Female,182,182,131,,,,,,,,,,,,
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,179,179,131,134,113,116,95,90,72,47,25,95,70.5,A,1335
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,174,172,126,128,108,119,91,91,65,46,21,100,68.5,C,1195
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,182,181,126,139,108,120,94,89,65,45,27,95,73,B,1355
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,178,178,135,136,113,121,101,94,67,51,24,93,75,A B,1390
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,180,180,122,125,110,119,96,96,66,47,25,100,69,C,1170
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,181,180,131,138,116,129,,,,51,25,,,,1390
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,177,176,120,125,107,119,98,101,69,49,22,103,67,E F,1130
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,171,171,127,129,107,112,94,90,63,43,23,96,73,B C,1190
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,169,168,124,139,,,,,,,,,,,1240
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,173,171,128,139,119,128,98,93,70,51,24,95,72,A B,1310
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,178,178,128,135,112,,97,97,68,48,25,100,69,C,1305
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,171,171,128,134,115,120,99,97,76,48,21,98,68.5,B,1250
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,171,171,122,132,112,119,91,91,66,44,25,100,68.5,C,1170
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,186,186,134,143,119,130,99,94,,51,27,95,,,1515
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,173,172,127,130,111,,98,96,69,46,25,98,70.5,C,1215
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,183,181,138,130,117,121,102,96,73,51,23,94,72.5,A,1395
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,174,174,127,128,113,120,96,97,75,50,24,101,66.5,C D,1200
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,169,,,131,,,,,,,,,,,
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,174,173,127,131,111,119,94,97,67,47,23,103,64,C D,1230
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,180,180,134,130,119,128,95,97,66,47,26,102,68,D E,1335
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,184,184,136,132,114,123,96,91,75,51,25,95,70,,1405
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,178,178,129,124,116,120,97,92,66,46,27,95,74,B,1210
+21,-4800,-4500,BC,BC,First Dynasty,Abydos,Female,176,175,126,118,107,116,93,88,61,45,22,95,75,B C,1110
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,182,181,122,125,,,94,,,,,,,,1180
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,187,186,122,134,,,98,,,,,,,,1300
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,184,184,133,132,,126,102,97,76,53,26,95,71,A B,1370
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,179,179,,128,,,,,65,47,26,,,,
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,175,174,123,135,,121,92,92,64,47,23,100,69,C,1235
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,180,182,136,133,116,124,101,100,73,53,26,99,69,C,1385
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,183,184,126,,,124,97,100,76,51,28,103,65,D,
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,171,172,129,128,,121,92,90,61,45,26,98,72,C D,1200
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,186,185,138,134,,123,103,89,,53,26.5,86,,,1460
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,181,180,143,125,,130,106,94,72,53,,89,78,- A,1375
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,177,176,131,130,,122,96,96,66,49,29,100,69.5,C D,1280
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,179,178,127,134,,117,94,91,60,45,23,97,73.5,C D,1295
+21,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,188,188,131,133,,128,106,99,71,52,28,93,75,A B,1390
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,179,179,129,128,,120,95,86,65,50,26,90.5,76.5,- A,1260
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,176,176,132,124,,123,91,91,65,44,22,100,69,C,1225
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,178,178,,127,,,,,,47,23,,,,
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,178,178,127,127,,123,96,95,66,47,24,99,70,C D,1220
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,174,174,125,127,,121,96,94,63,46,25,98,72,C D,1175
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,178,178,133,129,,116,99,92,66,48,25,93,75,A B,1300
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,185,185,129,135,,125,93,89,70,50,22,96,70,A B,1365
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,173,172,126,131,,120,99,89,68,49,24,90,76.5,- A,1215
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,180.5,178.5,126.5,135.5,,116.5,94,92,59.5,41,22,98,73,D,1315
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,177,177,131,130,,123,96,96,64,47,28.5,100,70,C D,1280
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,182,180.5,144,125,,129,106,94,70,,,89,79,- A,1395
+22,-4800,-4500,BC,BC,First Dynasty,El Amrah,Female,188,188,132,133,,128,106,100,72,,,94,74,A B,1405
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,182,182,125,136,117,,97,97,73,50,25,100,68,C,1315
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,176,176,125,133,116,125,97,97,66,48,25,100,70,C D,1245
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,181,180,126,135,118,127,94,87,68,51,26,93,73.5,A B,1310
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,176,176,123,129,115,124,95,97,68,50,26,102,67.5,D E,1185
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,173,173,123,132,112,116,90,89,65,47,27,99,69,C,1195
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,185,184,122,145,116,123,97,96,67,46,24,99,70,C D,1390
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,170,170,129,123,113,,96,95,67,49,29,99,69.5,C,1145
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,176,174,128,121,111,121,98,96,68,51,27,98,71,C,1160
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,174,174,126,129,108,119,91,88,66,48,28,97,70,B,1200
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,173,173,125,132,108,113,92,94,55,42,25,102,70,E F,1180
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,176,174,130,128,110,118,90,90,69,51,27,100,67,B C,1245
+22,-4800,-4500,BC,BC,First Dynasty,Hou,Female,172,172,125,126,110,118,93,97,69,48,25,104,65,D,1150
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,175,175,,135,,,,,68,47,25,,,,
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,184,183,128,136,112,118,93,83,67,49,24,89,75,- A,1360
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,182,182,,134,115,,91,92,70,47,26,101,67,C D,
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,176,175,,137,,,,,64,47,25,,,,
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,167,166,133,137,124,131,95,91,61,46,29,96,74,B C,1295
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,169,169,126,136,115,,91,91,71,52,25,100,67,B C,1230
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,173,173,125,139,112,120,91,90,69,50,24,99,68,B C,1280
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,178,178,133,132,110,114,94,89,65,46,21,95,73.5,B,1330
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,175,174,127,129,111,123,94,91,65,47,23,97,72,B C,1220
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,181,181,123,133,121,131,102,94,62,46,22,92,78.5,A B,1260
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,178,176,,133,,,,,,,,,,,
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,186,184,132,137,,,,,,,,,,,1430
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,171,170,124,127,113,122,96,96,68,49,26,100,69,C,1145
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,189,188,132,135,115,124,102,92,75,51,25,90,75,- A,1435
+22,-4800,-4200,BC,BC,First and Second Dynasties,Royal Tombs at Abydos,Female,184,184,125,141,118,124,97,96,64,46,24,99,71,D,1380
+22,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Female,181,178,137,145,125,127,93,85,74,52,22,91,71,- A,1530
+22,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Female,172,171,128,137,112,,94,94,68,47,26,100,68,C,1280
+22,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Female,170,168,124,132,,,100,85,64,48,21,85,81,- A,1185
+22,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Female,171,171,120,127,110,119,92,94,62,45,25,102,68,D E,1110
+22,-4200,-3700,BC,BC,Third and Fourth Dynasties,Regagnah,Female,178,177,126,131,110,121,95,90,65,46,26,95,73,B,1250
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,171,171,134,136,109,,95,92,,45,26,97,,,1325
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,173,172,136,139,108,,94,87,,49,24,93,,,1390
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,168,167,133,131,110,,92,84,,47,23,91,,,1245
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,176,175,135,131,109,,99,,,,,,,,1325
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,179,179,131,140,106,,98,92,,54,27,94,,,1395
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,170,164,,133,108,,,,,50,22,,,,
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,192,187,,137,,,,,,55,,,,,
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,178,180,134,133,109,,,,,,,,,,1365
+23,-3700,-3500,BC,BC,Fifth Dynasty,Deshasheh,Female,178,175,139,138,117,,99,87,,52,25,88,,,1450
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,175,131,130,112,118,99,93,68,46,25,94,74,A B,1275
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,180,179,125,128,101,114,96,90,57,50,30,94,77.5,B C,1225
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,169,168,129,130,111,120,93,97,59,57,26,104,68,F,1205
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,168,168,130,130,113,121,94,97,70,47,25,103,66,D E,1210
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,170,134,140,113,120,94,92,62,45,27,98,72,C D,1365
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,178,176,140,127,110,123,105,92,68,52,22,88,80,- A,1345
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,135,126,107,112,96,91,75,56,25,95,70,A,1245
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,161,161,125,126,108,116,88,85,63,47,23,97,70.5,B C,1080
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,130,127,,,97,89,55,41,20,92,80.5,A B,1210
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,174,131,132,117,122,97,85,65,46,27,,79,,1285
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,173,172,126,,106,113,97,103,64,47,24,106,66,G,1250
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,170,169,126,122,105,113,96,91,61,43,21,95,75,B C,1110
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,171,129,127,,,95,90,55,43,21,95,,77.5,1195
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,171,134,135,105,,93,,,,,,,,1325
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,137,132,114,120,96,88,67,50,23,92,75,A,1355
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,132,131,110,117,97,91,57,45,20,94,78,B C,1295
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,179,177,135,132,119,,105,97,71,53,23,92,76,A,1355
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,173,131,138,108,119,91,93,67,49,26,102,67,D,1345
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,174,134,135,115,118,94,89,62,46,24,95,74,B,1345
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,133,132,106,,99,,,,,,,,1315
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,125,121,105,,92,83,59,43,26,90,78.5,A,1105
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,170,169,121,122,106,110,91,87,,44,27,96,,,1065
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,123,125,,,91,91,61,43,26,100,70,C D,1115
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,185,184,134,132,119,123,105,94,73,52,27,90,76.5,- A,1390
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,167,167,126,126,106,114,91,91,64,47,23,100,69,C,1130
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,178,176,126,141,110,115,96,91,67,52,26,95,72.5,A B,1345
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,175,127,133,98,,97,97,68,47,24,100,69,C,1255
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,168,167,130,130,108,111,94,90,68,59,25,96,71,B,1205
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,176,,126,108,,,,64,50,25,,,,
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,170,170,119,122,114,121,96,92,64,50,26,,73,,1050
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,173,173,115,131,102,115,91,91,66,45,24,100,68.5,,1110
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,180,179,125.5,138,113,122,93,93,66,47,23,100,69,C,1330
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,181,181,137,127,110,120,100,98,67,47,25,98,71,C,1340
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,179,177,131,135,111,118,98,101,71,47,23,103,67,E,1350
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,169,168,127,129,99,107,93,92,65,47,24,99,70,C D,1180
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,176,125,121,,114,95,93,66,51,25,98,71,C,1140
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,175,124,130,108,,96,,,,,,,,1200
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,178,178,125,130,104,111,98,95,68,51,27,97,71,B C,1230
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,188,185,140,133,112,121,106,94,69,52,26,89,79,- A,1490
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,169,168,130,130,107,116,96,95,69,47,26,99,69,C,1215
+23,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,130,132,114,121,99,99,62,46,29,100,71,D E,1285
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,175,133,139,116,124,101,91,71,51,25,90,76,,1385
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,170,121,136,111,119,92,87,67,49,21,95,72,A B,1210
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,161,161,124,114,99,112,95,97,61,44,24,102,69.5,E,965
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,173,173,122,132,113,120,95,94,67,49,25,99,69,C,1185
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,173,172,129,133,114,119,91,93,67,43.5,24,102,67,D E,1265
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,175,133,130,114,123,101,95,69,49.5,26,94,73.5,A B,1285
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,181,180,136,,107,116,96,92,64,46,26,96,73,B C,
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,171,123,138,119,130,97,91,68,51.5,24,94,73,A,1245
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,177,130,133,112,118,94,90,66,47,26,96,72,B C,1300
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,180,180,130,140,119,125,95,91,72,53,25,96,70,A B,1395
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,176,132,135,111,116,98,89,66.5,49,26,91,76.5,A,1345
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,170,126,131,105,,96,94,65.5,50,24,98,71,C,1205
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,174,123,130,114,119,99,94,65,51,26,95,74,B,1185
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,132,133.5,112,119,99,99,69,48,23,100,69,C,1285
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,176,125,122,106,,95,99,67,49,25.5,104,66.5,E,1150
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,178,178,127,129,,,95,93,67,46,27,98,70,,1240
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,170,170,132,132,106,111,94.5,87,66,47,23,92,74.5,A,1260
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,175,,130,,,,,,,,,,,
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,174,122,131,109,,93,91,64,46,,98,71,,1185
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,185,185,131,130.5,111,115,99,90.5,65,48,24,91,77,A,1340
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,167,167,126,129,106,114,91,84,67,48,24,93,,,1155
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,169,168,130,129,114,120,94,84,64,51,25,89,77,- A,1205
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,171,132,137,109,113,95,93,71,48.5,25,98,69,B C,1325
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,180,178,132,132.5,110,122,100,96,65,47,26,96,73.5,B C,1335
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,173,127,129,101,109,96,86,61,50,24,90,79.5,,1215
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,169,169,126.5,127,111,,,,,,,,,,1150
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,178.5,178,134,134,111,120,98,97,65,48,26,99,72,D,1360
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,181,181,127,130,108,111,98,93,66,48,24.5,95,73.5,B,1270
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,161,161,127,129,105,109,92,88,62,58,21,96,73,B C,1120
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,174,127,128,106,115,99,99,64,47.5,25,100,70.5,D,1205
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,173,137,127,105,111,98,93,67,51,24,95,73,B,1290
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,183,183,135,140,112,120,100,99,73,54,25,99,69,C,1470
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,174,128,132,109,113,90.5,89,65,49,25,98,70,C,1250
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,184,184,139,136,118,125,99,94,71,55,26,95,72,,1480
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,165,162.5,133,136,105,113,97,95.5,63,50,23,99,72,D,1270
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,184,184,127,136,,,,,,,,,,,1350
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,173,173,131,132,111,118,94,96,68,50,25,102,67.5,D E,1275
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,182,182,133,142,118,123.5,99,95,68,49,26,96,72,B C,1460
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,181,180,130,133,110,119,103,106.5,72,52,26.5,103,73.5,,1330
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,174,127,128,105,115,95,89,66,49,24,94,73.5,A B,1205
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,118.5,117.5,102,114,101,102,64,45,23,101,70,D E,1010
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,179,178,136,128,,,105,99,67.5,53,25.5,94,75,B,1320
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,188,188,128,126,113,121,102,89,66,47.5,27,87,80.5,,1290
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,167,166,123,127,112,120,96,91,69,51.5,,95,72,A B,1110
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172.5,172.5,130,120,109,,109,91,65,50.5,26,84,87,- A,1140
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,126,128,109,118,94,90.5,67,49,26,96,71,B,1205
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,130,131,101,115,97,93,64.5,46,26,96,73,B C,1245
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175.5,175.5,132,124,108,120,100,95,68,47.5,29,95,73,B,1215
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,173,129,131,109,117,96,90,66,51,23,94,74,A B,1250
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174.5,174.5,131,123,105,115,96,94.5,68,47,27,98,70,C,1195
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,178,178,133,139,111,117.5,95,96,70,46,26,101,67.5,C D,1400
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,179,178,135,125,109,117,96,89,64,46,26,93,75,A B,1145
+24,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,163,162,126,131,107,113,91,86,61.5,42.5,23,94,74,A B,1145
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,173,128,130,115.5,127,96,91,67,50,24,95,72.5,A B,1230
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,165,165,132,129.5,110.5,115,96,82,66.5,51.5,26,85,80,- A,1195
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,177,130,129.5,102,108,95,90,68,50,24,95,72,A B,1265
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,181,181,126,131,114,124,100,94,74,49,25,94,71.5,A,1270
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,173.5,173,131,124,111,122,101,95,69,51,24,94,73.5,A B,1195
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,180,180,136,128,118,121,101,91,64.5,46.5,28,90,78,A,1335
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,136.5,140,107,117,92,80,55,45,21,,83,,1385
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,177,128,131.5,108,117,95,90,68,50,25,95,72,A B,1260
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,133.5,130,102.5,114,90.5,93,66,47,24,103,67,E,1295
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,180,180,137,137,110,115,99,101,66,51,25,102,69,E,1435
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,166,165,123,132.5,106,113.5,94,85,60,44.5,21,90,77,,1145
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,129,136,113,122,96,95,70,50,25,99,69,C,1315
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,183,182,132,134,131,,97,94,70,49,27,97,70.5,B C,1375
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,184,184,131,137,110,117,95,89,59,43,21.5,94,76,B,1405
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,174,174,128,127,109,,95,90,69.5,51,22,95,71.5,A B,1205
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,175,121,140,116,118.5,95,90,72,55,26,95,70,A,1260
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,191,191,133.5,106,110,124,101,92,70,50,26,,,,1145
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,175,134,135,109.5,116,100,94.5,67.5,50,27,95,74,B,1355
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,138,133,108,118,98,87,63,44,23,89,80,- A,1375
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,179,178,126,126,106,118,97,95.5,71,49,23,99,69,C,1210
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,133,135,108,115,92,93,70,48,27,101,67,C D,1315
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,177,135.5,127.5,113,124,94,90,67,49,23,95,71.5,A B,1290
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,129,128,107,114,94,89,64,47,26,95,73,B,1200
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,173,173,130,130,105,112,93,93,71,47.5,27,100,67,B C,1245
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,165,165,124,127,106,110.5,93,89,66,49,23,96,71.5,B,1105
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,131,129,113,,98,92,67,50.5,23,94,74,A B,1265
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,178,177.5,130,138,107,120,94,89,67,47,26,95,72,A B,1360
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,182,182,135,131,111,117,97,95,64,44.5,28,98,71.5,C D,1370
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,128,126,108,111,95,91,66,48,24,96,72,B C,1175
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,177,176,129,133,109,116,93,92,67,46,23,99,69,C,1290
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,181,181,134,141,118,125,101,97,70,50,26,96,72,B C,1455
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,170,126,130,115,121,95,92,74,52,26,97,68.5,A B,1200
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,176,176,128,125,103,115,95,93,69,49,24,98,69.5,B C,1200
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,167,167,133,131,106,117.5,97,94,66,43,27.5,97,72,B C,1240
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,175,125,125,111,116,98,97.5,60,44,24.5,99,72,D,1160
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,125,129,111,119,91,92,67,49,23.5,101,67.5,C D,1175
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,172,172,130,123,106,,93,92,70.5,48,26,99,68,B C,1170
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171.5,171.5,122,136,113,,93,91.5,63,46,25.5,98,71,C,1210
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,121,128,108,120,95,89,67.5,49,31,94,73,A,1125
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,174,126,134,110,117,92,91,67.5,47,25,98,69,B C,1260
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,174,135.5,129,110,118,101,94,67,49,25,93,75,A B,1300
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,185,184,127,126,114,119,99,94,72,53.5,27,95,71.5,A B,1260
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,130,125,104,118,100,95,71,51,28,95,72,A B,1180
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,179,179,131,124,,,,,,,,,,,1240
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,171,119,123,,,,,,,,,,,1065
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175.5,175.5,136.5,129,103,115,102,102.5,75,48,25,101,68,D,1305
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,184,183,134,137,107,119,92.5,92,70,,,100,68,C,1440
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,182,182,135,138,113,123,101,101,67,49,26,100,70,C D,1440
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,169,169,135,123,110,116.5,98,88,,45,25,90,,,1190
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,171,169,136,137,107,116,94,86,,49,24,92,,,1355
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,184,184,127,118,107,112,94,87,68,47,23,93,73.5,A,1175
+25,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,167,167,126,132,,,,,,,,,,,1180
+26,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,180,180,125,133,109,117,,,,,,,,,1270
+26,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,168,167.5,133,136,107,118,95,95,69,47,25,100,68.5,C,1290
+26,-3500,-2780,BC,BC,Sixth to Twelfth Dynasties,Denderah,Female,175,174,132,134,110,117,99,99,68,50,25,100,70,C D,1320
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,179,179,128,129,112,116,99,93,71,49,22,94,72.5,A,1255
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,170,170,117,122,109,114,90,84,62,44,23,93,74,A B,1030
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,175,174,126,132,111,119,92,87,69,46,23,95,71,A B,1240
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,170,170,125,127,108,117,92,87,63,47,23,95,73,B,1150
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,181,181,127,133,105,110,96,87,64,50,21,91,77,,1300
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,173,173,128,128,103,112,90,88,67,49,20,98,69,,1205
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,174,174,123,131,103,113,101,96,70,50,27,95,72.5,A B,1190
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,176,175,125,134,102,112,98,87,62,48,24,89,80,- A,1265
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,171,171,128,136,106,115,93,83,65,48,23,89,77,- A,1270
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,181,180,131,135,107,117,98,97,69,47,25,99,70,C D,1360
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,179,178,128,127,109,117,100,91,69,52,25,91,75,A,1240
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,174,174,129,134,,,93,90,61,46,24,97,72.5,C,1280
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,180,180,123,127,107,117,93,85,66,48,29,91,74.5,A,1195
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,176,175,128,132,107,120,96,93,71,51,25,97,70,B,1265
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,173,173,124,129,114,122,96,89,68,50,26,93,73.5,A,1180
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,182,181,128,140,116,121,96,91,70,50,25,95,71.5,,1390
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,176,176,126,135,110,118,98,95,64,48,25,97,72.5,C,1275
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,171,171,128,129,114,120,94,89,68,49,26,95,71.5,A B,1200
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,174,174,129,121,105,116,97,92,69,50,23,95,72,A B,1155
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,177,177,131,129,113,120,95,87,67,48,23,92,74.5,A,1270
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,171,171,123,126,106,113,93,90,65,43,26,97,71,B C,1130
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,172,172,125,128,109,119,93,95,67,44,26,102,67,D E,1170
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,178,178,128,130,111,121,92,94,69,48,25,102,66,C,1260
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,179,179,123,133,115,122,89,85,72,51,25,95.5,68,A,1245
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,176,176,131,124,,,99,85,70,,,86,78.5,- A,1215
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,179,177,123,138,110,118,97,95,70,49,26,98,70,C,1295
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,173,173,123,130,111,118,95,93,66,50,23,98,71,C,1180
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,173,173,124,136,111,122,93,94,66,49,24,101,68.5,D,1240
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,177,176,127,130,109,117,95,93,68,48,26,98,69.5,B C,1245
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,180,180,132,131,111,118,97,96,73,49,26,99,68.5,B C,1325
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,179,179,139,129,113,121,100,85,71,51,26,85,79,- A,1365
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,172,172,123,129,110,117,91,86,64,48,22,94.5,72.5,A,1160
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,181,181,131,132,114,120,102,96,71,51,26,94,73.5,A B,1330
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,165,165,124,138,110,113,91,85,64,47,24,93,73,A,1200
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,177,177,126,131,109,118,98,92,62,47,24,94,76,B,1245
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,176,176,123,135,105,113,91,88,59,44,25,97,72.5,C,1245
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,167,167,122,132,113,119,88,86,69,50,21,98,68,B,1145
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,174,173,127,131,120,123,98,89,69,48,26,91,75,A,1230
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,175,175,123,133,116,123,89,88,71,49,26,99,67,B,1220
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,177,175,123,133,108,116,94,90,66,48,22,96,72,B C,1230
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,196,196,137,133,109,125,104,97,69,49,26,93,75,A B,1520
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,175,175,119,132,112,116,92,93,67,45,26,101,67.5,C D,1170
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,179,179,132,133,112,117,92,81,70,48,23,88,74.5,- A,1340
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,179,177,128,128,111,120,97,93,69,51,25,96,71.5,B,1245
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,174,174,123,132,108,113,91,83,65,49,21,91,74.5,A,1200
+26,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,172,172,124,118,107,116,96,92,58,41,25,96,75,C,1070
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,175,174,126,129,110,120,95,89,72,49,25,94,71,A,1210
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,174,173,119,129,112,121,94,93,64,47,24,99,70,C D,1135
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,163,163,127,132,115,123,88,84,61,44,22,95,72,A B,1160
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,176,176,129,131,111,121,95,90,66,47,26,95,72.5,A B,1265
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,172,172,127,136,,,90,85,59,44,22,94,74,A B,1260
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,165,163,131,128,,,95,94,68,49,23,99,69,C,1175
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,190,190,129,128,114,126,104,103,63,47,25,99,73,D E,1335
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,170,168,117,122,105,114,96,100,64,48,27,104,67,E F,1030
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,175,174,131,134,,,95,89,65,46,24,94,74,A B,1305
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Hou,Female,171,171,128,130,112,117,98,98,67,44,23,100,69,C,
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,169,169,127,129,104,114,96,93,67,48,27,97,71,B C,1180
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,172,172,126,136,109,118,95,93,66,46,23,98,71,C,1255
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,174,173,135,130,108,115,99,90,67,48,26,91,76,A,1300
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,166,166,127,132,112,118,95,93,70,48,25,98,69,B C,1185
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,169,169,127,136,104,115,90,89,62,45,26,99,70,C D,1240
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,182,182,132,134,116,127,96,86,73,54,23,90,73.5,- A,1265
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,175,174,136,137,112,119,94,88,69,50,24,94,72,A,1385
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,169,168,132,129,110,120,97,92,71,47,24,95,71.5,A B,1225
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,182,181,134,132,116,125,95,87,71,54,23,92,73,A,1370
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,179,178,129,131,116,121,95,83,69,52,23,87,76.5,- A,1290
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,180,179,139,132,115,125,99,93,71,51,27,94,72.5,A,1405
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,174,174,123,135,112,118,94,89,70,51,25,95,71,A B,1230
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,181,181,128,132,114,122,96,88,70,52,25,92,73.5,A,1300
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,176,175,130,136,114,121,95,93,70,51,25,98,69,B C,1325
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,173,169,123,132,111,116,88,86,65,46,24,98,69,B C,1195
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,179,179,129,128,111,120,98,98,64,45,25,100,70.5,D,1260
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,174,171,128,133,112,120,95,92,68,48,21,97,70.5,B C,1260
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,174,174,129,131,114,127,96,86,66,46,24,90,77,- A,1250
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,171,171,126,125,106,117,95,92,66,50,28,97,71.5,B C,1145
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,176,176,132,141,116,119,91,85,67,49,25,93,72,A,1390
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,168,167,122,126,107,115,90,90,61,43,24,100,69,C,1100
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,168,168,123,131,110,116,93,86,64,48,24,92.5,74.5,A,1150
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,181,179,135,126,108,,95,98,66,47,23,103,67,E,1310
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,180,180,128,141,114,122,93,92,67,51,25,99,69,C,1385
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,179,179,131,135,115,123,92,86,64,48,25,93,73.5,C,1350
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,177,177,135,132,114,120,100,91,72,52,23,91,74,A,1340
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,182,182,130,132,114,120,93,89,64,50,24,96,72,B C,1330
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,177,176,128,125,110,121,101,94,70,51,28,93,74,A B,1205
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,169,169,133,142,119,129,96,86,73,51,24,90,73.5,- A,1360
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,175,175,128,135,111,119,95,90,67,49,28,95,72,A B,1285
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,177,177,138,138,112,121,95,93,76,53,24,98,67,A B,1435
+27,-2780,-2560,BC,BC,Twelfth to Fifteenth Dynasties,Abydos,Female,180,180,139,135,113,125,104,94,78,54,24,90,73.5,- A,1440
+27,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,176,126,120,113,123,101,84,68,51,25,83,81.5,- A,1150
+27,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,190,188,131,130,111,119,97,97,69,51,24,100,68,C,1375
+27,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,179,121,136,122,126,98,94,66,51,24,96,72,B C,1250
+27,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,177,129,127,112,121,102,96,64,46,25,94,77.5,B C,1245
+27,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,174,174,132,135,113,119,92,87,67,46,21,95,72,A B,1320
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,170,170,130,136,112,119,91,83,64,46,23,91,75,A,1280
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,181,181,131,127,111,119,99,99,63,45,22,100,70.5,D,1280
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,174,174,129,127,107,116,93,90,72,50,23,97,68,A B,1210
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,165,165,122,126,107,119,96,95,64,47,27,99,71,D,1080
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,181,181,134,132,109,121,98,96,69,46,23,98,70,C,1360
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,174,174,126,130,105,116,94,87,62,48,24,93,74.5,A B,1210
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,175,175,128,125,113,116,,,72,56,26,,,,1190
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,169,169,130,129,114,,95,89,69,50,23,94,72,A,1205
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,166,166,125,130,115,117,96,94,64,47,25,98,71.5,C D,1145
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,176,176,138,119,107,112,101,93,62,46,23,92,,,1230
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,179,127,129,109,120,96,95,65,43,26,99,70,C D,
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,173,173,128,135,111,117,93,95,63,47,25,102,68,D E,1270
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,177,128,129,117,124,98,89,65,48,26,91,76.5,A,1255
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,181,181,122,120,112,121,99,95,66,48,22,96,73,B C,1125
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,181,180,138,135,111,119,101,89,64,50,23,88,80,- A,1435
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,172,171,127,127,108,117,97,88,64,47,29,91,77,A,1180
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,174,173,122,129,110,120,94,97,67,49,24,103,66,D E,1165
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,176,174,124,130,109,119,95,91,66,49,22,96,72,B C,
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,175,175,117,136,113,121,90,85,65,51,25,94,72,A,1185
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,177,175,123,136,106,114,92,90,67,49,22,98,69,B C,1260
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,172,172,134,140,109,112,98,90,63,49,23,92,76,A,1375
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,185,185,131,129,117,124,98,90,64,49,27,92,,,1330
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,185,185,128,137,121,129,100,97,71,51,27,97,,,1375
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,175,174,130,134,116,125,98,94,73,53,25,96,,,1295
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,167,167,128,133,117,126,95,88,62,47,21,93,76,A B,1210
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,178,177,132,136,114,120,100,87,66,46,26,87,80,- A,1360
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,179,134,134,118,124,99,92,63,45,24,93,76.5,B,1365
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,178,125,125,108,117,97,87,65,50,24,89,77,- A,1190
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,174,174,132,130,116,121,94,81,64,48,22,86,79.5,- A,1270
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,178,178,123,130,109,113,86,86,63,46,22,100,67.5,B C,1210
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,171,171,123,123,108,118,88,86,65,46,26,98,69,B C,1100
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,168,167,130,132,101,110,89,92,61,42,24,103,66.5,D E,1225
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,183,183,140,136,108,118,98,91,64,48,22,93,75,A B,1480
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,183,183,128,137,113,120,101,98,70,49,28,97,71,B C,1365
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,183,182,127,136,114,117,102,96,66,49,26,94,74,A B,1345
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,171,170,125,136,111,118,96,98,67,51,23,102,67,D E,1240
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,179,132,138,123,128,99,98,71,51,26,99,69,C,1385
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,179,179,129,134,,121,92,84,73,48,24,91,70.5,- A,1315
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,170,170,129,125,108,119,90,85,73,51,26,94,69,- A,1165
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,180,179,124,136,112,120,93,92,66,49,23,99,69.5,C,1290
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,176,175,128,137,110,118,92,92,65,45,23,100,69.5,C D,1315
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,177,177,125,148,,,,,,,,,,,1390
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Shekh Ali,Female,178,178,123,127,110,121,98,99,68,52,23,101,68.5,D,1180
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,182,181,119,134,111,116,95,90,63,48,24,95,73,B,1235
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,170,170,127,138,103,110,86,82,63,47,23,95,71,A B,1235
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,180,180,,128,109,116,,,58,43,24,,,,
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,178,176,123,136,115,122,94,92,67,48,27,98,70,C,1265
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,167,167,122,126,105,112,89,93,68,47,24,104,65,D,1265
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,173,129,127,111,,97,91,69,49,26,94,72.5,A,1220
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,179,178,126,138,109,116,,,,47,25,,,,1325
+28,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,173,173,129,132,107,121,94,87,66,48,22,93,74,A B,1250
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,189,189,132,133,115,125,101,99,76,53,26,98,,,1410
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,175,131,135,110,117,94,84,65,47,22,89,,,1315
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,174,174,124,138,116,121,94,93,65,48,24,99,70,C D,1265
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,176,176,130,130,109,,97,86,57,40,19,89,81,- A,1265
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,161,159,127,134,115,121,91,85,66,47,22,93,72.5,A,1165
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,177,177,127,135,112,115,97,90,65,46,26,93,75,A B,1290
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,180,178,133,139,116,121,97,91,67,48,25,94,73.5,A B,1415
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,186,186,131,139,113,119,92,89,64,50,26,97,71,B C,1440
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,181,179,137,135,111,121,99,92,64,48,27,93,76,A B,1425
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,171,169,125,131,116,127,97,94,70,52,26,97,70.5,B C,1185
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,172,172,128,136,110,118,92,84,65,46,24,91,75,A,1275
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,183,181,121,139,111,120,93,93,66,47,24,100,68.5,C,1310
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,181,180,125,134,109,120,92,91,68,49,33,99,68.5,B C,1290
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,186,185,132,136,112,121,99,89,69,52,28,90,75.5,- A,1420
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,173,170,120,136,113,121,91,93,65,47,23,102,67,D E,1200
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,179,178,130,137,112,120,98,90,68,51,26,92,,,1355
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,181,180,134,136,118,130,105,104,73,53,29,99,70,C D,1400
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,181,181,130,135,117,126,102,94,66,49,29,92,77,A,1350
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,180,180,130,146,116,125,99,101,73,54,29,102,66.5,D,1455
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,184,184,128,136,116,126,102,103,66,47,31,101,70,D E,1365
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,178,177,128,139,113,122,96,98,68,48,28,102,68,D E,1345
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,178,178,132,134,108,116,92,89,72,52,24,97,68,A B,1340
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,179,178,129,137,119,124,99,98,68,49,26,99,70,C D,1345
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,185,185,131,132,114,124,96,93,72,53,24,97,69.5,B,1360
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,175,135,136,112,116,97,97,63,49,26,100,70.5,D,1365
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,172,172,121,123,105,117,93,83,66,50,25,89,76,- A,1090
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,186,185,123,132,120,129,106,103,79,60,25,97,69.5,B,1285
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,177,177,130,132,113,122,92,86,66,49,22,93,72.5,A,1290
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,178,178,126,139,113,119,92,88,67,47,22,96,71,B,1325
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,181,180,130,133,115,121,103,96,67,51,26,93,75,A B,1330
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,174,172,124,133,111,117,88,88,66,47,23,100,68,C,1220
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,177,177,126,140,110,118,94,92,71,51,25,98,68.5,B,1330
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,176,175,124,131,109,119,90,89,68,49,24,99,68,B C,1215
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,174,174,129,140,112,,90,89,67,48,26,99,68,B C,1335
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,182,181,129,131,121,133,99,92,67,47,24,93,74.5,A B,1310
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,183,182,135,138,116,124,96,84,64,52,28,88,,,1450
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,175,130,130,115,125,103,101,67,49,24,98,72,C D,1260
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,169,168,125,131,115,121,93,89,70,50,25,96,70,A B,1175
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,175,130,134,118,131,96,94,74,54,24,98,68,B,1295
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,174,173,128,137,115,122,93,85,65,48,24,91,75,A,1295
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,177,177,127,139,118,125,95,91,70,51,27,96,70.5,B,1330
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,175,128,132,111,119,96,98,68,50,24,102,68,D E,1260
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,178,177,131,133,115,123,99,93,67,48,26,94,74,A B,1320
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,172,172,130,134,116,124,96,83,65,46,25,86,79,- A,1275
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,176,176,131,135,116,125,100,93,71,50,21,93,73,A,1325
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,185,182,131,138,115,128,97,98,75,52,24,101,66,C D,1420
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,180,177,123,132,111,121,98,101,69,51,25,103,67,E,1245
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,181,180,135,135,122,131,104,97,76,56,24,93,72.5,A,1400
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,179,179,141,141,119,125,100,82,68,48,24,82,82.5,- A,1515
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,174,120,130,113,122,92,88,69,48,24,96,70,A B,1160
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,178,178,131,139,111,123,95,94,68,47,26,99,,,1380
+29,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,173,121,136,116,122,93,100,70,51,23,108,63,FG,1225
+30,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,188,188,133,140,112,121,100,96,70,49,25,96,72,B C,1490
+30,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,176,176,125,132,117,125,92,88,74,53,26,96,68,A,1235
+30,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,179,179,126,134,104,112,98,91,56,47,28,93,78,B,1285
+30,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,175,175,126,129,108,119,95,90,65,48,21,95,73,B,1210
+30,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,169,169,125,128,111,115,91,87,63,46,25,96,72.5,B C,1150
+30,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,176,174,128,130,111,121,96,90,64,50,28,94,74,A B,1245
+30,-1590,-1330,BC,BC,Eighteenth Dynasty,Abydos,Female,176,175,127,132,115,122,95,87,68,50,27,92,74,A,1255
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,182,181,130,139,114,123,96,90,72,53,23,94,71,A,1400
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,175,174,131,130,109,119,99,93,59,46,25,94,,,1265
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,176,176,137,127,120,130,102,95,67,52,25,93,75.5,A B,1305
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,176,176,123,130,111,121,94,91,63,46,26,97,73,C,1200
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,167,167,125,126,108,116,98,87,68,50,24,89,77,- A,1120
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,178,178,114,127,115,121,96,89,68,50,24,93,73.5,A,1095
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,181,180,131,127,117,122,97,86,66,49,25,89,77,- A,1280
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,172,171,127,127,113,121,101,96,71,50,27,95,72,A B,1180
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,173,173,125,126,116,125,97,92,65,47,25,95,74,B,1160
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,177,177,133,130,119,125,95,89,66,47,22,94,73.5,A B,1300
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,178,178,122,132,110,119,96,88,64,48,23,92,,,1220
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,181,181,127,129,117,121,104,93,67,50,25,89,79,- A,1260
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,173,173,118,127,104,114,95,91,63,50,26,96,73,B C,1100
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,171,171,124,136,112,116,94,92,62,47,23,98,72,C D,1225
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,177,177,127,132,113,122,97,89,67,48,24,92,74.5,A,1265
+30,-378,-342,BC,BC,Thirtieth Dynasty,Hou,Female,175,174,124,136,113,121,99,92,69,53,24,93,74,A B,1255
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,172,172,128.5,136,117,124,95,93,63,46,24,98,72,C D,1275
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,179,177,126,134,121,128,101.5,93,64,46.5,25,92,77.5,A,1285
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,167,167,124.5,130.5,112,118,92,91,66,51,24,99,69,C,1145
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180.5,179.5,131,139,121,127,98,98,72.5,51.5,28.5,100,68,C,1395
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,168,167,117,127,115,123,92.5,95,66,48,28,103,67,E,1060
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,174,173,122,133.5,113,120,94.5,89,71.5,51,21,94,71,A,1200
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180,178,132,139,122,132,103,94,73,54,25,91,74.5,A,1405
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180,180,127,133,121,121,94,92,71,51,26,98,69,B C,1290
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,183,183,135,137,110,117,102,96,65,48,23,94,76,A B,1440
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180,180,131,131,116,122,96,97,70,47.5,23,101,68,C D,1310
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,176,176,,138,113,118,,,,66,26,,,,
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,173,173,131,125,115,128,100,90,61,46,26,90,80,A,1205
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,184,184,130,132,123,130,103,91,69,50,22,88,78.5,,1345
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,172,171,125,125,111,120,98,90,70,53,23,92,74,A,1140
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,173,172,,128,108,116,,,,49,26,,,,
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,177,177,126,131,108,116,98,92,68,46,25,94,74,,1240
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,183,182,135,129,120,133,103,94,67,52.5,26,91,77.5,A,1350
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,179,178,132,131,110,118,101,95,74,52,25,94,72,A,1320
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180,179,130,139,126,130,103,92,73,53.5,25,89,76,- A,1375
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,178.5,178.5,126,130,112,121,102,97,71,53,26,95,72.5,A B,1240
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,176,175,136,132,114.5,126,104.5,89.5,69,51,28,86,81,- A,1345
+30,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180,180,125,133,114,121,96,94,65,47,23.5,98,71.5,C D,1270
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,184,184,137,135.5,123.5,129,102.5,94,73,56,26,92,74,A,1450
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180.5,180.5,126,128,105,110,93,84,61,47,23,90,78,A,1235
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,186,186,127,136,125,129,97,87,69,51,20,90,76,- A,1370
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,169,169,131,131.5,121,126,98,90,67,48.5,25,92,75.5,A,1235
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,170.5,170.5,126,129,117,122,99,94,64,46,26,95,74.5,B C,1175
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,174,174,125,135,118,124,95,92,74,52,25,97,68.5,A B,1250
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,167,167,123,129,107,117,91,85,66,50,20,93,72.5,A,1130
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,184,182,124,133,120,131,96,95,65,52.5,29,99,70,,1290
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,171,171,125,136,119,125,99.5,95,66,50,25,96,73,B C,1240
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,181,181,130,132.5,110,113,99,92,65.5,46,23.5,93,75.5,A B,1320
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,170.5,170.5,122,,107,116,96,,66,44,27,,,,
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,172,172,116,135,113.5,123,91,87,66,49.5,28,96,71,,1150
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180,179,127.5,133,113,120,97,85,69,51,26,88,77,,1290
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,181,181,129,140,120,130,97,92,65,49,27,95,74,B,1390
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,171,171,120,130,119,124,98,95,64,47,29,97,72.5,C,1135
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,185,183,134,138,115,,104,96.5,74,54,25.5,93,74,A B,1455
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,171,169,124,128,114,122,95,89,67,48,26,94,73,A,1155
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,166,165,124,132,113,123,98,92,66,52,23,94,74.5,A B,1160
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,179,179,129,137,123,129,98,91,68,50,24,93,74,A B,1345
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,170,169,125,138,117,125,92,84,65,49,26,91,75,A,1250
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,171,171,126,128,112,118.5,95,83,66.5,47,21,87,78,- A,1170
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,176,176,123,129,111,,96,101,59,45,24,105,67.5,F G,1190
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,171,171,125,136,117,120,100,93,66,48,25,93,75,A B,1235
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,167,165,128,135.5,119,126,101,94,70,51,25,93,74,A B,1225
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,175,175,126,134,118,123,102,96,72,51,25.5,94,73,A,1260
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,172,171,123,127,115,122.5,93,93.5,66,50,26,101,68.5,D,1140
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,177,177,137,134,110,122,98,92,66,49,25,94,74.5,A B,1380
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,182,182,127,136,110,115,92.5,88,59,42,22,95,74.5,B C,1340
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,190,190,135,129,118,126,104,88,75,56,26,85,78.5,,1410
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,178,178,133,131,115,127,101,94,61,44.5,25,93,77.5,B,1320
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,176,175,125,138,114,126,100,96,66,50.5,24,96,73,B C,1290
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,169,169,122,137,101,105,87,82,63,44,23,94,71.5,A,1200
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,174,174,126,133,115,121,93,92,68.5,52,23,99,69,C,1240
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,183,182,127,131,118,128,100.5,96,70,52,26,96,72,B C,1295
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,167,166,115,145,119,124,92,93,68,55,24,101,67.5,C D,1180
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,166.5,166.5,123,134,108,112,91.5,92.5,63,45.5,25,101,68.5,D,1170
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,175,174,127,135,114,122,98,89,64.5,46,26,91,77,A,1275
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,168,167,121,138,114,121,91,86,64,47,23,95,72.5,A B,1190
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,165,163,127,132,117,124,95,88,71,52,24,93,72,A,1180
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,180,180,130,131,117,123,103,98,66,47,29,95,75,B C,1305
+31,-331,,BC,Unknown or AD,Ptolemaic Period,Denderah,Female,175,173,120,132,117,124,95,91,66,49,23,96,72,B C,1180
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,182,182,127,133,111,121,100,98,66,51,,98,71.5,C D,1305
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,175,174,123,131,110,120,95,88,67,46,25.5,93,73.5,A,1200
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,177,176,130,136,117,122,97,88.5,69.5,51,21,91,74,A,1330
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,173.5,173.5,123.5,127,117,125,101,106,67.5,48,22,105,66.5,E F,1150
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,170,170,130,127,109,115,92,89,67,47,23.5,97,70,B,1195
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,176,176,131,134,105,115,99,99,65,44,28.5,100,70,C D,1315
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,183,182,131,135,113,,100,95.5,66,47.5,22,96,73.5,B C,1380
+31,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,176,175,129,133,111,124,103,97,75,52,25,94,72,A,1285
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,178.5,178.5,131,124,109,114,101,93,63,50,26,92,77.5,,1230
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,176,176,127,125,110,117,104,93,69.5,55,22,89,78,- A,1190
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,166,166,124,124,107.5,115,95,89,64,47,24,94,74,A B,1085
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,183,183,128,132,117,122,98,95.5,65,48,26.5,98,72,C D,1315
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,174,173,131,125.5,119,128,95,93.5,68,48,25.5,98,70,C,1210
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,189,189,127,133,109,120,95.5,96,64,46,25,101,69.5,D E,1360
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,174,174,118,135,112,118,91,86,71,53,23,95,70,A,1180
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,176,175,130,131,112,116,95,86,69,49,25,90,74,- A,1275
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,180,180,126,134,112,124,95,88,73,49.5,23,93,71,A,1295
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,178,177,130,135,115,124,97,91,71,51,21,94,72,A,1325
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,166,166,131,127,108,117,95,95,61,46,25,100,70.5,D,1175
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,176,175,127,130,116,120,95,91,68,50,25,96,71,B,1235
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,174,174,127,127,110,116,94,85,63,44,21,91,77,A,1195
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,167,167,125,133,115,122,92,91,71,49,26,99,67.5,B,1180
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,175,174,131,132,118.5,126,99,90,62,47,24,91,78,A,1285
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,170,168,116,131,115,122,96,87,69,52,25,91,74.5,A,1100
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,170,170,126,127,106,109,91,88,59,41,24,97,72.5,C,1155
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,173,172,128,133,117,122,97,90,58,44,26,93,78,B,1250
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,172,172,133,127,112,121,101,97,66,49,25,96,73,B C,1235
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,179,179,131,131,105,116,104,105,65,49,27,101,71,E,1305
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,179,179,129,135,112,122,99,93,,,,94,,,1325
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,171,171,,134,116,118,,,,45.5,23,,,,
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,173,172,128,133,116,120,99,95.5,66,46,25,97,73,C,1250
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,171,171,132,126,105,112.5,99,92,63,48,24,93,76.5,B,1210
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,177,177,120,129,105,115,93,90,65,47,26,97,71,B C,1165
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,169,169,126,128,108,117,96,85,58,47,24.5,89,81.5,A,1160
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,181,181,124,137,120,127,94,88,62,44,20,94,74.5,A B,1310
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,171,171,125,143,116,125,92,87,63,46,26,95,73,B,1300
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,173,173,128,145,111,,87,80,73,52,26,92,69,- A,1365
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,175,174,125,128,110,116,96,92,71,47,22,96,70.5,B,1190
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,176,176,127,131,117,124,92,90,62,43,23.5,98,71,C,1245
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,180,180,119,128,113.5,121,96,93,68,46,27,97,71,B C,1165
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,178,178,131,131,110,116,100,101,65.5,46,26,101,69,D E,1300
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,170,169,116,128,112.5,118,94,94,65,50,22,100,69,C,1075
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,171,171,115,131,115,120,99,84,,48,26,85,,,1100
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,167,167,118,125,108,113,,,58,41,23,,,,
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,174,174,125,125,110,118,95,96,67,47,25,101,68.5,D,1155
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,172,172,116,124,102,113.5,91,87,63.5,48.5,21,96,72,B C,1055
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,172,172,113,136,123,128,95,99,71,51.5,26,104,65,D,1120
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,161,161,122,120,107,112,87,87,58,46.5,22,100,69.5,C D,1000
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,166,166,122,133,112,116.5,93.5,92,65,47,25,98,70.5,C,1145
+32,-331,,BC,Unknown or AD,Roman Period,Denderah,Female,165,165,129,138,114,120,94,88,66,51,25,94,73,A,1250
