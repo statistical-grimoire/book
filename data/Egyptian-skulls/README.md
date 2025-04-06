@@ -1,4 +1,4 @@
-# **Comparative Data on Ancient Egyptian Skulls**
+# **Thomson & Randall-MacIver's 1905 Comparative Craniometric Data on Ancient Egyptian Skulls**
 
 ## Description
 
@@ -140,8 +140,36 @@ Petrie, W. M. F. (1905). *A history of Egypt from the XIXth to the XXXth dynasti
 
 Thomson, A., & Randall-MacIver, D. (1905). *Ancient races of the Thebaid*. Clarendon Press.
 
+## Citation
 
+If you use this dataset in your research, teaching, or publications, please cite the repository as follows:
 
+### APA-style citation:
+
+Pisklak, J. (2025). Thomson & Randall-MacIver's 1905 Comparative Craniometric Data on Ancient Egyptian Skulls [Data set]. GitHub. https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls
+
+### BibTeX
+
+```
+@misc{thomson_skulls_dataset,
+  author       = {Pisklak, Jeffrey M.},
+  title        = {Thomson & Randall-MacIver's 1905 Comparative Craniometric Data on Ancient Egyptian Skulls},
+  year         = {2025},
+  howpublished = {\url{https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls}},
+  note         = {Data set compiled from Thomson and Randall-MacIver (1905)}
+}
+```
+
+Please also cite the original source of the data:
+
+```
+@book{thomson1905thebaid,
+  author    = {Thomson, Arthur and Randall-MacIver, D.},
+  title     = {Ancient Races of the Thebaid: Being an Anthropometrical Study of the Inhabitants of Upper Egypt From the Earliest Prehistoric Times to the Mohammedan Conquest Based Upon the Examination of Over 1,500 Crania},
+  year      = {1905},
+  publisher = {Clarendon Press}
+}
+```
 
 
 
