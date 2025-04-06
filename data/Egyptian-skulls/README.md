@@ -44,7 +44,7 @@ This repository contains data sets with measurements of male and female Egyptian
 
 **location**
 
-- The archaeological site or geographic location where the skull was recovered.
+- The archaeological site where the skull was recovered.
 
 **sex**
 
