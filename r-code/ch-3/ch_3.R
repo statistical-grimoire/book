@@ -1,15 +1,16 @@
 library(tidyverse)
-skulls <- read_csv("Max_Breadth_TRM_1905.csv")
+skulls <- read_csv("skull_cap_partial_wide.csv")
 
 skulls
 
-mean(skulls$c3300_BCE)
+# Total amount of measurements
+sum(!is.na(skulls[, 2:ncol(skulls)]))
 
-skulls <- read_delim("Max_Breadth_TRM_1905.csv", delim = ",")
+mean(skulls$predynastic, na.rm = TRUE)
 
 skulls[1:5, 3]
 
-skulls_df <- read.csv("Max_Breadth_TRM_1905.csv")
+skulls_df <- read.csv("skull_cap_partial_wide.csv")
 skulls_df[1:5, 3]
 
 mean(skulls[1:5, 3])
@@ -27,14 +28,10 @@ print(skulls, n = 20)
 
 # options(pillar.print_min = 20)
 
-skulls
-
 # options(
 #   pillar.print_min = 20,
 #   pillar.width = Inf
 # )
-
-skulls
 
 pi_df <- tibble(pie = rep(pi, 4))
 pi_df

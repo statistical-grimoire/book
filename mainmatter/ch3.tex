@@ -33,21 +33,18 @@ As noted above, there are a variety of different spreadsheet file types data cou
 \end{center}
 
 \noindent
+This data represents a subset of a much larger dataset,\footnote{\R{Thomson\_Randall-MacIver\_1905.csv}} containing estimated cranial capacities in cubic centimetres for 1,449 ancient Egyptian skulls.\footnote{This is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. Also, for any Americans reading this, 1 centimetre is equal to 1.181 barleycorns.} These skulls span numerous historical periods, ranging from Egypt's early predynastic era to its Roman occupation.
 
-This data represents a subset of a much larger dataset\footnote{\R{Thomson\_Randall-MacIver\_1905.csv}}, containing estimated cranial capacities in cubic centimetres for 1,449 ancient Egyptian skulls.\footnote{This is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. Also, for any Americans reading this, 1 centimetre is equal to 1.181 barleycorns.} These skulls span ten distinct historical periods, ranging from the early predynastic era to the Roman occupation of Egypt.
-
-Upon opening the file within GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/skull_cap_partial_wide.csv}} you will see that it displays the file's contents in a fairly typical spreadsheet layout (see Table \ref{tab:skulls_wide} for an example displaying the first 10 rows).
+Upon opening the file on GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/skull_cap_partial_wide.csv}} the contents appear in a standard tabular format, resembling a typical spreadsheet (see Table \ref{tab:skulls_wide} for an example displaying the first ten rows). With the exception of the columns labelled \R{sex} and \R{predynastic}, each column header corresponds to the starting year of an approximate date range, as reported by the original authors. The prefix \textit{c} denotes \textit{circa} (``approximately''), followed by a year and the abbreviation \textit{BC} (``Before Christ''), reflecting the historical dating conventions employed by the original authors. A more contemporary and inclusive alternative would be \textit{BCE} (``Before Common Era''). The term \textit{predynastic} refers to periods preceding the earliest recorded Egyptian dynasties, which, at the time of \citeauthor{Thomson1905}'s (\citeyear{Thomson1905}) research, were not yet clearly established or reliably dated.
 
 \vspace{1em}
 
 \input{tables/ch-3/skulls_wide.tex}
 
-\vspace{1em}
-
-\noindent
-However, this is just how GitHub presents \texttt{.csv} files. The actual raw data is a basic text document that separates individual values with a comma. We can see this more clearly if we click the button on GitHub labelled ``Raw'' which will present the file in its unaltered (i.e., raw) text format. The first 10 rows can be seen below:
+While GitHub nicely formats the file as a spreadsheet for viewing, the actual raw data consists of nothing more than a basic text document that separates individual values with a comma. We can see this more clearly if we click the button on GitHub labelled ``Raw'' which will present the file in its unaltered (i.e., raw) text format. The first 10 rows can be seen below:
 
 \vspace{1em}
+
 \begin{listing}[H]
 \begin{raw}
 sex,predynastic,c4800BC,c4200BC,c4000BC,c3500BC,c2780BC,c1590BC,c378BC,c331BC,c3700BC
@@ -65,19 +62,18 @@ Male,1480,1565,1550,1255,1360,1310,1330,1365,1560,
 \caption*{Example of the \R{skull\_cap\_partial\_wide.csv} data file displayed in its raw text format. Only the first ten rows are shown.}
 \end{listing}
 
-\vspace{1em}
-
-Comparing the two versions it can readily be seen how the commas are functioning. They separate individual columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, they will always have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 Comma delimited''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV.}
+Comparing the two versions it can readily be seen how the commas are functioning. They separate individual columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, it will have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 Comma delimited''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV.}
 
 \section{Delimiters}
 
-In the case of the \R{Max\_Breadth\_TRM\_1905.csv} file, the comma is functioning as a \gls{delimiter}; which is to say it is a character that defines the limits of (i.e., it ``delimits'') individual values. Commas are not the only characters that can be used to delimit, any character can technically be used. Other common delimiters include semicolons (;) and tab-key spaces. Semicolons are often used when the data is logged with commas representing decimal points instead of periods (e.g., 13.666 = 13,666), which is a frequent practice in many countries. Oddly, when a delimited file uses semicolons, it is still often given a \texttt{.csv} file extension despite it being a completely different character.  In R, to avoid confusion, the convention is to refer to these semicolon delimited files as \R{csv2} files in function names (e.g., \R{write\_csv()} would use a comma to delimit whereas \R{write\_csv2()} would use a semicolon).
+In the case of the \R{skull\_cap\_partial\_wide.csv} file, the comma is functioning as a \gls{delimiter}; which is to say it is a character that defines the limits of (i.e., it ``delimits'') individual values. Commas are not the only characters that can be used to delimit, any character can technically be used. Other common delimiters include semicolons (;) and tab-key spaces. Semicolons are often used when the data is logged with commas representing decimal points instead of periods (e.g., 13.666 = 13,666), which is a frequent practice in many countries. Oddly, when a delimited file uses semicolons, it is still often given a \texttt{.csv} file extension despite it being a completely different character.  In R, to avoid confusion, the convention is to refer to these semicolon delimited files as \R{csv2} files in function names (e.g., \R{write\_csv()} would use a comma to delimit whereas \R{write\_csv2()} would use a semicolon).
 
 Tab spaces (i.e., pressing ``tab'' on your keyboard), are also frequently employed as a delimiter, but these are usually denoted as \texttt{.tsv} files (i.e., tab separated values). In fact, the name for the keyboard key ``tab'' comes from the the verb ``tabulate'' because the key facilitated easier generation of tables when working on a typewriter. Prior to the tab key's development, the space bar had to be repeatedly pressed to advance the typewriter's carriage to align columns appropriately. 
 
-If you were to save the \R{Max\_Breadth\_TRM\_1905} data set as a \texttt{.tsv} file and open it within a generic text editor, you would see something very similar to the following ...
+If you were to save the \R{skull\_cap\_partial\_wide.csv} data set as a \texttt{.tsv} file and open it within a generic text editor, you would see something very similar to the following ...
 
 \vspace{1em}
+
 \begin{listing}[H]
 \begin{raw}
 sex	predynastic	c4800BC	c4200BC	c4000BC	c3500BC	c2780BC	c1590BC
@@ -94,32 +90,32 @@ Male	1480	1565	1550	1255	1360	1310	1330	1365	1560
 \end{raw}
 \caption*{Excerpt of the \R{skull\_cap\_partial\_wide.csv} file displayed in raw text format as if it were a \texttt{.tsv}. Only the first 10 rows are shown; the last three column headers (\texttt{c378BC}, \texttt{c331BC}, and \texttt{c3700BC}) are omitted for space.}
 \end{listing}
-\vspace{1em}
 
 \noindent Notice that the tabular separation gives the file a much more grid-like aesthetic that is easier to read. Incorporating spaces into the text file can be used to further refine the alignment.
 
 \section{Reading a CSV File into R}
 
-Now that we have a good sense of what a \texttt{.csv} file is we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{Max\_Breadth\_TRM\_1905.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``\textit{Download raw file.}'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}} Depending on the browser you are using you may have to hunt around for the download option. For instance, if you are using Safari, you may have to select ``more file actions.''
+Now that we have a good sense of what a \texttt{.csv} file is, we should discuss how to load it into R as a data frame object so we can conduct our analyses. To begin with, you should download \R{skull\_cap\_partial\_wide.csv} from the aforementioned GitHub repo by simply clicking the ``down arrow'' icon labelled ``\textit{Download raw file.}'' Once downloaded, simply place the file inside your working directory.\footnote{If you are unsure what a ``working directory'' is see section \ref{sec:dir}} Depending on the browser you are using you may have to hunt around for the download option. For instance, if you are using Safari, you may have to select ``more file actions.''
 
-With the file in its appropriate location you can simply run the function \R{read\_csv()} and give it the full name (with extension) of your file. This will create a data frame object in R. However, \R{read\_csv()} is a function that belongs to the \textit{readr} package which is part of the \textit{tidyverse}, so if you do not have the \textit{tidyverse} loaded, this will not work. In order to easily call our loaded data, we will assign it the name \R{mm\_df}.
+With the file in its appropriate location you can simply run the function \R{read\_csv()} and give it the full name (with extension) of your file as a character string. This will create a data frame object in R. However, \R{read\_csv()} is a function that belongs to the \textit{readr} package which is part of the \textit{tidyverse}, so if you do not have the \textit{tidyverse} loaded, this will not work. In order to easily call our loaded data, we will assign it the name \R{skulls}.
 
 \begin{inR}
 library(tidyverse)
-skulls <- read_csv("Max_Breadth_TRM_1905.csv")
+skulls <- read_csv("skull_cap_partial_wide.csv")
 \end{inR}
 
 \begin{outR}
-Rows: 30 Columns: 6                                                                          
-── Column specification ─────────────────────────────────────────────────────────────────────
+Rows: 343 Columns: 11                                          
+── Column specification ───────────────────────────────────────
 Delimiter: ","
-dbl (6): skull, c4000_BCE, c3300_BCE, c1850_BCE, c200_BCE, c150_CE
+chr  (1): sex
+dbl (10): predynastic, c4800BC, c4200BC, c4000BC, c3500BC, ...
 
 i Use `spec()` to retrieve the full column specification for this data.
 i Specify the column types or set `show_col_types = FALSE` to quiet this message.
 \end{outR}
 
-Running the above code presents us with some useful information about the data set we have loaded.  We can see that it has 30 rows and 6 columns, uses a \R{,} as a delimiter, and the 6 columns all consist of \R{dbl} values, which is a shorthand way of referring to \textit{double-precision number}. To simplify a complex story, R has multiple types of \textit{numeric} objects; i.e., it has multiple ways of representing a number. A \textit{double}, as its often referred to, is one such representation. If that is confusing, don't worry, what is important to take away from the output is that \R{dbl} means the 6 columns all contain numeric values (i.e., we can use them to do mathematics).
+Running the above code presents us with some useful information about the data set we have loaded.  We can see that it has 343 rows and 11 columns, uses a \R{,} as a delimiter. One column, \R{sex}, consists of character (\R{chr}) values and the remaining 10 columns consist of \R{dbl} values, which is a shorthand way of referring to \textit{double-precision number}. To simplify a complex story, R has multiple types of \textit{numeric} objects; i.e., it has multiple ways of representing a number. A \textit{double}, as its often referred to, is one such representation. If that is confusing, don't worry, what is important to take away from the output is that \R{dbl} means the column contains numeric values (i.e., we can use them to do mathematics).
 
 Running \R{skulls} will print the data frame to the console.
 
@@ -128,35 +124,39 @@ skulls
 \end{inR}
 
 \begin{outR}
-# A tibble: 30 × 6
-   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
-   <dbl>     <dbl>     <dbl>     <dbl>    <dbl>   <dbl>
- 1     1       131       124       137      137     137
- 2     2       125       133       129      141     136
- 3     3       131       138       132      141     128
- 4     4       119       148       130      135     130
- 5     5       136       126       134      133     138
- 6     6       138       135       140      131     126
- 7     7       139       132       138      140     136
- 8     8       125       133       136      139     126
- 9     9       131       131       136      140     132
-10    10       134       133       126      138     139
-# i 20 more rows
+# A tibble: 343 × 11
+   sex   predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
+   <chr>       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+ 1 Male         1370    1410    1320    1445    1395    1425    1440
+ 2 Male         1250    1445    1565    1540    1420    1505    1355
+ 3 Male         1430    1440    1600    1565    1380    1360    1490
+ 4 Male         1350    1340    1460    1710    1260    1385    1425
+ 5 Male         1130    1460    1520    1690    1285    1350    1380
+ 6 Male         1670    1290    1440    1775    1505    1440    1490
+ 7 Male         1195    1290    1740    1390    1230    1400    1385
+ 8 Male         1500    1385    1410    1620    1250    1255    1270
+ 9 Male         1325    1290    1510    1500    1315    1450    1585
+10 Male         1480    1565    1550    1255    1360    1310    1330
+# i 333 more rows
+# i 3 more variables: c378BC <dbl>, c331BC <dbl>, c3700BC <dbl>
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
-You can now subset and manipulate the data frame \R{skulls} like was done in Chapter 1 when we first discussing data frames (see section \ref{sec:data_frames}). For instance, if we wanted to look at the mean breadth of skulls from the Early Dynastic Period (\textit{circa} 3300 BCE) we could simply run:
+You can now subset and manipulate the data frame \R{skulls} like was done in Chapter 1 when we first discussing data frames (see section \ref{sec:data_frames}). For instance, if we wanted to look at the mean breadth of skulls from the predynastic period, we could simply run:
 
 \begin{inR}
-mean(skulls$c3300_BCE)
+mean(skulls$predynastic, na.rm = TRUE)
 \end{inR}
 \begin{outR}
-[1] 132.3667
+[1] 1320.142
 \end{outR}
+
+\noindent
+One thing that is not apparent from the 10 row output is that all of the numeric columns contain some missing, \R{NA}, values. This is why the \R{na.rm = TRUE} needed to be specified.
 
 \subsubsection{\texttt{read.csv()} vs. \texttt{read\_csv()}}
 
-To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing - it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other, but if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some big advantages. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, instead of a data frame, it stores the data as a \textit{tibble}, which will be discussed later.
+To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing - it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other, but if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some advantages over its predecessor. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, instead of a data frame, it stores the data as a \textit{tibble}, which will be discussed later.
 
 \subsection{Reading Other File Types into R}
 
@@ -177,17 +177,14 @@ Now, what would you do if you wanted to load a Microsoft Excel spreadsheet file 
 
 \section{Tibbles vs. Data Frames}
 
-In the output for \R{skulls} (and the \R{msleep} data from chapter 2) you can see that the output printed to the console specifies that we are looking at something called a \gls{tibble}: \R{\# A tibble: 30 x 6}. The output also helpfully displays the dataset's dimensions and the class of object contained within each column. This is in contrast to the data frame created in chapter 1, which did not do any of that for us. In the \textit{tidyverse's} own words, a tibble is a ...
+In the output for \R{skulls} (and the \R{msleep} data from chapter 2) you can see that the output printed to the console specifies that we are looking at something called a \gls{tibble}: \R{\# A tibble: 343 × 11}. The output also helpfully displays the dataset's dimensions and the class of object contained within each column. This is in contrast to the data frame created in chapter 1, which did not do any of that for us. In the \textit{tidyverse's} own words, a tibble is a ...
 
 \begin{displayquote}
 \headingfont
 %\large
 modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. Tibbles are data.frames that are lazy and surly: they do less (i.e. they don’t change variable names or types, and don’t do partial matching) and complain more (e.g. when a variable does not exist). This forces you to confront problems earlier, typically leading to cleaner, more expressive code. Tibbles also have an enhanced print( ) method which makes them easier to use with large datasets containing complex objects.
 
-- \textit{\url{https://tibble.tidyverse.org/}}
-
-\vspace{-1em}
-(2024/07/28)
+- \textit{\url{https://tibble.tidyverse.org/} (2024/07/28)}
 
 \end{displayquote}
 
@@ -230,25 +227,25 @@ skulls[1:5, 3]
 
 \begin{outR}
 # A tibble: 5 × 1
-  c3300_BCE
-      <dbl>
-1       124
-2       133
-3       138
-4       148
-5       126
+  c4800BC
+    <dbl>
+1    1410
+2    1445
+3    1440
+4    1340
+5    1460
 \end{outR}
 
 \noindent This seems sensible enough behaviour, but is in contrast to the traditional behaviour of R's data frame which will output a vector unless more than one column is selected.
 
 \begin{inR}
-skulls_df <- read.csv("Max_Breadth_TRM_1905.csv")
+skulls_df <- read.csv("skull_cap_partial_wide.csv")
 
 skulls_df[1:5, 3]
 \end{inR}
 
 \begin{outR}
-[1] 124 133 138 148 126
+[1] 1410 1445 1440 1340 1460
 \end{outR}
 
 This may seem to be a trivial distinction; however, operations such as computing the mean of a column are common and often require inserting a numeric vector. Consequently, when the output is a tibble rather than a numeric or logical vector, attempting such operations results in an error.
@@ -272,8 +269,8 @@ mean(skulls[1:5, 3, drop = TRUE])
 \end{inR}
 
 \begin{outR}
-[1] 124 133 138 148 126
-[1] 133.8
+[1] 1410 1445 1440 1340 1460
+[1] 1419
 \end{outR}
 
 Should the need arise, switching between tibbles and data frames is a simple matter. For example, to convert our tibble \R{skulls} to a data frame, we can simply use the \R{as.data.frame()} function in R.
@@ -284,17 +281,17 @@ skulls <- as.data.frame(skulls)
 skulls
 \end{inR}
 \begin{outR}
-   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
-1      1       131       124       137      137     137
-2      2       125       133       129      141     136
-3      3       131       138       132      141     128
-4      4       119       148       130      135     130
-5      5       136       126       134      133     138
-6      6       138       135       140      131     126
-7      7       139       132       138      140     136
-8      8       125       133       136      139     126
-9      9       131       131       136      140     132
-10    10       134       133       126      138     139
+   sex  predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
+1  Male        1370    1410    1320    1445    1395    1425    1440
+2  Male        1250    1445    1565    1540    1420    1505    1355
+3  Male        1430    1440    1600    1565    1380    1360    1490
+4  Male        1350    1340    1460    1710    1260    1385    1425
+5  Male        1130    1460    1520    1690    1285    1350    1380
+6  Male        1670    1290    1440    1775    1505    1440    1490
+7  Male        1195    1290    1740    1390    1230    1400    1385
+8  Male        1500    1385    1410    1620    1250    1255    1270
+9  Male        1325    1290    1510    1500    1315    1450    1585
+10 Male        1480    1565    1550    1255    1360    1310    1330
 ...
 \end{outR}
 
@@ -306,20 +303,21 @@ skulls <- as_tibble(skulls)
 skulls
 \end{inR}
 \begin{outR}
-# A tibble: 30 × 6
-   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
-   <dbl>     <dbl>     <dbl>     <dbl>    <dbl>   <dbl>
- 1     1       131       124       137      137     137
- 2     2       125       133       129      141     136
- 3     3       131       138       132      141     128
- 4     4       119       148       130      135     130
- 5     5       136       126       134      133     138
- 6     6       138       135       140      131     126
- 7     7       139       132       138      140     136
- 8     8       125       133       136      139     126
- 9     9       131       131       136      140     132
-10    10       134       133       126      138     139
-# i 20 more rows
+# A tibble: 343 × 11
+   sex   predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
+   <chr>       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+ 1 Male         1370    1410    1320    1445    1395    1425    1440
+ 2 Male         1250    1445    1565    1540    1420    1505    1355
+ 3 Male         1430    1440    1600    1565    1380    1360    1490
+ 4 Male         1350    1340    1460    1710    1260    1385    1425
+ 5 Male         1130    1460    1520    1690    1285    1350    1380
+ 6 Male         1670    1290    1440    1775    1505    1440    1490
+ 7 Male         1195    1290    1740    1390    1230    1400    1385
+ 8 Male         1500    1385    1410    1620    1250    1255    1270
+ 9 Male         1325    1290    1510    1500    1315    1450    1585
+10 Male         1480    1565    1550    1255    1360    1310    1330
+# i 333 more rows
+# i 3 more variables: c378BC <dbl>, c331BC <dbl>, c3700BC <dbl>
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
@@ -358,7 +356,7 @@ skulls
 
 \vspace{1em}
 
-What about columns though? Well, interestingly tibbles will actually conform to the size of your console screen.  So if you can only fit five columns on screen, the tibble will only display those five and notify you of the others not displayed beneath the output. This is done to preserve the ``rectangleness'' of the data so it can be visualized appropriately. This also stands in stark contrast to how base R's data frames behave, which will stack columns on top of each other with no consideration of column or row space. Admittedly, its nice to have all that information displayed, but it comes at the cost of being difficult for a human to visually parse. That being said, if you wanted your tibbles to behave like this and always display all columns, you can just add an additional argument, \R{pillar.width = Inf}, to the \R{options()} function:
+What about columns though? Well, interestingly tibbles will actually conform to the size of your console screen.  So if you can only fit five columns on screen, the tibble will only display those five and notify you of the others not displayed beneath the output. This is done to preserve the ``rectangleness'' of the data so it can be visualized appropriately. This also stands in stark contrast to how base R's data frames behave, which will stack columns on top of each other, seemingly with no consideration of column or row space. Admittedly, its nice to have all that information displayed, but it comes at the cost of being difficult for a human to visually parse. That being said, if you wanted your tibbles to behave like this and always display all columns, you can just add an additional argument, \R{pillar.width = Inf}, to the \R{options()} function:
 
 \begin{inR}
 options(
@@ -393,7 +391,7 @@ pi
 \end{outR}
 
 \noindent
-Using that, we will create a simple data frame that repeats $\pi$ four times within a single column.
+Using that, we will create a simple tibble that repeats $\pi$ four times within a single column.
 
 \begin{inR}
 pi_df <- tibble(pie = rep(pi, 4))
