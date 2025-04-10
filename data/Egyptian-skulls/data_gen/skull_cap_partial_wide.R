@@ -23,7 +23,9 @@ data <- data |>
 data <- data |> 
   select(-c(dynasty, location)) |> 
   pivot_wider(names_from = start_date, values_from = cc) |> 
-  select(-c(id))
+  select(-c(id)) |> 
+  select(sex, predynastic, c4800BC, c4200BC, c4000BC, 
+         c3700BC, c3500BC, c2780BC, c1590BC, c378BC, c331BC)
 
 write_csv(data, "../skull_cap_partial_wide.csv", na = "")
 
