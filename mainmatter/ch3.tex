@@ -47,17 +47,17 @@ While GitHub nicely formats the file as a spreadsheet for viewing, the actual ra
 
 \begin{listing}[H]
 \begin{raw}
-sex,predynastic,c4800BC,c4200BC,c4000BC,c3500BC,c2780BC,c1590BC,c378BC,c331BC,c3700BC
-Male,1370,1410,1320,1445,1395,1425,1440,1310,1450,
-Male,1250,1445,1565,1540,1420,1505,1355,1395,1460,
-Male,1430,1440,1600,1565,1380,1360,1490,1360,1360,
-Male,1350,1340,1460,1710,1260,1385,1425,1485,1410,
-Male,1130,1460,1520,1690,1285,1350,1380,1365,1215,
-Male,1670,1290,1440,1775,1505,1440,1490,1220,1320,
-Male,1195,1290,1740,1390,1230,1400,1385,1195,1550,
-Male,1500,1385,1410,1620,1250,1255,1270,1410,1320,
-Male,1325,1290,1510,1500,1315,1450,1585,1370,1460,
-Male,1480,1565,1550,1255,1360,1310,1330,1365,1560,
+sex,predynastic,c4800BC,c4200BC,c4000BC,c3700BC,c3500BC,c2780BC,c1590BC,c378BC,c331BC
+Male,1370,1410,1320,1445,,1395,1425,1440,1310,1450
+Male,1250,1445,1565,1540,,1420,1505,1355,1395,1460
+Male,1430,1440,1600,1565,,1380,1360,1490,1360,1360
+Male,1350,1340,1460,1710,,1260,1385,1425,1485,1410
+Male,1130,1460,1520,1690,,1285,1350,1380,1365,1215
+Male,1670,1290,1440,1775,,1505,1440,1490,1220,1320
+Male,1195,1290,1740,1390,,1230,1400,1385,1195,1550
+Male,1500,1385,1410,1620,,1250,1255,1270,1410,1320
+Male,1325,1290,1510,1500,,1315,1450,1585,1370,1460
+Male,1480,1565,1550,1255,,1360,1310,1330,1365,1560
 \end{raw}
 \caption*{Example of the \R{skull\_cap\_partial\_wide.csv} data file displayed in its raw text format. Only the first ten rows are shown.}
 \end{listing}
@@ -76,19 +76,19 @@ If you were to save the \R{skull\_cap\_partial\_wide.csv} data set as a \texttt{
 
 \begin{listing}[H]
 \begin{raw}
-sex	predynastic	c4800BC	c4200BC	c4000BC	c3500BC	c2780BC	c1590BC
-Male	1370	1410	1320	1445	1395	1425	1440	1310	1450	
-Male	1250	1445	1565	1540	1420	1505	1355	1395	1460	
-Male	1430	1440	1600	1565	1380	1360	1490	1360	1360	
-Male	1350	1340	1460	1710	1260	1385	1425	1485	1410	
-Male	1130	1460	1520	1690	1285	1350	1380	1365	1215	
-Male	1670	1290	1440	1775	1505	1440	1490	1220	1320	
-Male	1195	1290	1740	1390	1230	1400	1385	1195	1550	
-Male	1500	1385	1410	1620	1250	1255	1270	1410	1320	
-Male	1325	1290	1510	1500	1315	1450	1585	1370	1460	
-Male	1480	1565	1550	1255	1360	1310	1330	1365	1560	
+sex	predynastic	c4800BC	c4200BC	c4000BC	c3700BC	c3500BC	c2780BC
+Male	1370	1410	1320	1445	NA	1395	1425	1440	1310	1450
+Male	1250	1445	1565	1540	NA	1420	1505	1355	1395	1460
+Male	1430	1440	1600	1565	NA	1380	1360	1490	1360	1360
+Male	1350	1340	1460	1710	NA	1260	1385	1425	1485	1410
+Male	1130	1460	1520	1690	NA	1285	1350	1380	1365	1215
+Male	1670	1290	1440	1775	NA	1505	1440	1490	1220	1320
+Male	1195	1290	1740	1390	NA	1230	1400	1385	1195	1550
+Male	1500	1385	1410	1620	NA	1250	1255	1270	1410	1320
+Male	1325	1290	1510	1500	NA	1315	1450	1585	1370	1460
+Male	1480	1565	1550	1255	NA	1360	1310	1330	1365	1560
 \end{raw}
-\caption*{Excerpt of the \R{skull\_cap\_partial\_wide.csv} file displayed in raw text format as if it were a \texttt{.tsv}. Only the first 10 rows are shown; the last three column headers (\texttt{c378BC}, \texttt{c331BC}, and \texttt{c3700BC}) are omitted for space.}
+\caption*{Excerpt of the \R{skull\_cap\_partial\_wide.csv} file displayed in raw text format as if it were a \texttt{.tsv}. Only the first 10 rows are shown; the last three column headers (\texttt{c1590BC}, \texttt{c378BC}, and \texttt{c331BC}) are omitted for space.}
 \end{listing}
 
 \noindent Notice that the tabular separation gives the file a much more grid-like aesthetic that is easier to read. Incorporating spaces into the text file can be used to further refine the alignment.
@@ -105,11 +105,11 @@ skulls <- read_csv("skull_cap_partial_wide.csv")
 \end{inR}
 
 \begin{outR}
-Rows: 343 Columns: 11                                          
-── Column specification ───────────────────────────────────────
+Rows: 343 Columns: 11                                             
+── Column specification ──────────────────────────────────────────
 Delimiter: ","
 chr  (1): sex
-dbl (10): predynastic, c4800BC, c4200BC, c4000BC, c3500BC, ...
+dbl (10): predynastic, c4800BC, c4200BC, c4000BC, c3700BC, c35...
 
 i Use `spec()` to retrieve the full column specification for this data.
 i Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -125,20 +125,20 @@ skulls
 
 \begin{outR}
 # A tibble: 343 × 11
-   sex   predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
+   sex   predynastic c4800BC c4200BC c4000BC c3700BC c3500BC c2780BC
    <chr>       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
- 1 Male         1370    1410    1320    1445    1395    1425    1440
- 2 Male         1250    1445    1565    1540    1420    1505    1355
- 3 Male         1430    1440    1600    1565    1380    1360    1490
- 4 Male         1350    1340    1460    1710    1260    1385    1425
- 5 Male         1130    1460    1520    1690    1285    1350    1380
- 6 Male         1670    1290    1440    1775    1505    1440    1490
- 7 Male         1195    1290    1740    1390    1230    1400    1385
- 8 Male         1500    1385    1410    1620    1250    1255    1270
- 9 Male         1325    1290    1510    1500    1315    1450    1585
-10 Male         1480    1565    1550    1255    1360    1310    1330
+ 1 Male         1370    1410    1320    1445      NA    1395    1425
+ 2 Male         1250    1445    1565    1540      NA    1420    1505
+ 3 Male         1430    1440    1600    1565      NA    1380    1360
+ 4 Male         1350    1340    1460    1710      NA    1260    1385
+ 5 Male         1130    1460    1520    1690      NA    1285    1350
+ 6 Male         1670    1290    1440    1775      NA    1505    1440
+ 7 Male         1195    1290    1740    1390      NA    1230    1400
+ 8 Male         1500    1385    1410    1620      NA    1250    1255
+ 9 Male         1325    1290    1510    1500      NA    1315    1450
+10 Male         1480    1565    1550    1255      NA    1360    1310
 # i 333 more rows
-# i 3 more variables: c378BC <dbl>, c331BC <dbl>, c3700BC <dbl>
+# i 3 more variables: c1590BC <dbl>, c378BC <dbl>, c331BC <dbl>
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
@@ -152,7 +152,7 @@ mean(skulls$predynastic, na.rm = TRUE)
 \end{outR}
 
 \noindent
-One thing that is not apparent from the 10 row output is that all of the numeric columns contain some missing, \R{NA}, values. This is why the \R{na.rm = TRUE} needed to be specified.
+One thing that is not apparent from the 10 row output is that \textit{all} of the numeric columns contain some missing, \R{NA}, values. This is why the \R{na.rm = TRUE} needed to be specified.
 
 \subsubsection{\texttt{read.csv()} vs. \texttt{read\_csv()}}
 
@@ -282,17 +282,17 @@ skulls <- as.data.frame(skulls)
 skulls
 \end{inR}
 \begin{outR}
-   sex  predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
-1  Male        1370    1410    1320    1445    1395    1425    1440
-2  Male        1250    1445    1565    1540    1420    1505    1355
-3  Male        1430    1440    1600    1565    1380    1360    1490
-4  Male        1350    1340    1460    1710    1260    1385    1425
-5  Male        1130    1460    1520    1690    1285    1350    1380
-6  Male        1670    1290    1440    1775    1505    1440    1490
-7  Male        1195    1290    1740    1390    1230    1400    1385
-8  Male        1500    1385    1410    1620    1250    1255    1270
-9  Male        1325    1290    1510    1500    1315    1450    1585
-10 Male        1480    1565    1550    1255    1360    1310    1330
+   sex  predynastic c4800BC c4200BC c4000BC c3700BC c3500BC c2780BC
+1  Male        1370    1410    1320    1445      NA    1395    1425
+2  Male        1250    1445    1565    1540      NA    1420    1505
+3  Male        1430    1440    1600    1565      NA    1380    1360
+4  Male        1350    1340    1460    1710      NA    1260    1385
+5  Male        1130    1460    1520    1690      NA    1285    1350
+6  Male        1670    1290    1440    1775      NA    1505    1440
+7  Male        1195    1290    1740    1390      NA    1230    1400
+8  Male        1500    1385    1410    1620      NA    1250    1255
+9  Male        1325    1290    1510    1500      NA    1315    1450
+10 Male        1480    1565    1550    1255      NA    1360    1310
 ...
 \end{outR}
 
@@ -305,20 +305,20 @@ skulls
 \end{inR}
 \begin{outR}
 # A tibble: 343 × 11
-   sex   predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
+   sex   predynastic c4800BC c4200BC c4000BC c3700BC c3500BC c2780BC
    <chr>       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
- 1 Male         1370    1410    1320    1445    1395    1425    1440
- 2 Male         1250    1445    1565    1540    1420    1505    1355
- 3 Male         1430    1440    1600    1565    1380    1360    1490
- 4 Male         1350    1340    1460    1710    1260    1385    1425
- 5 Male         1130    1460    1520    1690    1285    1350    1380
- 6 Male         1670    1290    1440    1775    1505    1440    1490
- 7 Male         1195    1290    1740    1390    1230    1400    1385
- 8 Male         1500    1385    1410    1620    1250    1255    1270
- 9 Male         1325    1290    1510    1500    1315    1450    1585
-10 Male         1480    1565    1550    1255    1360    1310    1330
+ 1 Male         1370    1410    1320    1445      NA    1395    1425
+ 2 Male         1250    1445    1565    1540      NA    1420    1505
+ 3 Male         1430    1440    1600    1565      NA    1380    1360
+ 4 Male         1350    1340    1460    1710      NA    1260    1385
+ 5 Male         1130    1460    1520    1690      NA    1285    1350
+ 6 Male         1670    1290    1440    1775      NA    1505    1440
+ 7 Male         1195    1290    1740    1390      NA    1230    1400
+ 8 Male         1500    1385    1410    1620      NA    1250    1255
+ 9 Male         1325    1290    1510    1500      NA    1315    1450
+10 Male         1480    1565    1550    1255      NA    1360    1310
 # i 333 more rows
-# i 3 more variables: c378BC <dbl>, c331BC <dbl>, c3700BC <dbl>
+# i 3 more variables: c1590BC <dbl>, c378BC <dbl>, c331BC <dbl>
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
@@ -454,20 +454,20 @@ skulls
 
 \begin{outR}
 # A tibble: 343 × 11
-   sex   predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
+   sex   predynastic c4800BC c4200BC c4000BC c3700BC c3500BC c2780BC
    <chr>       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
- 1 Male         1370    1410    1320    1445    1395    1425    1440
- 2 Male         1250    1445    1565    1540    1420    1505    1355
- 3 Male         1430    1440    1600    1565    1380    1360    1490
- 4 Male         1350    1340    1460    1710    1260    1385    1425
- 5 Male         1130    1460    1520    1690    1285    1350    1380
- 6 Male         1670    1290    1440    1775    1505    1440    1490
- 7 Male         1195    1290    1740    1390    1230    1400    1385
- 8 Male         1500    1385    1410    1620    1250    1255    1270
- 9 Male         1325    1290    1510    1500    1315    1450    1585
-10 Male         1480    1565    1550    1255    1360    1310    1330
+ 1 Male         1370    1410    1320    1445      NA    1395    1425
+ 2 Male         1250    1445    1565    1540      NA    1420    1505
+ 3 Male         1430    1440    1600    1565      NA    1380    1360
+ 4 Male         1350    1340    1460    1710      NA    1260    1385
+ 5 Male         1130    1460    1520    1690      NA    1285    1350
+ 6 Male         1670    1290    1440    1775      NA    1505    1440
+ 7 Male         1195    1290    1740    1390      NA    1230    1400
+ 8 Male         1500    1385    1410    1620      NA    1250    1255
+ 9 Male         1325    1290    1510    1500      NA    1315    1450
+10 Male         1480    1565    1550    1255      NA    1360    1310
 # i 333 more rows
-# i 3 more variables: c378BC <dbl>, c331BC <dbl>, c3700BC <dbl>
+# i 3 more variables: c1590BC <dbl>, c378BC <dbl>, c331BC <dbl>
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
@@ -488,11 +488,11 @@ apply(skulls[, 2:11], MARGIN = 2, FUN = mean, na.rm = TRUE)
 \end{inR}
 
 \begin{outR}
-predynastic     c4800BC     c4200BC     c4000BC     c3500BC 
-   1320.142    1348.831    1434.375    1494.700    1336.663 
+predynastic     c4800BC     c4200BC     c4000BC     c3700BC     c3500BC 
+   1320.142    1348.831    1434.375    1494.700    1356.429    1336.663 
    
-    c2780BC     c1590BC      c378BC      c331BC     c3700BC 
-   1308.454    1347.488    1285.781    1318.642    1356.429 
+    c2780BC     c1590BC      c378BC      c331BC 
+   1308.454    1347.488    1285.781    1318.642 
 \end{outR}
 
 \noindent
@@ -518,54 +518,62 @@ apply(skulls[, 2:11], MARGIN = 1, FUN = max, na.rm = TRUE)
 ...
 \end{outR}
 
-At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all are conveniently numeric. In reality, this layout—referred to in this book as \gls{wide data}—is not ideal for most types of analysis or visualization. In fact the original data set\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Thomson_Randall-MacIver_1905.csv}} had to be truncated substantially to put the data in this form.
+At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all are conveniently numeric. This layout—referred to in this book as \gls{wide data}—is not ideal for most types of analysis or visualization. In fact, the original data set\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Thomson_Randall-MacIver_1905.csv}} had to be truncated substantially to get the data into a wide format that is actually usable.
 
-In spite of its shortcomings, \textit{wide data} is fairly common and gets its name from the fact that it spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (predynastic, c4800BC, c4200BC, c4000BC, etc.) as a single variable in its own right. We might call this variable simply ``\textit{period}.'' That is to say, c4800BC represents a \textit{period} in Egypt's history, c4200BC represents a \textit{period} in Egypt's history, c4000BC represents a \textit{period} in Egypt's history, and so on. Adjunct to this is a second variable, which we could refer to as the ``\textit{cranial capacity}'' of the skulls. This variable consists of the literal measurements 1370, 1250, 1430, and so on. And of course ``\textit{sex}'' is a variable in this data as well; however, it is not spread across multiple columns the way \textit{period} and \textit{cranial capacity} are. 
+Despite its shortcomings, \textit{wide data} is fairly common and gets its name from the fact that it spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (predynastic, c4800BC, c4200BC, c4000BC, etc.) as a single variable in its own right. We might call this variable simply ``\textit{period}.'' That is to say, c4800BC represents a \textit{period} in Egypt's history, c4200BC represents a \textit{period} in Egypt's history, c4000BC represents a \textit{period} in Egypt's history, and so on. Adjunct to this is a second variable, which we could refer to as the ``\textit{cranial capacity}'' of the skulls. This variable consists of the literal measurements 1370, 1250, 1430, and so on. And of course ``\textit{sex}'' is a variable in this data as well; however, it is not spread across multiple columns the way \textit{period} and \textit{cranial capacity} are. 
 
 When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable \textit{period} is being spread across ten columns. And the variable \textit{cranial capacity} is found within each of those ten columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
 
 \begin{inR}
 skulls_tidy <- pivot_longer(skulls,
-  cols = c4000_BCE:c150_CE,
+  cols = predynastic : c331BC,
   names_to = "period",
-  values_to = "max_breadth"
+  values_to = "capacity"
 )
-
 skulls_tidy
 \end{inR}
 \begin{outR}
-# A tibble: 150 × 3
-   skull period    max_breadth
-   <dbl> <chr>           <dbl>
- 1     1 c4000_BCE         131
- 2     1 c3300_BCE         124
- 3     1 c1850_BCE         137
- 4     1 c200_BCE          137
- 5     1 c150_CE           137
- 6     2 c4000_BCE         125
- 7     2 c3300_BCE         133
- 8     2 c1850_BCE         129
- 9     2 c200_BCE          141
-10     2 c150_CE           136
-# i 140 more rows
+# A tibble: 3,430 × 3
+   sex   period      capacity
+   <chr> <chr>          <dbl>
+ 1 Male  predynastic     1370
+ 2 Male  c4800BC         1410
+ 3 Male  c4200BC         1320
+ 4 Male  c4000BC         1445
+ 5 Male  c3700BC           NA
+ 6 Male  c3500BC         1395
+ 7 Male  c2780BC         1425
+ 8 Male  c1590BC         1440
+ 9 Male  c378BC          1310
+10 Male  c331BC          1450
+# i 3,420 more rows
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
-Notice a few differences with this pivoted data. There are now considerably more rows in the data, 150 vs. 30, and there are two new columns, \R{\$period} and \R{\$max\_breadth} which have replaced the five different time period columns. In terms of the \R{pivot\_longer()} function we used, the most important argument we specified is \R{cols}, as this defines which columns are going to be collapsed into a single column. The arguments \R{names\_to} and \R{values\_to} just specify the name of the new columns and are not strictly required, but are good practice to include.
+Notice a few differences with this pivoted data. There are now considerably more rows in the data, 3,430 vs. 343, and there are two new columns, \R{\$period} and \R{\$capacity} which have replaced the ten different time period columns. In terms of the \R{pivot\_longer()} function we used, the most important argument we specified is \R{cols}, as this defines which columns are going to be collapsed into a single column. The arguments \R{names\_to} and \R{values\_to} just specify the name of the new columns and are not strictly required, but are good practice to include.
 
-In the above code, we used \R{:} to specify a range of columns (e.g., from c4000\_BCE to c150\_CE), but we could have instead provided a vector of column names, as shown below:
+In the above code, we used \R{:} to specify a range of columns (from predynastic to c331BC), but we could have instead provided a vector of column names, as shown below:
 
 \begin{inR}
-cols = c(c4000_BCE, c3300_BCE, c1850_BCE, c200_BCE, c150_CE)
+cols <- c(
+  predynastic, c4800BC, c4200BC, c4000BC, c3700BC,
+  c3500BC, c2780BC, c1590BC, c378BC, c331BC
+)
 \end{inR}
 \vspace{1em}
 
 \noindent It is worth noting that the \textit{tidyverse} has numerous methods for selecting multiple columns that do not exist as part of base R. For a rundown of each see the R documentation: \R{?tidyr\_tidy\_select}. Additionally, if you are operating outside of the \textit{tidyverse}, analogous base R functions, will usually require column names to be entered as character strings. E.g.,
 
 \begin{inR}
-cols = c("c4000_BCE", "c3300_BCE", "c1850_BCE", "c200_BCE", "c150_CE")
+cols <- c(
+  "predynastic", "c4800BC", "c4200BC", "c4000BC", "c3700BC",
+  "c3500BC", "c2780BC", "c1590BC", "c378BC", "c331BC"
+)
 \end{inR}
 \vspace{1em}
+
+\noindent
+\textit{tidyverse} functions are typically indifferent to this practice.
 
 \subsection{Tidy data}
 
