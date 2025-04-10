@@ -177,7 +177,7 @@ Now, what would you do if you wanted to load a Microsoft Excel spreadsheet file 
 
 \section{Tibbles vs. Data Frames}
 
-In the output for \R{skulls} (and the \R{msleep} data from chapter 2) you can see that the output printed to the console specifies that we are looking at something called a \gls{tibble}: \R{\# A tibble: 343 × 11}. The output also helpfully displays the dataset's dimensions and the class of object contained within each column. This is in contrast to the data frame created in chapter 1, which did not do any of that for us. In the \textit{tidyverse's} own words, a tibble is a ...
+In the output for \R{skulls} (and the \R{msleep} data from chapter 2) you can see that the output printed to the console specifies that we are looking at something called a \gls{tibble}. The output also helpfully displays the dataset's dimensions and the class of object contained within each column. This is in contrast to the data frame created in chapter 1, which did not do any of that for us. In the \textit{tidyverse's} own words, a tibble is a ...
 
 \begin{displayquote}
 \headingfont
@@ -188,7 +188,7 @@ modern reimagining of the data.frame, keeping what time has proven to be effecti
 
 \end{displayquote}
 
-In terms of basic usage, tibbles function almost identically to the classic data frame discussed in chapter 1. For instance, we can re-create chapter 1's data frame as a tibble using an identical syntax.
+In terms of basic usage, tibbles function almost identically to the classic data frame discussed in chapter 1. For instance, with the \textit{tidyverse} loaded, we can re-create chapter 1's data frame as a tibble using an identical syntax.
 
 \begin{inR}
 df <- tibble(
@@ -239,6 +239,7 @@ skulls[1:5, 3]
 \noindent This seems sensible enough behaviour, but is in contrast to the traditional behaviour of R's data frame which will output a vector unless more than one column is selected.
 
 \begin{inR}
+# Using read.csv to load the data as a data frame
 skulls_df <- read.csv("skull_cap_partial_wide.csv")
 
 skulls_df[1:5, 3]
@@ -248,7 +249,7 @@ skulls_df[1:5, 3]
 [1] 1410 1445 1440 1340 1460
 \end{outR}
 
-This may seem to be a trivial distinction; however, operations such as computing the mean of a column are common and often require inserting a numeric vector. Consequently, when the output is a tibble rather than a numeric or logical vector, attempting such operations results in an error.
+This may seem to be a trivial distinction; however, operations such as computing the mean of a column are quite common and often require inserting a numeric vector. Consequently, when the output is a tibble rather than a numeric or logical vector, attempting such operations results in an error.
 
 \begin{inR}
 mean(skulls[1:5, 3])
@@ -445,71 +446,83 @@ Because of limitations of 64-bit computing, a tibble is not going let you exceed
 \subsection{Wide Data}
 \label{sec:wide_data}
 
-Examining the \R{Max\_Breadth\_TRM\_1905.csv} file loaded at the beginning of this chapter, we see that the data is structured logically. Each column represents skull measurements from a distinct period in Egypt’s history. By examining the rows (or the values provided in column 1), we can see that each period includes measurements from 30 skulls. Thus, with five periods, this totals 150 measured skulls.
+Examining the \R{skull\_cap\_partial\_wide.csv} file loaded at the beginning of this chapter, we see that the data is structured logically. The first column represents the presumed sex (male or female) of the skulls in each row, as recorded by \textcite{Thomson1905}. The remaining columns represent skull measurements from a specific period in Egypt's history. Note that the output below displays only the first 8 of 11 columns, and the number of columns visible in your output may vary depending on your screen size.
 
 \begin{inR}
 skulls
 \end{inR}
 
 \begin{outR}
-# A tibble: 30 × 6
-   skull c4000_BCE c3300_BCE c1850_BCE c200_BCE c150_CE
-   <dbl>     <dbl>     <dbl>     <dbl>    <dbl>   <dbl>
- 1     1       131       124       137      137     137
- 2     2       125       133       129      141     136
- 3     3       131       138       132      141     128
- 4     4       119       148       130      135     130
- 5     5       136       126       134      133     138
- 6     6       138       135       140      131     126
- 7     7       139       132       138      140     136
- 8     8       125       133       136      139     126
- 9     9       131       131       136      140     132
-10    10       134       133       126      138     139
-# i 20 more rows
+# A tibble: 343 × 11
+   sex   predynastic c4800BC c4200BC c4000BC c3500BC c2780BC c1590BC
+   <chr>       <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>   <dbl>
+ 1 Male         1370    1410    1320    1445    1395    1425    1440
+ 2 Male         1250    1445    1565    1540    1420    1505    1355
+ 3 Male         1430    1440    1600    1565    1380    1360    1490
+ 4 Male         1350    1340    1460    1710    1260    1385    1425
+ 5 Male         1130    1460    1520    1690    1285    1350    1380
+ 6 Male         1670    1290    1440    1775    1505    1440    1490
+ 7 Male         1195    1290    1740    1390    1230    1400    1385
+ 8 Male         1500    1385    1410    1620    1250    1255    1270
+ 9 Male         1325    1290    1510    1500    1315    1450    1585
+10 Male         1480    1565    1550    1255    1360    1310    1330
+# i 333 more rows
+# i 3 more variables: c378BC <dbl>, c331BC <dbl>, c3700BC <dbl>
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
-This style of layout makes it easy to do certain things with the data. For instance, if we wanted to know the mean breadth of skulls \textit{circa} 4000 BCE, we could just run 
+This style of layout makes it easy to do certain things with the data. For instance, if we wanted to know the mean breadth of skulls \textit{circa} 4800 BCE, we could just run 
 
 \begin{inR}
-mean(skulls$c4000_BCE)
+mean(skulls$c4800BC, na.rm = TRUE)
 \end{inR}
 
 \begin{outR}
-[1] 131.3667
+[1] 1348.831
 \end{outR}
 
-If we wanted to obtain the mean of every column, we could use the \R{apply()} function. This function literally \textit{applies} a function of your choosing to either the columns or rows. So we could, for instance, apply the \R{mean()} function to each \textit{column}.
+If we wanted to calculate the mean of each column, we can use the \R{apply()} function. This function literally \textit{applies} a function of your choosing to either the columns or rows. For example, we might use \R{apply()} to compute the mean of each column. However, the first column (\R{\$sex}) contains character (\R{chr}) values which we cannot take the mean of. Trying to do so will generate an error, so we need to exclude such columns before performing our calculations. We can use what we learned about indexing in chapter 1 to ignore that first column (see section \ref{sec:df_Index}).
 
 \begin{inR}
-apply(skulls, MARGIN = 2, FUN = mean)
+apply(skulls[, 2:11], MARGIN = 2, FUN = mean, na.rm = TRUE)
 \end{inR}
 
 \begin{outR}
-    skull c4000_BCE c3300_BCE c1850_BCE  c200_BCE   c150_CE 
-  15.5000  131.3667  132.3667  134.4667  135.5000  136.1667 
+predynastic     c4800BC     c4200BC     c4000BC     c3500BC 
+   1320.142    1348.831    1434.375    1494.700    1336.663 
+   
+    c2780BC     c1590BC      c378BC      c331BC     c3700BC 
+   1308.454    1347.488    1285.781    1318.642    1356.429 
 \end{outR}
 
 \noindent
-The argument \R{FUN} specifies what function is applied. The argument \R{MARGIN} specifies whether that function is applied to the rows (\R{1}) or columns (\R{2}). In this case we are applying it to columns, so we specified \R{MARGIN = 2}.
+The argument \R{FUN} specifies what function is applied. The argument \R{MARGIN} specifies whether that function is applied to the rows (\R{1}) or columns (\R{2}). In this case we are applying it to columns, so we specified \R{MARGIN = 2}. \R{na.rm} is of course an argument belonging to the \R{mean()} function, which we need to specify so R knows how to handle the \R{NA} values in the data.
 
-If you wanted to know the sum of each row ignoring the first column \R{\$skull}, you could \textit{apply} the \R{sum()} function to the \textit{rows}. We can use what we learned about indexing in chapter 1 to ignore that first column (see section \ref{sec:df_Index}).
+As another example of \R{apply()}, if you wanted to know the maximum value contained in each row, ignoring the first column, you could \textit{apply} the function \R{max()} to the \textit{rows}. Since our data has 343 rows, we will produce a vector of 343 elements, of which only the first 130 are shown below.
 
 \begin{inR}
-apply(skulls[, 2:6], MARGIN = 1, FUN = sum)
+apply(skulls[, 2:11], MARGIN = 1, FUN = max, na.rm = TRUE)
 \end{inR}
 
 \begin{outR}
- [1] 666 664 670 662 667 670 685 659 670 670 674 677 663 677
-[15] 678 670 671 655 676 678 672 669 691 651 665 678 656 666
-[29] 683 663
+  [1] 1450 1565 1600 1710 1690 1775 1740 1620 1585 1565 1600 1560 1590
+ [14] 1575 1630 1670 1570 1510 1525 1475 1610 1460 1475 1570 1485 1560
+ [27] 1570 1570 1510 1540 1495 1520 1640 1600 1515 1590 1450 1740 1515
+ [40] 1520 1525 1510 1490 1475 1560 1505 1630 1535 1530 1600 1510 1550
+ [53] 1560 1590 1480 1570 1615 1510 1610 1430 1585 1610 1660 1470 1570
+ [66] 1665 1440 1520 1560 1460 1485 1385 1530 1485 1470 1510 1430 1420
+ [79] 1610 1610 1560 1580 1500 1465 1440 1595 1425 1485 1575 1595 1550
+ [92] 1720 1535 1370 1400 1345 1630 1340 1400 1420 1455 1380 1530 1480
+[105] 1360 1500 1615 1465 1400 1500 1475 1560 1550 1400 1610 1360 1630
+[118] 1760 1325 1400 1510 1640 1635 1620 1435 1305 1490 1545 1465 1540
+...
 \end{outR}
 
-At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet, and all our columns are conveniently numeric. In reality, this layout—referred to in this book as \gls{wide data}—is not ideal for most types of analysis or visualization. That may not be immediately obvious, and until you attempt more advanced analyses, you might not be fully convinced of the truth of that. For now, you will just have to take that point on faith. 
+At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all are conveniently numeric. In reality, this layout—referred to in this book as \gls{wide data}—is not ideal for most types of analysis or visualization. In fact the original data set\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Thomson_Randall-MacIver_1905.csv}} had to be truncated substantially to put the data in this form.
 
-\textit{Wide data} spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (c4000\_BCE, c3300\_BCE, etc.) as a single variable in its own right. We might call this variable simply ``period.'' That is to say, c4000\_BCE is a \textit{period}, c3300\_BCE is a \textit{period}, c1850\_BCE is a \textit{period}, and so on. There is also a second variable, which we could refer to as the ``maximum breadth'' of the skulls.
+In spite of its shortcomings, \textit{wide data} is fairly common and gets its name from the fact that it spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (predynastic, c4800BC, c4200BC, c4000BC, etc.) as a single variable in its own right. We might call this variable simply ``\textit{period}.'' That is to say, c4800BC represents a \textit{period} in Egypt's history, c4200BC represents a \textit{period} in Egypt's history, c4000BC represents a \textit{period} in Egypt's history, and so on. Adjunct to this is a second variable, which we could refer to as the ``\textit{cranial capacity}'' of the skulls. This variable consists of the literal measurements 1370, 1250, 1430, and so on. And of course ``\textit{sex}'' is a variable in this data as well; however, it is not spread across multiple columns the way \textit{period} and \textit{cranial capacity} are. 
 
-When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable ``period'' is being spread across five columns. And the variable ``maximum breadth'' is found within each of those five columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
+When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable \textit{period} is being spread across ten columns. And the variable \textit{cranial capacity} is found within each of those ten columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
 
 \begin{inR}
 skulls_tidy <- pivot_longer(skulls,
