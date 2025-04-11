@@ -518,9 +518,11 @@ apply(skulls[, 2:11], MARGIN = 1, FUN = max, na.rm = TRUE)
 ...
 \end{outR}
 
-At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all are conveniently numeric. This layout—referred to in this book as \gls{wide data}—is not ideal for most types of analysis or visualization. In fact, the original data set\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Thomson_Randall-MacIver_1905.csv}} had to be truncated substantially to get the data into a wide format that is actually usable.
+The structure of this dataset is what is commonly referred to as the \gls{wide format}. At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all the columns are conveniently numeric. Even though this layout might seem intuitive, it is not ideal for many types of analysis or visualization. In fact, the original dataset\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Thomson_Randall-MacIver_1905.csv}} had to be substantially truncated to fit into a usable wide format for our purposes here.
 
-Despite its shortcomings, \textit{wide data} is fairly common and gets its name from the fact that it spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (predynastic, c4800BC, c4200BC, c4000BC, etc.) as a single variable in its own right. We might call this variable simply ``\textit{period}.'' That is to say, c4800BC represents a \textit{period} in Egypt's history, c4200BC represents a \textit{period} in Egypt's history, c4000BC represents a \textit{period} in Egypt's history, and so on. Adjunct to this is a second variable, which we could refer to as the ``\textit{cranial capacity}'' of the skulls. This variable consists of the literal measurements 1370, 1250, 1430, and so on. And of course ``\textit{sex}'' is a variable in this data as well; however, it is not spread across multiple columns the way \textit{period} and \textit{cranial capacity} are. 
+\subsection{Tidy data}
+
+Despite its shortcomings, use of the \textit{wide format} is fairly common and gets its name from the fact that it spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (predynastic, c4800BC, c4200BC, c4000BC, etc.) as a single variable in its own right. We might call this variable simply ``\textit{period}.'' That is to say, c4800BC represents a \textit{period} in Egypt's history, c4200BC represents a \textit{period} in Egypt's history, c4000BC represents a \textit{period} in Egypt's history, and so on. Adjunct to this is a second variable, which we could refer to as the ``\textit{cranial capacity}'' of the skulls. This variable consists of the literal measurements 1370, 1250, 1430, and so on. And of course ``\textit{sex}'' is a variable in this data as well; however, it is not spread across multiple columns the way \textit{period} and \textit{cranial capacity} are. 
 
 When organizing or arranging data, best practices dictate that you \textbf{restrict a single variable to a single column}. In this case, the variable \textit{period} is being spread across ten columns. And the variable \textit{cranial capacity} is found within each of those ten columns. To fix this, we can use the \textit{tidyverse} function \R{pivot\_longer()}.
 
@@ -562,7 +564,7 @@ cols <- c(
 \end{inR}
 \vspace{1em}
 
-\noindent It is worth noting that the \textit{tidyverse} has numerous methods for selecting multiple columns that do not exist as part of base R. For a rundown of each see the R documentation: \R{?tidyr\_tidy\_select}. Additionally, if you are operating outside of the \textit{tidyverse}, analogous base R functions, will usually require column names to be entered as character strings. E.g.,
+\noindent It is worth noting that the \textit{tidyverse} has numerous methods for selecting multiple columns simultaneously that do not exist as part of base R. For a rundown of each see the R documentation: \R{?tidyr\_tidy\_select}. Additionally, if you are operating outside of the \textit{tidyverse}, analogous base R functions will usually require column names to be entered as character strings; though, \textit{tidyverse} functions are typically indifferent to this practice. E.g.,
 
 \begin{inR}
 cols <- c(
@@ -572,12 +574,7 @@ cols <- c(
 \end{inR}
 \vspace{1em}
 
-\noindent
-\textit{tidyverse} functions are typically indifferent to this practice.
-
-\subsection{Tidy data}
-
-By collapsing the six colour columns into one, the data has ascended into a sacred arrangement known as \gls{tidy data} (or, as some heretics call it, ``the long format'').  Tidy data is a cornerstone of the \textit{tidyverse's} thaumaturgy and all tidy data adheres to three basic precepts:
+By collapsing the 10 period columns into one, the data has now ascended into a sacred arrangement known as \gls{tidy data} (or, as some heretics call it, ``the long format'').  Tidy data is a cornerstone of the \textit{tidyverse's} thaumaturgy and all tidy data adheres to three basic precepts:
 
 \begin{minipage}{\textwidth}
 
@@ -592,115 +589,139 @@ By collapsing the six colour columns into one, the data has ascended into a sacr
 \end{minipage}
 
 \noindent
-It can be seen that the M\&M data now satisfies these three standards, as did the \R{msleep} data used in chapter 2. As we progress through the remainder of this chapter, it will become apparent that having your data in this tidy form will greatly facilitate both plotting and analysis. 
+It can be seen that the skull data now satisfies these three standards, as did the \R{msleep} data used in chapter 2. As we progress through the remainder of this chapter, it will become apparent that having your data in this tidy form will greatly facilitate both plotting and analysis. 
 
+Interestingly, because of the restriction that data frames and tibbles have whereby each column needs to contain the same amount of elements, the wide data necessarily had to make use of \R{NA} values. The pivoting that was done to transform the data from wide to tidy preserved those \R{NA} values, but now there is no need for them to keep them in the data (because they just represent a non-existent value). As an example, consider row five:
+
+\begin{inR}
+skulls_tidy[5, ]
+\end{inR}
+\begin{outR}
+# A tibble: 1 × 3
+  sex   period  capacity
+  <chr> <chr>      <dbl>
+1 Male  c3700BC       NA
+\end{outR}
+
+\noindent
+Without a value for \R{\$capacity}, this row conveys no meaningful information. As such, it—and any rows like it—can be safely removed from the dataset.
+
+\begin{inR}
+skulls_tidy <- drop_na(skulls_tidy, capacity)
+skulls_tidy
+\end{inR}
+\begin{outR}
+# A tibble: 1,449 × 3
+   sex   period      capacity
+   <chr> <chr>          <dbl>
+ 1 Male  predynastic     1370
+ 2 Male  c4800BC         1410
+ 3 Male  c4200BC         1320
+ 4 Male  c4000BC         1445
+ 5 Male  c3500BC         1395
+ 6 Male  c2780BC         1425
+ 7 Male  c1590BC         1440
+ 8 Male  c378BC          1310
+ 9 Male  c331BC          1450
+10 Male  predynastic     1250
+# i 1,439 more rows
+# i Use `print(n = ...)` to see more rows
+\end{outR}
+
+\noindent
+The function \R{drop\_na()} simply removes (i.e., ``drops'') any rows that have a \R{NA} value in the columns you specify.
 
 \section{Laying Pipe (The \texttt{|>} and \texttt{\%>\%} Operators)}
 
 One of the most significant contributions of the \textit{tidyverse} to R has been its seamless implementation of what is known as `piping' syntax, which allows for an almost otherworldly level of efficiency. However, this is not to say that piping was a concept invented entirely by the \textit{tidyverse}. Rather, the \textit{tidyverse}'s consistent and innovative use of it brought its potential to light, leading to widespread adoption within the R community. The best evidence of this influence is the integration of piping into base R as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0}, released in 2021.\footnote{Although I have no direct evidence that the \textit{tidyverse} directly motivated the addition of the pipe operator to base R, it seems unlikely to be a coincidence given the ubiquity of \R{\%>\%} and the popularity of the \textit{dplyr} package.} But what exactly is `piping'?
 
-The essence of piping is that you are transferring the output of one thing to another. For instance, suppose we wanted to know the mean maximum breadth across all periods of skulls. We could of course insert the \R{\$max\_breadth} column into the mean function like so ...
+The essence of piping is that you are transferring the output of one thing to another. For instance, suppose we wanted to know the mean cranial capacity across all periods of skulls. We could of course insert the \R{\$capacity} column into the mean function like so ...
 
 \begin{inR}
-mean(skulls_tidy$max_breadth)
+mean(skulls_tidy$capacity)
 \end{inR}
 \begin{outR}
-[1] 133.9733
+[1] 1335.255
 \end{outR}
 
-Alternatively, we could ``pipe'' (i.e., transfer) the \R{\$max\_breadth} column in our tidy data to the \R{mean()} function using R's pipe operator \R{|>}
+Alternatively, we could ``pipe'' (i.e., transfer) the \R{\$capacity} column in our tidy data to the \R{mean()} function using R's pipe operator \R{|>}
 
 \begin{inR}
-skulls_tidy$max_breadth |> mean()
+skulls_tidy$capacity |> mean()
 \end{inR}
 \begin{outR}
-[1] 133.9733
+[1] 1335.255
 \end{outR}
 
 \noindent We could then send that output to something like the \R{round()} function.
 
 \begin{inR}
-skulls_tidy$max_breadth |>
-    mean() |> 
-    round(2)
+skulls_tidy$capacity |>
+  mean() |>
+  round(1)
 \end{inR}
 \begin{outR}
-[1] 133.97
+[1] 1335.3
 \end{outR}
 
-As another example, suppose we wanted a tidy data frame that only contained skulls from the Middle Kingdom (circa 1850 BCE). The standard methodology would be to specify the data frame within the \R{filter()} function, like so ...
+As another example, suppose we wanted a tidy data frame that only contained skulls from the predynastic period. The standard methodology would be to specify the data frame within the \R{filter()} function, like so ...
 
 \begin{inR}
-filter(skulls_tidy, period == "c1850_BCE")
+filter(skulls_tidy, period == "predynastic")
 \end{inR}
 \begin{outR}
-# A tibble: 30 × 3
-   skull period    max_breadth
-   <dbl> <chr>           <dbl>
- 1     1 c1850_BCE         137
- 2     2 c1850_BCE         129
- 3     3 c1850_BCE         132
- 4     4 c1850_BCE         130
- 5     5 c1850_BCE         134
- 6     6 c1850_BCE         140
- 7     7 c1850_BCE         138
- 8     8 c1850_BCE         136
- 9     9 c1850_BCE         136
-10    10 c1850_BCE         126
-# i 20 more rows
+# A tibble: 318 × 3
+   sex   period      capacity
+   <chr> <chr>          <dbl>
+ 1 Male  predynastic     1370
+ 2 Male  predynastic     1250
+ 3 Male  predynastic     1430
+ 4 Male  predynastic     1350
+ 5 Male  predynastic     1130
+ 6 Male  predynastic     1670
+ 7 Male  predynastic     1195
+ 8 Male  predynastic     1500
+ 9 Male  predynastic     1325
+10 Male  predynastic     1480
+# i 308 more rows
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
 \noindent
-Alternatively, we could pipe the data into the \R{filter()} function.
+Alternatively, we could pipe the data into the \R{filter()} function to achieve the exact same result.
 
 \begin{inR}
-skulls_tidy |> filter(period == "c1850_BCE")
+skulls_tidy |> filter(period == "predynastic")
 \end{inR}
-\begin{outR}
-# A tibble: 30 × 3
-   skull period    max_breadth
-   <dbl> <chr>           <dbl>
- 1     1 c1850_BCE         137
- 2     2 c1850_BCE         129
- 3     3 c1850_BCE         132
- 4     4 c1850_BCE         130
- 5     5 c1850_BCE         134
- 6     6 c1850_BCE         140
- 7     7 c1850_BCE         138
- 8     8 c1850_BCE         136
- 9     9 c1850_BCE         136
-10    10 c1850_BCE         126
-# i 20 more rows
-# i Use `print(n = ...)` to see more rows
-\end{outR}
 
-In addition to this, suppose you did not want the \R{\$skull} column in the output. To achieve this, this output could be further piped into the \textit{tidyverse's} \R{select()} function which allows you to grab specific columns.
+\vspace{1em}
+
+In addition to this, suppose you did not want the \R{\$sex} column inside the output. To achieve this, this output could be further piped into the \textit{tidyverse's} \R{select()} function which allows you to grab specific columns.\footnote{Note that we could obtain the same result by excluding the sex column in the function. i.e., \R{select(-c(sex))}}
 
 \begin{inR}
 skulls_tidy |> 
-  filter(period == "c1850_BCE") |> 
-  select(period, max_breadth)
+  filter(period == "predynastic") |> 
+  select(period, capacity)
 \end{inR}
 \begin{outR}
-# A tibble: 30 × 2
-   period    max_breadth
-   <chr>           <dbl>
- 1 c1850_BCE         137
- 2 c1850_BCE         129
- 3 c1850_BCE         132
- 4 c1850_BCE         130
- 5 c1850_BCE         134
- 6 c1850_BCE         140
- 7 c1850_BCE         138
- 8 c1850_BCE         136
- 9 c1850_BCE         136
-10 c1850_BCE         126
-# i 20 more rows
+# A tibble: 318 × 2
+   period      capacity
+   <chr>          <dbl>
+ 1 predynastic     1370
+ 2 predynastic     1250
+ 3 predynastic     1430
+ 4 predynastic     1350
+ 5 predynastic     1130
+ 6 predynastic     1670
+ 7 predynastic     1195
+ 8 predynastic     1500
+ 9 predynastic     1325
+10 predynastic     1480
+# i 308 more rows
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
-Now that the logic of piping is clear, it is worth reiterating that the \R{|>} operator is a relatively new arrival in base R. Prior to this, the convention would be to use the \textit{tidyverse's} pipe operator \R{\%>\%} instead. This comes from a package called \textit{magrittr}, which contains a variety of pipes for different purposes, but the most significant of these is \R{\%>\%}. Before R version  4.1.0, \R{\%>\%} was the de facto pipe used by the R community at large. However, the recommended wisdom now (even by the keepers of the \textit{tidyverse}) is to use base R's pipe and not \textit{magrittr's}. That being said, many are unaware of this update to base R and much of the help documentation on websites like \href{https://stackoverflow.com/}{stack overflow} still use \textit{magrittr's} \R{\%>\%}. In terms of functionality, there is little meaningful difference between \R{|>} and \R{\%>\%} and all of the above code could have been written using \R{\%>\%}.
+Now that the logic of piping is clear, it is worth reiterating that the \R{|>} operator is a relatively new arrival in base R. Prior to its introduction in R \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0}, the convention would be to use the \textit{tidyverse's} pipe operator \R{\%>\%} instead. This comes from a package called \textit{magrittr} which contains a variety of pipes for different purposes, but the most significant of these is \R{\%>\%}. This was, and to a certain extent still is, the de facto pipe used by the R community at large. However, the recommended wisdom now (by the keepers of the \textit{tidyverse}) is to use base R's pipe and not \textit{magrittr's}. That being said, many are unaware of this update to base R and much of the help documentation on websites like \href{https://stackoverflow.com/}{stack overflow} still use \textit{magrittr's} \R{\%>\%}. In terms of functionality, there is little meaningful difference between \R{|>} and \R{\%>\%} and all of the above code could have been written using \R{\%>\%}.
 
 The above examples nicely show how the pipe operator works, but we should consider a more realistic use case to illustrate its versatility. 
 
@@ -708,40 +729,40 @@ The above examples nicely show how the pipe operator works, but we should consid
 
 \subsubsection{Summarising the Data}
 
-The \R{Max\_Breadth\_TRM\_1905.csv} data we loaded earlier was of course in the wide format originally, which is rarely needed. So what we could have done instead is loaded that data in to R using \R{read\_csv}, then pipe it to the \R{pivot\_longer()} function and, if we wanted to, pipe that to the \R{select()} function to avoid keeping irrelevant columns.
+The \R{skull\_cap\_partial\_wide.csv} data we loaded earlier was of course in the wide format originally, which is rarely needed. So what we could have done instead is loaded that data in to R using \R{read\_csv}, pipe it to the \R{pivot\_longer()} function, and then pipe that into the \R{drop\_na()} function.
 
 \begin{inR}
-skulls <- read_csv("Max_Breadth_TRM_1905.csv") |>
+skulls <- read_csv("skull_cap_partial_wide.csv") |>
   pivot_longer(
-    cols = c4000_BCE:c150_CE,
+    cols = predynastic:c331BC,
     names_to = "period",
-    values_to = "max_breadth"
+    values_to = "capacity"
   ) |>
-  select(period, max_breadth)
+  drop_na(capacity)
 
 skulls
 \end{inR}
 \begin{outR}
-# A tibble: 150 × 2
-   period    max_breadth
-   <chr>           <dbl>
- 1 c4000_BCE         131
- 2 c3300_BCE         124
- 3 c1850_BCE         137
- 4 c200_BCE          137
- 5 c150_CE           137
- 6 c4000_BCE         125
- 7 c3300_BCE         133
- 8 c1850_BCE         129
- 9 c200_BCE          141
-10 c150_CE           136
-# i 140 more rows
+# A tibble: 1,449 × 3
+   sex   period      capacity
+   <chr> <chr>          <dbl>
+ 1 Male  predynastic     1370
+ 2 Male  c4800BC         1410
+ 3 Male  c4200BC         1320
+ 4 Male  c4000BC         1445
+ 5 Male  c3500BC         1395
+ 6 Male  c2780BC         1425
+ 7 Male  c1590BC         1440
+ 8 Male  c378BC          1310
+ 9 Male  c331BC          1450
+10 Male  predynastic     1250
+# i 1,439 more rows
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
 It is worth emphasizing the utility of the pipe operator here: It allowed us to get our data into the form we wanted without creating and calling multiple different objects in memory. Only one object was created, \R{skulls}. Moreover, the ``arrow-like'' notation of the pipe \R{|>} nicely shows the workflow, i.e., logic, of our code.
 
-Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe we want to know the mean maximum breadth of each period. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from a very influential \textit{tidyverse} package called \textit{dplyr}. 
+Now suppose we wanted to compute some summary statistics for this data set.  For instance, maybe we want to know the mean cranial capacity of each period. This is where the \textit{tidyverse's} functions \R{group\_by()} and \R{summarise()} become extremely useful. Both of these functions, as well as the \R{filter()} and \R{select()} functions we have been using, come from a very influential \textit{tidyverse} package called \textit{dplyr}. 
 
 \begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 3.1: Why is it called \textit{dplyr}?]
 \color{darkgray}
@@ -756,55 +777,65 @@ We will begin with the \R{summarise()} function which is used to create a data f
 
 \begin{inR}
 skulls |> 
-  summarise(m = mean(max_breadth))
+  summarise(m = mean(capacity))
 \end{inR}
 
 \begin{outR}
 # A tibble: 1 × 1
       m
   <dbl>
-1  134.
+1 1335.
 \end{outR}
 
-The code we have written is telling the \R{summarise()} function to apply the \R{mean()} function to the \R{\$max\_breadth} column. When it did this, it also created a new data frame and stored that calculation as a column called \R{\$m} (though, we could have named the column whatever we wanted).
+The code we have written is telling the \R{summarise()} function to apply the \R{mean()} function to the \R{\$capacity} column. When it did this, it also created a new data frame\footnote{Yes, yes—I know, \textit{technically} what we created was a \textit{tibble}. But that’s only because \R{skulls} was already a tibble to begin with. For the sake of sanity (mine and yours), I’ll be treating tibbles and data frames as interchangeable for the rest of this book. Purists, feel free to clutch your pearls.} and stored that calculation as a column called \R{\$m} (though, we could have named the column whatever we wanted).
 
 At present, none of this may seem terribly useful; however, we can make it more useful by including the \R{group\_by()} function which will tell R to literally ``group by'' categories found in a different column or set of columns. Specifically, we can tell it to group by \R{\$period} and then summarise the data.
 
 \begin{inR}
 skulls |> 
   group_by(period) |> 
-  summarise(m = mean(max_breadth))
+  summarise(m = mean(capacity))
 \end{inR}
 \begin{outR}
-# A tibble: 5 × 2
-  period        m
-  <chr>     <dbl>
-1 c150_CE    136.
-2 c1850_BCE  134.
-3 c200_BCE   136.
-4 c3300_BCE  132.
-5 c4000_BCE  131.
+# A tibble: 10 × 2
+   period          m
+   <chr>       <dbl>
+ 1 c1590BC     1347.
+ 2 c2780BC     1308.
+ 3 c331BC      1319.
+ 4 c3500BC     1337.
+ 5 c3700BC     1356.
+ 6 c378BC      1286.
+ 7 c4000BC     1495.
+ 8 c4200BC     1434.
+ 9 c4800BC     1349.
+10 predynastic 1320.
 \end{outR}
 
 We can now see the mean of each period in the data set and if we wanted, we could create another column, \R{\$n}, showing how many skulls there are in each period total by using the \R{length()} function to count the skulls.
 
 \begin{inR}
-skulls |> 
-  group_by(period) |> 
+skulls |>
+  group_by(period) |>
   summarise(
-    m = mean(max_breadth),
-    n = length(max_breadth)
-    )
+    m = mean(capacity),
+    n = length(capacity)
+  )
 \end{inR}
 \begin{outR}
-# A tibble: 5 × 3
-  period        m     n
-  <chr>     <dbl> <int>
-1 c150_CE    136.    30
-2 c1850_BCE  134.    30
-3 c200_BCE   136.    30
-4 c3300_BCE  132.    30
-5 c4000_BCE  131.    30
+# A tibble: 10 × 3
+   period          m     n
+   <chr>       <dbl> <int>
+ 1 c1590BC     1347.   203
+ 2 c2780BC     1308.   152
+ 3 c331BC      1319.   232
+ 4 c3500BC     1337.   315
+ 5 c3700BC     1356.     7
+ 6 c378BC      1286.    32
+ 7 c4000BC     1495.    50
+ 8 c4200BC     1434.    16
+ 9 c4800BC     1349.   124
+10 predynastic 1320.   318
 \end{outR}
 
 If we wanted to add in a column, \R{\$N}, that represented the total amount of skulls across all the periods we could count the number of rows in \R{\$skulls}...
