@@ -35,7 +35,7 @@ As noted above, there are a variety of different spreadsheet file types data cou
 \noindent
 This data represents a subset of a much larger dataset,\footnote{\R{Thomson\_Randall-MacIver\_1905.csv}} containing estimated cranial capacities in cubic centimetres for 1,449 ancient Egyptian skulls.\footnote{This is not necessarily a statistic anyone should care about, but Ancient Egypt is really cool and skulls are metal AF. Also, for any Americans reading this, 1 centimetre is equal to 1.181 barleycorns.} These skulls span numerous historical periods, ranging from Egypt's early predynastic era to its Roman occupation.
 
-Upon opening the file on GitHub,\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/skull_cap_partial_wide.csv}} the contents appear in a standard tabular format, resembling a typical spreadsheet (see Table \ref{tab:skulls_wide} for an example displaying the first ten rows). With the exception of the columns labelled \R{sex} and \R{predynastic}, each column header corresponds to the starting year of an approximate date range, as reported by the original authors. The prefix \textit{c} denotes \textit{circa} (``approximately''), followed by a year and the abbreviation \textit{BC} (``Before Christ''), reflecting the historical dating conventions employed by the original authors. A more contemporary and inclusive alternative would be \textit{BCE} (``Before Common Era''). The term \textit{predynastic} refers to periods preceding the earliest recorded Egyptian dynasties, which, at the time of \citeauthor{Thomson1905}'s (\citeyear{Thomson1905}) research, were not yet clearly established or reliably dated.
+Upon opening the file on GitHub, the contents appear in a standard tabular format, resembling a typical spreadsheet (see Table \ref{tab:skulls_wide} for an example displaying the first ten rows). With the exception of the columns labelled \R{sex} and \R{predynastic}, each column header corresponds to the starting year of an approximate date range, as reported by the original authors. The prefix \textit{c} denotes \textit{circa} (meaning ``approximately''), followed by a year and the abbreviation \textit{BC} (``Before Christ''), reflecting the historical dating conventions employed by the original authors. A more contemporary and inclusive alternative would be \textit{BCE} (``Before Common Era''). The term \textit{predynastic} refers to periods preceding the earliest recorded Egyptian dynasties, which, at the time of \citeauthor{Thomson1905}'s (\citeyear{Thomson1905}) research, were not yet clearly established or reliably dated.
 
 \vspace{1em}
 
@@ -66,7 +66,7 @@ Comparing the two versions it can readily be seen how the commas are functioning
 
 \section{Delimiters}
 
-In the case of the \R{skull\_cap\_partial\_wide.csv} file, the comma is functioning as a \gls{delimiter}; which is to say it is a character that defines the limits of (i.e., it ``delimits'') individual values. Commas are not the only characters that can be used to delimit, any character can technically be used. Other common delimiters include semicolons (;) and tab-key spaces. Semicolons are often used when the data is logged with commas representing decimal points instead of periods (e.g., 13.666 = 13,666), which is a frequent practice in many countries. Oddly, when a delimited file uses semicolons, it is still often given a \texttt{.csv} file extension despite it being a completely different character.  In R, to avoid confusion, the convention is to refer to these semicolon delimited files as \R{csv2} files in function names (e.g., \R{write\_csv()} would use a comma to delimit whereas \R{write\_csv2()} would use a semicolon).
+In the case of the \R{skull\_cap\_partial\_wide.csv} file, the comma is functioning as a \gls{delimiter}; which is to say it is a character that defines the limits of (i.e., it ``delimits'') individual values. Commas are not the only characters that can be used to delimit, any character can technically be used. Other common delimiters include semicolons (;) and tab-key spaces. Semicolons are often used when the data is logged with commas representing decimal points instead of periods (e.g., 13.666 = 13,666), which is a frequent practice in many countries. Oddly, when a delimited file uses semicolons, it is still often given a \texttt{.csv} file extension despite it being a completely different character.  In R, to avoid confusion, the convention is to refer to these semicolon delimited files as \R{csv2} files in function names (e.g., \R{read\_csv()} would use a comma to delimit whereas \R{read\_csv2()} would use a semicolon).
 
 Tab spaces (i.e., pressing ``tab'' on your keyboard), are also frequently employed as a delimiter, but these are usually denoted as \texttt{.tsv} files (i.e., tab separated values). In fact, the name for the keyboard key ``tab'' comes from the the verb ``tabulate'' because the key facilitated easier generation of tables when working on a typewriter. Prior to the tab key's development, the space bar had to be repeatedly pressed to advance the typewriter's carriage to align columns appropriately. 
 
@@ -152,11 +152,11 @@ mean(skulls$predynastic, na.rm = TRUE)
 \end{outR}
 
 \noindent
-One thing that is not apparent from the 10 row output is that \textit{all} of the numeric columns contain some missing, \R{NA}, values. This is why the \R{na.rm = TRUE} needed to be specified.
+One thing that is not apparent from the ten row output is that \textit{all} of the numeric columns contain some missing, \R{NA}, values. This is why the \R{na.rm = TRUE} needed to be specified.
 
 \subsubsection{\texttt{read.csv()} vs. \texttt{read\_csv()}}
 
-To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing - it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other, but if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some advantages over its predecessor. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, instead of a data frame, it stores the data as a \textit{tibble}, which will be discussed later.
+To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing—it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other but, if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some advantages over its predecessor. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, instead of a data frame, it stores the data as a \textit{tibble}, which will be discussed later.
 
 \subsection{Reading Other File Types into R}
 
@@ -439,6 +439,7 @@ pi_df
  4 3.141592653589793e0
 \end{outR}
 
+\noindent
 Because of limitations of 64-bit computing, a tibble is not going let you exceed 16 sig figs and in certain cases will display results in scientific notation. In this case we see some scientific notation, but it is to the power of 0, so it can be ignored.
 
 \section{Wide Data vs. Tidy Data}
@@ -498,7 +499,7 @@ predynastic     c4800BC     c4200BC     c4000BC     c3700BC     c3500BC
 \noindent
 The argument \R{FUN} specifies what function is applied. The argument \R{MARGIN} specifies whether that function is applied to the rows (\R{1}) or columns (\R{2}). In this case we are applying it to columns, so we specified \R{MARGIN = 2}. \R{na.rm} is of course an argument belonging to the \R{mean()} function, which we need to specify so R knows how to handle the \R{NA} values in the data.
 
-As another example of \R{apply()}, if you wanted to know the maximum value contained in each row, ignoring the first column, you could \textit{apply} the function \R{max()} to the \textit{rows}. Since our data has 343 rows, we will produce a vector of 343 elements, of which only the first 130 are shown below.
+As another example of \R{apply()}, suppose you wanted to know the maximum value contained in each row, ignoring the first column, you could \textit{apply} the function \R{max()} to the \textit{rows}. Since our data has 343 rows, we will produce a vector of 343 elements, of which only the first 130 are shown below.
 
 \begin{inR}
 apply(skulls[, 2:11], MARGIN = 1, FUN = max, na.rm = TRUE)
@@ -629,11 +630,11 @@ skulls_tidy
 \end{outR}
 
 \noindent
-The function \R{drop\_na()} simply removes (i.e., ``drops'') any rows that have a \R{NA} value in the columns you specify.
+The function \R{drop\_na()} simply removes (i.e., ``drops'') any rows that have a \R{NA} value in the columns you specify. Numerous methods exist for removing \R{NA} values, this is merely one means by which to do that that remains true to the \textit{tidyverse's} cannon of spell casting.
 
 \section{Laying Pipe (The \texttt{|>} and \texttt{\%>\%} Operators)}
 
-One of the most significant contributions of the \textit{tidyverse} to R has been its seamless implementation of what is known as `piping' syntax, which allows for an almost otherworldly level of efficiency. However, this is not to say that piping was a concept invented entirely by the \textit{tidyverse}. Rather, the \textit{tidyverse}'s consistent and innovative use of it brought its potential to light, leading to widespread adoption within the R community. The best evidence of this influence is the integration of piping into base R as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0}, released in 2021.\footnote{Although I have no direct evidence that the \textit{tidyverse} directly motivated the addition of the pipe operator to base R, it seems unlikely to be a coincidence given the ubiquity of \R{\%>\%} and the popularity of the \textit{dplyr} package.} But what exactly is `piping'?
+One of the most significant contributions of the \textit{tidyverse} to R has been its seamless implementation of what is known as `piping' syntax, which allows for an almost otherworldly level of efficiency. However, this is not to say that piping was a concept invented entirely by the \textit{tidyverse}. Rather, the \textit{tidyverse}'s consistent and innovative use of it brought its potential to light, leading to widespread adoption within the R community. The best evidence of this influence is the integration of piping into base R as of \href{https://stat.ethz.ch/pipermail/r-announce/2021/000670.html}{version 4.1.0}, released in 2021.\footnote{Although I have no direct evidence that the \textit{tidyverse} directly motivated the addition of the pipe operator to base R, it seems unlikely to be a coincidence given the ubiquity of \R{\%>\%} and the popularity of the \textit{dplyr} package.} But, for the uninitiated, what exactly is `piping'?
 
 The essence of piping is that you are transferring the output of one thing to another. For instance, suppose we wanted to know the mean cranial capacity across all periods of skulls. We could of course insert the \R{\$capacity} column into the mean function like so ...
 
@@ -773,7 +774,7 @@ Generally, the names of R packages are relatively intuitive or are based on an i
 A common go-to strategy of programmers generally is to use for-loops to do much of the computational grunt work. For-loops just repeatedly execute a set of code until some condition has been satisfied. While for-loops can be used in R, its users often prefer to take a different, more efficient, \enquote{vectorized} approach. The goal is to use what are called \glspl{functional}. These are functions that accept another function as an input and produce a vector as output. That is precisely what the \R{apply()} function and its relatives like \R{lapply}, \R{sapply}, \R{vapply} do. R is incredibly adept at working with vectors, matrices, and arrays, and \textit{dplyr's} functions are all based around a strategy of using functionals for data manipulation.
 \end{mdframed}
 
-We will begin with the \R{summarise()} function which is used to create a data frame based on columns/variables in your data.
+We will begin with the \R{summarise()} function which is used to create a data frame of summarised information based on columns/variables in your data.
 
 \begin{inR}
 skulls |> 
@@ -844,88 +845,106 @@ If we wanted to add in a column, \R{\$N}, that represented the total amount of s
 nrow(skulls)
 \end{inR}
 \begin{outR}
-[1] 150
+[1] 1449
 \end{outR}
 
 \noindent
 ... and include that in the \R{summarise()} function.
 
 \begin{inR}
-skulls |> 
-  group_by(period) |> 
+skulls |>
+  group_by(period) |>
   summarise(
-    m = mean(max_breadth),
-    n = length(max_breadth),
+    m = mean(capacity),
+    n = length(capacity),
     N = nrow(skulls)
-    )
+  )
 \end{inR}
 \begin{outR}
-# A tibble: 5 × 4
-  period        m     n     N
-  <chr>     <dbl> <int> <int>
-1 c150_CE    136.    30   150
-2 c1850_BCE  134.    30   150
-3 c200_BCE   136.    30   150
-4 c3300_BCE  132.    30   150
-5 c4000_BCE  131.    30   150
+# A tibble: 10 × 4
+   period          m     n     N
+   <chr>       <dbl> <int> <int>
+ 1 c1590BC     1347.   203  1449
+ 2 c2780BC     1308.   152  1449
+ 3 c331BC      1319.   232  1449
+ 4 c3500BC     1337.   315  1449
+ 5 c3700BC     1356.     7  1449
+ 6 c378BC      1286.    32  1449
+ 7 c4000BC     1495.    50  1449
+ 8 c4200BC     1434.    16  1449
+ 9 c4800BC     1349.   124  1449
+10 predynastic 1320.   318  1449
 \end{outR}
 
-Mathematical expressions can also be applied to columns created within the \R{summarise()} function. For example, the mean maximum breadth is calculated in millimetres, but it can be easily converted to another unit, such as centimetres, by referencing the column and performing a simple mathematical operation.
+Mathematical operations can also be applied to columns created within the \R{summarise()} function. For instance, historical sources suggest that the ancient Egyptians used a volumetric unit known as the heqat, primarily for measuring grain, with an estimated value of approximately 4.8 litres \parencite{Clagett1989}. This allows us to convert skull capacities from cubic centimetres to heqats through a simple division. Since 1 litre = 1,000 cm\textsuperscript{3}, it follows that 1 heqat $\approx$ 4,800 cm\textsuperscript{3}. Thus if we wanted the mean and median cranial capacity in heqats we simply run ...
 
 \begin{inR}
-skulls |> 
-  group_by(period) |> 
+skulls |>
+  group_by(period) |>
   summarise(
-    m = mean(max_breadth),
-    n = length(max_breadth),
+    m = mean(capacity),
+    n = length(capacity),
     N = nrow(skulls),
-    m_cm = m / 10
-    )
+    m_heq = m / 4800,
+    med_heq = median(capacity) / 4800
+  )
 \end{inR}
 
 \begin{outR}
-# A tibble: 5 × 5
-  period        m     n     N  m_cm
-  <chr>     <dbl> <int> <int> <dbl>
-1 c150_CE    136.    30   150  13.6
-2 c1850_BCE  134.    30   150  13.4
-3 c200_BCE   136.    30   150  13.6
-4 c3300_BCE  132.    30   150  13.2
-5 c4000_BCE  131.    30   150  13.1
+# A tibble: 10 × 6
+   period          m     n     N m_heq med_heq
+   <chr>       <dbl> <int> <int> <dbl>   <dbl>
+ 1 c1590BC     1347.   203  1449 0.281   0.280
+ 2 c2780BC     1308.   152  1449 0.273   0.270
+ 3 c331BC      1319.   232  1449 0.275   0.275
+ 4 c3500BC     1337.   315  1449 0.278   0.277
+ 5 c3700BC     1356.     7  1449 0.283   0.284
+ 6 c378BC      1286.    32  1449 0.268   0.266
+ 7 c4000BC     1495.    50  1449 0.311   0.311
+ 8 c4200BC     1434.    16  1449 0.299   0.306
+ 9 c4800BC     1349.   124  1449 0.281   0.283
+10 predynastic 1320.   318  1449 0.275   0.273
 \end{outR}
 
+\noindent
+Notice that in the expression \R{m\_heq = m / 4800}, we were able to reuse the previously defined variable \R{m} within the same \R{summarise()} function. This is one of the more especially convenient aspects of this piping approach.
 
-To finish up, lets include the maximum and minimum size found in each period. We will also store this as an tibble called \R{skull\_summary}.
+To finish up, lets include the maximum and minimum capacities found in each period. We will also store this as an tibble called \R{skull\_summary}.
 
 \begin{inR}
 skull_summary <- skulls |>
   group_by(period) |>
   summarise(
-    m = mean(max_breadth),
-    n = length(max_breadth),
+    m = mean(capacity),
+    n = length(capacity),
     N = nrow(skulls),
-    m_cm = m / 10,
-    min = min(max_breadth),
-    max = max(max_breadth)
-  )\textbf{}
-
+    m_heq = m / 4800,
+    med_heq = median(capacity) / 4800,
+    min = min(capacity),
+    max = max(capacity)
+  )
 skull_summary
 \end{inR}
 
 \begin{outR}
-# A tibble: 5 × 7
-  period        m     n     N  m_cm   min   max
-  <chr>     <dbl> <int> <int> <dbl> <dbl> <dbl>
-1 c150_CE    136.    30   150  13.6   126   147
-2 c1850_BCE  134.    30   150  13.4   126   140
-3 c200_BCE   136.    30   150  13.6   129   144
-4 c3300_BCE  132.    30   150  13.2   123   148
-5 c4000_BCE  131.    30   150  13.1   119   141
+# A tibble: 10 × 8
+   period          m     n     N m_heq med_heq   min   max
+   <chr>       <dbl> <int> <int> <dbl>   <dbl> <dbl> <dbl>
+ 1 c1590BC     1347.   203  1449 0.281   0.280  1080  1665
+ 2 c2780BC     1308.   152  1449 0.273   0.270  1030  1660
+ 3 c331BC      1319.   232  1449 0.275   0.275  1000  1570
+ 4 c3500BC     1337.   315  1449 0.278   0.277   965  1760
+ 5 c3700BC     1356.     7  1449 0.283   0.284  1245  1450
+ 6 c378BC      1286.    32  1449 0.268   0.266  1095  1550
+ 7 c4000BC     1495.    50  1449 0.311   0.311  1235  1775
+ 8 c4200BC     1434.    16  1449 0.299   0.306  1110  1740
+ 9 c4800BC     1349.   124  1449 0.281   0.283  1110  1640
+10 predynastic 1320.   318  1449 0.275   0.273  1050  1710
 \end{outR}
 
 \subsubsection{Plotting the Summarised Data}
 
-Now that we have neatly organized these summary statistics in a tibble, we can visualize them. Since the \R{\$period} column contains five discrete categories, a bar plot is a natural choice for representing these data, so that is what we will create.
+Now that we have neatly organized these summary statistics inside a tibble, we can visualize them. Since the \R{\$period} column contains ten discrete categories, a bar plot is a basic natural choice for representing these data, so that is what we will create.
 
 The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the x and y axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with. Though, it is worth remembering that any of the other numeric columns could be used as well.
 
@@ -942,19 +961,39 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 
 The argument \R{stat = "identity"} is simply telling \textit{ggplot2} to use the values within the \R{skull\_summary} tibble to create the bars.  We needed to specify this because \textit{ggplot2} has the ability to take the raw data directly (e.g., \R{skulls}) and perform its own summary calculations. However, we do not need it to do that in this particular case, hence why we included this argument.
 
-The resulting bar graph displays the mean maximum breadth for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively (see Table \ref{tab:egypt_colour}).\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the x-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
+The resulting bar graph displays the mean estimated cranial capacity ($cm^3$) for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively.\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the x-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
 
-\input{tables/ch-3/egypt_colour.tex}
-
-First we will define our colour palette.
+First we will define our colour palette by creating a vector of hexadecimal colour codes we want to use. And to make the code a bit clearer and more convienent we will map a specific period name to each colour.
 
 \begin{inR}
-egypt_pal <- c("#E3C9A8", "#0C2C84", "#D4AF37", "#20603D", "#A23E0E")
+egypt_pal <- c(
+  "predynastic" = "#7E6A58",
+  "c4800BC" = "#C2B280",
+  "c4200BC" = "#6A8347",
+  "c4000BC" = "#A23E2A",
+  "c3700BC" = "#B04E0F",
+  "c3500BC" = "#2E8B8B",
+  "c2780BC" = "#264653",
+  "c1590BC" = "#D4AF37",
+  "c378BC"  = "#8B8589",
+  "c331BC"  = "#C9C9C9"
+)
 \end{inR}
 
 \vspace{1em}
+\noindent
+This allows us to call a specific period and see what its colour code is.
 
-Once \R{egypt\_pal} has been created we can use it to adjust the colour of the bar graph.
+\begin{inR}
+egypt_pal["c2780BC"]
+\end{inR}
+
+\begin{outR}
+  c2780BC 
+"#264653" 
+\end{outR}
+
+With \R{egypt\_pal} has been created, we can use it to adjust the fill colour of the bars in the plot.
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
@@ -963,41 +1002,52 @@ ggplot(skull_summary, aes(x = period, y = m)) +
     colour = "black",
     aes(fill = period)
   ) +
-  scale_fill_discrete(type = egypt_pal)
+  scale_fill_manual(values = egypt_pal)
 \end{inR}
 
 \vspace{2em}
 
 \begin{figure}[H]
-\includegraphics[scale = .75]{graphics/ch3Figs/bar_2.pdf}
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_2.pdf}
 \end{figure}
 
-Now, in addition to the mean maximum breadth of each period, \R{skull\_summary} also has information pertaining to the smallest and largest measured skull (these are columns \R{\$min} and \R{\$max} respectively). We could incorporate that information in our graph with the use of \glspl{error bar}. Error bars are a visual representation of our data's \textit{spread}, and the difference between the minimum and maximum represent a classic measure of spread called the \textit{range}.\footnote{If that isn't entirely clear, don't worry. The concept of spread as a statistical term will be explained in more detail in later chapters.}
-
-To create error bars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bar (\R{ymin}) and which column corresponds to the top of the errorbar (\R{ymax}).
+\textit{ggplot2} quite sagely adds a legend when you map fill colours to a variable; however, in this particular case the legend is redundant with the information our x-axis provides and is thus taking up space unnecessarily. To remove the legend, there are different methods that could be employed. Since we only have the fill aesthetic mapped, it is easy enough to just add \R{guide = "none"} to the \R{scale\_fill\_manual()} function.
 
 \begin{inR}
-ggplot(mm_summary, aes(x = type, y = m)) +
+...
+  scale_fill_manual(values = egypt_pal)
+\end{inR}
+
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_3.pdf}
+\end{figure}
+
+In addition to the mean estimated cranial capacity for each period, \R{skull\_summary} also includes the smallest and largest measured capacities, stored in the \R{\$min} and \R{\$max} columns, respectively. We can incorporate this information into our graph using \glspl{error bar}. Error bars provide a visual representation of the data's \textit{spread}, and the difference between the minimum and maximum values corresponds to a classic measure of spread known as the \textit{range}.\footnote{If this concept isn’t entirely clear yet, don’t worry—spread, as a formal statistical idea, will be explored in more detail in later chapters.} While the range is generally not recommended as a primary measure of spread, it has the advantage of being intuitive and serves our current illustrative purposes well enough.
+
+To create error bars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bars (\R{ymin}) and which column corresponds to the top of the error bars (\R{ymax}).
+
+\begin{inR}
+ggplot(skull_summary, aes(x = period, y = m)) +
   geom_bar(
     stat = "identity",
     colour = "black",
-    aes(fill = type)
+    aes(fill = period)
   ) +
-  scale_fill_discrete(type = mm_palette) +
+  scale_fill_manual(values = egypt_pal, guide = "none") +
   geom_errorbar(aes(ymin = min, ymax = max), width = 0.25)
 \end{inR}
 
 \vspace{2em}
 
 \begin{figure}[H]
-\includegraphics[scale = .75]{graphics/ch3Figs/bar_3.pdf}
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_4.pdf}
 \end{figure}
 
-All that remains is to update the plot’s labelling. Specifically, we should provide clearer titles for the $x$- and $y$-axes and remove the underscore (\_) in the $x$-axis labels. The legend can also be removed as it is redundant with the labelling.
+All that remains is to update the plot’s labelling. Specifically, we should provide clearer titles for the $x$- and $y$-axes and adjust the $x$-axis labels to promote better readability.
 
-To change the current labels ``c150\_CE'', ``c1850\_BCE'', ``c200\_BCE'' and so on, we can use the function \R{scale\_x\_discrete()} and use its \R{labels} argument. We just have to give it a character vector containing the new labelling in the correct order.
-
-To remove the legend, there are different methods you could employ. In this case, since we only have the fill aesthetic mapped, it is easy enough to just add \R{guide = "none"} to the \R{scale\_fill\_discrete()} function.
+To change the current labels ``c1590BC'', ``c2780BC'', ``c331BC'' and so on, we can use the \R{labels} argument inside the \R{scale\_x\_discrete()} function. We just have to give it a character vector containing the new labelling in the current order.
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
@@ -1006,22 +1056,27 @@ ggplot(skull_summary, aes(x = period, y = m)) +
     colour = "black",
     aes(fill = period)
   ) +
-  scale_fill_discrete(type = egypt_pal, guide = "none") +
+  scale_fill_manual(values = egypt_pal, guide = "none") +
   geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
   scale_x_discrete(
-    labels = c("c150 CE", "c1850 BCE", "c200 BCE", "c3300 BCE", "c4000 BCE")
+    labels = c(
+      "c.1590 BC", "c.2780 BC", "c.331 BC", "c.3500 BC", "c.3700 BC",
+      "c.378 BC", "c.4000 BC", "c.4200 BC", "c.4800 BC", "Predynastic"
+    )
   ) +
-  xlab("Period") +
-  ylab("Maximum Breadth (mm)")
+  labs(
+    x = "Period",
+    y = "Cranial Capacity (cm³)"
+  )
 \end{inR}
 
 \vspace{2em}
 
 \begin{figure}[H]
-\includegraphics[scale = .75]{graphics/ch3Figs/bar_4.pdf}
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_5.pdf}
 \end{figure}
 
-After reading Chapter 2 and this chapter, one key aspect of plotting remains unaddressed: how to adjust the order of categories. Currently, the time periods are not arranged chronologically (left to right) as one might expect. How can we fix this? This is where the concept of factors becomes important.
+Having now read Chapter 2 and this chapter, there is still one important plotting detail that remains unaddressed: how to control the order of categories. At the moment, the time periods appear in a non-chronological order (from left to right), which may not align with our expectations or or intentions. So how do we fix that? This is where the concept of \textit{factors} becomes essential.
 
 \section{Factors}
 
