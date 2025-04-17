@@ -152,11 +152,11 @@ mean(skulls$predynastic, na.rm = TRUE)
 \end{outR}
 
 \noindent
-One thing that is not apparent from the ten row output is that \textit{all} of the numeric columns contain some missing, \R{NA}, values. This is why the \R{na.rm = TRUE} needed to be specified.
+One thing that is not apparent from the ten row output is that \textit{all} of the numeric columns contain some missing, \R{NA}, values—hence the need to specify \R{na.rm = TRUE}.
 
 \subsubsection{\texttt{read.csv()} vs. \texttt{read\_csv()}}
 
-To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing—it will read a \texttt{.csv} file in to R. For most use cases there is little advantage to adopting one function over the other but, if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some advantages over its predecessor. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, instead of a data frame, it stores the data as a \textit{tibble}, which will be discussed later.
+To load the \R{skulls} data frame above, we used the function \R{read\_csv()}, which is part of the \textit{tidyverse}. However, base R has a similar function, \R{read.csv()}, that will do essentially the same thing—it will read a \texttt{.csv} file into R. For most use cases there is little advantage to adopting one function over the other but, if you have the \textit{tidyverse} loaded, you may as well use \R{read\_csv()} because it does have some advantages over its predecessor. First, it offers excellent customization options, which are particularly useful when loading very large datasets or merging multiple datasets. Second, it alerts you to any issues encountered during the loading process. Third, it performs much faster under heavy loads than its base R counterpart, even providing a progress bar when reasonable to do so. Finally, instead of a data frame, it stores the data as a \textit{tibble}, which will be discussed later.
 
 \subsection{Reading Other File Types into R}
 
@@ -961,39 +961,21 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 
 The argument \R{stat = "identity"} is simply telling \textit{ggplot2} to use the values within the \R{skull\_summary} tibble to create the bars.  We needed to specify this because \textit{ggplot2} has the ability to take the raw data directly (e.g., \R{skulls}) and perform its own summary calculations. However, we do not need it to do that in this particular case, hence why we included this argument.
 
-The resulting bar graph displays the mean estimated cranial capacity ($cm^3$) for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively.\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the x-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
+The resulting bar graph displays the mean estimated cranial capacity ($cm^3$) for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively.\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the \textit{x}-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
 
-First we will define our colour palette by creating a vector of hexadecimal colour codes we want to use. And to make the code a bit clearer and more convienent we will map a specific period name to each colour.
+First we will define our colour palette by creating a vector of hexadecimal colour codes we want to use.
 
 \begin{inR}
 egypt_pal <- c(
-  "predynastic" = "#7E6A58",
-  "c4800BC" = "#C2B280",
-  "c4200BC" = "#6A8347",
-  "c4000BC" = "#A23E2A",
-  "c3700BC" = "#B04E0F",
-  "c3500BC" = "#2E8B8B",
-  "c2780BC" = "#264653",
-  "c1590BC" = "#D4AF37",
-  "c378BC"  = "#8B8589",
-  "c331BC"  = "#C9C9C9"
+  "#7E6A58", "#C2B280", "#6A8347", "#A23E2A", "#B04E0F",
+  "#2E8B8B", "#264653", "#D4AF37", "#8B8589", "#C9C9C9"
 )
 \end{inR}
 
 \vspace{1em}
+
 \noindent
-This allows us to call a specific period and see what its colour code is.
-
-\begin{inR}
-egypt_pal["c2780BC"]
-\end{inR}
-
-\begin{outR}
-  c2780BC 
-"#264653" 
-\end{outR}
-
-With \R{egypt\_pal} has been created, we can use it to adjust the fill colour of the bars in the plot.
+We can then us \R{egypt\_pal} to adjust the fill colour of the bars in the plot.
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
@@ -1011,11 +993,12 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_2.pdf}
 \end{figure}
 
-\textit{ggplot2} quite sagely adds a legend when you map fill colours to a variable; however, in this particular case the legend is redundant with the information our x-axis provides and is thus taking up space unnecessarily. To remove the legend, there are different methods that could be employed. Since we only have the fill aesthetic mapped, it is easy enough to just add \R{guide = "none"} to the \R{scale\_fill\_manual()} function.
+\noindent
+\textit{ggplot2} quite sagely adds a legend when you map fill colours to a variable; however, in this particular case the legend is redundant with the information our \textit{x}-axis provides and is thus taking up space unnecessarily. To remove the legend, there are different methods that could be employed. Since we only have the fill aesthetic mapped, it is easy enough to just add \R{guide = "none"} to the \R{scale\_fill\_manual()} function.
 
 \begin{inR}
 ...
-  scale_fill_manual(values = egypt_pal)
+  scale_fill_manual(values = egypt_pal, guide = "none")
 \end{inR}
 
 \vspace{2em}
@@ -1026,7 +1009,7 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 
 In addition to the mean estimated cranial capacity for each period, \R{skull\_summary} also includes the smallest and largest measured capacities, stored in the \R{\$min} and \R{\$max} columns, respectively. We can incorporate this information into our graph using \glspl{error bar}. Error bars provide a visual representation of the data's \textit{spread}, and the difference between the minimum and maximum values corresponds to a classic measure of spread known as the \textit{range}.\footnote{If this concept isn’t entirely clear yet, don’t worry—spread, as a formal statistical idea, will be explored in more detail in later chapters.} While the range is generally not recommended as a primary measure of spread, it has the advantage of being intuitive and serves our current illustrative purposes well enough.
 
-To create error bars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bars (\R{ymin}) and which column corresponds to the top of the error bars (\R{ymax}).
+To create error bars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bars, using the argument \R{ymin}, and which column corresponds to the top of the error bars, using the argument \R{ymax}.
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
@@ -1080,182 +1063,217 @@ Having now read Chapter 2 and this chapter, there is still one important plottin
 
 \section{Factors}
 
-In statistics we often refer to a categorical variable as a \gls{factor},\footnote{Independent, manipulated, and predictor variables are often given this label when they have a fixed set of categories or are continuous but only take on a limited number of discrete values. If this is unclear now, don't worry — variable types will be explained in more detail in a later chapter.} and factors have different \glspl{level}.  For instance, in our tidy data (\R{skulls\_tidy}) the variable \R{\$period} could be considered a factor. The individual periods (e.g., c4000 BCE, c3300 BCE, etc.) in that column are each a level of that factor: c4000 BCE is its own level, c3300 BCE is its own level, c1850 BCE is its own level, and so on. In other words, in the \R{skulls\_tidy} data, the factor named ``period'' has 5 levels.
+In statistics, we often refer to a categorical variable as a \gls{factor}.\footnote{Variables are often called factors when they represent a fixed set of categories—such as groupings defined by experimental conditions—or when they are technically continuous but take on only a limited number of distinct values. If this seems unclear for now, don’t worry; we’ll explore variable types in more detail in a later chapter.} Factors consist of different \glspl{level}, which correspond to the unique categories that variable can take.
 
-To summarise, you can treat the term ``factor'' as synonymous with the terms ``column'' or ``variable.'' And you can treat the term ``level'' as synonymous with the term ``category.'' Though, this only applies to tidy data, not wide data.
+For example, in our tidy data, the variable \R{\$period} can be considered a factor. Each distinct time period in that column—such as \R{predynastic}, \R{c4800BC}, \R{c4200BC}, \R{c4000BC}, and so on—represents a different level of the factor. That is, the factor named \R{\$period} has multiple levels, one for each unique period label.
+
+To summarize: in tidy data, you can think of a ``factor'' as essentially a categorical variable (or column), and a ``level'' as one of its possible categories. Just beware that this terminology is specific to tidy data structures.
+
 {
 \begin{itemize}
   \setlength\itemsep{-1em}
-    \item Factor = column / variable
-    \item Level = category within a column / variable
+    \item Factor = column
+    \item Level = category within a column
 \end{itemize}
 }
 
-If we examine \R{skulls\_tidy}:
+If we examine \R{skulls}:
 
 \begin{inR}
-mm_data
+skulls
 \end{inR}
 \begin{outR}
-# A tibble: 150 × 3
-   skull period    max_breadth
-   <dbl> <chr>           <dbl>
- 1     1 c4000_BCE         131
- 2     1 c3300_BCE         124
- 3     1 c1850_BCE         137
- 4     1 c200_BCE          137
- 5     1 c150_CE           137
- 6     2 c4000_BCE         125
- 7     2 c3300_BCE         133
- 8     2 c1850_BCE         129
- 9     2 c200_BCE          141
-10     2 c150_CE           136
-# i 140 more rows
+# A tibble: 1,449 × 3
+   sex   period      capacity
+   <chr> <chr>          <dbl>
+ 1 Male  predynastic     1370
+ 2 Male  c4800BC         1410
+ 3 Male  c4200BC         1320
+ 4 Male  c4000BC         1445
+ 5 Male  c3500BC         1395
+ 6 Male  c2780BC         1425
+ 7 Male  c1590BC         1440
+ 8 Male  c378BC          1310
+ 9 Male  c331BC          1450
+10 Male  predynastic     1250
+# i 1,439 more rows
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
 \noindent
-You can see that the output is telling us that the \R{\$period} column is a character vector (notice the \R{<chr>}). In other words, R does not know that \R{c4000\_BCE}, \R{c3300\_BCE}, \R{c1850\_BCE}, etc. are categories. It just sees 150 individual character values in that particular column. For the purpose of plotting and analyses, it is important that R understands that these are levels of a factor (i.e., it is important that it treats these as categories). We can easily tell R that a particular column is a factor using the function \R{factor()}.\footnote{Technically, when we use this function we are replacing an existing column with a new column that happens to be a factor. We are not really ``telling'' R it is a factor, we are ``creating'' a factor - but that's just a nitpicky semantic issue.}
+You can see that the output is telling us that the \R{\$period} column is a character vector (notice the \R{<chr>}). In other words, R does not know that \R{predynastic}, \R{c4800BC}, \R{c4200BC}, etc. are categories. It just sees 1,449 individual character values in that particular column. For the purpose of plotting and analyses, it is important that R understands that these are levels of a factor (i.e., it is important that it treats these as categories). We can easily tell R that a particular column is a factor using the function \R{factor()}.\footnote{Technically, when we use this function we are replacing an existing column with a new column that happens to be a class of object called a factor. We are not really ``telling'' R it is a factor, we are ``creating'' a factor - but that's just a nitpicky semantic issue.}
 
 \begin{inR}
-skulls_tidy$period <- factor(skulls_tidy$period)
-
-skulls_tidy
+skulls$period <- factor(skulls$period)
+skulls
 \end{inR}
 \begin{outR}
-# A tibble: 150 × 3
-   skull period    max_breadth
-   <dbl> <fct>           <dbl>
- 1     1 c4000_BCE         131
- 2     1 c3300_BCE         124
- 3     1 c1850_BCE         137
- 4     1 c200_BCE          137
- 5     1 c150_CE           137
- 6     2 c4000_BCE         125
- 7     2 c3300_BCE         133
- 8     2 c1850_BCE         129
- 9     2 c200_BCE          141
-10     2 c150_CE           136
-# i 140 more rows
+# A tibble: 1,449 × 3
+   sex   period      capacity
+   <chr> <fct>          <dbl>
+ 1 Male  predynastic     1370
+ 2 Male  c4800BC         1410
+ 3 Male  c4200BC         1320
+ 4 Male  c4000BC         1445
+ 5 Male  c3500BC         1395
+ 6 Male  c2780BC         1425
+ 7 Male  c1590BC         1440
+ 8 Male  c378BC          1310
+ 9 Male  c331BC          1450
+10 Male  predynastic     1250
+# i 1,439 more rows
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
 
 \noindent
-Notice that now the column \R{\$period} is now listed as \R{<fct>}, which stands for ``factor.''  Moreover, if we isolate the column after doing this ...
+Notice that the \R{\$period} column is now labelled as \R{<fct>}, which stands for ``factor.'' Additionally, if we isolate this column, the ten levels of the factor are displayed at the bottom of the output.
 
 \begin{inR}
-skulls_tidy$period
+skulls$period
 \end{inR}
 \begin{outR}
 ...
-[136] c4000_BCE c3300_BCE c1850_BCE c200_BCE  c150_CE  
-[141] c4000_BCE c3300_BCE c1850_BCE c200_BCE  c150_CE  
-[146] c4000_BCE c3300_BCE c1850_BCE c200_BCE  c150_CE  
-Levels: c150_CE c1850_BCE c200_BCE c3300_BCE c4000_BCE
+10 Levels: c1590BC c2780BC c331BC c3500BC c3700BC ... predynastic
 \end{outR}
 
 \noindent
-You can see at the bottom of the output, that the five levels of our factor have been specified. Generally speaking, to view the levels of a factor, a better practice is to use the \R{levels()} function.
+While this implicit listing is convenient, a better and more deliberate way to view the levels of a factor is to use the \R{levels()} function.
 
 \begin{inR}
-levels(skulls_tidy$period)
+levels(skulls$period)
 \end{inR}
 \begin{outR}
-[1] "c150_CE" "c1850_BCE" "c200_BCE" "c3300_BCE" "c4000_BCE"
+ [1] "c1590BC"     "c2780BC"     "c331BC"      "c3500BC"     "c3700BC"    
+ [6] "c378BC"      "c4000BC"     "c4200BC"     "c4800BC"     "predynastic"
 \end{outR}
 
 \subsection{Ordering Levels}
 
-Discerning readers will have noticed that the order of the levels here (from left to right) matches the order of the bars on the plot we made earlier. This is because anytime you plot or summarise categories using \textit{ggplot2} and \textit{dplyr} functions respectively, these packages silently factor the data behind the scenes and R's default behaviour is to put factors in alphabetical order (which is why we saw the order we did).  But we can change the order by specifying it inside the factor function.
+Discerning readers may have noticed that the order of the levels shown match the order of the bars in the graph we created. This is not a coincidence. Whenever you use \textit{ggplot2} to plot or \textit{dplyr} to summarize categorical data, these packages quietly convert the relevant columns into factors behind the scenes. By default, R arranges factor levels in alphabetical order, which is why the bars appeared in that particular sequence. However, we can override this default by explicitly specifying the order of the levels when we define the factor using the \R{factor()} function. This allows us to arrange categories in a more meaningful way—such as placing historical time periods in chronological order.
 
 \begin{inR}
-mm_data$type <- factor(mm_data$type,
-  levels = c("red", "orange", "yellow", "green", "blue", "brown")
+skulls$period <- factor(skulls$period,
+  levels = c(
+    "predynastic", "c4800BC", "c4200BC", "c4000BC", "c3700BC",
+    "c3500BC", "c2780BC", "c1590BC", "c378BC", "c331BC"
+  )
 )
-
-levels(mm_data$type)
+levels(skulls$period)
 \end{inR}
 
 \begin{outR}
-[1] "red"    "orange" "yellow" "green"  "blue"   "brown" 
+ [1] "predynastic" "c4800BC"     "c4200BC"     "c4000BC"     "c3700BC"    
+ [6] "c3500BC"     "c2780BC"     "c1590BC"     "c378BC"      "c331BC" 
 \end{outR}
 
-It is important to emphasize that this does not change anything about how the data is laid out in our data frame. All those values are still in the same order. All we are doing here is telling R that, when it does it any analyses or plotting, that ``red'' comes before ``orange'' which comes before ``yellow'', and so on. For instance, when we re-run our earlier code that created the summary statistic data, you can see that the \R{\$type} column now follows this new order we have specified.
+It is important to emphasize that reordering the levels of a factor does \textit{not} change the actual order of the values in the data frame. The rows remain exactly as they were. What we are doing instead is instructing R that, for the purposes of plotting or analysis, \R{predynastic} should be treated as coming before \R{c4800BC}, which comes before \R{c4200BC}, and so on. If we now re-run our earlier code to compute summary statistics, you will see that the \R{\$period} column reflects this new ordering and is listed as \R{<fct>}.
 
 \begin{inR}
-mm_summary <- mm_data |>
-  group_by(type) |>
+skull_summary <- skulls |>
+  group_by(period) |>
   summarise(
-    m = mean(amount),
-    tot_type = sum(amount),
-    tot_overall = sum(mm_data$amount),
-    percent = tot_type / tot_overall * 100,
-    min = min(amount),
-    max = max(amount)
+    m = mean(capacity),
+    n = length(capacity),
+    N = nrow(skulls),
+    m_heq = m / 4800,
+    med_heq = median(capacity) / 4800,
+    min = min(capacity),
+    max = max(capacity)
   )
 
-mm_summary
+skull_summary
 \end{inR}
 
 \begin{outR}
-# A tibble: 6 × 7
-  type       m tot_type tot_overall percent   min   max
-  <fct>  <dbl>    <dbl>       <dbl>   <dbl> <dbl> <dbl>
-1 red     7.75      372        2620    14.2     2    12
-2 orange 11.3       544        2620    20.8     7    17
-3 yellow  7.69      369        2620    14.1     2    14
-4 green  10.1       483        2620    18.4     5    17
-5 blue   10.0       481        2620    18.4     5    16
-6 brown   7.73      371        2620    14.2     3    12
+# A tibble: 10 × 8
+   period        m     n     N m_heq med_heq   min   max
+   <fct>     <dbl> <int> <int> <dbl>   <dbl> <dbl> <dbl>
+ 1 predynas… 1320.   318  1449 0.275   0.273  1050  1710
+ 2 c4800BC   1349.   124  1449 0.281   0.283  1110  1640
+ 3 c4200BC   1434.    16  1449 0.299   0.306  1110  1740
+ 4 c4000BC   1495.    50  1449 0.311   0.311  1235  1775
+ 5 c3700BC   1356.     7  1449 0.283   0.284  1245  1450
+ 6 c3500BC   1337.   315  1449 0.278   0.277   965  1760
+ 7 c2780BC   1308.   152  1449 0.273   0.270  1030  1660
+ 8 c1590BC   1347.   203  1449 0.281   0.280  1080  1665
+ 9 c378BC    1286.    32  1449 0.268   0.266  1095  1550
+10 c331BC    1319.   232  1449 0.275   0.275  1000  1570
 \end{outR}
 
 \noindent
-
-Moreover, when we now plot the data the bars will also have shifted their position accordingly.
+Moreover, when we now plot the data, the bars will also have shifted their position accordingly.
 
 \begin{inR}
-ggplot(mm_summary, aes(x = type, y = m)) +
+ggplot(skull_summary, aes(x = period, y = m)) +
   geom_bar(stat = "identity")
 \end{inR}
 
 \vspace{2em}
 
 \begin{figure}[H]
-\includegraphics[scale = .75]{graphics/ch3Figs/bar_5.pdf}
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_6.pdf}
 \end{figure}
 
 \subsection{Naming Levels}
 
-On occasion, it will be useful to rename the levels of a factor. For instance, all of our levels are currently lower case, but to make them title case we could use the \R{levels()} function from earlier.
+On occasion, it will be useful to rename the levels of a factor. For instance, previously we had used the \R{labels} argument inside \textit{ggplot2}'s \R{scale\_x\_discrete()} function to adjust the \textit{x}-axis labelling. However, an alternative strategy would have been to relabel the factor levels. We can do this using the \R{levels()} function from earlier. And we have the option of renaming the levels of the \R{skulls} or \R{skull\_summary} data frames. We will do the latter so that we do not need to re-run the code that produced \R{skull\_summary}.
 
 \begin{inR}
-levels(mm_summary$type) <- c("Red", "Orange", "Yellow", "Green", "Blue", "Brown")
-
-mm_summary
+levels(skull_summary$period) <- c(
+  "Predynastic", "c.4800 BC", "c.4200 BC", "c.4000 BC", "c.3700 BC",
+  "c.3500 BC", "c.2780 BC", "c.1590 BC", "c.378 BC", "c.331 BC"
+)
+skull_summary
 \end{inR}
 \begin{outR}
-# A tibble: 6 × 7
-  type       m tot_type tot_overall percent   min   max
-  <fct>  <dbl>    <dbl>       <dbl>   <dbl> <dbl> <dbl>
-1 Red     7.75      372        2620    14.2     2    12
-2 Orange 11.3       544        2620    20.8     7    17
-3 Yellow  7.69      369        2620    14.1     2    14
-4 Green  10.1       483        2620    18.4     5    17
-5 Blue   10.0       481        2620    18.4     5    16
-6 Brown   7.73      371        2620    14.2     3    12
+# A tibble: 10 × 8
+   period          m     n     N m_heq med_heq   min   max
+   <fct>       <dbl> <int> <int> <dbl>   <dbl> <dbl> <dbl>
+ 1 Predynastic 1320.   318  1449 0.275   0.273  1050  1710
+ 2 c.4800 BC   1349.   124  1449 0.281   0.283  1110  1640
+ 3 c.4200 BC   1434.    16  1449 0.299   0.306  1110  1740
+ 4 c.4000 BC   1495.    50  1449 0.311   0.311  1235  1775
+ 5 c.3700 BC   1356.     7  1449 0.283   0.284  1245  1450
+ 6 c.3500 BC   1337.   315  1449 0.278   0.277   965  1760
+ 7 c.2780 BC   1308.   152  1449 0.273   0.270  1030  1660
+ 8 c.1590 BC   1347.   203  1449 0.281   0.280  1080  1665
+ 9 c.378 BC    1286.    32  1449 0.268   0.266  1095  1550
+10 c.331 BC    1319.   232  1449 0.275   0.275  1000  1570
 \end{outR}
 
 \noindent
-A corresponding change will be seen on the plot's x-axis labels as well when that is generated.
+A corresponding change will be seen on the plot's \textit{x}-axis labels as well when that is generated.
 
-A word of warning is needed here. DO NOT confuse the \R{levels} \textit{argument} inside \R{factor()} function with the \R{levels()} \textit{function}. The \R{levels} argument is used for ordering levels. The \R{levels()} function is for re-naming levels.\footnote{At the risk of confusing readers, I feel obligated to mention that the \R{factor()} function has an additional argument \R{labels} that will allow you to change the level names. See R documentation: \R{?factor}}
+\begin{inR}
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  scale_fill_manual(values = egypt_pal, guide = "none") +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(
+    x = "Period",
+    y = "Cranial Capacity (cm³)"
+  )
+\end{inR}
 
-{
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_7.pdf}
+\end{figure}
+
+A brief word of warning is in order: \textbf{do not} confuse the \R{levels} \textit{argument} used inside the \R{factor()} function with the \R{levels()} \textit{function} itself. While they sound similar, they serve very different purposes.\footnote{To further complicate things (because of course it does), the \R{factor()} function also includes a \R{labels} argument that allows you to rename levels at the time of creation. See the R documentation for details: \R{?factor}}
+
 \begin{itemize}
-    \item Ordering levels: \R{factor(df\$column, levels = c(new order))}
-    \item Naming levels: \R{levels(df\$column) <- c(new names)}
+    \item \R{levels = ...} (argument inside \R{factor()}) is used to \textit{specify the order} of factor levels.
+    \item \R{levels()} (function) is used to \textit{rename} existing factor levels.
 \end{itemize}
-}
 
-Particularly for beginners, factors are annoying to contend with, but they are vital for so many things within R and therefore a necessary evil. Consequently, it is recommended to new users that they submit and wholeheartedly embrace this wickedness. Only then will they find inner peace with factoring.
+\noindent
+It is also worth noting that the \href{https://forcats.tidyverse.org/}{\textit{forcats}} package—automatically loaded with the \textit{tidyverse}—offers a variety of useful functions specifically designed for working with factors.
+
+For beginners, factors can feel like a particularly troublesome hex: cryptic, temperamental, and always popping up when least expected. But they are foundational to R’s data-handling magick and cannot be avoided. So rather than resisting, it is best to surrender to the arcane forces of factoring. Only by embracing this necessary evil will you achieve true statistical enlightenment.

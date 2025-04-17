@@ -19,7 +19,7 @@ description={A symbol (e.g., \R{<-}) that assigns a name to an object in R so it
 %B-----------------------------------
 \newglossaryentry{bivariate data}{
 name=bivariate data,
-description={Data consisting of a two variables.}
+description={Data consisting of a single \gls{response variable} and at least one other related variable.}
 }
 
 \newglossaryentry{boolean}{
@@ -63,6 +63,11 @@ description={A object class in R with rows and columns resembling a spreadsheet 
 name=delimiter,
 description={A character within a data file used to delimit (i.e., define the limits of) individual values.}
 }
+
+\newglossaryentry{dependent variable}{
+name=dependent variable,
+description={The variable that you are trying to explain, predict, or measure the effect on. i.e., It is ``dependent'' on changes to other variables and is also known as the \gls{response variable} or \gls{outcome variable}. In R formulas, the dependent variable typically appears on the left-hand side of the tilde (e.g., \R{dependent variable \textasciitilde { }predictor variable}).
+}}
 
 \newglossaryentry{directory}{
 name= directory,
@@ -159,9 +164,8 @@ description={The value returned using a modulo operation.}
 
 \newglossaryentry{multivariate data}{
 name=multivariate data,
-description={Data consisting of a more than two variables.}
+description={Data consisting of a more than two \glspl{response variable} and at least one other related variable.}
 }
-
 
 %N-----------------------------------
 \newglossaryentry{negation operator}{
@@ -184,6 +188,13 @@ description={Represented as \R{NULL} in the R language, this is used to represen
 name=numeric,
 description={A type of storage mode in R for numbers.}
 }
+
+
+%O-----------------------------------
+\newglossaryentry{outcome variable}{
+name=outcome variable,
+description={The variable that you are trying to explain, predict, or measure the effect on. i.e., It is the ``outcome'' that results to changes in other variables and is also known as the \gls{response variable} or \gls{dependent variable}. In R formulas, the outcome variable typically appears on the left-hand side of the tilde (e.g., \R{outcome \textasciitilde { }predictor}).
+}}
 
 
 %P-----------------------------------
@@ -218,6 +229,11 @@ description={A symbol (e.g., \R{==}) that is used to determine whether a specifi
 name=reserved words,
 description={Words that have specific functions and meanings within the R language and cannot be used as syntactic names. R Documentation: \R{?Reserved}}
 }
+
+\newglossaryentry{response variable}{
+name=response variable,
+description={The variable that you are trying to explain, predict, or measure the effect on. i.e., It ``responds'' to changes in other variables and is also known as the \gls{dependent variable} or \gls{outcome variable}. In R formulas, the response variable typically appears on the left-hand side of the tilde (e.g., \R{outcome \textasciitilde { }predictor}).
+}}
 
 \newglossaryentry{RStudio}{
 name=RStudio,
@@ -275,9 +291,8 @@ description={A powerful set of R magick, with an underlying philosophy, that all
 %U-----------------------------------
 \newglossaryentry{univariate data}{
 name=univariate data,
-description={Data consisting of a single variable.}
+description={Data which consists of a single variable.}
 }
-
 
 %V-----------------------------------
 \newglossaryentry{vector}{

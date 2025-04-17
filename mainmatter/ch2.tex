@@ -4,15 +4,15 @@
 \IMFellEnglish
 \lettrine[lines=5, realheight, lraise = 0.045]{T}{HE} history of R can be split into two epochs. First, there was the age before the tidyverse—a time of primordial chaos, where data analysts toiled in the shadows, their efforts marred by inefficiency and hardship. It was a brutal time, full of necessary violence, that forged the tools for what was to come.
 
-Then came the tidyverse. A revelation. A collection of mystical and cohesive R packages, summoned into the light by Hadley Wickham and his coven of arcane programmers \parencite{Wickham2019}. Their sorcery brought order to the chaos, shaping the wild, unruly cosmos of R into something usable—something powerful.
-
-\begin{wrapfigure}[15]{r}{0.3\textwidth}
+\begin{wrapfigure}[12]{r}{0.3\textwidth}
   \begin{center}
     \includegraphics[width=0.3\textwidth]{graphics/ch2Figs/t_pennant.pdf}
   \end{center}
     \caption{An engraving depicting acolytes of the tidyverse burning live sacrifices, captive within a large wicker effigy, to appease their deities \parencite{Pennant1784}.}
     \label{fig:ch2_wicker}
 \end{wrapfigure}
+
+Then came the tidyverse. A revelation. A collection of mystical and cohesive R packages, summoned into the light by Hadley Wickham and his coven of arcane programmers \parencite{Wickham2019}. Their sorcery brought order to the chaos, shaping the wild, unruly cosmos of R into something usable—something powerful.
 
 The tidyverse became a gateway for common folk, allowing them to twist, shape, and visualize data with an ease once reserved for only the most privileged elite. Though once viewed as complex and heretical \parencite{Muenchen}, the tidyverse has become an essential craft, passed from hand to hand, spreading like whispers in the dark. The art of tidy data flourished, growing stronger through collaboration, trial, and sacrifice.
 
@@ -88,7 +88,7 @@ In the case of the above code, the function \R{rnorm()} is just generating 10,00
 \label{fig:base_hist}
 \end{figure}
 
-R's base plotting functions offer a convenient means of producing simple quality plots and can be very efficient when working with \gls{univariate data} or \gls{bivariate data}.  That is, data which consists of only one (uni) or two (bi) variables; however, most research concerned with analyzing \gls{multivariate data}. That is data with more than two variables. Each additional variable adds ever increasing amounts of complexity and nuance to your data and, by extension, the plots you use to visualizing those data.  The stock set of plotting functions R offers can accommodate these more complex scenarios; however, that level of accommodation is heavily dependent on the users proficiency with R.  For this reason, this book will adopt the practice of ignoring R's base plotting functions, and instead rely on well-known R package called \textit{ggplot2} which is among the most venerated portions of the tidyverse.   
+R's base plotting functions offer a convenient means of producing simple quality plots and can be very efficient when working with \gls{univariate data} or \gls{bivariate data}.  That is, data which consists of only one (uni) or two (bi) \glspl{response variable} alongside other explanatory variables. However, a lot of research is concerned with analysing \gls{multivariate data}. This is data with more than two response variables. Each additional variable adds ever increasing amounts of complexity and nuance to your data and, by extension, the plots you use to visualizing those data.  The stock set of plotting functions R offers can accommodate these more complex scenarios; however, that level of accommodation is heavily dependent on the users proficiency with R.  For this reason, this book will adopt the practice of ignoring R's base plotting functions, and instead rely on well-known R package called \textit{ggplot2} which is among the most venerated portions of the tidyverse.   
 
 The \textit{``gg''} in \textit{ggplot2} stands for ``grammar of graphics'' and provides users with a logical framework for the construction of plots within R.  The term ``grammar'' here is likely to conjure up long forgotten traumas of boring English and Language Arts lessons, but do not fear, the use of the term grammar is really just to emphasize that \textit{ggplot2} is constructed in a way that allows users to build plots of various kinds in a consistent and efficient manner that is easily tailored to their specific needs.  This is in contrast to how plotting in software works generally, where you are frequently stuck trying to fit a square peg (your data) into a circular hole (the software's narrow conception of how data should be presented).
 
