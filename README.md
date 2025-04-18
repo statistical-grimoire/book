@@ -10,7 +10,7 @@ This book was created to give students a solid, practical, and free introduction
 [https://statistical-grimoire.neocities.org/](https://statistical-grimoire.neocities.org/)
 
 ## Releases
-- [Latest Release](https://github.com/statistical-grimoire/book/releases/tag/v2.0.0)
+- [Latest Release](https://github.com/statistical-grimoire/book/releases/tag/v2.0.1)
 
 - [All Releases](https://github.com/statistical-grimoire/book/releases/)
 

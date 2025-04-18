@@ -88,10 +88,11 @@ In the case of the above code, the function \R{rnorm()} is just generating 10,00
 \label{fig:base_hist}
 \end{figure}
 
-R's base plotting functions offer a convenient means of producing simple quality plots and can be very efficient when working with \gls{univariate data} or \gls{bivariate data}.  That is, data which consists of only one (uni) or two (bi) \glspl{response variable} alongside other explanatory variables. However, a lot of research is concerned with analysing \gls{multivariate data}. This is data with more than two response variables. Each additional variable adds ever increasing amounts of complexity and nuance to your data and, by extension, the plots you use to visualizing those data.  The stock set of plotting functions R offers can accommodate these more complex scenarios; however, that level of accommodation is heavily dependent on the users proficiency with R.  For this reason, this book will adopt the practice of ignoring R's base plotting functions, and instead rely on well-known R package called \textit{ggplot2} which is among the most venerated portions of the tidyverse.   
+R's base plotting functions offer a convenient means of producing simple quality plots and can be very efficient when working with \gls{univariate data} or \gls{bivariate data}. This is data which consists of only one (uni) or two (bi) variables, respectively. However, a lot of research is concerned with analysing \gls{multivariate data}. This is data consisting of two or more \glspl{response variable} alongside other explanatory variables. Each additional variable adds ever increasing amounts of complexity and nuance to your data and, by extension, the plots you use to visualizing those data.  The stock set of plotting functions R offers can accommodate these more complex scenarios; however, that level of accommodation is heavily dependent on the users proficiency with R.  For this reason, this book will adopt the practice of ignoring R's base plotting functions, and instead rely on well-known R package called \textit{ggplot2} which is among the most venerated portions of the tidyverse.   
 
 The \textit{``gg''} in \textit{ggplot2} stands for ``grammar of graphics'' and provides users with a logical framework for the construction of plots within R.  The term ``grammar'' here is likely to conjure up long forgotten traumas of boring English and Language Arts lessons, but do not fear, the use of the term grammar is really just to emphasize that \textit{ggplot2} is constructed in a way that allows users to build plots of various kinds in a consistent and efficient manner that is easily tailored to their specific needs.  This is in contrast to how plotting in software works generally, where you are frequently stuck trying to fit a square peg (your data) into a circular hole (the software's narrow conception of how data should be presented).
 
+\clearpage
 The easiest way to understand how \textit{ggplot2} works is to simply dive in and use it. Along the way, we will also learn a little bit more about R and data manipulation. However, a disclaimer is perhaps useful here:
 
 \begin{displayquote}
@@ -173,6 +174,7 @@ ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
 \noindent
 Looking at the \R{ggplot()} function we typed, we can see that the argument \R{data} tells \textit{ggplot2} where the data is coming from - in this case it is coming from the \R{msleep} data frame.  The \R{x} and \R{y} arguments are telling \textit{ggplot2} what variables/columns should be mapped to the x and y axis respectively.  Notice that, not only has \textit{ggplot2} labelled the axis accordingly, but it has also given them scales that correspond to size of the values found in both columns.
 
+\clearpage
 Next we will, quite literally, add (\R{+}) a layer of points on top of this by typing \R{+ geom\_point()}. The term ``geom'' here is just an abbreviation for ``geometric object'', and points are one of many different types of geometric object \textit{ggplot2} recognizes.
 
 \begin{inR}
@@ -221,6 +223,7 @@ filter(msleep, bodywt > 2000)
 
 A quick glance at the output reveals that these two points represent the Asian and African elephant respectively.  Thus, while these values are quite extreme and do not seem to be terribly representative of the data as a whole, they are not mistakes and therefore should remain in the data set.  However, this begs the question, how do we visualize this data adequately with such odd scaling?
 
+\clearpage
 \subsection{Logarithms}
 
 A common strategy in cases like this where larger values tend to become more and more extreme (i.e., exhibit some kind of exponential growth) is to plot the logarithm of the values. As a refresher of high school mathematics, logarithms are essentially exponents in reverse. For example:
@@ -309,13 +312,9 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
              stroke = 1.5)
 \end{inR}
 
-\vspace{2em}
-
-\begin{figure}[H]
+\begin{figure}[!h]
 \includegraphics[scale = 0.75]{graphics/ch2Figs/ggEx_5.pdf}
 \end{figure}
-
-\bigskip
 
 \begin{mdframed}[nobreak=true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 2.1: An alternative way to scale]
 \IMFellEnglish
@@ -434,6 +433,7 @@ is.na(msleep$vore)
  [15] ...
 \end{outR}
 
+\clearpage
 \noindent
 Thus, we can use that as the ``test'' in the \R{ifelse()} function.
 
@@ -539,7 +539,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   )
 \end{inR}
 
-\vspace{2em}
+%\vspace{2em}
 
 \begin{figure}[H]
 \includegraphics[scale = 0.75]{graphics/ch2Figs/ggEx_12.pdf}
@@ -608,6 +608,7 @@ Particularly for beginners with R, it is difficult to impress how useful \textit
 
 To finish up the plot, we should adjust some of the labelling, save it, and then take a look at some other more advanced features of \textit{ggplot2}.
 
+\clearpage
 \section{Labels}
 
 To adjust the x and y axis titles we can simply use the functions \R{xlab()} and \R{ylab()}.
@@ -995,9 +996,9 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 \vspace{2em}
 
-\begin{figure}[h]
+\begin{figure}[p]
 \centering
-\includegraphics[scale = .6]{graphics/ch2Figs/palettes.pdf}
+\includegraphics[width = \textwidth]{graphics/ch2Figs/palettes.pdf}
 \caption{Examples of the various discrete colour palettes in base R.}
 \label{fig:discrete_cols}
 \end{figure}
@@ -1005,6 +1006,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \subsection{Continuous Colour Scales}
 
 Continuous colour scales operate more or less in the same manner as discrete ones; however, to illustrate them, we need to map colour to a continuous variable. In the \R{msleep} data, there is a column called \R{\$brainwt} which, similar to \R{\$bodywt}, is a continuous measure. To visualize it adequately we will need to log transform it as well. For simplicity we will do this directly in the plot's code:
+
+\clearpage
 
 \begin{inR}
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -1055,6 +1058,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \begin{figure}[H]
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_27.pdf}
 \end{figure}
+
+\clearpage
 
 With the mammal sleep data, there is no logical reason to plot a midpoint colour using \\ \R{scale\_colour\_gradient2()} but to illustrate its use we will depict a midpoint using the colour \R{"grey"} and we will place it at a $\text{log}_{10}(\text{brain weight}) = -1.5$.
 
@@ -1269,9 +1274,9 @@ Additional pre-built themes can be accessed via other R packages, such as \R{ggt
 
 \vspace{2em}
 
-\begin{figure}[h]
+\begin{figure}[p]
 \centering
-\frame{\includegraphics[scale = .35]{graphics/ch2Figs/ggEx_themes.pdf}}
+\includegraphics[width = \textwidth]{graphics/ch2Figs/ggEx_themes.pdf}
 \caption{Visual examples of the eight built-in themes \textit{ggplot2} provides.}
 \label{fig:gg_built-in-themes}
 \end{figure}
@@ -1319,6 +1324,8 @@ my_plot + theme_bw() +
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_34.pdf}
 \end{figure}
 
+\clearpage
+
 A similar logic applies to the axis title.  In that case we would modify the \R{axis.title} element. And again, if we wanted to modify the x-axis title specifically, we would use \R{axis.title.x}.  The y-axis title would of course be \R{axis.title.y}.
 
 \begin{inR}
@@ -1339,6 +1346,8 @@ my_plot + theme_bw() +
 \begin{figure}[H]
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_35.pdf}
 \end{figure}
+
+\clearpage
 
 \section{A Final Note}
 

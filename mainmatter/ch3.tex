@@ -62,6 +62,8 @@ Male,1480,1565,1550,1255,,1360,1310,1330,1365,1560
 \caption*{Example of the \R{skull\_cap\_partial\_wide.csv} data file displayed in its raw text format. Only the first ten rows are shown.}
 \end{listing}
 
+\clearpage
+
 Comparing the two versions it can readily be seen how the commas are functioning. They separate individual columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, it will have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 Comma delimited''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV.}
 
 \section{Delimiters}
@@ -174,6 +176,8 @@ If your text document was separated by semicolons you would just include \R{deli
 One thing that is worth appreciating about delimited files is that their file extension (e.g., the \texttt{.csv} or \texttt{.tsv} at the end of the file name) is irrelevant to how R reads the file. As has been previously emphasized, \texttt{.csv} files and \texttt{.tsv} files for instance, are just generic text documents, nothing more. This means you may see them with the file extension \texttt{.txt}, but that will not impact how any of the above functions operate.
 
 Now, what would you do if you wanted to load a Microsoft Excel spreadsheet file (i.e., a \texttt{.xlsx} file) into R directly? Well as per the discussion on spreadsheets and ethical file formats (see section \ref{sec:spreadsheet_soft} and \ref{sec:ethical_file}), the best practice is to save it as a \texttt{.csv} using Excel and load that new file directly into R. However, should you wish to eschew this advice, the \textit{tidyverse} does have a package called \textit{readxl} with functions that will allow you to do this. This is not part of the nine core packages, so it will need to be loaded using the \R{library()} function. A word of warning is in order though. As well made as the \textit{readxl} package is, reading \texttt{.xlsx} files directly will, almost certainly, cause more problems than it solves. These files are not intended to be read by anything other than Excel and Microsoft does not want them read by anything other than Excel. Thus, by loading the \texttt{.xlsx} file directly into R, you are (computationally speaking) picking an unnecessary fight with Microsoft. Nine times out of ten, you will win that fight thanks to \textit{readxl}, but you will still probably end up with some nasty bruises and scars.
+
+\clearpage
 
 \section{Tibbles vs. Data Frames}
 
@@ -295,6 +299,8 @@ skulls
 10 Male        1480    1565    1550    1255      NA    1360    1310
 ...
 \end{outR}
+
+\clearpage
 
 \noindent
 To convert it back to a tibble:
@@ -441,6 +447,8 @@ pi_df
 
 \noindent
 Because of limitations of 64-bit computing, a tibble is not going let you exceed 16 sig figs and in certain cases will display results in scientific notation. In this case we see some scientific notation, but it is to the power of 0, so it can be ignored.
+
+\clearpage
 
 \section{Wide Data vs. Tidy Data}
 
@@ -654,6 +662,8 @@ skulls_tidy$capacity |> mean()
 [1] 1335.255
 \end{outR}
 
+\clearpage
+
 \noindent We could then send that output to something like the \R{round()} function.
 
 \begin{inR}
@@ -815,6 +825,8 @@ skulls |>
 
 We can now see the mean of each period in the data set and if we wanted, we could create another column, \R{\$n}, showing how many skulls there are in each period total by using the \R{length()} function to count the skulls.
 
+\clearpage
+
 \begin{inR}
 skulls |>
   group_by(period) |>
@@ -860,6 +872,9 @@ skulls |>
     N = nrow(skulls)
   )
 \end{inR}
+
+\clearpage
+
 \begin{outR}
 # A tibble: 10 × 4
    period          m     n     N
@@ -960,6 +975,8 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \end{figure}
 
 The argument \R{stat = "identity"} is simply telling \textit{ggplot2} to use the values within the \R{skull\_summary} tibble to create the bars.  We needed to specify this because \textit{ggplot2} has the ability to take the raw data directly (e.g., \R{skulls}) and perform its own summary calculations. However, we do not need it to do that in this particular case, hence why we included this argument.
+
+\clearpage
 
 The resulting bar graph displays the mean estimated cranial capacity ($cm^3$) for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively.\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the \textit{x}-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
 
@@ -1267,6 +1284,8 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \end{figure}
 
 A brief word of warning is in order: \textbf{do not} confuse the \R{levels} \textit{argument} used inside the \R{factor()} function with the \R{levels()} \textit{function} itself. While they sound similar, they serve very different purposes.\footnote{To further complicate things (because of course it does), the \R{factor()} function also includes a \R{labels} argument that allows you to rename levels at the time of creation. See the R documentation for details: \R{?factor}}
+
+\clearpage
 
 \begin{itemize}
     \item \R{levels = ...} (argument inside \R{factor()}) is used to \textit{specify the order} of factor levels.
