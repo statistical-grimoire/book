@@ -7,7 +7,7 @@ To begin with ...
 
 \section[What is R?]{What is R?}
 
-\lettrine[lines=5, realheight]{R} is a \gls{programming language}. A programming language is a means by which mortals commune with the cold, unyielding logic of machines. Humans—featherless bipedal apes known as \textit{Homo sapiens}—fashion these languages as incantations to command lifeless thralls known as computers. These soulless automatons follow rigid, unforgiving rules, devoid of will, incapable of deviating from their ordained paths \parencite{Turing1950}. Yet, as the ancients knew, the boundary between man and machine is a shadowy one. In a bygone age, computation was not formed of silicon and wires but of flesh and bone. Mortal ``computers'' laboured in dimly lit chambers, chained to the drudgery of endless calculations, their toil dictated by the cryptic marks and guttural utterances of their superiors. Today, the human computer is a relic, swept away by the inexorable tide of technological sorcery, as mathematics and other arcane arts, such as reading and writing, wither further and further into obscurity, forsaken by the students of this benighted age.
+\lettrine[lines=5, realheight]{R} is a \gls{programming language}. A programming language is a means by which mortals commune with the cold, unyielding logic of machines. Humans—featherless bipedal apes known as \textit{Homo sapiens}—fashion these languages as incantations to command lifeless thralls known as computers. These soulless automatons follow rigid, unforgiving rules, devoid of will, incapable of deviating from their ordained paths \parencite{Turing1950}. Yet, as the ancients knew, the boundary between man and machine is a shadowy one. In a bygone age, computation was not formed of silicon and wires but of flesh and bone. Mortal \enquote{computers} laboured in dimly lit chambers, chained to the drudgery of endless calculations, their toil dictated by the cryptic marks and guttural utterances of their superiors. Today, the human computer is a relic, swept away by the inexorable tide of technological sorcery, as mathematics and other arcane arts, such as reading and writing, wither further and further into obscurity, forsaken by the students of this benighted age.
 
 In the modern day, the digital computer reigns as the unchallenged sovereign of computation. Forged from silicon and shrouded in enigmatic circuitry, this mechanical progeny bears a dark resemblance to its primate forerunner—save for one vital distinction: it is unflinchingly logical. Some mortals, perhaps out of desperation or hubris, even dare to call these constructs ``smart.'' Such claims, however, speak volumes about the feeble intellects of their human masters rather than the devices themselves. With these machines now enthroned, society has deemed it unnecessary to burden young minds with the rites of a once-venerated education. Mathematics—the ancient domain of sweat, tears, and torment—has been cast aside, its cruel trials abandoned, and with them, the rich harvest of discipline and understanding that once emerged from the crucible of suffering.
 
@@ -15,9 +15,9 @@ In the modern day, the digital computer reigns as the unchallenged sovereign of 
 
 \subsection{The Genesis of R}
 
-The name ``R'' was derived from the first initials of its original two programmers, \textbf{R}obert Gentleman and \textbf{R}oss Ihaka.  The decision to name the language using a single English letter is what might, charitably, be called a joke on the part of these two programmers, who saw themselves poking fun at R's parent language, which was given the unimaginative name of ``S''. In the 1970s the S language had undergone its initial development at the famous Bell Laboratories with the primary aim of enabling and encouraging ``GOOD DATA ANALYSIS''- a goal so fundamental to the ethos of S that the authors, \textcite{Becker1984}, felt they had to emphasize it using uppercase lettering inside the preface to the language's inaugural instruction manual (the uppercase lettering has been reproduced here for the reader's benefit). The familial correspondence R has with S is present even to this day, to such an extent that \textcite{Becker1984} original manual could probably function decently well as an introductory manual to R itself.
+The name ``R'' was derived from the first initials of its original two programmers, \textbf{R}obert Gentleman and \textbf{R}oss Ihaka.  The decision to name the language using a single English letter is what might, charitably, be called a joke on the part of these two programmers, who saw themselves poking fun at R's parent language, which was given the unimaginative name of ``S''. In the 1970s the S language had undergone its initial development at the famous Bell Laboratories with the primary aim of enabling and encouraging ``GOOD DATA ANALYSIS''- a goal so fundamental to the ethos of S that the authors, \textcite{Becker1984}, felt they had to emphasize it using uppercase lettering inside the preface to the language's inaugural instruction manual (the uppercase lettering has been reproduced here for the reader's benefit). The familial correspondence R has with S is present even to this day, to such an extent that \textcite{Becker1984} original manual could probably function decently well as an introductory manual to R itself. 
 
-\section{Why R?}
+\section{Why a Programming Language?}
 
 At this point readers might be wondering why it should ever be necessary to learn a programming language to conduct statistics and data analysis more generally. These topics are usually considered difficult enough by many students and educators, what need is there to compound this with a programming language? Why not, for instance, make use of any one of the many pieces of statistical software that already exist and require no requisite knowledge of programming? In other words, why not use software such as SPSS\footnote{SPSS is popular software for conducting statistics that was originally released in the late 1960s and is an acronym for \textit{Statistical Package for the Social Sciences}. At some point it was purchased by IBM and re-branded to mean \textit{Steeply Priced Shitty Software.}} or one of its many malformed, and equally expensive, doppelgängers, Minitab, SAS, and Stata.
 
@@ -30,6 +30,8 @@ Although programs like SPSS may initially appear familiar to new users due to th
 Owing to its nature as a programming language crafted for statistics, R is grounded by the logic of mathematics. This foundation often makes it easier for new users to understand and build upon, even for those who claim to dislike math. Moreover, proficiency with R grants users the ability to work with other statistical software if needed. The reverse, however, is rarely true: mastering SPSS or similar programs does not provide the same level of flexibility or transferable skills.
 
 %%% https://www.fogcam.org/
+
+\clearpage
 
 An altogether different answer to the question that opened this section, and one that will appeal to the University students reading this, is simply cost. R is free for the user, with no need to put up with annoying advertising or pay for additional features. The same can not be said of the other aforementioned software which are almost always subscription based, requiring the user to consistently renew an expensive license to use the software. In fact, upon visiting the respective websites for SPSS and other, slightly less talked about, SPSS-style software like Minitab, and Stata, one can see that it is worryingly difficult to find any price listings whatsoever for these programs—evoking the age old wisdom that, if you have to ask the price, you probably can't afford it.  But R is not just free in monetary terms, it is also free in philosophical terms. R adopts the Free Software Foundation’s GNU General Public License and thus adheres to the philosophy of ``free software'' (what some might term ``open-source'').  From the GNU project website \parencite{GNUphil}:
 
@@ -72,12 +74,67 @@ This philosophy extends beyond the software itself to include both its file form
 
 In summary, while the prospect of learning a programming language like R may seem daunting at first, it ultimately provides a more adaptable, intuitive, ethical, affordable, and rewarding tool for statistical analysis than many of its proprietary counterparts.
 
+\subsection{Why R?}
+
+At this point, it is worth addressing a question that comes up often: ``\textit{Why use R instead of something like Python or Julia?}'' It is a fair question. After all, Python and Julia—like R—are full-fledged programming languages that are powerful and capable, but the difference comes down to origin story.
+
+\clearpage
+
+R is not a general-purpose language. It is the progeny of S, a language birthed in the depths of statistical practice for one primary goal: GOOD DATA ANALYSIS. Everything about R—from its object types to its default printing behaviour—is tailored to the sorts of things data analysts do every day.
+
+By contrast, Python and Julia are general-purpose languages. They are designed to do many things well: build websites, run simulations, automate tasks, and yes, analyse data. But this means that good data analysis is a goal these languages aspire to, not one they were born to achieve.
+
+To illustrate, suppose you wanted to calculate the mean of the numbers 1 to 666. In R, this is as natural as a reflex:
+
+\begin{inR}
+mean(1:666)
+\end{inR}
+
+\begin{outR}
+333.5
+\end{outR}
+
+\noindent
+No need to import packages. No need to loop. No need to define arrays. It just works.
+
+In Python, you will find that a bit more ceremony is required:
+
+\begin{inR}
+x = list(range(1, 667))
+print(sum(x) / len(x))
+\end{inR}
+
+\begin{outR}
+333.5
+\end{outR}
+
+\noindent
+Additional packages, like Python's excellent \textit{numpy} package can simplify what needs to be written, but it still is not quite so good as what R offers as a baseline user experience.
+
+Julia sits somewhere in the middle. It was built with scientific computing in mind, and its syntax can often be just as clean as R's:
+
+\begin{inR}
+using Statistics
+mean(1:666)
+\end{inR}
+
+\begin{outR}
+333.5
+\end{outR}
+
+\noindent
+However, Julia still expects you to opt in to statistics, with basic functions like \R{mean()} not being available until you explicitly load them. That is not a flaw—it’s a philosophical choice. Julia gives you a lean, high-performance core, and leaves the rest to you.
+
+R, by contrast, assumes you are doing data analysis. You do not have to ask for permission to compute a mean. Like a loyal familiar, it is already waiting for you. Moreover, neither Julia nor Python have the mature ecosystem of statistical tools, diagnostic plots, or nuanced modelling features that R does—at least not yet. R's statistical packages, often written by the very people developing the methods, remain second to none.
+
 \section{Installing and Running R on Your Computer}
 
 \subsection{Languages and Environments}
 \label{sec:LangAndEnv}
 
 R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux; however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply ``understanding'' the language is not sufficient.  For this reason, most operating systems come equipped with a basic way of interfacing with the user via a \gls{command console}\footnote{A windowed application that allows you to type instructions (a.k.a. ``commands'') to your computer.} of some kind. On computers using the Windows operating system, this is referred to as the \textit{Command Prompt} application, on Macintosh and Linux computers this is the \textit{Terminal} application. Relying on your operating system's basic command console application as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing. The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an ``\textbf{environment}'' or, more garrulously, an ``\gls{integrated development environment} (\acrshort{IDE}).''  This is simply a software application providing the user with a more elegant visual workspace and feature set to make programming a smoother experience. 
+
+\clearpage
 
 \begin{wrapfigure}[11]{r}{0.4\textwidth}
   \begin{center}
@@ -126,8 +183,6 @@ At the time of writing, R is on version 4.4.2, nicknamed the ``Pile of Leaves'' 
 Upon opening the base R environment you will be shown a pane labelled \textit{R Console}.  Opening RStudio environment will show a similar pane simply labelled \textit{Console} alongside a couple of others (see Figure \ref{fig:Rstudio}).  The console pane functions as the command console described earlier (see section \ref{sec:LangAndEnv}).  Inside it you will see a ``$>$.'' This symbol denotes the command line's prompt.  In other words, it denotes the space in which you type commands, using R code, to your computer.  The term ``code'' here is just a shorthand way of referring to ``computer code'' which is another way of expressing the fact that we are typing commands using a programming language. The presence of $>$ also indicates that the computer is awaiting your command.
 
 If you type $1 + 1$ on this line and the press ``enter/return'' on your keyboard, you should see a 2 display as an output almost instantaneously beneath it.  In this case the expression ``$1 + 1$'' is a \textit{line of R code}.  Pressing enter/return, \textit{runs} or \textit{executes} this R code. The ``$2$'' is the computer's resulting \textit{output}.
-
-\clearpage
 
 \textbf{Input:}
 \begin{inR}
@@ -295,6 +350,8 @@ Given that we are on the topic of basic arithmetic, it is perhaps worth consider
 \noindent
 You can see that R produces a result of \R{Inf} and \R{-Inf} which is an abbreviated way of referring to \gls{infinity} in the positive and negative directions respectively.\footnote{This will also be generated if a number is too large for a computer to cope with. For example, the code \R{.Machine\$double.xmax} will produce the largest number your computer can handle. R will technically still let you \textit{add} values to this number, but the number won't change from R's perspective because the amount you would have to add to alter what is shown is excessively large. However, if you \textit{multiply} it by 2, you should get \R{Inf}.}
 
+\clearpage
+
 What happens if you take the square root of a negative number?\footnote{Recall that exponents can be used to take the square-root of a number.  For example, $\sqrt{4}$ can be expressed as $4^\frac{1}{2}$.}
 
 \begin{inR}
@@ -332,7 +389,6 @@ If the output were showing \R{e+5}, then you would move the decimal five digits 
 
 Remember that positive powers move the decimal right (in the positive direction), and negative powers move the decimal left (in the negative direction).
 
-
 \subsection{Commenting Out Lines}
 In the course of writing R code, there will be occasions where you would like to run a script you have typed up, but not necessarily run every single line on that script.  There might be certain lines that you would, at least tentatively, like to keep for one reason or another but not necessarily run.  You can accomplish this by ``commenting out'' your code.  If you type a \R{\#} symbol, any code that follows that symbol and is on the same line as that symbol will not be run.
 
@@ -367,7 +423,7 @@ x <- 1
 
 \vspace{1em}
 
-You will find that running this line of code produces no corresponding output.  However, if we now run \R{x} by itself the computer will display an output of $1$
+You will find that running this line of code produces no corresponding output.  However, if we now run \R{x} by itself the computer will display an output of $1$.
 
 \begin{inR}
 x
@@ -539,9 +595,9 @@ ANGRYCASE <- 5
 \end{inR}
 \medskip
 
-Apart from the last two, R programmers tend to use all of these with seeming abandon. It is worth noting that different style guides for R have been developed and altered over the years with varying degrees of adoption. Presently there is no consensus on which style-guide should act in an official capacity for R; however, the most popular, and widely respected, is the Tidyverse Style Guide\footnote{The \textit{tidyverse} will be explained in the next chapter, just know that all the code written in this book will (do its best) to adhere to its standards.} (\url{https://style.tidyverse.org}) which advocates the strict and concise use of \textit{snake\_case} only.
+Apart from the last two, R programmers tend to use all of these with seeming abandon. It is worth noting that different style guides for R have been developed and altered over the years with varying degrees of adoption. Presently there is no consensus on which style-guide should act in an official capacity for R; however, the most popular, and widely respected, is the \textit{Tidyverse} Style Guide\footnote{The \textit{tidyverse} will be explained in the next chapter, just know that all the code written in this book will (do its best) to adhere to its standards.} (\url{https://style.tidyverse.org}) which advocates the strict and concise use of \textit{snake\_case} only.
 
-When it comes to naming objects, all of the rules just laid out only apply to what are referred to as \glspl{syntactic name}; however, if you choose to be a psychopath, you can ignore all of those rules and create what are called \glspl{non-syntactic name} by simply enclosing the name within backticks.
+When it comes to naming objects, all of the rules just laid out only apply to what are referred to as \glspl{syntactic name}; however, if villainy is more your style, you can gleefully ignore all of those rules and conjure up what are called \glspl{non-syntactic name} by simply enclosing the name within backticks.
 
 \begin{inR}
 `420 * 69` <- "PARTY TIME!"
@@ -1520,7 +1576,7 @@ df
 
 Notice in the previous example that, by removing row 9 (i.e., the row that contained the \R{NA} value), the index numbers on the leftmost side of the data frame's output become mislabelled. It counts from 1 to 8, skips 9, and goes straight to 10. The reason it does this is because those numbers on the left are not actually index values, as you might reasonably assume. They are actually \textit{row names} and, when the data frame was initially created, the rows were literally named 1 through 10.  
 
-R users tend to be on the fence as to whether this is a useful feature or not.  It does provide a nice visual confirmation that specific rows have been removed, but it makes future indexing potentially more confusing since the row named 10 is actually the 9\textsuperscript{th} row.  Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the \R{rownames()} function.
+R users tend to be on the fence as to whether this is a useful feature or not.\footnote{If you, like the \textit{tidyverse} high council, see this as a mild heresy, fear not—the \textit{tibble} (covered in Chapter 3) was made with you in mind.}  It does provide a nice visual confirmation that specific rows have been removed, but it makes future indexing potentially more confusing since the row named 10 is actually the 9\textsuperscript{th} row.  Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the \R{rownames()} function.
 
 \begin{inR}
 rownames(df) <- 1:nrow(df)
@@ -1551,6 +1607,9 @@ nrow(df)
 An alternative way of defining the row names would have been to type \R{rownames(df) <- 1:9}; however, this is STRONGLY discouraged.  The reasons being that 1) if you are working with a large data frame, you often do not know how many rows there are and 2) if some aspect about your data frame changes in the future (maybe because you have updated your data set or indexed different values), the \R{1:9} is no longer going to be accurate and will produce errors that you may or may not notice, unless you have remembered to change it. Using the code \R{1:nrow(df)} ensures that your row names will always be correct.
 
 Here we have named our rows using numbers, but you can technically name rows anything you want.
+
+\clearpage
+
 \begin{inR}
 rownames(df) <- month.name[1:nrow(df)]
 df
@@ -1642,7 +1701,7 @@ As a standalone piece of software, R has an excellent toolbox of functions and o
 
 The packages R users make publicly available are downloaded from online \textit{repositories} (often called ``repos'').  The \textit{Comprehensive R Archive Network} (CRAN) discussed in section \ref{sec:install} is one such repository, another well known one would be \textit{GitHub}.\footnote{This textbook actually has its own GitHub repo: \url{https://github.com/statistical-grimoire/book}}  The CRAN repository is easily the most frequented by R users and is likely to be the only R repository you will ever need. It is special in that the packages it provides are curated by the \textit{The R Project for Statistical Computing}.
 
-To install a package from the CRAN repository you simply run the function \R{install.packages(" ")} with the package name inside the quotation marks. As an example, we shall install the ``cowsay'' package.
+To install a package from the CRAN repository you simply run the function \\ \R{install.packages(" ")} with the package name inside the quotation marks. As an example, we shall install the ``cowsay'' package.
 
 \begin{inR}
 install.packages("cowsay")
@@ -1694,7 +1753,7 @@ Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing
 
 \vspace{1em}
 
-\begin{figure}[tb]
+\begin{figure}[p]
 \centering
 \includegraphics[width = \textwidth]{graphics/ch1Figs/GustaveDORÉ-LittleRedR-Fd106325.pdf}
 \caption{From the National Gallery of Victoria, Melbourne: Gustave Doré's illustration of the ``\textit{penultimate moment, just before the triumphant, and satiated, wolf bites off Little Red Riding Hood’s head}'' in Charles Perrault's version of the classic fairy tale \parencite{Dore1862}.}
