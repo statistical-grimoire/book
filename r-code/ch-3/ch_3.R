@@ -327,7 +327,7 @@ ggplot(skull_summary, aes(x = sex, y = m)) +
   geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
   scale_fill_manual(values = egypt_pal, guide = "none") +
   labs(
-    x = "Period",
+    x = "Sex",
     y = "Cranial Capacity (cm³)"
   ) +
   facet_wrap(~ period, ncol = 5)
