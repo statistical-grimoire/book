@@ -1295,4 +1295,142 @@ A brief word of warning is in order: \textbf{do not} confuse the \R{levels} \tex
 \noindent
 It is also worth noting that the \href{https://forcats.tidyverse.org/}{\textit{forcats}} package—automatically loaded with the \textit{tidyverse}—offers a variety of useful functions specifically designed for working with factors.
 
-For beginners, factors can feel like a particularly troublesome hex: cryptic, temperamental, and always popping up when least expected. But they are foundational to R’s data-handling magick and cannot be avoided. So rather than resisting, it is best to surrender to the arcane forces of factoring. Only by embracing this necessary evil will you achieve true statistical enlightenment.
+For beginners, factors can feel particularly troublesome: they are cryptic, temperamental, and always popping up when least expected. But they are also foundational to R's thaumaturgy and cannot be avoided. So rather than resisting, it is best to embrace their evil, arcane \mbox{nature}—only then will you be at peace.
+
+\clearpage
+
+\section{Putting It All Together}
+
+To consolidate everything covered in this chapter, it's helpful to revisit the analysis one final time—but in a more realistic, streamlined, end-to-end format. Doing so not only reinforces how the various components work together in a complete R script, but also provides an opportunity to enhance the graph by incorporating some faceting based on the previously ignored variable \R{\$sex}.\footnote{Facets were covered in Chapter 2, section \ref{sec:facets}.}
+
+\begin{inR}
+# Load the tidyverse
+library(tidyverse)
+\end{inR}
+
+\begin{inR}
+# Load the data
+skulls <- read_csv("skull_cap_partial_wide.csv") |>
+  # Pivot to the tidy format
+  pivot_longer(
+    cols = predynastic:c331BC,
+    names_to = "period",
+    values_to = "capacity"
+  ) |>
+  # Remove NAs
+  drop_na(capacity)
+\end{inR}
+
+\begin{inR}
+# Factor and order "period"
+skulls$period <- factor(skulls$period,
+  levels = c(
+    "predynastic", "c4800BC", "c4200BC", "c4000BC", "c3700BC",
+    "c3500BC",     "c2780BC", "c1590BC", "c378BC",  "c331BC"
+  )
+)
+\end{inR}
+
+\begin{inR}
+# Rename the factor levels
+levels(skulls$period) <- c(
+  "Predynastic", "c.4800 BC", "c.4200 BC", "c.4000 BC", "c.3700 BC",
+  "c.3500 BC",   "c.2780 BC", "c.1590 BC", "c.378 BC",  "c.331 BC"
+)
+\end{inR}
+
+\clearpage
+
+\begin{inR}
+# Calculate stats for plot, grouping by 'period' and 'sex'
+skull_summary <- skulls |>
+  group_by(period, sex) |> # Note the addition of a second factor to group_by
+  summarise(
+    m = mean(capacity),
+    min = min(capacity),
+    max = max(capacity)
+  )
+
+skull_summary # Output shows group-wise means and ranges, separated by sex
+\end{inR}
+
+\begin{outR}
+# A tibble: 18 × 5
+# Groups:   period [10]
+   period      sex        m   min   max
+   <fct>       <chr>  <dbl> <dbl> <dbl>
+ 1 Predynastic Female 1262.  1050  1570
+ 2 Predynastic Male   1391.  1130  1710
+ 3 c.4800 BC   Female 1280.  1110  1515
+ 4 c.4800 BC   Male   1430.  1195  1640
+ 5 c.4200 BC   Female 1271   1110  1530
+ 6 c.4200 BC   Male   1509.  1320  1740
+ 7 c.4000 BC   Male   1495.  1235  1775
+ 8 c.3700 BC   Female 1356.  1245  1450
+ 9 c.3500 BC   Female 1255.   965  1490
+10 c.3500 BC   Male   1408.  1160  1760
+11 c.2780 BC   Female 1252.  1030  1520
+12 c.2780 BC   Male   1384.  1160  1660
+13 c.1590 BC   Female 1288.  1080  1515
+14 c.1590 BC   Male   1421.  1210  1665
+15 c.378 BC    Female 1227.  1095  1400
+16 c.378 BC    Male   1345.  1190  1550
+17 c.331 BC    Female 1245   1000  1455
+18 c.331 BC    Male   1383.  1150  1570
+\end{outR}
+
+\begin{inR}
+# Store desired colours
+egypt_pal <- c(
+  "#7E6A58", "#C2B280", "#6A8347", "#A23E2A", "#B04E0F",
+  "#2E8B8B", "#264653", "#D4AF37", "#8B8589", "#C9C9C9"
+)
+\end{inR}
+
+\begin{inR}
+# Plot data
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  scale_fill_manual(values = egypt_pal, guide = "none") +
+  labs(
+    x = "Period",
+    y = "Cranial Capacity (cm³)"
+  ) +
+  facet_wrap(~ sex, ncol = 1) # Note the use of facet_wrap
+\end{inR}
+
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_8.pdf}
+\end{figure}
+
+Finally, it is worth demonstrating just how easily—and dramatically—we can adjust \textit{ggplot2} to suit different analytical goals. As it currently stands, the plot is structured to compare cranial capacity across time periods within each sex. However, with just two minor changes (see line 2 and 14), we can reorient the layout to instead compare the sexes within each time period. Specifically, we place the \R{\$sex} on the $x$-axis and facet according to \R{\$period}.\footnote{While the data shows that males tend to have slightly larger crania on average, it's worth noting that the sperm whale (\textit{Physeter macrocephalus}) possesses a brain over five times the size of a human’s—and yet it spends much of its time ramming giant squid in total darkness and clicking at 230 decibels. Don't over-interpret this finding. Male skulls may be bigger on average—but before anyone gets too proud, remember: it's what you do with your brain that counts.}
+
+\begin{inR}
+# Plot data
+ggplot(skull_summary, aes(x = sex, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  scale_fill_manual(values = egypt_pal, guide = "none") +
+  labs(
+    x = "Period",
+    y = "Cranial Capacity (cm³)"
+  ) +
+  facet_wrap(~ period, ncol = 5)
+\end{inR}
+
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_9.pdf}
+\end{figure}

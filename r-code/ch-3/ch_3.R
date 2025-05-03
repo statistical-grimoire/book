@@ -250,3 +250,86 @@ ggplot(skull_summary, aes(x = period, y = m)) +
   )
 
 ggsave("bar_7.pdf", units = "cm", width = 24, height = 9)
+
+#-------------------------------------------------------------------------------
+
+# Load the tidyverse
+library(tidyverse)
+
+# Load the data
+skulls <- read_csv("skull_cap_partial_wide.csv") |>
+  # Pivot to the tidy format
+  pivot_longer(
+    cols = predynastic:c331BC,
+    names_to = "period",
+    values_to = "capacity"
+  ) |>
+  # Remove NAs
+  drop_na(capacity)
+
+# Factor and order "period"
+skulls$period <- factor(skulls$period,
+  levels = c(
+    "predynastic", "c4800BC", "c4200BC", "c4000BC", "c3700BC",
+    "c3500BC",     "c2780BC", "c1590BC", "c378BC",  "c331BC"
+  )
+)
+
+# Rename the levels
+levels(skulls$period) <- c(
+  "Predynastic", "c.4800 BC", "c.4200 BC", "c.4000 BC", "c.3700 BC",
+  "c.3500 BC",   "c.2780 BC", "c.1590 BC", "c.378 BC",  "c.331 BC"
+)
+
+# Calculate stats for plot
+skull_summary <- skulls |>
+  group_by(period, sex) |> # Note the addition of a second factor to group by
+  summarise(
+    m = mean(capacity),
+    min = min(capacity),
+    max = max(capacity)
+  )
+
+skull_summary
+
+# Store desired colours
+egypt_pal <- c(
+  "#7E6A58", "#C2B280", "#6A8347", "#A23E2A", "#B04E0F",
+  "#2E8B8B", "#264653", "#D4AF37", "#8B8589", "#C9C9C9"
+)
+
+# Plot data
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  scale_fill_manual(values = egypt_pal, guide = "none") +
+  labs(
+    x = "Period",
+    y = "Cranial Capacity (cm³)"
+  ) +
+  facet_wrap(~ sex, ncol = 1) # Note the use of facet_wrap
+  #facet_wrap(~ period, ncol = 2)
+
+ggsave("bar_8.pdf", units = "cm", width = 24, height = 14)
+
+
+# Plot data
+ggplot(skull_summary, aes(x = sex, y = m)) +
+  geom_bar(
+    stat = "identity",
+    colour = "black",
+    aes(fill = period)
+  ) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  scale_fill_manual(values = egypt_pal, guide = "none") +
+  labs(
+    x = "Period",
+    y = "Cranial Capacity (cm³)"
+  ) +
+  facet_wrap(~ period, ncol = 5)
+
+ggsave("bar_9.pdf", units = "cm", width = 24, height = 13)
