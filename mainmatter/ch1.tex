@@ -31,9 +31,9 @@ Owing to its nature as a programming language crafted for statistics, R is groun
 
 %%% https://www.fogcam.org/
 
-\clearpage
-
 An altogether different answer to the question that opened this section, and one that will appeal to the University students reading this, is simply cost. R is free for the user, with no need to put up with annoying advertising or pay for additional features. The same can not be said of the other aforementioned software which are almost always subscription based, requiring the user to consistently renew an expensive license to use the software. In fact, upon visiting the respective websites for SPSS and other, slightly less talked about, SPSS-style software like Minitab, and Stata, one can see that it is worryingly difficult to find any price listings whatsoever for these programs—evoking the age old wisdom that, if you have to ask the price, you probably can't afford it.  But R is not just free in monetary terms, it is also free in philosophical terms. R adopts the Free Software Foundation’s GNU General Public License and thus adheres to the philosophy of ``free software'' (what some might term ``open-source'').  From the GNU project website \parencite{GNUphil}:
+
+\clearpage
 
 %\sffamily
 {
@@ -77,8 +77,6 @@ In summary, while the prospect of learning a programming language like R may see
 \subsection{Why R?}
 
 At this point, it is worth addressing a question that comes up often: ``\textit{Why use R instead of something like Python or Julia?}'' It is a fair question. After all, Python and Julia—like R—are full-fledged programming languages that are powerful and capable, but the difference comes down to origin story.
-
-\clearpage
 
 R is not a general-purpose language. It is the progeny of S, a language birthed in the depths of statistical practice for one primary goal: GOOD DATA ANALYSIS. Everything about R—from its object types to its default printing behaviour—is tailored to the sorts of things data analysts do every day.
 
@@ -228,6 +226,8 @@ You can now place your cursor at a line of your choosing and run that line indiv
 
 It is at this juncture that a noteworthy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called ``hotkeys''). All robust programming environments equip users with the ability to perform virtually any non-typing task directly from the keyboard, increasing efficiency and comfort. For instance, if you are using the Windows operating system, pressing the ``control'' key simultaneously with the ``s'' key will save your script file (Ctrl + S). Learning the shortcuts for frequently used features, such as selecting and running lines of code, will make the process of writing code considerably more time efficient and effortless.  In theory, a good programmer - using a competently developed coding environment - should never require the use of a mouse.  RStudio, in particular, offers a wide range of keyboard shortcuts that can be customized to user preferences.  For instance, selecting \textit{Help $\rightarrow$ Keyboard Shortcuts Help} will display a list of existing shortcuts that users can avail themselves of.  Please note, it is not being suggested that you go out of your way to memorize all of these at once. The simple act of trying to use them consistently will be sufficient to learn them in an effortless manner. At the outset, it is to your advantage to merely select a few and attempt to use them consistently while you code. A few of the most useful ones are listed in Table \ref{tab:key_shortcuts}.\footnote{Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.}
 
+\clearpage
+
 \input{tables/ch-1/key_shortcuts.tex}
 
 \section{How To Code Using R: The Fundamentals}
@@ -350,8 +350,6 @@ Given that we are on the topic of basic arithmetic, it is perhaps worth consider
 \noindent
 You can see that R produces a result of \R{Inf} and \R{-Inf} which is an abbreviated way of referring to \gls{infinity} in the positive and negative directions respectively.\footnote{This will also be generated if a number is too large for a computer to cope with. For example, the code \R{.Machine\$double.xmax} will produce the largest number your computer can handle. R will technically still let you \textit{add} values to this number, but the number won't change from R's perspective because the amount you would have to add to alter what is shown is excessively large. However, if you \textit{multiply} it by 2, you should get \R{Inf}.}
 
-\clearpage
-
 What happens if you take the square root of a negative number?\footnote{Recall that exponents can be used to take the square-root of a number.  For example, $\sqrt{4}$ can be expressed as $4^\frac{1}{2}$.}
 
 \begin{inR}
@@ -371,6 +369,8 @@ pi
 \begin{outR}
 [1] 3.141593
 \end{outR}
+
+\clearpage
 
 \subsection{Understanding Scientific Notation}
 
@@ -619,8 +619,6 @@ x
 
 The lower case \R{c} is short for \textit{combine}. By combining the numbers 1 through 5 in this way we have created what is technically known as a \gls{vector}.\footnote{More specifically, we are speaking of \textit{atomic vectors} here, though most people just call them \textit{vectors.}} We can further use this combine function, \R{c()}, to combine vectors with other vectors. In the example below, we create two vectors, \R{x} and \R{y}, and combine them to create an object called \R{z}.
 
-
-\clearpage
 \begin{inR}
 x <- c(1, 2, 3, 4, 5)
 y <- c(6, 7, 8, 9, 10)
@@ -663,7 +661,6 @@ x + 2
 [1] 3 4 5 6 7
 \end{outR}
 
-\clearpage
 \noindent
 Correspondingly:
 
@@ -696,6 +693,8 @@ x + y
 
 \noindent
 However, a curious thing will occur if the vectors have an unequal number of elements greater than 1. Suppose, as an example, one vector has four elements and another has five and we want to add them together. In the process of adding the first element with the first element, and the second element with the second, and so on, R will automatically loop back around to the first element in the shorter vector to complete the calculation; though, it does this only after giving you a warning.  Needless to say, you should not be performing any arithmetic on vectors of unequal lengths.
+
+\clearpage
 
 \begin{inR}
 x <- c(1,2,3,4)
@@ -753,6 +752,8 @@ e
 \noindent
 In fact if you have an entire vector of logical values you can treat the \R{TRUE} and \R{FALSE} values as 1s and 0s respectively. This is a feature of logical vectors that frequently comes in handy. 
 
+\clearpage
+
 \begin{inR}
 x <- c(100)
 g <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
@@ -806,7 +807,7 @@ LETTERS[17]
 \noindent
 If we want to list out the first 5 letters we can simply insert a numeric vector...
 \begin{inR}
-LETTERS[c(1,2,3,4,5)]
+LETTERS[c(1, 2, 3, 4, 5)]
 \end{inR}
 
 \begin{outR}
@@ -817,7 +818,7 @@ LETTERS[c(1,2,3,4,5)]
 By contrast, if we want to list out all of the letters, except the first five (i.e., exclude the first five), we can include a minus sign in front of the combine symbol.
 
 \begin{inR}
-LETTERS[-c(1,2,3,4,5)]
+LETTERS[-c(1, 2, 3, 4, 5)]
 \end{inR}
 
 \begin{outR}
@@ -855,6 +856,7 @@ FALSE[1]
 
 Notice in the second line above that when \R{666} was indexed at position 2, R returned \R{NA} because no value exists at that position. The moral of the story is that, when the combine function,\R{c()}, is used, you are not creating a vector, but rather combining vectors.
 
+\clearpage
 
 \subsection{Operators And Comparison Statements}
 \label{sec:operatorsAndCompair}
@@ -999,6 +1001,8 @@ max(x)
 [1]  5
 \end{outR}
 
+\clearpage
+
 \noindent
 Calculating the \textit{length} (i.e., number of elements) of a vector:
 \begin{inR}
@@ -1056,6 +1060,8 @@ round(x, digits = 2)
 \begin{outR}
 [1] 3.14 1.41
 \end{outR}
+
+\clearpage
 
 \noindent
 Alternatively, we could round to the nearest integer:
@@ -1159,7 +1165,6 @@ A common hurdle in data analysis are missing values.  Values can be missing for 
 
 Intuitively, this behaviour makes a fair amount of sense to most people.  We do not know what \R{NA} is or should be, so the expression \R{5 + NA} cannot be evaluated. And R, quite logically, extends this principle to functions:
 
-\clearpage
 \begin{inR}
 x <- c(710, 633, 786, NA, 642)
 mean(x)
@@ -1183,7 +1188,6 @@ mean(x, na.rm = TRUE)
 
 For situations where a function does not have a \R{na.rm} argument or equivalent, the function \R{is.na()} can be easily employed. This function evaluates whether each element of an R object is missing or not and returns a logical (\R{TRUE} or \R{FALSE}) value. For example:
 
-\clearpage
 \begin{inR}
 x <- c(710, 633, 786, NA, 642)
 is.na(x)
@@ -1282,6 +1286,8 @@ sapply(df, FUN = mode)
   "numeric" "character"   "numeric"    
 \end{outR}
 
+\clearpage
+
 In this example, the \R{sapply()} function has, quite literally, \textit{applied} the function \R{mode()} to each of the columns of our data frame, thereby telling us what each column's mode is. The argument \R{FUN} is just short for ``function'' and is telling \R{sapply()} what function you want to \textit{apply} to the columns. In this case we are applying the \R{mode()} function. 
 
 Knowing the mode of a column is very important because columns behave like vectors insofar as trying to mix and match different object types within a single column will potentially change that entire column.  As an example, if we had coded ... 
@@ -1328,7 +1334,7 @@ df_3
 \end{outR}
 
 \noindent
-Notice in the above example that we assigned four values to the \textit{a} column and two values to the \textit{b} column and instead of producing an error, R simply recycled the values in \textit{b} to fill the empty spots.
+Notice in the above example that we assigned four values to the \R{a} column and two values to the \R{b} column and instead of producing an error, R simply recycled the values in \R{b} to fill the empty spots.
 
 \subsubsection{Indexing}
 \label{sec:df_Index}
@@ -1466,6 +1472,8 @@ df
 
 If we wanted to create a column named \textit{new\_val} that multiplies all the numbers in the \textit{Value} column by 100, we can easily do that.
 
+\clearpage
+
 \begin{inR}
 df$new_val <- df$Value * 100
 df
@@ -1504,8 +1512,9 @@ df
 10      10  Cont -1.04    -104
 \end{outR}
 
-\clearpage
 If you want to remove multiple columns, a quick way is to simply index the columns you do NOT want to keep, negate them using a minus sign (which means you are now technically indexing the ones you DO want to keep).  You can then override your data frame object, which in our case is (\R{df}). To illustrate, we will remove column's one and four.
+
+\clearpage
 
 \begin{inR}
 df <- df[ , -c(1, 4)]
@@ -1553,6 +1562,9 @@ df
 11  SPAM 999.00
 \end{outR}
 
+\clearpage
+
+\noindent
 To remove rows (e.g., 9 and 11), you can follow the same basic process that was outlined for removing columns.
 
 \begin{inR}
@@ -1604,11 +1616,10 @@ nrow(df)
 [1] 9
 \end{outR}
 
+\noindent
 An alternative way of defining the row names would have been to type \R{rownames(df) <- 1:9}; however, this is STRONGLY discouraged.  The reasons being that 1) if you are working with a large data frame, you often do not know how many rows there are and 2) if some aspect about your data frame changes in the future (maybe because you have updated your data set or indexed different values), the \R{1:9} is no longer going to be accurate and will produce errors that you may or may not notice, unless you have remembered to change it. Using the code \R{1:nrow(df)} ensures that your row names will always be correct.
 
 Here we have named our rows using numbers, but you can technically name rows anything you want.
-
-\clearpage
 
 \begin{inR}
 rownames(df) <- month.name[1:nrow(df)]
@@ -1630,6 +1641,8 @@ September  Cont -1.04
 Generally speaking though, this is not something you should be doing.  If you wanted to label each row with a name of the month, you would be better off creating a new column called \textit{Month}, and keeping the row names as ascending integers.
 
 Column names can be renamed in a similar fashion using the \R{colnames()} function. Though, R's syntax does not permit you to name them solely with numeric values, nor are you allowed to include spaces or any type of special characters other than an underscore.
+
+\clearpage
 
 \begin{inR}
 colnames(df) <- c("1st_Col", "2nd_Col")
@@ -1749,7 +1762,7 @@ Unfortunately, most modern operating systems are configured in such a way that t
 
 The reasons why this change took place are not altogether clear, but the main justification seems to be that there is an inherent danger in users accidentally deleting or altering an extension when renaming a file, thereby causing it not to run. At face value this makes a certain amount of sense, but not when you consider the problems that it creates. In particular, this compromises a computer's (and by extension a network's) security much more. Seeing an unfamiliar file extension and knowing not to click on it (because it is unfamiliar) is one of the most effective ways of preventing malicious software from attacking your computer. Seeing unfamiliar file extensions also means the user is less likely to move, delete, or open file types on their system they do not understand and are integral for the running of their system and its applications. However, with no file extension displayed there is no obvious way of distinguishing familiar file types from unfamiliar ones.
 
-Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing \texttt{grandma.png.exe} on a system that is configured to hide extensions will display for the user as \texttt{grandma.png}, leading someone (a child perhaps) to believe they are clicking an innocent image of their grandma, when in fact their computer is about to be devoured by grandma.\footnote{Once upon a time users were expected to be the ``smart'' ones, not their devices.}
+Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing \\ \texttt{grandma.png.exe} on a system that is configured to hide extensions will display for the user as \texttt{grandma.png}, leading someone (a child perhaps) to believe they are clicking an innocent image of their grandma, when in fact their computer is about to be devoured by grandma.\footnote{Once upon a time users were expected to be the ``smart'' ones, not their devices.}
 
 \vspace{1em}
 
@@ -1761,8 +1774,6 @@ Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing
 
 For both security and everyday use, it is important for users to understand that different types of files exist and that they can easily identify them. The relatively modern practice of hiding file extensions prevents new users from gaining the essential experience needed to learn this and tends to make programming a more cumbersome process than it needs to be. The reality is that file extensions are essential pieces of information for any programmer working with or creating files. Fortunately, operating systems still make it possible to display extensions and it is highly recommend that readers of this book enable that feature on their respective system:
 
-\clearpage
-
 \begin{itemize}
     \item \textbf{Windows 11:} 
     \begin{enumerate}
@@ -1770,8 +1781,10 @@ For both security and everyday use, it is important for users to understand that
         \item In the Windows search bar type \enquote{File Explorer Options.}
         \item Open the \textit{File Explorer Options} menu. 
         \item Select the \textit{View} tab. 
-        \item In the \textit{Advanced Settings} scroll area, uncheck the box labelled \textit{Hide extensions for known file types}.
+        \item In the \textit{Advanced Settings} scroll area, uncheck the box labelled \\ \textit{Hide extensions for known file types}.
     \end{enumerate}
+
+\clearpage
 
     \item \textbf{Macintosh:} 
     \begin{enumerate}
@@ -1804,9 +1817,7 @@ As an example, if you right click the icon of a file on your desktop (control-cl
 
 \subsection{The Working Directory}
 
-Any time R needs to grab or create a file, it needs to grab or create that file somewhere and if you do not tell R where that somewhere is, it will default to what is known as the \gls{working directory}.
-
-To see where your current working directory is set to you can just run the function \R{getwd()}.
+Any time R needs to access or create a file, it needs to access or create that file somewhere and if you do not tell R where that somewhere is, it will default to what is known as the \gls{working directory}. To see where your current working directory is set to you can just run the function \R{getwd()}.
 
 \begin{inR}
 getwd()
@@ -1890,6 +1901,8 @@ dir.create(path = "./Directory A")
 \noindent
 This will create a directory (i.e., visually you will see a folder) called \R{Directory A} inside your working directory. The period (\R{.}) in front of the forward slash (\R{/}) is a shorthand way of referring to the current working directory. Thus, you can view the path here as equivalent to typing \R{"C:/Users/Acheron/Desktop/Directory A"}.
 
+\clearpage
+
 Next we will nest another new directory, B, inside A, and then nest a directory, C, inside B, such that the path structure ends up like this:
 
 \vspace{1em}
@@ -1948,6 +1961,8 @@ write.csv(df, file = "../letters_4.csv")
 .2 letters\_3.csv.
 }
 
+\clearpage
+
 \noindent
 If you wanted to save the file two directories up, you just carry forward the logic.
 
@@ -1973,9 +1988,8 @@ And you can use the same logic reset the working directory back to the \R{Deskto
 setwd("../../..")
 \end{inR}
 
-\medskip
+\vspace{1em}
 
-\clearpage
 \noindent We end up back at the Desktop because ...
 
 \begin{itemize}
@@ -2005,6 +2019,8 @@ file.path(wd, dir_A, dir_B, dir_C)
 \begin{outR}
 "C:/Users/Acheron/Desktop/Directory A/Directory B/Directory C" 
 \end{outR}
+
+\clearpage
 
 \noindent
 So if we wanted to save our spreadsheet in \R{Directory C} using the full file path we could run ...

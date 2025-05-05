@@ -62,9 +62,9 @@ Male,1480,1565,1550,1255,,1360,1310,1330,1365,1560
 \caption*{Example of the \R{skull\_cap\_partial\_wide.csv} data file displayed in its raw text format. Only the first ten rows are shown.}
 \end{listing}
 
-\clearpage
-
 Comparing the two versions it can readily be seen how the commas are functioning. They separate individual columns and each new line represents a new row in the spreadsheet. This not only makes it easy to read \texttt{.csv} files within a basic text editor, but create them as well. Just save (or rename) the text document with a \texttt{.csv} file extension (which you may need to configure your computer to display). Alternatively, if you have a good spreadsheet software on your computer, it will have the ability to \textit{``Save As''} a \texttt{.csv} file or \textit{``Export''} to one. For instance, the save menu of Microsoft Excel will present the user with a drop down list of potential file types it can save as and (as of writing this) has four different versions of \texttt{.csv} files (the best option is the one labelled ``UTF-8 Comma delimited''). By contrast the Numbers application on a Mac will not permit a spreadsheet to save as anything other than a \texttt{.NUMBERS} file, but will allow you to export your saved spreadsheet as a \texttt{.csv}. Just select \textit{File $\rightarrow$ Export To $\rightarrow$ CSV.}
+
+\clearpage
 
 \section{Delimiters}
 
@@ -118,6 +118,8 @@ i Specify the column types or set `show_col_types = FALSE` to quiet this message
 \end{outR}
 
 Running the above code presents us with some useful information about the data set we have loaded.  We can see that it has 343 rows and 11 columns, uses a \R{,} as a delimiter. One column, \R{sex}, consists of character (\R{chr}) values and the remaining 10 columns consist of \R{dbl} values, which is a shorthand way of referring to \textit{double-precision number}. To simplify a complex story, R has multiple types of \textit{numeric} objects; i.e., it has multiple ways of representing a number. A \textit{double}, as its often referred to, is one such representation. If that is confusing, don't worry, what is important to take away from the output is that \R{dbl} means the column contains numeric values (i.e., we can use them to do mathematics).
+
+\clearpage
 
 Running \R{skulls} will print the data frame to the console.
 
@@ -299,8 +301,6 @@ skulls
 10 Male        1480    1565    1550    1255      NA    1360    1310
 ...
 \end{outR}
-
-\clearpage
 
 \noindent
 To convert it back to a tibble:
@@ -529,6 +529,8 @@ apply(skulls[, 2:11], MARGIN = 1, FUN = max, na.rm = TRUE)
 
 The structure of this dataset is what is commonly referred to as the \gls{wide format}. At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all the columns are conveniently numeric. Even though this layout might seem intuitive, it is not ideal for many types of analysis or visualization. In fact, the original dataset\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Thomson_Randall-MacIver_1905.csv}} had to be substantially truncated to fit into a usable wide format for our purposes here.
 
+\clearpage
+
 \subsection{Tidy data}
 
 Despite its shortcomings, use of the \textit{wide format} is fairly common and gets its name from the fact that it spreads variables across multiple columns. In this case, we can treat of the different historical periods of the skulls (predynastic, c4800BC, c4200BC, c4000BC, etc.) as a single variable in its own right. We might call this variable simply ``\textit{period}.'' That is to say, c4800BC represents a \textit{period} in Egypt's history, c4200BC represents a \textit{period} in Egypt's history, c4000BC represents a \textit{period} in Egypt's history, and so on. Adjunct to this is a second variable, which we could refer to as the ``\textit{cranial capacity}'' of the skulls. This variable consists of the literal measurements 1370, 1250, 1430, and so on. And of course ``\textit{sex}'' is a variable in this data as well; however, it is not spread across multiple columns the way \textit{period} and \textit{cranial capacity} are. 
@@ -602,6 +604,8 @@ It can be seen that the skull data now satisfies these three standards, as did t
 
 Interestingly, because of the restriction that data frames and tibbles have whereby each column needs to contain the same amount of elements, the wide data necessarily had to make use of \R{NA} values. The pivoting that was done to transform the data from wide to tidy preserved those \R{NA} values, but now there is no need for them to keep them in the data (because they just represent a non-existent value). As an example, consider row five:
 
+\clearpage
+
 \begin{inR}
 skulls_tidy[5, ]
 \end{inR}
@@ -661,8 +665,6 @@ skulls_tidy$capacity |> mean()
 \begin{outR}
 [1] 1335.255
 \end{outR}
-
-\clearpage
 
 \noindent We could then send that output to something like the \R{round()} function.
 
@@ -825,8 +827,6 @@ skulls |>
 
 We can now see the mean of each period in the data set and if we wanted, we could create another column, \R{\$n}, showing how many skulls there are in each period total by using the \R{length()} function to count the skulls.
 
-\clearpage
-
 \begin{inR}
 skulls |>
   group_by(period) |>
@@ -873,8 +873,6 @@ skulls |>
   )
 \end{inR}
 
-\clearpage
-
 \begin{outR}
 # A tibble: 10 × 4
    period          m     n     N
@@ -891,7 +889,7 @@ skulls |>
 10 predynastic 1320.   318  1449
 \end{outR}
 
-Mathematical operations can also be applied to columns created within the \R{summarise()} function. For instance, historical sources suggest that the ancient Egyptians used a volumetric unit known as the heqat, primarily for measuring grain, with an estimated value of approximately 4.8 litres \parencite{Clagett1989}. This allows us to convert skull capacities from cubic centimetres to heqats through a simple division. Since 1 litre = 1,000 cm\textsuperscript{3}, it follows that 1 heqat $\approx$ 4,800 cm\textsuperscript{3}. Thus if we wanted the mean and median cranial capacity in heqats we simply run ...
+Mathematical operations can also be applied to columns created within the \R{summarise()} function. For instance, historical sources suggest that the ancient Egyptians used a volumetric unit known as the ``heqat,'' primarily for measuring grain, with an estimated value of approximately 4.8 litres \parencite{Clagett1989}. This allows us to convert skull capacities from cubic centimetres to heqats through a simple division. Since 1 litre = 1,000 cm\textsuperscript{3}, it follows that 1 heqat $\approx$ 4,800 cm\textsuperscript{3}. Thus if we wanted the mean and median cranial capacity in heqats we simply run ...
 
 \begin{inR}
 skulls |>
@@ -904,6 +902,8 @@ skulls |>
     med_heq = median(capacity) / 4800
   )
 \end{inR}
+
+\clearpage
 
 \begin{outR}
 # A tibble: 10 × 6
@@ -941,6 +941,8 @@ skull_summary <- skulls |>
 skull_summary
 \end{inR}
 
+\clearpage
+
 \begin{outR}
 # A tibble: 10 × 8
    period          m     n     N m_heq med_heq   min   max
@@ -961,7 +963,7 @@ skull_summary
 
 Now that we have neatly organized these summary statistics inside a tibble, we can visualize them. Since the \R{\$period} column contains ten discrete categories, a bar plot is a basic natural choice for representing these data, so that is what we will create.
 
-The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the x and y axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with. Though, it is worth remembering that any of the other numeric columns could be used as well.
+The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the x and y axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with. Though, it is worth remembering that any of the other numeric (\R{<dbl>}) columns could be used as well.
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
@@ -975,8 +977,6 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \end{figure}
 
 The argument \R{stat = "identity"} is simply telling \textit{ggplot2} to use the values within the \R{skull\_summary} tibble to create the bars.  We needed to specify this because \textit{ggplot2} has the ability to take the raw data directly (e.g., \R{skulls}) and perform its own summary calculations. However, we do not need it to do that in this particular case, hence why we included this argument.
-
-\clearpage
 
 The resulting bar graph displays the mean estimated cranial capacity ($cm^3$) for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively.\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the \textit{x}-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
 
@@ -1086,6 +1086,8 @@ For example, in our tidy data, the variable \R{\$period} can be considered a fac
 
 To summarize: in tidy data, you can think of a ``factor'' as essentially a categorical variable (or column), and a ``level'' as one of its possible categories. Just beware that this terminology is specific to tidy data structures.
 
+\clearpage
+
 {
 \begin{itemize}
   \setlength\itemsep{-1em}
@@ -1094,6 +1096,7 @@ To summarize: in tidy data, you can think of a ``factor'' as essentially a categ
 \end{itemize}
 }
 
+\noindent
 If we examine \R{skulls}:
 
 \begin{inR}
@@ -1259,6 +1262,8 @@ skull_summary
 10 c.331 BC    1319.   232  1449 0.275   0.275  1000  1570
 \end{outR}
 
+\clearpage
+
 \noindent
 A corresponding change will be seen on the plot's \textit{x}-axis labels as well when that is generated.
 
@@ -1284,8 +1289,6 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \end{figure}
 
 A brief word of warning is in order: \textbf{do not} confuse the \R{levels} \textit{argument} used inside the \R{factor()} function with the \R{levels()} \textit{function} itself. While they sound similar, they serve very different purposes.\footnote{To further complicate things (because of course it does), the \R{factor()} function also includes a \R{labels} argument that allows you to rename levels at the time of creation. See the R documentation for details: \R{?factor}}
-
-\clearpage
 
 \begin{itemize}
     \item \R{levels = ...} (argument inside \R{factor()}) is used to \textit{specify the order} of factor levels.
@@ -1338,8 +1341,6 @@ levels(skulls$period) <- c(
   "c.3500 BC",   "c.2780 BC", "c.1590 BC", "c.378 BC",  "c.331 BC"
 )
 \end{inR}
-
-\clearpage
 
 \begin{inR}
 # Calculate stats for plot, grouping by 'period' and 'sex'
@@ -1410,7 +1411,9 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_8.pdf}
 \end{figure}
 
-Finally, it is worth demonstrating just how easily—and dramatically—we can adjust \textit{ggplot2} to suit different analytical goals. As it currently stands, the plot is structured to compare cranial capacity across time periods within each sex. However, with just two minor changes (see line 2 and 14), we can reorient the layout to instead compare the sexes within each time period. Specifically, we place the \R{\$sex} on the $x$-axis and facet according to \R{\$period}.\footnote{While the data shows that males tend to have slightly larger crania on average, it's worth noting that the sperm whale (\textit{Physeter macrocephalus}) possesses a brain over five times the size of a human’s—and yet it spends much of its time ramming giant squid in total darkness and clicking at 230 decibels. Don't over-interpret this finding. Male skulls may be bigger on average—but before anyone gets too proud, remember: it's what you do with your brain that counts.}
+Finally, it is worth demonstrating just how easily—and dramatically—we can adjust \textit{ggplot2} to suit different analytical goals. As it currently stands, the plot is structured to compare cranial capacity across time periods within each sex. However, with just two minor changes (see line 2 and 14), we can reorient the layout to instead compare the sexes within each time period. Specifically, we place \R{\$sex} on the $x$-axis and facet according to \R{\$period}.
+
+%\footnote{While the data shows that males tend to have slightly larger crania on average, it's worth noting that the sperm whale (\textit{Physeter macrocephalus}) possesses a brain over five times the size of a human’s—and yet it spends much of its time ramming giant squid in total darkness and clicking at 230 decibels. Don't over-interpret this finding. Male skulls may be bigger on average—but before anyone gets too proud, remember: it's what you do with your brain that counts.}
 
 \begin{inR}
 # Plot data

@@ -4,15 +4,15 @@
 \IMFellEnglish
 \lettrine[lines=5, realheight, lraise = 0.045]{T}{HE} history of R can be split into two epochs. First, there was the age before the tidyverse—a time of primordial chaos, where data analysts toiled in the shadows, their efforts marred by inefficiency and hardship. It was a brutal time, full of necessary violence, that forged the tools for what was to come.
 
-\begin{wrapfigure}[12]{r}{0.3\textwidth}
+Then came the tidyverse. A revelation. A collection of mystical and cohesive R packages, summoned into the light by Hadley Wickham and his coven of arcane programmers \parencite{Wickham2019}. Their sorcery brought order to the chaos, shaping the wild, unruly cosmos of R into something usable—something powerful.
+
+\begin{wrapfigure}[13]{r}{0.3\textwidth}
   \begin{center}
     \includegraphics[width=0.3\textwidth]{graphics/ch2Figs/t_pennant.pdf}
   \end{center}
     \caption{An engraving depicting acolytes of the tidyverse burning live sacrifices, captive within a large wicker effigy, to appease their deities \parencite{Pennant1784}.}
     \label{fig:ch2_wicker}
 \end{wrapfigure}
-
-Then came the tidyverse. A revelation. A collection of mystical and cohesive R packages, summoned into the light by Hadley Wickham and his coven of arcane programmers \parencite{Wickham2019}. Their sorcery brought order to the chaos, shaping the wild, unruly cosmos of R into something usable—something powerful.
 
 The tidyverse became a gateway for common folk, allowing them to twist, shape, and visualize data with an ease once reserved for only the most privileged elite. Though once viewed as complex and heretical \parencite{Muenchen}, the tidyverse has become an essential craft, passed from hand to hand, spreading like whispers in the dark. The art of tidy data flourished, growing stronger through collaboration, trial, and sacrifice.
 
@@ -64,6 +64,8 @@ While the above code installs all the packages, running \R{library(tidyverse)} o
 
 Speaking for the beginner, it will be noticed that when the tidyverse is loaded, not only is there a confirmation of what packages (and their versions) have been loaded, but there is also a list of ``conflicts'' displayed in the output.\footnote{Most packages will not display this information for you quite so nicely as the tidyverse does, so pay attention to any messages you receive using the \R{library()} function.} For instance, two functions from the \textit{dplyr} package, \R{filter()} and \R{lag()}, have the same name as pre-existing functions within R and, when you load a package with a conflict like this, precedence is always given to the most recently loaded package. This means, when you use the \R{filter()} function for example, R is going to use the version belonging to \textit{dplyr}, not the original version that was a part of base R's \textit{stats} package (which is pre-loaded each time you use R). Though you can still use that original version in the following manner: \R{package\_name::function\_name()}.  For example, \R{stats::filter()}. 
 
+\clearpage
+
 As a whole, the tidyverse will not solve all your problems, but it will come damn close. Admittedly, and this is particularly true for beginners, much of what the tidyverse offers will not be needed in your daily programming rituals, but will come in handy when least expected.
 
 \section{Plotting with R}
@@ -92,7 +94,6 @@ R's base plotting functions offer a convenient means of producing simple quality
 
 The \textit{``gg''} in \textit{ggplot2} stands for ``grammar of graphics'' and provides users with a logical framework for the construction of plots within R.  The term ``grammar'' here is likely to conjure up long forgotten traumas of boring English and Language Arts lessons, but do not fear, the use of the term grammar is really just to emphasize that \textit{ggplot2} is constructed in a way that allows users to build plots of various kinds in a consistent and efficient manner that is easily tailored to their specific needs.  This is in contrast to how plotting in software works generally, where you are frequently stuck trying to fit a square peg (your data) into a circular hole (the software's narrow conception of how data should be presented).
 
-\clearpage
 The easiest way to understand how \textit{ggplot2} works is to simply dive in and use it. Along the way, we will also learn a little bit more about R and data manipulation. However, a disclaimer is perhaps useful here:
 
 \begin{displayquote}
@@ -141,6 +142,8 @@ Now, while the names of each column are self-explanatory, the elements of each c
 ?msleep
 \end{inR}
 \vspace{1em}
+
+\clearpage
 
 \noindent
 Inspecting the documentation, we can see that \R{\$sleep\_total} is given in hours and that the column \R{\$conservation} indicates ``the conservation status of the animal.''  Admittedly, concerning this latter column, that does not tell us too much, but it does at least give us a starting point for understanding what those values might represent.  In all likelihood, we are seeing abbreviations for the IUCN's (International Union for Conservation of Nature) species ranking. 
@@ -223,7 +226,6 @@ filter(msleep, bodywt > 2000)
 
 A quick glance at the output reveals that these two points represent the Asian and African elephant respectively.  Thus, while these values are quite extreme and do not seem to be terribly representative of the data as a whole, they are not mistakes and therefore should remain in the data set.  However, this begs the question, how do we visualize this data adequately with such odd scaling?
 
-\clearpage
 \subsection{Logarithms}
 
 A common strategy in cases like this where larger values tend to become more and more extreme (i.e., exhibit some kind of exponential growth) is to plot the logarithm of the values. As a refresher of high school mathematics, logarithms are essentially exponents in reverse. For example:
@@ -300,22 +302,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \label{fig:ggEx_3.pdf}
 \end{figure}
 
-\section{Aesthetics}
-
-Geometric objects in \textit{ggplot2}, like the point geom, all have various traits, like their size, shape, and colour that can be customized.  In the language of \textit{ggplot2}, these are referred to as \gls{aesthetics}.  For example, we can customize the points in the following way ...
-
-\begin{inR}
-ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
-  geom_point(size = 3, 
-             shape = 4, 
-             colour = "blue", 
-             stroke = 1.5)
-\end{inR}
-
-\begin{figure}[!h]
-\includegraphics[scale = 0.75]{graphics/ch2Figs/ggEx_5.pdf}
-\end{figure}
-
 \begin{mdframed}[nobreak=true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 2.1: An alternative way to scale]
 \IMFellEnglish
 
@@ -338,6 +324,24 @@ ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
 \end{mdframed}
 
 \clearpage
+
+\section{Aesthetics}
+
+Geometric objects in \textit{ggplot2}, like the point geom, all have various traits, like their size, shape, and colour that can be customized.  In the language of \textit{ggplot2}, these are referred to as \gls{aesthetics}.  For example, we can customize the points in the following way ...
+
+\begin{inR}
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 3, 
+             shape = 4, 
+             colour = "blue", 
+             stroke = 1.5)
+\end{inR}
+
+\vspace{2em}
+
+\begin{figure}[!h]
+\includegraphics[scale = 0.75]{graphics/ch2Figs/ggEx_5.pdf}
+\end{figure}
 
 With a bit of experimentation, it should be apparent how the arguments \R{size} and \R{stroke} work in the above example; however, the \R{shape} and \R{colour} arguments are slightly less intuitive.\footnote{If you accidentally omit the ``u'' when typing ``colour,'' \textit{ggplot2} will still understand what you mean, even though it isn't correct English.} R comes with a variety of point shapes (technically called ``plotting characters'' or ``\gls{pch}'' symbols for short) that are denoted by numbers. The various possibilities are depicted in Figure \ref{fig:points.pdf}.  In this case, number 4 is an $\times$.  Notably, the last five plotting characters (21 through 25) incorporate both a \R{colour} aesthetic for their edges and a \R{fill} aesthetic. All the other symbols only require a \R{colour} aesthetic to be specified.
 
@@ -608,10 +612,9 @@ Particularly for beginners with R, it is difficult to impress how useful \textit
 
 To finish up the plot, we should adjust some of the labelling, save it, and then take a look at some other more advanced features of \textit{ggplot2}.
 
-\clearpage
 \section{Labels}
 
-To adjust the x and y axis titles we can simply use the functions \R{xlab()} and \R{ylab()}.
+To adjust the $x$ and $y$ axis titles we can simply use the functions \R{xlab()} and \R{ylab()}.
 
 \begin{inR}
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -660,6 +663,8 @@ A close inspection reveals jaggedness on the blue line and general blurriness ar
 Now you might think that a simple remedy would be to increase the dpi to a much higher value, but this is generally a strategy you want to avoid.  There tends to be diminishing returns with resolution increases and anything beyond 300 dpi is not going to do much for you apart from ballooning the image's file size. The optimal strategy is to make use of something called a vector graphic.
 
 Vector graphics are not really images in the traditional sense; rather, they are more akin to a set of instructions your computer uses to draw the image. Consequently, a vector-based image can be resized and magnified as much as you would like and it will never lose its quality. The drawback to vector graphics is that they do not work too well for highly detailed photographs (e.g., a forested landscape) and they are not always recognized by software. For instance, the most common types of vector you will encounter are .PDF, .SVG, and .EPS.  Recent versions of Microsoft Word and PowerPoint will happily accommodate .SVG files, but if you are wanting to use a .PDF or .EPS, you will be out of luck. Correspondingly, Google Docs and Google Slides will not accept any type of vector graphic, which is doubly frustrating because these apps will also downscale the resolution of raster graphics you import. Libre Office's Writer and Impress applications will accept a .PDF image, but it converts it to a lower resolution raster graphic when it is imported. Despite these types of compatibility limitations, if you are able to use vector graphics then you should, because they will give your work a level polish other people are not likely to have.
+
+\clearpage
 
 To save a file as a vector graphic, the process is the same as before, we just need to modify the file extension and remove the \R{dpi} argument (because dpi has no meaning for vector graphics).
 
@@ -1007,8 +1012,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 Continuous colour scales operate more or less in the same manner as discrete ones; however, to illustrate them, we need to map colour to a continuous variable. In the \R{msleep} data, there is a column called \R{\$brainwt} which, similar to \R{\$bodywt}, is a continuous measure. To visualize it adequately we will need to log transform it as well. For simplicity we will do this directly in the plot's code:
 
-\clearpage
-
 \begin{inR}
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
@@ -1058,8 +1061,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \begin{figure}[H]
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_27.pdf}
 \end{figure}
-
-\clearpage
 
 With the mammal sleep data, there is no logical reason to plot a midpoint colour using \\ \R{scale\_colour\_gradient2()} but to illustrate its use we will depict a midpoint using the colour \R{"grey"} and we will place it at a $\text{log}_{10}(\text{brain weight}) = -1.5$.
 
@@ -1112,6 +1113,8 @@ hcl.colors(n = 8, palette = "Inferno")
 \end{outR}
 
 To use one of base R's HCL colour palettes in our plot we can use the function \\ \R{scale\_fill\_gradientn()} to set our palette. The function just takes a vector of colours and extrapolates a gradient from that.
+
+\clearpage
 
 \begin{inR}
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -1203,6 +1206,8 @@ In the sections above, we have only considered the position, colour, fill, and s
 \section{Modifying Other Non-data Components}
 
 One thing that will be apparent is that \textit{ggplot2} has a very specific ``look'' to it, and that look is not arbitrary. It was crafted meticulously on the basis of expert advice. In the language of \textit{ggplot2}, this look is what is referred to as a \textit{theme}.  Specifically, we are seeing \R{theme\_grey()} and in the dark master's own words:
+
+\clearpage
 
 \begin{displayquote}
 \headingfont

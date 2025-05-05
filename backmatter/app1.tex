@@ -7,6 +7,8 @@ Despite the obvious benefits of using \R{=}, much of R's core user-base has held
 
 For example, if we use R's \R{sum()} function to calculate the sum of the numbers one through five using \R{=} to set the function's main \textit{argument}. We can see that, while the function works as intended (producing a value of 15), there is no new variable generated that stored the values one through five:
 
+\clearpage
+
 \begin{inR}
 sum(x = 1:5)
 x
@@ -67,6 +69,8 @@ Error: object 'rat_pi' not found
 
 \noindent
 At face value this is odd behaviour because, to be able to run the line \R{return(rat\_pi)}, the object \R{rat\_pi} must have been stored at some point.  And it was stored, but only \textit{within the scope of the function}. To make \R{rat\_pi} available outside the function's scope, we can employ \R{{<}<-} when we define the function:
+
+\clearpage
 
 \begin{inR}
 rational_pi = function() {
