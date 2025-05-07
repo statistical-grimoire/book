@@ -10,8 +10,29 @@ These are not the thing itself, but the traces it leaves in the air as it moves 
 
 \section{A Practical Problem}
 
-Consider the full set of craniometric data provided by \textcite{Thomson1905}. The data file is called \R{Thomson\_Randall-MacIver\_1905.csv}\footnote{The data file can be obtained at this book's GitHub repository: \url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}} and portions of it were used to illustrate some features of plotting and data manipulation in Chapter 3.
-
-
+Consider the full set of craniometric data provided by \textcite{Thomson1905}. The data file is called \R{Thomson\_Randall-MacIver\_1905.csv}\footnote{The data file can be obtained at this book's GitHub repository: \url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}} and portions of it were used to illustrate some features of plotting and data manipulation in Chapter 3. Table \ref{tab:skulls_full} shows about 1/16\textsuperscript{th} of the complete data set. It can be readily seen that the data contains a variety of different measures pertaining to the skulls alongside various useful descriptive information such as the approximate date range the skull belong to, the dynasty which ruled at the time, the archaeological site the skull was obtained from, and its presumed sex. Additional specifics about each column and the data more generally can be found in the data's \href{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}{README} file on GitHub.
 
 \input{tables/ch-4/skulls_full}
+
+Assuming we are primarily interested in the estimated cranial capacity of the skulls—given by the last column ``\textit{cc}'', that means we have  1,449 measurements we might want to perform analyses with.
+
+\begin{inR}
+skulls <- skulls |> 
+  select(table:sex, cc) |> # grab relevant columns
+  drop_na(cc) # remove rows containing NAs
+  
+nrow(skulls)
+\end{inR}
+
+\begin{outR}
+[1] 1449
+\end{outR}
+
+\noindent
+This begs a couple questions though. 1) What do we mean by ``analyses'' here? 2) With so many different values, how do we on a practical level talk about this data in a meaningful way? It would be incredibly inconvenient if we had to list out all 1,449 values each time we wanted to discuss this data. But even if we were willing to do that, it is safe to say that there are just too many values for our meagre primate brains to keep track of.
+
+\section{Descriptive vs Inferential Statistics}
+
+\section{Central Tendency and Spread}
+
+\subsection{Types of Numeric Data}
