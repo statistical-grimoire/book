@@ -10,16 +10,19 @@ These are not the thing itself, but the traces it leaves in the air as it moves 
 
 \section{A Practical Problem}
 
-Consider the full set of craniometric data provided by \textcite{Thomson1905}. The data file is called \R{Thomson\_Randall-MacIver\_1905.csv}\footnote{The data file can be obtained at this book's GitHub repository: \url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}} and portions of it were used to illustrate some features of plotting and data manipulation in Chapter 3. Table \ref{tab:skulls_full} shows about 1/16\textsuperscript{th} of the complete data set. It can be readily seen that the data contains a variety of different measures pertaining to the skulls alongside various useful descriptive information such as the approximate date range the skull belong to, the dynasty which ruled at the time, the archaeological site the skull was obtained from, and its presumed sex. Additional specifics about each column and the data more generally can be found in the data's \href{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}{README} file on GitHub.
+Consider the complete craniometric dataset provided by  \textcite{Thomson1905}, available in the file \R{Thomson\_Randall-MacIver\_1905.csv}.\footnote{The data file can be obtained at this book's GitHub repository: \url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}} This file contains a wide range of measurements taken from skulls recovered at various ancient Egyptian archaeological sites. While selected portions of this dataset were previously used in Chapter 3 to demonstrate plotting and data manipulation, we will now be working with the entire dataset. Table \ref{tab:skulls_full} presents a small excerpt—roughly 1/16\textsuperscript{th} of the full data—which includes a variety of craniometric measurements along with useful contextual information, such as the estimated date range for each skull, the ruling dynasty at the time, and the archaeological site of origin.
 
 \input{tables/ch-4/skulls_full}
 
-Assuming we are primarily interested in the estimated cranial capacity of the skulls—given by the last column ``\textit{cc}'', that means we have  1,449 measurements we might want to perform analyses with.
+To simplify a complex situation, let us restrict ourselves to working with the estimated cranial capacity of the skulls—given by the last column, ``cc.'' Loading and subsetting the data, we find that this leaves us with 1,449 measurements to conduct our analyses with.
 
 \begin{inR}
+library(tidyverse)
+skulls <- read_csv("Thomson_Randall-MacIver_1905.csv")
+
 skulls <- skulls |> 
   select(table:sex, cc) |> # grab relevant columns
-  drop_na(cc) # remove rows containing NAs
+  drop_na(cc) # remove rows containing NAs in the `cc` column
   
 nrow(skulls)
 \end{inR}
@@ -29,9 +32,22 @@ nrow(skulls)
 \end{outR}
 
 \noindent
-This begs a couple questions though. 1) What do we mean by ``analyses'' here? 2) With so many different values, how do we on a practical level talk about this data in a meaningful way? It would be incredibly inconvenient if we had to list out all 1,449 values each time we wanted to discuss this data. But even if we were willing to do that, it is safe to say that there are just too many values for our meagre primate brains to keep track of.
+However, this raises a couple of important questions:
 
-\section{Descriptive vs Inferential Statistics}
+\begin{enumerate}
+    \item What exactly do we mean by ``analyses'' in this context?
+    \item Given the sheer number of distinct values—1,449, to be precise—how can we discuss this data in a practical and meaningful way?
+\end{enumerate}
+
+Listing all 1,449 values every time we want to reference the dataset would be wildly impractical. And even if we were absurdly committed to doing so, it’s safe to say that our meagre primate brains simply aren’t equipped to juggle that much information at once. What we are after then are clear, compact, and accurate descriptions of the data that still capture its essential features. Put another way, we need to distil the data's chaos into something intelligible. Because, despite its seeming randomness, there is often a large amount of order buried within.
+
+\section{Descriptive vs. Inferential Analyses}
+
+The analysis of data is often guided by two principal objectives. The first is \textbf{descriptive}: to summarize the data in mathematical terms that are, ideally, intuitive and meaningful. This is known as \gls{descriptive analysis}. The second is \textbf{inferential}: to use those summaries to draw conclusions that extend beyond the data itself. These inferences are typically assumed to carry some form of practical significance\footnote{While practical significance should be a requirement for any inferential analysis, many analyses are often performed more out of tradition than any genuine purpose. This is not your author being cynical, just speaking jadedly from experience.}—for example, by helping to answer a critical research question. This is known as inferential analysis.
+
+In many respects \textit{descriptive analyses} is should be a purely empirical task. To the best of the analyser's ability, it is about answering the simple question ``what do we know for certain about this data?''  \textit{Inferential analysis} goes beyond that, incorporating some reasonable assumptions, to draw out some type of prediction or claim from the data that it can not make in isolation.
+
+%Include section on Random variables?
 
 \section{Central Tendency and Spread}
 
