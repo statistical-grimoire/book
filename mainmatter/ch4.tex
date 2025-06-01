@@ -1,5 +1,5 @@
 %\chapter{The Basics of Loading and Manipulating Data}
-\chapter{The Echo of Catacombs - Central Tendency and Spread}
+\chapter{Taxonomies of the Profane – Variables, Scales, and Their Unholy Properties}
 
 \IMFellEnglish
 \lettrine[lines=5, realheight]{W}{hen} we seek to understand a dataset as a thing unto itself, we are engaging in nothing short of an act of necromancy. It is an attempt to give voice to something that is potentially vast, shapeless, and even dead. We cannot see the thing's full form; we are too small, too insignificant, and the catacombs stretch too deep. But we can listen. We can measure its echoes. 
@@ -59,10 +59,9 @@ Each row in Table \ref{tab:skulls_full} corresponds to a single skull examined b
 
 Each of these columns represents what we call a variable—a characteristic or property that can vary from one observation (i.e., row) to another. More broadly, variables can be either qualitative (descriptive, non-numeric) or quantitative (numerical), and they form the backbone of any dataset used in statistical analysis.
 
-The way you approach descriptive or inferential analysis depends heavily on the nature of your variables. It does not, for example, make sense to compute the mean of 
-of certain phenotypes like eye-colour, a group of people's sex, or the status (alive or dead) of a sample of plant specimens. Computing a mean assumes certain numerical properties are present within the data.
+The way you approach descriptive or inferential analysis depends critically on the nature of your variables. For example, it makes little sense to compute the mean of categorical traits like eye colour, biological sex, or whether a plant specimen is alive or dead. Calculating a mean assumes the data possess certain numerical properties—specifically, that the values lie on a scale where arithmetic operations like addition and division are valid. When those conditions are not met, the result is not just meaningless—it is misleading.
 
-Since the late 1940s, data has traditionally been classified into four types, known as \textit{scales of measurement}. This framework arose in response to a philosophical dilemma that emerged as the field of Psychology sought to establish itself as a scientific discipline. Specifically, it revolved around a deceptively simple question: \textit{Is it possible to measure human sensation?} \parencite[p. 677]{Stevens1946}.
+Since the late 1940s, data in most areas of science has traditionally been classified into four types, known as \textit{scales of measurement}. This framework arose in response to a philosophical dilemma that emerged as the field of Psychology sought to establish itself as a valid scientific discipline. Specifically, it revolved around a deceptively simple question: \textit{Is it possible to measure human sensation?} \parencite[p. 677]{Stevens1946}.
 
 To see why this question matters, consider a basic example. Suppose you ask participants in a study to rate their happiness on a 11-point scale, where 0 represents the absence of any happiness and 10 represents the happiest they could
 conceivably be. For simplicity, imagine you only have two participants—one selects a 3, the other a 5. A common research practice is to compute the mean average, which in this case would be 4. 
@@ -71,12 +70,12 @@ conceivably be. For simplicity, imagine you only have two participants—one sel
 \frac{3 + 5}{2} = \frac{8}{2} = 4
 \end{equation}
 
-But there is a potential problem lurking here: the ``psychological distance'' between numbers on the scale may not be consistent across individuals. What one person considers a 5, another might interpret as a 7, or a 3, or some other value. That becomes an issue when we calculate a mean because the process of adding the values in the numerator assumes these values have a meaning independent of the person. For instance, if instead the participants had reported 2 and 6 we would similarly arrive at 8 in the numerator, but we have no reason to assume that mathematical equality (3 + 5 = 2 + 6 = 8) should hold because the numbers reflect \textit{subjective} judgments, not objective quantities with a standardized unit of measurement. Thus, we cannot be certain that participants are interpreting the numbers in a comparable way. Moreover, there is no means to verify the accuracy or complete truth of any subjective statement of this kind. We have to take it more or less on faith that, not only are they telling the truth, but that they have the ability to accurately report their subjective states. This challenge—often referred to as the problem of introspection—has haunted psychology since its earliest days under Wilhelm Wundt in the mid-to-late 19th century. 
+But there is a potential problem lurking here: the ``psychological distance'' between numbers on the scale may not be consistent across individuals. What one person considers a 5, another might interpret as a 7, or a 3, or some other value. That becomes an issue when we calculate a mean because the process of adding the values in the numerator assumes these values have a meaning independent of the person. For instance, if instead the participants had reported 2 and 6 we would similarly arrive at 8 in the numerator, but we have no reason to assume that mathematical equality (3 + 5 = 2 + 6 = 8) should hold because the numbers reflect \textit{subjective} judgments, not objective quantities with a standardized unit of measurement. Thus, we cannot be certain that participants are interpreting the numbers in a comparable way. Moreover, there is no means to verify the accuracy or complete truth of any subjective statement of this kind. We have to take it more or less on faith that, not only are they telling the truth, but that they have the ability to accurately report their subjective states. This challenge—often referred to as the problem of introspection—has haunted Psychology since its earliest days under Wilhelm Wundt in the mid-to-late 19th century. 
 
 That said, one must be cautious not to cast all such measures into the inferno. As \textcite{Labovitz1967} argues, there may still be value—however impure—in treating these subjective ratings as more numeric than they truly are. Despite their crude, unstable, and potentially erroneous nature, they may still be sufficiently precise to extract some kind of signal from the noise. Introspection is a murky cauldron to be sure, but pursuing methodological purity risks sacrificing potentially useful data upon an altar of perfectionism, discarding what might yet yield insight merely because it fails to meet some idealized standard.
 
 
-
+% Add examples of descriptive and inferential analyses.
 
 %Include section on Random variables?
 
