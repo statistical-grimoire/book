@@ -2,9 +2,7 @@
 \chapter{Taxonomies of the Profane – Variables, Scales, and Their Unholy Properties}
 
 \IMFellEnglish
-\lettrine[lines=5, realheight]{W}{hen} we seek to understand a dataset as a thing unto itself, we are engaging in nothing short of an act of necromancy. It is an attempt to give voice to something that is potentially vast, shapeless, and even dead. We cannot see the thing's full form; we are too small, too insignificant, and the catacombs stretch too deep. But we can listen. We can measure its echoes. 
-
-These are not the thing itself, but the traces it leaves in the air as it moves past us. These measures do not reveal the full anatomy of the creature; they offer only its shadow on the wall, its weight in the dust, its shriek retreating into the stone. And yet, rely on them we must. They are how we pretend to understand the whole, even when what we see is only a sliver of the crypt.
+\lettrine[lines=5, realheight]{T}{here} is a kind of grim devilry in the act of classification. The moment you categorize a thing—whether it be a small volume of blood, the reaction time of a startle, or the flickering presence of a belief—you strip it from the chaos of the unknown and chain it down, trembling, to a scale. Statisticians call them variables, but do not be fooled: these are not gentle creatures. They are twisted reflections of reality that must be bound in measurement and tortured into order. Nominal. Ordinal. Interval. Ratio. These are the sigils we etch into our grimoires of data, each one whispering what kind of rituals—summations, correlations, regressions—we may dare perform. But beware: misuse the wrong scale, or confuse the nature of your variable, and the results may turn on you, distorted and cursed. This chapter delves into the infernal art of measurement, uncovering the hidden laws that govern how data can be named, ranked, counted, or quantified. Prepare yourself—for to wield statistics is to practice a kind of taxonomy, yes  ... but one written in the ink of madness, precision, and cruelty.
 
 \normalfont
 
@@ -14,7 +12,7 @@ Consider the complete craniometric dataset provided by  \textcite{Thomson1905}, 
 
 \input{tables/ch-4/skulls_full}
 
-To simplify a complex situation, let us restrict ourselves to working with the estimated cranial capacity of the skulls—given by the last column, ``cc.'' Loading and subsetting the data, we find that this leaves us with 1,449 measurements to conduct our analyses with.
+To simplify a complex situation, suppose we restrict ourselves to working with the estimated cranial capacity of the skulls—given by the last column, ``cc.'' Loading and subsetting the data, we find that this leaves us with 1,449 measurements to conduct our analyses with.
 
 \begin{inR}
 library(tidyverse)
@@ -43,9 +41,11 @@ Listing all 1,449 values every time we want to reference the dataset would be wi
 
 \section{Descriptive vs. Inferential Analyses}
 
-The analysis of data is often guided by two principal objectives. The first is \textbf{descriptive}: to summarize the data in mathematical terms that are, ideally, intuitive and meaningful. This is known as \gls{descriptive analysis}. The second is \textbf{inferential}: to use those summaries to draw conclusions that extend beyond the data itself. These inferences are typically assumed to carry some form of practical significance\footnote{While practical significance should be a requirement for any inferential analysis, many analyses are often performed more out of tradition than any genuine purpose. This is not your author being cynical, just speaking jadedly from experience.}—for example, by helping to answer a critical research question. This is known as inferential analysis.
+The analysis of data is often guided by two principal objectives. The first is \textbf{descriptive}: to summarize the data in mathematical terms that are, ideally, intuitive and meaningful. This is known as \gls{descriptive analysis}. The second is \textbf{inferential}: to use those summaries to draw conclusions that extend beyond the data itself. These inferences are typically assumed to carry some form of practical significance\footnote{While practical significance should be a requirement for any inferential analysis, many analyses are often performed more out of tradition than any genuine purpose. This is not your author being cynical, just speaking jadedly from experience.}—for example, by helping to answer a critical research question. This is known as \gls{inferential analysis}.
 
-In many respects \textit{descriptive analysis} is should be a purely empirical task. To the best of the analyser's ability, it is about answering the simple question ``what do we know for certain about this data?''  \textit{Inferential analysis}, by contrast, goes a step further by introducing reasonable assumptions that allow us to make predictions or generalizations that the data alone cannot support.
+In many respects \textit{descriptive analysis} is should be a purely empirical endeavor. To the best of the analyst’s ability, it seeks to answer a simple question: what can we say with certainty about this data? This often involves computing summary statistics that characterize the dataset as a whole. For example, calculating familiar measures such as the mode, median, and mean, or visualizing the distribution using graphs like histograms, can help reveal which values are most commonly observed.
+
+\textit{Inferential analysis} goes a step further by introducing reasonable assumptions that allow the analyst to make predictions or generalizations that extend beyond the data at hand. In most cases, we are not interested in the dataset for its own sake—we care about what it represents. That is, what can it tell us about a broader population, what trends might it reveal about an underlying system, what future outcomes might it help us predict?
 
 \section{Data}
 
@@ -72,10 +72,16 @@ conceivably be. For simplicity, imagine you only have two participants—one sel
 
 But there is a potential problem lurking here: the ``psychological distance'' between numbers on the scale may not be consistent across individuals. What one person considers a 5, another might interpret as a 7, or a 3, or some other value. That becomes an issue when we calculate a mean because the process of adding the values in the numerator assumes these values have a meaning independent of the person. For instance, if instead the participants had reported 2 and 6 we would similarly arrive at 8 in the numerator, but we have no reason to assume that mathematical equality (3 + 5 = 2 + 6 = 8) should hold because the numbers reflect \textit{subjective} judgments, not objective quantities with a standardized unit of measurement. Thus, we cannot be certain that participants are interpreting the numbers in a comparable way. Moreover, there is no means to verify the accuracy or complete truth of any subjective statement of this kind. We have to take it more or less on faith that, not only are they telling the truth, but that they have the ability to accurately report their subjective states. This challenge—often referred to as the problem of introspection—has haunted Psychology since its earliest days under Wilhelm Wundt in the mid-to-late 19th century. 
 
-That said, one must be cautious not to cast all such measures into the inferno. As \textcite{Labovitz1967} argues, there may still be value—however impure—in treating these subjective ratings as more numeric than they truly are. Despite their crude, unstable, and potentially erroneous nature, they may still be sufficiently precise to extract some kind of signal from the noise. Introspection is a murky cauldron to be sure, but pursuing methodological purity risks sacrificing potentially useful data upon an altar of perfectionism, discarding what might yet yield insight merely because it fails to meet some idealized standard.
+That said, one must be cautious not to cast all such measures into the inferno. As \textcite{Labovitz1967} argues, there may be some value—however impure—in treating these subjective ratings as more numeric than they truly are. Despite their crude, unstable, and potentially erroneous nature, they may still be sufficiently precise to extract some kind of signal from the noise. Introspection is a murky cauldron to be sure, but pursuing methodological purity risks sacrificing potentially useful data upon an altar of perfectionism, discarding what might yet yield insight merely because it fails to meet some idealized standard.
 
 
 % Add examples of descriptive and inferential analyses.
+
+% Samples and populations
+
+% Add glossary entries for variables and descriptive and inferential analyses.
+
+% Define qunatitative and qualitative.
 
 %Include section on Random variables?
 

@@ -6,12 +6,21 @@
 \definecolor{mint-bg-in}{rgb}{0.95,0.95,0.92}
 \newcommand{\R}[1]{\colorbox{mint-bg-in}{\texttt{#1}}}
 
+% Original----------
 \newenvironment{inR}
  {\VerbatimEnvironment
   \begin{minted}[
     bgcolor=backcolourIN,
     linenos]{R}}
  {\end{minted}\vspace{-1.5cm}}
+
+\newenvironment{inRhigh}[1][]
+ {\VerbatimEnvironment
+  \begin{minted}[
+    bgcolor=backcolourIN,
+    linenos, #1]{R}}
+ {\end{minted} 
+ \vspace{-1.5cm}}
 
 \newenvironment{outR}
  {\VerbatimEnvironment
