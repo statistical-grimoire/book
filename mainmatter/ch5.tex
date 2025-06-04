@@ -5,3 +5,21 @@
 \lettrine[lines=5, realheight]{W}{hen} we seek to understand a dataset as a thing unto itself, we are engaging in nothing short of an act of necromancy. It is an attempt to give voice to something that is potentially vast, shapeless, and undead. We cannot see the thing's full form; we are too small, too insignificant, and the catacombs stretch too deep. But we can listen. We can measure its echoes. 
 
 These are not the thing itself, but the traces it leaves in the air as it moves past us. These measures do not reveal the full anatomy of the creature; they offer only its shadow on the wall, its weight in the dust, its shriek retreating into the stone. And yet, rely on them we must. They are how we pretend to understand the whole, even when what we see is only a sliver of the crypt.
+
+
+To simplify a complex situation, we shall restrict ourselves to working with the cranial capacity estimates—given by the last column, ``cc.'' Loading and subsetting the data, we find that this leaves us with 1,449 measurements to conduct our analyses with.
+
+\begin{inR}
+library(tidyverse)
+skulls <- read_csv("Thomson_Randall-MacIver_1905.csv")
+
+skulls <- skulls |> 
+  select(table:sex, cc) |> # grab relevant columns
+  drop_na(cc) # remove rows containing NAs in the `cc` column
+  
+nrow(skulls)
+\end{inR}
+
+\begin{outR}
+[1] 1449
+\end{outR}
