@@ -8,88 +8,95 @@
 
 \section{A Practical Problem}
 
-Consider the complete craniometric dataset provided by  \textcite{Thomson1905}, available in the file \R{Thomson\_Randall-MacIver\_1905.csv}.\footnote{The data file can be obtained at this book's GitHub repository: \url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}} This file contains a wide range of measurements taken from skulls recovered at various ancient Egyptian archaeological sites. While selected portions of this dataset were previously used in Chapter 3, we will now subject ourselves to the entire dataset. Table \ref{tab:skulls_full} presents a small excerpt—roughly 1/16\textsuperscript{th} of the full data—which includes a variety of craniometric measurements along with useful, and sometimes missing, contextual information, such as the estimated date range for each skull, the ruling dynasty at the time, and the archaeological site of origin.
+Consider the complete craniometric dataset provided by  \textcite{Thomson1905}, available in the file \R{Thomson\_Randall-MacIver\_1905.csv},\footnote{The data file can be obtained at this book's GitHub repository: \url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}} a ``small'' excerpt of which is displayed in Table \ref{tab:skulls_full}. The file contains a wide range of craniometric measurements along with other useful, and sometimes missing, contextual information, such as the estimated date range for each skull, the ruling dynasty at the time, and the archaeological site of origin. 
 
 \input{tables/ch-4/skulls_full}
 
-Loading the data, we can see that we have 23 separate columns of information each with close to 1000 or more values to conduct our analyses with.
-
-\begin{inR}
-library(tidyverse)
-skulls <- read_csv("Thomson_Randall-MacIver_1905.csv")
-\end{inR}
-
-\begin{outR}
-Rows: 1565 Columns: 23                                                   
-── Column specification ───────────────────────────────────────────────────
-Delimiter: ","
-chr  (6): start_era, end_era, dynasty, location, sex, po
-dbl (17): table, start_date, end_date, gol, ool, bbh, mb, biaurb, bizyg...
-\end{outR}
-
-\begin{inR}
-ncol(skulls) # Number of columns
-colSums(!is.na(skulls)) # Number of rows, excluding NA values
-\end{inR}
-
-\begin{outR}
-[1] 23
-
-   table start_date   end_date  start_era    end_era    dynasty 
-    1565       1186        945       1565       1565       1565 
-location        sex        gol        ool        bbh         mb 
-    1565       1565       1558       1532       1471       1545 
-  biaurb     bizygb        bnl        bal        nah         nh 
-    1359       1274       1410       1392       1372       1414 
-      nw        fai         ga         po         cc 
-    1406       1381       1320       1260       1449 
-\end{outR}
-
-\noindent
-However, this raises a couple of important questions:
+All totalled, there are 23 separate columns of information each with close to 1000 or more values to conduct an analyses with. This raises a couple of important questions:
 
 \begin{enumerate}
     \item What exactly do we mean by ``analyses'' in this context?
     \item Given the sheer number of distinct values, how can we discuss this data in a practical and meaningful way?
 \end{enumerate}
 
-Listing the complete set of values each time we want to reference the dataset would be wildly impractical. And even if we were absurdly committed to doing so, it is safe to say that our meagre primate brains simply are not equipped to juggle that much information at once. What we are after then are clear, compact, and accurate descriptions of the data that still capture its essential features. Put another way, we need to distil the data's chaos into something intelligible. That is the essence of ``conducting'' an analysis and, while this may seem a hopeless task given the sheer volume of data, there is often a surprisingly large amount of order buried within this seeming chaos.
+Listing the complete set of values each time we want to reference the data would be wildly impractical. And even if we were absurdly committed to doing so, it is safe to say that our meagre primate brains simply are not equipped to juggle that much information at once. What we are after then are clear, compact, and accurate descriptions of the data that still capture its essential features. Put another way, we need to distil the data's chaos into something intelligible. That is the essence of ``conducting'' an analysis and, while this may seem a hopeless task given the sheer volume of data, there is often a surprisingly large amount of order buried within this seeming chaos.
 
 \section{Descriptive and Inferential Analyses}
 
-The analysis of data is typically driven by two main objectives. The first is descriptive: to summarize the data in ways that are intuitive and meaningful. This is commonly referred to as \gls{descriptive analysis}. The second is inferential: to use those summaries to make conclusions that reach beyond the data at hand. These conclusions are generally assumed to have some form of practical relevance\footnote{While practical significance should be a requirement for any inferential analysis, many such analyses are performed more out of tradition than genuine purpose. This isn't cynicism—just the voice of experience, tinged with a bit of jadedness.}—for example, by helping to answer a key research question. This process is known as \gls{inferential analysis}, and it always builds upon descriptive analysis as a necessary foundation.
+The analysis of data is typically driven by two main objectives. The first is descriptive: to summarize the data in ways that are intuitive and meaningful. Perhaps unsurprisingly, this is commonly referred to as a \gls{descriptive analysis}. The second objective is inferential: to use those summaries to make conclusions that reach beyond the data at hand. These conclusions are generally assumed to have some form of practical relevance\footnote{While practical relevance should be a requirement for any inferential analysis, many such analyses are performed more out of tradition than genuine purpose. This isn't cynicism—just the voice of experience, tinged with a bit of jadedness.}—for example, by helping to answer a key research question. This process is known as \gls{inferential analysis}, and it always builds upon descriptive analysis as a necessary foundation.
 
-In many respects a \textit{descriptive analysis} should be a purely empirical endeavour. To the best of the analyst’s ability, it seeks to answer a simple question: what can be said with certainty about this data? This often involves computing summary statistics that characterize the dataset as a whole. For example, calculating familiar measures such as the mode, median, and mean, or visualizing the distribution using graphs like histograms, are methods that tell us something about which values are most commonly observed in the data set.
+In many respects a \textit{descriptive analysis} should be a purely empirical endeavour. To the best of the analyst’s ability, it seeks to answer a simple question: what can be said with certainty about this data? This often involves computing summary statistics that characterize the dataset as a whole. For example, calculating familiar measures such as the mode, median, and mean, or visualizing the distribution using graphs like histograms, are all methods that tell us something about which values are most commonly observed in the data set and how the values as a whole are distributed.
 
-\textit{Inferential analysis} goes a step further by introducing reasonable assumptions that allow us (the analyst) to make predictions or generalizations that extend beyond the data at hand. In most cases, we are not interested in the dataset for its own sake—we care about what it represents. That is, what can it tell us about a broader population, what trends might it reveal about an underlying system, what future outcomes might it help us predict? Statistical methods that allow us to extrapolate in this respect are inferential in nature.
+\textit{Inferential analysis} goes a step further by introducing reasonable assumptions that allow us (the analyst) to make predictions or generalizations that extend beyond the data at hand. In most cases, we are not interested in the dataset for its own sake—we care about what it represents. That is, we want to know what can it tell us about a broader population, what trends might it reveal about an underlying system, what future outcomes might it help us predict? Statistical methods that allow us to extrapolate in this respect are inferential in nature.
 
 \section{Data}
 
-The word data has appeared frequently throughout this book, often without much reflection as to what it actually means. Given that data is the central subject of both \textit{descriptive} and \textit{inferential} analysis, it is perhaps worth taking a moment to clarify. At its core, \gls{data} refers to a collection of observations about \textit{something}. The singular form, \gls{datum}, refers to just one of those observations. The ``something'' in question is usually the phenomenon the researcher is investigating—this could be the number of cells in a slice of brain tissue, the rate of deaths per capita, how quickly participants learn a behavioural response; or any number of other things that can be measured or classified. 
+The word data has appeared frequently throughout this book, often without much reflection as to what it actually means. Given that data is the central subject of both \textit{descriptive} and \textit{inferential} analysis, it is perhaps worth taking a moment to clarify. At its core, \gls{data} refers to a collection of observations about \textit{something}. The singular form, \gls{datum}, refers to just one of those observations. The ``something'' in question is usually the phenomenon the researcher is investigating—this could be the number of cells in a slice of brain tissue, the rate of deaths per capita, how quickly participants learn a behavioural response; or any number of other things that can be measured or classified in some way. 
 
-Before going further, it’s worth drawing a distinction between what we will refer to as \textit{statistical data}—the kind typically used in research and analysis (e.g., see Table \ref{tab:msleep} and Table \ref{tab:skulls_full})—and the data used to train machine learning models (e.g., pictures of cats, playlists of Eurodance hits, or whatever else the algorithm gods demand). In the latter case, what’s being fed to the model often resembles collections of stimuli more than data in the traditional statistical sense of the term. That said, in machine learning contexts, the terms \textit{data} and \textit{stimuli} are often used interchangeably.
+Before going further, it’s worth drawing a distinction between what we will refer to as \textit{statistical data}—the kind typically used in research and analysis (e.g., see Table \ref{tab:msleep} and Table \ref{tab:skulls_full})—and the kind of data used to train machine learning models (e.g., pictures of cats, playlists of Eurodance hits, or whatever else the algorithm gods demand). In the latter case, what is being fed to the model is perhaps more akin to collections of stimuli than it is data in the traditional statistical sense of the term. That said, in machine learning contexts, the terms \textit{data} and \textit{stimuli} are often used interchangeably. When this book refers to ``data'', you can assume it means \textit{statistical data}.\footnote{Yes, I’m aware I haven’t defined ``statistic'' yet. But some knowledge comes at a price—and you haven’t bled nearly enough.}
 
-\subsection{A Taxonomy of Data - Scales of Measurement}
+\section{A Taxonomy of Data}
 
-Examining Table \ref{tab:skulls_full}, we can see that each row corresponds to a single skull examined by \textcite{Thomson1905}. Each column captures a different type of information recorded for that skull. Some columns contain categorical details—such as the ruling dynasty at the time of burial, the archaeological site where the skull was found, or the presumed sex of the individual—while others include numerical measurements, like the glabello-occipital length (gol), ophryo-occipital length (ool), and basi-bregmatic height (bbh), to name just a few.
+\subsection{Variables}
 
-Each column in a dataset represents what we call a variable—a characteristic or property that can \textit{vary} across observations (i.e., rows). It is perhaps worth noting that this use of the term ``variable'' is slightly different from how it is used in something like algebra, which is probably the most familiar context in which the term appears. In algebra, a variable is a symbol that stands for an unknown value or set of values (hence the classic phrase ``solve for $x$'', with $x$ being the variable). Still, the two meanings have an underlying connection because, in both cases, we are referring to something—be it a symbol, label, or phrase—that can represent different values. For example, in Table \ref{tab:skulls_full} \textit{sex} is a variable that (from \citeauthor{Thomson1905}'s perspective) has two possible values: ``male'' and ``female.''  Cranial capacity (\textit{cc}) is also a variable, but it is a variable which can take on a theoretically infinite amount of possibilities that extend anywhere from 0 to infinity in the positive direction.
+Examining Table \ref{tab:skulls_full}, we can see that each row corresponds to a single skull examined by \textcite{Thomson1905}. Each column captures a different type of information recorded for that skull. Some columns contain categorical details—such as the ruling dynasty at the time of burial, the archaeological site where the skull was found, or the presumed sex of the individual—while others include numeric measurements, like the glabello-occipital length (gol), ophryo-occipital length (ool), and basi-bregmatic height (bbh), just to name a few.
 
-The way you approach descriptive or inferential analysis depends critically on the nature of your variables. For example, it makes little sense to try to compute the mean of categorical traits like eye colour, biological sex, or whether a plant specimen is alive or dead. Calculating a mean assumes the data possess certain numerical properties—specifically, that the values lie on a scale where arithmetic operations like addition and division are valid. When those conditions are not met, the result is not just meaningless—it is misleading.
+Each column in a dataset represents what we call a \gls{variable}—a characteristic or property that can differ (i.e., \textit{vary}) across the observations. It is worth noting that this use of the term ``variable'' is slightly different from how it is used in something like algebra, which is probably the most familiar context in which the term appears. In algebra, a variable is a symbol that stands for an unknown value or set of values (hence the classic phrase ``solve for $x$'', with $x$ being the variable). Still, the two meanings have an underlying connection because, in both cases, we are referring to something—be it a symbol, label, or phrase—that can represent different values. For example, in Table \ref{tab:skulls_full} \textit{sex} is a variable that (from \citeauthor{Thomson1905}'s perspective) has two possible values: ``male'' and ``female.''  Cranial capacity (\textit{cc}) is also a variable, but it is a variable which can take on a theoretically infinite amount of possibilities that extend anywhere from 0 to infinity in the positive direction.\footnote{This is not to suggest that Godzilla-sized skulls are in any way feasible. An asymptote lurks somewhere along the continuum — and long before we reach kaiju level proportions, the laws of physics (and the poor creature’s neck) would surely intervene.}
 
-Since the late 1940s, data in most areas of science has traditionally been classified into four types, known as \textit{scales of measurement}. This framework arose in response to a philosophical dilemma that emerged as the field of Psychology sought to establish itself as a valid scientific discipline. Specifically, it revolved around a deceptively simple question: \textit{Is it possible to measure human sensation?} \parencite[p. 677]{Stevens1946}.
+\subsection{Scales of Measurement}
+
+The way you approach a descriptive or inferential analysis depends critically on the nature of your variables. For example, it makes little sense to try to compute the mean of categorical traits like eye colour, biological sex, or whether a plant specimen is alive or dead. Calculating a mean assumes the data possess certain numerical properties—specifically, that the values lie on a scale where arithmetic operations like addition and division are valid. When those conditions are not met, the result is not just meaningless—it is misleading.
+
+Since the late 1940s, most areas of science have traditionally classified data into four types, known as \textit{scales of measurement}. This framework arose in response to a philosophical dilemma that emerged as the field of Psychology in particular sought to establish itself as a valid scientific discipline. Specifically, the problem revolved around a deceptively simple question: \textit{Is it possible to measure human sensation?} \parencite[p. 677]{Stevens1946}.
 
 To see why this question matters, consider a basic example. Suppose you ask participants in a study to rate their happiness on a 11-point scale, where 0 represents the absence of any happiness and 10 represents the happiest they could
-conceivably be. For simplicity, imagine you only have two participants—one selects a 3, the other a 5. A common research practice is to compute the mean average, which in this case would be 4. 
+conceivably be. For simplicity, imagine you only have two participants—one selects a 3, the other a 5. A common research practice is to compute the mean average, which in this case would be 4 (see equation \ref{eq:sens_1}). 
 
 \begin{equation}
 \frac{3 + 5}{2} = \frac{8}{2} = 4
+\label{eq:sens_1}
 \end{equation}
 
-Seems straightforward enough. The average happiness level across these two people is a 4. However, there is a potential problem lurking here: the ``psychological distance'' between the numbers on the scale may not be consistent across individuals. What one person considers a 5, another might interpret as a 7, or a 3, or some other value. That becomes an issue when we calculate a mean because the process of adding the values in the numerator assumes these values have a meaning independent of the person. For instance, if instead the participants had reported 2 and 6 we would similarly arrive at 8 in the numerator, but we have no reason to assume that mathematical equality (3 + 5 = 2 + 6 = 8) should hold because the numbers reflect \textit{subjective} judgments, not objective quantities with a standardized unit of measurement. Thus, we cannot be certain that participants are interpreting the numbers in a comparable way. Moreover, there is no means to verify the accuracy or complete truth of any subjective statement of this kind. We have to take it more or less on faith that, not only are they telling the truth, but that they have the ability to accurately report their own subjective states. This challenge—often referred to as the problem of introspection—has haunted Psychology since its earliest days under Wilhelm Wundt in the mid-to-late 19th century. 
+\noindent
+This seems straightforward enough. The average happiness level across these two people is 4. However, there is a potential problem lurking here: the ``psychological distance'' between the numbers on the scale may not be consistent across individuals. What one person considers a 5, another might interpret as a 4, or as a 6, or as a 7, or as a 8.4, or 2.66, or some other value. That becomes an issue when we calculate a mean because the process of adding the values in the numerator assumes these values have a meaning independent of the person. For instance, if instead the participants had reported 2 and 6 we would similarly arrive at 8 in the numerator (see equation \ref{eq:sens_2}).
 
-That said, one must be cautious not to cast all such measures into the inferno. As \textcite{Labovitz1967} argues, there may be some value—however impure—in treating these subjective ratings as more numeric than they truly are. Despite their crude, unstable, and potentially erroneous nature, they may still be sufficiently precise to extract some kind of signal from the noise. Introspection is a murky cauldron to be sure, but pursuing methodological purity risks sacrificing potentially useful data upon an altar of perfectionism, discarding what might yet yield insight merely because it fails to meet some idealized standard.
+\begin{equation}
+\frac{2 + 6}{2} = \frac{8}{2} = 4
+\label{eq:sens_2}
+\end{equation}
 
+\noindent
+However, we have no compelling reason to assume that a mathematical equality such as $(3 + 5) = (2 + 6)$ should hold in this context (see \ref{eq:sens_3}), because these numbers reflect \textit{subjective} judgments—not objective quantities grounded in a standardized unit of measurement. Is it mathematically true that both $(3 + 5) = 8$ and $(2 + 6) = 8$? Yes, arithmetically. But in the realm of subjective ratings, such an equality only holds if participants are interpreting the scale in a comparable way. While that is possible, it is far from guaranteed, given the vast differences in individual physiology, psychological states, and lived experience.
+
+\begin{equation}
+(3 + 5) \stackrel{?}{=} (2 + 6) \stackrel{?}{=} 8
+\label{eq:sens_3}
+\end{equation}
+
+\noindent
+And the problems do not end there. More fundamentally, there is no objective means of verifying the accuracy—or even the honesty—of any subjective report. We are left to trust that participants are both willing and able to faithfully describe their internal states. This issue, often referred to as the \textit{problem of introspection}, has haunted Psychology since its inception, tracing back to Wilhelm Wundt’s 19th-century laboratory, where the first systematic efforts to understand ``minds'' began.\footnote{One could argue that this problem traces back even earlier, to the foundational work of Ernst Heinrich Weber and Gustav Fechner in psychophysics—research that Wundt deeply admired and which heavily influenced his own.}
+
+None of this is to suggest that subjective assessments should be dismissed outright as pseudoscience. As \textcite{Labovitz1967} contends, there may be some value—however impure—in treating such ratings as more numerical than they truly are. Despite their crude, unstable, and potentially erroneous nature, these measures may still contain just enough precision to tease some signal from the noise. By analogy, the literal sound an engine makes is not what powers a vehicle, but a skilled mechanic can often diagnose a problem from the sound alone. Subjective assessments may be similar in this respect. Introspection is, without doubt, a murky cauldron—but an obsession with methodological purity risks sacrificing potentially useful data on the altar of perfectionism. We ought not discard what might yield insight simply because it falls short of an ideal.
+
+Given what has been said so far, it is hopefully understandable that while not all data conforms to our ideals surrounding numbers and measurement there may still be a certain utility in ascribing numbers to things that are not necessarily quantifiable in the traditional sense. It is often useful to break observations up into sensibile categories and perhaps even order those categories. Along these lines data is usually considered to be either qualitative or quantitive.
+
+Quantiative data is that 
+
+
+
+
+
+
+
+of assigning numbers to magnitudes.
+
+
+The history of measurement is a long one, dating back to the times of Euclid, and could easily encompass its own textbook.
+
+assigning numbers to magnitudes
+
+
+%https://plato.stanford.edu/entries/measurement-science/
 
 % Add examples of descriptive and inferential analyses.
 

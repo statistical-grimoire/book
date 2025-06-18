@@ -1,5 +1,5 @@
 library(tidyverse)
-skulls <- read_csv("skull_cap_partial_wide.csv")
+skulls <- read_csv("https://raw.githubusercontent.com/statistical-grimoire/book/refs/heads/main/data/Egyptian-skulls/skull_cap_partial_wide.csv")
 # write_tsv(skulls, "temp.tsv")
 
 skulls
@@ -11,7 +11,7 @@ mean(skulls$predynastic, na.rm = TRUE)
 
 skulls[1:5, 3]
 
-skulls_df <- read.csv("skull_cap_partial_wide.csv")
+skulls_df <- read.csv("https://raw.githubusercontent.com/statistical-grimoire/book/refs/heads/main/data/Egyptian-skulls/skull_cap_partial_wide.csv")
 skulls_df[1:5, 3]
 
 mean(skulls[1:5, 3])
@@ -76,7 +76,17 @@ skulls_tidy |>
   filter(period == "predynastic") |>
   select(period, capacity)
 
-skulls <- read_csv("skull_cap_partial_wide.csv") |>
+
+
+
+
+
+
+
+
+
+
+skulls <- read_csv("https://raw.githubusercontent.com/statistical-grimoire/book/refs/heads/main/data/Egyptian-skulls/skull_cap_partial_wide.csv") |>
   pivot_longer(
     cols = predynastic:c331BC,
     names_to = "period",
@@ -113,95 +123,15 @@ skull_summary <- skulls |>
 skull_summary
 
 ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
 
 ggsave("bar_1.pdf", units = "cm", width = 20, height = 9)
 
-#------------------------------------------------------------------------------
-# egypt_pal <- c(
-#   "predynastic" = "#7E6A58",
-#   "c4800BC" = "#C2B280",
-#   "c4200BC" = "#6A8347",
-#   "c4000BC" = "#A23E2A",
-#   "c3700BC" = "#B04E0F",
-#   "c3500BC" = "#2E8B8B",
-#   "c2780BC" = "#264653",
-#   "c1590BC" = "#D4AF37",
-#   "c378BC"  = "#8B8589",
-#   "c331BC"  = "#C9C9C9"
-# )
-
-egypt_pal <- c(
-  "#7E6A58", "#C2B280", "#6A8347", "#A23E2A", "#B04E0F",
-  "#2E8B8B", "#264653", "#D4AF37", "#8B8589", "#C9C9C9"
-)
-
-egypt_pal["c2780BC"]
-
-ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal)
-
-ggsave("bar_2.pdf", units = "cm", width = 24, height = 9)
-
-#------------------------------------------------------------------------------
-
-ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal, guide = "none")
-
-ggsave("bar_3.pdf", units = "cm", width = 24, height = 9)
-
-#------------------------------------------------------------------------------
-
-ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal, guide = "none") +
-  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25)
-
-
-ggsave("bar_4.pdf", units = "cm", width = 24, height = 9)
-
-#------------------------------------------------------------------------------
-
-ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal, guide = "none") +
-  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
-  scale_x_discrete(
-    labels = c(
-      "c.1590 BC", "c.2780 BC", "c.331 BC", "c.3500 BC", "c.3700 BC",
-      "c.378 BC", "c.4000 BC", "c.4200 BC", "c.4800 BC", "Predynastic"
-    )
-  ) +
-  labs(
-    x = "Period",
-    y = "Cranial Capacity (cm³)"
-  )
-
-ggsave("bar_5.pdf", units = "cm", width = 24, height = 9)
-
-#------------------------------------------------------------------------------
-
 skulls$period <- factor(skulls$period)
 skulls
-skulls$period
+
+# skulls$period
 
 levels(skulls$period)
 
@@ -211,6 +141,7 @@ skulls$period <- factor(skulls$period,
     "c3500BC", "c2780BC", "c1590BC", "c378BC", "c331BC"
   )
 )
+levels(skulls$period)
 
 skull_summary <- skulls |>
   group_by(period) |>
@@ -227,29 +158,69 @@ skull_summary <- skulls |>
 skull_summary
 
 ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
 
-ggsave("bar_6.pdf", units = "cm", width = 24, height = 9)
+ggsave("bar_2.pdf", units = "cm", width = 20, height = 9)
 
 levels(skull_summary$period) <- c(
   "Predynastic", "c.4800 BC", "c.4200 BC", "c.4000 BC", "c.3700 BC",
   "c.3500 BC", "c.2780 BC", "c.1590 BC", "c.378 BC", "c.331 BC"
 )
+skull_summary
 
 ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal, guide = "none") +
-  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
-  labs(
-    x = "Period",
-    y = "Cranial Capacity (cm³)"
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
+
+ggsave("bar_3.pdf", units = "cm", width = 20, height = 9)
+
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)") +
+  scale_x_discrete(
+    labels = c(
+      "Predynastic", "c.4800 BC", "c.4200 BC", "c.4000 BC", "c.3700 BC",
+      "c.3500 BC", "c.2780 BC", "c.1590 BC", "c.378 BC", "c.331 BC"
+      )
   )
 
-ggsave("bar_7.pdf", units = "cm", width = 24, height = 9)
+skull_summary
+
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
+
+ggsave("bar_4.pdf", units = "cm", width = 20, height = 9)
+
+length(levels(skulls$period))
+
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity", colour = "black", fill = "#CBA135") +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
+
+ggsave("bar_5.pdf", units = "cm", width = 20, height = 9)
+
+
+egypt_pal <- hcl.colors(n = 10, palette = "Green-Brown")
+
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity", colour = "black", aes(fill = period)) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)") +
+  scale_fill_manual(values = egypt_pal)
+
+ggsave("bar_6.pdf", units = "cm", width = 20, height = 9)
+
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity", colour = "black", aes(fill = period)) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)") +
+  scale_fill_manual(values = egypt_pal, guide = "none")
+
+ggsave("bar_7.pdf", units = "cm", width = 20, height = 9)
 
 #-------------------------------------------------------------------------------
 
@@ -257,7 +228,7 @@ ggsave("bar_7.pdf", units = "cm", width = 24, height = 9)
 library(tidyverse)
 
 # Load the data
-skulls <- read_csv("skull_cap_partial_wide.csv") |>
+skulls <- read_csv("https://raw.githubusercontent.com/statistical-grimoire/book/refs/heads/main/data/Egyptian-skulls/skull_cap_partial_wide.csv") |>
   # Pivot to the tidy format
   pivot_longer(
     cols = predynastic:c331BC,
@@ -293,10 +264,7 @@ skull_summary <- skulls |>
 skull_summary
 
 # Store desired colours
-egypt_pal <- c(
-  "#7E6A58", "#C2B280", "#6A8347", "#A23E2A", "#B04E0F",
-  "#2E8B8B", "#264653", "#D4AF37", "#8B8589", "#C9C9C9"
-)
+egypt_pal <- hcl.colors(n = 10, palette = "Green-Brown")
 
 # Plot data
 ggplot(skull_summary, aes(x = period, y = m)) +

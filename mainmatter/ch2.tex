@@ -408,6 +408,8 @@ Because of their larger base, a single hexadecimal digit can store more informat
 
 In the above examples, the aesthetic changes we made to the plots affected all of the points. In the language of \textit{ggplot2}, we would say that the aesthetics were mapped to all the points. However, it is often necessary to visually break up the points according to one of the other variables in your data.  For instance, we could colour the points in our plot according to the categories in the data's \R{\$vore} column.
 
+\clearpage
+
 \begin{inR}
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     geom_point(size = 3, aes(colour = vore))
@@ -438,6 +440,7 @@ is.na(msleep$vore)
 \end{outR}
 
 \clearpage
+
 \noindent
 Thus, we can use that as the ``test'' in the \R{ifelse()} function.
 
@@ -531,7 +534,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 It is at this point where the versatility of the \textit{ggplot2} really begins to shine.  For instance, if we wanted to create a separate regression line for each category of \R{\$vore} we can accomplish that by once again making use of the \R{aes()} function and ``grouping'' by \R{\$vore}.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={8}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore, shape = vore)) +
   geom_smooth(
@@ -541,7 +544,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5,
     aes(group = vore)
   )
-\end{inR}
+\end{inRhigh}
 
 %\vspace{2em}
 
@@ -551,7 +554,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 At present it is not clear which line applies to which category, but we could also have each regression line correspond to the colour mapped to \R{\$vore}, and (in consideration of colour blindness) give each line a separate \R{linetype}.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={7}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore, shape = vore)) +
   geom_smooth(
@@ -560,7 +563,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5,
     aes(colour = vore, linetype = vore)
     )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -573,7 +576,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 As interesting as our plot looks, it is becoming rather cluttered and difficult to visually parse. In situations like this, it is often helpful to split the plot up into separate facets (i.e., give each category its own graph). \textit{ggplot2} makes this very easy with its \R{facet\_wrap()} function.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={9}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore, shape = vore)) +
   geom_smooth(
@@ -583,7 +586,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     aes(colour = vore)
   ) +
     facet_wrap(~ vore)
-\end{inR}
+\end{inRhigh}
 \vspace{2em}
 \begin{figure}[H]
 \includegraphics[scale = 0.75]{graphics/ch2Figs/ggEx_14.pdf}
@@ -593,12 +596,12 @@ You can interpret the small formula we wrote (\R{\textasciitilde vore}) as meani
 
 Notice that now, the colour and shape aesthetics are providing redundant information with the facet labels. As a general rule, you want to avoid redundancy in your plots because additional visual elements might bias the viewer's eye in unpredictable ways. We can easily fix this by removing some of the aesthetics we added earlier, and we can also adjust the facets so that they are all on a single row by adding the argument, \R{nrow = 1} to our \R{facet\_wrap()} function.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={4}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3) +
   geom_smooth(method = "lm", se = FALSE, linewidth = 0.5) +
   facet_wrap(~ vore, nrow = 1)
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -614,9 +617,9 @@ To finish up the plot, we should adjust some of the labelling, save it, and then
 
 \section{Labels}
 
-To adjust the $x$ and $y$ axis titles we can simply use the functions \R{xlab()} and \R{ylab()}.
+To adjust the $x$ and $y$ axis titles we can simply use the function \R{labs()}.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={9-12}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3) +
   geom_smooth(
@@ -625,9 +628,11 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)")
-\end{inR}
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  )
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -701,15 +706,17 @@ geom_point(aes(colour = vore, shape = vore))
 
 \vspace{1em}
 
+\clearpage
+
 \noindent
-\textit{ggplot2} automatically chose which colours and shapes got applied to each category, but you can use functions to override these automatic mappings. 
+When we did that, \textit{ggplot2} automatically chose which colours and shapes got applied to each category, but you can use functions to override these automatic mappings. 
 
 The function you use to make these overrides is going to be dictated by the aesthetic you want to modify. For instance, to adjust the colour (or edge colour) of a point you could use the \R{scale\_\textbf{colour}\_discrete()} function or the \R{scale\_\textbf{colour}\_continuous()} function. If you wanted to adjust the shapes of the points, you could use \R{scale\_\textbf{shape}\_discrete()} function.  If you wanted to adjust the fill colour of something (e.g., the fill colour of points or the fill colour of bars on a graph), you could use \R{scale\_\textbf{fill}\_discrete()} function or the \R{scale\_\textbf{fill}\_continuous()} function.
 
 There are a large amount of functions like these and, at this point, you do not need to concern yourself with all their varieties and how they work. What is important to recognize here is that each scale function specifies, inside its name, what aesthetic (e.g., colour, shape, fill, etc.) it is modifying:
 
 \begin{center}
-    \R{scale\_\textit{<aesthetic name>}\_\textit{<transformation>}()}
+    \R{scale\_\textit{<aes name>}\_\textit{<transformation>}()}
 \end{center}
 
 The ``transformation'' part of the function's name is intended to describe how the function modifies the aesthetic which will hopefully become more apparent as we move through some examples.
@@ -751,9 +758,9 @@ mode(msleep$sleep_total) # y-axis
 
 If we had, for instance, plotted a categorical variable on the x-axis (e.g., the conservation status of the animal) then the x-axis would be discrete while the y-axis remains continuous (we will see an example of this later on).
 
-To customize the breaks on our axis, we simply need to add one of the aforementioned functions to our plot's code and provide a vector of values we want to see displayed using the argument \R{breaks}. For instance, if we want the x-axis to only display the numbers 1, 2, and 3, we would add \\ \R{scale\_x\_continuous(breaks = c(1,2,3))} to our code (see line 11).
+To customize the breaks on our axis, we simply need to add one of the aforementioned functions to our plot's code and provide a vector of values we want to see displayed using the argument \R{breaks}. For instance, if we want the x-axis to only display the numbers 1, 2, and 3, we would add \\ \R{scale\_x\_continuous(breaks = c(1,2,3))} to our code (see line 13).
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={13}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3) +
   geom_smooth(
@@ -762,10 +769,12 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)") + 
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  ) +
   scale_x_continuous(breaks = c(1,2,3))
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -773,9 +782,9 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_17.pdf}
 \end{figure}
 
-In general, the best practice is not to specify values individually, but rather specify a sequence using the \R{seq()} function we learned about in Chapter 1 (see section \ref{sec:func_args}). For instance, we could have the x-axis increment by 1s and the y-axis increment by 2s (see lines 11 and 12).
+In general, the best practice is not to specify values individually, but rather specify a sequence using the \R{seq()} function we learned about in Chapter 1 (see section \ref{sec:func_args}). For instance, we could have the x-axis increment by 1s and the y-axis increment by 2s (see lines 13 and 14).
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={13-14}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3) +
   geom_smooth(
@@ -784,11 +793,13 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)") + 
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  ) +
   scale_x_continuous(breaks = seq(-2, 4, 1)) +
   scale_y_continuous(breaks = seq(0, 20, 2))
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -802,7 +813,7 @@ The four scale functions above can achieve a lot more than what is being shown h
 
 In addition to axis break adjustment, the range of the axis will often require customization as well.  To achieve this, the best practice is usually to use the function \R{coord\_cartesian()}.  To illustrate with some absurd values, we could have the x-axis span between -2 and +1 and have the y-axis span between $-5$ and $+10$.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={15}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3) +
   geom_smooth(
@@ -811,12 +822,14 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)") +
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  ) +
   scale_x_continuous(breaks = seq(-2, 4, 1)) +
   scale_y_continuous(breaks = seq(0, 20, 2)) +
   coord_cartesian(xlim = c(-2, 1), ylim = c(-5, 10))
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -846,8 +859,8 @@ Similar to how \textit{ggplot2} automatically selected a scaling for the breaks 
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale = .4]{graphics/ch2Figs/col_gradient.pdf}
-\caption{Example of a continuous colour scale (i.e., a colour gradient).}
+\includegraphics[scale = .3]{graphics/ch2Figs/col_gradient.png}
+\caption{Example of a continuous colour scale (i.e., a colour gradient)}
 \label{fig:continuous_col_scale}
 \end{figure}
 
@@ -855,12 +868,12 @@ Similar to how \textit{ggplot2} automatically selected a scaling for the breaks 
 
 \begin{figure}[H]
 \centering
-\includegraphics[scale = .4]{graphics/ch2Figs/col_discrete.pdf}
-\caption{Example of a discrete colour scale (a.k.a. a qualitative palette.)}
+\includegraphics[scale = .3]{graphics/ch2Figs/col_discrete.png}
+\caption{Example of a discrete colour scale (a.k.a. a qualitative palette)}
 \label{fig:discrete_col_scale}
 \end{figure}
 
-\vspace{1em}
+\clearpage
 
 \subsection{Discrete Colour Scales}
 \label{sec:discrete_cols}
@@ -881,13 +894,13 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \noindent
 First we will map the edge colour to the column \R{\$vore}.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={4}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, shape = 21, stroke = 2,
     aes(colour = vore)
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -898,14 +911,14 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \noindent
 Then, to override these colours we can simply use \R{scale\_colour\_discrete()} and input a vector of colours.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={6}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, shape = 21, stroke = 2,
     aes(colour = vore)
   ) +
   scale_colour_discrete(type = c("red", "blue", "green", "purple", "orange"))
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -950,14 +963,14 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 Notice that we are using pch 21 as our shape. Recall that this shape takes both an edge and fill colour (see Figure \ref{fig:points.pdf}). At present, we have not specified a fill colour, so the points are hollow. However, instead of modifying the edge colour like we have been doing, we could modify the fill colour of the points and just keep the edges black.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={3-4}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, shape = 21, stroke = 1, colour = "black",
     aes(fill = vore)
   ) +
   scale_fill_discrete(type = palette)
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -967,6 +980,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 \noindent
 Notice where the important changes have taken place in the code.  We have moved the \R{colour} aesthetic outside of the \R{aes()} function.  This means a single \R{colour} (black) will now be mapped to all the points. We have also mapped the \R{\$vore} column to the \R{fill} aesthetic inside of \R{aes()} and, for that reason, now specify \R{scale\_\textbf{fill}\_discrete()} to modify the colour options. In other words, we are now adjusting the \textit{fill} colour, not the point/edge colour.
+
+\clearpage
 
 \subsubsection{Pre-Existing Discrete Colour Palettes}
 
@@ -984,14 +999,14 @@ palette.pals()
 
 Of note, palettes \R{"R4"}, \R{"Okabe-Ito"}, \R{"Dark 2"}, \R{"Paired"}, and \R{"Set 2"}, are all decently robust under conditions of colour vision deficiency. To obtain a vector of the hex codes used for a specific palette, you can just run \R{palette.colors(n = NULL, "Dark 2")}, but it is usually more convenient to insert this function directly into \textit{ggplot2}. Figure \ref{fig:discrete_cols} illustrates the colours employed in each palette - only eight colours are shown but some do contain more.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={6}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, shape = 21, stroke = 1, colour = "black",
     aes(fill = vore)
   ) +
   scale_fill_discrete(type = palette.colors(n = NULL, "Dark2"))
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1008,17 +1023,19 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \label{fig:discrete_cols}
 \end{figure}
 
+\clearpage
+
 \subsection{Continuous Colour Scales}
 
 Continuous colour scales operate more or less in the same manner as discrete ones; however, to illustrate them, we need to map colour to a continuous variable. In the \R{msleep} data, there is a column called \R{\$brainwt} which, similar to \R{\$bodywt}, is a continuous measure. To visualize it adequately we will need to log transform it as well. For simplicity we will do this directly in the plot's code:
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={4}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, shape = 21, stroke = 1, colour = "black",
     aes(fill = log10(brainwt))
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1041,7 +1058,7 @@ If you are left unsatisfied by the default black to blue gradient, \textit{ggplo
 
 In addition to those main arguments, you can also specify what colour you would like \R{NA} values to be represented by and set the the breaks that appear on the colourbar. These are given by the arguments \R{na.value} and \R{breaks} respectively.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={7-12}]
 # scale_colour_gradient example
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
@@ -1054,7 +1071,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     na.value = "green", 
     breaks = seq(-4, 1, 1)
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1064,7 +1081,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 With the mammal sleep data, there is no logical reason to plot a midpoint colour using \\ \R{scale\_colour\_gradient2()} but to illustrate its use we will depict a midpoint using the colour \R{"grey"} and we will place it at a $\text{log}_{10}(\text{brain weight}) = -1.5$.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={7-14}]
 # scale_colour_gradient2 example
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
@@ -1079,7 +1096,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     na.value = "green", 
     breaks = seq(-4, 1, 1)
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1088,6 +1105,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \end{figure}
 
 \subsubsection{Pre-Existing Continuous Colour Palettes}
+\label{sec:hcl_palettes}
 
 Similar to what we saw with discrete colour scales, R comes with a set of continuous colour palettes we can use, some of which are sequential and some of which are diverging. For those interested, these palettes are based around an HCL (hue-chroma-luminance) colour space model which confers some advantages over the HSV (hue-saturation-value) colour space model computers have traditionally employed \parencite{Zeileis2019}.
 
@@ -1103,7 +1121,7 @@ hcl.pals(type = "qualitative")
 
 The qualitative palettes work best for discrete scales (i.e., identifying distinct categories) where you want each category to have equal perceptual weight. These are not much use for our present purposes but are notable because they are based on a HCL colour space model. That means we are not limited by the amount of colours in the palette like we were with R's standard discrete colour palettes (see section \ref{sec:discrete_cols}). Though, anecdotally, when you go beyond 6 categories the HCL qualitative palettes' colours start to become more and more difficult to discriminate between (even with standard colour vision). Interestingly, \textit{ggplot2}'s default discrete colour selection relies on a similar underlying theory.
 
-To obtain the hex codes for any given palette (e.g., \R{"Inferno"}) you will, in addition to providing the palette name, need to specify how many hex codes you want to see using the argument \R{n}. Visual examples of the three HCL palette types are provided in Appendix \ref{sec:AppendixPalettes}.
+To retrieve the hex codes for a given palette (e.g., \R{"Inferno"}), you’ll need to specify not only the palette name but also the number of colours you want using the \R{n} argument. This determines the granularity of the palette—higher values yield a more finely graded colour spectrum. That said, for most practical purposes, distinctions beyond 4 or 5 colours tend to become visually negligible with the sequential and diverging palettes. Visual examples of all three HCL palette types can be found in Appendix \ref{sec:AppendixPalettes}.
 
 \begin{inR}
 hcl.colors(n = 8, palette = "Inferno") 
@@ -1114,9 +1132,7 @@ hcl.colors(n = 8, palette = "Inferno")
 
 To use one of base R's HCL colour palettes in our plot we can use the function \\ \R{scale\_fill\_gradientn()} to set our palette. The function just takes a vector of colours and extrapolates a gradient from that.
 
-\clearpage
-
-\begin{inR}
+\begin{inRhigh}[highlightlines={6-10}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, shape = 21, stroke = 1, colour = "black",
@@ -1127,7 +1143,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     na.value = "grey", 
     breaks = seq(-4, 1, 1)
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1139,7 +1155,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 We know that relying solely on colour to visually discriminate categories is inadvisable due to colour vision deficiencies people may have; thus, in addition to adjusting the colour scales, we can also adjust the shape scale simultaneously by mapping \R{\$vore} to both \R{shape} and \R{fill} within the \R{aes()} function. For the shapes we will use the pch symbols 21 - 24 and also have the category ``unknown'' be represented by pch 13 (see Figure \ref{fig:points.pdf}) - recall that these particular symbols (21 - 24) take both a colour and fill aesthetic. We will keep the edges (i.e., colour aesthetic) black but, for the fill aesthetic, we will use the \R{"R4"} colour palette (see Figure \ref{fig:discrete_cols}).
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={4,6-7}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, stroke = 1, colour = "black",
@@ -1147,7 +1163,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   ) +
   scale_shape_manual(values = c(21:24), na.value = 13) +
   scale_fill_discrete(type = palette.colors(n = NULL, "R4"))
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1157,9 +1173,11 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 \subsection{Legend Titles}
 
-In all the examples above, the legend that \textit{ggplot2} produced has always been titled with the name of the column it is representing. For instance, when we mapped the categories in the \R{\$vore} column it was titled ``vore.'' When we mapped \R{log10(brainwt}, it was titled ``log10(brainwt).'' To adjust the name of the legend, each \R{scale} function we have used also takes a \R{name} argument which will dictate how the legend is titled. For instance, keeping with the above example, we could adjust the legend title to read "Diet".
+In all the examples above, the legend that \textit{ggplot2} produced has always been titled with the name of the column it is representing. For instance, when we mapped the categories in the \R{\$vore} column it was titled ``vore.'' When we mapped \R{log10(brainwt)}, it was titled ``log10(brainwt).'' To adjust the name of the legend, each \R{scale} function we have used also takes a \R{name} argument which will dictate how the legend is titled. For instance, keeping with the above example, we could adjust the legend title to read "Diet".
 
-\begin{inR}
+\clearpage
+
+\begin{inRhigh}[highlightlines={6-7}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, stroke = 1, colour = "black",
@@ -1167,7 +1185,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   ) +
   scale_shape_manual(values = c(21:24), na.value = 13, name = "Diet") +
   scale_fill_discrete(type = palette.colors(n = NULL, "R4"), name = "Diet")
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1179,7 +1197,7 @@ In this example, we have two scales in our legend, the \R{shape} scale and the \
 
 An alternative method for renaming your legend is to add the function \R{labs()} to your plot's code and specify the name of each scale as a separate argument.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={8-11}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, stroke = 1, colour = "black",
@@ -1191,9 +1209,9 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     shape = "Diet",
     fill = "Diet"
   )
-\end{inR}
+\end{inRhigh}
 
-\vspace{1em}
+\clearpage
 
 \subsection{Other Scales}
 
@@ -1206,8 +1224,6 @@ In the sections above, we have only considered the position, colour, fill, and s
 \section{Modifying Other Non-data Components}
 
 One thing that will be apparent is that \textit{ggplot2} has a very specific ``look'' to it, and that look is not arbitrary. It was crafted meticulously on the basis of expert advice. In the language of \textit{ggplot2}, this look is what is referred to as a \textit{theme}.  Specifically, we are seeing \R{theme\_grey()} and in the dark master's own words:
-
-\clearpage
 
 \begin{displayquote}
 \headingfont
@@ -1236,7 +1252,7 @@ x + 2
 \noindent
 your plot is also an object (just a very complex one) that you can \textit{add} things to. For instance, on the first line of our plot's code, right before the function \R{ggplot()}, we could give our plot the name \R{my\_plot}.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={1}]
 my_plot <- ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
     size = 3, colour = "black",
@@ -1245,11 +1261,12 @@ my_plot <- ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   scale_shape_manual(values = c(21:24, 13)) +
   scale_fill_discrete(type = palette.colors(n = NULL, "R4")) +
   labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)",
     shape = "Diet",
     fill = "Diet"
-  ) +
-  xlab("Log10(Body Weight kg)") + ylab("Sleep Total (hrs)")
-\end{inR}
+  )
+\end{inRhigh}
 
 \vspace{1em}
 
@@ -1266,7 +1283,9 @@ my_plot
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_32.pdf}
 \end{figure}
 
-The quickest way to modify the overall appearance of your plot - which works well as a starting point for other modifications you want to make - is to use one of ggplot2's built in themes shown in Figure \ref{fig:gg_built-in-themes}.  Simply add the theme's function to your plot's code.  For instance, if you wanted to use the black and white theme, \R{theme\_bw()}, you would run ...
+\clearpage
+
+The quickest way to modify the overall appearance of your plot - which works well as a starting point for other modifications you want to make - is to use one of \textit{ggplot2's} built in themes shown in Figure \ref{fig:gg_built-in-themes}.  Simply add the theme's function to your plot's code.  For instance, if you wanted to use the black and white theme, \R{theme\_bw()}, you would run ...
 
 \begin{inR}
 my_plot + theme_bw()
@@ -1275,9 +1294,7 @@ my_plot + theme_bw()
 \vspace{1em}
 
 \noindent
-Additional pre-built themes can be accessed via other R packages, such as \R{ggthemes}.
-
-\vspace{2em}
+Additional pre-built themes can be accessed via other R packages, such as \textit{ggthemes}.
 
 \begin{figure}[p]
 \centering
@@ -1296,7 +1313,9 @@ Obtaining a more fine-grained control over the visual elements will require the 
 \url{https://ggplot2-book.org/themes.html#sec-theme-elements}
 \end{center}
 
-To modify the axis text, we first need to specify, within the \R{theme()} function, the name of the element we want to modify. In this case, since we want to modify \textit{both} the x and y axis, we will specify \R{axis.text}.  Then we need to specify a function to modify this element we have chosen. In this case, since we want to modify text, we will use the function \R{element\_text()}. Within that, we can specify numerous arguments related to the text. For a full list of arguments, it is highly recommended that the reader consult the R documentation: \R{?element\_text()}
+To modify the axis text, we first need to specify, within the \R{theme()} function, the name of the element we want to modify. In this case, since we want to modify \textit{both} the $x$ and $y$ axis, we will specify \R{axis.text}.  Then we need to specify a function to modify this element we have chosen. In this case, since we want to modify text, we will use the function \R{element\_text()}. Within that, we can specify numerous arguments related to the text. For a full list of arguments, it is highly recommended that the reader consult the R documentation: \R{?element\_text()}
+
+\clearpage
 
 \begin{inR}
 my_plot + theme_bw() +
@@ -1313,7 +1332,7 @@ my_plot + theme_bw() +
 
 Notice that the code affected both axes; however, if we want to affect a change for only one axis (e.g., the x-axis) we just specify the element as \R{axis.text.x}.  This will also allow us to include a \R{margin} argument to affect the spacing around the text.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={3,5}]
 my_plot + theme_bw() +
   theme(
     axis.text.x = element_text(
@@ -1321,7 +1340,7 @@ my_plot + theme_bw() +
       margin = margin(t = 1, r = 0, b = 0, l = 0, unit = "cm")
     )
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1333,7 +1352,7 @@ my_plot + theme_bw() +
 
 A similar logic applies to the axis title.  In that case we would modify the \R{axis.title} element. And again, if we wanted to modify the x-axis title specifically, we would use \R{axis.title.x}.  The y-axis title would of course be \R{axis.title.y}.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={3,7}]
 my_plot + theme_bw() +
   theme(
     axis.text.x = element_text(
@@ -1344,7 +1363,7 @@ my_plot + theme_bw() +
       size = 18, face = "italic", colour = "deepskyblue3", angle = 90
     )
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1359,8 +1378,9 @@ my_plot + theme_bw() +
 In the plots created above, we have gone through how to adjust a wide variety of elements but there are two adjustments that have not been discussed:
 
 \begin{enumerate}
-    \item How do you change the order of the categories?  For instance, suppose we wanted ``herbi'' to be at the top of the ``Diet'' legend. Or suppose we wanted it to come first in our sequence of faceted plots we created in section \ref{sec:facets}. How can we make that happen?
-    \item  How do we adjust the names of the categories? Each category of vore/diet has had its name shortened, but what if we wanted to write out each category in its entirety. E.g., display ``carnivore'' instead of ``carni'', and ``herbivore'' instead of ``herbi'', and so on.
+    \item How do you change the \textit{order} of the categories?  For instance, suppose we wanted ``herbi'' to be at the top of the ``Diet'' legend. Or suppose we wanted it to come first in our sequence of faceted plots we created in section \ref{sec:facets}. How can we make that happen?
+    
+    \item  How do we adjust the \textit{names} of the categories? Each category of vore/diet has had its name shortened, but what if we wanted to write out each category in its entirety. E.g., display ``carnivore'' instead of ``carni'', and ``herbivore'' instead of ``herbi'', and so on.
 \end{enumerate}
 
-The answer to both these questions requires first understanding ``factors,'' which will be explained later in the next chapter.
+The answer to both these questions requires first understanding ``factors,'' which will be explained in the next chapter.

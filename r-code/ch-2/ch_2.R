@@ -202,8 +202,10 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)") 
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  )
 
 ggsave('graphics/ggEx_16.pdf', units = 'cm', width = 20, height = 7)
 
@@ -226,8 +228,10 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)") + 
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  ) +
   scale_x_continuous(breaks = c(1,2,3))
 
 ggsave('graphics/ggEx_17.pdf', units = 'cm', width = 20, height = 7)
@@ -242,8 +246,10 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)") + 
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  ) +
   scale_x_continuous(breaks = seq(-2, 4, 1)) +
   scale_y_continuous(breaks = seq(0, 20, 2))
 
@@ -259,8 +265,10 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5
   ) +
   facet_wrap(~vore, nrow = 1) +
-  xlab("Log10(Body Weight kg)") + 
-  ylab("Sleep Total (hrs)") +
+  labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)"
+  ) +
   scale_x_continuous(breaks = seq(-2, 4, 1)) +
   scale_y_continuous(breaks = seq(0, 20, 2)) +
   coord_cartesian(xlim = c(-2, 1), ylim = c(-5, 10))
@@ -282,18 +290,18 @@ ggsave('graphics/ggEx_19.pdf', units = 'cm', width = 20, height = 7)
 #   ylim(-2, 1)
 
 #-------------------------------------------------------------------------------
-
-library(RColorBrewer)
-
-pdf("graphics/col_gradient.pdf", width = 10, height = 1.5)
+n_cols <- 1000000
+png("graphics/col_gradient.png", width = 1000, height = 150)
 par(mar = c(0, 0, 0, 0))
-image(1:9,1,as.matrix(1:9),col=brewer.pal(9,"YlOrRd"))
+image(1:n_cols, 1, as.matrix(1:n_cols), 
+      col = hcl.colors(n = n_cols, palette = "Spectral"), axes = FALSE, xlab = "", ylab = "")
 dev.off()
 
-
-pdf("graphics/col_discrete.pdf", width = 10, height = 1.5)
+n_cols <- 8
+png("graphics/col_discrete.png", width = 1000, height = 150)
 par(mar = c(0, 0, 0, 0))
-image(1:9,1,as.matrix(1:9), col = brewer.pal(9,"Set1"))
+image(1:n_cols, 1, as.matrix(1:n_cols), 
+      col = palette.colors(n = 8, "Set 1"), axes = FALSE, xlab = "", ylab = "")
 dev.off()
 
 #-------------------------------------------------------------------------------
@@ -594,10 +602,11 @@ my_plot <- ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   scale_shape_manual(values = c(21:24, 13)) +
   scale_fill_discrete(type = palette.colors(n = NULL, "R4")) +
   labs(
+    x = "Log10(Body Weight kg)",
+    y = "Sleep Total (hrs)",
     shape = "Diet",
     fill = "Diet"
-  ) +
-  xlab("Log10(Body Weight kg)") + ylab("Sleep Total (hrs)")
+  )
 
 ggsave('graphics/ggEx_32.pdf', plot = my_plot, units = 'cm', width = 12, height = 7)
 

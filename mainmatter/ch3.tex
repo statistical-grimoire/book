@@ -963,11 +963,12 @@ skull_summary
 
 Now that we have neatly organized these summary statistics inside a tibble, we can visualize them. Since the \R{\$period} column contains ten discrete categories, a bar plot is a basic natural choice for representing these data, so that is what we will create.
 
-The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the x and y axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with. Though, it is worth remembering that any of the other numeric (\R{<dbl>}) columns could be used as well.
+The basic logic of plotting has been discussed at length in chapter 2, and this discussion will follow from that.\footnote{In other words, if you haven't read chapter 2, go back and do that.} The first step will be to give \textit{ggplot2} the data and tell it which columns to map to the $x$ and $y$ axis respectively. Then we will add the \R{geom\_bar()} function to this. In this case, we are going to display the mean (i.e., column \R{\$m}) on the y-axis because that is a fairly standard practice many people will be familiar with. Though, it is worth remembering that any of the other numeric (\R{<dbl>}) columns could be used as well.
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
 \end{inR}
 
 \vspace{2em}
@@ -978,113 +979,15 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 
 The argument \R{stat = "identity"} is simply telling \textit{ggplot2} to use the values within the \R{skull\_summary} tibble to create the bars.  We needed to specify this because \textit{ggplot2} has the ability to take the raw data directly (e.g., \R{skulls}) and perform its own summary calculations. However, we do not need it to do that in this particular case, hence why we included this argument.
 
-The resulting bar graph displays the mean estimated cranial capacity ($cm^3$) for each period. To enhance its visual appeal, we can adjust the fill colour of the bars to reflect the corresponding time periods more effectively.\footnote{Technically, this is something we should NOT do because, for the sake of comparison, its better to give all the bars the same ``visual weight.'' Keeping all the bars the same colour does precisely that. Moreover, with the \textit{x}-axis labels, there is no reason to add additional elements that could be distracting. That being said, if you are collaborating on a project, your collaborators will probably demand to see colourful bars irrespective this rationale (experience has taught me this). And if they outnumber you, they can probably beat you in a fight - it doesn't matter if you have the moral or logical high ground.} When we do this, we have to be mindful of the fact that the x-axis contains a \textit{discrete} scale, not a \textit{continuous} one like we saw in chapter 2 (for more information on discrete vs. continuous scales see section \ref{sec:pos_scale}).
-
-First we will define our colour palette by creating a vector of hexadecimal colour codes we want to use.
-
-\begin{inR}
-egypt_pal <- c(
-  "#7E6A58", "#C2B280", "#6A8347", "#A23E2A", "#B04E0F",
-  "#2E8B8B", "#264653", "#D4AF37", "#8B8589", "#C9C9C9"
-)
-\end{inR}
-
-\vspace{1em}
-
-\noindent
-We can then us \R{egypt\_pal} to adjust the fill colour of the bars in the plot.
-
-\begin{inR}
-ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal)
-\end{inR}
-
-\vspace{2em}
-
-\begin{figure}[H]
-\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_2.pdf}
-\end{figure}
-
-\noindent
-\textit{ggplot2} quite sagely adds a legend when you map fill colours to a variable; however, in this particular case the legend is redundant with the information our \textit{x}-axis provides and is thus taking up space unnecessarily. To remove the legend, there are different methods that could be employed. Since we only have the fill aesthetic mapped, it is easy enough to just add \R{guide = "none"} to the \R{scale\_fill\_manual()} function.
-
-\begin{inR}
-...
-  scale_fill_manual(values = egypt_pal, guide = "none")
-\end{inR}
-
-\vspace{2em}
-
-\begin{figure}[H]
-\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_3.pdf}
-\end{figure}
-
-In addition to the mean estimated cranial capacity for each period, \R{skull\_summary} also includes the smallest and largest measured capacities, stored in the \R{\$min} and \R{\$max} columns, respectively. We can incorporate this information into our graph using \glspl{error bar}. Error bars provide a visual representation of the data's \textit{spread}, and the difference between the minimum and maximum values corresponds to a classic measure of spread known as the \textit{range}.\footnote{If this concept isn’t entirely clear yet, don’t worry—spread, as a formal statistical idea, will be explored in more detail in later chapters.} While the range is generally not recommended as a primary measure of spread, it has the advantage of being intuitive and serves our current illustrative purposes well enough.
-
-To create error bars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bars, using the argument \R{ymin}, and which column corresponds to the top of the error bars, using the argument \R{ymax}.
-
-\begin{inR}
-ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal, guide = "none") +
-  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25)
-\end{inR}
-
-\vspace{2em}
-
-\begin{figure}[H]
-\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_4.pdf}
-\end{figure}
-
-All that remains is to update the plot’s labelling. Specifically, we should provide clearer titles for the $x$- and $y$-axes and adjust the $x$-axis labels to promote better readability.
-
-To change the current labels ``c1590BC'', ``c2780BC'', ``c331BC'' and so on, we can use the \R{labels} argument inside the \R{scale\_x\_discrete()} function. We just have to give it a character vector containing the new labelling in the current order.
-
-\begin{inR}
-ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal, guide = "none") +
-  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
-  scale_x_discrete(
-    labels = c(
-      "c.1590 BC", "c.2780 BC", "c.331 BC", "c.3500 BC", "c.3700 BC",
-      "c.378 BC", "c.4000 BC", "c.4200 BC", "c.4800 BC", "Predynastic"
-    )
-  ) +
-  labs(
-    x = "Period",
-    y = "Cranial Capacity (cm³)"
-  )
-\end{inR}
-
-\vspace{2em}
-
-\begin{figure}[H]
-\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_5.pdf}
-\end{figure}
-
-Having now read Chapter 2 and this chapter, there is still one important plotting detail that remains unaddressed: how to control the order of categories. At the moment, the time periods appear in a non-chronological order (from left to right), which may not align with our expectations or or intentions. So how do we fix that? This is where the concept of \textit{factors} becomes essential.
+At the moment, going from left to right, the time periods confusingly appear in a non-chronological order. So how do we fix that? This is where the concept of \textit{factors} becomes essential.
 
 \section{Factors}
 
-In statistics, we often refer to a categorical variable as a \gls{factor}.\footnote{Variables are often called factors when they represent a fixed set of categories—such as groupings defined by experimental conditions—or when they are technically continuous but take on only a limited number of distinct values. If this seems unclear for now, don’t worry; we’ll explore variable types in more detail in a later chapter.} Factors consist of different \glspl{level}, which correspond to the unique categories that variable can take.
+In statistics, we often refer to a categorical variable as a \gls{factor}. Factors consist of different \glspl{level}, which correspond to the unique categories that variable can take.
 
 For example, in our tidy data, the variable \R{\$period} can be considered a factor. Each distinct time period in that column—such as \R{predynastic}, \R{c4800BC}, \R{c4200BC}, \R{c4000BC}, and so on—represents a different level of the factor. That is, the factor named \R{\$period} has multiple levels, one for each unique period label.
 
-To summarize: in tidy data, you can think of a ``factor'' as essentially a categorical variable (or column), and a ``level'' as one of its possible categories. Just beware that this terminology is specific to tidy data structures.
+To summarize: in tidy data, you can think of a ``factor'' as essentially a categorical variable (or column), and a ``level'' as one of its possible categories. Just beware that this terminology is specific to tidy data layouts.\footnote{While ``factors'' have a more technical definition in statistics—particularly in the context of experimental design and modelling—this simplified description is sufficient for our current purposes.}
 
 \clearpage
 
@@ -1145,7 +1048,6 @@ skulls
 # i Use `print(n = ...)` to see more rows
 \end{outR}
 
-
 \noindent
 Notice that the \R{\$period} column is now labelled as \R{<fct>}, which stands for ``factor.'' Additionally, if we isolate this column, the ten levels of the factor are displayed at the bottom of the output.
 
@@ -1170,7 +1072,7 @@ levels(skulls$period)
 
 \subsection{Ordering Levels}
 
-Discerning readers may have noticed that the order of the levels shown match the order of the bars in the graph we created. This is not a coincidence. Whenever you use \textit{ggplot2} to plot or \textit{dplyr} to summarize categorical data, these packages quietly convert the relevant columns into factors behind the scenes. By default, R arranges factor levels in alphabetical order, which is why the bars appeared in that particular sequence. However, we can override this default by explicitly specifying the order of the levels when we define the factor using the \R{factor()} function. This allows us to arrange categories in a more meaningful way—such as placing historical time periods in chronological order.
+Discerning readers may have noticed that the order of the levels shown match the order of the bars in the graph we created. This is not a coincidence. Whenever you use \textit{ggplot2} to plot or \textit{dplyr} to summarize categorical data, these packages quietly convert the relevant columns into factors behind the scenes when necessary. By default, R arranges factor levels in alphabetical order, which is why the bars appeared in that particular sequence. However, we can override this default by explicitly specifying the order of the levels when we define the factor using the \R{factor()} function. This allows us to arrange categories in a more meaningful way—such as placing historical time periods in chronological order.
 
 \begin{inR}
 skulls$period <- factor(skulls$period,
@@ -1226,13 +1128,14 @@ Moreover, when we now plot the data, the bars will also have shifted their posit
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(stat = "identity")
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
 \end{inR}
 
 \vspace{2em}
 
 \begin{figure}[H]
-\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_6.pdf}
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_2.pdf}
 \end{figure}
 
 \subsection{Naming Levels}
@@ -1262,25 +1165,144 @@ skull_summary
 10 c.331 BC    1319.   232  1449 0.275   0.275  1000  1570
 \end{outR}
 
-\clearpage
-
 \noindent
 A corresponding change will be seen on the plot's \textit{x}-axis labels as well when that is generated.
 
 \begin{inR}
 ggplot(skull_summary, aes(x = period, y = m)) +
-  geom_bar(
-    stat = "identity",
-    colour = "black",
-    aes(fill = period)
-  ) +
-  scale_fill_manual(values = egypt_pal, guide = "none") +
-  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
-  labs(
-    x = "Period",
-    y = "Cranial Capacity (cm³)"
-  )
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
 \end{inR}
+
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_3.pdf}
+\end{figure}
+
+It would be remiss not to mention that \textit{ggplot2} provides a dedicated method for updating $x$-axis labels—one that doesn’t require modifying the factor levels directly. Specifically, you can use the \R{labels} argument within the \R{scale\_x\_discrete()} function. This approach simply involves supplying a character vector that specifies the new labels in their current plotting order, like so…
+
+\begin{inRhigh}[highlightlines={4-8}]
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Period", y = "Cranial Capacity (cm³)") +
+  scale_x_discrete(
+    labels = c(
+      "Predynastic", "c.4800 BC", "c.4200 BC", "c.4000 BC", "c.3700 BC",
+      "c.3500 BC", "c.2780 BC", "c.1590 BC", "c.378 BC", "c.331 BC"
+      )
+  )
+\end{inRhigh}
+
+Concerning the manipulation of factors, a brief word of warning is in order: \textbf{do not} confuse the \R{levels} \textit{argument} used inside the \R{factor()} function with the \R{levels()} \textit{function} itself. While they sound similar, they serve very different purposes.\footnote{To further complicate things (because of course it does), the \R{factor()} function also includes a \R{labels} argument that allows you to rename levels at the time of creation. See the R documentation for details: \R{?factor}}
+
+\begin{itemize}
+    \item \R{levels = ...} (argument inside \R{factor()}) is used to \textit{specify the order} of factor levels.
+    \item \R{levels()} (function) is used to \textit{rename} existing factor levels.
+\end{itemize}
+
+For beginners, factors can feel particularly troublesome. But they are foundational to R's thaumaturgy and cannot be avoided. So rather than resisting, it is best to embrace their evil, arcane nature—otherwise you will never be at peace with yourself.
+
+\section{Adding Error Bars}
+
+Recall that in addition to the mean estimated cranial capacity for each period, \R{skull\_summary} also includes the smallest and largest measured capacities, stored in the \R{\$min} and \R{\$max} columns, respectively.
+
+\begin{inR}
+skull_summary
+\end{inR}
+
+\begin{outR}
+# A tibble: 10 × 8
+   period          m     n     N m_heq med_heq   min   max
+   <fct>       <dbl> <int> <int> <dbl>   <dbl> <dbl> <dbl>
+ 1 Predynastic 1320.   318  1449 0.275   0.273  1050  1710
+ 2 c.4800 BC   1349.   124  1449 0.281   0.283  1110  1640
+ 3 c.4200 BC   1434.    16  1449 0.299   0.306  1110  1740
+ 4 c.4000 BC   1495.    50  1449 0.311   0.311  1235  1775
+ 5 c.3700 BC   1356.     7  1449 0.283   0.284  1245  1450
+ 6 c.3500 BC   1337.   315  1449 0.278   0.277   965  1760
+ 7 c.2780 BC   1308.   152  1449 0.273   0.270  1030  1660
+ 8 c.1590 BC   1347.   203  1449 0.281   0.280  1080  1665
+ 9 c.378 BC    1286.    32  1449 0.268   0.266  1095  1550
+10 c.331 BC    1319.   232  1449 0.275   0.275  1000  1570
+\end{outR}
+
+\noindent
+We can incorporate this information into our graph using \glspl{error bar}. Error bars provide a visual representation of the data's \textit{spread}, and the difference between the maximum and minimum values corresponds to a classic measure of spread known as the \textit{range}.\footnote{If this concept isn’t entirely clear yet, don’t worry—spread, as a formal statistical idea, will be explored in more detail in later chapters.} While the range is generally not recommended as a primary measure of spread, it has the advantage of being intuitive and serves our current illustrative purposes well enough.
+
+To create error bars, we can simply use \textit{ggplot2's} \R{geom\_errorbar()} function. We just need to tell it which column corresponds to the bottom of the error bars, using the argument \R{ymin}, and which column corresponds to the top of the error bars, using the argument \R{ymax}.
+
+\begin{inRhigh}[highlightlines={3}]
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
+\end{inRhigh}
+
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_4.pdf}
+\end{figure}
+
+\section{Bar Fill Colour}
+
+To further enhance the bar plot's visual appeal, we could adjust the fill colour of the bars to reflect the corresponding time periods.
+
+But we should pause for a moment because, strictly speaking, this is something we should NOT do—unless we have a compelling reason. And in this case, we do not have a compelling reason. The purpose of a plot like this is to compare the heights of the bars—that is, the $y$-axis values. From a scientific standpoint, it’s best to ensure that each bar has equal visual weight, and using a single consistent colour accomplishes exactly that. Since the categories are already labelled on the $x$-axis, additional colours only serve as unnecessary distractions that might bias or obscure the comparisons you are trying to see. For instance, something like this would be scientifically acceptable:
+
+\begin{inRhigh}[highlightlines={2}]
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity", colour = "black", fill = "#CBA135") +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)")
+\end{inRhigh}
+
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_5.pdf}
+\end{figure}
+
+That said, if you’re collaborating on a project, your teammates may insist on rainbow-coloured bars or other such nonsense regardless of this sound logic. And if they outnumber you, they’ll win the vote—and possibly the fistfight. Science offers no defence against the tyranny of \mbox{``aesthetics.''}
+
+Setting aside everything we just said, if we do decide to adjust the colour of the bars, we need to be mindful of how the $x$-axis is structured. Technically, the $x$-axis represents a \textit{discrete} scale—not a \textit{continuous} one (see Section \ref{sec:pos_scale} for more on this distinction). However, while \textit{ggplot2} treats it as discrete (because it's a bar plot), the underlying variable—ordered time periods—does follow a natural continuum theoretically. So, in this case, using a continuous colour palette is not entirely unjustified. To that end, we can make use of one of R’s many HCL palettes discussed in Section \ref{sec:hcl_palettes}. The ``Green-Brown'' palette, in particular, is a solid choice—it provides a smooth gradation that maps well onto temporal data without being garish or overly distracting.\footnote{A visual guide to all HCL palettes is available in Appendix \ref{sec:AppendixPalettes}.}
+
+Given that we have 10 separate categories of dates, we can define our palette in the following way.\footnote{If you want to be a bit fancy—and make your code more robust—you can write something like \R{egypt\_pal <- hcl.colors(\textbf{length(levels(skulls\$period))}, palette = "Green-Brown")}. This way, if you ever remove levels, the number of colours will automatically adjust, and you won’t need to revise your code manually.}
+
+\begin{inR}
+egypt_pal <- hcl.colors(n = 10, palette = "Green-Brown")
+\end{inR}
+
+\clearpage
+
+\noindent
+We can then use \R{egypt\_pal} to adjust the fill colour of the bars in the plot.
+
+\begin{inRhigh}[highlightlines={2,5}]
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity", colour = "black", aes(fill = period)) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)") +
+  scale_fill_manual(values = egypt_pal)
+\end{inRhigh}
+
+\vspace{2em}
+
+\begin{figure}[H]
+\includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_6.pdf}
+\end{figure}
+
+\noindent
+\textit{ggplot2} quite sagely adds a legend when you map fill colours to a variable; however, in this particular case the legend is redundant with the information our \textit{x}-axis provides and is thus taking up space unnecessarily. To remove the legend, there are different methods that could be employed. Since we only have the fill aesthetic mapped, it is easy enough to just add \R{guide = "none"} to the \R{scale\_fill\_manual()} function.
+
+\begin{inRhigh}[highlightlines={5}]
+ggplot(skull_summary, aes(x = period, y = m)) +
+  geom_bar(stat = "identity", colour = "black", aes(fill = period)) +
+  geom_errorbar(aes(ymin = min, ymax = max), width = 0.25) +
+  labs(x = "Period", y = "Cranial Capacity (cm³)") +
+  scale_fill_manual(values = egypt_pal, guide = "none")
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1288,26 +1310,12 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_7.pdf}
 \end{figure}
 
-A brief word of warning is in order: \textbf{do not} confuse the \R{levels} \textit{argument} used inside the \R{factor()} function with the \R{levels()} \textit{function} itself. While they sound similar, they serve very different purposes.\footnote{To further complicate things (because of course it does), the \R{factor()} function also includes a \R{labels} argument that allows you to rename levels at the time of creation. See the R documentation for details: \R{?factor}}
-
-\begin{itemize}
-    \item \R{levels = ...} (argument inside \R{factor()}) is used to \textit{specify the order} of factor levels.
-    \item \R{levels()} (function) is used to \textit{rename} existing factor levels.
-\end{itemize}
-
-\noindent
-It is also worth noting that the \href{https://forcats.tidyverse.org/}{\textit{forcats}} package—automatically loaded with the \textit{tidyverse}—offers a variety of useful functions specifically designed for working with factors.
-
-For beginners, factors can feel particularly troublesome: they are cryptic, temperamental, and always popping up when least expected. But they are also foundational to R's thaumaturgy and cannot be avoided. So rather than resisting, it is best to embrace their evil, arcane \mbox{nature}—only then will you be at peace.
-
-\clearpage
-
 \section{Putting It All Together}
 
-To consolidate everything covered in this chapter, it's helpful to revisit the analysis one final time—but in a more realistic, streamlined, end-to-end format. Doing so not only reinforces how the various components work together in a complete R script, but also provides an opportunity to enhance the graph by incorporating some faceting based on the previously ignored variable \R{\$sex}.\footnote{Facets were covered in Chapter 2, section \ref{sec:facets}.}
+To consolidate everything covered in this chapter, it's helpful to revisit the analysis one final time—but in a more realistic, streamlined, end-to-end format. Doing so not only reinforces how the various components work together in a complete R script, but also provides an opportunity to enhance the graph by incorporating some faceting\footnote{Facets were covered in Chapter 2, section \ref{sec:facets}.} based on the previously ignored variable \R{\$sex}.
 
 \begin{inR}
-# Load the tidyverse
+# Load the tidyverse (and praise the our dear leader Hadley)
 library(tidyverse)
 \end{inR}
 
@@ -1342,10 +1350,10 @@ levels(skulls$period) <- c(
 )
 \end{inR}
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={3}]
 # Calculate stats for plot, grouping by 'period' and 'sex'
 skull_summary <- skulls |>
-  group_by(period, sex) |> # Note the addition of a second factor to group_by
+  group_by(period, sex) |> # Note the addition of a second factor to group_by()
   summarise(
     m = mean(capacity),
     min = min(capacity),
@@ -1353,7 +1361,7 @@ skull_summary <- skulls |>
   )
 
 skull_summary # Output shows group-wise means and ranges, separated by sex
-\end{inR}
+\end{inRhigh}
 
 \begin{outR}
 # A tibble: 18 × 5
@@ -1382,13 +1390,12 @@ skull_summary # Output shows group-wise means and ranges, separated by sex
 
 \begin{inR}
 # Store desired colours
-egypt_pal <- c(
-  "#7E6A58", "#C2B280", "#6A8347", "#A23E2A", "#B04E0F",
-  "#2E8B8B", "#264653", "#D4AF37", "#8B8589", "#C9C9C9"
-)
+egypt_pal <- hcl.colors(n = 10, palette = "Green-Brown")
 \end{inR}
 
-\begin{inR}
+\clearpage
+
+\begin{inRhigh}[highlightlines={14}]
 # Plot data
 ggplot(skull_summary, aes(x = period, y = m)) +
   geom_bar(
@@ -1403,7 +1410,7 @@ ggplot(skull_summary, aes(x = period, y = m)) +
     y = "Cranial Capacity (cm³)"
   ) +
   facet_wrap(~ sex, ncol = 1) # Note the use of facet_wrap
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -1411,11 +1418,13 @@ ggplot(skull_summary, aes(x = period, y = m)) +
 \includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_8.pdf}
 \end{figure}
 
+\clearpage
+
 Finally, it is worth demonstrating just how easily—and dramatically—we can adjust \textit{ggplot2} to suit different analytical goals. As it currently stands, the plot is structured to compare cranial capacity across time periods within each sex. However, with just two minor changes (see line 2 and 14), we can reorient the layout to instead compare the sexes within each time period. Specifically, we place \R{\$sex} on the $x$-axis and facet according to \R{\$period}.
 
 %\footnote{While the data shows that males tend to have slightly larger crania on average, it's worth noting that the sperm whale (\textit{Physeter macrocephalus}) possesses a brain over five times the size of a human’s—and yet it spends much of its time ramming giant squid in total darkness and clicking at 230 decibels. Don't over-interpret this finding. Male skulls may be bigger on average—but before anyone gets too proud, remember: it's what you do with your brain that counts.}
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={14}]
 # Plot data
 ggplot(skull_summary, aes(x = sex, y = m)) +
   geom_bar(
@@ -1430,10 +1439,64 @@ ggplot(skull_summary, aes(x = sex, y = m)) +
     y = "Cranial Capacity (cm³)"
   ) +
   facet_wrap(~ period, ncol = 5)
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
 \begin{figure}[H]
 \includegraphics[width = 0.95\textwidth]{graphics/ch3Figs/bar_9.pdf}
 \end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
