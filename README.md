@@ -1,7 +1,9 @@
 # The Statistical Grimoire:
 ## Statistics for the Natural Sciences Using R
 
-**The Statistical Grimoire** is a freely available resource that is still being updated with statistics and data analysis techniques using the R programming language.
+*The Statistical Grimoire* is a freely available resource that is actively being updated with statistical and data analysis techniques using the R programming language.
+
+You can access the book via its official website or by downloading the latest PDF release directly from the main branch (e.g., `Stat_Grimoire_vx_x_x.pdf`).
 
 ## About
 This book was created to give students a solid, practical, and free introduction to R programming, especially if they have not done any coding before. Over time, it is meant to become a more complete guide for those ready to explore statistical programming.
