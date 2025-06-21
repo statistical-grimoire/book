@@ -65,7 +65,7 @@ This seems straightforward enough. The average happiness level across these two 
 \end{equation}
 
 \noindent
-However, we have no compelling reason to assume that a mathematical equality such as $(3 + 5) = (2 + 6)$ should hold in this context (see \ref{eq:sens_3}), because these numbers reflect \textit{subjective} judgments—not objective quantities grounded in a standardized unit of measurement. Is it mathematically true that both $(3 + 5) = 8$ and $(2 + 6) = 8$? Yes, arithmetically. But in the realm of subjective ratings, such an equality only holds if participants are interpreting the scale in a comparable way. While that is possible, it is far from guaranteed, given the vast differences in individual physiology and lived experience.
+However, we have no compelling reason to assume that a mathematical equality such as $(3 + 5) = (2 + 6)$ should hold in this context (see \ref{eq:sens_3}), because these numbers reflect \textit{subjective} judgments—not objective quantities grounded in a standardized unit of measurement. Is it mathematically true that both $(3 + 5) = 8$ and $(2 + 6) = 8$? Yes, arithmetically. But in the realm of subjective ratings, such an equality only holds if participants are interpreting the scale in a comparable way. While that is possible, it is far from guaranteed given the vast differences in individual physiology and lived experience people have.
 
 \begin{equation}
 (3 + 5) \stackrel{?}{=} (2 + 6) \stackrel{?}{=} 8
@@ -83,12 +83,83 @@ The most influential attempt to resolve the problem of measurement came from \te
 
 \subsection{Nominal Scales}
 
-One of the most basic properties of numbers is that they are distinct from every other number: for example, $1 \neq 2$, $2 \neq 3$, $3 \neq \sqrt{3}$, and so on. Likewise, identical numbers are treated as equivalent: $1 = 1$, $2 = 2$, $\sqrt{3} = \sqrt{3}$, etc. Nominal scales preserve this property of distinctness and equivalence that numbers have. They allow us to determine whether two values refer to the same category or not, but they do not carry any information about order, magnitude, or arithmetic relationships. For example, if we define a variable for handedness—assigning 0 for ambidextrous, 1 for left-handed, and 2 for right-handed—we are simply labelling three distinct categories. The numbers here are symbolic: $2$ does not imply that right-handedness is ``greater'' than left-handedness, only that $1 \neq 2 \neq 0$.
+One of the most basic properties of numbers is that they are distinct from every other number: for example, $1 \neq 2$, $2 \neq 3$, $3 \neq \sqrt{3}$, and so on. Likewise, identical numbers are treated as equivalent: $1 = 1$, $2 = 2$, $\sqrt{3} = \sqrt{3}$, etc. Nominal scales preserve this property of distinctness and equivalence that numbers have. In other words, they allow us to determine whether two values refer to the same category or not, but they do \textit{not} carry any information about order, magnitude, or arithmetic relationships. For example, if we define a variable for handedness—assigning 0 for ambidextrous, 1 for left-handed, and 2 for right-handed—we are simply labelling three distinct categories. The numbers here are symbolic: $2$ does not imply that right-handedness is ``greater'' than left-handedness, only that $1 \neq 2 \neq 0$.
 
-Mathematics aside, nominal measurement scales are fundamentally about categorizing observations into mutually exclusive\footnote{``Mutually exclusive'' means that each observation can belong to only one category. You cannot, for instance, be both right-handed and ambidextrous.} unordered groups. The numbers are just convenient labels. Common examples include binary responses like yes or no, taste qualities such as sweet, sour, salty, bitter, and savoury, or biological traits like feeding strategy (e.g., herbivore, carnivore, omnivore, detritivore), disease presence (e.g., infected vs. not infected), or treatment group (e.g., placebo, drug A, drug B). What matters is not the number itself, but the category it stands in for.
+Mathematics aside, nominal measurement scales are fundamentally about categorizing observations into mutually exclusive\footnote{\textit{Mutually exclusive} means that each observation can belong to only one category. You cannot, for instance, be both right-handed and ambidextrous.} unordered groups. The numbers are just convenient labels. Common examples include binary responses like yes or no, taste qualities such as sweet, sour, salty, bitter, and savoury, or biological traits like feeding strategy (e.g., herbivore, carnivore, omnivore, detritivore), disease presence (e.g., infected vs. not infected), or treatment group (e.g., placebo, drug A, drug B). What matters is not the number itself, but the category it stands in for. 
+
+At the risk of undermining what was just said, in many cases, researchers do not actually bother coding nominal categories as numbers at all. For example, Table \ref{tab:skulls_full} stores the nominal variables (dynasty, location, sex) as plain text. Modern computers handle character strings efficiently, and it is often easier to interpret variable levels when they are stored in a human-readable format. Of course, exceptions exist—especially in contexts like regression analysis, where categorical variables must be converted into numerical representations to be included in the model.
 
 \subsection{Ordinal Scales}
 
+Ordinal scales share the properties of distinctness and equivalence found in nominal scales, but they also introduce the crucial property of order. That is, the numbers can be arranged meaningfully along a ranked continuum: 1 is greater than 0, 2 is greater than 1, 3 is less than 4, and so on. In other words, ordinal scales impose a logical sequence—such as $0 < 1 < 2 < 3 < 4$—on the categories they represent. When coding variables that have an inherent order, the numerical values used should reflect that ordering.
+
+A classic example is letter grades. A grade of $A$ reflects a higher level of academic performance than a $B$, which in turn reflects higher performance than a $C$, and so forth. These categories are often translated into grade point values—e.g., $A = 4.0$, $B = 3.0$, $C = 2.0$—which makes the ranking explicit: $4.0 > 3.0 > 2.0$. However, this is where the usefulness of the numbers stops. We cannot meaningfully say that an $A$ is ``twice as good'' as a $C$, or that the difference between a $B$ and a $C$ is the same as the difference between an $A$ and a $B$. This is because the criteria for assigning these grades differ across courses, disciplines, and institutions. The numeric labels indicate order, but not magnitude or difference.
+
+Other examples of ordinal scales include developmental stages in biology (e.g., larva $\rightarrow$ pupa $\rightarrow$ adult), where the stages follow a clear order but the differences between them are not necessarily equal in duration or complexity. In chemistry and safety contexts, hazard levels (e.g., flammable $\rightarrow$ highly flammable $\rightarrow$ extremely flammable) represent increasing danger, but again without uniform steps. In astronomy, seeing conditions are rated subjectively as ``poor,'' ``fair,'' ``good,'' and so on—ordered categories that describe atmospheric clarity without precise measurement. Similarly, the Fujita Scale for tornadoes ranks storm intensity from F0 to F5 based on observed damage, providing an ordered but not evenly spaced classification.
+
+% ADD IN OTHER EXAMPLES
+
+\subsection{Interval Scales}
+
+The interval scale is the first scale in which measurements are meaningfully numerical, supporting standard mathematical operations with minimal risk of misapplication. Like ordinal scales, interval scales preserve both distinctness (different numbers represent different things) and order (larger numbers represent greater amounts). But interval scales go a step further by allowing meaningful statements about the differences between values—because the units along the scale are empirically equal.
+
+Take, for example, the span of time between certain historical events. The difference between the years 1347 and 1014 is the same as the difference between 1666 and 1333: in both cases, exactly 333 years separate the two points. These differences are equivalent because a year is a standardized, empirically defined unit—it corresponds to the time it takes the Earth to complete one full orbit around the Sun, or more precisely, the time between two vernal equinoxes (when the Sun crosses the equator heading north and a blood sacrifice is demanded). Crucially, this unit does not change depending on when it is measured. A year is a year, whether you’re counting from the fall of Rome or the end of the world.\footnote{A small caveat: we are treating the empirical unit of a year as if it were perfectly constant, when in fact it fluctuates by fractions of a second due to gravitational interactions, axial wobble, and orbital quirks. These variations are imperceptible to humans and rarely matter in practice—but over time, the errors accumulate. This is, of course, the reason leap years exist: to reconcile our tidy calendar with the untidy behaviour of the cosmos.}
+
+Often, when we measure something to be a value of zero, we are not just assigning a number—we are declaring the absence of the thing itself. For instance, a height of 0 metres implies no person. A scale reading 0 kg suggests nothing is being weighed. However, interval scales eschew this. On interval scales a value of zero does not represent the absence of the thing being measured. For example, if we measure time in years, the year 0 does not indicate the absence of time—it is simply a reference point.\footnote{Casually referring to year 0 is a bit of a historical no-no. In the calendar used by most historians (the Gregorian calendar), there is no year 0—time jumps straight from 1 BCE to 1 CE with no pause for breath. The concept of zero didn’t exist in Roman numerals, so early timekeepers just skipped it. Astronomers, being a more mathematically inclined bunch, use a system that does include a year 0—because trying to do calculations across 1 BCE/1 CE without one is annoying.} Consider temperature as another case. On the Celsius scale, 0 degrees is defined as the freezing point of water, but this does not indicate the absence of temperature. The molecules in the water are still moving—still vibrating and colliding—meaning there is still kinetic energy present. In short, zero on an interval scale is arbitrary, not absolute.\footnote{This is why the concept of absolute zero exists, it is the theoretical point at which all molecular motion stops: $−273.15^\circ C$}
+
+This fact about zeros and interval scales has big implications for the kind of mathematics we can conduct. Interval scales allow us to talk meaningfully about the \textit{difference} between measurements. However, they do not allow us to make meaningful statements about the \textit{ratio} of two measurements. For example, we cannot say that $10^\circ$C is twice as warm as $5^\circ$C (see Equation \ref{eq:temp_ratio_1}).
+
+\begin{equation}
+\frac{10^\circ \text{C}}{5^\circ \text{C}} \neq 2
+\label{eq:temp_ratio_1}
+\end{equation}
+
+\noindent
+This is one of the core issues with having an arbitrary, rather than absolute, zero. A ratio such as Equation \ref{eq:temp_ratio_2}—
+
+\begin{equation}
+\frac{10}{5} = 2
+\label{eq:temp_ratio_2}
+\end{equation}
+
+—implies that 10 contains two full units of whatever quantity is represented by 5. But that logic only works when zero represents the complete absence of the thing being measured.
+
+Interestingly, while interval scales do not support ratios of values, they do support ratios of \textit{differences}. For example, if the temperature on Monday was $10^\circ$C and the temperature on Tuesday was also $10^\circ$C, the difference is 0°C—an absolute value indicating no change in temperature (i.e., $10^\circ$C − $10^\circ$C = $0^\circ$C). In this context, zero \textit{does} mean ``none of the thing''—it reflects a complete absence of temperature change. In other words, talking in terms of differences gives us an absolute zero that we can utilize in the context of ratios. 
+
+For instance, it is perfectly valid to say that the temperature change between $10^\circ$C and $0^\circ$C is twice as large as the change between $5^\circ$C and $0^\circ$C:
+
+\begin{equation}
+\frac{10^\circ \text{C} - 0^\circ \text{C}}{5^\circ \text{C} - 0^\circ \text{C}} = 2
+\label{eq:temp_ratio_3}
+\end{equation}
+
+Now admittedly, if you look at how Equation \ref{eq:temp_ratio_3} arrives at a value of 2, you might be confused—because it appears to be doing exactly what Equation \ref{eq:temp_ratio_1} said was not permissible. Step by step, the calculation proceeds as follows:
+
+\begin{equation}
+\frac{10^\circ \text{C} - 0^\circ \text{C}}{5^\circ \text{C} - 0^\circ \text{C}} = \mathbf{\frac{10^\circ \textbf{C}}{5^\circ \textbf{C}}} = \frac{10\cancel{^\circ \text{C}}}{5\cancel{^\circ \text{C}}} = 2
+\label{eq:temp_ratio_4}
+\end{equation}
+
+The second step (in bold text) looks identical to Equation \ref{eq:temp_ratio_1}. But it is not the same. In Equation \ref{eq:temp_ratio_1}, the numerator and denominator represent absolute temperatures—values on an arbitrary scale where zero does not represent an absence of temperature. In contrast, in Equation \ref{eq:temp_ratio_4}, both the numerator and denominator represent temperature differences, and differences on an interval scale are meaningful because they reflect quantities with consistent units.
+
+Unfortunately, this is a distinction that the math alone can obscure. The symbolic operations may look identical, but the interpretation depends entirely on what the numbers represent.
+
+
+\begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 4.1: The GPA Illusion]
+\IMFellEnglish
+
+Let’s take a moment to talk about something sacred: the Grade Point Average (GPA). That little number—$3.2$, $3.9$, or (gulp) $2.3$—wields tremendous power. It determines scholarships, grad school admissions, and sometimes whether your parents buy you dinner. But there’s a secret no one likes to talk about: GPA is a mathematical illusion. It’s the \textit{mean} average of grade point values ($A = 4.0$, $B = 3.0$, $C = 2.0$, etc.), which themselves are just numbers slapped onto ordinal categories. We know that an $A$ is better than a $B$, and a $B$ is better than a $C$—but is the \enquote{distance} between them truly equal? Does moving from a $B$ to an $A$ represent the same leap in achievement as going from a $D$ to a $C$?
+
+If you’re thinking \enquote{probably not,} you’d be right. Taking the mean of ordinal data is technically a no-no because the math assumes equal spacing between the numbers—something ordinal scales don’t guarantee. It's like claiming the difference between silver and gold medals is the same as between bronze and a participation ribbon. If we were being HONEST AND FAIR, we’d use the \textit{median} average instead: it respects rank without pretending the scale is evenly spaced. But honesty doesn’t feed the machine. The \textit{median} flattens distinctions. It produces ties. It refuses to give the illusion of precision that bureaucracies crave. The \textit{mean}, in contrast, offers lovely decimals—$3.47$ vs. $3.52$—that suggest meaningful differences where none may exist. It is ideal for sorting, and thus ideal for systems that would prefer not to think too hard.
+
+Your instructors probably know better. Most of them, anyway. But the people making the rules—the ones who decide how grades are processed—tend to prioritize convenience over correctness.\footnote{I am going to get in so much trouble for writing all this.} Why else would an entire institution choose a method so statistically indefensible? Their unofficial motto might as well be: \textit{Numerus est veritas, etiam si mendacium}—\enquote{The number is truth, even if it’s a lie.}
+
+\end{mdframed}
+
+
+% Note: you can perform any mathematical operation you'd like as long as it does not break the rules of the particular scale.
+
+% Continuous vs discrete and %qualitative vs quantitative.
 
 
 % Note: some scales can operate on more than one level.  E.g. 
