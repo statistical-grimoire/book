@@ -2,7 +2,7 @@
 \chapter{Taxonomies of the Profane – Variables, Scales, and Their Unholy Properties}
 
 \IMFellEnglish
-\lettrine[lines=5, realheight]{T}{here} is a kind of grim devilry in the act of classification. The moment you categorize a thing—whether it be a small volume of blood, the reaction time of a startle, or the flickering presence of a belief—you strip it from the chaos of the unknown and chain it down, trembling, to a scale. Statisticians call them variables, but do not be fooled: these are not gentle creatures. They are twisted reflections of reality that must be bound in measurement and tortured into order. Nominal. Ordinal. Interval. Ratio. These are the sigils we etch into our grimoires of data, each one whispering what kind of rituals—summations, correlations, regressions—we may dare perform. But beware: misuse the wrong scale, or confuse the nature of your variable, and the results may turn on you, distorted and cursed. This chapter delves into the infernal art of measurement, uncovering the hidden laws that govern how data can be named, ranked, counted, or quantified. Prepare yourself—for to wield statistics is to practice a kind of taxonomy, yes  ... but one written in the ink of madness, precision, and cruelty.
+\lettrine[lines=5, realheight]{T}{HERE} is a kind of grim devilry in the act of classification. The moment you categorize a thing—whether it be a small volume of blood, the reaction time of a startle, or the flickering presence of a belief—you strip it from the chaos of the unknown and chain it down, trembling, to a scale. Statisticians call them variables, but do not be fooled: these are not gentle creatures. They are twisted reflections of reality that must be bound in measurement and tortured into order. Nominal. Ordinal. Interval. Ratio. These are the sigils we etch into our grimoires of data, each one whispering what kind of rituals—summations, correlations, regressions—we may dare perform. But beware: misuse the wrong scale, or confuse the nature of your variable, and the results may turn on you, distorted and cursed. This chapter delves into the infernal art of measurement, uncovering the hidden laws that govern how data can be named, ranked, counted, or quantified. Prepare yourself—for to wield statistics is to practice a kind of taxonomy, yes  ... but one written in the ink of madness, precision, and cruelty.
 
 \normalfont
 
@@ -23,7 +23,7 @@ Listing the complete set of values each time we want to reference the data would
 
 \section{Descriptive and Inferential Analyses}
 
-The analysis of data is typically driven by two main objectives. The first is descriptive: to summarize the data in ways that are intuitive and meaningful. Perhaps unsurprisingly, this is commonly referred to as a \gls{descriptive analysis}. The second objective is inferential: to use those summaries to make conclusions that reach beyond the data at hand. These conclusions are generally assumed to have some form of practical relevance\footnote{While practical relevance should be a requirement for any inferential analysis, many such analyses are performed more out of tradition than genuine purpose. This isn't cynicism—just the voice of experience, tinged with a bit of jadedness.}—for example, by helping to answer a key research question. This process is known as \gls{inferential analysis}, and it always builds upon descriptive analysis as a necessary foundation.
+The analysis of data is typically driven by two main objectives. The first is descriptive: to summarize the data in ways that are intuitive and meaningful. Perhaps unsurprisingly, this is commonly referred to as a \gls{descriptive analysis}. The second objective is inferential: to use those summaries to make conclusions that reach beyond the data at hand. These conclusions are generally assumed to have some form of practical relevance\footnote{While practical relevance should be a requirement for any inferential analysis, many such analyses are performed more out of tradition than genuine purpose. This isn't cynicism—just the voice of experience, tinged with a bit of jadedness.}—for example, perhaps they help to answer a key research question. This process is known as \gls{inferential analysis}, and it always builds upon descriptive analysis as a necessary foundation.
 
 In many respects a \textit{descriptive analysis} should be a purely empirical endeavour. To the best of the analyst’s ability, it seeks to answer a simple question: what can be said with certainty about this data? This often involves computing summary statistics that characterize the dataset as a whole. For example, calculating familiar measures such as the mode, median, and mean, or visualizing the distribution using graphs like histograms, are all methods that tell us something about which values are most commonly observed in the data set and how the values as a whole are distributed.
 
@@ -33,24 +33,23 @@ In many respects a \textit{descriptive analysis} should be a purely empirical en
 
 The word data has appeared frequently throughout this book, often without much reflection as to what it actually means. Given that data is the central subject of both \textit{descriptive} and \textit{inferential} analysis, it is perhaps worth taking a moment to clarify. At its core, \gls{data} refers to a collection of observations about \textit{something}. The singular form, \gls{datum}, refers to just one of those observations. The ``something'' in question is usually the phenomenon the researcher is investigating—this could be the number of cells in a slice of brain tissue, the rate of deaths per capita, how quickly participants learn a behavioural response; or any number of other things that can be measured or classified in some way. 
 
-Before going further, it’s worth drawing a distinction between what we will refer to as \textit{statistical data}—the kind typically used in research and analysis (e.g., see Table \ref{tab:msleep} and Table \ref{tab:skulls_full})—and the kind of data used to train machine learning models (e.g., pictures of cats, playlists of Eurodance hits, or whatever else the algorithm gods demand). In the latter case, what is being fed to the model is perhaps more akin to collections of stimuli than it is data in the traditional statistical sense of the term. That said, in machine learning contexts, the terms \textit{data} and \textit{stimuli} are often used interchangeably. When this book refers to ``data'', you can assume it means \textit{statistical data}.\footnote{Yes, I’m aware I haven’t defined ``statistic'' yet. But some knowledge comes at a price—and you haven’t bled nearly enough.}
+Before going further, it’s worth drawing a distinction between what we will refer to as \textit{statistical data}—the kind typically used in research and analysis (e.g., see Table \ref{tab:msleep} and Table \ref{tab:skulls_full})—and the kind of data used to train machine learning models (e.g., pictures of cats, playlists of Eurodance hits, or whatever else the algorithm gods demand). In the latter case, what is being fed to the model is perhaps more akin to collections of stimuli than it is data in the traditional statistical sense of the term. That said, in machine learning contexts, the terms \textit{data} and \textit{stimuli} are often used interchangeably. When this book refers to ``data'', you can assume it means \textit{statistical data}.\footnote{Yes, I’m aware I haven’t defined the term ``statistic'' yet. But some knowledge comes at a price—and you haven’t bled nearly enough.}
 
-\section{A Taxonomy of Data}
+\section{Variables}
 
-\subsection{Variables}
+Examining Table \ref{tab:skulls_full}, we can see that each row corresponds to a single skull examined by \textcite{Thomson1905}. Each column captures a different type of information recorded for that skull. Some columns contain categorical details—such as the ruling dynasty at the time of burial, the archaeological site where the skull was found, or the presumed sex of the individual—while others include numeric measurements, like the glabello-occipital length (gol), ophryo-occipital length (ool), and basi-bregmatic height (bbh), just to name a few.\footnote{View the data file's \href{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/README.md}{README} document for the complete listing.}
 
-Examining Table \ref{tab:skulls_full}, we can see that each row corresponds to a single skull examined by \textcite{Thomson1905}. Each column captures a different type of information recorded for that skull. Some columns contain categorical details—such as the ruling dynasty at the time of burial, the archaeological site where the skull was found, or the presumed sex of the individual—while others include numeric measurements, like the glabello-occipital length (gol), ophryo-occipital length (ool), and basi-bregmatic height (bbh), just to name a few.
+Each column in a dataset represents what we call a \gls{variable}—a single characteristic or property that can differ (i.e., \textit{vary}) across the observations. It is worth noting that this use of the term ``variable'' is slightly different from how it is often used in something like algebra, which is probably the most familiar context in which the term appears. In algebra, a variable is a symbol that stands for an unknown value or set of values (hence the classic phrase ``solve for $x$'', with $x$ being the variable). Still, the two meanings have an underlying connection because, in both cases, we are referring to something—be it a symbol, label, or phrase—that can represent different values. For example, in Table \ref{tab:skulls_full} \textit{sex} is a variable that (from \citeauthor{Thomson1905}'s perspective) has two possible values: ``male'' and ``female.''  Cranial capacity (\textit{cc}) is also a variable, but it is a variable which can take on a theoretically infinite amount of possibilities that extend anywhere from 0 to infinity in the positive direction.\footnote{This is not to suggest that Godzilla-sized skulls are in any way feasible. An asymptote lurks somewhere along the continuum — and long before we reach kaiju level proportions, the laws of physics (and the poor creature’s neck) would surely intervene.}
 
-Each column in a dataset represents what we call a \gls{variable}—a characteristic or property that can differ (i.e., \textit{vary}) across the observations. It is worth noting that this use of the term ``variable'' is slightly different from how it is used in something like algebra, which is probably the most familiar context in which the term appears. In algebra, a variable is a symbol that stands for an unknown value or set of values (hence the classic phrase ``solve for $x$'', with $x$ being the variable). Still, the two meanings have an underlying connection because, in both cases, we are referring to something—be it a symbol, label, or phrase—that can represent different values. For example, in Table \ref{tab:skulls_full} \textit{sex} is a variable that (from \citeauthor{Thomson1905}'s perspective) has two possible values: ``male'' and ``female.''  Cranial capacity (\textit{cc}) is also a variable, but it is a variable which can take on a theoretically infinite amount of possibilities that extend anywhere from 0 to infinity in the positive direction.\footnote{This is not to suggest that Godzilla-sized skulls are in any way feasible. An asymptote lurks somewhere along the continuum — and long before we reach kaiju level proportions, the laws of physics (and the poor creature’s neck) would surely intervene.}
+The way you conduct a descriptive or inferential analysis hinges on the nature of your variables. For instance, it makes little sense to compute the mean of categorical traits such as eye colour, biological sex, or whether a plant is alive or dead. While this may seem self-evident, these types of variables are often represented numerically in data files. For example, ``Alive'' might be coded as 1 and ``Dead'' might be coded as 0, giving the illusion that arithmetic operations are appropriate. But calculating a mean assumes the data have specific numerical properties: namely, that the values lie on a scale where addition and division are meaningful. When these conditions are not met, the result is not just meaningless—it is misleading. For example, if you have 20 plants that are alive and 30 that are dead, calculating the mean would yield an ``aliveness'' score of 0.4. But what does that actually tell you? That the average plant is 40\% alive? As we will see, the mean is intended to reflect the value most typical of the data. But what exactly is ``typical'' about 0.4 when, under our coding scheme, the only valid values are 0 (dead) and 1 (alive)? No plant in the dataset is 40\% alive. The absurdity of this result lays bare the danger of treating categorical variables as if they were genuinely numerical. Just because something is \textit{represented} by a number does not mean it \textit{is} a number.
 
-\subsection{Scales of Measurement}
+This issue strikes at the very core of what it means to measure something. Once a research question is identified, what needs to be measured often feels self-evident—duration, height, topography, severity, intensity, hardness, rate, and so on. But how to measure it is an entirely different matter. Suppose we want to assess the height of 100 people. One approach is straightforward: use a tape measure and record each individual’s height in metres. Alternatively, we could assign rankings—giving the tallest person a score of 100 and the shortest a score 1. A third option would be to sort them into broad categories: short, medium, and tall. Or we might simply ask them, via questionnaire, ``How tall are you in metres?'' While one of these methods clearly rises above the others in terms of scientific precision, each method produces its own kind of height ``measurement''.\footnote{To show how flexible measurement can be, in Canada, distance is commonly measured in units of time. For example: ``Eh bud, d'ya know how far Timmies is?'' `Oh, bout five minutes. Just make a larry, it's kitty-corner from the rink.' ``Thanks eh.''} And therein lies the deeper problem: not every measurement is created equal.
 
-The way you approach a descriptive or inferential analysis depends critically on the nature of your variables. For example, it makes little sense to try to compute the mean of categorical traits like eye colour, biological sex, or whether a plant specimen is alive or dead. Calculating a mean assumes the data possess certain numerical properties—specifically, that the values lie on a scale where arithmetic operations like addition and division are valid. When those conditions are not met, the result is not just meaningless—it is misleading.
+\section{Measurement and The Problem of Measurability}
 
-Since the late 1940s, most areas of science have traditionally classified data into four types, known as \textit{scales of measurement}. This framework arose in response to a philosophical dilemma that emerged as the field of Psychology in particular sought to establish itself as a valid scientific discipline. Specifically, the problem revolved around a deceptively simple question: \textit{Is it possible to measure human sensation?} \parencite[p. 677]{Stevens1946}.
+Prior to the late 1940s, scientific measurement was primarily understood as the assignment of numbers to real-world magnitudes—quantities that were assumed to exist independently of the observer. The central idea being that mathematical relationships could meaningfully represent relationships among physical objects or phenomena. However, a philosophical dilemma began to take shape as the field of Psychology sought to align itself with the standards of the natural sciences. There was heated debate about whether mathematical relations could validly capture the complexities of the human mind. At the heart of this controversy was a deceptively simple question: Is it possible to measure human sensation? \parencite[p. 677]{Stevens1946}.
 
-To see why this question matters, consider a basic example. Suppose you ask participants in a study to rate their happiness on a 11-point scale, where 0 represents the absence of any happiness and 10 represents the happiest they could
-conceivably be. For simplicity, imagine you only have two participants—one selects a 3, the other a 5. A common research practice is to compute the mean average, which in this case would be 4 (see equation \ref{eq:sens_1}). 
+To get a sense of the problem being grappled with, suppose you ask participants in a study to rate their happiness on a 11-point scale, where 0 represents the absence of any happiness and 10 represents the happiest they could conceivably be. For simplicity, imagine you only have two participants—one selects a 3, the other a 5. A common research practice is to compute the scores mean, which in this case would be 4 (see equation \ref{eq:sens_1}). 
 
 \begin{equation}
 \frac{3 + 5}{2} = \frac{8}{2} = 4
@@ -58,7 +57,7 @@ conceivably be. For simplicity, imagine you only have two participants—one sel
 \end{equation}
 
 \noindent
-This seems straightforward enough. The average happiness level across these two people is 4. However, there is a potential problem lurking here: the ``psychological distance'' between the numbers on the scale may not be consistent across individuals. What one person considers a 5, another might interpret as a 4, or as a 6, or as a 7, or as a 8.4, or 2.66, or some other value. That becomes an issue when we calculate a mean because the process of adding the values in the numerator assumes these values have a meaning independent of the person. For instance, if instead the participants had reported 2 and 6 we would similarly arrive at 8 in the numerator (see equation \ref{eq:sens_2}).
+This seems straightforward enough. The average happiness level across these two people is 4. However, there is a potential problem lurking here: the ``psychological distance'' between the numbers on the scale may not be consistent across individuals. What one person considers a 5, another might interpret as a 4, or as a 6, or as a 7, or as a 8.4, or a 2.66, or some other value. That becomes an issue when we calculate a mean because the process of adding the values in the numerator assumes these values have a meaning independent of the person. For instance, if instead the participants had reported 2 and 6 we would similarly arrive at 8 in the numerator (see equation \ref{eq:sens_2}).
 
 \begin{equation}
 \frac{2 + 6}{2} = \frac{8}{2} = 4
@@ -66,7 +65,7 @@ This seems straightforward enough. The average happiness level across these two 
 \end{equation}
 
 \noindent
-However, we have no compelling reason to assume that a mathematical equality such as $(3 + 5) = (2 + 6)$ should hold in this context (see \ref{eq:sens_3}), because these numbers reflect \textit{subjective} judgments—not objective quantities grounded in a standardized unit of measurement. Is it mathematically true that both $(3 + 5) = 8$ and $(2 + 6) = 8$? Yes, arithmetically. But in the realm of subjective ratings, such an equality only holds if participants are interpreting the scale in a comparable way. While that is possible, it is far from guaranteed, given the vast differences in individual physiology, psychological states, and lived experience.
+However, we have no compelling reason to assume that a mathematical equality such as $(3 + 5) = (2 + 6)$ should hold in this context (see \ref{eq:sens_3}), because these numbers reflect \textit{subjective} judgments—not objective quantities grounded in a standardized unit of measurement. Is it mathematically true that both $(3 + 5) = 8$ and $(2 + 6) = 8$? Yes, arithmetically. But in the realm of subjective ratings, such an equality only holds if participants are interpreting the scale in a comparable way. While that is possible, it is far from guaranteed, given the vast differences in individual physiology and lived experience.
 
 \begin{equation}
 (3 + 5) \stackrel{?}{=} (2 + 6) \stackrel{?}{=} 8
@@ -76,11 +75,46 @@ However, we have no compelling reason to assume that a mathematical equality suc
 \noindent
 And the problems do not end there. More fundamentally, there is no objective means of verifying the accuracy—or even the honesty—of any subjective report. We are left to trust that participants are both willing and able to faithfully describe their internal states. This issue, often referred to as the \textit{problem of introspection}, has haunted Psychology since its inception, tracing back to Wilhelm Wundt’s 19th-century laboratory, where the first systematic efforts to understand ``minds'' began.\footnote{One could argue that this problem traces back even earlier, to the foundational work of Ernst Heinrich Weber and Gustav Fechner in psychophysics—research that Wundt deeply admired and which heavily influenced his own.}
 
-None of this is to suggest that subjective assessments should be dismissed outright as pseudoscience. As \textcite{Labovitz1967} contends, there may be some value—however impure—in treating such ratings as more numerical than they truly are. Despite their crude, unstable, and potentially erroneous nature, these measures may still contain just enough precision to tease some signal from the noise. By analogy, the literal sound an engine makes is not what powers a vehicle, but a skilled mechanic can often diagnose a problem from the sound alone. Subjective assessments may be similar in this respect. Introspection is, without doubt, a murky cauldron—but an obsession with methodological purity risks sacrificing potentially useful data on the altar of perfectionism. We ought not discard what might yield insight simply because it falls short of an ideal.
+None of this is to suggest that subjective assessments should be dismissed outright as pseudoscience and you would be hard pressed to find anyone in the modern day dismissing these types of measures out of hand. As \textcite{Labovitz1967} contends, there may be some practical value—however impure—in treating such ratings as more numerical than they truly are. Despite their crude, unstable, and potentially erroneous nature, these measures may still contain just enough precision to tease some signal from the noise. By analogy, the literal sound an engine makes is not what powers a vehicle, but a skilled mechanic can sometimes diagnose a problem from the sound alone. Subjective assessments may be similar in this respect. Introspection is, without doubt, a murky cauldron—but an obsession with methodological purity does risk sacrificing potentially useful data on the altar of perfectionism. We ought not discard what might yield insight simply because it falls short of an ideal.
 
-Given what has been said so far, it is hopefully understandable that while not all data conforms to our ideals surrounding numbers and measurement there may still be a certain utility in ascribing numbers to things that are not necessarily quantifiable in the traditional sense. It is often useful to break observations up into sensibile categories and perhaps even order those categories. Along these lines data is usually considered to be either qualitative or quantitive.
+\section{Scales of Measurement}
 
-Quantiative data is that 
+The most influential attempt to resolve the problem of measurement came from \textcite{Stevens1946}, who defined measurement as the ``assignment of numerals to objects or events according to rule'' (p. 677), a view that aligned with the operationalist philosophy dominant at the time. Stevens proposed that measurement could be classified into four distinct scales—nominal, ordinal, interval, and ratio—each defined by the specific rules used to assign numbers. These rules, in turn, determine which mathematical operations are meaningful for a given type of measurement. The four scales can be loosely conceptualized as a progression from less to more quantitatively meaningful, with nominal scales representing categories and ratio scales representing fully numeric measurements that support the full range of arithmetic operations.
+
+\subsection{Nominal Scales}
+
+One of the most basic properties of numbers is that they are distinct from every other number: for example, $1 \neq 2$, $2 \neq 3$, $3 \neq \sqrt{3}$, and so on. Likewise, identical numbers are treated as equivalent: $1 = 1$, $2 = 2$, $\sqrt{3} = \sqrt{3}$, etc. Nominal scales preserve this property of distinctness and equivalence that numbers have. They allow us to determine whether two values refer to the same category or not, but they do not carry any information about order, magnitude, or arithmetic relationships. For example, if we define a variable for handedness—assigning 0 for ambidextrous, 1 for left-handed, and 2 for right-handed—we are simply labelling three distinct categories. The numbers here are symbolic: $2$ does not imply that right-handedness is ``greater'' than left-handedness, only that $1 \neq 2 \neq 0$.
+
+Mathematics aside, nominal measurement scales are fundamentally about categorizing observations into mutually exclusive\footnote{``Mutually exclusive'' means that each observation can belong to only one category. You cannot, for instance, be both right-handed and ambidextrous.} unordered groups. The numbers are just convenient labels. Common examples include binary responses like yes or no, taste qualities such as sweet, sour, salty, bitter, and savoury, or biological traits like feeding strategy (e.g., herbivore, carnivore, omnivore, detritivore), disease presence (e.g., infected vs. not infected), or treatment group (e.g., placebo, drug A, drug B). What matters is not the number itself, but the category it stands in for.
+
+\subsection{Ordinal Scales}
+
+
+
+% Note: some scales can operate on more than one level.  E.g. 
+% pH category (e.g., acidic, neutral, basic)
+% → The pH value is quantitative, but these categories are nominal.
+
+% Element name (e.g., hydrogen, carbon, oxygen)
+% → The atomic number is quantitative, but the names themselves are nominal.
+
+
+
+% Given what has been said so far, it is hopefully understandable that while not all data conforms to our ideals surrounding numbers and measurement there may still be a certain utility in ascribing numbers to things that are not necessarily quantifiable in the traditional sense. 
+
+% Talk about stevens
+
+%It is often useful to break observations up into sensible categories and perhaps even order those categories. Along these lines data is usually considered to fall into one of two camps: \textbf{qual}itative or \textbf{quant}itive.
+
+% add in faces to allude to Janus?
+
+% Qualitative data consists of non-numeric values or categories. 
+
+% Add examples of qualitative data here
+
+% Calling this type of data ``non-numeric'' signals that mathematical operations—like addition, subtraction, or division—simply do not make sense in this context. Take handedness as a basic example: a person might be left-handed, right-handed, or ambidextrous. But what would it mean to divide ``right-handedness'' by two? The question is not just unanswerable—it is nonsensical.
+
+% The same confusion arises when we try to treat certain subjective ratings as if they behaved like physical quantities. Returning to the earlier example of happiness, what does it mean to add 2 units of happiness to a happiness rating of 1? Does that place us neatly at a 3, as though we were laying metre sticks end to end? Or do psychological realities interfere—perhaps there are diminishing returns, so that adding 2 units only nudges the total to 2.5, or even less? Is the psychological distance between a happiness rating of 1 and 2 the same as the distance between 2 and 3? Maybe as you increase happiness the distance between the levels expands? Or maybe happiness compresses as it stacks? These are the kinds of questions that remind us why treating certain kinds of data as if they obey the laws of arithmetic can be deeply misleading.
 
 
 
@@ -88,12 +122,23 @@ Quantiative data is that
 
 
 
-of assigning numbers to magnitudes.
 
 
-The history of measurement is a long one, dating back to the times of Euclid, and could easily encompass its own textbook.
 
-assigning numbers to magnitudes
+
+
+
+
+
+
+
+% Talk about how something is measured (e.g., operational defintions)
+
+% Quantitative data is data as most people conceive of it. It is data which consists of countable or numerical values.
+
+
+
+% assigning numbers to magnitudes
 
 
 %https://plato.stanford.edu/entries/measurement-science/
