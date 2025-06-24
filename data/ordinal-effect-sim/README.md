@@ -60,7 +60,7 @@ If you use this code, dataset, or plot in your research, teaching, or publicatio
   author       = {Pisklak, Jeffrey M.},
   title        = {Ordinal Data and Effect Size Inflation: A Simulation Study},
   year         = {2024},
-  url          = {https://github.com/yourusername/ordinal-effectsize-sim},
+  url          = {https://github.com/yourusername/ordinal-effect-sim},
   note         = {Version 1.0}
 }
 ```
