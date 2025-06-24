@@ -67,3 +67,14 @@ If you use this code, dataset, or plot in your research, teaching, or publicatio
   note         = {Version 1.0}
 }
 ```
+
+---
+
+## Package References
+
+- Torchiano, M. (2020). *effsize: Efficient effect size computation* (R package version 0.8.1). [https://CRAN.R-project.org/package=effsize](https://CRAN.R-project.org/package=effsize)  
+[https://doi.org/10.5281/zenodo.1480624](https://doi.org/10.5281/zenodo.1480624)
+
+- Wickham, H., Averick, M., Bryan, J., Chang, W., D'Agostino McGowan, L., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., Takahashi, K., Vaughan, D., Wilke, C., Woo, K., & Yutani, H. (2019). Welcome to the tidyverse. *Journal of Open Source Software, 4*(43), 1686. https://doi.org/10.21105/joss.01686
+
+
