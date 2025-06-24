@@ -42,3 +42,25 @@ install.packages(c("tidyverse", "effsize"))
 ```r
 source("ordinal_simulation.R")
 ```
+
+---
+
+## Citation
+
+If you use this code, dataset, or plot in your research, teaching, or publications, please cite the repository as follows:
+
+### APA-style citation:
+
+> Pisklak, J. (2025). *Ordinal Data and Effect Size Inflation: A Simulation* (Version 1.0) [Computer software]. https://github.com/statistical-grimoire/book/tree/main/data/ordinal-effect-sim
+
+### BibTeX
+
+```
+@misc{ordinal_sim,
+  author       = {Pisklak, Jeffrey M.},
+  title        = {Ordinal Data and Effect Size Inflation: A Simulation Study},
+  year         = {2024},
+  url          = {https://github.com/yourusername/ordinal-effectsize-sim},
+  note         = {Version 1.0}
+}
+```
