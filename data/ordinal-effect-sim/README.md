@@ -1,6 +1,6 @@
 # Ordinal Data and Effect Size Inflation: A Simulation
 
-This repository contains R code for a simulation study that demonstrates how treating **ordinal Likert-scale data** as if it were **interval-scaled** can lead to **inflated effect size estimates** when using **Cohen's *d***.
+This repository contains R code for a simulation that demonstrates how treating **ordinal Likert-scale data** as if it were **interval-scaled** can lead to **inflated effect size estimates** when using **Cohen's *d***.
 
 The simulation compares estimated effect sizes under two assumptions:
 - When **Likert values (1–5)** are treated as **equally spaced interval values**, and
@@ -44,7 +44,7 @@ install.packages(c("tidyverse", "effsize"))
 source("ordinal_simulation.R")
 ```
 
-The script simulates 10,000 experiments, compares group-level differences using both interval and ordinal assumptions, and produces a histogram showing the distribution of effect sizes.
+The script simulates 10,000 experiments, compares group-level differences under both interval and ordinal scale assumptions, and generates a histogram of effect size distributions along with a data file containing the full simulation results.
 
 ---
 
