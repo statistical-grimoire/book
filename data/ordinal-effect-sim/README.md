@@ -23,7 +23,8 @@ This simulation illustrates:
 
 - `ordinal_simulation.R` – Main script for the simulation study.
 - `README.md` – This file.
-- ordinal_effect_sim_results.csv – LaTeX table describing a Likert scale example.
+- `ordinal_effect_sim_results.csv` – Data file of raw values obtained from the simulation (comma seperated values format).
+- `ord_vs_int_effect.pdf` - Plot of generated distributions.
 
 ---
 
