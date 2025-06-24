@@ -78,7 +78,7 @@ title <- expression(
   paste(
     "Impact of Measurement Scale on Cohen’s ",
     italic("d "),
-    "Estimates Across Simulated Trials",
+    "Estimates Across Simulated Trials"
   )
 )
 
@@ -105,9 +105,10 @@ ggplot(results, aes(
     linewidth = 1.25
   ) +
   scale_x_continuous(breaks = seq(0, 2, by = 0.2)) +
+  coord_cartesian(xlim = c(0, 1.5)) +
   scale_fill_manual(values = palette.colors(n = 2, palette = "Dark 2")) +
   labs(
-    title = title,
+    # title = title,
     x = expression(paste("Cohen's ", italic("d"))),
     y = "Count",
     fill = "Scale Type:",
@@ -120,8 +121,9 @@ ggplot(results, aes(
     title.vjust = 1
   )) +
   theme(
-    axis.text.x = element_text(size = 12),
-    axis.title.x = element_text(size = 14),
+    plot.title = element_text(size = 17),
+    axis.text.x = element_text(size = 14),
+    axis.title.x = element_text(size = 16),
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     axis.title.y = element_blank(),
@@ -131,4 +133,4 @@ ggplot(results, aes(
     legend.key.width = unit(2, "cm")
   )
 
-ggsave("ord_vs_int_effect.pdf", units = "cm", width = 21, height = 13)
+ggsave("ord_vs_int_effect.pdf", units = "cm", width = 22, height = 12)

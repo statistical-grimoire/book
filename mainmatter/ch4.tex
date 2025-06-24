@@ -149,38 +149,51 @@ Unfortunately, this is a distinction that the maths alone can obscure. The symbo
 Of the four scale types identified by \textcite{Stevens1946}, ratio scales are the most robustly numeric. They retain all the properties of nominal, ordinal, and interval scales, but with one critical addition: a true zero point that signifies the complete absence of the measured attribute. This allows for meaningful ratio comparisons—for example, one value can be said to be twice another—and eliminates concerns about the appropriateness of mathematical operations like multiplication or division. Ratio scales are especially prevalent in the natural sciences, where quantities such as mass (e.g., of tissues), cell count, blood volume, elapsed time, concentration (e.g., parts per million), frequency, reinforcer amount, and behavioural response duration are measured from zero and up, enabling a full range of mathematical analysis.
 
 
-\subsection{Needs a title}
+\subsection{Implications of Scale Type for Statistical Analysis}
 
 The concept of measurement scales carries with it a deceptively simple but important warning: it is entirely possible to use numbers incorrectly. That is, one can feed numerical values into a statistical formula, obtain a result, and walk away with a clean-looking number—but that number may bear little resemblance to anything meaningful in the real world \parencite{Roberts1985}. Worse, it might produce an interpretation that is subtly misleading and difficult to detect.
 
-Think of a statistical procedure like a meat grinder: it does not care what you put in. Toss in high-quality ingredients, and you will get something palatable. Toss in a boot, and you will still get an output—just not one you'd want to serve. Likewise, statistical methods are indifferent to the scale of measurement used. They will happily crunch any numbers you supply, whether those numbers actually warrant mathematical manipulation or not. But just as pureed leather makes a poor sausage, treating ordinal or nominal data as if it were interval or ratio can yield results that are technically valid but conceptually indigestible.
+Think of a statistical procedure like a meat grinder: it does not care what you put in it. Toss in high-quality ingredients, and you will get something palatable. Toss in a boot, and you will still get an output—just not one you probably want to serve. Likewise, statistical methods are indifferent to the scale of measurement used. They will happily crunch any numbers you supply, whether those numbers actually warrant mathematical manipulation or not. But just as pureed leather makes a poor sausage, treating ordinal or nominal data as if it were interval or ratio can yield results that are technically valid but conceptually indigestible.
 
 The entire project of \textcite{Stevens1946} was, in many ways, aimed at avoiding this exact mistake. His advocacy centred on the principle of invariance—that we should use statistical and mathematical procedures that preserve the properties of the underlying scale \parencite{Stevens1968}. By identifying the scale on which a variable is measured, researchers can more appropriately select analyses that respect the structure of the data and preserve its intended meaning.
 
 To see why this matters, consider a simple experiment designed to test whether a drug reduces headache severity. One group receives a placebo, the other receives an active treatment. An hour later, participants rate their current headache intensity on a 5-point Likert scale, using the labels shown in Table \ref{tab:headache_scale}.
 
-\vspace{1em}
+\vspace{2em}
 
 \input{tables/ch-4/likert_headache}
+
+\vspace{1em}
 
 \noindent
 As the researcher, you do not have direct access to participants’ internal experience of pain. There's no standardized unit of discomfort that you can measure like you would millimetres or kilograms. The Likert scale values are, in effect, numerical placeholders for subjective states.
 
-Now suppose—just for argument’s sake—that you do know the true underlying discomfort each value represents. Rather than simple integers from 1 to 5, perhaps the true subjective intensity of the headache follows an exponential progression: 1, 3, 10, 32, and 100. Notice that this alternative scale preserves the order of the original ratings, but the intervals between points are no longer equal. The leap in discomfort from a “1” to a “2” on the Likert scale is not equivalent to the leap from “4” to “5”; the subjective change is far greater in the latter.
+Now suppose—just for argument’s sake—that you do know the true underlying discomfort each Likert value represents. Rather than simple integers from 1 to 5, perhaps the true subjective intensity of the headache follows an exponential progression: 1, 3, 10, 32, and 100. Notice that this alternative scale preserves the order of the original ratings, but the intervals between points are no longer equal. The leap in discomfort from a “1” to a “2” on the Likert scale is not equivalent to the leap from “4” to “5”; the subjective change is far greater in the latter.
 
-This difference has real consequences for interpreting results. For instance, researchers commonly use a statistic called Cohen’s \textit{d} to quantify the size of a treatment effect. In this context, Cohen’s \textit{d} would estimate how effective the drug was in reducing headache severity compared to placebo. However, Cohen’s \textit{d} relies on means, which in turn assume that the data are measured on at least an interval scale—where equal differences between values correspond to equal differences in the underlying construct. The Likert scale, as used here, only preserves order, not spacing. It is ordinal, not interval.
+If a difference like this truly exists between measurement scales, it has real consequences for how we interpret certain statistical results. Researchers commonly use a statistic called Cohen’s \textit{d} to quantify the size of a treatment effect. In this context, Cohen’s \textit{d} would estimate how effective the drug was at reducing headache severity compared to a placebo. However, Cohen’s \textit{d} relies on means, which assume the data are measured on at least an interval scale—that is, where equal differences between values reflect equal differences in the underlying construct. The Likert scale used here, by contrast, preserves only the order of values, not the spacing between them. It is ordinal, not interval. The ``true'' discomfort values we have listed, on the other hand, do meet the criteria of an interval scale.
 
-Using R, we can simulate this hypothetical experiment thousands of times by randomly generating data and calculating Cohen’s \textit{d} for each iteration—once using the raw Likert scores, and once using the true discomfort values. If the scale of measurement truly does not matter, the resulting effect sizes should be approximately equivalent.
+To explore the consequences of this mismatch, we can simulate the experiment in R thousands of times, randomly generating data and calculating Cohen’s \textit{d} for each iteration—once using the raw Likert scores, and once using the true discomfort values. If the scale of measurement genuinely does not matter, then the resulting effect sizes should be roughly equivalent across both cases. In other words, we should observe similar values of Cohen’s \textit{d} regardless of which scale we use.
 
-Figure~X displays the results across 10,000 simulated experiments. The divergence between the two versions of Cohen’s \textit{d} is striking. When based on the Likert values, the effect size appears consistently larger, overstating the drug’s effectiveness. In contrast, the effect size calculated from the true values tells a more modest story. This mismatch illustrates just how misleading it can be to apply interval-based statistics to ordinal data. The sausage may look the same on the plate—but if you grind in the wrong ingredients, the result may not sit well. Respecting the scale of measurement reduces the risk that the outcome of a statistical test is an artifact of numerical representation rather than a valid insight.
+Figure \ref{fig:ord_vs_int_effect} displays the results across 10,000 simulated experiments. The divergence between the two versions of Cohen’s \textit{d} is striking. When based on the Likert values, the effect size appears consistently larger, overstating the drug’s effectiveness. In contrast, the effect size calculated from the true values tells a more modest story. This mismatch illustrates just how misleading it can be to apply interval-based statistics to ordinal data. The sausage may look the same on the plate—but if you grind in the wrong ingredients, the result may not sit well. Respecting the scale of measurement reduces the risk that the outcome of a statistical test is an artifact of numerical representation rather than a valid insight.
 
-In this vein, it is worth noting that alternative effect size measures designed for ordinal data—such as Cliff’s delta—are not susceptible to this distortion. Because Cliff’s delta relies only on order information, it produces equivalent results whether calculated from the Likert scores or the true discomfort values. In other words, when the tool matches the scale, the message stays consistent.
+\vspace{2em}
 
-Because of these issues, Stevens and others attempted to prescribe which statistical methods were appropriate for each type of measurement scale \parencite{Robinson1965, Senders1958, Stevens1946}. However, that endeavour—and Stevens’ broader framework—has not gone unchallenged.
+\begin{figure}[h]
+\includegraphics[width = 0.95\textwidth]{data/ordinal-effect-sim/ord_vs_int_effect.pdf}
+\caption{Results from 10,000 simulated experiments comparing effect size estimates using Cohen’s \textit{d} based on Likert-scale values versus ``true'' exponentially scaled discomfort values. Although both scales preserve ordinal ranking, the unequal intervals in the true values reveal that the Likert-based \textit{d} consistently overestimates the effect size. Black horizontal lines indicate the mean Cohen’s d for each scale type. This highlights how treating ordinal data as interval can distort results—like mistaking shoe leather for sausage.
+Simulation code available at: \url{https://github.com/statistical-grimoire/book/tree/main/data/ordinal-effect-sim}}
+\label{fig:ord_vs_int_effect}
+\end{figure}
 
-One common criticism is that his classification system is not as clear-cut as it initially appears. Many real-world variables occupy a gray area. Take IQ scores, for example: while technically ordinal, they are often treated as though they possess interval properties. Researchers frequently assume that differences in IQ scores reflect meaningful psychological differences, even though the scale may not meet the strict criteria required for interval measurement.\footnote{This is not to suggest that differences between IQ scores \textit{do} or \textit{do not} reflect meaningful psychological differences—only that some researchers proceed as though they do.}
+\vspace{2em}
 
-Additionally, many statistical procedures that theoretically require interval or ratio-level data often produce results quite similar to those based on ordinal methods, when the underlying assumptions about scale are violated \parencite{Baker1966}. This robustness has led some to argue that, in practice, violating scale assumptions may not always lead to catastrophic errors—at least not when the primary concern is \textit{statistical significance} (e.g., p-values). However, this reassurance comes with important caveats:
+In this vein, it is worth noting that alternative effect size measures designed for ordinal data—such as Cliff’s delta ($\delta$)—are not susceptible to this distortion. Because Cliff’s $\delta$ relies only on order information, it produces equivalent results whether calculated from the Likert scores or the true discomfort values. In other words, when the tool matches the scale, the message stays consistent.
+
+Because of these issues, Stevens and others attempted to prescribe which statistical methods were appropriate for each type of measurement scale to help researchers avoid making precisely these kind of mistakes \parencite{Robinson1965, Senders1958, Stevens1946}. However, that endeavour—and Stevens’ broader framework—has not gone unchallenged.
+
+One common criticism is that his classification system is not as clear-cut as it initially appears. Many real-world variables seem to occupy a gray area. Take intelligence (I.Q.) scores, for example: while technically ordinal, they are often treated as though they possess interval properties. Researchers frequently assume that differences in I.Q. scores reflect meaningful psychological differences, even though the scale may not meet the strict criteria required for interval measurement.\footnote{This is not to suggest that differences between IQ scores \textit{do} or \textit{do not} reflect meaningful psychological differences—only that some researchers proceed as though they do.} 
+
+Additionally, many statistical procedures that theoretically require interval or ratio-level data often yield results similar to those produced by ordinal methods when applied to ordinal-scale data \parencite{Baker1966}. This robustness has led some to argue that, in practice, violating scale assumptions may not always lead to catastrophic errors—at least not when the primary concern is \textit{statistical significance} (e.g., p-values). However, this reassurance comes with important caveats:
 
 \begin{itemize}
     \item The consequences of misusing statistical methods can be more serious in high-stakes contexts or when findings are generalized beyond their original scope.
@@ -197,42 +210,10 @@ The debate is long-standing, and in many cases, critiques of Stevens’ framewor
 
 Let’s take a moment to talk about something sacred: the Grade Point Average (GPA). That little number—$3.2$, $3.9$, or (gulp) $2.3$—wields tremendous power. It determines scholarships, grad school admissions, and sometimes whether your parents buy you dinner. But there’s a secret no one likes to talk about: GPA is a mathematical illusion. It’s the \textit{mean} average of grade point values ($A = 4.0$, $B = 3.0$, $C = 2.0$, etc.), which themselves are just numbers slapped onto ordinal categories. We know that an $A$ is better than a $B$, and a $B$ is better than a $C$—but is the \enquote{distance} between them truly equal? Does moving from a $B$ to an $A$ represent the same leap in achievement as going from a $D$ to a $C$?
 
-If you’re thinking \enquote{probably not,} you’d be right. Taking the mean of ordinal data is technically a no-no because the math assumes equal spacing between the numbers—something ordinal scales don’t guarantee. It's like claiming the difference between silver and gold medals is the same as between bronze and a participation ribbon. If we were being HONEST AND FAIR, we’d use the \textit{median} average instead: it respects rank without pretending the scale is evenly spaced. But honesty doesn’t feed the machine. The \textit{median} flattens distinctions. It produces ties. It refuses to give the illusion of precision that bureaucracies crave. The \textit{mean}, in contrast, offers lovely decimals—$3.47$ vs. $3.52$—that suggest meaningful differences where none may exist. It is ideal for sorting, and thus ideal for systems that would prefer not to think too hard.
+If you’re thinking \enquote{probably not,} you’d be right. Taking the mean of ordinal data is technically a no-no because the math assumes equal spacing between the numbers—something ordinal scales don’t guarantee. It's like claiming the difference between silver and gold medals is the same as between bronze and a participation ribbon. If we were being HONEST AND FAIR, we’d use the \textit{median} average instead: it respects rank without pretending the scale is evenly spaced. But honesty doesn’t feed the machine. The \textit{median} flattens distinctions. It produces ties. It refuses to give the illusion of precision that bureaucracies crave. The \textit{mean}, in contrast, offers lovely decimals—$3.47$ vs. $3.52$—that suggest meaningful differences where none may actually exist. It is ideal for sorting, and thus ideal for systems that would prefer not to think too hard.
 
-Your instructors probably know better. Most of them, anyway. But the people making the rules—the ones who decide how grades are processed—tend to prioritize convenience over correctness.\footnote{I am going to get in so much trouble for writing all this.} Why else would an entire institution choose a method so statistically indefensible? Their unofficial motto might as well be: \textit{Numerus est veritas, etiam si mendacium}—\enquote{The number is truth, even if it’s a lie.}
-
+Your instructors probably know better. Most of them, anyway. But the people making the rules—the ones who decide how grades are processed—tend to prioritize convenience over correctness.\footnote{I am going to get in so much trouble for writing this.} Why else would an entire institution choose a method so statistically indefensible? Their unofficial motto might as well be: \textit{Numerus est veritas, etiam si mendacium}—\enquote{The number is truth, even if it’s a lie.}
 \end{mdframed}
-
-
-% Note: you can perform any mathematical operation you'd like as long as it does not break the rules of the particular scale.
-
-% Continuous vs discrete and %qualitative vs quantitative.
-
-
-% Note: some scales can operate on more than one level.  E.g. 
-% pH category (e.g., acidic, neutral, basic)
-% → The pH value is quantitative, but these categories are nominal.
-
-% Element name (e.g., hydrogen, carbon, oxygen)
-% → The atomic number is quantitative, but the names themselves are nominal.
-
-
-
-% Given what has been said so far, it is hopefully understandable that while not all data conforms to our ideals surrounding numbers and measurement there may still be a certain utility in ascribing numbers to things that are not necessarily quantifiable in the traditional sense. 
-
-% Talk about stevens
-
-%It is often useful to break observations up into sensible categories and perhaps even order those categories. Along these lines data is usually considered to fall into one of two camps: \textbf{qual}itative or \textbf{quant}itive.
-
-% add in faces to allude to Janus?
-
-% Qualitative data consists of non-numeric values or categories. 
-
-% Add examples of qualitative data here
-
-% Calling this type of data ``non-numeric'' signals that mathematical operations—like addition, subtraction, or division—simply do not make sense in this context. Take handedness as a basic example: a person might be left-handed, right-handed, or ambidextrous. But what would it mean to divide ``right-handedness'' by two? The question is not just unanswerable—it is nonsensical.
-
-% The same confusion arises when we try to treat certain subjective ratings as if they behaved like physical quantities. Returning to the earlier example of happiness, what does it mean to add 2 units of happiness to a happiness rating of 1? Does that place us neatly at a 3, as though we were laying metre sticks end to end? Or do psychological realities interfere—perhaps there are diminishing returns, so that adding 2 units only nudges the total to 2.5, or even less? Is the psychological distance between a happiness rating of 1 and 2 the same as the distance between 2 and 3? Maybe as you increase happiness the distance between the levels expands? Or maybe happiness compresses as it stacks? These are the kinds of questions that remind us why treating certain kinds of data as if they obey the laws of arithmetic can be deeply misleading.
 
 
 
