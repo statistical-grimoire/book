@@ -62,7 +62,7 @@ If you use this code, dataset, or plot in your research, teaching, or publicatio
 @misc{ordinal_sim,
   author       = {Pisklak, Jeffrey M.},
   title        = {Ordinal Data and Effect Size Inflation: A Simulation Study},
-  year         = {2024},
+  year         = {2025},
   url          = {https://github.com/statistical-grimoire/book/tree/main/data/ordinal-effect-sim},
   note         = {Version 1.0}
 }
