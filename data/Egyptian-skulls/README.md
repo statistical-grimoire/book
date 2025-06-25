@@ -155,7 +155,7 @@ Pisklak, J. (2025). Thomson & Randall-MacIver's 1905 Comparative Craniometric Da
   author       = {Pisklak, Jeffrey M.},
   title        = {Thomson \& Randall-MacIver's 1905 Comparative Craniometric Data on Ancient Egyptian Skulls},
   year         = {2025},
-  url = {https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls},
+  url          = {https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls},
   note         = {Data set compiled from Thomson \& Randall-MacIver (1905)}
 }
 ```
