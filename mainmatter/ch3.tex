@@ -425,9 +425,9 @@ print(pi_df$pie[1], digits = 16)
 \end{outR}
 
 \noindent
-It is important to understand that tibbles do not strictly control the handling of decimals. Instead, they work with \gls{significant figures}, also known as \textit{significant digits}.  This allows the tibble to preserve its desired ``rectangleness,'' giving it cleaner looking columns. Since tibbles default to three significant figures, $\pi$ will only display as 3.14. 
+It is important to understand that tibbles do not limit the actual numeric precision of your data. Rather, they format numbers using \gls{significant figures} (also known as \textit{significant digits}) when printing to the console. This helps maintain the clean, rectangular structure of the tibble output, making columns easier to scan.
 
-As a refresher of primary school math, with significant figures, everything in front of the decimal point is always displayed, but each number in front of that decimal point uses up a significant figure (a.k.a. a ``sig fig'' or ``sig dig''). For instance, if you had a number like 666.13.  Displaying that to two sig figs would give you 666.  Displayed to three sig figs would again be 666. Displayed to four sig figs would be 666.1. Five sig digs would be 666.13. Six sig figs would be 666.130. Seven would be 666.1300, and so on.
+The way tibbles work with significant figures is slightly different than you may have learned in primary school math class. Everything in front of the decimal point is always displayed, but each number in front of that decimal point uses up a significant figure (a.k.a. a ``sig fig'' or ``sig dig''). For instance, if you had a number like 666.13.  Displaying that to two sig figs would give you 666. Displayed to three sig figs would again be 666. Displayed to four sig figs would be 666.1. Five sig digs would be 666.13. Six sig figs would be 666.130. Seven would be 666.1300, and so on.\footnote{Note that in conventional mathematics, displaying 666.13 to two sig figs would be 670. The first two significant digits are 6 and 6, but the third digit (6) causes rounding up.}
 
 To increase the number of sig figs shown within a tibble we can simply add another argument to the \R{options()} function:
 
