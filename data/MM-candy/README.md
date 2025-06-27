@@ -6,7 +6,7 @@ This repository contains a dataset on the colour distribution of M&M Milk Chocol
 
 ## Files
 
-- `MM_Madison_wide.csv`: A comma-separated values (CSV) file with 48 rows and 9 columns, representing individual M&M packages and color counts compiled from Josh Madison’s blog post.
+- `MM_Madison_wide.csv`: A comma-separated values (CSV) file with 48 rows and 9 columns, representing individual M&M packages and colour counts compiled from Josh Madison’s blog post.
 
 ## Format
 
@@ -22,7 +22,7 @@ Each row represents one M&M package. The dataset includes the following variable
     — Year in which the data were collected.
 
 - **blue**, **brown**, **green**, **orange**, **red**, **yellow**
-    — Count of M&Ms of each respective color in the package.
+    — Count of M&Ms of each respective colour in the package.
 
 ## Source
 
