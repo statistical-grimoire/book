@@ -33,8 +33,6 @@ https://joshmadison.com/2007/12/02/mms-color-distribution-analysis/
 
 If you use this dataset, please cite the original source and this repository as follows:
 
-<br>
-
 ### Original blog post
 
 Madison, J. (2007, December 2). *M&M’s Color Distribution Analysis* [Blog post]. https://joshmadison.com/2007/12/02/mms-color-distribution-analysis/
@@ -49,8 +47,6 @@ Madison, J. (2007, December 2). *M&M’s Color Distribution Analysis* [Blog post
   url          = {https://joshmadison.com/2007/12/02/mms-color-distribution-analysis/}
 }
 ```
-
-<br>
 
 ### Dataset repository
 
