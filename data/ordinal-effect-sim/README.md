@@ -54,15 +54,16 @@ If you use this code, dataset, or plot in your research, teaching, or publicatio
 
 ### APA-style citation:
 
-> Pisklak, J. (2025). *Ordinal Data and Effect Size Inflation: A Simulation* (Version 1.0) [Computer software]. https://github.com/statistical-grimoire/book/tree/main/data/ordinal-effect-sim
+> Pisklak, J. (2025). *Ordinal data and effect size inflation: A simulation* (Version 1.0) [GitHub]. https://github.com/statistical-grimoire/book/tree/main/data/ordinal-effect-sim
 
 ### BibTeX
 
-```
-@misc{ordinal_sim,
+```bibtex
+@online{ ,
   author       = {Pisklak, Jeffrey M.},
-  title        = {Ordinal Data and Effect Size Inflation: A Simulation Study},
+  title        = {Ordinal Data and Effect Size Inflation: A Simulation},
   year         = {2025},
+  organization = {GitHub},
   url          = {https://github.com/statistical-grimoire/book/tree/main/data/ordinal-effect-sim},
   note         = {Version 1.0}
 }

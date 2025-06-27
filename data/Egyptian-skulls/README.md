@@ -146,26 +146,27 @@ If you use this dataset in your research, teaching, or publications, please cite
 
 ### APA-style citation:
 
-Pisklak, J. (2025). Thomson & Randall-MacIver's 1905 Comparative Craniometric Data on Ancient Egyptian Skulls [Data set]. GitHub. https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls
+Pisklak, J. (2025). *Thomson & Randall-MacIver's 1905 comparative craniometric data on ancient Egyptian skulls* [Data set]. GitHub. https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls
 
 ### BibTeX
 
-```
-@misc{thomson_skulls_dataset,
+```bibtex
+@online{ ,
   author       = {Pisklak, Jeffrey M.},
-  title        = {Thomson \& Randall-MacIver's 1905 Comparative Craniometric Data on Ancient Egyptian Skulls},
+  title        = {Thomson \& {Randall}-{MacIver}'s 1905 Comparative Craniometric Data on Ancient {Egyptian} Skulls},
   year         = {2025},
+  organization = {GitHub},
   url          = {https://github.com/statistical-grimoire/book/tree/main/data/Egyptian-skulls},
-  note         = {Data set compiled from Thomson \& Randall-MacIver (1905)}
+  note         = {Data set}
 }
 ```
 
 Please also cite the original source of the data:
 
-```
-@book{thomson1905thebaid,
+```bibtex
+@book{ ,
   author    = {Thomson, Arthur and Randall-MacIver, D.},
-  title     = {Ancient Races of the Thebaid: Being an Anthropometrical Study of the Inhabitants of Upper Egypt From the Earliest Prehistoric Times to the Mohammedan Conquest Based Upon the Examination of Over 1,500 Crania},
+  title     = {Ancient Races of the {Thebaid}: Being an Anthropometrical Study of the Inhabitants of {Upper} {Egypt} From the Earliest Prehistoric Times to the {Mohammedan} Conquest Based Upon the Examination of Over 1,500 Crania},
   year      = {1905},
   publisher = {Clarendon Press}
 }
