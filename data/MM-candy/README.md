@@ -17,7 +17,7 @@ Each row represents one M&M package. The dataset includes the following variable
   
 - **weight_oz**
     - Weight of the package in ounces.
-    - 
+
 - **year**
     — Year in which the data were collected.
 
