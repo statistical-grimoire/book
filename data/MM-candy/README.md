@@ -33,7 +33,9 @@ https://joshmadison.com/2007/12/02/mms-color-distribution-analysis/
 
 If you use this dataset, please cite the original source and this repository as follows:
 
-**Original blog post**
+<br>
+
+### Original blog post
 
 Madison, J. (2007, December 2). *M&M’s Color Distribution Analysis* [Blog post]. https://joshmadison.com/2007/12/02/mms-color-distribution-analysis/
 
@@ -48,7 +50,9 @@ Madison, J. (2007, December 2). *M&M’s Color Distribution Analysis* [Blog post
 }
 ```
 
-**Dataset repository**
+<br>
+
+### Dataset repository
 
 Madison, J. (2025). *Josh Madison M&M Milk Chocolate Color Counts Dataset* [Data set]. GitHub. https://github.com/statistical-grimoire/book/tree/main/data/MM-candy
 
