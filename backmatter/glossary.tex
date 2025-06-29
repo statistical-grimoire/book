@@ -17,11 +17,6 @@ description={A symbol (e.g., \R{<-}) that assigns a name to an object in R so it
 
 
 %B-----------------------------------
-\newglossaryentry{bivariate data}{
-name=bivariate data,
-description={Data consisting of a single \gls{response variable} and one other related variable.}
-}
-
 \newglossaryentry{boolean}{
 name=boolean,
 description={A term used to denote \gls{logical} (true or false) statements and objects. Named after the English mathematician and logician George Boole.}
@@ -199,7 +194,7 @@ description={The value returned using a modulo operation.}
 
 \newglossaryentry{multivariate data}{
 name=multivariate data,
-description={Data consisting of a more than two \glspl{response variable} and at least one other related variable.}
+description={Data consisting of two or more \glspl{response variable} and one or more predictor variables.}
 }
 
 %N-----------------------------------
@@ -267,7 +262,7 @@ description={A language humans use to communicate instructions to a computer.}
 %Q-----------------------------------
 \newglossaryentry{qualitative variable}{
 name=qualitative variable,
-description={A \gls{variable} that represents non-numeric characteristics or categories. These categories can be either ordered (e.g., letter grades) or unordered (e.g., handedness), but they must be mutually exclusive, meaning each observation can belong to only one category at a time.}
+description={A \gls{variable} that represents non-numeric characteristics or categories. These categories can be either ordered or unordered, but they must be mutually exclusive.}
 }
 
 \newglossaryentry{quantitative variable}{
@@ -304,7 +299,7 @@ description={An \gls{integrated development environment} for R.}
 %S-----------------------------------
 \newglossaryentry{scatter plot}{
 name=scatter plot,
-description={A type of graph that is used to visualize the relationship between two paired variables. The observations of one variable are plotted on the x-axis, while the observations of the other variable are plotted on the y-axis. The intersection of the x-y pairs are plotted as points on a Cartesian plane (i.e., a  grid). For further details see \url{https://www.mathsisfun.com/data/scatter-xy-plots.html}}
+description={A type of graph that is used to visualize the relationship between two paired variables. The observations of one variable are plotted on the $x$-axis, while the observations of the other variable are plotted on the $y$-axis. The intersection of the $x$-$y$ pairs are plotted as points on a Cartesian plane (i.e., a  grid). For further details see \url{https://www.mathsisfun.com/data/scatter-xy-plots.html}}
 }
 
 \newglossaryentry{scientific notation}{
@@ -329,7 +324,7 @@ description={A directory nested within another directory.}
 
 \newglossaryentry{syntactic name}{
 name=syntactic name,
-description={A object name consisting of letters, numbers and the dot or underline characters and starts with a letter or the dot not followed by a number.  R Documentation: \R{?make.names}}
+description={An object name that begins with a letter or a dot (not followed by a number) and may include letters, numbers, dots, or underscores. R Documentation: \R{?make.names}}
 }
 
 
@@ -352,7 +347,7 @@ description={A powerful set of R magick, with an underlying philosophy, that all
 %U-----------------------------------
 \newglossaryentry{univariate data}{
 name=univariate data,
-description={Data which consists of a single variable.}
+description={Data which consists of a single \gls{response variable} and sometimes one or more predictor variables.}
 }
 
 %V-----------------------------------

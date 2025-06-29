@@ -70,7 +70,7 @@ As a whole, the tidyverse will not solve all your problems, but it will come dam
 
 \section{Plotting with R}
 
-A core component of any GOOD DATA ANALYSIS obviously involves visualizing your data. As you progress through the various topics in this book, specific types of plots and their uses will be discussed in detail; however, for the time being, it will be helpful to get an intuitive sense of how plotting works with R generally. Thus, what follows in this section is intended to help you understand the logic of plotting with R. The goal at this point is not to make you an expert; rather, it is to provide beginners with a base level of knowledge.
+A core component of any GOOD DATA ANALYSIS obviously involves visualizing your data. As you progress through the various topics in this book, specific types of plots and their uses will be discussed in detail; however, for the time being, it will be helpful to get an intuitive sense of how plotting works with R generally. Thus, what follows in this section is intended to help you understand the logic of plotting with R. The goal at this point is not to make you an expert; rather, it is to provide beginners with a base level of knowledge and experience.
 
 By itself, base R comes with a stock set of functions for plotting data. To illustrate we can run the following code to produce a nice looking histogram ...
 
@@ -90,9 +90,9 @@ In the case of the above code, the function \R{rnorm()} is just generating 10,00
 \label{fig:base_hist}
 \end{figure}
 
-R's base plotting functions offer a convenient means of producing simple quality plots and can be very efficient when working with \gls{univariate data} or \gls{bivariate data}. This is data which consists of only one (uni) or two (bi) variables, respectively. However, a lot of research is concerned with analysing \gls{multivariate data}. This is data consisting of two or more \glspl{response variable} alongside other explanatory variables. Each additional variable adds ever increasing amounts of complexity and nuance to your data and, by extension, the plots you use to visualizing those data.  The stock set of plotting functions R offers can accommodate these more complex scenarios; however, that level of accommodation is heavily dependent on the users proficiency with R.  For this reason, this book will adopt the practice of ignoring R's base plotting functions, and instead rely on well-known R package called \textit{ggplot2} which is among the most venerated portions of the tidyverse.   
+R's base plotting functions provide a convenient way to produce simple, high-quality plots, and they can be quite efficient when working with basic \gls{univariate data} involving only one or two variables. However, modern research often demands the handling of far more complex datasets—ones that may include multiple \glspl{response variable} alongside numerous explanatory variables. Each additional variable adds layers of complexity and nuance to your data and, by extension, to the plots used to visualize them. While R's built-in plotting tools can accommodate these more elaborate scenarios, doing so often requires a high level of fluency with R's syntax and customization options. For this reason, this book will forgo R's base plotting system in favour of the widely respected \textit{ggplot2} package, a core component of the \textit{tidyverse}. \textit{ggplot2} provides a more consistent and powerful framework for building complex plots, making it the preferred tool for data visualization throughout this text.
 
-The \textit{``gg''} in \textit{ggplot2} stands for ``grammar of graphics'' and provides users with a logical framework for the construction of plots within R.  The term ``grammar'' here is likely to conjure up long forgotten traumas of boring English and Language Arts lessons, but do not fear, the use of the term grammar is really just to emphasize that \textit{ggplot2} is constructed in a way that allows users to build plots of various kinds in a consistent and efficient manner that is easily tailored to their specific needs.  This is in contrast to how plotting in software works generally, where you are frequently stuck trying to fit a square peg (your data) into a circular hole (the software's narrow conception of how data should be presented).
+The ``\textit{gg}'' in \textit{ggplot2} stands for ``grammar of graphics,'' a term borrowed from Leland Wilkinson’s influential book of the same name \parencite{Wilkinson2005}. Now, the word ``grammar'' might dredge up long-buried memories of dull English classes—but fear not. In this context, the term simply emphasizes that \textit{ggplot2} is built on a coherent set of rules for assembling visualizations. This structure allows users to build a wide variety of plots in a consistent, modular way that can be easily tailored to their data and needs. This is a major improvement over many traditional plotting systems, which often require you to awkwardly cram your data into rigid, predefined formats—like trying to fit a square peg (your beautifully weird data) into a round hole (the software's narrow expectations).
 
 The easiest way to understand how \textit{ggplot2} works is to simply dive in and use it. Along the way, we will also learn a little bit more about R and data manipulation. However, a disclaimer is perhaps useful here:
 
@@ -102,7 +102,7 @@ The easiest way to understand how \textit{ggplot2} works is to simply dive in an
    This chapter contains a large variety of functions and strategies for plotting data with \textit{ggplot2}. The reader would do well to head the advice provided on page 1.
 \end{displayquote}
 
-The first thing to do will be to ensure that \textit{ggplot2} has been installed into our computer's library of packages and loaded so we can access its functions. As mentioned in section \ref{sec:tidyverse}, if you have installed and loaded the tidyverse, this is already done, but if you chose not to do that,\footnote{Shame on you.} \textit{ggplot2} can be installed and loaded as a standalone package as well.
+The first thing to do will be to ensure that \textit{ggplot2} has been installed into our computer's library of packages and loaded so we can access its functions. As mentioned in section \ref{sec:tidyverse}, if you have installed and loaded the \textit{tidyverse}, this is already done, but if you chose not to do that,\footnote{Shame on you.} \textit{ggplot2} can be installed and loaded as a standalone package as well.
 
 \begin{inR}
 install.packages("ggplot2")
@@ -161,7 +161,7 @@ Using a \gls{scatter plot} as a basic starting point, we will graph the relation
 
 \section{Adding layers}
 
-\textit{ggplot2} constructs plots by adding visual layers on top of one another. The first layer is the grid upon which our scatter plot's points will appear.  To generate this first layer we can simply type ...
+\textit{ggplot2} constructs plots by adding visual layers on top of one another. The first layer is the grid upon which our scatter plot's points will appear.  To generate this first layer we can simply type:
 
 \begin{inR}
 ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
@@ -175,7 +175,7 @@ ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
 \end{figure}
 
 \noindent
-Looking at the \R{ggplot()} function we typed, we can see that the argument \R{data} tells \textit{ggplot2} where the data is coming from - in this case it is coming from the \R{msleep} data frame.  The \R{x} and \R{y} arguments are telling \textit{ggplot2} what variables/columns should be mapped to the x and y axis respectively.  Notice that, not only has \textit{ggplot2} labelled the axis accordingly, but it has also given them scales that correspond to size of the values found in both columns.
+Looking at the \R{ggplot()} function we typed, we can see that the argument \R{data} tells \textit{ggplot2} where the data is coming from - in this case it is coming from the \R{msleep} data frame.  The \R{x} and \R{y} arguments are telling \textit{ggplot2} what variables/columns should be mapped to the $x$ and $y$ axis respectively.  Notice that, not only has \textit{ggplot2} labelled the axis accordingly, but it has also given them scales that correspond to size of the values found in both columns.
 
 \clearpage
 Next we will, quite literally, add (\R{+}) a layer of points on top of this by typing \R{+ geom\_point()}. The term ``geom'' here is just an abbreviation for ``geometric object'', and points are one of many different types of geometric object \textit{ggplot2} recognizes.
@@ -202,11 +202,11 @@ ggplot(data = msleep, aes(x = bodywt, y = sleep_total)) + geom_point()
 \vspace{1em}
 
 \noindent
-But, particularly as we add more customization to the plot, this style of writing becomes hard to read. The (tidyverse's) \href{https://style.tidyverse.org/syntax.html#long-lines}{R style guide} recommends that no line of code exceed 80 characters, which is the advice most of the R community adheres to. In fact, Rstudio can be configured to display a margin representing the 80 character limit: (\textit{Tools $\rightarrow$ Global Options $\rightarrow$ Code $\rightarrow$ Display}). To ensure that you do not exceed limit with larger blocks of code, it is worth remembering that you can always move portions of code to a new line after a comma, operator, or unclosed parentheses. The indentation we used is purely to guide the eye in recognizing that \R{geom\_point()} belongs to a larger block of code.\footnote{While the R programming language allows users to indent code with reckless abandon, some programming languages, such as \textit{Python}, require it to be used in very specific ways.}
+But, particularly as we add more customization to the plot, this style of writing becomes hard to read. The (\textit{tidyverse's}) \href{https://style.tidyverse.org/syntax.html#long-lines}{R style guide} recommends that no line of code exceed 80 characters, which is the advice most of the R community adheres to. In fact, Rstudio can be configured to display a margin representing the 80 character limit: (\textit{Tools $\rightarrow$ Global Options $\rightarrow$ Code $\rightarrow$ Display}). To ensure that you do not exceed limit with larger blocks of code, it is worth remembering that you can always move portions of code to a new line after a comma, operator, or unclosed parentheses. The indentation we used is purely to guide the eye in recognizing that \R{geom\_point()} belongs to a larger block of code.\footnote{While the R programming language allows users to indent code with reckless abandon, some programming languages, such as \textit{Python}, require it to be used in very specific ways.}
 
 \subsection{Inspecting potential outliers}
 
-At present, the plot does not look like much.  There are numerous points scattered between 0 and 1000, and a couple of very extreme points beyond which are skewing the x-axis scale and making the majority of the data difficult to visualize. Given how rare and extreme these two values appear, we should inspect them to ensure that they are not errors within the data set (i.e., ensure that there is not a 2500 kg mouse, bird, or other such abomination in our data set). To accomplish this, most people will instinctively try to scan the data frame's 83 rows one by one with their eyes. Obviously, that strategy will be slow, inefficient, and highly prone to error.  A better strategy is to have R isolate these values using the \R{filter()} function which is part of the tidyverse's \textit{dplyr} package.\footnote{Base R has a (more or less) equivalent function \R{subset()} that we could use as well. There are reasons for preferring \R{filter()}, but in this context there is no advantage to using either.}  We simply give the function our data frame, and then specify a logical rule to subset by. In this case we will tell the function to show us all the rows that have a body weight greater than 2000.
+At present, the plot does not look like much.  There are numerous points scattered between 0 and 1000, and a couple of very extreme points beyond which are skewing the $x$-axis scale and making the majority of the data difficult to visualize. Given how rare and extreme these two values appear, we should inspect them to ensure that they are not errors within the data set (i.e., ensure that there is not a 2500 kg mouse, bird, or other such abomination in our data set). To accomplish this, most people will instinctively try to scan the data frame's 83 rows one by one with their eyes. Obviously, that strategy will be slow, inefficient, and highly prone to error.  A better strategy is to have R isolate these values using the \R{filter()} function which is part of the \textit{tidyverse's} \textit{dplyr} package.\footnote{Base R has a (more or less) equivalent function \R{subset()} that we could use as well. There are reasons for preferring \R{filter()}, but in this context there is no advantage to using either.}  We simply give the function our data frame, and then specify a logical rule to subset by. In this case we will tell the function to show us all the rows that have a body weight greater than 2000.
 
 \begin{inR}
 filter(msleep, bodywt > 2000)
@@ -284,7 +284,7 @@ log(1000, base = 666) # Pick your own base
 [1] 1.062521
 \end{outR}
 
-A base-10 logarithm is generally considered the most intuitive so we will use that. There are various ways to incorporate a logarithmic scale on our plot's axis, but perhaps the safest way is to simply add a new column of $\log_{10}$ values to our dataframe and plot that instead of the standard \R{\$bodywt} column.
+A base-10 logarithm is generally considered the most intuitive so we will use that. There are various ways to incorporate a logarithmic scale on our plot's axis, but perhaps the safest way is to simply add a new column of $\log_{10}$ values to our dataframe and plot that instead of the standard \R{\$bodywt} column (see Box \hyperlink{box:log_scale}{2.1} for a alternative method of scaling the axis).
 
 \begin{inR}
 # Add new column of log bodywt values.
@@ -302,10 +302,13 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \label{fig:ggEx_3.pdf}
 \end{figure}
 
+\begin{figure}[htpb]
+\hypertarget{box:log_scale}{}
 \begin{mdframed}[nobreak=true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 2.1: An alternative way to scale]
 \IMFellEnglish
+\begin{spacing}{1.25}
 
-In the previous example, the logarithm was applied by creating a new column of x-axis values and plotting that. However, this means that, if you want to interpret the numbers in their original units, you need to calculate 10\textsuperscript{\textit{x}}, which can be annoying.  
+In the previous example, the logarithm was applied by creating a new column of $x$-axis values and plotting that. However, this means that, if you want to interpret the numbers in their original units, you need to calculate $10^x$, which can be annoying. \\
 
 \noindent An alternative strategy would be to keep the \R{\$bodywt} column as is and just scale the plot's axis itself to increment logarithmically, which \textit{ggplot2} will do straightforwardly.
 
@@ -315,13 +318,17 @@ ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
   scale_x_continuous(trans = "log10")
 \end{inR}
 
-\vspace{1em}
+\vspace{3em}
 
 \includegraphics[scale = 0.7]{graphics/ch2Figs/ggEx_4.pdf}
 
-\noindent The advantage of this method is you can look at a point's value on the x-axis and know immediately that it corresponds to a weight of \textit{x} kg. The drawback is you may end up with excessively small or large values on the axis, hence the \href{https://www.mathsisfun.com/numbers/scientific-notation.html}{\textit{scientific notation}} you see in the plot.
+\vspace{1em}
 
+\noindent The advantage of this method is you can look at a point's value on the $x$-axis and know immediately that it corresponds to a weight of $x$ kg. The drawback is you may end up with excessively small or large values on the axis, hence the \href{https://www.mathsisfun.com/numbers/scientific-notation.html}{\textit{scientific notation}} you see in the plot.
+
+\end{spacing}
 \end{mdframed}
+\end{figure}
 
 \clearpage
 
@@ -377,14 +384,15 @@ The plotting characters shown in Figure \ref{fig:points.pdf} are just a few of t
 \bigskip
 
 \noindent
-In the above examples we specified a desired colour by typing the name of a primary colour, but we are not limited to just using primary colours. R comes with a built in set of 657 differently named colours.  You can obtain the full list of colour names by running \R{colors()}.  R also has a built-in demo of these colours you can run to get a visual representation of each.  Simply run the command \R{demo("colors")}. 
+In the above examples we specified a desired colour by typing the name of a primary colour, but we are not limited to just using primary colours. R comes with a built in set of 657 differently named colours.  You can obtain the full list of colour names by running \R{colors()}.  R also has a built-in demo of these colours you can run to get a visual representation of each.  Simply run the command \R{demo("colors")}.\footnote{For some reason R spells ``colour'' incorrectly in these functions. This error has persisted for years, and the developers show no signs of correcting it.}
 
-Alternatively, instead of typing a colour name, you can use a hexadecimal value (also referred to as a ``hex code'' or ``hex value'') that represents a specific colour. For example, the hex value \R{"\#FFC0CB"} represents the colour pink. Hexadecimal values offer the user a lot of nuance when it comes to colour selection and, in most cases, the simplest way of finding an appropriate hex value is to consult one of the many websites devoted to colour codes and colour theory (i.e., do an internet search). However, if you would like to understand the theory behind hex codes and why they are used, see Box 2.2.
+Alternatively, instead of typing a colour name, you can use a hexadecimal value (also referred to as a ``hex code'' or ``hex value'') that represents a specific colour. For example, the hex value \R{"\#FFC0CB"} represents the colour pink. Hexadecimal values offer the user a lot of nuance when it comes to colour selection and, in most cases, the simplest way of finding an appropriate hex value is to consult one of the many websites devoted to colour codes and colour theory (i.e., do an internet search). However, if you would like to understand the theory behind hex codes and why they are used, see Box \hyperlink{box:hex_codes}{2.2}.
 
+\hypertarget{box:hex_codes}{}
 \begin{mdframed}[nobreak = true, style = miscFrame, frametitle = \Large\IMFellEnglish Box 2.2: Hexadecimal Notation for Colours]
 \IMFellEnglish
 
-Hexadecimal values are simply numbers that use a base-16 counting method. In other words, in the world of hexadecimals, there are 16 different numbers that are used to count with, instead of the typical 10 numbers (0:9), you were probably raised to use. These are 
+Hexadecimal values are simply numbers that use a base-16 counting method. In other words, in the world of hexadecimals, there are $16$ different numbers that are used to count with, instead of the typical $10$ numbers $(0:9)$, you were probably raised to use. These are 
 
 \vspace{1em}
 
@@ -399,9 +407,9 @@ Hexadecimal values are simply numbers that use a base-16 counting method. In oth
 \end{table}
 
 \noindent
-Because of their larger base, a single hexadecimal digit can store more information than a conventional base-10 digit can.  For instance, if a computer stores various gradations of the colour red using just two digits, that only allows for 100 (10 x 10) different reds. Using hexadecimals you can have 256 (16 x 16) reds, with just two digits.  Thus, if a colour is some combination of red, green, and blue, and each is stored using two hexadecimal digits that gives you 256\textsuperscript{3} = 16,777,216 colours as opposed to the meagre 100\textsuperscript{3} = 1,000,000 you would have using the inferior base-10 counting method.
+Because of their larger base, a single hexadecimal digit can store more information than a conventional base-10 digit can.  For instance, if a computer stores various gradations of the colour red using just two digits, that only allows for $100$ ($10 \times 10$) different reds. Using hexadecimals you can have $256$ ($16 \times 16$) reds, with just two digits.  Thus, if a colour is some combination of red, green, and blue, and each is stored using two hexadecimal digits that gives you $256^3 = 16,777,216$ colours as opposed to the meagre $100^3 = 1,000,000$ you would have using the inferior base-10 counting method.
 
-\noindent To use hexadecimals to represent colour, two digits are assigned to red (RR), green (GG) and blue (BB), in that order like so \R{"\#RRGGBB"}.  Smaller values are darker, and larger values are brighter.  Consequently, black is represented as \R{"\#000000"} and white is represented as \R{"\#FFFFFF"}. Thus, if you want the \enquote{purest} red, you would input \R{"\#FF0000"}, the purest green would be \R{"\#00FF00"}, and the purest blue would be \R{"\#0000FF"}.
+\noindent To use hexadecimals to represent colour, two digits are assigned to red (RR), green (GG) and blue (BB), in that order like so \R{"\#RRGGBB"}.  Smaller values are darker, and larger values are brighter.  Consequently, black is represented as \R{"\#000000"} and white is represented as\\\R{"\#FFFFFF"}. Thus, if you want the \enquote{purest} red, you would input \R{"\#FF0000"}, the purest green would be \R{"\#00FF00"}, and the purest blue would be \R{"\#0000FF"}.
 \end{mdframed}
 
 \subsection{Aesthetics by variable}
@@ -498,7 +506,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 \section{Displaying trends}
 
-Notice that the data points appear to trend downward as you move from left to right on the x-axis. In other words, as body weight increases, you tend to see decreases in sleep total. By simply adding a second geom, called \R{geom\_smooth()}, we can use a line of best fit to represent (i.e., model) this trend.
+Notice that the data points appear to trend downward as you move from left to right on the $x$-axis. In other words, as body weight increases, you tend to see decreases in sleep total. By simply adding a second geom, called \R{geom\_smooth()}, we can use a line of best fit to represent (i.e., model) this trend.
 
 \begin{inR}
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -512,7 +520,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 The shaded grey area represents a statistic called the \textit{standard error} and the line was drawn using a fancy smoothing method called \textit{local polynomial regression fitting}, but we can use a more common regression line as well and modify various aspects of it just like we had done earlier using \R{geom\_point()}.
 
-\begin{inR}
+\begin{inRhigh}[highlightlines={4}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore, shape = vore)) +
   geom_smooth(
@@ -521,7 +529,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     linewidth = 0.5,
     colour = "black"
   )
-\end{inR}
+\end{inRhigh}
 
 \vspace{2em}
 
@@ -609,9 +617,9 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_15.pdf}
 \end{figure}
 
-The default behaviour of \R{facet\_wrap()} preserves the x and y axis scales across the facets, making them easy to compare. In most cases, this is a feature you do not want to override but it can be done (see the R documentation: \R{?facet\_wrap}).
+The default behaviour of \R{facet\_wrap()} preserves the $x$ and $y$ axis scales across the facets, making them easy to compare. In most cases, this is a feature you do not want to override but it can be done (see the R documentation: \R{?facet\_wrap}).
 
-Particularly for beginners with R, it is difficult to impress how useful \textit{ggplot2} is here. Using base R plotting functions to produce a comparable graph would be a considerably more complex process and require a heftier amount of code to be written, whereas ggplot does it all for us in four short lines.
+Particularly for beginners with R, it is difficult to impress how useful \textit{ggplot2} is here. Using base R plotting functions to produce a comparable graph would be a considerably more complex process and require a heftier amount of code to be written, whereas \textit{ggplot2} does it all for us in four short lines.
 
 To finish up the plot, we should adjust some of the labelling, save it, and then take a look at some other more advanced features of \textit{ggplot2}.
 
@@ -681,6 +689,8 @@ ggsave("msleep_plot.svg", units = "cm", width = 20, height = 7)
 
 The above code saved the image as a .SVG (Scalable Vector Graphic) file. This is a commonly used image file in web design, meaning it will, by default, be most likely displayed within a web-browser when you open it.
 
+\vspace{1em}
+
 \begin{figure}[H]
 \centering
 \includesvg[scale = .3]{graphics/ch2Figs/artifacting_2.svg}
@@ -690,7 +700,7 @@ The above code saved the image as a .SVG (Scalable Vector Graphic) file. This is
 
 \section{Scales}
 
-A core concept in the ``grammar'' of \textit{ggplot2} is that of scales. Scales control how data is mapped to different aesthetics. For instance, there are scales for position, colour, size, shape, linetype, and so on. When you map an aesthetic to a variable like we did above where we had mapped both colour and shape to the \R{\$vore} column - e.g.,
+A core concept in the ``grammar'' of \textit{ggplot2} is that of scales. Scales control how data is mapped to different aesthetics. For instance, there are scales for position, colour, size, shape, linetype, and so on. When we mapped an aesthetic to a variable—like we did above where we had mapped both colour and shape to the \R{\$vore} column:
 
 \begin{inR}
 ...
@@ -709,14 +719,14 @@ geom_point(aes(colour = vore, shape = vore))
 \clearpage
 
 \noindent
-When we did that, \textit{ggplot2} automatically chose which colours and shapes got applied to each category, but you can use functions to override these automatic mappings. 
+—\textit{ggplot2} automatically chose which colours and shapes got applied to each category, but you can use functions to override these automatic mappings. 
 
 The function you use to make these overrides is going to be dictated by the aesthetic you want to modify. For instance, to adjust the colour (or edge colour) of a point you could use the \R{scale\_\textbf{colour}\_discrete()} function or the \R{scale\_\textbf{colour}\_continuous()} function. If you wanted to adjust the shapes of the points, you could use \R{scale\_\textbf{shape}\_discrete()} function.  If you wanted to adjust the fill colour of something (e.g., the fill colour of points or the fill colour of bars on a graph), you could use \R{scale\_\textbf{fill}\_discrete()} function or the \R{scale\_\textbf{fill}\_continuous()} function.
 
 There are a large amount of functions like these and, at this point, you do not need to concern yourself with all their varieties and how they work. What is important to recognize here is that each scale function specifies, inside its name, what aesthetic (e.g., colour, shape, fill, etc.) it is modifying:
 
 \begin{center}
-    \R{scale\_\textit{<aes name>}\_\textit{<transformation>}()}
+    \R{scale\_\textit{<aesthetic name>}\_\textit{<transformation>}()}
 \end{center}
 
 The ``transformation'' part of the function's name is intended to describe how the function modifies the aesthetic which will hopefully become more apparent as we move through some examples.
@@ -724,7 +734,7 @@ The ``transformation'' part of the function's name is intended to describe how t
 \subsection{Position Scales: Modifying the Axis Breaks}
 \label{sec:pos_scale}
 
-When we first created the grid on to which we drew our points, we had actually mapped some aesthetics to do this. Specifically, we mapped the x and y aesthetics to the \R{\$bodywt} and \R{\$sleep\_total} columns respectively. In other words, we had written:
+When we first created the grid on to which we drew our points, we had actually mapped some aesthetics to do this. Specifically, we mapped the $x$ and $y$ aesthetics to the \R{\$bodywt} and \R{\$sleep\_total} columns respectively. In other words, we had written:
 
 \begin{inR}
 ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
@@ -732,7 +742,7 @@ ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
 
 \vspace{1em}
 
-When first mapping the x and y axes of a plot, \textit{ggplot2} typically selects an appropriate sequence of values to display for each. These are what are referred to as axis \textit{breaks} and, most of the time, \textit{ggplot2}'s default scaling for the breaks is excellent. However, there are occasions where more customized scaling is necessary. In these situations, the following four functions are useful:
+When first mapping the $x$ and $y$ axes of a plot, \textit{ggplot2} typically selects an appropriate sequence of values to display for each. These are what are referred to as axis \textit{breaks} and, most of the time, \textit{ggplot2}'s default scaling for the breaks is excellent. However, there are occasions where more customized scaling is necessary. In these situations, the following four functions are useful:
 
 \begin{enumerate}
 \setlength\itemsep{-1em}
@@ -743,9 +753,9 @@ When first mapping the x and y axes of a plot, \textit{ggplot2} typically select
 \end{enumerate}
 
 \noindent
-The above four functions allow you to easily modify what values appear on your axis; though, which one you use depends on whether your axis has a \textit{continuous} or \textit{discrete} \gls{position scale}. Position scales control the location mappings of a plots visual elements.
+The above four functions allow you to easily modify what values appear on your axis; though, which one you use depends on whether your axis has a \textit{continuous} or \textit{discrete} \gls{position scale}. Position scales control the location (i.e., $x$ and $y$) mappings of a plot's visual elements.
 
-In the case of the mammal sleep data we plotted, both the x-axis scale (body weight) and y-axis scale (sleep total) are \textit{continuous} in nature. In other words, the axis values represent measured numeric values as opposed to categories. Another way of conceptualizing this continuous vs discrete distinction is to approach it from R's perspective. In this case, both axes represent \textit{numeric} objects as opposed to \textit{character} objects. Thus, for the purpose of plotting, they are treated as a continuous scale.
+In the case of the mammal sleep data we plotted, both the $x$-axis scale (body weight) and $y$-axis scale (sleep total) are \textit{continuous} in nature. In other words, the axis values represent measured numeric values as opposed to categories. Another way of conceptualizing this continuous vs discrete distinction is to approach it from R's perspective. In this case, both axes represent \textit{numeric} objects as opposed to \textit{character} objects.
 
 \begin{inR}
 mode(msleep$bodywt_log10) # x-axis
@@ -756,7 +766,8 @@ mode(msleep$sleep_total) # y-axis
 [1] "numeric"
 \end{outR}
 
-If we had, for instance, plotted a categorical variable on the x-axis (e.g., the conservation status of the animal) then the x-axis would be discrete while the y-axis remains continuous (we will see an example of this later on).
+\noindent
+Thus, for the purpose of plotting, they are treated as a continuous scale and you would need to use \R{scale\_x\_continuous()} and \R{scale\_y\_continuous()} respectively. If we had, for instance, plotted a categorical variable on the $x$-axis (e.g., the conservation status of the animal) then the $x$-axis would be discrete while the $y$-axis remains continuous (we will see an example of this in Chapter 3 when we build a bar graph of skulls ).
 
 To customize the breaks on our axis, we simply need to add one of the aforementioned functions to our plot's code and provide a vector of values we want to see displayed using the argument \R{breaks}. For instance, if we want the x-axis to only display the numbers 1, 2, and 3, we would add \\ \R{scale\_x\_continuous(breaks = c(1,2,3))} to our code (see line 13).
 
@@ -782,7 +793,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_17.pdf}
 \end{figure}
 
-In general, the best practice is not to specify values individually, but rather specify a sequence using the \R{seq()} function we learned about in Chapter 1 (see section \ref{sec:func_args}). For instance, we could have the x-axis increment by 1s and the y-axis increment by 2s (see lines 13 and 14).
+In general, the best practice is not to specify values individually, but rather specify a sequence using the \R{seq()} function we learned about in Chapter 1 (see section \ref{sec:func_args}). For instance, we could have the $x$-axis increment by 1s and the $y$-axis increment by 2s (see lines 13 and 14).
 
 \begin{inRhigh}[highlightlines={13-14}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -811,7 +822,7 @@ The four scale functions above can achieve a lot more than what is being shown h
 
 \subsection{Modifying the Axis Range}
 
-In addition to axis break adjustment, the range of the axis will often require customization as well.  To achieve this, the best practice is usually to use the function \R{coord\_cartesian()}.  To illustrate with some absurd values, we could have the x-axis span between -2 and +1 and have the y-axis span between $-5$ and $+10$.
+In addition to axis break adjustment, the range of the axis will often require customization as well.  To achieve this, the best practice is usually to use the function \R{coord\_cartesian()}.  To illustrate with some absurd values, we could have the $x$-axis span between -2 and +1 and have the $y$-axis span between $-5$ and $+10$.
 
 \begin{inRhigh}[highlightlines={15}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -838,24 +849,26 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \end{figure}
 
 \noindent
-Note that, while the y-axis goes as low as -5, it does not show breaks below 0 because of how the \R{breaks} argument in \R{scale\_y\_continuous()} were set.
+Note that, while the $y$-axis goes as low as -5, it does not show breaks below 0 because of how the \R{breaks} argument in \R{scale\_y\_continuous()} were set.
 
-At this point it is worth offering a disclaimer.  Within the position scale functions mentioned earlier (i.e., \R{scale\_x\_continuous()} and \R{scale\_y\_continuous()}, there is an argument called \R{limits} that will allow you to set the range of the scale in a manner similar to the \R{coord\_cartesian()} function. Additionally, \textit{ggplot2} also has two other functions, \R{xlim()} and \R{ylim()}, that will do the same. However, setting the limits of your plot with these arguments and functions is best avoided because they will remove data falling outside of those specified limits. This can result in problems if your plot's code is performing some type of statistical calculation. For instance, if you remove lines 12 and 13 in the above script and add \R{ylim(-2, 1)} you will be confronted with a very nasty error message, telling you (among other things) that ...
+At this point it is worth offering a disclaimer.  Within the position scale functions mentioned earlier (i.e., \R{scale\_x\_continuous()} and \R{scale\_y\_continuous()}), there is an argument called \R{limits} that will allow you to set the range of the scale in a manner similar to the \R{coord\_cartesian()} function. Additionally, \textit{ggplot2} also has two other functions, \R{xlim()} and \R{ylim()}, that will do the same. However, setting the limits of your plot with these arguments and functions is best avoided because they will remove data falling outside of those specified limits. This can result in problems if your plot's code is performing some type of statistical calculation that is dependent on those values. For instance, if you replace lines 13-15 in the above script with \R{xlim(-2, 1)} you will be confronted with a very nasty error message, telling you (among other things) that ...
 
 \begin{outR}
 Warning messages:
-1: Removed 83 rows containing non-finite outside the scale range
+1: Removed 27 rows containing non-finite outside the scale range
 (`stat_smooth()`). 
+2: Removed 27 rows containing missing values or values outside the scale
+range (`geom_point()`). 
 \end{outR}
 
 \noindent
-This occurs because values in our data falling outside of $-2$ and $+1$ are not recognized anymore, but \textit{ggplot2} needed those values to calculate that blue regression line using the \R{geom\_smooth()} function. Thus, the moral of the story is, if you need to ``zoom-in'' or ``zoom-out'' on a plot, use \R{coord\_cartesian()}. Do not be tempted by those other options.\footnote{Readers are probably wondering ``\textit{what use does removing data outside of the limits serve? It seems like it would only ever cause more problems than it solves (especially if you are unaware it is happening).}'' And to that I say, yes.}
+This occurs because values in our data falling outside of $-2$ and $+1$ are not recognized any more, which, by extension means they are not being used by \R{geom\_smooth()} and \R{geom\_point()}. Particularly in the case of \R{geom\_smooth()}, that will impact how the trend line is calculated. Thus, the moral of the story is, if you need to ``zoom-in'' or ``zoom-out'' on a plot, use \R{coord\_cartesian()}. Do not be tempted by those other options.\footnote{Readers are probably wondering ``\textit{what use does removing data outside of the limits serve? It seems like it would only ever cause more problems than it solves (especially if you are unaware it is happening).}'' And to that I say, yes; however, \textit{ggplot2} has its reasons. Functions like \R{xlim()}, \R{ylim()}, and arguments like \R{limits = } can be useful when you want to restrict the data used in calculations, not just what’s shown. This can help speed things up or focus analyses on a particular range—especially when letting \textit{ggplot2} handle things like smoothing or density estimation. Just be warned: this is a power best wielded carefully.}
 
 \subsection{Colour Scales: Modifying Colour Mappings}
 
-Similar to how \textit{ggplot2} automatically selected a scaling for the breaks on the x and y axis, it also automatically selected various colours to use when we mapped colour to the \R{$vore$} column. Moreover, the distinction between \textit{continuous} and \textit{discrete} scaling applies just as much to colour as it does position. As illustrated in Figure \ref{fig:continuous_col_scale} and \ref{fig:discrete_col_scale}, continuous colour scales are usually represented with a colour gradient and discrete scales are represented by distinct colours (like in a box of crayons). While it is possible to do this, you usually do not want to use a gradient to represent distinct categories because it makes the categories difficult to discriminate visually. For instance, the \R{\$vore} column we mapped to the colour aesthetic earlier contained distinct non-numeric categories (e.g., carni, herbi, insecti, and so on); thus, a colour palette such as that seen in Figure \ref{fig:discrete_col_scale} would be much more appropriate than Figure \ref{fig:continuous_col_scale}.
+Similar to how \textit{ggplot2} automatically selected a scaling for the breaks on the $x$ and $y$ axis, it also automatically selected various colours to use when we mapped colour to the \R{\$vore} column. Moreover, the distinction between \textit{continuous} and \textit{discrete} scaling applies just as much to colour as it does position. As illustrated in Figure \ref{fig:continuous_col_scale} and \ref{fig:discrete_col_scale}, continuous colour scales are usually represented with a colour gradient and discrete scales are represented by distinct colours (like in a box of crayons). While it is possible to do this, you usually do not want to use a gradient to represent distinct categories because it makes the categories difficult to discriminate visually. For instance, the \R{\$vore} column we mapped to the colour aesthetic earlier contained distinct non-numeric categories (e.g., carni, herbi, insecti, and so on); thus, a colour palette such as that seen in Figure \ref{fig:discrete_col_scale} would be much more appropriate than Figure \ref{fig:continuous_col_scale}.
 
-\vspace{2em}
+\clearpage
 
 \begin{figure}[h]
 \centering
@@ -872,8 +885,6 @@ Similar to how \textit{ggplot2} automatically selected a scaling for the breaks 
 \caption{Example of a discrete colour scale (a.k.a. a qualitative palette)}
 \label{fig:discrete_col_scale}
 \end{figure}
-
-\clearpage
 
 \subsection{Discrete Colour Scales}
 \label{sec:discrete_cols}
@@ -926,6 +937,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_22.pdf}
 \end{figure}
 
+\noindent
 The same effect can be achieved by using \R{scale\_colour\_manual()} instead.
 
 \begin{inR}
@@ -981,8 +993,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \noindent
 Notice where the important changes have taken place in the code.  We have moved the \R{colour} aesthetic outside of the \R{aes()} function.  This means a single \R{colour} (black) will now be mapped to all the points. We have also mapped the \R{\$vore} column to the \R{fill} aesthetic inside of \R{aes()} and, for that reason, now specify \R{scale\_\textbf{fill}\_discrete()} to modify the colour options. In other words, we are now adjusting the \textit{fill} colour, not the point/edge colour.
 
-\clearpage
-
 \subsubsection{Pre-Existing Discrete Colour Palettes}
 
 Until now, we have been specifying our own custom colour palettes; however, base R contains a variety of pre-existing palettes we can make use of. To obtain the list you can simply run the following:
@@ -1022,8 +1032,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 \caption{Examples of the various discrete colour palettes in base R.}
 \label{fig:discrete_cols}
 \end{figure}
-
-\clearpage
 
 \subsection{Continuous Colour Scales}
 
@@ -1121,7 +1129,7 @@ hcl.pals(type = "qualitative")
 
 The qualitative palettes work best for discrete scales (i.e., identifying distinct categories) where you want each category to have equal perceptual weight. These are not much use for our present purposes but are notable because they are based on a HCL colour space model. That means we are not limited by the amount of colours in the palette like we were with R's standard discrete colour palettes (see section \ref{sec:discrete_cols}). Though, anecdotally, when you go beyond 6 categories the HCL qualitative palettes' colours start to become more and more difficult to discriminate between (even with standard colour vision). Interestingly, \textit{ggplot2}'s default discrete colour selection relies on a similar underlying theory.
 
-To retrieve the hex codes for a given palette (e.g., \R{"Inferno"}), you’ll need to specify not only the palette name but also the number of colours you want using the \R{n} argument. This determines the granularity of the palette—higher values yield a more finely graded colour spectrum. That said, for most practical purposes, distinctions beyond 4 or 5 colours tend to become visually negligible with the sequential and diverging palettes. Visual examples of all three HCL palette types can be found in Appendix \ref{sec:AppendixPalettes}.
+To retrieve the hex codes for a given palette (e.g., \R{"Inferno"}), you will need to specify not only the palette name but also the number of colours you want using the \R{n} argument. This determines the granularity of the palette—higher values yield a more finely graded colour spectrum. That said, for most practical purposes, distinctions beyond 4 or 5 colours tend to become visually negligible with the sequential and diverging palettes. Visual examples of all three HCL palette types can be found in Appendix \ref{sec:AppendixPalettes}.
 
 \begin{inR}
 hcl.colors(n = 8, palette = "Inferno") 
@@ -1131,6 +1139,8 @@ hcl.colors(n = 8, palette = "Inferno")
 \end{outR}
 
 To use one of base R's HCL colour palettes in our plot we can use the function \\ \R{scale\_fill\_gradientn()} to set our palette. The function just takes a vector of colours and extrapolates a gradient from that.
+
+\clearpage
 
 \begin{inRhigh}[highlightlines={6-10}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -1175,8 +1185,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 In all the examples above, the legend that \textit{ggplot2} produced has always been titled with the name of the column it is representing. For instance, when we mapped the categories in the \R{\$vore} column it was titled ``vore.'' When we mapped \R{log10(brainwt)}, it was titled ``log10(brainwt).'' To adjust the name of the legend, each \R{scale} function we have used also takes a \R{name} argument which will dictate how the legend is titled. For instance, keeping with the above example, we could adjust the legend title to read "Diet".
 
-\clearpage
-
 \begin{inRhigh}[highlightlines={6-7}]
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(
@@ -1211,8 +1219,6 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   )
 \end{inRhigh}
 
-\clearpage
-
 \subsection{Other Scales}
 
 In the sections above, we have only considered the position, colour, fill, and shape scales, which are among the features most frequently appealed to when graphing, but similar functions exist for other scales. For instance, there are scale functions to modify the size, linewidth, and linetype aesthetics if needed. To learn more about these and other features, an excellent resource is the tidyverse's official \textit{ggplot2} website, which contains a learning section that will direct you to various excellent resources (\url{https://ggplot2.tidyverse.org/}), the best and most comprehensive of which is the official manual for \textit{ggplot2} titled ``ggplot2: Elegant Graphics for Data Analysis.'' Keeping with the ethos of ``free software'', this is available to read online for free at 
@@ -1228,8 +1234,7 @@ One thing that will be apparent is that \textit{ggplot2} has a very specific ``l
 \begin{displayquote}
 \headingfont
 %\large
-The theme is designed to put the data forward while supporting comparisons, following the advice of Tufte \citeyear{Tufte2006}; Brewer \citeyear{Brewer1994}; Carr \citeyear{Carr2002}, \citeyear{Carr1994}; Carr and Sun \citeyear{Carr1999}. We can still see the gridlines to aid in the judgement of position \parencite{Cleveland1993}, but they have little visual impact and we can easily `tune' them out. The grey background gives the plot a similar typographic colour to the text, ensuring that the graphics fit in with the flow of a document without jumping out with a bright white background. Finally, the grey background creates a continuous field of colour which ensures that the plot is perceived as a single visual entity.
-
+The theme is designed to put the data forward while supporting comparisons, following the advice of Tufte \citeyear{Tufte2006}; Brewer \citeyear{Brewer1994}; Carr \citeyear{Carr2002}, \citeyear{Carr1994}; Carr and Sun \citeyear{Carr1999}. We can still see the gridlines to aid in the judgement of position \parencite{Cleveland1993}, but they have little visual impact and we can easily \enquote{tune} them out. The grey background gives the plot a similar typographic colour to the text, ensuring that the graphics fit in with the flow of a document without jumping out with a bright white background. Finally, the grey background creates a continuous field of colour which ensures that the plot is perceived as a single visual entity.
 - \cite{Wickham_ggplot2}
 
 \end{displayquote}
@@ -1283,8 +1288,6 @@ my_plot
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_32.pdf}
 \end{figure}
 
-\clearpage
-
 The quickest way to modify the overall appearance of your plot - which works well as a starting point for other modifications you want to make - is to use one of \textit{ggplot2's} built in themes shown in Figure \ref{fig:gg_built-in-themes}.  Simply add the theme's function to your plot's code.  For instance, if you wanted to use the black and white theme, \R{theme\_bw()}, you would run ...
 
 \begin{inR}
@@ -1330,7 +1333,7 @@ my_plot + theme_bw() +
 \includegraphics[scale = .75]{graphics/ch2Figs/ggEx_33.pdf}
 \end{figure}
 
-Notice that the code affected both axes; however, if we want to affect a change for only one axis (e.g., the x-axis) we just specify the element as \R{axis.text.x}.  This will also allow us to include a \R{margin} argument to affect the spacing around the text.
+Notice that the code affected both axes; however, if we want to affect a change for only one axis (e.g., the $x$-axis) we just specify the element as \R{axis.text.x}.  This will also allow us to include a \R{margin} argument to affect the spacing around the text.
 
 \begin{inRhigh}[highlightlines={3,5}]
 my_plot + theme_bw() +
@@ -1350,7 +1353,7 @@ my_plot + theme_bw() +
 
 \clearpage
 
-A similar logic applies to the axis title.  In that case we would modify the \R{axis.title} element. And again, if we wanted to modify the x-axis title specifically, we would use \R{axis.title.x}.  The y-axis title would of course be \R{axis.title.y}.
+A similar logic applies to the axis title.  In that case we would modify the \R{axis.title} element. And again, if we wanted to modify the $x$-axis title specifically, we would use \R{axis.title.x}.  The $y$-axis title would of course be \R{axis.title.y}.
 
 \begin{inRhigh}[highlightlines={3,7}]
 my_plot + theme_bw() +
@@ -1380,7 +1383,7 @@ In the plots created above, we have gone through how to adjust a wide variety of
 \begin{enumerate}
     \item How do you change the \textit{order} of the categories?  For instance, suppose we wanted ``herbi'' to be at the top of the ``Diet'' legend. Or suppose we wanted it to come first in our sequence of faceted plots we created in section \ref{sec:facets}. How can we make that happen?
     
-    \item  How do we adjust the \textit{names} of the categories? Each category of vore/diet has had its name shortened, but what if we wanted to write out each category in its entirety. E.g., display ``carnivore'' instead of ``carni'', and ``herbivore'' instead of ``herbi'', and so on.
+    \item  How do we adjust the \textit{names} of the categories? Each category of vore/diet was labelled using the shortened version contained in the data set, but what if we wanted to write out each category in its entirety? E.g., display ``carnivore'' instead of ``carni'', and ``herbivore'' instead of ``herbi'', and so on.
 \end{enumerate}
 
 The answer to both these questions requires first understanding ``factors,'' which will be explained in the next chapter.
