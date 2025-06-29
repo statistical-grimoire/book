@@ -767,7 +767,7 @@ mode(msleep$sleep_total) # y-axis
 \end{outR}
 
 \noindent
-Thus, for the purpose of plotting, they are treated as a continuous scale and you would need to use \R{scale\_x\_continuous()} and \R{scale\_y\_continuous()} respectively. If we had, for instance, plotted a categorical variable on the $x$-axis (e.g., the conservation status of the animal) then the $x$-axis would be discrete while the $y$-axis remains continuous (we will see an example of this in Chapter 3 when we build a bar graph of skulls ).
+Thus, for the purpose of plotting, they are treated as a continuous scale and you would need to use \R{scale\_x\_continuous()} and \R{scale\_y\_continuous()} respectively. If we had, for instance, plotted a categorical variable on the $x$-axis (e.g., the conservation status of the animal) then the $x$-axis would be discrete while the $y$-axis remains continuous (we will see an example of this in Chapter 3 when we build a bar graph of skulls \emoji{metal}).
 
 To customize the breaks on our axis, we simply need to add one of the aforementioned functions to our plot's code and provide a vector of values we want to see displayed using the argument \R{breaks}. For instance, if we want the x-axis to only display the numbers 1, 2, and 3, we would add \\ \R{scale\_x\_continuous(breaks = c(1,2,3))} to our code (see line 13).
 
