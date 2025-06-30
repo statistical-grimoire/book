@@ -8,7 +8,6 @@ set.seed(1750737416)
 # Parameters
 n_iter <- 10000
 n <- 100
-alpha <- 0.05
 
 # Non-linear psychological scale
 psych_scale <- c(
