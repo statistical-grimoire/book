@@ -13,16 +13,16 @@ This repository contains a dataset on the colour distribution of M&M Milk Chocol
 Each row represents one M&M package. The dataset includes the following variables:
 
 - **pkg**
-    — Package identifier (1–48). Each corresponds to a single M&M package sampled from one 48-pack case.
+    - Package identifier (1–48). Each corresponds to a single M&M package sampled from one 48-pack case.
   
 - **weight_oz**
     - Weight of the package in ounces.
 
 - **year**
-    — Year in which the data were collected.
+    - Year in which the data were collected.
 
 - **blue**, **brown**, **green**, **orange**, **red**, **yellow**
-    — Count of M&Ms of each respective colour in the package.
+    - Count of M&Ms of each respective colour in the package.
 
 ## Source
 
