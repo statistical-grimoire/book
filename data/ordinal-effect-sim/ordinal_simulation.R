@@ -22,9 +22,7 @@ psych_scale <- c(
 results <- tibble(
   iteration = integer(),
   scale_type = character(),
-  d_value = numeric(),
-  t_sig = logical(),
-  wilcox_sig = logical()
+  d_value = numeric()
 )
 
 # Simulation loop
