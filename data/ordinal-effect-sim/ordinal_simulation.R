@@ -59,7 +59,7 @@ for (i in 1:n_iter) {
     results,
     tibble(
       iteration = i,
-      scale_type = "Coded (1–5)",
+      scale_type = "Coded (1-5)",
       d_value = d_coded
     ),
     tibble(
