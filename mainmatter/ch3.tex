@@ -29,7 +29,7 @@ As noted above, there are a variety of different spreadsheet file types data cou
 ``CSV'' stands for ``comma separated values.'' It gets its name from the fact that it is, quite literally, nothing more than a generic text document that uses commas to denote a tabular (spreadsheet) structure in the data.\footnote{``Tabular'' and ``spreadsheet'' mean the same thing here.} This is easiest to see with an example. The GitHub repository for this book contains a file called \R{skull\_cap\_partial\_wide.csv}. It is located in the \R{./data} directory at the following URL:
 
 \begin{center}
-\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls}
+\url{https://github.com/statistical-grimoire/thomson-randallmaciver-1905}
 \end{center}
 
 \noindent
@@ -527,7 +527,7 @@ apply(skulls[, 2:11], MARGIN = 1, FUN = max, na.rm = TRUE)
 ...
 \end{outR}
 
-The structure of this dataset is what is commonly referred to as the \gls{wide format}. At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all the columns are conveniently numeric. Even though this layout might seem intuitive, it is not ideal for many types of analysis or visualization. In fact, the original dataset\footnote{\url{https://github.com/statistical-grimoire/book/blob/main/data/Egyptian-skulls/Thomson_Randall-MacIver_1905.csv}} had to be substantially truncated to fit into a usable wide format for our purposes here.
+The structure of this dataset is what is commonly referred to as the \gls{wide format}. At first glance, R makes it fairly easy to work with data in this format. However, we have not attempted anything particularly complex yet and, apart from the first column, all the columns are conveniently numeric. Even though this layout might seem intuitive, it is not ideal for many types of analysis or visualization. In fact, the original dataset\footnote{Full data set: \url{https://github.com/statistical-grimoire/thomson-randallmaciver-1905/blob/main/Thomson_Randall-MacIver_1905.csv}} had to be substantially truncated to fit into a usable wide format for our purposes here.
 
 \clearpage
 
