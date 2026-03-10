@@ -1,0 +1,10 @@
+# How to Use R on a Computer
+
+R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux[^1]; however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply "understanding" the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a terminal emulator which is a windowed application that allows you to type instructions (a.k.a. "commands") to your computer.
+
+
+
+}\footnote{A windowed application that allows you to type instructions (a.k.a. ``commands'') to your computer.} of some kind. On computers using the Windows operating system, this is referred to as the \textit{Command Prompt} application, on Macintosh and Linux computers this is the \textit{Terminal} application. Relying on your operating system's basic command console application as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing. The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an ``\textbf{environment}'' or, more garrulously, an ``\gls{integrated development environment} (\acrshort{IDE}).''  This is simply a software application providing the user with a more elegant visual workspace and feature set to make programming a smoother experience. 
+
+[^1]:Admittedly, the process is probably a little less straightforward on Linux, but still managable if you RTFM. 
+

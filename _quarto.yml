@@ -1,0 +1,33 @@
+project:
+  type: book
+  output-dir: docs
+  resources:
+    - .nojekyll
+
+
+book:
+  title: "The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R"
+  author: "Jeffrey M. Pisklak"
+  date: "2026-03-09"
+  page-footer:
+    left: |
+      The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R was written by Jeffrey M. Pisklak.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - intro.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+

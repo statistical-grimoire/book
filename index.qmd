@@ -1,0 +1,17 @@
+# About {.unnumbered}
+
+The Statistical Grimoire is a beginner-friendly open-access textbook actively being updated with statistical and data analysis techniques using the R programming language and other open-source tools.
+
+This book was created to give students a solid, practical, and free introduction to both statistics and R programming, especially if they have not done any coding before. 
+
+<hr>
+
+The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R by Jeffrey M. Pisklak is licensed under <a href = "https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a>.
+
+<a href = "https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src = "imgs/preface/by-nc-nd.svg"></a>
+
+<a href = "https://github.com/statistical-grimoire/book"><img src = "imgs/preface/GitHub_Invertocat_Black_Clearspace.svg" style="height:1.5em; width:auto;" target = "_blank">https://github.com/statistical-grimoire/book</a>
+
+This is a Quarto book.
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.

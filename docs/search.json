@@ -1,0 +1,102 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R",
+    "section": "",
+    "text": "About\nThe Statistical Grimoire is a beginner-friendly open-access textbook actively being updated with statistical and data analysis techniques using the R programming language and other open-source tools.\nThis book was created to give students a solid, practical, and free introduction to both statistics and R programming, especially if they have not done any coding before.\n\nThe Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R by Jeffrey M. Pisklak is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International.\n\nhttps://github.com/statistical-grimoire/book\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "preface.html",
+    "href": "preface.html",
+    "title": "Why This Book Exists",
+    "section": "",
+    "text": "Foolish Assumptions Made by Your Author\nMany students arrive at graduate level study with a strong dislike of statistics and, importantly, without the preparation modern research demands. The gap here isn’t only a statistical one. It’s also about the tools and workflows that make statistical work reliable, transparent, and reproducible.\nOpen-source tools such as R, Git, Markdown, and LaTeX, and many others are now standard in many research settings. Students paying for a rigorous education should be introduced to these tools early. Yet many never even learn that they exist, and those that do typically discover them by accident since most programs barely mention them. Those who do encounter them often learn under pressure, quickly and inconsistently, because a deadline leaves them with no alternative. That path is stressful and prone to mistakes. Its the route I and many others took and it left me frustrated and resentful. How could an overpriced education fail so badly at preparing students for the practical realities of contemporary research.\nThese tools are not distractions from learning statistics; they support the process. They help students compute, document, verify, and communicate their work with far less friction than would otherwise be experianced. In an era of unprecedented access to computing power, it makes little sense to train students as if that power, and the practices that harness it, barely matter. When we cling to older methods by default, we risk mistaking tradition for rigor and blaming students for problems our training choices create.\nThis book is an attempt to close that gap: to teach statistics alongside the open-source tools and workflows that students will actually use, so they can spend less time fighting the process and more time doing careful, credible research.\nThe primary tool used throughout this book is the R programming language, though we will introduce other tools (markdown, git, LaTeX) when appropriate. Over the long term, my goal is for this text to function as a practical, open-access guide that leads complete beginners step by step through both statistical thinking and statistical programming in a clear, thorough, and usable way. Please treat everything here as a work in progress: the book will evolve.",
+    "crumbs": [
+      "Why This Book Exists"
+    ]
+  },
+  {
+    "objectID": "preface.html#foolish-assumptions-made-by-your-author",
+    "href": "preface.html#foolish-assumptions-made-by-your-author",
+    "title": "Why This Book Exists",
+    "section": "",
+    "text": "You will actually read this (yes, I’m an optimist)\nYou probably don’t like math. You might even fear it, but deep down, you know it’s good for you. Math, like confession, is rarely pleasant but often necessary.\nYou’ll start at the beginning and move forward.\nYou won’t take the sillier stuff too seriously—especially the parts that sound true. They probably aren’t. Probably.",
+    "crumbs": [
+      "Why This Book Exists"
+    ]
+  },
+  {
+    "objectID": "preface.html#errata",
+    "href": "preface.html#errata",
+    "title": "Why This Book Exists",
+    "section": "Errata",
+    "text": "Errata\nNo manuscript is free from error. Should you unearth any mistakes, please file an issue on GitHub:\nhttps://github.com/statistical-grimoire/book/issues",
+    "crumbs": [
+      "Why This Book Exists"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction to R",
+    "section": "",
+    "text": "1.1 What is R?\nR is a programming language. A progamming language is simply a language humans use to communicate instructions to a digital computer.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#the-genesis-of-r",
+    "href": "intro.html#the-genesis-of-r",
+    "title": "1  Introduction to R",
+    "section": "1.2 The Genesis of R",
+    "text": "1.2 The Genesis of R\nThe name “R” was derived from the first initials of its original two programmers, “R”obert Gentleman and “R”oss Ihaka. The decision to name the language using a single English letter is what might, charitably, be called a joke on the part of these two programmers, who saw themselves poking fun at R’s parent language, which was given the unimaginative name of “S”. In the 1970s the S language had undergone its initial development at the famous Bell Laboratories with the primary aim of enabling and encouraging “GOOD DATA ANALYSIS”- a goal so fundamental to the ethos of S that the authors, Becker and Chamber (1984), felt they had to emphasize it using uppercase lettering inside the preface to the language’s inaugural instruction manual (the uppercase lettering has been reproduced here for the reader’s benefit). The familial correspondence R has with S is present even to this day, to such an extent that Becker and Chamber’s original manual could probably function decently well as an introductory manual to R itself.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#why-a-progamming-language",
+    "href": "intro.html#why-a-progamming-language",
+    "title": "1  Introduction to R",
+    "section": "1.3 Why a Progamming Language?",
+    "text": "1.3 Why a Progamming Language?\nAt this point readers might be wondering why it should ever be necessary to learn a programming language to conduct statistics and data analysis more generally. These topics are usually considered difficult enough by many students and educators, what need is there to compound this with a programming language? Why not, for instance, make use of any one of the many pieces of statistical software that already exist and (as the advertising would want you to beleive) require no requisite knowledge of programming? In other words, why not use software such as SPSS1 or one of its many malformed, and equally expensive, doppelgängers, Minitab, SAS, and Stata.\nThe primary answer to this question lies in flexibility. There is rarely a single correct way to analyze data, as different datasets come with their own unique challenges and intricacies. These complexities often resist the rigid, prescriptive approaches employed by many proprietary software programs. This is not to say software like SPSS cannot adapt to such scenarios—it often can. However, this adaptation typically comes at a cost: users may need to pay for additional features not included in the original purchase, or they may face an even steeper learning curve. One that forces mastery of a obscure and enigmatic language. A language that is so specific to the software, that only a select few (if any) even seem to understand it.\nIn direct contrast to this, R offers an intuitive and empowering experience for users. While it may seem daunting at first, R operates in a straightforward and logical manner, much like a calculator. Many users discover that using R is far easier than they initially expected. This is largely due to the vibrant and dedicated R community that exists online, which has cultivated an extensive network of resources over the years. Acolytes of R see it as something worthwhile to preserve and develop (often at their own personal time and expense). Proprietary statistical software has no equivalent to this, nor will it ever. Users are often snared within its ecosystem not out of preference or love for the program, but because it is all they have ever known.\nAlthough programs like SPSS may initially appear familiar to new users due to their resemblance to popular spreadsheet software like Microsoft Excel, this familiarity is purely superficial. To illustrate, SPSS and its equivalents will, in a manner similar to most spreadsheet software, present users with an array of buttons and menus above a friendly spreadsheet-style grid. However, the similarities end there. New users will quickly find themselves overwhelmed by the abundance of strange options needed to perform even simple tasks, such as loading and viewing a dataset. Contrary to what their marketing might lead you to believe, the learning curve for these programs is dangerously steep, and users are unknowingly at risk of being lead off a cliff.\nOwing to its nature as a programming language crafted for statistics, R is a language grounded by the logic of mathematics. This foundation often makes it easier for new users to understand and build upon, even for those who claim to dislike math. Moreover, proficiency with R grants users the ability to work with other statistical software if needed. The reverse, however, is rarely true: mastering SPSS or similar programs does not provide the same level of flexibility or transferable skills.\nAn altogether different answer to the question that opened this section, and one that will appeal to the University students reading this, is simply cost. R is free for the user, with no need to put up with annoying advertising or pay for additional features. The same can not be said of the other aforementioned software which are almost always subscription based, requiring the user to consistently renew a very expensive license to use the software. But R is not just free in monetary terms, it is also free in philosophical terms. R adopts the Free Software Foundation’s GNU General Public License and thus adheres to the philosophy of free software (what some might term open-source).\n\n\n\n\n\n\nImportantThe four essential freedoms\n\n\n\nFrom the GNU project website (Free Software Foundation 2026):\nA program is free software if the program’s users have the four essential freedoms:\n\nThe freedom to run the program as you wish, for any purpose (freedom 0).\nThe freedom to study how the program works, and change it so it does your computing as you wish (freedom 1). Access to the source code is a precondition for this.\nThe freedom to redistribute copies so you can help others (freedom 2).\nThe freedom to distribute copies of your modified versions to others (freedom 3). By doing this you can give the whole community a chance to benefit from your changes. Access to the source code is a precondition for this.\n\n\n\nThis philosophy extends beyond the software itself to include both its file formats and help documentation. For years, the dissemination of scientific findings has been (and still is) hindered by the reliance on proprietary file formats imposed by commercial research tools. Locking information within these exclusive systems is clearly counterproductive to scientific progress, as it binds researchers to overpriced, branded ecosystems. Such practices prioritize profit over the broader goals of accessibility and collaboration, making their continued adoption ethically questionable. In practical terms, this means that choosing R is not just about its functionality, it is also a statement against the restrictive and exploitative behaviours proprietary software providers perpetuate. More plainly, and if for no other reason, we should use R just to give the middle finger to these companies.\nAs if you didn’t need any other reasons to start using R immediately, here are some more:\n\nR Is Not A Gooey Mess: Unlike programs tied to a graphical user interface (GUI, often called “gooey”), R is not limited by point-and-click constraints. Its capabilities are as vast as what you and others can program (and your computer can handle).\nAdvanced Statistical Capabilities: R’s packages make it easy to apply best practices in statistics.\nEnhanced Data Visualization: With intuitive tools like ggplot2, Shiny, Plotly, and many others, R easily permits sophisticated and customized visualizations.\nReproducible Research: R is built for reproducible research, aligning with principles. It allows you to create scripts that are easy to share, review, and rerun, by anyone. This helps ensure transparency, accuracy, and reliability.\nIntegration with Other Tools: R can easily integrate with other software and programming languages, such as Python, SQL, HTML, , and even Excel. This makes it a valuable tool for working in diverse computational environments. Moreover, because of it’s nature as programing language, version control is seemlesly applied with systems like Git.\n\nWhile the prospect of learning a programming language like R may seem daunting at first, it ultimately provides a more adaptable, intuitive, ethical, affordable, and rewarding tool for statistical analysis than many of its proprietary counterparts.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#why-r",
+    "href": "intro.html#why-r",
+    "title": "1  Introduction to R",
+    "section": "1.4 Why R?",
+    "text": "1.4 Why R?\nAt this point, it is worth addressing a question that comes up often: “Why use R instead of something like Python or Julia?” It is a fair question. After all, Python and Julia—like R—are full-fledged programming languages that are powerful and capable, but the difference comes down to origin story.\nR is not a general-purpose language. It is the progeny of S, a language birthed in the depths of statistical practice for one primary goal: GOOD DATA ANALYSIS. Everything about R—from its object types to its default printing behaviour—is tailored to the sorts of things data analysts do every day.\nBy contrast, Python and Julia are general-purpose languages. They are designed to do many things well: build websites, run simulations, automate tasks, and yes, analyse data. But this means that good data analysis is a goal these languages aspire to, not one they were born to achieve.\nTo illustrate, suppose you wanted to calculate the mean of the numbers 1 to 100. In R, this is as natural as a reflex:\n\nmean(1:100)\n\n[1] 50.5\n\n\nNo need to import packages. No need to loop. No need to define arrays. It just works.\nIn Python, you will find that a bit more ceremony is required:\n\nx = list(range(1, 101))\nprint(sum(x) / len(x))\n\n50.5\n\n\nAdditional packages, like Python’s excellent numpy package can simplify what needs to be written, but it still is not quite so good as what R offers as a baseline user experience.\nJulia sits somewhere in the middle. It was built with scientific computing in mind, and its syntax can often be just as clean as R’s:\nusing Statistics\nmean(1:100)\nHowever, Julia still expects you to opt in to statistics, with basic functions like mean() not being available until you explicitly load them. That is not a flaw BTW—it’s a philosophical choice.\nR, by contrast, assumes you are doing data analysis. You do not have to ask for permission to compute a mean. Moreover, neither Julia nor Python have the mature ecosystem of statistical tools, diagnostic plots, or nuanced modelling features that R does—at least not yet. R’s statistical packages, often written by the very people developing the methods, remain second to none.\nThat being said Python and Julia are still great choices for data analysis and nobody should be discouraged from using them (to the contrary in fact).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#references",
+    "href": "intro.html#references",
+    "title": "1  Introduction to R",
+    "section": "1.5 References",
+    "text": "1.5 References\n\n\nBecker, R. A., and J. M. Chambers. 1984. S: An Interactive\nEnvironment for Data Analysis and Graphics. Belmont, CA: Wadsworth.\n\n\nFree Software Foundation. 2026. “What Is Free Software?” https://www.gnu.org/philosophy/free-sw.html.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#footnotes",
+    "href": "intro.html#footnotes",
+    "title": "1  Introduction to R",
+    "section": "",
+    "text": "SPSS is popular software for conducting statistics that was originally released in the late 1960s and is an acronym for Statistical Package for the Social Sciences. At some point it was purchased by IBM and re-branded to mean Steeply Priced Shitty Software.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
+    ]
+  }
+]
