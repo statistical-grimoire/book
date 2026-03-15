@@ -85,7 +85,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./run_R.html" rel="next">
 <link href="./preface.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -97,7 +97,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-562dbf3b5556630648859584984cb735.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-01a19f1df9f5d1a1c0e7a8e8625601d2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -183,6 +183,12 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./run_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How to Use R on a Computer</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -201,7 +207,6 @@ div.csl-indent {
   <li><a href="#the-genesis-of-r" id="toc-the-genesis-of-r" class="nav-link" data-scroll-target="#the-genesis-of-r"><span class="header-section-number">1.2</span> The Genesis of R</a></li>
   <li><a href="#why-a-progamming-language" id="toc-why-a-progamming-language" class="nav-link" data-scroll-target="#why-a-progamming-language"><span class="header-section-number">1.3</span> Why a Progamming Language?</a></li>
   <li><a href="#why-r" id="toc-why-r" class="nav-link" data-scroll-target="#why-r"><span class="header-section-number">1.4</span> Why R?</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">1.5</span> References</a></li>
   </ul>
 </nav>
     </div>
@@ -233,7 +238,7 @@ div.csl-indent {
 </section>
 <section id="the-genesis-of-r" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="the-genesis-of-r"><span class="header-section-number">1.2</span> The Genesis of R</h2>
-<p>The name “R” was derived from the first initials of its original two programmers, “R”obert Gentleman and “R”oss Ihaka. The decision to name the language using a single English letter is what might, charitably, be called a joke on the part of these two programmers, who saw themselves poking fun at R’s parent language, which was given the unimaginative name of “S”. In the 1970s the S language had undergone its initial development at the famous Bell Laboratories with the primary aim of enabling and encouraging “GOOD DATA ANALYSIS”- a goal so fundamental to the ethos of S that the authors, Becker and Chamber <span class="citation" data-cites="Becker1984">(<a href="intro.html#ref-Becker1984" role="doc-biblioref">1984</a>)</span>, felt they had to emphasize it using uppercase lettering inside the preface to the language’s inaugural instruction manual (the uppercase lettering has been reproduced here for the reader’s benefit). The familial correspondence R has with S is present even to this day, to such an extent that Becker and Chamber’s original manual could probably function decently well as an introductory manual to R itself.</p>
+<p>The name “R” was derived from the first initials of its original two programmers, “R”obert Gentleman and “R”oss Ihaka. The decision to name the language using a single English letter is what might, charitably, be called a joke on the part of these two programmers, who saw themselves poking fun at R’s parent language, which was given the unimaginative name of “S”. In the 1970s the S language had undergone its initial development at the famous Bell Laboratories with the primary aim of enabling and encouraging “GOOD DATA ANALYSIS”- a goal so fundamental to the ethos of S that the authors, Becker and Chamber <span class="citation" data-cites="Becker1984">(<a href="references.html#ref-Becker1984" role="doc-biblioref">1984</a>)</span>, felt they had to emphasize it using uppercase lettering inside the preface to the language’s inaugural instruction manual (the uppercase lettering has been reproduced here for the reader’s benefit). The familial correspondence R has with S is present even to this day, to such an extent that Becker and Chamber’s original manual could probably function decently well as an introductory manual to R itself.</p>
 </section>
 <section id="why-a-progamming-language" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="why-a-progamming-language"><span class="header-section-number">1.3</span> Why a Progamming Language?</h2>
@@ -253,7 +258,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>From the GNU project website <span class="citation" data-cites="GNUphil">(<a href="intro.html#ref-GNUphil" role="doc-biblioref">Free Software Foundation 2026</a>)</span>:</p>
+<p>From the GNU project website <span class="citation" data-cites="GNUphil">(<a href="references.html#ref-GNUphil" role="doc-biblioref">Free Software Foundation 2026</a>)</span>:</p>
 <p>A program is free software if the program’s users have the four essential freedoms:</p>
 <ul>
 <li>The freedom to run the program as you wish, for any purpose (freedom 0).</li>
@@ -302,20 +307,16 @@ div.csl-indent {
 <p>However, Julia still expects you to opt in to statistics, with basic functions like <code>mean()</code> not being available until you explicitly load them. That is not a flaw BTW—it’s a philosophical choice.</p>
 <p>R, by contrast, assumes you are doing data analysis. You do not have to ask for permission to compute a mean. Moreover, neither Julia nor Python have the mature ecosystem of statistical tools, diagnostic plots, or nuanced modelling features that R does—at least not yet. R’s statistical packages, often written by the very people developing the methods, remain second to none.</p>
 <p>That being said Python and Julia are still great choices for data analysis and nobody should be discouraged from using them (to the contrary in fact).</p>
-</section>
-<section id="references" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="references"><span class="header-section-number">1.5</span> References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-Becker1984" class="csl-entry" role="listitem">
-Becker, R. A., and J. M. Chambers. 1984. <em>S: An Interactive
-Environment for Data Analysis and Graphics</em>. Belmont, CA: Wadsworth.
+Becker, R. A., and J. M. Chambers. 1984. <em>S: An Interactive Environment for Data Analysis and Graphics</em>. Belmont, CA: Wadsworth.
 </div>
 <div id="ref-GNUphil" class="csl-entry" role="listitem">
 Free Software Foundation. 2026. <span>“What Is Free Software?”</span> <a href="https://www.gnu.org/philosophy/free-sw.html">https://www.gnu.org/philosophy/free-sw.html</a>.
 </div>
 </div>
-
-
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
@@ -732,8 +733,8 @@ Free Software Foundation. 2026. <span>“What Is Free Software?”</span> <a hre
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./run_R.html" class="pagination-link" aria-label="How to Use R on a Computer">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How to Use R on a Computer</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

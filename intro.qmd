@@ -86,8 +86,3 @@ However, Julia still expects you to opt in to statistics, with basic functions l
 R, by contrast, assumes you are doing data analysis. You do not have to ask for permission to compute a mean. Moreover, neither Julia nor Python have the mature ecosystem of statistical tools, diagnostic plots, or nuanced modelling features that R does—at least not yet. R's statistical packages, often written by the very people developing the methods, remain second to none.
 
 That being said Python and Julia are still great choices for data analysis and nobody should be discouraged from using them (to the contrary in fact).
-
-## References
-
-::: {#refs}
-:::

@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jeffrey M. Pisklak">
-<meta name="dcterms.date" content="2026-03-09">
 
-<title>The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R</title>
+<title>2&nbsp; How to Use R on a Computer – The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -32,7 +50,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./preface.html" rel="next">
+<link href="./references.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -84,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./run_R.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How to Use R on a Computer</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -129,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./run_R.html" class="sidebar-item-text sidebar-link">
+  <a href="./run_R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How to Use R on a Computer</span></span></a>
   </div>
 </li>
@@ -144,40 +163,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How to Use R on a Computer</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jeffrey M. Pisklak </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 9, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -187,31 +188,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about" class="level1 unnumbered">
-<h1 class="unnumbered">About</h1>
-<p>The Statistical Grimoire is a beginner-friendly open-access textbook actively being updated with statistical and data analysis techniques using the R programming language and other open-source tools.</p>
-<p>This book was created to give students a solid, practical, and free introduction to both statistics and R programming, especially if they have not done any coding before.</p>
+<p>R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux;<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> however, prior to attempting any install it is important to make a simple distinction first. R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required. This is a basic reality that applies to any language. It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a terminal emulator which is a windowed application that allows you to type instructions (a.k.a. “commands”) to your computer. On computers using the Windows operating system, this is referred to as the <em>Windows Terminal</em>, on Macintosh and Linux computers this is the <em>Terminal</em> application.</p>
+<p>We refer to these as “emulators” because, in a bygone era, “terminals” were peices of computer hardware, consisting mainly of a keyboard paired with a monitor or printer, that people could use to send data to and receive data from a computer. Prior to this, information would have to be entered via punch-card <span class="citation" data-cites="Norsk_Digital_Museum">(<a href="references.html#ref-Norsk_Digital_Museum" role="doc-biblioref">Norsk Teknisk Museum 2014</a>)</span>.</p>
+<div id="fig-ibm2260" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="IBM 2260 terminal used to communicate with an IBM mainframe computer in the 1960s and 1970s." alt="IBM 2260 Terminal and mainframe.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ibm2260-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imgs/run_R_files/NTM_TELE_IBM_2012_59021.jpg" class="img-fluid figure-img" style="width:50.0%" data-fig-cap="IBM 2260 terminal used to communicate with an IBM mainframe computer in the 1960s and 1970s." alt="IBM 2260 Terminal and mainframe.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ibm2260-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: IBM 2260
+</figcaption>
+</figure>
+</div>
+<p>Relying on your operating system’s basic terminal emulator as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an <em>environment</em> or, more garrulously, an <em>integrated development environment</em> (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and <a href="https://positron.posit.co/">Positron</a> are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+<span class="screen-reader-only">Caution</span>Coming Soon:
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You’re reading a what amounts to a friendly beta version (it literally only has one complete chapter so far). Check back for additions and improvements.</p>
+<ul>
+<li>Installation Instructions for R, RStudio, Positron on Windows, Max, and (maybe) beginner friendly Linux Distros.</li>
+<li>Cloud-based IDEs (no installation required)</li>
+</ul>
 </div>
 </div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Norsk_Digital_Museum" class="csl-entry" role="listitem">
+Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Photograph. Norsk Telemuseum. September 10, 2014. <a href="https://digitaltmuseum.no/011015240147/22-0-ibm-modell-360-370">https://digitaltmuseum.no/011015240147/22-0-ibm-modell-360-370</a>.
+</div>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
-<p>The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R by Jeffrey M. Pisklak is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a>.</p>
-<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="imgs/preface/by-nc-nd.svg"></a></p>
-<p><a href="https://github.com/statistical-grimoire/book"><img src="imgs/preface/GitHub_Invertocat_Black_Clearspace.svg" style="height:1.5em; width:auto;" target="_blank">https://github.com/statistical-grimoire/book</a></p>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
-
-
+<ol>
+<li id="fn1"><p>Admittedly, the process is probably a little less straightforward on Linux, but still managable if you RTFM.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>I say that as someone who worships at the throne of Tux, the Penguin Emperor.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -617,10 +635,13 @@ Caution
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction to R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to R</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./preface.html" class="pagination-link" aria-label="Why This Book Exists">
-        <span class="nav-page-text">Why This Book Exists</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

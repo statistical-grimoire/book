@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R",
     "section": "",
-    "text": "About\nThe Statistical Grimoire is a beginner-friendly open-access textbook actively being updated with statistical and data analysis techniques using the R programming language and other open-source tools.\nThis book was created to give students a solid, practical, and free introduction to both statistics and R programming, especially if they have not done any coding before.\n\n\n\n\n\n\nCaution\n\n\n\nYou’re reading a what amounts to a friendly beta version (it literally only has one chapter so far). Check back for additions and improvements.\n\n\n\nThe Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R by Jeffrey M. Pisklak is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International.\n\nhttps://github.com/statistical-grimoire/book\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "About\nThe Statistical Grimoire is a beginner-friendly open-access textbook actively being updated with statistical and data analysis techniques using the R programming language and other open-source tools.\nThis book was created to give students a solid, practical, and free introduction to both statistics and R programming, especially if they have not done any coding before.\n\n\n\n\n\n\nCaution\n\n\n\nYou’re reading a what amounts to a friendly beta version (it literally only has one complete chapter so far). Check back for additions and improvements.\n\n\n\nThe Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R by Jeffrey M. Pisklak is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International.\n\nhttps://github.com/statistical-grimoire/book\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
     "crumbs": [
       "About"
     ]
@@ -74,17 +74,7 @@
     "href": "intro.html#why-r",
     "title": "1  Introduction to R",
     "section": "1.4 Why R?",
-    "text": "1.4 Why R?\nAt this point, it is worth addressing a question that comes up often: “Why use R instead of something like Python or Julia?” It is a fair question. After all, Python and Julia—like R—are full-fledged programming languages that are powerful and capable, but the difference comes down to origin story.\nR is not a general-purpose language. It is the progeny of S, a language birthed in the depths of statistical practice for one primary goal: GOOD DATA ANALYSIS. Everything about R—from its object types to its default printing behaviour—is tailored to the sorts of things data analysts do every day.\nBy contrast, Python and Julia are general-purpose languages. They are designed to do many things well: build websites, run simulations, automate tasks, and yes, analyse data. But this means that good data analysis is a goal these languages aspire to, not one they were born to achieve.\nTo illustrate, suppose you wanted to calculate the mean of the numbers 1 to 100. In R, this is as natural as a reflex:\n\nmean(1:100)\n\n[1] 50.5\n\n\nNo need to import packages. No need to loop. No need to define arrays. It just works.\nIn Python, you will find that a bit more ceremony is required:\n\nx = list(range(1, 101))\nprint(sum(x) / len(x))\n\n50.5\n\n\nAdditional packages, like Python’s excellent numpy package can simplify what needs to be written, but it still is not quite so good as what R offers as a baseline user experience.\nJulia sits somewhere in the middle. It was built with scientific computing in mind, and its syntax can often be just as clean as R’s:\nusing Statistics\nmean(1:100)\nHowever, Julia still expects you to opt in to statistics, with basic functions like mean() not being available until you explicitly load them. That is not a flaw BTW—it’s a philosophical choice.\nR, by contrast, assumes you are doing data analysis. You do not have to ask for permission to compute a mean. Moreover, neither Julia nor Python have the mature ecosystem of statistical tools, diagnostic plots, or nuanced modelling features that R does—at least not yet. R’s statistical packages, often written by the very people developing the methods, remain second to none.\nThat being said Python and Julia are still great choices for data analysis and nobody should be discouraged from using them (to the contrary in fact).",
-    "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
-    ]
-  },
-  {
-    "objectID": "intro.html#references",
-    "href": "intro.html#references",
-    "title": "1  Introduction to R",
-    "section": "1.5 References",
-    "text": "1.5 References\n\n\nBecker, R. A., and J. M. Chambers. 1984. S: An Interactive\nEnvironment for Data Analysis and Graphics. Belmont, CA: Wadsworth.\n\n\nFree Software Foundation. 2026. “What Is Free Software?” https://www.gnu.org/philosophy/free-sw.html.",
+    "text": "1.4 Why R?\nAt this point, it is worth addressing a question that comes up often: “Why use R instead of something like Python or Julia?” It is a fair question. After all, Python and Julia—like R—are full-fledged programming languages that are powerful and capable, but the difference comes down to origin story.\nR is not a general-purpose language. It is the progeny of S, a language birthed in the depths of statistical practice for one primary goal: GOOD DATA ANALYSIS. Everything about R—from its object types to its default printing behaviour—is tailored to the sorts of things data analysts do every day.\nBy contrast, Python and Julia are general-purpose languages. They are designed to do many things well: build websites, run simulations, automate tasks, and yes, analyse data. But this means that good data analysis is a goal these languages aspire to, not one they were born to achieve.\nTo illustrate, suppose you wanted to calculate the mean of the numbers 1 to 100. In R, this is as natural as a reflex:\n\nmean(1:100)\n\n[1] 50.5\n\n\nNo need to import packages. No need to loop. No need to define arrays. It just works.\nIn Python, you will find that a bit more ceremony is required:\n\nx = list(range(1, 101))\nprint(sum(x) / len(x))\n\n50.5\n\n\nAdditional packages, like Python’s excellent numpy package can simplify what needs to be written, but it still is not quite so good as what R offers as a baseline user experience.\nJulia sits somewhere in the middle. It was built with scientific computing in mind, and its syntax can often be just as clean as R’s:\nusing Statistics\nmean(1:100)\nHowever, Julia still expects you to opt in to statistics, with basic functions like mean() not being available until you explicitly load them. That is not a flaw BTW—it’s a philosophical choice.\nR, by contrast, assumes you are doing data analysis. You do not have to ask for permission to compute a mean. Moreover, neither Julia nor Python have the mature ecosystem of statistical tools, diagnostic plots, or nuanced modelling features that R does—at least not yet. R’s statistical packages, often written by the very people developing the methods, remain second to none.\nThat being said Python and Julia are still great choices for data analysis and nobody should be discouraged from using them (to the contrary in fact).\n\n\n\n\nBecker, R. A., and J. M. Chambers. 1984. S: An Interactive Environment for Data Analysis and Graphics. Belmont, CA: Wadsworth.\n\n\nFree Software Foundation. 2026. “What Is Free Software?” https://www.gnu.org/philosophy/free-sw.html.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
     ]
@@ -97,6 +87,36 @@
     "text": "SPSS is popular software for conducting statistics that was originally released in the late 1960s and is an acronym for Statistical Package for the Social Sciences. At some point it was purchased by IBM and re-branded to mean Steeply Priced Shitty Software.↩︎",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to R</span>"
+    ]
+  },
+  {
+    "objectID": "run_R.html",
+    "href": "run_R.html",
+    "title": "2  How to Use R on a Computer",
+    "section": "",
+    "text": "R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux;1 however, prior to attempting any install it is important to make a simple distinction first. R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required. This is a basic reality that applies to any language. It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a terminal emulator which is a windowed application that allows you to type instructions (a.k.a. “commands”) to your computer. On computers using the Windows operating system, this is referred to as the Windows Terminal, on Macintosh and Linux computers this is the Terminal application.\nWe refer to these as “emulators” because, in a bygone era, “terminals” were peices of computer hardware, consisting mainly of a keyboard paired with a monitor or printer, that people could use to send data to and receive data from a computer. Prior to this, information would have to be entered via punch-card (Norsk Teknisk Museum 2014).\nRelying on your operating system’s basic terminal emulator as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.2 The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an environment or, more garrulously, an integrated development environment (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, RStudio and Positron are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>How to Use R on a Computer</span>"
+    ]
+  },
+  {
+    "objectID": "run_R.html#footnotes",
+    "href": "run_R.html#footnotes",
+    "title": "2  How to Use R on a Computer",
+    "section": "",
+    "text": "Admittedly, the process is probably a little less straightforward on Linux, but still managable if you RTFM.↩︎\nI say that as someone who worships at the throne of Tux, the Penguin Emperor.↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>How to Use R on a Computer</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Becker, R. A., and J. M. Chambers. 1984. S: An Interactive\nEnvironment for Data Analysis and Graphics. Belmont, CA: Wadsworth.\n\n\nFree Software Foundation. 2026. “What Is Free Software?” https://www.gnu.org/philosophy/free-sw.html.\n\n\nNorsk Teknisk Museum. 2014. “22.0 IBM - Modell 360 / 370.”\nPhotograph. Norsk Telemuseum. September 10, 2014. https://digitaltmuseum.no/011015240147/22-0-ibm-modell-360-370.",
+    "crumbs": [
+      "References"
     ]
   }
 ]

@@ -18,6 +18,7 @@ book:
     - index.qmd
     - preface.qmd
     - intro.qmd
+    - run_R.qmd
     - references.qmd
 
 bibliography: references.bib
