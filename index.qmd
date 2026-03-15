@@ -16,6 +16,12 @@ The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences
 
 <a href = "https://github.com/statistical-grimoire/book"><img src = "imgs/preface/GitHub_Invertocat_Black_Clearspace.svg" style="height:1.5em; width:auto;" target = "_blank">https://github.com/statistical-grimoire/book</a>
 
-This is a Quarto book.
+<hr>
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This is a [Quarto](https://quarto.org/docs/books) book. To learn more about Quarto books visit [https://quarto.org/docs/books](https://quarto.org/docs/books).
+
+
+This book uses the Braille Institute's Hyperlegible family of fonts. To learn more visit: [https://www.brailleinstitute.org/freefont/](https://www.brailleinstitute.org/freefont/)
+
+- **Body Typeface:** Atkinson Hyperlegible Next
+- **Code Typeface:** `Atkinson Hyperlegible Mono Font`

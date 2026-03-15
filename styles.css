@@ -1,0 +1,80 @@
+@font-face{
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/Atkinson_Hyperlegible/AtkinsonHyperlegibleNext-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/Atkinson_Hyperlegible/AtkinsonHyperlegibleNext-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/Atkinson_Hyperlegible/AtkinsonHyperlegibleNext-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/Atkinson_Hyperlegible/AtkinsonHyperlegibleNext-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+/* Mono faces */
+@font-face{
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("fonts/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("fonts/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-RegularItalic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("fonts/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("fonts/Atkinson_Hyperlegible_Mono/AtkinsonHyperlegibleMono-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Quarto/Pandoc code */
+pre, pre code, code, kbd, samp {
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, SFMono-Regular,
+               Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body { 
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  color: #000;}
+
+a { color: #000; }                /* optional */
+.quarto-title-block .subtitle,
+.quarto-title-block .description,
+p, li, dd { color: #000; }        /* optional reinforcement */
+
+
