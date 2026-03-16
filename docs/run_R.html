@@ -164,8 +164,17 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#installing-the-r-programming-language" id="toc-installing-the-r-programming-language" class="nav-link active" data-scroll-target="#installing-the-r-programming-language"><span class="header-section-number">2.1</span> Installing the R Programming Language</a>
+  <ul class="collapse">
+  <li><a href="#windows-installation" id="toc-windows-installation" class="nav-link" data-scroll-target="#windows-installation"><span class="header-section-number">2.1.1</span> Windows Installation</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -189,19 +198,49 @@ div.csl-indent {
 </header>
 
 
-<p>R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux;<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> however, prior to attempting any install it is important to make a simple distinction first. R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required. This is a basic reality that applies to any language. It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a terminal emulator which is a windowed application that allows you to type instructions (a.k.a. “commands”) to your computer. On computers using the Windows operating system, this is referred to as the <em>Windows Terminal</em>, on Macintosh and Linux computers this is the <em>Terminal</em> application.</p>
-<p>We refer to these as “emulators” because, in a bygone era, “terminals” were peices of computer hardware, consisting mainly of a keyboard paired with a monitor or printer, that people could use to send data to and receive data from a computer. Prior to this, information would have to be entered via punch-card <span class="citation" data-cites="Norsk_Digital_Museum">(<a href="references.html#ref-Norsk_Digital_Museum" role="doc-biblioref">Norsk Teknisk Museum 2014</a>)</span>.</p>
-<div id="fig-ibm2260" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="IBM 2260 terminal used to communicate with an IBM mainframe computer in the 1960s and 1970s." alt="IBM 2260 Terminal and mainframe.">
+<p>R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux;<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> however, prior to attempting any install it is important to make a simple distinction first. R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required. This is a basic reality that applies to any language. It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a terminal emulator which is a windowed application that allows you to type instructions (a.k.a. “commands”) to your computer. On computers using the Windows operating system, this is referred to as the <em>Windows Terminal</em>, on Macintosh and Linux computers this is the <em>Terminal</em> application.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>We refer to these as “emulators” because they are emulating the terminals of the past. In a bygone era, “terminals” were peices of computer hardware, consisting mainly of a keyboard paired with a monitor or printer, that people could use to send data to and receive data from a computer. Prior to this, information would have to be entered via punch-card <span class="citation" data-cites="Norsk_Digital_Museum">(<a href="references.html#ref-Norsk_Digital_Museum" role="doc-biblioref">Norsk Teknisk Museum 2014</a>)</span>.</p>
+<div id="fig-ibm2260" class="quarto-float quarto-figure quarto-figure-center anchored" alt="IBM 2260 Terminal and mainframe.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ibm2260-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="imgs/run_R_files/NTM_TELE_IBM_2012_59021.jpg" class="img-fluid figure-img" style="width:50.0%" data-fig-cap="IBM 2260 terminal used to communicate with an IBM mainframe computer in the 1960s and 1970s." alt="IBM 2260 Terminal and mainframe.">
+<img src="imgs/run_R/NTM_TELE_IBM_2012_59021.jpg" class="img-fluid figure-img" style="width:50.0%" alt="IBM 2260 Terminal and mainframe.">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ibm2260-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: IBM 2260
+Figure&nbsp;2.1: IBM 2260 terminal used to communicate with an IBM mainframe computer in the 1960s and 1970s.
 </figcaption>
 </figure>
 </div>
-<p>Relying on your operating system’s basic terminal emulator as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an <em>environment</em> or, more garrulously, an <em>integrated development environment</em> (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and <a href="https://positron.posit.co/">Positron</a> are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea.</p>
+<p>Relying on your operating system’s terminal emulator as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an <em>environment</em> or, more garrulously, an <em>integrated development environment</em> (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and <a href="https://positron.posit.co/">Positron</a> are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea. However, before doing that, it is important to first install the R language itself.</p>
+<section id="installing-the-r-programming-language" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="installing-the-r-programming-language"><span class="header-section-number">2.1</span> Installing the R Programming Language</h2>
+<p>The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Macintosh operating system. An example of the stock environment R ships with on Windows can be seen in <a href="#fig-RGui" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>. Admittedly, as IDEs go, this will get the job done, but offers a pretty lackluster experiance. But don’t worry, that’s what RStudio and Positron are for.</p>
+<div id="fig-RGui" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Base R Environment">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-RGui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imgs/run_R/RGui.png" class="img-fluid figure-img" style="width:100.0%" alt="Base R Environment">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-RGui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Base R environment for Windows, featuring the default console interface for running R code and viewing outputs (left) and the default scripting window (right) for writing, running, and saving R code.
+</figcaption>
+</figure>
+</div>
+<p>To install R - both the language and environment simultaneously - simply go to the <em>R Project for Statistical Computing</em> website: <a href="https://www.r-project.org/">https://www.r-project.org/</a> The site makes no apologies for its spartan ’90s aesthetic, and we should all be so principled. Zero flash, maximum substance.</p>
+<p>Located on the front-page of this website should be a link labelled CRAN. This stands for “Comprehensive R Archive Network” and is a set of servers around the world that distribute R alongside packages associated with R. The servers are “mirrored,”” meaning they all provide the same content. So there is no need to worry about one server providing incomplete, out-of-date, or unofficial versions of R. Technically speaking, the server closest to your home location is the one you should opt to download from; however, the topmost link labeled “0-Cloud” will be sufficient for most users. The install file is only about 80 megabytes large, so unless you live in the remotest areas of Earth, download speed, and thus choice of server, is probably not a concern.</p>
+<p>Once you have chosen a suitable server, you will need select your operating system from the list the site provides (Chromebooks and Mobile devices are out of luck - though cloud-based alternatives do exist that can run R through a web-browser).</p>
+<section id="windows-installation" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="windows-installation"><span class="header-section-number">2.1.1</span> Windows Installation</h3>
+<p>Click the “Download for Windows” link to access the R download page(see <a href="#fig-win_download_1" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>). Select the <strong>“base”</strong> option (labeled “install R for the first time”), which will direct you to the installer for the latest version of R. You’ll see a download link for the current release—for example, <strong>Download R-4.5.3 for Windows</strong> - which is the newest version available at the time of writing.</p>
+<div id="fig-win_download_1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Windows download options.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-win_download_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="imgs/run_R/R_win_download_1.png" class="img-fluid figure-img" style="width:100.0%" alt="Windows download options.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-win_download_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Windows download options
+</figcaption>
+</figure>
+</div>
+<p>Once you have downloaded the installation file, open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -213,7 +252,7 @@ Figure&nbsp;2.1: IBM 2260
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Installation Instructions for R, RStudio, Positron on Windows, Max, and (maybe) beginner friendly Linux Distros.</li>
+<li>Installation Instructions for R, RStudio, Positron on Windows, Mac, and (maybe) beginner friendly Linux Distros.</li>
 <li>Cloud-based IDEs (no installation required)</li>
 </ul>
 </div>
@@ -225,11 +264,14 @@ Figure&nbsp;2.1: IBM 2260
 Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Photograph. Norsk Telemuseum. September 10, 2014. <a href="https://digitaltmuseum.no/011015240147/22-0-ibm-modell-360-370">https://digitaltmuseum.no/011015240147/22-0-ibm-modell-360-370</a>.
 </div>
 </div>
+</section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Admittedly, the process is probably a little less straightforward on Linux, but still managable if you RTFM.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>I say that as someone who worships at the throne of Tux, the Penguin Emperor.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Admittedly, the process is probably a little less straightforward on Linux, but still managable.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>It’s worth noting that most popular mobile and desktop operating systems do their absolute best to keep terminal emulators out of sight. They they offer too much fine grain control of the computer (a.k.a. freedom). That makes it hard to herd users into the unquestioned patterns of behaviour the platform wants. You’ll hear this justified as protecting the “user experience,” but it rings hollow: 10-year-olds in the early ’90s navigated MS-DOS to launch Duke Nukem, and ’80s kids taught themselves BASIC to play Ultima. The assumption that users can’t handle a command line isn’t about safety, it’s about control.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>I say that as someone who worships at the throne of Tux, the Penguin Emperor.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
