@@ -44,8 +44,14 @@ Click the "Download R for macOS" link to access the R download page and select t
 
 Once you have downloaded the (.pkg) installation file, open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the "launchpad" or applications folder.
 
+<br>
+<hr>
+<br>
+
 ::: callout-caution
 ## Coming Soon:
 - Installation Instructions for R, RStudio, Positron on Windows, Mac, and (maybe) beginner friendly Linux Distros.
 - Cloud-based IDEs (no installation required)
 :::
+
+<br>
