@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -173,6 +208,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#windows-installation" id="toc-windows-installation" class="nav-link" data-scroll-target="#windows-installation"><span class="header-section-number">2.1.1</span> Windows Installation</a></li>
   <li><a href="#macos-installation" id="toc-macos-installation" class="nav-link" data-scroll-target="#macos-installation"><span class="header-section-number">2.1.2</span> macOS Installation</a></li>
+  <li><a href="#linux-installation-ubuntu-and-mint" id="toc-linux-installation-ubuntu-and-mint" class="nav-link" data-scroll-target="#linux-installation-ubuntu-and-mint"><span class="header-section-number">2.1.3</span> Linux Installation (Ubuntu and Mint)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -221,7 +257,7 @@ Figure&nbsp;2.2: IBM 2260 terminal used to communicate with an IBM mainframe com
 </figcaption>
 </figure>
 </div>
-<p>Relying on your operating system’s terminal application as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an <em>environment</em> or, more garrulously, an <em>integrated development environment</em> (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and <a href="https://positron.posit.co/">Positron</a> are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea. However, before doing that, it is important to first install the R language itself.</p>
+<p>Relying on your operating system’s terminal application as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an <em>environment</em> or, more garrulously, an <em>integrated development environment</em> (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and <a href="https://positron.posit.co/">Positron</a> are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea. However, before doing that, it is important to install the R language itself first.</p>
 <section id="installing-the-r-programming-language" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="installing-the-r-programming-language"><span class="header-section-number">2.1</span> Installing the R Programming Language</h2>
 <p>The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Macintosh operating system. An example of the stock environment R ships with on Windows can be seen in <a href="#fig-RGui" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>. Admittedly, as IDEs go, this will get the job done, but offers a pretty lackluster experiance. But don’t worry, that’s what RStudio and Positron are for.</p>
@@ -251,7 +287,7 @@ Figure&nbsp;2.4: Windows download options
 </figcaption>
 </figure>
 </div>
-<p>Once you have downloaded the (.exe) installation file, open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).</p>
+<p>Once you have downloaded the (.exe) installation file (check your <em>Downloads</em> folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).</p>
 </section>
 <section id="macos-installation" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="macos-installation"><span class="header-section-number">2.1.2</span> macOS Installation</h3>
@@ -266,7 +302,44 @@ Figure&nbsp;2.5: macOS download options
 </figcaption>
 </figure>
 </div>
-<p>Once you have downloaded the (.pkg) installation file, open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the “launchpad” or applications folder.</p>
+<p>Once you have downloaded the (.pkg) installation file (check your <em>Downloads</em> folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the “launchpad” or applications folder.</p>
+</section>
+<section id="linux-installation-ubuntu-and-mint" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="linux-installation-ubuntu-and-mint"><span class="header-section-number">2.1.3</span> Linux Installation (Ubuntu and Mint)</h3>
+<p>Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand. Obviously there are a pleathora of distinct Linux distributions (a.k.a. operating systems) out there and it is unrealisic to attempt to cover all of them. Consequently, this section will focus on two common beginner friendly distributions: Ubuntu and Linux Mint.</p>
+<section id="ubuntu" class="level4" data-number="2.1.3.1">
+<h4 data-number="2.1.3.1" class="anchored" data-anchor-id="ubuntu"><span class="header-section-number">2.1.3.1</span> Ubuntu</h4>
+<p>Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files obtained from the CRAN. Ubuntu’s package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but means you’re not getting the latest version of R immediately.</p>
+<p>By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project’s own repository to Ubuntu’s package manager configuration (<code>apt</code>).</p>
+<p>If using Ubuntu’s offical repository appeals to you, inside your terminal you can just run …</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If on the other hand you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project’s official server. This is used to verify that R packages from the the CRAN’s Ubuntu repository are legitimate and haven’t been tampered with.</p>
+<p>In your terminal run the the following to first refresh your package lists</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This tells apt “go fetch the latest list of available packages and their versions” from all the configured repositories on your computer.</p>
+<p>Next we are going to install two helper programs, <code>software-properties-common</code> and <code>dirmngr</code>. The former provides tools for managing software repositories. The latter is background service that manages OpenPGP (GPG) keys and certificates. It’s used to verify GPG signatures on packages and keys.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">--no-install-recommends</span> software-properties-common dirmngr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, in order to install the GPG key file we run …</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">wget</span> <span class="at">-qO-</span> https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc <span class="kw">|</span> <span class="fu">sudo</span> tee <span class="at">-a</span> /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Next we add the R Project’s repository to your system’s package sources so <code>apt</code> knows where to find R packages. To do this, you need to determine the codename of Ubuntu you are running. Ubuntu names each new release of its operating system with an animal codename (focal = 20.04, jammy = 22.04, noble = 24.04, etc.) To determine the code name just run <code>lsb_release -cs</code> in the terminal.</p>
+<p>In the code below you need to replace <code>noble</code> with the codename of your version of Ubuntu.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/"</span> <span class="dt">\</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/sources.list.d/cran-r.list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And now we can finally install R:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And, for good measure, install build tools for installing R packages from source This is needed for many CRAN package installs.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check the version of R you are running.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="linux-mint" class="level4" data-number="2.1.3.2">
+<h4 data-number="2.1.3.2" class="anchored" data-anchor-id="linux-mint"><span class="header-section-number">2.1.3.2</span> Linux Mint</h4>
+<p>Linux Mint is based on Ubuntu, so the installation process is identical, with one exception. Mint has it’s own distinct codenames. This means in the steps above where we replace <code>noble</code>, we will need to make sure that we use the Ubuntu codename that your version of Mint is based on. This can be obtained by running the following in the terminal.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> /etc/os-release</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$UBUNTU_CODENAME</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Everything else about the Mint install, is the same as Ubuntu.</p>
 <br>
 <hr>
 <p><br></p>
@@ -281,7 +354,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Installation Instructions for R, RStudio, Positron on Windows, Mac, and (maybe) beginner friendly Linux Distros.</li>
+<li>Installation Instructions for R, RStudio, Positron.</li>
 <li>Cloud-based IDEs (no installation required)</li>
 </ul>
 </div>
@@ -294,6 +367,7 @@ Figure&nbsp;2.5: macOS download options
 Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Photograph. Norsk Telemuseum. September 10, 2014. <a href="https://digitaltmuseum.no/011015240147/22-0-ibm-modell-360-370">https://digitaltmuseum.no/011015240147/22-0-ibm-modell-360-370</a>.
 </div>
 </div>
+</section>
 </section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">

@@ -12,7 +12,7 @@ For historical reasons, we refer to these applications "terminals" because they 
 
 ![IBM 2260 terminal used to communicate with an IBM mainframe computer in the 1960s and 1970s.](imgs/run_R/NTM_TELE_IBM_2012_59021.jpg){width=50% #fig-ibm2260 fig-alt="IBM 2260 Terminal and mainframe."}
 
-Relying on your operating system's terminal application as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.[^Linux_Me] The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an *environment* or, more garrulously, an *integrated development environment* (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, [RStudio](https://posit.co/products/open-source/rstudio/) and [Positron](https://positron.posit.co/) are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea. However, before doing that, it is important to first install the R language itself.
+Relying on your operating system's terminal application as a primary interface is often a cumbersome and inefficient experience, and definitely not a recommended course of action - though, for what it is worth, Linux users seem to delight in this sort of thing.[^Linux_Me] The preferred means of communicating R to your computer is via the use of what, in programming lingo, is commonly termed an *environment* or, more garrulously, an *integrated development environment* (IDE). This is simply a software application providing the user with a more polished visual workspace and feature set to make programming a smoother experience. IDEs exist for almost every language and for nearly any use case you can imagine. Among R users, [RStudio](https://posit.co/products/open-source/rstudio/) and [Positron](https://positron.posit.co/) are two of the most popular options. That said, IDEs vary widely in style and capability, and using R does not require the use of these IDEs specifically, or any IDE for that matter. Still, installing one alongside the language itself is probably a good idea. However, before doing that, it is important to install the R language itself first.
 
 [^Linux_Me]:I say that as someone who worships at the throne of Tux, the Penguin Emperor.
 
@@ -35,14 +35,92 @@ Click the "Download for Windows" link to access the R download page (see @fig-wi
 
 ![Windows download options](imgs/run_R/R_win_download_1.png){width=100% #fig-win_download_1 fig-alt="Windows download options."}
 
-Once you have downloaded the (.exe) installation file, open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).
+Once you have downloaded the (.exe) installation file (check your *Downloads* folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).
 
 ### macOS Installation
 Click the "Download R for macOS" link to access the R download page and select the option relevant to your computer (see @fig-mac_download). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed "Apple silicon"); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting *About This Mac* via the small little apple logo in the top left corner of their desktop screen. Machines using Apple silicon, will display a row called "Chip" and state something akin to "Apple M1".  If you see this, you should opt to choose the install file that says "arm64". Machines using Intel processors will display a row reading "Processor" followed by the make and model of the processor. In this latter case, you should choose the install file that says "x86_64."
 
 ![macOS download options](imgs/run_R/R_mac_download.png){width=100% #fig-mac_download fig-alt="macOS download options."}
 
-Once you have downloaded the (.pkg) installation file, open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the "launchpad" or applications folder.
+Once you have downloaded the (.pkg) installation file (check your *Downloads* folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the "launchpad" or applications folder.
+
+### Linux Installation (Ubuntu and Mint)
+Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand. Obviously there are a pleathora of distinct Linux distributions (a.k.a. operating systems) out there and it is unrealisic to attempt to cover all of them. Consequently, this section will focus on two common beginner friendly distributions: Ubuntu and Linux Mint.
+
+#### Ubuntu
+
+Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files obtained from the CRAN. Ubuntu's package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but means you're not getting the latest version of R immediately.
+
+By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project's own repository to Ubuntu's package manager configuration (`apt`).
+
+If using Ubuntu's offical repository appeals to you, inside your terminal you can just run ...
+
+```bash
+sudo apt update
+sudo apt install r-base
+```
+
+If on the other hand you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project's official server. This is used to verify that R packages from the the CRAN's Ubuntu repository are legitimate and haven't been tampered with.
+
+In your terminal run the the following to first refresh your package lists
+
+```bash
+sudo apt update
+```
+
+This tells apt "go fetch the latest list of available packages and their versions" from all the configured repositories on your computer.
+
+Next we are going to install two helper programs, `software-properties-common` and `dirmngr`. The former provides tools for managing software repositories. The latter is background service that manages OpenPGP (GPG) keys and certificates. It's used to verify GPG signatures on packages and keys. 
+
+```bash
+sudo apt install --no-install-recommends software-properties-common dirmngr
+```
+
+Then, in order to install the GPG key file we run ...
+
+```bash
+ wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
+```
+
+Next we add the R Project's repository to your system's package sources so `apt` knows where to find R packages. To do this, you need to determine the codename of Ubuntu you are running.  Ubuntu names each new release of its operating system with an animal codename (focal = 20.04, jammy = 22.04, noble = 24.04, etc.)  To determine the code name just run `lsb_release -cs` in the terminal.
+
+In the code below you need to replace `noble` with the codename of your version of Ubuntu.
+
+```bash
+echo "deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/" \
+ | sudo tee /etc/apt/sources.list.d/cran-r.list
+```
+
+And now we can finally install R:
+
+```bash
+sudo apt update
+sudo apt install r-base
+```
+
+And, for good measure, install build tools for installing R packages from source
+This is needed for many CRAN package installs.
+
+```bash
+sudo apt install r-base-dev
+```
+
+Check the version of R you are running.
+
+```bash
+R --version
+```
+
+#### Linux Mint
+
+Linux Mint is based on Ubuntu, so the installation process is identical, with one exception.  Mint has it's own distinct codenames. This means in the steps above where we replace `noble`, we will need to make sure that we use the Ubuntu codename that your version of Mint is based on.  This can be obtained by running the following in the terminal.
+
+```bash
+. /etc/os-release
+echo "$UBUNTU_CODENAME"
+```
+
+Everything else about the Mint install, is the same as Ubuntu.
 
 <br>
 <hr>
@@ -50,7 +128,7 @@ Once you have downloaded the (.pkg) installation file, open it and follow the se
 
 ::: callout-caution
 ## Coming Soon:
-- Installation Instructions for R, RStudio, Positron on Windows, Mac, and (maybe) beginner friendly Linux Distros.
+- Installation Instructions for R, RStudio, Positron.
 - Cloud-based IDEs (no installation required)
 :::
 
