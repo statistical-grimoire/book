@@ -210,6 +210,7 @@ div.csl-indent {
   <li><a href="#macos-installation" id="toc-macos-installation" class="nav-link" data-scroll-target="#macos-installation"><span class="header-section-number">2.1.2</span> macOS Installation</a></li>
   <li><a href="#linux-installation-ubuntu-and-mint" id="toc-linux-installation-ubuntu-and-mint" class="nav-link" data-scroll-target="#linux-installation-ubuntu-and-mint"><span class="header-section-number">2.1.3</span> Linux Installation (Ubuntu and Mint)</a></li>
   </ul></li>
+  <li><a href="#installing-an-ide-rstudio-and-positron" id="toc-installing-an-ide-rstudio-and-positron" class="nav-link" data-scroll-target="#installing-an-ide-rstudio-and-positron"><span class="header-section-number">2.2</span> Installing an IDE (RStudio and Positron)</a></li>
   </ul>
 </nav>
     </div>
@@ -242,7 +243,7 @@ div.csl-indent {
 <img src="imgs/run_R/win_95_MS_DOS_terminal.png" class="img-fluid figure-img" style="width:100.0%" alt="MS-DOS Prompt application in Windows 95">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-win95_MS_DOS-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: The MS-DOS Prompt application in Windows 95, which allowed users to access the DOS command line that remained the foundation of the operating system.
+Figure&nbsp;2.1: The MS-DOS Prompt application in Windows 95 is an example of a terminal window. This allowed users to access the DOS command line which was the foundation of the Windows operating system.
 </figcaption>
 </figure>
 </div>
@@ -306,21 +307,40 @@ Figure&nbsp;2.5: macOS download options
 </section>
 <section id="linux-installation-ubuntu-and-mint" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="linux-installation-ubuntu-and-mint"><span class="header-section-number">2.1.3</span> Linux Installation (Ubuntu and Mint)</h3>
-<p>Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand. Obviously there are a pleathora of distinct Linux distributions (a.k.a. operating systems) out there and it is unrealisic to attempt to cover all of them. Consequently, this section will focus on two common beginner friendly distributions: Ubuntu and Linux Mint.</p>
+<p>Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse.</p>
+<p>When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on two common beginner friendly distributions: <a href="https://ubuntu.com/desktop">Ubuntu</a> and <a href="https://www.linuxmint.com/">Linux Mint</a>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unlike Windows and macOS, installing R on Linux does not include a graphical coding environment (see <a href="#fig-RGui" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>). Consequently, Linux users must use the terminal to run R until they install an IDE such as RStudio or Positron.</p>
+</div>
+</div>
 <section id="ubuntu" class="level4" data-number="2.1.3.1">
 <h4 data-number="2.1.3.1" class="anchored" data-anchor-id="ubuntu"><span class="header-section-number">2.1.3.1</span> Ubuntu</h4>
-<p>Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files obtained from the CRAN. Ubuntu’s package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but means you’re not getting the latest version of R immediately.</p>
+<p>Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files supplied by the R Project’s CRAN repository. The reason being, Ubuntu’s package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but, unfortunately, means you’re not getting the latest version of R immediately.</p>
 <p>By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project’s own repository to Ubuntu’s package manager configuration (<code>apt</code>).</p>
+<section id="installing-from-ubuntus-repository" class="level5" data-number="2.1.3.1.1">
+<h5 data-number="2.1.3.1.1" class="anchored" data-anchor-id="installing-from-ubuntus-repository"><span class="header-section-number">2.1.3.1.1</span> Installing from Ubuntu’s Repository</h5>
 <p>If using Ubuntu’s offical repository appeals to you, inside your terminal you can just run …</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If on the other hand you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project’s official server. This is used to verify that R packages from the the CRAN’s Ubuntu repository are legitimate and haven’t been tampered with.</p>
-<p>In your terminal run the the following to first refresh your package lists</p>
+</section>
+<section id="installing-from-the-r-projects-repository-cran" class="level5" data-number="2.1.3.1.2">
+<h5 data-number="2.1.3.1.2" class="anchored" data-anchor-id="installing-from-the-r-projects-repository-cran"><span class="header-section-number">2.1.3.1.2</span> Installing from the R Project’s Repository (CRAN)</h5>
+<p>If, on the other hand, you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project’s official server. This is used to verify that R packages from the the CRAN’s Ubuntu repository are legitimate and haven’t been tampered with.</p>
+<p>In your terminal run the the following to first refresh your package lists:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This tells apt “go fetch the latest list of available packages and their versions” from all the configured repositories on your computer.</p>
-<p>Next we are going to install two helper programs, <code>software-properties-common</code> and <code>dirmngr</code>. The former provides tools for managing software repositories. The latter is background service that manages OpenPGP (GPG) keys and certificates. It’s used to verify GPG signatures on packages and keys.</p>
+<p>This tells <code>apt</code> “go fetch the latest list of available packages and their versions” from all the configured repositories on your computer.</p>
+<p>Next we are going to install two helper programs, <code>software-properties-common</code> and <code>dirmngr</code>. The former provides tools for managing software repositories. The latter is background service that manages keys and certificates. It’s used to verify GPG signatures on packages and keys.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">--no-install-recommends</span> software-properties-common dirmngr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then, in order to install the GPG key file we run …</p>
+<p>Then, in order to install the GPG key file, we run …</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">wget</span> <span class="at">-qO-</span> https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc <span class="kw">|</span> <span class="fu">sudo</span> tee <span class="at">-a</span> /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Next we add the R Project’s repository to your system’s package sources so <code>apt</code> knows where to find R packages. To do this, you need to determine the codename of Ubuntu you are running. Ubuntu names each new release of its operating system with an animal codename (focal = 20.04, jammy = 22.04, noble = 24.04, etc.) To determine the code name just run <code>lsb_release -cs</code> in the terminal.</p>
 <p>In the code below you need to replace <code>noble</code> with the codename of your version of Ubuntu.</p>
@@ -331,15 +351,32 @@ Figure&nbsp;2.5: macOS download options
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>And, for good measure, install build tools for installing R packages from source This is needed for many CRAN package installs.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the version of R you are running.</p>
+<p>Check the version of R you have installed.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To run R simply type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To quit running R:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 </section>
 <section id="linux-mint" class="level4" data-number="2.1.3.2">
 <h4 data-number="2.1.3.2" class="anchored" data-anchor-id="linux-mint"><span class="header-section-number">2.1.3.2</span> Linux Mint</h4>
 <p>Linux Mint is based on Ubuntu, so the installation process is identical, with one exception. Mint has it’s own distinct codenames. This means in the steps above where we replace <code>noble</code>, we will need to make sure that we use the Ubuntu codename that your version of Mint is based on. This can be obtained by running the following in the terminal.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> /etc/os-release</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$UBUNTU_CODENAME</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> /etc/os-release</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$UBUNTU_CODENAME</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Everything else about the Mint install, is the same as Ubuntu.</p>
+</section>
+<section id="other-linux-distributions" class="level4" data-number="2.1.3.3">
+<h4 data-number="2.1.3.3" class="anchored" data-anchor-id="other-linux-distributions"><span class="header-section-number">2.1.3.3</span> Other Linux Distributions</h4>
+<p>The offical R Project website contains detailed information for installing on other major Linux distributions. <a href="https://cloud.r-project.org/bin/linux/">https://cloud.r-project.org/bin/linux/</a></p>
+</section>
+</section>
+</section>
+<section id="installing-an-ide-rstudio-and-positron" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="installing-an-ide-rstudio-and-positron"><span class="header-section-number">2.2</span> Installing an IDE (RStudio and Positron)</h2>
+<p>As mentioned earlier, the default R environment that ships with a Windows and macOS install of R is quite limited (see <a href="#fig-RGui" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>). While perfectly functional, it lacks many quality-of-life features found in modern IDEs. <a href="https://posit.co/products/open-source/rstudio/">RStudio</a> and <a href="https://positron.posit.co/">Positron</a>, by contrast, are the two most feature-rich IDEs for R, with RStudio having dominated the community for years and Positron emerging as a compelling newer alternative.</p>
+<p>As of writing this, RStudio is the established choice. It has extensive documentation, countless tutorials, and broad support across the R community. By contrast, Positron is a much more recent development offering a more flexible and responsive interface built on Visual Studio Code’s foundation.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Both applications are developed by Posit, a company focused on open-source tools for data science and scientific research. For a detailed feature comparison, see Posit’s <a href="https://positron.posit.co/migrate-rstudio-compare.html">comparison page</a>.</p>
+<p>If you can’t decide which to choose and want definitive choice made for you, go with Positron. It integrates modern development practices more seamlessly than RStudio, which was designed in 2011 when the computing landscape looked rather different. Both are excellent, but Positron won’t make you feel like you’re using legacy software.</p>
 <br>
 <hr>
 <p><br></p>
@@ -368,14 +405,13 @@ Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Phot
 </div>
 </div>
 </section>
-</section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>Admittedly, the process is probably a little less straightforward on Linux, but still managable.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>It’s worth noting that most popular mobile and desktop operating systems do their absolute best to keep terminal applications out of sight. They they offer too much fine grain control of the computer (a.k.a. freedom). That makes it hard to herd users into the unquestioned patterns of behaviour the platform wants. You’ll hear this justified as protecting the “user experience,” but it rings hollow: 10-year-olds in the early ’90s navigated MS-DOS to launch Duke Nukem, and ’80s kids taught themselves BASIC to play Ultima. The assumption that users can’t handle a command line isn’t about safety, it’s about control.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>I say that as someone who worships at the throne of Tux, the Penguin Emperor.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Visual Studio Code is a free open-source IDE that has become the standard choice for many developers across multiple programming languages.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

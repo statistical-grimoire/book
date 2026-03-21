@@ -4,7 +4,7 @@ R will install and run straightforwardly on Windows and Macintosh operating syst
 
 [^Linux_Run]:Admittedly, the process is probably a little less straightforward on Linux, but still managable.
 
-![The MS-DOS Prompt application in Windows 95, which allowed users to access the DOS command line that remained the foundation of the operating system.](imgs/run_R/win_95_MS_DOS_terminal.png){width=100% #fig-win95_MS_DOS fig-alt="MS-DOS Prompt application in Windows 95"} 
+![The MS-DOS Prompt application in Windows 95 is an example of a terminal window. This allowed users to access the DOS command line which was the foundation of the Windows operating system.](imgs/run_R/win_95_MS_DOS_terminal.png){width=100% #fig-win95_MS_DOS fig-alt="MS-DOS Prompt application in Windows 95"} 
 
 [^Modern_NoNo]:It's worth noting that most popular mobile and desktop operating systems do their absolute best to keep terminal applications out of sight. They they offer too much fine grain control of the computer (a.k.a. freedom). That makes it hard to herd users into the unquestioned patterns of behaviour the platform wants. You'll hear this justified as protecting the "user experience," but it rings hollow: 10-year-olds in the early '90s navigated MS-DOS to launch Duke Nukem, and '80s kids taught themselves BASIC to play Ultima. The assumption that users can't handle a command line isn't about safety, it's about control.
 
@@ -45,13 +45,21 @@ Click the "Download R for macOS" link to access the R download page and select t
 Once you have downloaded the (.pkg) installation file (check your *Downloads* folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the "launchpad" or applications folder.
 
 ### Linux Installation (Ubuntu and Mint)
-Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand. Obviously there are a pleathora of distinct Linux distributions (a.k.a. operating systems) out there and it is unrealisic to attempt to cover all of them. Consequently, this section will focus on two common beginner friendly distributions: Ubuntu and Linux Mint.
+Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse.
+
+When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on two common beginner friendly distributions: [Ubuntu](https://ubuntu.com/desktop) and [Linux Mint](https://www.linuxmint.com/).
+
+::: callout-important
+Unlike Windows and macOS, installing R on Linux does not include a graphical coding environment (see @fig-RGui). Consequently, Linux users must use the terminal to run R until they install an IDE such as RStudio or Positron.
+:::
 
 #### Ubuntu
 
-Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files obtained from the CRAN. Ubuntu's package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but means you're not getting the latest version of R immediately.
+Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files supplied by the R Project's CRAN repository. The reason being, Ubuntu's package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but, unfortunately, means you're not getting the latest version of R immediately.
 
 By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project's own repository to Ubuntu's package manager configuration (`apt`).
+
+##### Installing from Ubuntu's Repository
 
 If using Ubuntu's offical repository appeals to you, inside your terminal you can just run ...
 
@@ -60,23 +68,25 @@ sudo apt update
 sudo apt install r-base
 ```
 
-If on the other hand you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project's official server. This is used to verify that R packages from the the CRAN's Ubuntu repository are legitimate and haven't been tampered with.
+##### Installing from the R Project's Repository (CRAN)
 
-In your terminal run the the following to first refresh your package lists
+If, on the other hand, you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project's official server. This is used to verify that R packages from the the CRAN's Ubuntu repository are legitimate and haven't been tampered with.
+
+In your terminal run the the following to first refresh your package lists:
 
 ```bash
 sudo apt update
 ```
 
-This tells apt "go fetch the latest list of available packages and their versions" from all the configured repositories on your computer.
+This tells `apt` "go fetch the latest list of available packages and their versions" from all the configured repositories on your computer.
 
-Next we are going to install two helper programs, `software-properties-common` and `dirmngr`. The former provides tools for managing software repositories. The latter is background service that manages OpenPGP (GPG) keys and certificates. It's used to verify GPG signatures on packages and keys. 
+Next we are going to install two helper programs, `software-properties-common` and `dirmngr`. The former provides tools for managing software repositories. The latter is background service that manages keys and certificates. It's used to verify GPG signatures on packages and keys. 
 
 ```bash
 sudo apt install --no-install-recommends software-properties-common dirmngr
 ```
 
-Then, in order to install the GPG key file we run ...
+Then, in order to install the GPG key file, we run ...
 
 ```bash
  wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
@@ -105,10 +115,22 @@ This is needed for many CRAN package installs.
 sudo apt install r-base-dev
 ```
 
-Check the version of R you are running.
+Check the version of R you have installed.
 
 ```bash
 R --version
+```
+
+To run R simply type:
+
+```bash
+R
+```
+
+To quit running R:
+
+```bash
+q()
 ```
 
 #### Linux Mint
@@ -121,6 +143,20 @@ echo "$UBUNTU_CODENAME"
 ```
 
 Everything else about the Mint install, is the same as Ubuntu.
+
+#### Other Linux Distributions
+
+The offical R Project website contains detailed information for installing on other major Linux distributions. [https://cloud.r-project.org/bin/linux/](https://cloud.r-project.org/bin/linux/) 
+
+## Installing an IDE (RStudio and Positron)
+
+As mentioned earlier, the default R environment that ships with a Windows and macOS install of R is quite limited (see @fig-RGui). While perfectly functional, it lacks many quality-of-life features found in modern IDEs. [RStudio](https://posit.co/products/open-source/rstudio/) and [Positron](https://positron.posit.co/), by contrast, are the two most feature-rich IDEs for R, with RStudio having dominated the community for years and Positron emerging as a compelling newer alternative.
+
+As of writing this, RStudio is the established choice. It has extensive documentation, countless tutorials, and broad support across the R community. By contrast, Positron is a much more recent development offering a more flexible and responsive interface built on Visual Studio Code's foundation.[^VS_code] Both applications are developed by Posit, a company focused on open-source tools for data science and scientific research. For a detailed feature comparison, see Posit's [comparison page](https://positron.posit.co/migrate-rstudio-compare.html).
+
+[^VS_code]:Visual Studio Code is a free open-source IDE that has become the standard choice for many developers across multiple programming languages.
+
+If you can't decide which to choose and want definitive choice made for you, go with Positron. It integrates modern development practices more seamlessly than RStudio, which was designed in 2011 when the computing landscape looked rather different. Both are excellent, but Positron won't make you feel like you're using legacy software.
 
 <br>
 <hr>
