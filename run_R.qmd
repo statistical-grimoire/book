@@ -29,9 +29,9 @@ The standard installation of R will come with an associated environment for the 
 To install R - both the language and environment simultaneously - simply go to the *R Project for Statistical Computing* website: 
 
 <center>
-[https://www.r-project.org/](https://www.r-project.org/).
+<a href = "https://www.r-project.org/" target = "_blank">https://www.r-project.org/</a>
 </center>
-
+<br>
 
 ::: callout-caution
 R's website makes no apologies for its spartan '90s aesthetic (and we should all be so principled frankly). Additionally, you'll encounter lots of technical jargon throughout the site's various pages, and as a newcomer to R and programming, some (maybe even a lot) of it will feel opaque. That's not a problem and you shouldn't feel bad about it. Skim through it, absorb what clicks, maybe look up one or two things, and let the rest wash over you. Doing this builds familiarity with the landscape and overtime, as your skillset and vocabularly grows, the jargon will become more transparent.
@@ -177,11 +177,11 @@ Installing a IDE is not strictly necessary to work through this book's content; 
 
 To install RStudio simply visit:
 
-
 <center>
-[https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+<a href = "https://posit.co/download/rstudio-desktop/" target = "_blank">https://posit.co/download/rstudio-desktop/</a>
 </center>
 <br>
+
 
 Installing R studio is as simple as selecting the installation relevant to your operating system ("OS" on the website's table), downloading the installation file, and launching it with a double-click of the mouse.
 
@@ -212,6 +212,14 @@ sudo apt install ./filename.deb
 ```
 The `./` before the filename tells `apt` to look in the current directory.
 
+### Installing Positron
+
+To install Positron visit: 
+
+<center>
+<a href = "https://positron.posit.co/download.html" target = "_blank">https://positron.posit.co/download.html</a>
+</center>
+<br>
 
 <br>
 <hr>
