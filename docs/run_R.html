@@ -207,7 +207,7 @@ div.csl-indent {
   <li><a href="#installing-the-r-programming-language" id="toc-installing-the-r-programming-language" class="nav-link active" data-scroll-target="#installing-the-r-programming-language"><span class="header-section-number">2.1</span> Installing the R Programming Language</a>
   <ul class="collapse">
   <li><a href="#windows-installation" id="toc-windows-installation" class="nav-link" data-scroll-target="#windows-installation"><span class="header-section-number">2.1.1</span> Windows Installation</a></li>
-  <li><a href="#macos-installation" id="toc-macos-installation" class="nav-link" data-scroll-target="#macos-installation"><span class="header-section-number">2.1.2</span> macOS Installation</a></li>
+  <li><a href="#sec-mac_install" id="toc-sec-mac_install" class="nav-link" data-scroll-target="#sec-mac_install"><span class="header-section-number">2.1.2</span> macOS Installation</a></li>
   <li><a href="#linux-installation" id="toc-linux-installation" class="nav-link" data-scroll-target="#linux-installation"><span class="header-section-number">2.1.3</span> Linux Installation</a></li>
   </ul></li>
   <li><a href="#installing-an-ide-rstudio-and-positron" id="toc-installing-an-ide-rstudio-and-positron" class="nav-link" data-scroll-target="#installing-an-ide-rstudio-and-positron"><span class="header-section-number">2.2</span> Installing an IDE (RStudio and Positron)</a>
@@ -324,8 +324,8 @@ Figure&nbsp;2.4: Windows download options
 </div>
 <p>Once you have downloaded the (.exe) installation file (check your <em>Downloads</em> folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).</p>
 </section>
-<section id="macos-installation" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="macos-installation"><span class="header-section-number">2.1.2</span> macOS Installation</h3>
+<section id="sec-mac_install" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-mac_install"><span class="header-section-number">2.1.2</span> macOS Installation</h3>
 <p>Click the “Download R for macOS” link to access the R download page and select the option relevant to your computer (see <a href="#fig-mac_download" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed “Apple silicon”); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting <em>About This Mac</em> via the small little apple logo in the top left corner of their desktop screen. Machines using Apple silicon, will display a row called “Chip” and state something akin to “Apple M1”. If you see this, you should opt to choose the install file that says “arm64”. Machines using Intel processors will display a row reading “Processor” followed by the make and model of the processor. In this latter case, you should choose the install file that says “x86_64.”</p>
 <div id="fig-mac_download" class="quarto-float quarto-figure quarto-figure-center anchored" alt="macOS download options.">
 <figure class="quarto-float quarto-float-fig figure">
@@ -424,8 +424,8 @@ Important
 <h4 data-number="2.2.1.1" class="anchored" data-anchor-id="note-for-macintosh-users"><span class="header-section-number">2.2.1.1</span> Note for Macintosh Users</h4>
 <p>For Macintosh users, when you download and launch the install file for R studio there will probably be no installation wizard; rather, you will likely be prompted to drag an RStudio icon into your applications folder. Once that is done, R studio is installed.</p>
 </section>
-<section id="notes-for-linux-users-of-ubuntu-mint-and-other-ubuntu-based-distros" class="level4" data-number="2.2.1.2">
-<h4 data-number="2.2.1.2" class="anchored" data-anchor-id="notes-for-linux-users-of-ubuntu-mint-and-other-ubuntu-based-distros"><span class="header-section-number">2.2.1.2</span> Notes for Linux Users of Ubuntu, Mint, and other Ubuntu-based Distros</h4>
+<section id="sec-linux_RStudio" class="level4" data-number="2.2.1.2">
+<h4 data-number="2.2.1.2" class="anchored" data-anchor-id="sec-linux_RStudio"><span class="header-section-number">2.2.1.2</span> Notes for Linux Users of Ubuntu, Mint, and other Ubuntu-based Distros</h4>
 <p>Ubuntu users, Mint users, and users of other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, etc.) will need to select the Ubuntu install file that corresponds to the major version of Ubuntu they are running. In most cases this is will be Ubuntu 24.</p>
 <p>It is also worth noting that the install file is a <code>.deb</code> file. Once downloaded to your computer, these can usually be run without issue using a simple double click of the mouse (similar to the <code>.exe</code> files present on Windows systems). However, the more reliable method is to use the terminal to install this file. Should you want to take this approach you can follow the three steps below.</p>
 <ol type="1">
@@ -443,10 +443,19 @@ Important
 </section>
 <section id="installing-positron" class="level3" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="installing-positron"><span class="header-section-number">2.2.2</span> Installing Positron</h3>
+<p>The install process Positron is a relatively seamless one. In the case of Windows, Macintosh, and Linux, the process is as simple as downloading the appropriate install file and double clicking it with your mouse.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <p>To install Positron visit:</p>
 <center>
 <a href="https://positron.posit.co/download.html" target="_blank">https://positron.posit.co/download.html</a>
 </center>
+<section id="windows-install-file-notes" class="level4" data-number="2.2.2.1">
+<h4 data-number="2.2.2.1" class="anchored" data-anchor-id="windows-install-file-notes"><span class="header-section-number">2.2.2.1</span> Windows Install File Notes</h4>
+<p>The Windows install file for Positron comes in two forms: a “system level” install and a “user level” install. Assuming the machine you are installing on is one in which you are the primary (or only) user, user-level is generally the best choice.</p>
+<p>Simply download the relevant install file and follow the setup wizard. Keep the default settings unless you have a specific reason to change them.</p>
+</section>
+<section id="macintosh-install-file-notes" class="level4" data-number="2.2.2.2">
+<h4 data-number="2.2.2.2" class="anchored" data-anchor-id="macintosh-install-file-notes"><span class="header-section-number">2.2.2.2</span> Macintosh Install File Notes</h4>
+<p>Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at <a href="#sec-mac_install" class="quarto-xref"><span>Section 2.1.2</span></a></p>
 <p><br></p>
 <br>
 <hr>
@@ -477,6 +486,7 @@ Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Phot
 </div>
 </section>
 </section>
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -484,6 +494,7 @@ Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Phot
 <li id="fn2"><p>It’s worth noting that most popular mobile and desktop operating systems do their absolute best to keep terminal applications out of sight. They they offer too much fine grain control of the computer (a.k.a. freedom). That makes it hard to herd users into the unquestioned patterns of behaviour the platform wants. You’ll hear this justified as protecting the “user experience,” but it rings hollow: 10-year-olds in the early ’90s navigated MS-DOS to launch Duke Nukem, and ’80s kids taught themselves BASIC to play Ultima. The assumption that users can’t handle a command line isn’t about safety, it’s about control.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>I say that as someone who worships at the throne of Tux, the Penguin Emperor.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Visual Studio Code is a free open-source IDE that has become the standard choice for many developers across multiple programming languages.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>While Linux users generally can double-click the <code>.deb</code> install file have it run without issue, the reccommended course of action is to install through the terminal like was described in the RStudio install instructions (see <a href="#sec-linux_RStudio" class="quarto-xref"><span>Section 2.2.1.2</span></a>).<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

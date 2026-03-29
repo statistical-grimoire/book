@@ -50,7 +50,7 @@ Click the "Download for Windows" link to access the R download page (see @fig-wi
 
 Once you have downloaded the (.exe) installation file (check your *Downloads* folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).
 
-### macOS Installation
+### macOS Installation {#sec-mac_install}
 Click the "Download R for macOS" link to access the R download page and select the option relevant to your computer (see @fig-mac_download). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed "Apple silicon"); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting *About This Mac* via the small little apple logo in the top left corner of their desktop screen. Machines using Apple silicon, will display a row called "Chip" and state something akin to "Apple M1".  If you see this, you should opt to choose the install file that says "arm64". Machines using Intel processors will display a row reading "Processor" followed by the make and model of the processor. In this latter case, you should choose the install file that says "x86_64."
 
 ![macOS download options](imgs/run_R/R_mac_download.png){width=100% #fig-mac_download fig-alt="macOS download options."}
@@ -189,7 +189,7 @@ Installing R studio is as simple as selecting the installation relevant to your 
 
 For Macintosh users, when you download and launch the install file for R studio there will probably be no installation wizard; rather, you will likely be prompted to drag an RStudio icon into your applications folder. Once that is done, R studio is installed.
 
-#### Notes for Linux Users of Ubuntu, Mint, and other Ubuntu-based Distros
+#### Notes for Linux Users of Ubuntu, Mint, and other Ubuntu-based Distros {#sec-linux_RStudio}
 
 Ubuntu users, Mint users, and users of other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, etc.) will need to select the Ubuntu install file that corresponds to the major version of Ubuntu they are running. In most cases this is will be Ubuntu 24.
 
@@ -213,12 +213,24 @@ sudo apt install ./filename.deb
 The `./` before the filename tells `apt` to look in the current directory.
 
 ### Installing Positron
+The install process Positron is a relatively seamless one. In the case of Windows, Macintosh, and Linux, the process is as simple as downloading the appropriate install file and double clicking it with your mouse.[^mouse_linux]
+
+[^mouse_linux]:While Linux users generally can double-click the `.deb` install file have it run without issue, the reccommended course of action is to install through the terminal like was described in the RStudio install instructions (see @sec-linux_RStudio).
 
 To install Positron visit: 
 
 <center>
 <a href = "https://positron.posit.co/download.html" target = "_blank">https://positron.posit.co/download.html</a>
 </center>
+
+#### Windows Install File Notes
+The Windows install file for Positron comes in two forms: a "system level" install and a "user level" install. Assuming the machine you are installing on is one in which you are the primary (or only) user, user-level is generally the best choice.
+
+Simply download the relevant install file and follow the setup wizard. Keep the default settings unless you have a specific reason to change them.
+
+#### Macintosh Install File Notes
+Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at @sec-mac_install
+
 <br>
 
 <br>
