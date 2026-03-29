@@ -1,9 +1,5 @@
 # How to Use R on a Computer
 
-::: callout-caution
-## This chapter is under construction
-:::
-
 R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux;[^Linux_Run] however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a "terminal window" (see @fig-win95_MS_DOS). This is an application that allows you to type instructions (a.k.a. "commands") to your computer. Put more simply, when you see people "hacking" in movies, a terminal window is usually what they typing into. On computers using the Windows 11 operating system, this is referred to as the *Windows Terminal*, on Macintosh and Linux computers this is simple the *Terminal* application.[^Modern_NoNo] 
 
 [^Linux_Run]:Admittedly, the process is probably a little less straightforward on Linux, but still managable.
@@ -24,7 +20,7 @@ Relying on your operating system's terminal application as a primary interface i
 
 The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Macintosh operating system. An example of the stock environment R ships with on Windows can be seen in [@fig-RGui]. Admittedly, as IDEs go, this will get the job done, but offers a pretty lackluster experiance. But don't worry, that's what RStudio and Positron are for.
 
-![Base R environment for Windows, featuring the default console interface for running R code and viewing outputs (left) and the default scripting window (right) for writing, running, and saving R code.](imgs/run_R/RGui.png){width=100% #fig-RGui fig-alt="Base R Environment"}
+![Base R environment for Windows. The default **console** interface for running R code and viewing outputs can be seen on the left side. The default scripting window for writing, running, and saving R cod can be seen on the right side.](imgs/run_R/RGui.png){width=100% #fig-RGui fig-alt="Base R Environment"}
 
 To install R - both the language and environment simultaneously - simply go to the *R Project for Statistical Computing* website: 
 
@@ -237,7 +233,7 @@ There are updates made to R about two to three times a year and it is generally 
 
 [^packages]:"Packages" (also commonly referred to as "libraries") will be explained later.
 
-If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will both allow you to easily switch between installed versions on your computer.
+If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will allow you to easily switch between different versions of R installed on your computer.
 
 For Linux users, updating R is as simple as running the following in the terminal:
 
@@ -247,17 +243,3 @@ sudo apt upgrade
 ```
 
 At the time of writing, R is on version 4.5.3, nicknamed the "Reassured Reassurer" version.  New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.
-
-<br>
-
-<br>
-<hr>
-<br>
-
-::: callout-caution
-## Coming Soon:
-- Installation Instructions for Positron.
-- Cloud-based IDEs (no installation required)
-:::
-
-<br>

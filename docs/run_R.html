@@ -241,19 +241,6 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-empty-content callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>This chapter is under construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
 <p>R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux;<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> however, prior to attempting any install it is important to make a simple distinction first. R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required. This is a basic reality that applies to any language. It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a “terminal window” (see <a href="#fig-win95_MS_DOS" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>). This is an application that allows you to type instructions (a.k.a. “commands”) to your computer. Put more simply, when you see people “hacking” in movies, a terminal window is usually what they typing into. On computers using the Windows 11 operating system, this is referred to as the <em>Windows Terminal</em>, on Macintosh and Linux computers this is simple the <em>Terminal</em> application.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div id="fig-win95_MS_DOS" class="quarto-float quarto-figure quarto-figure-center anchored" alt="MS-DOS Prompt application in Windows 95">
 <figure class="quarto-float quarto-float-fig figure">
@@ -286,7 +273,7 @@ Figure&nbsp;2.2: IBM 2260 terminal used to communicate with an IBM mainframe com
 <img src="imgs/run_R/RGui.png" class="img-fluid figure-img" style="width:100.0%" alt="Base R Environment">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-RGui-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.3: Base R environment for Windows, featuring the default console interface for running R code and viewing outputs (left) and the default scripting window (right) for writing, running, and saving R code.
+Figure&nbsp;2.3: Base R environment for Windows. The default <strong>console</strong> interface for running R code and viewing outputs can be seen on the left side. The default scripting window for writing, running, and saving R cod can be seen on the right side.
 </figcaption>
 </figure>
 </div>
@@ -463,32 +450,11 @@ Important
 <section id="upgrading-r" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Upgrading R</h1>
 <p>There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R but, assuming you are on Windows or Macintosh, the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<p>If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will both allow you to easily switch between installed versions on your computer.</p>
+<p>If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will allow you to easily switch between different versions of R installed on your computer.</p>
 <p>For Linux users, updating R is as simple as running the following in the terminal:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>At the time of writing, R is on version 4.5.3, nicknamed the “Reassured Reassurer” version. New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.</p>
-<p><br></p>
-<br>
-<hr>
-<p><br></p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Coming Soon:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Installation Instructions for Positron.</li>
-<li>Cloud-based IDEs (no installation required)</li>
-</ul>
-</div>
-</div>
-<p><br></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
