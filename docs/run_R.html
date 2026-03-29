@@ -215,6 +215,7 @@ div.csl-indent {
   <li><a href="#installing-rstudio" id="toc-installing-rstudio" class="nav-link" data-scroll-target="#installing-rstudio"><span class="header-section-number">2.2.1</span> Installing RStudio</a></li>
   <li><a href="#installing-positron" id="toc-installing-positron" class="nav-link" data-scroll-target="#installing-positron"><span class="header-section-number">2.2.2</span> Installing Positron</a></li>
   </ul></li>
+  <li><a href="#upgrading-r" id="toc-upgrading-r" class="nav-link" data-scroll-target="#upgrading-r"><span class="header-section-number">3</span> Upgrading R</a></li>
   </ul>
 </nav>
     </div>
@@ -456,6 +457,17 @@ Important
 <section id="macintosh-install-file-notes" class="level4" data-number="2.2.2.2">
 <h4 data-number="2.2.2.2" class="anchored" data-anchor-id="macintosh-install-file-notes"><span class="header-section-number">2.2.2.2</span> Macintosh Install File Notes</h4>
 <p>Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at <a href="#sec-mac_install" class="quarto-xref"><span>Section 2.1.2</span></a></p>
+</section>
+</section>
+</section>
+<section id="upgrading-r" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Upgrading R</h1>
+<p>There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R but, assuming you are on Windows or Macintosh, the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will both allow you to easily switch between installed versions on your computer.</p>
+<p>For Linux users, updating R is as simple as running the following in the terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>At the time of writing, R is on version 4.5.3, nicknamed the “Reassured Reassurer” version. New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.</p>
 <p><br></p>
 <br>
 <hr>
@@ -485,8 +497,6 @@ Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Phot
 </div>
 </div>
 </section>
-</section>
-</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
@@ -495,6 +505,7 @@ Norsk Teknisk Museum. 2014. <span>“22.0 IBM - Modell 360 / 370.”</span> Phot
 <li id="fn3"><p>I say that as someone who worships at the throne of Tux, the Penguin Emperor.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Visual Studio Code is a free open-source IDE that has become the standard choice for many developers across multiple programming languages.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>While Linux users generally can double-click the <code>.deb</code> install file have it run without issue, the reccommended course of action is to install through the terminal like was described in the RStudio install instructions (see <a href="#sec-linux_RStudio" class="quarto-xref"><span>Section 2.2.1.2</span></a>).<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>“Packages” (also commonly referred to as “libraries”) will be explained later.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

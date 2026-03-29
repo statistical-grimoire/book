@@ -231,6 +231,23 @@ Simply download the relevant install file and follow the setup wizard. Keep the 
 #### Macintosh Install File Notes
 Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at @sec-mac_install
 
+# Upgrading R
+
+There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R but, assuming you are on Windows or Macintosh, the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.[^packages]
+
+[^packages]:"Packages" (also commonly referred to as "libraries") will be explained later.
+
+If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will both allow you to easily switch between installed versions on your computer.
+
+For Linux users, updating R is as simple as running the following in the terminal:
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
+
+At the time of writing, R is on version 4.5.3, nicknamed the "Reassured Reassurer" version.  New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.
+
 <br>
 
 <br>
