@@ -2,9 +2,26 @@
 
 ## The Console
 
-When you launch the base-R environment, RStudio, or Positron, somewhere on the screen will be a window or panel labelled "Console". Assuming you have not tweaked the default layout, on RStudio this is usually located on the left side of the application.
+When you launch the base-R environment (for Windows or Mac), launch RStudio, or launch Positron, somewhere on the screen will be a window pane labelled "Console". Assuming you have not tweaked the default layout, all three environments will have this located on the left side (see @fig-IDE_panes_html).
 
+::: {.content-visible when-format="html" #fig-IDE_panes_html layout-ncol=2}
 
+![RStudio Panes. ](imgs/basics/rstudio_default_panes.svg){#fig-rstudio_panes_html}
 
+![Positron Panes](imgs/basics/positron_default_panes.svg){#fig-positron_panes_html}
 
-Upon opening the base R environment you will be shown a pane labelled *R Console* (see @fig-RGui).  Opening RStudio environment will show a similar pane simply labelled \textit{Console} alongside a couple of others (see Figure \ref{fig:Rstudio}).  The console pane functions as the command console described earlier (see section \ref{sec:LangAndEnv}).  Inside it you will see a $>$. This symbol denotes the command line's prompt.  In other words, it denotes the space in which you type commands, using R code, to your computer.  The term ``code'' here is just a shorthand way of referring to ``computer code'' which is another way of expressing the fact that we are typing commands using a programming language. The presence of $>$ also indicates that the computer is awaiting your command.
+RStudio (a) and Positron (b) integrated development environments. Each pane serves a specific purpose for writing, running, and managing R code. Note that the scripting pane (top left) does not appear by default—open it by selecting File → New File. To enlarge these images, right-click and select "Open Image in New Tab."
+:::
+
+::: {.content-visible when-format="pdf" layout-ncol=2}
+
+![RStudio Panes](imgs/basics/rstudio_default_panes.pdf){#fig-rstudio_panes_html}
+
+![Positron Panes](imgs/basics/positron_default_panes.pdf){#fig-positron_panes_pdf}
+
+Test
+:::
+
+The console pane functions as a terminal for the R language specifically.[^console_py] Though, to distinguish it from your operating system's main terminal it is labelled "console." Inside it you will see a $>$. This symbol denotes the command line's prompt.  In other words, it denotes the space in which you type commands, using R code, to your computer.  The term ``code'' here is just a shorthand way of referring to ``computer code'' which is another way of expressing the fact that we are typing commands using a programming language. The presence of $>$ also indicates that the computer is awaiting your command.
+
+[^console_py]:When I said the console is for the the R language specifically, I lied. RStudio and Positron give you the ability to toggle between both R and Python.
