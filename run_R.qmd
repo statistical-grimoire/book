@@ -242,9 +242,9 @@ Installing R studio is as simple as selecting the installation relevant to your 
 
 For Macintosh users, when you download and launch the install file for R studio there will probably be no installation wizard; rather, you will likely be prompted to drag an RStudio icon into your applications folder. Once that is done, R studio is installed.
 
-#### Notes for Linux Users of Ubuntu, Mint, and other Ubuntu-based Distros {#sec-linux_RStudio}
+#### Notes for Linux Users of Debian, Ubuntu, Mint, and other Debian or Ubuntu-based Distros {#sec-linux_RStudio}
 
-Ubuntu users, Mint users, and users of other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, etc.) will need to select the Ubuntu install file that corresponds to the major version of Ubuntu they are running. In most cases this is will be Ubuntu 24.
+Users of Debian, Ubuntu, Mint, and other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, etc.) will need to select the install file that corresponds to the major version of Debian or Ubuntu they are running. In most cases this is will be Debian 13 or Ubuntu 24.
 
 It is also worth noting that the install file is a `.deb` file. Once downloaded to your computer, these can usually be run without issue using a simple double click of the mouse (similar to the `.exe` files present on Windows systems).  However, the more reliable method is to use the terminal to install this file. Should you want to take this approach you can follow the three steps below.
 
