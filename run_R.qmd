@@ -56,19 +56,22 @@ Once you have downloaded the (.pkg) installation file (check your *Downloads* fo
 ### Linux Installation
 Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse.
 
-When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on [Ubuntu](https://ubuntu.com/desktop) and its derivatives such as [Linux Mint](https://www.linuxmint.com/), [Kubuntu](https://kubuntu.org/), [Budgie](https://ubuntubudgie.org/), etc.
+When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on [Debian](https://www.debian.org/), [Ubuntu](https://ubuntu.com/desktop), and Ubuntu's derivatives such as [Linux Mint](https://www.linuxmint.com/), [Kubuntu](https://kubuntu.org/), [Budgie](https://ubuntubudgie.org/), etc.
 
 ::: callout-important
 Unlike Windows and macOS, installing R on Linux does not include a graphical coding environment (see @fig-RGui). Consequently, Linux users must use the terminal to run R until they install an IDE such as RStudio or Positron.
 :::
 
-#### Ubuntu and its Flavours
+If you are using Debian or Linux Mint and are relatively new to Linux, I recommend first reading the installation instructions for Ubuntu. This will familiarize you with how R installation works on Linux systems generally.
+
+::: {.callout-note collapse="true"}
+## Ubuntu
 
 Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files supplied by the R Project's CRAN repository. The reason being, Ubuntu's package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but, unfortunately, means you're not getting the latest version of R immediately.
 
 By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project's own repository to Ubuntu's package manager configuration `apt` (Advanced Package Tool).
 
-##### Installing from Ubuntu's Repository
+#### Installing from Ubuntu's Repository
 
 If using Ubuntu's offical repository appeals to you, inside your terminal you can just run ...
 
@@ -77,7 +80,7 @@ sudo apt update
 sudo apt install r-base
 ```
 
-##### Installing from the R Project's Repository (CRAN)
+#### Installing from the R Project's Repository (CRAN)
 
 If, on the other hand, you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project's official server. This is used to verify that R packages from the the CRAN's Ubuntu repository are legitimate and haven't been tampered with.
 
@@ -141,8 +144,10 @@ To quit running R:
 ```bash
 q()
 ```
+:::
 
-#### Linux Mint and other Ubuntu-based Distributions
+::: {.callout-note collapse="true"}
+## Linux Mint and other Ubuntu-based Distributions
 
 The installation processs on other Ubuntu-based distributions, such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, and others, is identical to regular Ubuntu with one exception. Some distributions, such as Linux Mint, have their own distinct codenames. This means that, in the steps above where we replace `noble`, we will need to make sure that we use the Ubuntu codename that your Ubuntu-based distribution is built from. This can be obtained by running the following lines in the terminal:
 
@@ -152,10 +157,62 @@ echo "$UBUNTU_CODENAME"
 ```
 
 Everything else about the install, should be the same as standard Ubuntu.
+:::
 
-#### Other Linux Distributions
+::: {.callout-note collapse="true"}
+## Debian
+
+Using the terminal, follow the steps below.
+
+**1. Add the CRAN repository**
+
+Add the CRAN repository to Debian's list of approved sources to ensure you can install the latest version of R.
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
+This command opens "nano," a text editor that runs inside the Linux terminal. Use the arrow keys to navigate to the bottom of the document and add the following line:
+
+```bash
+deb https://cloud.r-project.org/bin/linux/debian trixie-cran40/
+```
+
+**Important:** Replace `trixie` (the codename for Debian 13) with the codename for your Debian version:
+
+- Debian 13: `trixie`
+- Debian 12: `bookworm`
+- Debian 11: `bullseye`
+
+Once added, save the file by pressing Ctrl + O, then press Enter to confirm. Exit nano by pressing Ctrl + X.
+
+**2. Add CRAN security key**
+
+Import and register the CRAN GPG key to verify package authenticity:
+
+```bash
+sudo apt install gnupg
+gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
+gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | sudo tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
+sudo apt update
+```
+
+**3. Install R**
+
+Update the package list and install R along with development tools:
+
+```bash
+sudo apt update
+sudo apt install r-base r-base-dev
+```
+:::
+
+::: {.callout-note collapse="true"}
+## Other Linux Distributions
 
 The offical R Project website contains detailed information for installing on other major Linux distributions. [https://cloud.r-project.org/bin/linux/](https://cloud.r-project.org/bin/linux/) 
+
+:::
 
 ## Installing an IDE (RStudio and Positron)
 
