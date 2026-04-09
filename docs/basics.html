@@ -226,6 +226,7 @@ window.Quarto = {
   <li><a href="#scientific-notation" id="toc-scientific-notation" class="nav-link" data-scroll-target="#scientific-notation"><span class="header-section-number">3.5</span> Scientific Notation</a></li>
   <li><a href="#commenting-out-lines" id="toc-commenting-out-lines" class="nav-link" data-scroll-target="#commenting-out-lines"><span class="header-section-number">3.6</span> Commenting Out Lines</a></li>
   <li><a href="#creating-objects" id="toc-creating-objects" class="nav-link" data-scroll-target="#creating-objects"><span class="header-section-number">3.7</span> Creating Objects</a></li>
+  <li><a href="#creating-objects-again" id="toc-creating-objects-again" class="nav-link" data-scroll-target="#creating-objects-again"><span class="header-section-number">3.8</span> Creating Objects (again)</a></li>
   </ul>
 </nav>
     </div>
@@ -570,6 +571,119 @@ Important
 </div>
 </div>
 <p>To see a complete list of objects presently loaded in memory have a look at the <em>Environment</em> window pane in R studio and the <em>Variables</em> pane in Positron.</p>
+</section>
+<section id="creating-objects-again" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="creating-objects-again"><span class="header-section-number">3.8</span> Creating Objects (again)</h2>
+<p>To assign the names <code>x</code> and <code>y</code> we typed an arrow <code>&lt;-</code>. However, we could have assigned the names using an equal sign <code>=</code> instead.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> x <span class="sc">+</span> <span class="dv">4</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+</div>
+<p>Both <code>&lt;-</code> and <code>=</code>, in the manner we are using them here, are what are referred to as <strong>assignment operators</strong> in that, they are used to perform the <em>operation</em> of <em>assigning</em> a name to an object. For most use cases, there is no practical difference between the two; except insofar as the arrow can be swapped around to assign values to objects like so.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="ot">-&gt;</span> z</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>z</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+<p>The existence of both <code>=</code> and <code>&lt;-</code> as assignment operators raises an obvious question: which is better to use? This is a question for which there are strong opinions. While code written using <code>=</code> tends to have an intuitive appeal and requires one less key to press, the <code>&lt;-</code> has greater functionality and is generally preferred by R’s anointed high council (the overseers of Tidyverse) for that reason. If you opt to use <code>&lt;-</code>, it is worth noting that RStudio and Positron contain a keyboard shortcut that offers a more ergonomic means of typing <code>&lt;-</code> by pressing the alt key followed by a minus (-) sign.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Comparing Assignment Operators: <code>&lt;-</code> vs.&nbsp;<code>=</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>⚡ <strong>Advanced note:</strong> New programmers can safely skip this section.</p>
+<p>The original assignment operator of the S programming language was <code>&lt;-</code>. The use of <code>=</code> to assign names to objects was a more recent development in S’s history. This was doubtlessly motivated by 1) the intuitive appeal of <code>=</code> (you are setting something <code>equal</code> to something else), 2) its cleaner look, 3) its correspondence with other modern programming languages, and 4) the basic fact that it requires one less keystroke. It also has the added benefit of not resulting in confusion when dealing with inequalities. For instance, something like <code>x&lt;-1</code> could be read as either assigning the name <code>x</code> to the object <span class="math inline">\(1\)</span>, or it could be evaluating whether <span class="math inline">\(x\)</span> is <em>less</em> than <span class="math inline">\(-1\)</span>. As written here, the statement will result in the former unless appropriate spacing is applied; i.e., <code>x &lt; -1</code>.</p>
+<p>Despite the obvious benefits of using <code>=</code>, much of R’s core user-base favours <code>&lt;-</code>. To understand why, it is helpful to know that, prior to its use as an assignment operator, the <code>=</code> was used to designate values to <em>arguments</em> inside a <em>function</em> and, to this day, it still serves this purpose. Consequently, when it was granted the coveted position of “assignment operator” it now had dual syntactic roles within the language but with a particular limitation: You cannot use <code>=</code> to both assign a value to a function’s argument and create a variable simultaneously. With <code>&lt;-</code>, you can.</p>
+<p><strong>The Core Difference</strong></p>
+<p>Consider calculating the mean of the numbers one through five. Using <code>=</code> to set the argument works but creates no new variable:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! object 'x' not found</code></pre>
+</div>
+</div>
+<p>Using <code>&lt;-</code> both sets the argument and stores the values:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+<p><strong>The Uber-Assignment operator: &lt;&lt;-</strong></p>
+<p>The <code>&lt;-</code> also has an advantage in that a simple variant of it, <code>&lt;&lt;-</code>, allows you to create variables within your own custom-made functions that are executable outside the scope of that function. Admittedly, this is a more advanced usage than readers of this text are likely to need, but it is an useful feature to know about as skills with R develop.</p>
+<p>As a basic illustration, suppose we created a function, <code>rational_pi()</code>, that displays <span class="math inline">\(\pi\)</span> to the nearest integer, <span class="math inline">\(3\)</span>, like so…</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>rational_pi <span class="ot">=</span> <span class="cf">function</span>() {</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  rat_pi <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rat_pi)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rational_pi</span>() <span class="co"># Returns 3</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>rat_pi <span class="co"># Error</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error:
+! object 'rat_pi' not found</code></pre>
+</div>
+</div>
+<p>At face value this is odd behaviour because, to be able to run the line <code>return(rat_pi)</code>, the object <code>rat_pi</code> must have been stored at some point. And it was stored, but only <em>within the scope of the function</em>. To make <code>rat_pi</code> available outside the function’s scope, we can employ <code>&lt;&lt;-</code> when we define the function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>rational_pi <span class="ot">=</span> <span class="cf">function</span>() {</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  rat_pi <span class="ot">&lt;&lt;-</span> <span class="dv">3</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rat_pi)</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rational_pi</span>()</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>rat_pi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3
+[1] 3</code></pre>
+</div>
+</div>
+<p>Now we have a “rational” version of <span class="math inline">\(\pi\)</span> stored as <code>rat_pi</code>. However, one other intriguing feature of <code>&lt;&lt;-</code> needs to be mentioned in this context: <code>&lt;&lt;-</code> only assigns a value within the function’s scope, <em>if</em> the object you are creating does not already exist inside the function. However, the value will still get assigned globally (i.e., outside of the function’s scope). This is easiest to comprehend with a simple example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>rational_pi <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  rat_pi <span class="ot">&lt;-</span> <span class="dv">666</span>   <span class="co"># Local assignment</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  rat_pi <span class="ot">&lt;&lt;-</span> <span class="dv">3</span>    <span class="co"># Global assignment only</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(rat_pi)  <span class="co"># Returns the local value</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rational_pi</span>()  <span class="co"># Returns 666 (local value)</span></span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>rat_pi         <span class="co"># Returns 3 (global value)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 666
+[1] 3</code></pre>
+</div>
+</div>
+<p><strong>Additional Advantages of <code>&lt;-</code></strong></p>
+<p>The <code>&lt;-</code> operator offers two other minor advantages: reversibility (you can write <code>-&gt;</code> and <code>-&gt;&gt;</code> to assign rightward) and consistency with R’s documentation, where most code examples use<code>&lt;-</code>. For many R users, this familiarity makes code easier to parse at a glance.</p>
+</div>
+</div>
+</div>
 
 
 </section>

@@ -241,3 +241,100 @@ y
 ```
 
 To see a complete list of objects presently loaded in memory have a look at the *Environment* window pane in R studio and the *Variables* pane in Positron.
+
+## Creating Objects (again)
+
+To assign the names `x` and `y` we typed an arrow `<-`. However, we could have assigned the names using an equal sign `=` instead.
+
+```{r}
+y = x + 4
+y
+```
+
+Both `<-` and `=`, in the manner we are using them here, are what are referred to as **assignment operators** in that, they are used to perform the *operation* of *assigning* a name to an object. For most use cases, there is no practical difference between the two; except insofar as the arrow can be swapped around to assign values to objects like so.
+
+```{r}
+10 -> z
+z
+```
+
+The existence of both `=` and `<-` as assignment operators raises an obvious question: which is better to use?  This is a question for which there are strong opinions. While code written using `=` tends to have an intuitive appeal and requires one less key to press, the `<-` has greater functionality and is generally preferred by R's anointed high council (the overseers of Tidyverse) for that reason. If you opt to use `<-`, it is worth noting that RStudio and Positron contain a keyboard shortcut that offers a more ergonomic means of typing `<-` by pressing the alt key followed by a minus (-) sign.
+
+::: {.callout-note collapse="true"}
+## Comparing Assignment Operators: `<-` vs. `=`
+
+⚡ **Advanced note:** New programmers can safely skip this section.
+
+The original assignment operator of the S programming language was `<-`. The use of `=` to assign names to objects was a more recent development in S's history. This was doubtlessly motivated by 1) the intuitive appeal of `=` (you are setting something `equal` to something else), 2) its cleaner look, 3) its correspondence with other modern programming languages, and 4) the basic fact that it requires one less keystroke. It also has the added benefit of not resulting in confusion when dealing with inequalities. For instance, something like `x<-1` could be read as either assigning the name `x` to the object $1$, or it could be evaluating whether $x$ is *less* than $-1$.  As written here, the statement will result in the former unless appropriate spacing is applied; i.e., `x < -1`.  
+
+Despite the obvious benefits of using `=`, much of R's core user-base favours `<-`. To understand why, it is helpful to know that, prior to its use as an assignment operator, the `=` was used to designate values to *arguments* inside a *function* and, to this day, it still serves this purpose. Consequently, when it was granted the coveted position of "assignment operator" it now had dual syntactic roles within the language but with a particular limitation: You cannot use `=` to both assign a value to a function's argument and create a variable simultaneously. With `<-`, you can.
+
+**The Core Difference**
+
+Consider calculating the mean of the numbers one through five. Using `=` to set the argument works but creates no new variable:
+
+```{r}
+#| echo: false
+rm(x)  # Remove specific objects
+```
+
+```{r}
+#| error: true
+mean(x = 1:5)
+x
+```
+
+Using `<-` both sets the argument and stores the values:
+
+```{r}
+mean(x <- 1:5)
+x
+```
+
+**The Uber-Assignment operator: <<-**
+
+The `<-` also has an advantage in that a simple variant of it, `<<-`, allows you to create variables within your own custom-made functions that are executable outside the scope of that function. Admittedly, this is a more advanced usage than readers of this text are likely to need, but it is an useful feature to know about as skills with R develop.
+
+As a basic illustration, suppose we created a function, `rational_pi()`, that displays $\pi$ to the nearest integer, $3$, like so...
+
+```{r}
+rational_pi = function() {
+  rat_pi <- 3
+  return(rat_pi)
+}
+```
+```{r}
+#| error: true
+rational_pi() # Returns 3
+rat_pi # Error
+```
+
+At face value this is odd behaviour because, to be able to run the line `return(rat_pi)`, the object `rat_pi` must have been stored at some point.  And it was stored, but only *within the scope of the function*. To make `rat_pi` available outside the function's scope, we can employ `<<-` when we define the function:
+
+```{r results = "hold"}
+rational_pi = function() {
+  rat_pi <<- 3
+  return(rat_pi)
+}
+
+rational_pi()
+rat_pi
+```
+
+Now we have a "rational" version of $\pi$ stored as `rat_pi`.  However, one other intriguing feature of `<<-` needs to be mentioned in this context: `<<-` only assigns a value within the function's scope, *if* the object you are creating does not already exist inside the function. However, the value will still get assigned globally (i.e., outside of the function's scope).  This is easiest to comprehend with a simple example:
+
+```{r results = "hold"}
+rational_pi <- function() {
+  rat_pi <- 666   # Local assignment
+  rat_pi <<- 3    # Global assignment only
+  return(rat_pi)  # Returns the local value
+}
+
+rational_pi()  # Returns 666 (local value)
+rat_pi         # Returns 3 (global value)
+```
+
+**Additional Advantages of `<-`**
+
+The `<-` operator offers two other minor advantages: reversibility (you can write `->` and `->>`  to assign rightward) and consistency with R's documentation, where most code examples use`<-`. For many R users, this familiarity makes code easier to parse at a glance.
+:::
