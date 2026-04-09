@@ -267,7 +267,7 @@ window.Quarto = {
 <p>What follows assumes you have installed either RStudio or Positron, though almost everything discussed also applies to the base R environment that comes with the language on Windows and Macintosh computers.</p>
 <section id="the-console-pane" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="the-console-pane"><span class="header-section-number">3.1</span> The Console Pane</h2>
-<p>When you launch the base-R environment (for Windows or Mac), launch RStudio, or launch Positron, somewhere on the screen will be a window pane labelled “<em>Console</em>”. Assuming you have not tweaked the default layout, all three environments will have this located on the left side (see <a href="#fig-IDE_panes_html" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>).</p>
+<p>When you launch the base-R environment (for Windows or Mac), launch RStudio, or launch Positron, somewhere on the screen will be a window pane labelled “<em>Console</em>”. Assuming you have not tweaked the default layout, all three environments will have this located on the left side (see the sections highlighted in red in <a href="#fig-IDE_panes_html" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>).</p>
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-IDE_panes_html-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
@@ -303,10 +303,13 @@ window.Quarto = {
 Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environments. Each pane serves a specific purpose for writing, running, and managing R code. Note that the scripting pane (top left) does not appear by default—open it by selecting File → New File.
 </figcaption>
 </figure>
-<p>The console pane functions as a terminal for the R language specifically.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Though, to distinguish it from your operating system’s main terminal it is labelled “console.” Within the console pane, you should see a <span class="math inline">\(&gt;\)</span>. This symbol denotes the <em>command line’s prompt</em>. In other words, it denotes the space in which you type commands, using R code, to your computer. The term “code” here is just a shorthand way of referring to “computer code” which is a more modern way of expressing the fact that we are typing commands using a programming language. The presence of <span class="math inline">\(&gt;\)</span> indicates that the computer is awaiting your command.</p>
+<p>The console pane functions as a terminal for the R language specifically.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Though, to distinguish it from your operating system’s main terminal it is labelled “console.”</p>
+<p>Within the console pane, you should see a <span class="math inline">\(&gt;\)</span>. This symbol denotes the <em>command line’s prompt</em>. In other words, it denotes the space in which you type commands, using R <em>code</em>, to your computer (this is the section highlighted in purple in <a href="#fig-IDE_panes_html" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>). The term “code” here is just a shorthand way of referring to “computer code” which is a more modern way of expressing the fact that we are typing commands using a programming language. The presence of <span class="math inline">\(&gt;\)</span> indicates that the computer is awaiting your command.</p>
 <p>If you type <code>1 + 1</code> on the command line and then press “<em>enter/return</em>” on your keyboard, you should see a <code>2</code> display as an <em>output</em> almost instantaneously beneath it. In this case the expression <code>1 + 1</code> is a line of R code. Pressing <em>enter/return</em>, runs (or executes) this R code. The <code>2</code> is the computer’s resulting <em>output</em>.”</p>
+<p>Input:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Output:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
@@ -496,7 +499,7 @@ Important
 <pre><code>[1] NaN</code></pre>
 </div>
 </div>
-<p>The abbreviation <code>NaN</code> here stands for <code>not a number,</code> and is a fairly sensible output given that the square root of a negative number does not exist as a real number (consequently, it only exists in your imagination).</p>
+<p>The abbreviation <code>NaN</code> here stands for <code>not a number,</code> and is a fairly sensible output given that the square root of a negative number does not exist as a real number (it only exists in your imagination).</p>
 <p>Finally, since its use crops up from time to time, it can be handy to know that R comes with the number <span class="math inline">\(\pi\)</span> stored as a constant. To use it, you need only type <code>pi</code>.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>pi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -522,12 +525,12 @@ Important
 <h2 data-number="3.6" class="anchored" data-anchor-id="commenting-out-lines"><span class="header-section-number">3.6</span> Commenting Out Lines</h2>
 <p>In the course of writing R code, there will be occasions where you would like to run a script you have typed up, but not necessarily run every single line on that script. There might be certain lines that you would, at least tentatively, like to keep for one reason or another but not necessarily run. You can accomplish this by “commenting out” your code. If you type a <code>#</code> symbol, any code that follows that symbol and is on the same line as that symbol will not be run.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 + 2</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">5</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2 + 4</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">3</span></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">3</span> <span class="co"># + 4 + 5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2
+<pre><code>[1] 6
 [1] 6
 [1] 6</code></pre>
 </div>
@@ -547,7 +550,7 @@ Important
 <pre><code>[1] 1</code></pre>
 </div>
 </div>
-<p>R is technically classified as an <em>object-oriented programming language</em> (an “OOP”). This is because, if you look into how R actually stores what we have done in memory, the “object” here is the number <span class="math inline">\(1\)</span>. <code>x</code> is merely the name we are assigning to that object. However, a lot of R users are under the impression that the reverse is true - i.e., that we have in some sense created an object called <code>x</code> and stored something inside of it, but that is not actually the case. <code>x</code> is just a name binded to the object <span class="math inline">\(1\)</span>, and this object <span class="math inline">\(1\)</span> is located somewhere inside your computer’s memory. Admittedly, unless you are doing some seriously advanced R programming, this is a distinction that will not matter to most R users, but it is important because it means that if you do something like this . . .</p>
+<p>If you look into how R actually stores what we have done in memory, the “object” in memory is the number <span class="math inline">\(1\)</span>. <code>x</code> is merely a name we are assigning to that object. However, a lot of R users are under the impression that the reverse is true - i.e., that we have in some sense created an object called <code>x</code> and stored something inside of it, but that is not actually the case. <code>x</code> is just a name binded to the object <span class="math inline">\(1\)</span>, and this object <span class="math inline">\(1\)</span> is located somewhere inside your computer’s memory. Admittedly, unless you are doing some seriously advanced R programming, this is a distinction that will not matter to most R users, but it is important because it means that if you do something like this . . .</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -574,7 +577,7 @@ Important
 <hr>
 <ol>
 <li id="fn1"><p>This is technically a lie. RStudio and Positron give you the ability to toggle between both R and Python.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Shortcuts 3, 4, and 5 can be combined with shortcut 7 to highlight bigger sections of code.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>If this isn’t true of your keyboard, it’s time to get a better keyboard.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>“BEDMAS” of course being the famous mnemonic to help memorize the order of operations: Brackets, Exponents, Division, Multiplication, Addition, and Subtraction. Many non-Canadian readers may be more familiar with the inferior variants of this mnemonic, PEDMAS and PEMDAS.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>This will also be generated if a number is too large for a computer to cope with. For example, the code <code>.Machine$double.xmax</code> will produce the largest number your computer can handle. R will technically still let you add values to this number, but the number won’t appear to change because the amount you would have to add to alter what is shown is excessively large. However, if you multiply it by <span class="math inline">\(2\)</span>, you should get <code>Inf</code>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>

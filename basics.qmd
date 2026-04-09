@@ -8,7 +8,7 @@ What follows assumes you have installed either RStudio or Positron, though almos
 
 ## The Console Pane
 
-When you launch the base-R environment (for Windows or Mac), launch RStudio, or launch Positron, somewhere on the screen will be a window pane labelled "*Console*". Assuming you have not tweaked the default layout, all three environments will have this located on the left side (see @fig-IDE_panes_html).
+When you launch the base-R environment (for Windows or Mac), launch RStudio, or launch Positron, somewhere on the screen will be a window pane labelled "*Console*". Assuming you have not tweaked the default layout, all three environments will have this located on the left side (see the sections highlighted in red in @fig-IDE_panes_html).
 
 ::: {.content-visible when-format="html" #fig-IDE_panes_html layout-nrow=2}
 
@@ -28,13 +28,22 @@ RStudio (a) and Positron (b) integrated development environments. Each pane serv
 Test
 :::
 
-The console pane functions as a terminal for the R language specifically.[^console_py] Though, to distinguish it from your operating system's main terminal it is labelled "console." Within the console pane, you should see a $>$. This symbol denotes the *command line's prompt*.  In other words, it denotes the space in which you type commands, using R code, to your computer.  The term "code" here is just a shorthand way of referring to "computer code" which is a more modern way of expressing the fact that we are typing commands using a programming language. The presence of $>$ indicates that the computer is awaiting your command.
+The console pane functions as a terminal for the R language specifically.[^console_py] Though, to distinguish it from your operating system's main terminal it is labelled "console." 
+
+Within the console pane, you should see a $>$. This symbol denotes the *command line's prompt*.  In other words, it denotes the space in which you type commands, using R *code*, to your computer (this is the section highlighted in purple in @fig-IDE_panes_html). The term "code" here is just a shorthand way of referring to "computer code" which is a more modern way of expressing the fact that we are typing commands using a programming language. The presence of $>$ indicates that the computer is awaiting your command.
 
 [^console_py]:This is technically a lie. RStudio and Positron give you the ability to toggle between both R and Python.
 
 If you type `1 + 1` on the command line and then press "*enter/return*" on your keyboard, you should see a `2` display as an *output* almost instantaneously beneath it. In this case the expression `1 + 1` is a line of R code.  Pressing *enter/return*, runs (or executes) this R code. The `2` is the computer's resulting *output*."
 
+Input:
+```r
+1 + 1
+```
+
+Output:
 ```{r}
+#| echo: false
 1 + 1
 ```
 
@@ -78,7 +87,7 @@ Please note, it is not being suggested that you go out of your way to memorize a
 
 : Useful Keyboard Shortcuts {#tbl-key_shorts}
 
-[^key_shorts]:Shortcuts 3, 4, and 5 can be combined with shortcut 6 to highlight bigger sections of code.
+[^key_shorts]:Shortcuts 3, 4, and 5 can be combined with shortcut 7 to highlight bigger sections of code.
 
 ::: callout-important
 When utilizing the keyboard shortcuts mentioned in @sec-key_shorts, it is worth remembering that standard QWERTY-style keyboards are symmetrically designed. Modifier keys like the *shift* key, *control* key, and *alt* key are located on both the left and right side of the board.[^key_layout] This is not by accident and many people - even those who have grown up with unprecedented access to computers and the internet - have never learned to appreciate the utility of this layout or use it appropriately.
@@ -159,7 +168,7 @@ What happens if you take the square root of a negative number?[^sqrt_neg]
 (-4)^(1/2)
 ```
 
-The abbreviation `NaN` here stands for `not a number,` and is a fairly sensible output given that the square root of a negative number does not exist as a real number (consequently, it only exists in your imagination).
+The abbreviation `NaN` here stands for `not a number,` and is a fairly sensible output given that the square root of a negative number does not exist as a real number (it only exists in your imagination).
 
 Finally, since its use crops up from time to time, it can be handy to know that R comes with the number $\pi$ stored as a constant. To use it, you need only type `pi`.[^mmmm_pi]
 
@@ -188,8 +197,8 @@ Remember that positive powers move the decimal right (in the positive direction)
 In the course of writing R code, there will be occasions where you would like to run a script you have typed up, but not necessarily run every single line on that script.  There might be certain lines that you would, at least tentatively, like to keep for one reason or another but not necessarily run.  You can accomplish this by "commenting out" your code.  If you type a `#` symbol, any code that follows that symbol and is on the same line as that symbol will not be run.
 
 ```{r results = "hold"}
-1 + 1
-# 2 + 2
+1 + 5
+# 2 + 4
 3 + 3
 1 + 2 + 3 # + 4 + 5
 ```
@@ -210,7 +219,7 @@ You will find that running this line of code produces no corresponding output.  
 x
 ```
 
-R is technically classified as an *object-oriented programming language* (an "OOP"). This is because, if you look into how R actually stores what we have done in memory, the "object" here is the number $1$.  `x` is merely the name we are assigning to that object. However, a lot of R users are under the impression that the reverse is true - i.e., that we have in some sense created an object called `x` and stored something inside of it, but that is not actually the case. `x` is just a name binded to the object $1$, and this object $1$ is located somewhere inside your computer's memory. Admittedly, unless you are doing some seriously advanced R programming, this is a distinction that will not matter to most R users, but it is important because it means that if you do something like this . . . 
+If you look into how R actually stores what we have done in memory, the "object" in memory is the number $1$.  `x` is merely a name we are assigning to that object. However, a lot of R users are under the impression that the reverse is true - i.e., that we have in some sense created an object called `x` and stored something inside of it, but that is not actually the case. `x` is just a name binded to the object $1$, and this object $1$ is located somewhere inside your computer's memory. Admittedly, unless you are doing some seriously advanced R programming, this is a distinction that will not matter to most R users, but it is important because it means that if you do something like this . . . 
 
 ```{r}
 x <- 1
