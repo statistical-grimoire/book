@@ -97,6 +97,20 @@ As an example, to type capital letters you should always depress the shift key o
 
 [^key_layout]:If this isn't true of your keyboard, it's time to get a better keyboard.
 
+## How to Code Using R: Some Advice to Novice Programmers
+
+With the formalities of installation, console, and scripting window behind us, we can now start learning to write (i.e., code) in R. But before we dive in, some advice for novice programmers is in order.
+
+You don't need to memorize anything in this section or any section of this text. R is a language, and like any language, consistent use will lead to natural, effortless memorization over time. To help accelerate this process, here are some basic recommendations:
+
+- Type all code yourself. Resist the urge to copy and paste. The physical act of typing reinforces learning.
+- Run every example in the textbook and try to reproduce the same results.
+- If you do not know how to do some particular thing, then look up how to do it each time you need to do it. Memorization will happen effortlessly over time.
+- Stay organized. This applies to both the code you write and the files you save.
+- Commit to using R for all your statistics from now on. Immersion is the fastest path to fluency.
+
+Everything discussed here is designed to acquaint you with the R language so that when you encounter R code, you will not be overwhelmed or intimidated. As you progress through the book, you will learn more advanced concepts and see much of this material revisited and re-explained in new contexts. Your goal in this chapter is not to become an R expert, it is to develop an intuitive grasp of R's underlying syntax and logic.
+
 ## Basic Arithmetic
 
 At its core R is really nothing more than a powerful calculator, and we can use it as such.  R can be used to add ($+$), subtract ($-$), multiply ($\times$), and divide ($\div$).
@@ -338,3 +352,140 @@ rat_pi         # Returns 3 (global value)
 
 The `<-` operator offers two other minor advantages: reversibility (you can write `->` and `->>`  to assign rightward) and consistency with R's documentation, where most code examples use`<-`. For many R users, this familiarity makes code easier to parse at a glance.
 :::
+
+## Object Modes
+
+Thus far all of the objects we have created have been **numeric** objects; though, we can avail ourselves of other types.  For instance, another common object is the **character** object which gets defined using quotation marks on each end of the value.
+
+```{r}
+x <- "SPAM"
+x
+```
+
+Both single or double quotation marks can be used to define a character object. For instance, running ...
+
+```{r}
+y <- 'SPAM'
+y
+```
+
+works just fine, but if you were to mix and match the two types of quotation marks (e.g., try to run `y <- "SPAM'`), you will find that no actual output is produced, and the console just displays the code you tried to run with a small `+` appended to it. The `+` indicates that the line of code is incomplete and more is expected before an output can be returned. If this happens in RStudio, you need only press the escape key *esc* with your cursor inside the console window. In Positron press *Ctrl* + *c*.
+
+A core point about character objects, which will probably seem obvious, is that you cannot perform standard mathematical operations on them.
+
+```{r}
+#| error: true
+y * 5
+```
+
+Another type of object is what is known as a **logical** object.  This is an object that contains a value of `TRUE` or `FALSE` and is often referred to as a **boolean** object.
+
+```{r}
+x <- TRUE
+y <- FALSE
+x
+y
+```
+
+The values `TRUE` and `FALSE` must be typed completely in uppercase without quotations for R to recognize them as a logical object.  Alternatively, R does permit a shorthand version of each.  Instead of typing `TRUE` and `FALSE`, you can type `T` and `F` respectively.  Though, for ease of reading, using this shorthand version is not advised.
+
+Thus far, we have demonstrated three basic categories of object: *numeric*, *character*, and *logical*.  R refers to these various categories as **modes**,[^modes] and as you progress with R, both in this book and more generally, you will encounter other object modes.
+
+[^modes]:You may sometimes hear these referred to as object "classes" as well. The distinction between modes and classes in R is nuanced, with considerable overlap between the two terms; though, they are not perfectly equivalent. I have chosen to refer to object modes because it more consistently categorizes objects as numeric, character, or logical, which I believe is helpful for beginners learning R.
+
+## Naming Objects
+
+Often we will run into circumstances where other people are required to read, run, and modify the code we write.  Still other times, we may need to look at, and make sense of, code we have written in the past and largely forgotten. These considerations make it of the utmost importance that all of the code we write is intelligible to other people and our future selves. Among the best way to achieve this is by naming objects appropriately. Ideally, the name of an object should be concise and descriptive. Generally, you can name objects almost anything you like, as long as the name begins with a letter, contains no spaces, avoids special characters (except underscores `_`), and does not use any of R's **reserved words** such as `TRUE`, `Inf`, `NaN`, `function`, etc.
+
+Given that spaces are not permitted in the naming of objects, programmers have developed certain conventions to promote readability. One such convention is *snake case*, which separates lowercase lettered words with an underscore: `snake_case <- 1`.
+
+Another, referred to as *camel case*, denotes separate words by capitalizing the first letter of each new word: `camelCase <- 2`
+
+There is also *period case*: `period.case <- 3`.
+
+There is *random case* [@Wickham2023]: `Ra.nD0M_CAs.e <- 4`
+
+Finally, there is of course *angry case* for those moments when you need to communicate your frustration with coding: `ANGRYCASE <- 5`
+
+Apart from the last two, R programmers tend to use all of these with seeming abandon. It is worth noting that different style guides for R have been developed and altered over the years with varying degrees of adoption. Presently there is no consensus on which style-guide should act in an official capacity for R; however, the most popular, and widely respected, is the *Tidyverse* Style Guide[^tidyverse_explain] (<a href = "https://style.tidyverse.org" target = "_blank">https://style.tidyverse.org</a>) which advocates the strict and concise use of *snake_case* only.
+
+[^tidyverse_explain]:The *tidyverse* will be explained in the next chapter, just know that all the code written in this book will (do its best) to adhere to its standards.
+
+When it comes to naming objects, all of the rules just laid out only apply to what are referred to as **syntactic names**; however, if villainy is more your style, you can gleefully ignore all of those rules and conjure up what are called **non-syntactic names** by simply enclosing the name within backticks.
+
+```{r}
+`420 * 69` <- "PARTY TIME!"
+`The devil made me do it!` <- "Hail Satan"
+```
+
+## Vectors
+
+It is not the case that an object need store only a single value, as we have been doing above. Particularly when conducting statistical analyses, you are almost always working with variables that contain more than one value (i.e. multiple observations). In view of this, R objects can store as many values as you require. For instance, if we want `x` to be equal to the numbers 1 through 5, we need only type: 
+
+```{r}
+x <- c(1, 2, 3, 4, 5)
+x
+```
+
+The lower case `c` is short for *combine*. By combining the numbers $1$ through $5$ in this way we have created what is technically known as a **vector**.[^vector] We can further use this combine function, `c()`, to combine vectors with other vectors. In the example below, we create two vectors, `x` and `y`, and combine them to create an object called `z`.
+
+[^vector]:More specifically, we are speaking of *atomic vectors* here, though most people just call them *vectors.*
+
+```{r}
+x <- c(1, 2, 3, 4, 5)
+y <- c(6, 7, 8, 9, 10)
+z <- c(x, y)
+z
+```
+
+::: callout-tip
+## How to Use Your Colon Effectively
+In the previous examples, we used R's combine function to create a basic set of ascending numbers. The need to generate regular sequences of integers is a common occurrence in data analyses, so R provides users with a convenient means to create them using the **colon operator** (`:`).
+
+```{r}
+x <- 1:5
+x
+```
+
+This can also be used in reverse and with negative values.
+
+```{r}
+3:-5
+```
+::: 
+
+The concept of a vector is one which will have relevance to people with a fondness of linear and matrix algebra,[^matrix_algebra] since it amounts to little more than a one-dimensional array/matrix. We can see how R handles vectors for these purposes by simply performing some mathematical operations on them. For instance, if we add a single number to our vector, we can see that R straightforwardly adds that number to each element (i.e. position) in the vector.
+
+[^matrix_algebra]:While I assume such people must exist, their existence is about as well-confirmed as that of the Sasquatch.
+
+```{r results = "hold"}
+x
+x + 2
+```
+
+Correspondingly:
+
+```{r results = "hold"}
+x - 2
+x * 2
+x / 2
+x^2
+```
+
+A similarly logical process is seen when we perform mathematical operations on two or more vectors of the same size.  For instance, adding them together results in the first element of one being added to the first element of the other.  The second element of one being added to the second element of the other, and so on.
+
+```{r}
+x <- c(1,2,3,4,5)
+y <- c(6,7,8,9,10)
+
+x + y
+```
+
+However, a curious thing will occur if the vectors have an unequal number of elements greater than 1. Suppose, as an example, one vector has four elements and another has five and we want to add them together. In the process of adding the first element with the first element, and the second element with the second, and so on, R will automatically loop back around to the first element in the shorter vector to complete the calculation; though, it does this only after giving you a warning.  Needless to say, you should not be performing any arithmetic on vectors of unequal lengths.
+
+```{r}
+#| error: true
+x <- c(1,2,3,4)
+y <- c(6,7,8,9,10)
+x + y
+```

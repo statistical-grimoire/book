@@ -268,7 +268,7 @@ The `./` before the filename tells `apt` to look in the current directory.
 ### Installing Positron
 The install process Positron is a relatively seamless one. In the case of Windows, Macintosh, and Linux, the process is as simple as downloading the appropriate install file and double clicking it with your mouse.[^mouse_linux]
 
-[^mouse_linux]:While Linux users generally can double-click the `.deb` install file have it run without issue, the reccommended course of action is to install through the terminal like was described in the RStudio install instructions (see @sec-linux_RStudio).
+[^mouse_linux]:While Linux users generally can double-click the `.deb` install file and have it run without issue, the reccommended course of action is to install the `.deb` file through the terminal like was described in the RStudio install instructions (see @sec-linux_RStudio).
 
 To install Positron visit: 
 
