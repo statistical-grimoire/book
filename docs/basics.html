@@ -252,6 +252,8 @@ window.Quarto = {
   <li><a href="#object-modes" id="toc-object-modes" class="nav-link" data-scroll-target="#object-modes"><span class="header-section-number">3.10</span> Object Modes</a></li>
   <li><a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects"><span class="header-section-number">3.11</span> Naming Objects</a></li>
   <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">3.12</span> Vectors</a></li>
+  <li><a href="#operators-and-comparison-statements" id="toc-operators-and-comparison-statements" class="nav-link" data-scroll-target="#operators-and-comparison-statements"><span class="header-section-number">3.13</span> Operators And Comparison Statements</a></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">3.14</span> Functions</a></li>
   </ul>
 </nav>
     </div>
@@ -873,9 +875,353 @@ length</code></pre>
 <pre><code>[1]  7  9 11 13 11</code></pre>
 </div>
 </div>
+<p>Vectors are also not limited to numbers. They can also contain character values and logical values.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"BREAD"</span>, <span class="st">"SPAM"</span>, <span class="st">"BREAD"</span>)</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>a</span>
+<span id="cb86-6"><a href="#cb86-6" aria-hidden="true" tabindex="-1"></a>b</span>
+<span id="cb86-7"><a href="#cb86-7" aria-hidden="true" tabindex="-1"></a>c</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3
+[1] "BREAD" "SPAM"  "BREAD"
+[1]  TRUE FALSE FALSE</code></pre>
+</div>
+</div>
+<p>Though, you cannot mix and match. For instance, if you have a character string amongst a set of numeric values, those numeric values will all be converted to character strings as evidenced by the quotation marks in the output below.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="st">"SPAM"</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>)</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "5"    "SPAM" "6"    "7"    "8"   </code></pre>
+</div>
+</div>
+<p>If you have logical values amongst a set of numeric values, those logical values will be transformed such that <code>TRUE = 1</code> and <code>FALSE = 0</code>, making the entire vector numeric.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">666</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>e</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 666   1   0</code></pre>
+</div>
+</div>
+<p>In fact if you have an entire vector of logical values you can treat the <code>TRUE</code> and <code>FALSE</code> values as 1s and 0s respectively. This is a feature of logical vectors that frequently comes in handy.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>)</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> g</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 101 101 100 100 101</code></pre>
+</div>
+</div>
+<p>Similar to how R comes with <span class="math inline">\(\pi\)</span> stored as a constant, it also has constants for a few commonly used character vectors. For more info about these</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>LETTERS</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S"
+[20] "T" "U" "V" "W" "X" "Y" "Z"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>letters</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s"
+[20] "t" "u" "v" "w" "x" "y" "z"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>month.name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "January"   "February"  "March"     "April"     "May"       "June"     
+ [7] "July"      "August"    "September" "October"   "November"  "December" </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>month.abb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"</code></pre>
+</div>
+</div>
+<p>Notice in the previous example’s output that the numbers within brackets indicate the position number of a element in the vector. For example, in the vector <code>LETTERS</code>, <code>"T"</code> is located at the 20<sup>th</sup> position. In the vector <code>month.name</code>, <code>"July"</code> is in the 7<sup>th</sup> position. Every new line written to the console screen gives the position number of the first element on the line - meaning that the size of your console screen will effect which position numbers get displayed (so you might have different values that what is shown above).</p>
+<p>It is not by accident that these positions are demarcated using square brackets. Square brackets serve a special purpose in R. They allow us to subset values by referencing their position in the vector. For instance, if we want to know what the 17<sup>th</sup> letter of the English alphabet is, we need only type …</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="dv">17</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Q"</code></pre>
+</div>
+</div>
+<p>If we want to list out the first 5 letters we can simply insert a numeric vector…</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)]</span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or equivalently</span></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "A" "B" "C" "D" "E"
+[1] "A" "B" "C" "D" "E"</code></pre>
+</div>
+</div>
+<p>By contrast, if we want to list out all of the letters, except the first five (i.e., exclude the first five), we can include a minus sign in front of the combine symbol.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)]</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or equivalently</span></span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>LETTERS[<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X"
+[20] "Y" "Z"
+ [1] "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X"
+[20] "Y" "Z"</code></pre>
+</div>
+</div>
+<p>The use of vectors inside the indexing brackets allows us to select any position we want. For instance, if we wanted to examine the 2<sup>nd</sup>, 3<sup>rd</sup>, 5<sup>th</sup>, 7<sup>th</sup>, 11<sup>th</sup>, 13<sup>th</sup>, 17<sup>th</sup>, 19<sup>th</sup>, and 23<sup>rd</sup> numbers (all prime numbers), we can create a vector of those values and simply insert it into the index.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>primes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">13</span>, <span class="dv">17</span>, <span class="dv">19</span>, <span class="dv">23</span>)</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>LETTERS[primes]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "B" "C" "E" "G" "K" "M" "Q" "S" "W"</code></pre>
+</div>
+</div>
+<p>Somewhat uniquely, within the R programming language every <em>single</em> basic data object—such as a number, character string, or logical value—is inherently a vector. For example, the number <code>666</code> is a vector, the character string <code>"SPAM"</code> is a vector, and the logical value <code>FALSE</code> is also a vector. These are simply vectors with a single element, or a length of 1. As such, all of these can be indexed just like any other vector with a length greater than 1.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="dv">666</span>[<span class="dv">1</span>]</span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="dv">666</span>[<span class="dv">2</span>]</span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a><span class="st">"SPAM"</span>[<span class="dv">1</span>]</span>
+<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a><span class="cn">FALSE</span>[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 666
+[1] NA
+[1] "SPAM"
+[1] FALSE</code></pre>
+</div>
+</div>
+<p>Notice in the second line, when <code>666</code> was indexed at position 2, R returned <code>NA</code> because no value exists at that position. The moral of the story is that, when the combine function,<code>c()</code>, is used, you are not creating a vector, but rather combining vectors.</p>
+</section>
+<section id="operators-and-comparison-statements" class="level2" data-number="3.13">
+<h2 data-number="3.13" class="anchored" data-anchor-id="operators-and-comparison-statements"><span class="header-section-number">3.13</span> Operators And Comparison Statements</h2>
+<p>Symbols in R such as <code>&lt;-</code>, <code>+</code>, <code>-</code>, and so on are referred to as operators because they are used to perform “operations” such as assigning a name to an object, adding numbers together, etc. Table <a href="#tbl-operators" class="quarto-xref">Table&nbsp;<span>3.2</span></a> shows a list of some common operators in R that we have seen before and some new ones called <strong>relational operator</strong>. These are operators that evaluate a comparison of some kind. For instance, you can evaluate whether one value is <em>greater than</em> or <em>less than</em> another value.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&gt;</span> pi</span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">&lt;</span> pi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE
+[1] TRUE</code></pre>
+</div>
+</div>
+<p>In the above example, the statement “three is <em>greater</em> than <span class="math inline">\(\pi\)</span>”, is a <em>false</em> statement. By contrast, the statement “three is <em>less</em> than <span class="math inline">\(\pi\)</span>”, is a <em>true</em> statement.</p>
+<div id="tbl-operators" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-operators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.2: Basic R Operators
+</figcaption>
+<div aria-describedby="tbl-operators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 25%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Type</th>
+<th style="text-align: center;">Operator</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Assignment</td>
+<td style="text-align: center;"><code>x &lt;- value</code></td>
+<td style="text-align: left;">Assign a value to a name.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>value -&gt; x</code></td>
+<td style="text-align: left;">Assign a value to a name (rightward).</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x = value</code></td>
+<td style="text-align: left;">Assign a value to a name.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Arithmetic</td>
+<td style="text-align: center;"><code>x + y</code></td>
+<td style="text-align: left;">Addition</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x - y</code></td>
+<td style="text-align: left;">Subtraction</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x * y</code></td>
+<td style="text-align: left;">Multiplication</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x / y</code></td>
+<td style="text-align: left;">Division</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x^y</code></td>
+<td style="text-align: left;">Exponentiation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x %% y</code></td>
+<td style="text-align: left;">Modulo (remainder after division)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x %/% y</code></td>
+<td style="text-align: left;">Integer division (quotient without remainder)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Relational</td>
+<td style="text-align: center;"><code>x &lt; y</code></td>
+<td style="text-align: left;">Less than</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x &gt; y</code></td>
+<td style="text-align: left;">Greater than</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x &lt;= y</code></td>
+<td style="text-align: left;">Less than or equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x &gt;= y</code></td>
+<td style="text-align: left;">Greater than or equal to</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x == y</code></td>
+<td style="text-align: left;">Equal to</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>x != y</code></td>
+<td style="text-align: left;">Not equal to</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>In a similar fashion, you can also evaluate whether a value is <em>greater than or equal to</em> some other value or <em>less than OR equal to</em> some value. For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">&gt;=</span> pi</span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">&lt;=</span> pi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE
+[1] TRUE</code></pre>
+</div>
+</div>
+<p>You can also evaluate whether two values are <em>equivalent</em> or <em>not equivalent</em>, by using the symbols <code>==</code> and <code>!=</code> respectively.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">==</span> pi <span class="co"># testing if equivalent</span></span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">==</span> (<span class="dv">22</span><span class="sc">/</span><span class="dv">7</span>)</span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>pi <span class="sc">!=</span> (<span class="dv">22</span><span class="sc">/</span><span class="dv">7</span>) <span class="co"># testing if NOT (!) equivalent</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE
+[1] FALSE
+[1] TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="functions" class="level2" data-number="3.14">
+<h2 data-number="3.14" class="anchored" data-anchor-id="functions"><span class="header-section-number">3.14</span> Functions</h2>
+<p>In conventional mathematics a function is a way of relating an input to an output <span class="citation" data-cites="Pierce2022">(<a href="references.html#ref-Pierce2022" role="doc-biblioref">Pierce 2022</a>)</span>. Typically this is notated as</p>
+<p><span id="eq-"><span class="math display">\[
+f(\text{input}) = \text{output}
+\tag{3.1}\]</span></span></p>
+<p>When you place something inside the left parentheses, there is a corresponding output. The use of <span class="math inline">\(f\)</span> here to denote the function is just a formality mathematicians have adopted. A function can be named or symbolized with anything.</p>
+<p>As an example of a function’s use, we could create one that outputs the square root of a number.</p>
+<p><span id="eq-"><span class="math display">\[
+f(x) = \sqrt{x}
+\tag{3.2}\]</span></span></p>
+<p>In this case, <span class="math inline">\(x\)</span> is just acting as a place holder; thus, swapping the <span class="math inline">\(x\)</span> inside of <span class="math inline">\(f()\)</span> with a real number will give us a corresponding output by taking the square root of that number. For example, if we insert the number 25 into the function:</p>
+<p><span id="eq-"><span class="math display">\[
+\begin{align}
+f(25) &amp;= \sqrt{25} \\
+      &amp;= 5
+\end{align}
+\tag{3.3}\]</span></span></p>
+<p><strong>Functions</strong> in R work identically to this. For instance, R has a function for finding the square root of a number, except instead of naming the function <span class="math inline">\(f(x)\)</span>, it names the function <code>sqrt(x)</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>And, rather conveniently, R will also store the output of a function as an object if you ask it to.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="dv">25</span>)</span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<p>As you might expect, given its lineage as a tool for data analysis, R has many such functions. Examples of some of the more common, self-explanatory ones can be seen below. For each we will insert a vector containing the values one through five.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the sum of all the values:</span></span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculating the product of all the values:</span></span>
+<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prod</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 120</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the minimum and maximum of all the values:</span></span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(x)</span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 5</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the length (i.e., number of elements) of a vector:</span></span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the mean of all the values:</span></span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the median of all the values:</span></span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+<p>Functions are not limited to just mathematical processes either. For instance, R has a function to tell us what an object’s mode is, thus allowing us to determine if the vector consists of numeric, character, or logical values.<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-Pierce2022" class="csl-entry" role="listitem">
+Pierce, R. 2022. <span>“Math Is Fun: What Is a Function.”</span> <a href="http://www.mathsisfun.com/sets/function.html">http://www.mathsisfun.com/sets/function.html</a>.
+</div>
 <div id="ref-Wickham2023" class="csl-entry" role="listitem">
 Wickham, H., M. Çetinkaya-Rundel, and G. Grolemund. 2023. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. Second. O’Reilly Media. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
@@ -895,6 +1241,9 @@ Wickham, H., M. Çetinkaya-Rundel, and G. Grolemund. 2023. <em>R for Data Scienc
 <li id="fn9"><p>The <em>tidyverse</em> will be explained in the next chapter, just know that all the code written in this book will (do its best) to adhere to its standards.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn10"><p>More specifically, we are speaking of <em>atomic vectors</em> here, though most people just call them <em>vectors.</em><a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn11"><p>While I assume such people must exist, their existence is about as well-confirmed as that of the Sasquatch.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>You can also check the vector’s mode by running <code>mode(d)</code>.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>It’s perhaps worth pointing out that the small <code>c</code> we use to combine values into a vector is also a function, which is why it is always followed with parentheses,<code>c()</code>.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn14"><p>Do not confuse this with the mathematical concept of a modal value; i.e., the number that appears most often.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

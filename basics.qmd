@@ -489,3 +489,220 @@ x <- c(1,2,3,4)
 y <- c(6,7,8,9,10)
 x + y
 ```
+
+Vectors are also not limited to numbers. They can also contain character values and logical values.
+
+```{r results = "hold"}
+a <- c(1,2,3)
+b <- c("BREAD", "SPAM", "BREAD")
+c <- c(TRUE, FALSE, FALSE)
+
+a
+b
+c
+```
+
+Though, you cannot mix and match. For instance, if you have a character string amongst a set of numeric values, those numeric values will all be converted to character strings as evidenced by the quotation marks in the output below.[^mode]
+
+[^mode]:You can also check the vector's mode by running `mode(d)`.
+
+```{r}
+d <- c(5, "SPAM", 6, 7, 8)
+d
+```
+
+If you have logical values amongst a set of numeric values, those logical values will be transformed such that `TRUE = 1` and `FALSE = 0`, making the entire vector numeric.
+
+```{r}
+e <- c(666, TRUE, FALSE)
+e
+```
+
+In fact if you have an entire vector of logical values you can treat the `TRUE` and `FALSE` values as 1s and 0s respectively. This is a feature of logical vectors that frequently comes in handy.
+
+```{r}
+x <- c(100)
+g <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
+x + g
+```
+
+Similar to how R comes with $\pi$ stored as a constant, it also has constants for a few commonly used character vectors. For more info about these 
+
+```{r}
+LETTERS
+letters
+month.name
+month.abb
+```
+
+Notice in the previous example's output that the numbers within brackets indicate the position number of a element in the vector.  For example, in the vector `LETTERS`, `"T"` is located at the 20^th^ position.  In the vector `month.name`,  `"July"` is in the 7^th^ position. Every new line written to the console screen gives the position number of the first element on the line - meaning that the size of your console screen will effect which position numbers get displayed (so you might have different values that what is shown above).
+
+It is not by accident that these positions are demarcated using square brackets. Square brackets serve a special purpose in R.  They allow us to subset values by referencing their position in the vector. For instance, if we want to know what the 17^th^ letter of the English alphabet is, we need only type ...
+
+```{r}
+LETTERS[17]
+```
+
+If we want to list out the first 5 letters we can simply insert a numeric vector...
+
+```{r results = "hold"}
+LETTERS[c(1, 2, 3, 4, 5)]
+# or equivalently
+LETTERS[1:5]
+```
+
+By contrast, if we want to list out all of the letters, except the first five (i.e., exclude the first five), we can include a minus sign in front of the combine symbol.
+
+```{r results = "hold"}
+LETTERS[-c(1, 2, 3, 4, 5)]
+# or equivalently
+LETTERS[-1:-5]
+```
+
+The use of vectors inside the indexing brackets allows us to select any position we want.  For instance, if we wanted to examine the 2^nd^, 3^rd^, 5^th^, 7^th^, 11^th^, 13^th^, 17^th^, 19^th^, and 23^rd^ numbers (all prime numbers), we can create a vector of those values and simply insert it into the index. 
+
+```{r}
+primes <- c(2, 3, 5, 7, 11, 13, 17, 19, 23)
+LETTERS[primes]
+```
+
+Somewhat uniquely, within the R programming language every *single* basic data object—such as a number, character string, or logical value—is inherently a vector. For example, the number `666` is a vector, the character string `"SPAM"` is a vector, and the logical value `FALSE` is also a vector. These are simply vectors with a single element, or a length of 1. As such, all of these can be indexed just like any other vector with a length greater than 1.
+
+```{r results = "hold"}
+666[1]
+666[2]
+"SPAM"[1]
+FALSE[1]
+```
+
+Notice in the second line, when `666` was indexed at position 2, R returned `NA` because no value exists at that position. The moral of the story is that, when the combine function,`c()`, is used, you are not creating a vector, but rather combining vectors.
+
+## Operators And Comparison Statements
+
+Symbols in R such as `<-`, `+`, `-`, and so on are referred to as operators because they are used to perform "operations" such as assigning a name to an object, adding numbers together, etc.  Table @tbl-operators shows a list of some common operators in R that we have seen before and some new ones called **relational operator**.  These are operators that evaluate a comparison of some kind.  For instance, you can evaluate whether one value is *greater than* or *less than* another value.
+
+```{r results = "hold"}
+3 > pi
+3 < pi
+```
+
+In the above example, the statement "three is *greater* than $\pi$", is a *false* statement. By contrast, the statement "three is *less* than $\pi$", is a *true* statement.
+
+| Type | Operator | Description |
+|:------------:|:-----------------:|:-----------------------------------------|
+| Assignment | `x <- value` | Assign a value to a name. |
+| | `value -> x` | Assign a value to a name (rightward). |
+| | `x = value` | Assign a value to a name. |
+| Arithmetic | `x + y` | Addition |
+| | `x - y` | Subtraction |
+| | `x * y` | Multiplication |
+| | `x / y` | Division |
+| | `x^y` | Exponentiation |
+| | `x %% y` | Modulo (remainder after division) |
+| | `x %/% y` | Integer division (quotient without remainder) |
+| Relational | `x < y` | Less than |
+| | `x > y` | Greater than |
+| | `x <= y` | Less than or equal to |
+| | `x >= y` | Greater than or equal to |
+| | `x == y` | Equal to |
+| | `x != y` | Not equal to |
+
+: Basic R Operators {#tbl-operators}
+
+In a similar fashion, you can also evaluate whether a value is *greater than or equal to* some other value or *less than OR equal to* some value. For example:
+
+```{r results = "hold"}
+pi >= pi
+pi <= pi
+```
+
+You can also evaluate whether two values are *equivalent* or *not equivalent*, by using the symbols `==` and `!=` respectively.
+
+```{r results = "hold"}
+pi == pi # testing if equivalent
+pi == (22/7)
+pi != (22/7) # testing if NOT (!) equivalent
+```
+
+## Functions
+In conventional mathematics a function is a way of relating an input to an output [@Pierce2022].  Typically this is notated as
+
+$$
+f(\text{input}) = \text{output}
+$$ {#eq-}
+
+When you place something inside the left parentheses, there is a corresponding output. The use of $f$ here to denote the function is just a formality mathematicians have adopted.  A function can be named or symbolized with anything.  
+
+As an example of a function's use, we could create one that outputs the square root of a number.
+
+$$
+f(x) = \sqrt{x}
+$$ {#eq-}
+
+In this case, $x$ is just acting as a place holder; thus, swapping the $x$ inside of $f()$ with a real number will give us a corresponding output by taking the square root of that number. For example, if we insert the number 25 into the function:
+
+::: {.content-visible when-format="html"}
+$$
+\begin{align}
+f(25) &= \sqrt{25} \\
+      &= 5
+\end{align}
+$${#eq-}
+:::
+
+**Functions** in R work identically to this.  For instance, R has a function for finding the square root of a number, except instead of naming the function $f(x)$, it names the function `sqrt(x)`.
+
+```{r}
+sqrt(25)
+```
+
+And, rather conveniently, R will also store the output of a function as an object if you ask it to.
+
+```{r}
+x <- sqrt(25)
+x
+```
+
+As you might expect, given its lineage as a tool for data analysis, R has many such functions. Examples of some of the more common, self-explanatory ones can be seen below. For each we will insert a vector containing the values one through five.[^combine_func]
+
+[^combine_func]:It's perhaps worth pointing out that the small `c` we use to combine values into a vector is also a function, which is why it is always followed with parentheses,`c()`.
+
+```{r results = "hold"}
+x <- c(1, 2, 3, 4, 5)
+```
+```{r}
+# Calculating the sum of all the values:
+sum(x)
+```
+```{r}
+#Calculating the product of all the values:
+prod(x)
+```
+```{r results = "hold"}
+# Calculating the minimum and maximum of all the values:
+min(x)
+max(x)
+```
+
+```{r}
+# Calculating the length (i.e., number of elements) of a vector:
+length(x)
+```
+
+```{r}
+# Calculating the mean of all the values:
+mean(x)
+```
+
+```{r}
+# Calculating the median of all the values:
+median(x)
+```
+
+Functions are not limited to just mathematical processes either.  For instance, R has a function to tell us what an object's mode is, thus allowing us to determine if the vector consists of numeric, character, or logical values.[^mode_fun]
+
+```{r}
+mode(x)
+```
+
+[^mode_fun]:Do not confuse this with the mathematical concept of a modal value; i.e., the number that appears most often.
