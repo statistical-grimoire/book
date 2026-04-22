@@ -9,7 +9,7 @@ book:
   title: "The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R"
   author: "Jeffrey M. Pisklak"
   cover-image: cover.png
-  date: "2026-04-20"
+  date: "2026-04-21"
   page-footer:
     left: |
       The Statistical Grimoire: Modern Statistical Approaches for the Natural Sciences Using R was written by Jeffrey M. Pisklak.
@@ -31,6 +31,11 @@ format:
     theme:
       - cosmo
       - brand
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1rem
   pdf:
     documentclass: scrreprt
 
