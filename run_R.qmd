@@ -30,7 +30,7 @@ To install R - both the language and environment simultaneously - simply go to t
 <br>
 
 ::: callout-caution
-R's website makes no apologies for its spartan '90s aesthetic (and we should all be so principled frankly). Additionally, you'll encounter lots of technical jargon throughout the site's various pages, and as a newcomer to R and programming, some (maybe even a lot) of it will feel opaque. That's not a problem and you shouldn't feel bad about it. Skim through it, absorb what clicks, maybe look up one or two things, and let the rest wash over you. Doing this builds familiarity with the landscape and overtime, as your skillset and vocabularly grows, the jargon will become more transparent.
+R's website makes no apologies for its spartan '90s aesthetic (and we should all be so principled frankly). Additionally, you'll encounter lots of technical jargon throughout the site's various pages and, as a newcomer to R and programming, some (maybe even a lot) of it will feel opaque. That's not a problem and you shouldn't feel bad about it. Skim through it, absorb what clicks, maybe look up one or two things, and let the rest wash over you. Doing this builds familiarity with the landscape and overtime, as your skillset and vocabularly grows, the jargon will become more transparent.
 :::
 
 Located on the front-page of this website should be a link labelled CRAN. This stands for "Comprehensive R Archive Network" and is a set of servers around the world that distribute R alongside software packages associated with R. The servers are "mirrored," meaning they all provide the same content.  So there is no need to worry about one server providing incomplete, out-of-date, or unofficial versions of R. Technically speaking, the server closest to your home location is the one you should opt to download from; however, the topmost link labeled "0-Cloud" will be sufficient for most users. The install file is only about 80 megabytes large, so unless you live in the remotest areas of Earth, download speed, and thus choice of server, is probably not a concern.
@@ -39,7 +39,7 @@ Once you have chosen a suitable server, you will need select your operating syst
 
 
 ### Windows Installation
-Click the "Download for Windows" link to access the R download page (see @fig-win_download_1). Select the **"base"** option (labeled "install R for the first time"), which will direct you to the installer for the latest version of R. You'll see a download link for the current release—for example, **Download R-4.5.3 for Windows** - which is the newest version available at the time of writing.
+Click the "Download for Windows" link to access the R download page (see @fig-win_download_1). Select the **"base"** option (labeled "install R for the first time"), which will direct you to the installer for the latest version of R. You will see a download link for the current release—for example, **Download R-4.5.3 for Windows** - which is the newest version available at the time of writing.
 
 
 ![Windows download options](imgs/run_R/R_win_download_1.png){width=100% #fig-win_download_1 fig-alt="Windows download options."}
@@ -388,7 +388,7 @@ Simply download the relevant install file and follow the setup wizard. Keep the 
 #### Macintosh Install File Notes
 Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at @sec-mac_install
 
-### Cloud-Based Alternatives
+## Cloud-Based Alternatives
 
 If you are using a Chromebook, tablet, mobile device, or you simply do not want to install software on your computer, you can run R through a cloud-based platform. These platforms run R on remote servers and let you access it through a web browser.
 
