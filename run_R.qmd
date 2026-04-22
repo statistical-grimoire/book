@@ -44,25 +44,47 @@ Click the "Download for Windows" link to access the R download page (see @fig-wi
 
 ![Windows download options](imgs/run_R/R_win_download_1.png){width=100% #fig-win_download_1 fig-alt="Windows download options."}
 
-Once you have downloaded the (.exe) installation file (check your *Downloads* folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).
+Once you have downloaded the (`.exe`) installation file (check your *Downloads* folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them as the defaults are sensible for nearly all users. The installer will ask you where to install R (the default is usually `C:\Program Files\R\R-4.5.3`), whether to create shortcuts, and a few other minor options. You can safely click through these. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup). You should see the basic R GUI (graphical user interface) window open (see @fig-RGui), confirming that R is installed and working.
+
+::: callout-tip
+## Administrator privileges
+
+If you are installing R on a university or work computer, you may need administrator privileges. If you run into permission errors during installation, contact your IT department for assistance.
+:::
 
 ### macOS Installation {#sec-mac_install}
-Click the "Download R for macOS" link to access the R download page and select the option relevant to your computer (see @fig-mac_download). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed "Apple silicon"); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting *About This Mac* via the small little apple logo in the top left corner of their desktop screen. Machines using Apple silicon, will display a row called "Chip" and state something akin to "Apple M1".  If you see this, you should opt to choose the install file that says "arm64". Machines using Intel processors will display a row reading "Processor" followed by the make and model of the processor. In this latter case, you should choose the install file that says "x86_64."
+Click the "*Download R for macOS*" link to access the R download page and select the option relevant to your computer (see @fig-mac_download). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed "Apple silicon"); however, many older Macintosh computers (pre-2023) still contain Intel-made processors.
 
 ![macOS download options](imgs/run_R/R_mac_download.png){width=100% #fig-mac_download fig-alt="macOS download options."}
 
-Once you have downloaded the (.pkg) installation file (check your *Downloads* folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the "launchpad" or applications folder.
+To determine your processor type, click the Apple logo in the top-left corner of your desktop screen and select "*About This Mac*". Machines using Apple silicon will display a row labeled "*Chip*" and state something like "Apple M1," "Apple M2," or "Apple M3." If you see this, choose the install file that says "**arm64**" (this is the architecture used by Apple silicon).
+
+Machines using Intel processors will display a row labeled "*Processor*" followed by the make and model of the processor (e.g., "2.3 GHz Dual-Core Intel Core i5"). In this case, choose the install file that says "**x86_64**" (this is the architecture used by Intel chips).
+
+Once you have downloaded the (`.pkg`) installation file (check your *Downloads* folder if you're unsure where it's located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. The installer will guide you through a series of screens mostly just clicking "Continue" and entering your password to authorize the installation.
+
+Once installation is complete, you can delete the install file to free up disk space, and launch the base R environment from the Launchpad or Applications folder.
+
+::: callout-tip
+## macOS security settings
+
+Depending on your macOS version and security settings, you may see a warning that the file "cannot be opened because it is from an unidentified developer." If this happens, click the Apple logo in the top-left corner of your desktop screen, select *System Settings*, then click *Privacy & Security* in the sidebar.
+
+Scroll to the *Security* section and press the *Open Anyway* button. Then choose *Open*. Finally, enter your login password and click *OK*.
+:::
+
 
 ### Linux Installation
 Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse.
 
-When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on [Debian](https://www.debian.org/), [Ubuntu](https://ubuntu.com/desktop), and Ubuntu's derivatives such as [Linux Mint](https://www.linuxmint.com/), [Kubuntu](https://kubuntu.org/), [Budgie](https://ubuntubudgie.org/), etc.
+When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on [Debian](https://www.debian.org/), [Ubuntu](https://ubuntu.com/desktop), and Ubuntu's derivatives such as [Linux Mint](https://www.linuxmint.com/), [Kubuntu](https://kubuntu.org/), [Budgie](https://ubuntubudgie.org/), and others.
 
 ::: callout-important
+## No graphical environment included
 Unlike Windows and macOS, installing R on Linux does not include a graphical coding environment (see @fig-RGui). Consequently, Linux users must use the terminal to run R until they install an IDE such as RStudio or Positron.
 :::
 
-If you are using Debian or Linux Mint and are relatively new to Linux, I recommend first reading the installation instructions for Ubuntu. This will familiarize you with how R installation works on Linux systems generally.
+If you are using Debian or Linux Mint and are relatively new to Linux, I recommend first reading the installation instructions for Ubuntu below. This will familiarize you with how R installation works on Linux systems generally.
 
 ::: {.callout-note collapse="true"}
 ## Ubuntu
@@ -71,7 +93,7 @@ Many Linux distros, like Ubuntu, have their own officially currated repositories
 
 By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project's own repository to Ubuntu's package manager configuration `apt` (Advanced Package Tool).
 
-#### Installing from Ubuntu's Repository
+#### Installing from Ubuntu's Repository (Simpler, but Older Version)
 
 If using Ubuntu's offical repository appeals to you, inside your terminal you can just run ...
 
@@ -80,11 +102,15 @@ sudo apt update
 sudo apt install r-base
 ```
 
-#### Installing from the R Project's Repository (CRAN)
+The first command refreshes your system's list of available packages. The second installs R.  You can now skip to **step 7** below.
 
-If, on the other hand, you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project's official server. This is used to verify that R packages from the the CRAN's Ubuntu repository are legitimate and haven't been tampered with.
+#### Installing from the R Project's Repository (Recommended for Latest Version)
 
-In your terminal run the the following to first refresh your package lists:
+If, on the other hand, you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to configure your system to trust and use the CRAN repository.
+
+**Step 1: Refresh your package lists**
+
+In your terminal, run:
 
 ```bash
 sudo apt update
@@ -92,46 +118,73 @@ sudo apt update
 
 This tells `apt` "go fetch the latest list of available packages and their versions" from all the configured repositories on your computer.
 
+**Step 2: Install helper tools**
+
 Next we are going to install two helper programs, `software-properties-common` and `dirmngr`. The former provides tools for managing software repositories. The latter is background service that manages keys and certificates. It's used to verify GPG signatures on packages and keys. 
 
 ```bash
 sudo apt install --no-install-recommends software-properties-common dirmngr
 ```
 
-Then, in order to install the GPG key file, we run ...
+The `--no-install-recommends` flag tells `apt` to install only the essential packages and skip optional extras, keeping your system lean.
+
+**Step 3: Download and install the GPG public key**
+
+Now we need to download the GPG public key from the R Project's official server. This key is used to verify that R packages from the CRAN Ubuntu repository are legitimate and have not been tampered with. Think of it as a digital signature that proves authenticity.
 
 ```bash
  wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 ```
 
-Next we add the R Project's repository to your system's package sources so `apt` knows where to find R packages. To do this, you need to determine the codename of Ubuntu you are running. Ubuntu names each new long term support (LTS) release of its operating system with a codename (focal = 20.04, jammy = 22.04, noble = 24.04, etc.)  To determine the code name just run `lsb_release -cs` in the terminal.
+Breaking this down: `wget -qO-` quietly downloads the key file and outputs it to your terminal. The pipe (`|`) sends that output to `sudo tee`, which writes it to the system's trusted key directory.
 
-In the code below you need to replace `noble` with the codename of your version of Ubuntu.
+**Step 4: Add the CRAN repository to your system**
+
+Next we add the R Project's repository to your system's package sources so `apt` knows where to find R packages. To do this, you need to determine the codename of Ubuntu you are running. Ubuntu names each new long term support (LTS) release of its operating system with a codename:
+
+- focal = 20.04
+- jammy = 22.04
+- noble = 24.04
+
+To determine the code name just run `lsb_release -cs` in the terminal. This will print your Ubuntu version's codename. Now, in the code below, replace `noble` with the codename of your version of Ubuntu:
 
 ```bash
 echo "deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/" \
  | sudo tee /etc/apt/sources.list.d/cran-r.list
 ```
 
-And now we can finally install R:
+This command adds a new repository configuration file to your system, telling `apt` to check CRAN's servers for R packages.
+
+**Step 5: Install R**
+
+Now we can finally install R:
 
 ```bash
 sudo apt update
 sudo apt install r-base
 ```
 
-And, for good measure, install build tools for installing R packages from source
-This is needed for many CRAN package installs.
+**Step 6: Install development tools (important!)**
+
+For good measure, install build tools for compiling and installing R packages from source. This is needed for many CRAN package installations, especially those that include compiled code (which is common):
 
 ```bash
 sudo apt install r-base-dev
 ```
 
-Check the version of R you have installed.
+Skipping this step may cause headaches later when you try to install certain packages and get cryptic error messages about missing compilers or libraries.
+
+**Step 7: Verify your installation**
+
+Check the version of R you have installed:
 
 ```bash
 R --version
 ```
+
+You should see output indicating the R version number, confirming that R is installed and accessible.
+
+**Step 8: Launch R**
 
 To run R simply type:
 
@@ -139,32 +192,41 @@ To run R simply type:
 R
 ```
 
-To quit running R:
+You should see the R "console" appear in your terminal. You can now type R commands interactively. To quit R and return to your normal terminal prompt, type:
 
 ```bash
 q()
 ```
+
+R will ask if you want to save your workspace. For now, you can type `n` (no) and press *Enter*.
+
 :::
 
 ::: {.callout-note collapse="true"}
 ## Linux Mint and other Ubuntu-based Distributions
 
-The installation processs on other Ubuntu-based distributions, such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, and others, is identical to regular Ubuntu with one exception. Some distributions, such as Linux Mint, have their own distinct codenames. This means that, in the steps above where we replace `noble`, we will need to make sure that we use the Ubuntu codename that your Ubuntu-based distribution is built from. This can be obtained by running the following lines in the terminal:
+The installation process on other Ubuntu-based distributions—such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, Pop!_OS, and others—is identical to regular Ubuntu with one important exception.
+
+Some distributions, such as Linux Mint, have their own distinct codenames that differ from Ubuntu's. For example, Linux Mint 21 "Vanessa" is based on Ubuntu 22.04 "Jammy," but uses "Vanessa" as its own codename. This means that in the steps above where we replace `noble`, we need to make sure we use the Ubuntu codename that your distribution is built from, not the distribution's own codename.
+
+To find the underlying Ubuntu codename, run the following in the terminal:
 
 ```bash
 . /etc/os-release
 echo "$UBUNTU_CODENAME"
 ```
 
-Everything else about the install, should be the same as standard Ubuntu.
+This will print the Ubuntu codename (e.g., jammy for distributions based on Ubuntu 22.04). Use this codename when adding the CRAN repository in **Step 4** of the Ubuntu instructions above.
+
+Everything else about the installation should be the same as standard Ubuntu.
 :::
 
 ::: {.callout-note collapse="true"}
 ## Debian
 
-Using the terminal, follow the steps below.
+Debian is the upstream distribution that Ubuntu is based on, so the process is similar but with some important differences. Follow the steps below using the terminal.
 
-**1. Add the CRAN repository**
+**Step 1: Add the CRAN repository**
 
 Add the CRAN repository to Debian's list of approved sources to ensure you can install the latest version of R.
 
@@ -172,7 +234,7 @@ Add the CRAN repository to Debian's list of approved sources to ensure you can i
 sudo nano /etc/apt/sources.list
 ```
 
-This command opens "nano," a text editor that runs inside the Linux terminal. Use the arrow keys to navigate to the bottom of the document and add the following line:
+This command opens **nano**, a text editor that runs inside the Linux terminal. Use the arrow keys to navigate to the bottom of the document and add the following line:
 
 ```bash
 deb https://cloud.r-project.org/bin/linux/debian trixie-cran40/
@@ -184,34 +246,76 @@ deb https://cloud.r-project.org/bin/linux/debian trixie-cran40/
 - Debian 12: `bookworm`
 - Debian 11: `bullseye`
 
+You can check your Debian version by running `lsb_release -cs` in a seperate terminal window.
+
 Once added, save the file by pressing Ctrl + O, then press Enter to confirm. Exit nano by pressing Ctrl + X.
 
-**2. Add CRAN security key**
+**Step 2: Add the CRAN security key**
 
-Import and register the CRAN GPG key to verify package authenticity:
+Import and register the CRAN GPG key to verify package authenticity. First, install `gnupg` if it's not already installed:
 
 ```bash
 sudo apt install gnupg
+```
+
+Then, download and add the CRAN public key:
+
+```bash
 gpg --keyserver keyserver.ubuntu.com --recv-key '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'
 gpg --armor --export '95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | sudo tee /etc/apt/trusted.gpg.d/cran_debian_key.asc
+```
+
+Finally, update your package lists:
+
+```bash
 sudo apt update
 ```
 
-**3. Install R**
+**Step 3: Install R**
 
-Update the package list and install R along with development tools:
+Update the package list (again, to be safe) and install R along with development tools:
 
 ```bash
 sudo apt update
 sudo apt install r-base r-base-dev
 ```
+
+Including `r-base-dev` ensures you have the compilers and libraries needed to build R packages from source.
+
+**Step 4: Verify your installation**
+
+Check the version of R you have installed:
+
+```bash
+R --version
+```
+
+You should see output confirming the R version, indicating that R is installed correctly.
+
+**Step 5: Launch R**
+
+To run R, type:
+
+```bash
+R
+```
+
+To quit R and return to the terminal, type:
+
+```bash
+q()
+```
+
+R will ask if you want to save your workspace. For now, you can type `n` (no) and press *Enter*.
+
 :::
 
 ::: {.callout-note collapse="true"}
 ## Other Linux Distributions
 
-The offical R Project website contains detailed information for installing on other major Linux distributions. [https://cloud.r-project.org/bin/linux/](https://cloud.r-project.org/bin/linux/) 
+The official R Project website contains detailed installation instructions for other major Linux distributions, including Fedora, Red Hat, openSUSE, Arch Linux, and more. Visit: [https://cloud.r-project.org/bin/linux/](https://cloud.r-project.org/bin/linux/) 
 
+If you are using a distribution not explicitly covered, check the site for guidance or consult your distribution's documentation. In many cases, R is available through your distribution's package manager. Just be aware that, as with Ubuntu's default repositories, the version may lag behind the latest CRAN release.
 :::
 
 ## Installing an IDE (RStudio and Positron)
@@ -284,6 +388,20 @@ Simply download the relevant install file and follow the setup wizard. Keep the 
 #### Macintosh Install File Notes
 Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at @sec-mac_install
 
+### Cloud-Based Alternatives
+
+If you are using a Chromebook, tablet, mobile device, or you simply do not want to install software on your computer, you can run R through a cloud-based platform. These platforms run R on remote servers and let you access it through a web browser.
+
+Popular options include:
+
+- <a href = "https://posit.cloud/" target = "_blank">Posit Cloud</a> (formerly RStudio Cloud): A browser-based version of RStudio. Free tier available, with paid plans for more storage and computing power.
+
+- <a href = "https://colab.research.google.com/" target = "_blank">Google Colab</a>: Primarily designed for Python, but can easily set to run R.
+
+- <a href = "https://cocalc.com/" target = "_blank">CoCalc</a>: A collaborative platform that supports R, Python, and other languages.
+
+Cloud-based platforms are convenient and require no installation, but they require an internet connection, and may have limitations in terms of functionality, computing power, storage, and session length. For serious work, a local installation is generally preferable, but cloud platforms are excellent for getting started or for situations where you cannot install software or need real-time collaboration with people.
+
 # Upgrading R
 
 There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R but, assuming you are on Windows or Macintosh, the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.[^packages]
@@ -300,3 +418,5 @@ sudo apt upgrade
 ```
 
 At the time of writing, R is on version 4.5.3, nicknamed the "Reassured Reassurer" version.  New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.
+
+When you do update R, be aware that packages (add-ons that extend R's functionality, which we will cover later) are often tied to specific versions of R. After updating, you may need to reinstall or update your packages. Don't worry, this is a normal part of the process, and we will walk through package management in a later chapter.

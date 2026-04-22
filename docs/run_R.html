@@ -221,6 +221,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#installing-rstudio" id="toc-installing-rstudio" class="nav-link" data-scroll-target="#installing-rstudio"><span class="header-section-number">2.2.1</span> Installing RStudio</a></li>
   <li><a href="#installing-positron" id="toc-installing-positron" class="nav-link" data-scroll-target="#installing-positron"><span class="header-section-number">2.2.2</span> Installing Positron</a></li>
+  <li><a href="#cloud-based-alternatives" id="toc-cloud-based-alternatives" class="nav-link" data-scroll-target="#cloud-based-alternatives"><span class="header-section-number">2.2.3</span> Cloud-Based Alternatives</a></li>
   </ul></li>
   <li><a href="#upgrading-r" id="toc-upgrading-r" class="nav-link" data-scroll-target="#upgrading-r"><span class="header-section-number">3</span> Upgrading R</a></li>
   </ul>
@@ -317,11 +318,24 @@ Figure&nbsp;2.4: Windows download options
 </figcaption>
 </figure>
 </div>
-<p>Once you have downloaded the (.exe) installation file (check your <em>Downloads</em> folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup).</p>
+<p>Once you have downloaded the (<code>.exe</code>) installation file (check your <em>Downloads</em> folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them as the defaults are sensible for nearly all users. The installer will ask you where to install R (the default is usually <code>C:\Program Files\R\R-4.5.3</code>), whether to create shortcuts, and a few other minor options. You can safely click through these. Once installation is complete, you can launch R from the Start menu or a desktop shortcut (if you chose to create one during setup). You should see the basic R GUI (graphical user interface) window open (see <a href="#fig-RGui" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>), confirming that R is installed and working.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Administrator privileges
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you are installing R on a university or work computer, you may need administrator privileges. If you run into permission errors during installation, contact your IT department for assistance.</p>
+</div>
+</div>
 </section>
 <section id="sec-mac_install" class="level3" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-mac_install"><span class="header-section-number">2.1.2</span> macOS Installation</h3>
-<p>Click the “Download R for macOS” link to access the R download page and select the option relevant to your computer (see <a href="#fig-mac_download" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed “Apple silicon”); however, many older Macintosh computers (pre-2023) still contain Intel-made processors. The install file you select will need to be determined by which type of processor your computer is using. Macintosh users can determine this by selecting <em>About This Mac</em> via the small little apple logo in the top left corner of their desktop screen. Machines using Apple silicon, will display a row called “Chip” and state something akin to “Apple M1”. If you see this, you should opt to choose the install file that says “arm64”. Machines using Intel processors will display a row reading “Processor” followed by the make and model of the processor. In this latter case, you should choose the install file that says “x86_64.”</p>
+<p>Click the “<em>Download R for macOS</em>” link to access the R download page and select the option relevant to your computer (see <a href="#fig-mac_download" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed “Apple silicon”); however, many older Macintosh computers (pre-2023) still contain Intel-made processors.</p>
 <div id="fig-mac_download" class="quarto-float quarto-figure quarto-figure-center anchored" alt="macOS download options.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mac_download-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -332,28 +346,45 @@ Figure&nbsp;2.5: macOS download options
 </figcaption>
 </figure>
 </div>
-<p>Once you have downloaded the (.pkg) installation file (check your <em>Downloads</em> folder if you are unsure where on your computer it is located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. Once installation is complete, you can delete the install file and launch the base-R environment from the “launchpad” or applications folder.</p>
+<p>To determine your processor type, click the Apple logo in the top-left corner of your desktop screen and select “<em>About This Mac</em>”. Machines using Apple silicon will display a row labeled “<em>Chip</em>” and state something like “Apple M1,” “Apple M2,” or “Apple M3.” If you see this, choose the install file that says “<strong>arm64</strong>” (this is the architecture used by Apple silicon).</p>
+<p>Machines using Intel processors will display a row labeled “<em>Processor</em>” followed by the make and model of the processor (e.g., “2.3 GHz Dual-Core Intel Core i5”). In this case, choose the install file that says “<strong>x86_64</strong>” (this is the architecture used by Intel chips).</p>
+<p>Once you have downloaded the (<code>.pkg</code>) installation file (check your <em>Downloads</em> folder if you’re unsure where it’s located), open it and follow the setup wizard. Keep the default settings unless you have a specific reason to change them. The installer will guide you through a series of screens mostly just clicking “Continue” and entering your password to authorize the installation.</p>
+<p>Once installation is complete, you can delete the install file to free up disk space, and launch the base R environment from the Launchpad or Applications folder.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>macOS security settings
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Depending on your macOS version and security settings, you may see a warning that the file “cannot be opened because it is from an unidentified developer.” If this happens, click the Apple logo in the top-left corner of your desktop screen, select <em>System Settings</em>, then click <em>Privacy &amp; Security</em> in the sidebar.</p>
+<p>Scroll to the <em>Security</em> section and press the <em>Open Anyway</em> button. Then choose <em>Open</em>. Finally, enter your login password and click <em>OK</em>.</p>
+</div>
+</div>
 </section>
 <section id="linux-installation" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="linux-installation"><span class="header-section-number">2.1.3</span> Linux Installation</h3>
 <p>Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse.</p>
-<p>When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on <a href="https://www.debian.org/">Debian</a>, <a href="https://ubuntu.com/desktop">Ubuntu</a>, and Ubuntu’s derivatives such as <a href="https://www.linuxmint.com/">Linux Mint</a>, <a href="https://kubuntu.org/">Kubuntu</a>, <a href="https://ubuntubudgie.org/">Budgie</a>, etc.</p>
+<p>When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on <a href="https://www.debian.org/">Debian</a>, <a href="https://ubuntu.com/desktop">Ubuntu</a>, and Ubuntu’s derivatives such as <a href="https://www.linuxmint.com/">Linux Mint</a>, <a href="https://kubuntu.org/">Kubuntu</a>, <a href="https://ubuntubudgie.org/">Budgie</a>, and others.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+<span class="screen-reader-only">Important</span>No graphical environment included
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Unlike Windows and macOS, installing R on Linux does not include a graphical coding environment (see <a href="#fig-RGui" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>). Consequently, Linux users must use the terminal to run R until they install an IDE such as RStudio or Positron.</p>
 </div>
 </div>
-<p>If you are using Debian or Linux Mint and are relatively new to Linux, I recommend first reading the installation instructions for Ubuntu. This will familiarize you with how R installation works on Linux systems generally.</p>
+<p>If you are using Debian or Linux Mint and are relatively new to Linux, I recommend first reading the installation instructions for Ubuntu below. This will familiarize you with how R installation works on Linux systems generally.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -362,99 +393,62 @@ Important
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files supplied by the R Project’s CRAN repository. The reason being, Ubuntu’s package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but, unfortunately, means you’re not getting the latest version of R immediately.</p>
 <p>By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project’s own repository to Ubuntu’s package manager configuration <code>apt</code> (Advanced Package Tool).</p>
-<section id="installing-from-ubuntus-repository" class="level4" data-number="2.1.3.1">
-<h4 data-number="2.1.3.1" class="anchored" data-anchor-id="installing-from-ubuntus-repository"><span class="header-section-number">2.1.3.1</span> Installing from Ubuntu’s Repository</h4>
+<section id="installing-from-ubuntus-repository-simpler-but-older-version" class="level4" data-number="2.1.3.1">
+<h4 data-number="2.1.3.1" class="anchored" data-anchor-id="installing-from-ubuntus-repository-simpler-but-older-version"><span class="header-section-number">2.1.3.1</span> Installing from Ubuntu’s Repository (Simpler, but Older Version)</h4>
 <p>If using Ubuntu’s offical repository appeals to you, inside your terminal you can just run …</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The first command refreshes your system’s list of available packages. The second installs R. You can now skip to <strong>step 7</strong> below.</p>
 </section>
-<section id="installing-from-the-r-projects-repository-cran" class="level4" data-number="2.1.3.2">
-<h4 data-number="2.1.3.2" class="anchored" data-anchor-id="installing-from-the-r-projects-repository-cran"><span class="header-section-number">2.1.3.2</span> Installing from the R Project’s Repository (CRAN)</h4>
-<p>If, on the other hand, you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to download the GPG public key file from the R project’s official server. This is used to verify that R packages from the the CRAN’s Ubuntu repository are legitimate and haven’t been tampered with.</p>
-<p>In your terminal run the the following to first refresh your package lists:</p>
+<section id="installing-from-the-r-projects-repository-recommended-for-latest-version" class="level4" data-number="2.1.3.2">
+<h4 data-number="2.1.3.2" class="anchored" data-anchor-id="installing-from-the-r-projects-repository-recommended-for-latest-version"><span class="header-section-number">2.1.3.2</span> Installing from the R Project’s Repository (Recommended for Latest Version)</h4>
+<p>If, on the other hand, you would like the most recent releases of R and R packages (this is the reccommended approach), you will first need to configure your system to trust and use the CRAN repository.</p>
+<p><strong>Step 1: Refresh your package lists</strong></p>
+<p>In your terminal, run:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This tells <code>apt</code> “go fetch the latest list of available packages and their versions” from all the configured repositories on your computer.</p>
+<p><strong>Step 2: Install helper tools</strong></p>
 <p>Next we are going to install two helper programs, <code>software-properties-common</code> and <code>dirmngr</code>. The former provides tools for managing software repositories. The latter is background service that manages keys and certificates. It’s used to verify GPG signatures on packages and keys.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install <span class="at">--no-install-recommends</span> software-properties-common dirmngr</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then, in order to install the GPG key file, we run …</p>
+<p>The <code>--no-install-recommends</code> flag tells <code>apt</code> to install only the essential packages and skip optional extras, keeping your system lean.</p>
+<p><strong>Step 3: Download and install the GPG public key</strong></p>
+<p>Now we need to download the GPG public key from the R Project’s official server. This key is used to verify that R packages from the CRAN Ubuntu repository are legitimate and have not been tampered with. Think of it as a digital signature that proves authenticity.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">wget</span> <span class="at">-qO-</span> https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc <span class="kw">|</span> <span class="fu">sudo</span> tee <span class="at">-a</span> /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Next we add the R Project’s repository to your system’s package sources so <code>apt</code> knows where to find R packages. To do this, you need to determine the codename of Ubuntu you are running. Ubuntu names each new long term support (LTS) release of its operating system with a codename (focal = 20.04, jammy = 22.04, noble = 24.04, etc.) To determine the code name just run <code>lsb_release -cs</code> in the terminal.</p>
-<p>In the code below you need to replace <code>noble</code> with the codename of your version of Ubuntu.</p>
+<p>Breaking this down: <code>wget -qO-</code> quietly downloads the key file and outputs it to your terminal. The pipe (<code>|</code>) sends that output to <code>sudo tee</code>, which writes it to the system’s trusted key directory.</p>
+<p><strong>Step 4: Add the CRAN repository to your system</strong></p>
+<p>Next we add the R Project’s repository to your system’s package sources so <code>apt</code> knows where to find R packages. To do this, you need to determine the codename of Ubuntu you are running. Ubuntu names each new long term support (LTS) release of its operating system with a codename:</p>
+<ul>
+<li>focal = 20.04</li>
+<li>jammy = 22.04</li>
+<li>noble = 24.04</li>
+</ul>
+<p>To determine the code name just run <code>lsb_release -cs</code> in the terminal. This will print your Ubuntu version’s codename. Now, in the code below, replace <code>noble</code> with the codename of your version of Ubuntu:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/"</span> <span class="dt">\</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/sources.list.d/cran-r.list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And now we can finally install R:</p>
+<p>This command adds a new repository configuration file to your system, telling <code>apt</code> to check CRAN’s servers for R packages.</p>
+<p><strong>Step 5: Install R</strong></p>
+<p>Now we can finally install R:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And, for good measure, install build tools for installing R packages from source This is needed for many CRAN package installs.</p>
+<p><strong>Step 6: Install development tools (important!)</strong></p>
+<p>For good measure, install build tools for compiling and installing R packages from source. This is needed for many CRAN package installations, especially those that include compiled code (which is common):</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Check the version of R you have installed.</p>
+<p>Skipping this step may cause headaches later when you try to install certain packages and get cryptic error messages about missing compilers or libraries.</p>
+<p><strong>Step 7: Verify your installation</strong></p>
+<p>Check the version of R you have installed:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see output indicating the R version number, confirming that R is installed and accessible.</p>
+<p><strong>Step 8: Launch R</strong></p>
 <p>To run R simply type:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To quit running R:</p>
+<p>You should see the R “console” appear in your terminal. You can now type R commands interactively. To quit R and return to your normal terminal prompt, type:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>R will ask if you want to save your workspace. For now, you can type <code>n</code> (no) and press <em>Enter</em>.</p>
 </section>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Linux Mint and other Ubuntu-based Distributions
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>The installation processs on other Ubuntu-based distributions, such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, and others, is identical to regular Ubuntu with one exception. Some distributions, such as Linux Mint, have their own distinct codenames. This means that, in the steps above where we replace <code>noble</code>, we will need to make sure that we use the Ubuntu codename that your Ubuntu-based distribution is built from. This can be obtained by running the following lines in the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> /etc/os-release</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$UBUNTU_CODENAME</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Everything else about the install, should be the same as standard Ubuntu.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Debian
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Using the terminal, follow the steps below.</p>
-<p><strong>1. Add the CRAN repository</strong></p>
-<p>Add the CRAN repository to Debian’s list of approved sources to ensure you can install the latest version of R.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/apt/sources.list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This command opens “nano,” a text editor that runs inside the Linux terminal. Use the arrow keys to navigate to the bottom of the document and add the following line:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">deb</span> https://cloud.r-project.org/bin/linux/debian trixie-cran40/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>Important:</strong> Replace <code>trixie</code> (the codename for Debian 13) with the codename for your Debian version:</p>
-<ul>
-<li>Debian 13: <code>trixie</code></li>
-<li>Debian 12: <code>bookworm</code></li>
-<li>Debian 11: <code>bullseye</code></li>
-</ul>
-<p>Once added, save the file by pressing Ctrl + O, then press Enter to confirm. Exit nano by pressing Ctrl + X.</p>
-<p><strong>2. Add CRAN security key</strong></p>
-<p>Import and register the CRAN GPG key to verify package authenticity:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gnupg</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gpg</span> <span class="at">--keyserver</span> keyserver.ubuntu.com <span class="at">--recv-key</span> <span class="st">'95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gpg</span> <span class="at">--armor</span> <span class="at">--export</span> <span class="st">'95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/trusted.gpg.d/cran_debian_key.asc</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>3. Install R</strong></p>
-<p>Update the package list and install R along with development tools:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -464,13 +458,88 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Other Linux Distributions
+<span class="screen-reader-only">Note</span>Linux Mint and other Ubuntu-based Distributions
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The offical R Project website contains detailed information for installing on other major Linux distributions. <a href="https://cloud.r-project.org/bin/linux/">https://cloud.r-project.org/bin/linux/</a></p>
+<p>The installation process on other Ubuntu-based distributions—such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, Pop!_OS, and others—is identical to regular Ubuntu with one important exception.</p>
+<p>Some distributions, such as Linux Mint, have their own distinct codenames that differ from Ubuntu’s. For example, Linux Mint 21 “Vanessa” is based on Ubuntu 22.04 “Jammy,” but uses “Vanessa” as its own codename. This means that in the steps above where we replace <code>noble</code>, we need to make sure we use the Ubuntu codename that your distribution is built from, not the distribution’s own codename.</p>
+<p>To find the underlying Ubuntu codename, run the following in the terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> /etc/os-release</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$UBUNTU_CODENAME</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will print the Ubuntu codename (e.g., jammy for distributions based on Ubuntu 22.04). Use this codename when adding the CRAN repository in <strong>Step 4</strong> of the Ubuntu instructions above.</p>
+<p>Everything else about the installation should be the same as standard Ubuntu.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Debian
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Debian is the upstream distribution that Ubuntu is based on, so the process is similar but with some important differences. Follow the steps below using the terminal.</p>
+<p><strong>Step 1: Add the CRAN repository</strong></p>
+<p>Add the CRAN repository to Debian’s list of approved sources to ensure you can install the latest version of R.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nano /etc/apt/sources.list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This command opens <strong>nano</strong>, a text editor that runs inside the Linux terminal. Use the arrow keys to navigate to the bottom of the document and add the following line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">deb</span> https://cloud.r-project.org/bin/linux/debian trixie-cran40/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Important:</strong> Replace <code>trixie</code> (the codename for Debian 13) with the codename for your Debian version:</p>
+<ul>
+<li>Debian 13: <code>trixie</code></li>
+<li>Debian 12: <code>bookworm</code></li>
+<li>Debian 11: <code>bullseye</code></li>
+</ul>
+<p>You can check your Debian version by running <code>lsb_release -cs</code> in a seperate terminal window.</p>
+<p>Once added, save the file by pressing Ctrl + O, then press Enter to confirm. Exit nano by pressing Ctrl + X.</p>
+<p><strong>Step 2: Add the CRAN security key</strong></p>
+<p>Import and register the CRAN GPG key to verify package authenticity. First, install <code>gnupg</code> if it’s not already installed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install gnupg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, download and add the CRAN public key:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gpg</span> <span class="at">--keyserver</span> keyserver.ubuntu.com <span class="at">--recv-key</span> <span class="st">'95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">gpg</span> <span class="at">--armor</span> <span class="at">--export</span> <span class="st">'95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7'</span> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/trusted.gpg.d/cran_debian_key.asc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Finally, update your package lists:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Step 3: Install R</strong></p>
+<p>Update the package list (again, to be safe) and install R along with development tools:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install r-base r-base-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Including <code>r-base-dev</code> ensures you have the compilers and libraries needed to build R packages from source.</p>
+<p><strong>Step 4: Verify your installation</strong></p>
+<p>Check the version of R you have installed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see output confirming the R version, indicating that R is installed correctly.</p>
+<p><strong>Step 5: Launch R</strong></p>
+<p>To run R, type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To quit R and return to the terminal, type:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">q()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>R will ask if you want to save your workspace. For now, you can type <code>n</code> (no) and press <em>Enter</em>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Other Linux Distributions
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The official R Project website contains detailed installation instructions for other major Linux distributions, including Fedora, Red Hat, openSUSE, Arch Linux, and more. Visit: <a href="https://cloud.r-project.org/bin/linux/">https://cloud.r-project.org/bin/linux/</a></p>
+<p>If you are using a distribution not explicitly covered, check the site for guidance or consult your distribution’s documentation. In many cases, R is available through your distribution’s package manager. Just be aware that, as with Ubuntu’s default repositories, the version may lag behind the latest CRAN release.</p>
 </div>
 </div>
 </div>
@@ -502,12 +571,12 @@ Important
 <li><p>Open a terminal by pressing <code>Ctrl + Alt + T</code> or searching for “Terminal” in your application menu.</p></li>
 <li><p>Assuming the file you downloaded is in your “Downloads” folder, navigate their in your terminal by typing:</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Downloads</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>~</code> symbol represents your home directory, so this takes you to <code>/home/yourusername/Downloads</code>.</p>
 <ol start="3" type="1">
 <li>Install the file by typing the code below making sure to replace <code>filename.deb</code> with the actual name of the file you downloaded.</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ./filename.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install ./filename.deb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The <code>./</code> before the filename tells <code>apt</code> to look in the current directory.</p>
 </section>
 </section>
@@ -528,15 +597,27 @@ Important
 <p>Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at <a href="#sec-mac_install" class="quarto-xref"><span>Section 2.1.2</span></a></p>
 </section>
 </section>
+<section id="cloud-based-alternatives" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="cloud-based-alternatives"><span class="header-section-number">2.2.3</span> Cloud-Based Alternatives</h3>
+<p>If you are using a Chromebook, tablet, mobile device, or you simply do not want to install software on your computer, you can run R through a cloud-based platform. These platforms run R on remote servers and let you access it through a web browser.</p>
+<p>Popular options include:</p>
+<ul>
+<li><p><a href="https://posit.cloud/" target="_blank">Posit Cloud</a> (formerly RStudio Cloud): A browser-based version of RStudio. Free tier available, with paid plans for more storage and computing power.</p></li>
+<li><p><a href="https://colab.research.google.com/" target="_blank">Google Colab</a>: Primarily designed for Python, but can easily set to run R.</p></li>
+<li><p><a href="https://cocalc.com/" target="_blank">CoCalc</a>: A collaborative platform that supports R, Python, and other languages.</p></li>
+</ul>
+<p>Cloud-based platforms are convenient and require no installation, but they require an internet connection, and may have limitations in terms of functionality, computing power, storage, and session length. For serious work, a local installation is generally preferable, but cloud platforms are excellent for getting started or for situations where you cannot install software or need real-time collaboration with people.</p>
+</section>
 </section>
 <section id="upgrading-r" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Upgrading R</h1>
 <p>There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R but, assuming you are on Windows or Macintosh, the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <p>If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will allow you to easily switch between different versions of R installed on your computer.</p>
 <p>For Linux users, updating R is as simple as running the following in the terminal:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt upgrade</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>At the time of writing, R is on version 4.5.3, nicknamed the “Reassured Reassurer” version. New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.</p>
+<p>When you do update R, be aware that packages (add-ons that extend R’s functionality, which we will cover later) are often tied to specific versions of R. After updating, you may need to reinstall or update your packages. Don’t worry, this is a normal part of the process, and we will walk through package management in a later chapter.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
