@@ -1,6 +1,6 @@
 # How to Use R on a Computer
 
-R will install and run straightforwardly on Windows and Macintosh operating systems as well as Linux;[^Linux_Run] however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a "terminal window" (see @fig-win95_MS_DOS). This is an application that allows you to type instructions (a.k.a. "commands") to your computer. Put more simply, when you see people "hacking" in movies, a terminal window is usually what they typing into. On computers using the Windows 11 operating system, this is referred to as the *Windows Terminal*, on Macintosh and Linux computers this is simply the *Terminal* application.[^Modern_NoNo] 
+R will install and run straightforwardly on Microsoft (Windows) and Macintosh (MacOS) operating systems as well as Linux;[^Linux_Run] however, prior to attempting any install it is important to make a simple distinction first.  R is a programming language, which means it is nothing more than a language you use to communicate instructions to a computer. To communicate those instructions, some type of interface is required.  This is a basic reality that applies to any language.  It is quite difficult to communicate with someone if they have no mouth, eyes, or ears to send and receive communications with. Computers are no different in this respect. Simply understanding the language is not sufficient. For this reason, most operating systems come equipped with a basic way of interfacing with the user via a "terminal window" (see @fig-win95_MS_DOS). This is an application that allows you to type instructions (a.k.a. "commands") to your computer. Put more simply, when you see people "hacking" in movies, a terminal window is usually what they typing into. On computers using the Windows 11 operating system, this is referred to as the *Windows Terminal*, on Macintosh and Linux computers this is simply the *Terminal* application.[^Modern_NoNo] 
 
 [^Linux_Run]:Admittedly, the process is probably a little less straightforward on Linux, but still managable.
 
@@ -18,7 +18,7 @@ Relying on your operating system's terminal application as a primary interface i
 
 ## Installing the R Programming Language
 
-The standard installation of R will come with an associated environment for the user - provided they are working with either a Windows or Macintosh operating system. An example of the stock environment R ships with on Windows can be seen in [@fig-RGui]. Admittedly, as IDEs go, this will get the job done, but offers a pretty lackluster experiance. But don't worry, that's what RStudio and Positron are for.
+The standard installation of R will come with an associated environment for the user - provided they are working with either a Microsoft (Windows) or Macintosh (MacOS) operating system. An example of the stock environment R ships with on Windows can be seen in [@fig-RGui]. Admittedly, as IDEs go, this will get the job done, but offers a pretty lackluster experiance. But don't worry, that's what RStudio and Positron are for.
 
 ![Base R environment for Windows. The default **console** interface for running R code and viewing outputs can be seen on the left side. The default scripting window for writing, running, and saving R cod can be seen on the right side.](imgs/run_R/RGui.png){width=100% #fig-RGui fig-alt="Base R Environment"}
 
@@ -52,7 +52,7 @@ Once you have downloaded the (`.exe`) installation file (check your *Downloads* 
 If you are installing R on a university or work computer, you may need administrator privileges. If you run into permission errors during installation, contact your IT department for assistance.
 :::
 
-### macOS Installation {#sec-mac_install}
+### MacOS Installation {#sec-mac_install}
 Click the "*Download R for macOS*" link to access the R download page and select the option relevant to your computer (see @fig-mac_download). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed "Apple silicon"); however, many older Macintosh computers (pre-2023) still contain Intel-made processors.
 
 ![macOS download options](imgs/run_R/R_mac_download.png){width=100% #fig-mac_download fig-alt="macOS download options."}
@@ -81,7 +81,7 @@ When it comes to Linux distributions (a.k.a. Linux operating systems), there are
 
 ::: callout-important
 ## No graphical environment included
-Unlike Windows and macOS, installing R on Linux does not include a graphical coding environment (see @fig-RGui). Consequently, Linux users must use the terminal to run R until they install an IDE such as RStudio or Positron.
+Unlike Windows and MacOS, installing R on Linux does not include a graphical coding environment (see @fig-RGui). Consequently, Linux users must use the terminal to run R until they install an IDE such as RStudio or Positron.
 :::
 
 If you are using Debian or Linux Mint and are relatively new to Linux, I recommend first reading the installation instructions for Ubuntu below. This will familiarize you with how R installation works on Linux systems generally.
@@ -320,15 +320,15 @@ If you are using a distribution not explicitly covered, check the site for guida
 
 ## Installing an IDE (RStudio and Positron)
 
-As mentioned earlier, the default R environment that ships with a Windows and macOS install of R is quite limited (see @fig-RGui). While perfectly functional, it lacks many quality-of-life features found in modern IDEs. [RStudio](https://posit.co/products/open-source/rstudio/) and [Positron](https://positron.posit.co/), by contrast, are the two most feature-rich IDEs for R, with RStudio having dominated the community for years and Positron emerging as a compelling newer alternative.
+As mentioned earlier, the default R environment that ships with a Windows and MacOS install of R is quite limited (see @fig-RGui). While perfectly functional, it lacks many quality-of-life features found in modern IDEs. [RStudio](https://posit.co/products/open-source/rstudio/) and [Positron](https://positron.posit.co/), by contrast, are the two most feature-rich IDEs for R, with RStudio having dominated the community for years and Positron emerging as a compelling newer alternative.
 
 As of writing this, RStudio is the established choice. It has extensive documentation, countless tutorials, and broad support across the R community. By contrast, Positron is a much more recent development offering a more flexible and responsive interface built on Visual Studio Code's foundation.[^VS_code] Both applications are developed by Posit, a company focused on open-source tools for data science and scientific research. For a detailed feature comparison, see Posit's [comparison page](https://positron.posit.co/migrate-rstudio-compare.html).
 
 [^VS_code]:Visual Studio Code is a free open-source IDE that has become the standard choice for many developers across multiple programming languages.
 
-If you can't decide which to choose and want definitive choice made for you, go with Positron. It integrates modern development practices more seamlessly than RStudio, which was designed in 2011 when the computing landscape looked rather different. Both are excellent, but Positron won't make you feel like you're using legacy software.
+If you can't decide which to choose and want definitive choice made for you, go with Positron. It integrates modern development practices more seamlessly than RStudio, which was designed in 2011 when the computing landscape looked rather different. Both are excellent, but Positron will not make you feel like you are using legacy software.
 
-Installing a IDE is not strictly necessary to work through this book's content; however, the wealth of features and customization they offer does makes it a worthwhile endeavor and is recommended for anyone reading this text. 
+Installing an IDE is not strictly necessary to work through this book's content; however, the wealth of features and customization they offer makes it a worthwhile endeavor and is strongly recommended for anyone reading this text. 
 
 ### Installing RStudio
 
@@ -339,22 +339,33 @@ To install RStudio simply visit:
 </center>
 <br>
 
+Installing R studio is as simple as selecting the installation file relevant to your operating system ("OS" on the website's table), downloading it, and launching it with a double-click of the mouse. The setup wizard will guide you through the process. Keep the default settings unless you have a specific reason to change them.
 
-Installing R studio is as simple as selecting the installation relevant to your operating system ("OS" on the website's table), downloading the installation file, and launching it with a double-click of the mouse.
+#### Windows Installation
 
-#### Note for Macintosh Users
+Download the `.exe` file for Windows, double-click it, and follow the setup wizard. The installer will automatically detect where R is installed on your system. If for some reason it cannot find R, make sure you have installed R first (see the previous sections).
 
-For Macintosh users, when you download and launch the install file for R studio there will probably be no installation wizard; rather, you will likely be prompted to drag an RStudio icon into your applications folder. Once that is done, R studio is installed.
+Once installation is complete, you can launch RStudio from the Start menu or a desktop shortcut.
+
+#### MacOS Installation
+
+Download the `.dmg` file for macOS and double-click it to open. For macOS users, there will probably be no installation wizard; rather, you will likely be prompted to drag the RStudio icon into your Applications folder. Once that is done, RStudio is installed. You can then eject the disk image and delete the `.dmg` file to free up space.
+
+To launch RStudio, open your Applications folder or use Spotlight (press Cmd + Space and type "RStudio"). The first time you launch RStudio, macOS may ask you to confirm that you want to open an application downloaded from the internet. Click "*Open*" to proceed.
 
 #### Notes for Linux Users of Debian, Ubuntu, Mint, and other Debian or Ubuntu-based Distros {#sec-linux_RStudio}
 
-Users of Debian, Ubuntu, Mint, and other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, etc.) will need to select the install file that corresponds to the major version of Debian or Ubuntu they are running. In most cases this is will be Debian 13 or Ubuntu 24.
+Users of Debian, Ubuntu, Linux Mint, and other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, Pop!_OS, etc.) will need to select the install file that corresponds to the major version of Debian or Ubuntu they are running. In most cases, this will be Debian 13 or Ubuntu 24 (or Ubuntu 22 if your system is slightly older). If you are unsure which version you are running, type `lsb_release -a` in the terminal to check.
 
-It is also worth noting that the install file is a `.deb` file. Once downloaded to your computer, these can usually be run without issue using a simple double click of the mouse (similar to the `.exe` files present on Windows systems).  However, the more reliable method is to use the terminal to install this file. Should you want to take this approach you can follow the three steps below.
+The install file is a `.deb` file. Once downloaded to your computer, these can usually be run without issue using a simple double-click of the mouse (similar to the `.exe` files present on Windows systems). Your system's software installer will open, and you can click "*Install*." However, the more reliable method is to use the terminal to install the file, as it handles dependencies more gracefully. Should you want to take this approach, follow the three steps below.
 
-1. Open a terminal by pressing `Ctrl + Alt + T` or searching for "Terminal" in your application menu.
+**Step 1: Open a terminal**
 
-2. Assuming the file you downloaded is in your "Downloads" folder, navigate their in your terminal by typing:
+Press `Ctrl + Alt + T` or search for "Terminal" in your application menu.
+
+**Step 2: Navigate to your Downloads folder**
+
+Assuming the file you downloaded is in your "Downloads" folder, navigate there in your terminal by typing:
 
 ```bash
 cd ~/Downloads
@@ -362,15 +373,21 @@ cd ~/Downloads
 
 The `~` symbol represents your home directory, so this takes you to `/home/yourusername/Downloads`.  
 
-3. Install the file by typing the code below making sure to replace `filename.deb` with the actual name of the file you downloaded.
+**Step 3: Install the file**
+
+Install the file by typing the code below, making sure to replace `filename.deb` with the actual name of the file you downloaded (you can type the first few letters and press Tab to autocomplete the filename):
 
 ```bash
 sudo apt install ./filename.deb
 ```
-The `./` before the filename tells `apt` to look in the current directory.
+The `./` before the filename tells apt to look in the current directory. You will be prompted to enter your password. The installer will automatically fetch any missing dependencies and complete the installation.
+
+**Step 4: Launch RStudio**
+
+Once installed, you can launch RStudio from your application menu or by typing `rstudio` in the terminal.
 
 ### Installing Positron
-The install process Positron is a relatively seamless one. In the case of Windows, Macintosh, and Linux, the process is as simple as downloading the appropriate install file and double clicking it with your mouse.[^mouse_linux]
+The installation process for Positron is relatively seamless across all platforms. In the case of Windows, macOS, and Linux, the process is as simple as downloading the appropriate install file and double-clicking it with your mouse.[^mouse_linux]
 
 [^mouse_linux]:While Linux users generally can double-click the `.deb` install file and have it run without issue, the reccommended course of action is to install the `.deb` file through the terminal like was described in the RStudio install instructions (see @sec-linux_RStudio).
 
@@ -380,13 +397,54 @@ To install Positron visit:
 <a href = "https://positron.posit.co/download.html" target = "_blank">https://positron.posit.co/download.html</a>
 </center>
 
-#### Windows Install File Notes
-The Windows install file for Positron comes in two forms: a "system level" install and a "user level" install. Assuming the machine you are installing on is one in which you are the primary (or only) user, user-level is generally the best choice.
+#### Windows Installation
+The Windows install file for Positron comes in two forms: a "system level" install and a "user level" install. 
 
-Simply download the relevant install file and follow the setup wizard. Keep the default settings unless you have a specific reason to change them.
+- **User-level install:** Installs Positron only for your user account. No administrator privileges required. This is the best choice if you are the primary (or only) user of the machine, or if you don't have admin rights.
+- **System-level install:** Installs Positron for all users on the machine. Requires administrator privileges.
 
-#### Macintosh Install File Notes
-Just like was seen in the install process of the R language, the install file you choose is going to depend upon whether your device has a Apple Silicon processor or a Intel processor. Details on choosing can be found above at @sec-mac_install
+For most users, user-level is the recommended choice. Simply download the relevant install file (it will be a `.exe` file) and double-click it to launch the setup wizard. Follow the prompts and keep the default settings unless you have a specific reason to change them.
+
+Once installation is complete, you can launch Positron from the Start menu or a desktop shortcut. When Positron opens, you should see a sleek, modern interface with a sidebar on the left, a main editor pane in the center, and panels for the console, variables, and plots on the right or bottom.
+
+#### MacOS Installation
+
+Just as with the R language installation, the install file you choose depends on whether your device has an Apple Silicon processor or an Intel processor. Details on determining your processor type can be found in @sec-mac_install.
+
+Download the appropriate `.dmg` file:
+
+- Apple Silicon (M1, M2, M3, etc.): Choose the file labeled for Apple Silicon or ARM64.
+- Intel processors: Choose the file labeled for Intel or x86_64.
+
+Once downloaded, double-click the `.dmg` file to open it. You will be prompted to drag the Positron icon into your Applications folder. Once that's done, Positron is installed. You can then eject the disk image and delete the `.dmg` file to free up space.
+
+To launch Positron, open your Applications folder or use Spotlight (press Cmd + Space and type "Positron"). The first time you launch Positron, macOS may ask you to confirm that you want to open an application downloaded from the internet. Click "Open" to proceed.
+
+#### Linux Installation
+
+For Debian, Ubuntu, Linux Mint, and other Debian/Ubuntu-based distributions, download the `.deb` file. Once downloaded, you can double-click it to install using your system's software installer, or use the terminal method described in @sec-linux_RStudio for a more reliable installation.
+
+If you prefer the terminal method (recommended), follow these steps:
+
+**Step 1: Navigate to your Downloads folder**
+
+```bash
+cd ~/Downloads
+```
+
+**Step 2: Install Positron**
+
+Replace `positron-xxxx.deb` with the actual filename:
+
+```bash
+sudo apt install ./positron-xxxx.deb
+```
+
+**Step 3: Launch Positron**
+
+Once installed, you can launch Positron from your application menu or by typing positron in the terminal.
+
+For other Linux distributions (Fedora, Arch, etc.), check the <a href = "https://positron.posit.co/download.html" target = "_blank">Positron download page</a> for options specific to your system.
 
 ## Cloud-Based Alternatives
 
@@ -402,21 +460,67 @@ Popular options include:
 
 Cloud-based platforms are convenient and require no installation, but they require an internet connection, and may have limitations in terms of functionality, computing power, storage, and session length. For serious work, a local installation is generally preferable, but cloud platforms are excellent for getting started or for situations where you cannot install software or need real-time collaboration with people.
 
-# Upgrading R
+## Upgrading R
 
-There are updates made to R about two to three times a year and it is generally good practice to upgrade regularly. There are various methods you can use to update R but, assuming you are on Windows or Macintosh, the most straightforward method is to just download the latest version of R as though you were installing it for the first time and then re-install commonly used packages.[^packages]
+### Upgrading on Windows and MacOS
+
+R receives updates two to three times a year, and it is generally good practice to upgrade regularly. These updates include bug fixes, performance improvements, security patches, and occasionally new features or enhancements to existing functions. While you do not need to update immediately every time a new version is released, staying reasonably current (within a year or so of the latest release) helps ensure compatibility with modern packages and avoids running into bugs that have already been fixed.
+
+There are various methods you can use to update R, but assuming you are on Windows or macOS, the most straightforward method is to simply download the latest version of R as though you were installing it for the first time (following the same steps outlined earlier in this chapter) and then reinstall your commonly used packages.[^packages]
 
 [^packages]:"Packages" (also commonly referred to as "libraries") will be explained later.
 
-If you follow the default setup, you do not need to uninstall the previous version. In fact, it is usually preferable not to, as RStudio and Positron will allow you to easily switch between different versions of R installed on your computer.
+If you follow the default setup during installation, you do not need to uninstall the previous version of R. In fact, it is usually preferable not to, as both RStudio and Positron allow you to easily switch between different versions of R installed on your computer. This can be useful if you need to reproduce old analyses or if a particular package has not yet been updated to work with the newest R version.
 
-For Linux users, updating R is as simple as running the following in the terminal:
+### Upgrading on Linux
+
+For Linux users, updating R depends on how you originally installed it. If you installed R from the CRAN repository (as recommended in the Linux installation instructions earlier), updating R is as simple as running the following commands in the terminal:
 
 ```bash
 sudo apt update
 sudo apt upgrade
 ```
 
-At the time of writing, R is on version 4.5.3, nicknamed the "Reassured Reassurer" version.  New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips.
+The first command refreshes your system's list of available packages and their versions. The second command upgrades all installed packages, including R, to their latest versions. If a new version of R is available in the CRAN repository you configured earlier, this will install it automatically.
 
-When you do update R, be aware that packages (add-ons that extend R's functionality, which we will cover later) are often tied to specific versions of R. After updating, you may need to reinstall or update your packages. Don't worry, this is a normal part of the process, and we will walk through package management in a later chapter.
+If you installed R from your distribution's default repositories (which tend to lag behind CRAN), the same commands will work, but you may not get the absolute latest version. In that case, you may want to switch to the CRAN repository following the instructions in the Linux installation section above.
+
+### R Version Nicknames
+
+At the time of writing, R is on version 4.5.3, nicknamed the "Reassured Reassurer" version. New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips. Past versions have included gems like "Great Pumpkin," "Planting of a Tree," and "Innocent and Trusting." No one quite knows why this tradition exists, but it has become a charming quirk of the R software. If you ever need a conversation starter at a data science meetup, asking someone to explain the latest R version nickname is a solid bet.
+
+::: {.callout-note collapse="true"}
+## Version Numbering
+
+R's version numbering system, follows what is known as **semantic versioning**. This means version numbers are structured as Major.Minor.Patch (e.g., 4.5.3)
+
+- **Major version (the first number, e.g., the 4 in 4.5.3):** Major version changes are relatively rare and signal significant, potentially breaking changes. In other words, code that worked in the previous major version might not work anymore, or might behave differently.
+
+- **Minor version (the second number, e.g., the 5 in 4.5.3):** This is incremented when new features are added in a backward-compatible manner. Existing code should continue to work, but new functionality is now available. Minor version updates happen more frequently than major ones.
+
+- **Patch version (the third number, e.g., the 3 in 4.5.3):** This is incremented for small updates that fix errors or issues without adding new features or breaking existing code. Patch updates are the most frequent type of update.
+
+So in the current version 4.5.3, the 4 indicates we are in the fourth major version of R, the 5 means there have been five minor feature releases since version 4.0, and the 3 indicates this is the third patch/bug fix release for version 4.5.
+
+It is worth noting that R's major version number has remained at 4 for several years now (since version 4.0.0 was released in April 2020). Most updates to R are minor or patch releases, which is typical for mature software.
+:::
+
+### What Happens to Your Packages When You Upgrade?
+
+When you upgrade R, your existing packages (add-ons that extend R's functionality, which we will cover in detail later) generally do not automatically carry over to the new version. This is because packages are stored in version-specific directories on your computer. For example, packages installed under R 4.4.x will live in a different folder than those installed under R 4.5.x.
+
+This means that after upgrading R, you may need to reinstall your packages. Don't panic, this is a normal part of the process. There are a few ways to handle this but the simplest method for beginners is to simply reinstall packages manually.
+
+As you start using R after the upgrade, you will likely encounter errors like:
+
+```r
+Error in library(ggplot2) : there is no package called 'ggplot2'
+```
+
+When this happens, reinstall the missing package like so:
+
+```r
+install.packages("ggplot2")
+```
+
+
