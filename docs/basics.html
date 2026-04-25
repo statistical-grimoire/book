@@ -251,9 +251,12 @@ window.Quarto = {
   <li><a href="#creating-objects-again" id="toc-creating-objects-again" class="nav-link" data-scroll-target="#creating-objects-again"><span class="header-section-number">3.9</span> Creating Objects (again)</a></li>
   <li><a href="#object-modes" id="toc-object-modes" class="nav-link" data-scroll-target="#object-modes"><span class="header-section-number">3.10</span> Object Modes</a></li>
   <li><a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects"><span class="header-section-number">3.11</span> Naming Objects</a></li>
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">3.12</span> Vectors</a></li>
+  <li><a href="#sec-vectors" id="toc-sec-vectors" class="nav-link" data-scroll-target="#sec-vectors"><span class="header-section-number">3.12</span> Vectors</a></li>
   <li><a href="#operators-and-comparison-statements" id="toc-operators-and-comparison-statements" class="nav-link" data-scroll-target="#operators-and-comparison-statements"><span class="header-section-number">3.13</span> Operators And Comparison Statements</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">3.14</span> Functions</a></li>
+  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments"><span class="header-section-number">3.15</span> Arguments</a></li>
+  <li><a href="#r-help-documentation" id="toc-r-help-documentation" class="nav-link" data-scroll-target="#r-help-documentation"><span class="header-section-number">3.16</span> R (Help) Documentation</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">3.17</span> Missing Values</a></li>
   </ul>
 </nav>
     </div>
@@ -783,8 +786,8 @@ Important
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">The devil made me do it!</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="st">"Hail Satan"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="vectors" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="vectors"><span class="header-section-number">3.12</span> Vectors</h2>
+<section id="sec-vectors" class="level2" data-number="3.12">
+<h2 data-number="3.12" class="anchored" data-anchor-id="sec-vectors"><span class="header-section-number">3.12</span> Vectors</h2>
 <p>It is not the case that an object need store only a single value, as we have been doing above. Particularly when conducting statistical analyses, you are almost always working with variables that contain more than one value (i.e.&nbsp;multiple observations). In view of this, R objects can store as many values as you require. For instance, if we want <code>x</code> to be equal to the numbers 1 through 5, we need only type:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
@@ -1216,6 +1219,203 @@ f(25) &amp;= \sqrt{25} \\
 <pre><code>[1] "numeric"</code></pre>
 </div>
 </div>
+</section>
+<section id="arguments" class="level2" data-number="3.15">
+<h2 data-number="3.15" class="anchored" data-anchor-id="arguments"><span class="header-section-number">3.15</span> Arguments</h2>
+<p>The utility of functions in R actually extends far beyond this basic usage because most functions are easily modified through the use of <em>arguments</em>. An “argument” is simply a parameter that allows you to customize how a function operates. A simple example of this is the <code>round()</code> function. This is used to round numbers to a specified decimal place. For instance, if we have a vector that contains both the number <span class="math inline">\(\pi\)</span> and the <span class="math inline">\(\sqrt{2}\)</span></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(pi, <span class="fu">sqrt</span>(<span class="dv">2</span>))</span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.141593 1.414214</code></pre>
+</div>
+</div>
+<p>We can use the <code>round()</code> function and its <code>digits</code> argument to round these to 2 digits.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.14 1.41</code></pre>
+</div>
+</div>
+<p>Alternatively, we could round to the nearest integer:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(x, <span class="at">digits =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 1</code></pre>
+</div>
+</div>
+<p>Critically, in the above two examples, we have specified the <code>digits</code> argument using an <code>=</code> sign. Generally speaking, this is the best practice and original purpose of <code>=</code> because, while you are permitted to use the assignment operator <code>&lt;-</code> in place of this, doing so will store an object called <code>digits</code> unnecessarily, wasting your computers resources and cluttering R’s working environment.</p>
+<p>The <code>round()</code> function only takes one argument but many functions take multiple arguments. A good example of this is the sequence function, <code>seq()</code>, which generates regular number sequences. For instance, if you wanted to generate a sequence from 0 to 100, counting by 2’s, there are three arguments you will need to set: <code>from</code>, <code>to</code>, and <code>by</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]   0   2   4   6   8  10  12  14  16  18  20  22  24  26  28  30  32  34  36
+[20]  38  40  42  44  46  48  50  52  54  56  58  60  62  64  66  68  70  72  74
+[39]  76  78  80  82  84  86  88  90  92  94  96  98 100</code></pre>
+</div>
+</div>
+<p>The sequence function is also illustrative of another feature of functions, often they will have mutually exclusive arguments. Instead of using the <code>by</code> argument, we could have used the <code>length.out</code> argument to specify how many values we want in our sequence.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">length.out =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]   0  20  40  60  80 100</code></pre>
+</div>
+</div>
+<p>To save yourself some effort in typing out functions and their corresponding arguments, you can actually just provide the values, without the argument name and equal sign, provided you specify the arguments in the correct order.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]   0   2   4   6   8  10  12  14  16  18  20  22  24  26  28  30  32  34  36
+[20]  38  40  42  44  46  48  50  52  54  56  58  60  62  64  66  68  70  72  74
+[39]  76  78  80  82  84  86  88  90  92  94  96  98 100</code></pre>
+</div>
+</div>
+<p>To determine the correct ordering of arguments you will need to consult the function’s <strong>R documentation</strong>.</p>
+</section>
+<section id="r-help-documentation" class="level2" data-number="3.16">
+<h2 data-number="3.16" class="anchored" data-anchor-id="r-help-documentation"><span class="header-section-number">3.16</span> R (Help) Documentation</h2>
+<p>R includes a vast array of built-in functions, some of which perform highly complex tasks. Consequently, when reading R code, you will often encounter functions whose purpose and usage seem mysterious. To demystify these functions, it is often necessary to consult R’s help documentation. Each function in R comes with corresponding documentation that outlines its purpose, explains its arguments, and provides references. While R’s documentation can often be challenging to interpret for novice users, it should always be your first resource when you are unsure about how a function works or what it does. Only after consulting the help documentation should you turn to additional resources, such as internet searches or forums.</p>
+<p>To access the documentation for any function in R, simply precede the function name with a question mark and run it in the R console. For example, running <code>?mean</code> will bring up the documentation for the arithmetic mean function.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>R Documentation for <code>mean()</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>?mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>mean {base}</p>
+<h2 class="anchored">
+Arithmetic Mean
+</h2>
+<h3 class="anchored">
+Description:
+</h3>
+<p>Generic function for the (trimmed) arithmetic mean.</p>
+<h3 class="anchored">
+Usage:
+</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, ...)</span>
+<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Default S3 method:</span></span>
+<span id="cb150-4"><a href="#cb150-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">trim =</span> <span class="dv">0</span>, <span class="at">na.rm =</span> <span class="cn">FALSE</span>, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<h3 class="anchored">
+Arguments:
+</h3>
+<p><code>x:</code> an R object. Currently there are methods for numeric/logical vectors and date, date-time and time interval objects. Complex vectors are allowed for ‘trim = 0’, only.</p>
+<p><code>trim:</code> the fraction (0 to 0.5) of observations to be trimmed from each end of ‘x’ before the mean is computed. Values of trim outside that range are taken as the nearest endpoint.</p>
+<p><code>na.rm:</code> a logical evaluating to ‘TRUE’ or ‘FALSE’ indicating whether ‘NA’ values should be stripped before the computation proceeds.</p>
+<p><code>...</code> further arguments passed to or from other methods.</p>
+<h3 class="anchored">
+Value:
+</h3>
+<p>If <code>trim</code> is zero (the default), the arithmetic mean of the values in <code>x</code> is computed, as a numeric or complex vector of length one. If ‘x’ is not logical (coerced to numeric), numeric (including integer) or complex, <code>NA_real_</code> is returned, with a warning.</p>
+<p>If <code>trim</code> is non-zero, a symmetrically trimmed mean is computed with a fraction of <code>trim</code> observations deleted from each end before the mean is computed.</p>
+<h3 class="anchored">
+References:
+</h3>
+<p>Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) <em>The New S Language</em>. Wadsworth &amp; Brooks/Cole.</p>
+<h3 class="anchored">
+See Also:
+</h3>
+<p><code>weighted.mean</code>, <code>mean.POSIXct</code>, <code>colMeans</code> for row and column means.</p>
+<h3 class="anchored">
+Examples:
+</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">50</span>)</span>
+<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>xm <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(xm, <span class="fu">mean</span>(x, <span class="at">trim =</span> <span class="fl">0.10</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8.75 5.50</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>All R documentation follows a consistent structure, designed to provide users with a comprehensive understanding of each function. At the top, you will find the name of the function along with the name of the package it belongs to, enclosed in braces. For example, consulting the documentation for the <code>mean()</code> function displays <code>mean {base}</code> at the top, indicating that this function is part of base R. Similarly, for other common functions like <code>sd()</code>, you might see `{stats}’ listed. The stats package, included with R, contains functions for statistical calculations and random number generation, provided by the R Core Team alongside base R functions.</p>
+<p>Beneath the function name and package, you will find a brief Description section outlining the function’s purpose. This is typically followed by a Usage section, which includes a code block demonstrating how the function is used and detailing its arguments. For instance, documentation for the <code>mean()</code> function includes the following usage:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, ...)</span>
+<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Default S3 method:</span></span>
+<span id="cb153-4"><a href="#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">trim =</span> <span class="dv">0</span>, <span class="at">na.rm =</span> <span class="cn">FALSE</span>, ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The topmost line of the code block, <code>mean(x, ...)</code>, represents the minimal working example for the function. This indicates that, at a minimum, the argument <code>x</code> must be provided for the function to work. The Arguments section below the code block provides further details about <code>x</code>. Specifically, it states that <code>x</code> is an “<em>an R object. Currently there are methods for numeric/logical vectors and date, date-time and time interval objects. …</em>” In simpler terms, this is saying that <code>x</code> should be a numeric or logical object and not, for instance, a character object. For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a>nums <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">666</span></span>
+<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="at">x =</span> nums)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 333</code></pre>
+</div>
+</div>
+<p>In this case, <code>nums</code>, a numeric vector, is the R object provided to the argument <code>x</code>.</p>
+<p>Beneath the minimal working example, in the Usage block, is a line of code displaying the various additional arguments the function has: <code>trim</code> and <code>na.rm</code>. These arguments are optional because they come with default values, meaning they do not need to be explicitly set by the user, unlike the required argument <code>x</code>.</p>
+<p>Further down, the documentation includes a Value section, which describes the output of the function based on the arguments provided and the data types used. Finally, the documentation concludes with additional details references, supplemental links, and practical examples to demonstrate the function’s usage in real-world scenarios.</p>
+</section>
+<section id="missing-values" class="level2" data-number="3.17">
+<h2 data-number="3.17" class="anchored" data-anchor-id="missing-values"><span class="header-section-number">3.17</span> Missing Values</h2>
+<p>A common hurdle in data analysis are missing values. Values can be missing for any number of reasons; perhaps a participant never showed up for a research session, perhaps an lab animal died, perhaps there was a equipment malfunction, perhaps someone recorded something incorrectly, or maybe you just ran out of time and money. The R language denotes missing values using <code>NA</code>, which stands for “not available.” In many instances, numerical calculations on a <code>NA</code> value will simply result in another <code>NA</code> value.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="cn">NA</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Intuitively, this behaviour makes a fair amount of sense to most people. We do not know what <code>NA</code> is or should be, so the expression <code>5 + NA</code> cannot be evaluated. And R, quite logically, extends this principle to functions:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">710</span>, <span class="dv">633</span>, <span class="dv">786</span>, <span class="cn">NA</span>, <span class="dv">642</span>)</span>
+<span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>However, in this latter case, the logic which seemed so obvious initially seems less so now. Consider that these values might be observations from an experiment. Many researchers will reflexively ignore the <code>NA</code> and compute the <em>mean</em> of these values as readily as a rat devours a food pellet, and it is to R’s credit that it actually prohibits its users from indulging so recklessly.</p>
+<p>How missing values should be handled is a matter of great importance and statisticians often disagree on what the best practice should be in any given case. In a situation like this, most people would simply ignore the missing element and treat the vector as containing only four values. However, most data sets are not this simplistic. That <code>NA</code> might be <em>paired</em> with collected observations of other variables. That is a situation where you might, for the purpose of conducting a certain analysis, require a number to be in that fourth spot. What do you do then? Do you replace <code>NA</code> with the mean of the four values, do you replace it with the median, or do you do something else?</p>
+<p>There is no one-size-fits-all answer here; however, in those instances where simply ignoring the <code>NA</code> is the sensible course of action, many base R functions allow you to specify an additional logical <em>argument</em>, <code>na.rm</code>, that will remove any <code>NA</code> values prior to calculation. You can see this by simply accessing the R documentation (e.g., <code>?mean</code>). By default the argument is set to <code>FALSE</code> and setting <code>na.rm = TRUE</code> will remove the <code>NA</code> values accordingly.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 692.75</code></pre>
+</div>
+</div>
+<p>For situations where a function does not have a <code>na.rm</code> argument or equivalent, the function <code>is.na()</code> can be easily employed. This function evaluates whether each element of an R object is missing or not and returns a logical (<code>TRUE</code> or <code>FALSE</code>) value. For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb162"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">710</span>, <span class="dv">633</span>, <span class="dv">786</span>, <span class="cn">NA</span>, <span class="dv">642</span>)</span>
+<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE FALSE FALSE  TRUE FALSE</code></pre>
+</div>
+</div>
+<p>Looking at the output, we can see that the fourth value is missing because it has returned a value of <code>TRUE</code> (i.e., the function has determined that it <em>is</em> a <code>NA</code> value). Combing the behaviour of this function with the indexing feature of vectors (see <a href="#sec-vectors" class="quarto-xref"><span>Section 3.12</span></a>) and a <strong>logical operator</strong> called the <strong>negation operator</strong> (denoted using <code>!</code>), we can easily obtain a version of the vector with missing values excluded.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb164"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a>x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 710 633 786 642</code></pre>
+</div>
+</div>
+<p>With the negation operator, the expression <code>!is.na(x)</code> can be interpreted as asking, “which values of <code>x</code> are <em>not</em> missing values? This is easily seen by comparing the <em>is.na()</em> function with and without the negation.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb166"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x)</span>
+<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE FALSE FALSE  TRUE FALSE
+[1]  TRUE  TRUE  TRUE FALSE  TRUE</code></pre>
+</div>
+</div>
+<p>Notice that the <code>!</code> just provides the logical opposite (i.e., negation) of the original function. Thus, putting all this together, you could write …</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb168"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x[<span class="sc">!</span><span class="fu">is.na</span>(x)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 692.75</code></pre>
+</div>
+</div>
+<p>…in lieu of using or not having a <code>na.rm</code> style argument to remove missing values. To novice users of R, techniques like this may seem cumbersome initially. This is especially the case when you are dealing with so few values and can immediately see what is and is not missing within the data. For instance, noting that the fourth value is missing from <code>x</code>, you could simply create a new vector of the form <code>y &lt;- c(710, 633, 786, 642)</code> and insert that into your functions. However, many (if not most) data sets are too large to “eyeball” and manually rebuild in this way. Automated solutions like those shown with the negation operator are not only necessary to save time, but are also less prone to error.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">

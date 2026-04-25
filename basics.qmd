@@ -418,7 +418,7 @@ When it comes to naming objects, all of the rules just laid out only apply to wh
 `The devil made me do it!` <- "Hail Satan"
 ```
 
-## Vectors
+## Vectors {#sec-vectors}
 
 It is not the case that an object need store only a single value, as we have been doing above. Particularly when conducting statistical analyses, you are almost always working with variables that contain more than one value (i.e. multiple observations). In view of this, R objects can store as many values as you require. For instance, if we want `x` to be equal to the numbers 1 through 5, we need only type: 
 
@@ -706,3 +706,186 @@ mode(x)
 ```
 
 [^mode_fun]:Do not confuse this with the mathematical concept of a modal value; i.e., the number that appears most often.
+
+## Arguments
+
+The utility of functions in R actually extends far beyond this basic usage because most functions are easily modified through the use of *arguments*. An "argument" is simply a parameter that allows you to customize how a function operates. A simple example of this is the `round()` function.  This is used to round numbers to a specified decimal place. For instance, if we have a vector that contains both the number $\pi$ and the $\sqrt{2}$
+
+```{r}
+x <- c(pi, sqrt(2))
+x
+```
+
+We can use the `round()` function and its `digits` argument to round these to 2 digits.
+
+```{r}
+round(x, digits = 2)
+```
+
+Alternatively, we could round to the nearest integer:
+
+```{r}
+round(x, digits = 0)
+```
+
+Critically, in the above two examples, we have specified the `digits` argument using an `=` sign. Generally speaking, this is the best practice and original purpose of `=` because, while you are permitted to use the assignment operator `<-` in place of this, doing so will store an object called `digits` unnecessarily, wasting your computers resources and cluttering R's working environment. 
+
+The `round()` function only takes one argument but many functions take multiple arguments.  A good example of this is the sequence function, `seq()`, which generates regular number sequences.  For instance, if you wanted to generate a sequence from 0 to 100, counting by 2's, there are three arguments you will need to set: `from`, `to`, and `by`:
+
+```{r}
+seq(from = 0, to = 100, by = 2)
+```
+
+The sequence function is also illustrative of another feature of functions, often they will have mutually exclusive arguments. Instead of using the `by` argument, we could have used the `length.out` argument to specify how many values we want in our sequence.
+
+```{r}
+seq(from = 0, to = 100, length.out = 6)
+```
+
+To save yourself some effort in typing out functions and their corresponding arguments, you can actually just provide the values, without the argument name and equal sign, provided you specify the arguments in the correct order.
+
+```{r}
+seq(0, 100, 2)
+```
+
+To determine the correct ordering of arguments you will need to consult the function's **R documentation**.
+
+## R (Help) Documentation
+
+R includes a vast array of built-in functions, some of which perform highly complex tasks. Consequently, when reading R code, you will often encounter functions whose purpose and usage seem mysterious. To demystify these functions, it is often necessary to consult R's help documentation. Each function in R comes with corresponding documentation that outlines its purpose, explains its arguments, and provides references. While R's documentation can often be challenging to interpret for novice users, it should always be your first resource when you are unsure about how a function works or what it does. Only after consulting the help documentation should you turn to additional resources, such as internet searches or forums.
+
+To access the documentation for any function in R, simply precede the function name with a question mark and run it in the R console. For example, running `?mean` will bring up the documentation for the arithmetic mean function.
+
+::: {.callout-note collapse="true"}
+## R Documentation for `mean()`
+```{r}
+?mean
+```
+
+mean {base}
+
+<h2>Arithmetic Mean</h2>
+
+<h3>Description:</h3>
+
+Generic function for the (trimmed) arithmetic mean.
+
+<h3>Usage:</h3>
+
+```r
+mean(x, ...)
+     
+## Default S3 method:
+mean(x, trim = 0, na.rm = FALSE, ...)
+```
+     
+<h3>Arguments:</h3>
+
+`x:` an R object.  Currently there are methods for numeric/logical vectors and date, date-time and time interval objects. Complex vectors are allowed for ‘trim = 0’, only.
+
+`trim:` the fraction (0 to 0.5) of observations to be trimmed from each end of ‘x’ before the mean is computed.  Values of trim outside that range are taken as the nearest endpoint.
+
+`na.rm:` a logical evaluating to ‘TRUE’ or ‘FALSE’ indicating whether ‘NA’ values should be stripped before the computation proceeds.
+
+`...` further arguments passed to or from other methods.
+
+<h3>Value:</h3>
+
+If `trim` is zero (the default), the arithmetic mean of the values in `x` is computed, as a numeric or complex vector of length one. If ‘x’ is not logical (coerced to numeric), numeric (including integer) or complex, `NA_real_` is returned, with a warning.
+
+If `trim` is non-zero, a symmetrically trimmed mean is computed with a fraction of `trim` observations deleted from each end before the mean is computed.
+
+<h3>References:</h3>
+
+Becker, R. A., Chambers, J. M. and Wilks, A. R. (1988) _The New S Language_.  Wadsworth & Brooks/Cole.
+
+<h3>See Also:</h3>
+
+`weighted.mean`, `mean.POSIXct`, `colMeans` for row and column means.
+
+<h3>Examples:</h3>
+
+```{r}
+x <- c(0:10, 50)
+xm <- mean(x)
+c(xm, mean(x, trim = 0.10))
+```
+
+:::
+
+All R documentation follows a consistent structure, designed to provide users with a comprehensive understanding of each function. At the top, you will find the name of the function along with the name of the package it belongs to, enclosed in braces. For example, consulting the documentation for the `mean()` function displays `mean {base}` at the top, indicating that this function is part of base R. Similarly, for other common functions like `sd()`, you might see `{stats}' listed. The stats package, included with R, contains functions for statistical calculations and random number generation, provided by the R Core Team alongside base R functions.
+
+Beneath the function name and package, you will find a brief Description section outlining the function's purpose. This is typically followed by a Usage section, which includes a code block demonstrating how the function is used and detailing its arguments. For instance, documentation for the `mean()` function includes the following usage:
+
+```r
+mean(x, ...)
+
+## Default S3 method:
+mean(x, trim = 0, na.rm = FALSE, ...)
+```
+
+The topmost line of the code block, `mean(x, ...)`, represents the minimal working example for the function. This indicates that, at a minimum, the argument `x` must be provided for the function to work. The Arguments section below the code block provides further details about `x`. Specifically, it states that `x` is an "*an R object.  Currently there are methods for numeric/logical vectors and date, date-time and time interval objects. ...*" In simpler terms, this is saying that `x` should be a numeric or logical object and not, for instance, a character object. For example:
+
+```{r}
+nums <- 0:666
+mean(x = nums)
+```
+
+In this case, `nums`, a numeric vector, is the R object provided to the argument `x`.
+
+Beneath the minimal working example, in the Usage block, is a line of code displaying the various additional arguments the function has: `trim` and `na.rm`. These arguments are optional because they come with default values, meaning they do not need to be explicitly set by the user, unlike the required argument `x`.
+
+Further down, the documentation includes a Value section, which describes the output of the function based on the arguments provided and the data types used. Finally, the documentation concludes with additional details references, supplemental links, and practical examples to demonstrate the function's usage in real-world scenarios.
+
+## Missing Values
+
+A common hurdle in data analysis are missing values.  Values can be missing for any number of reasons; perhaps a participant never showed up for a research session, perhaps an lab animal died, perhaps there was a equipment malfunction, perhaps someone recorded something incorrectly, or maybe you just ran out of time and money. The R language denotes missing values using `NA`, which stands for "not available." In many instances, numerical calculations on a `NA` value will simply result in another `NA` value.
+
+```{r}
+5 + NA
+```
+
+Intuitively, this behaviour makes a fair amount of sense to most people.  We do not know what `NA` is or should be, so the expression `5 + NA` cannot be evaluated. And R, quite logically, extends this principle to functions:
+
+```{r}
+x <- c(710, 633, 786, NA, 642)
+mean(x)
+```
+
+However, in this latter case, the logic which seemed so obvious initially seems less so now.  Consider that these values might be observations from an experiment.  Many researchers will reflexively ignore the `NA` and compute the *mean* of these values as readily as a rat devours a food pellet, and it is to R's credit that it actually prohibits its users from indulging so recklessly.
+
+How missing values should be handled is a matter of great importance and statisticians often disagree on what the best practice should be in any given case. In a situation like this, most people would simply ignore the missing element and treat the vector as containing only four values. However, most data sets are not this simplistic.  That `NA` might be *paired* with collected observations of other variables. That is a situation where you might, for the purpose of conducting a certain analysis, require a number to be in that fourth spot. What do you do then? Do you replace `NA` with the mean of the four values, do you replace it with the median, or do you do something else?
+
+There is no one-size-fits-all answer here; however, in those instances where simply ignoring the `NA` is the sensible course of action, many base R functions allow you to specify an additional logical *argument*, `na.rm`, that will remove any `NA` values prior to calculation. You can see this by simply accessing the R documentation (e.g., `?mean`). By default the argument is set to `FALSE` and setting `na.rm = TRUE` will remove the `NA` values accordingly.
+
+```{r}
+mean(x, na.rm = TRUE)
+```
+
+For situations where a function does not have a `na.rm` argument or equivalent, the function `is.na()` can be easily employed. This function evaluates whether each element of an R object is missing or not and returns a logical (`TRUE` or `FALSE`) value. For example:
+
+```{r}
+x <- c(710, 633, 786, NA, 642)
+is.na(x)
+```
+
+Looking at the output, we can see that the fourth value is missing because it has returned a value of `TRUE` (i.e., the function has determined that it *is* a `NA` value).  Combing the behaviour of this function with the indexing feature of vectors (see @sec-vectors) and a **logical operator** called the **negation operator** (denoted using `!`), we can easily obtain a version of the vector with missing values excluded.
+
+```{r}
+x[!is.na(x)]
+```
+
+With the negation operator, the expression `!is.na(x)` can be interpreted as asking, "which values of `x` are *not* missing values?  This is easily seen by comparing the *is.na()* function with and without the negation.
+
+```{r results = "hold"}
+is.na(x)
+!is.na(x)
+```
+
+Notice that the `!` just provides the logical opposite (i.e., negation) of the original function.  Thus, putting all this together, you could write ...
+
+```{r}
+mean(x[!is.na(x)])
+```
+
+...in lieu of using or not having a `na.rm` style argument to remove missing values.  To novice users of R, techniques like this may seem cumbersome initially.  This is especially the case when you are dealing with so few values and can immediately see what is and is not missing within the data. For instance, noting that the fourth value is missing from `x`, you could simply create a new vector of the form `y <- c(710, 633, 786, 642)` and insert that into your functions. However, many (if not most) data sets are too large to "eyeball" and manually rebuild in this way. Automated solutions like those shown with the negation operator are not only necessary to save time, but are also less prone to error.
