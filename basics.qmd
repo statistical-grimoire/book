@@ -353,7 +353,7 @@ rat_pi         # Returns 3 (global value)
 The `<-` operator offers two other minor advantages: reversibility (you can write `->` and `->>`  to assign rightward) and consistency with R's documentation, where most code examples use`<-`. For many R users, this familiarity makes code easier to parse at a glance.
 :::
 
-## Object Modes
+## Object Modes {#sec-modes}
 
 Thus far all of the objects we have created have been **numeric** objects; though, we can avail ourselves of other types.  For instance, another common object is the **character** object which gets defined using quotation marks on each end of the value.
 
@@ -393,7 +393,7 @@ Thus far, we have demonstrated three basic categories of object: *numeric*, *cha
 
 [^modes]:You may sometimes hear these referred to as object "classes" as well. The distinction between modes and classes in R is nuanced, with considerable overlap between the two terms; though, they are not perfectly equivalent. I have chosen to refer to object modes because it more consistently categorizes objects as numeric, character, or logical, which I believe is helpful for beginners learning R.
 
-## Naming Objects
+## Naming Objects {#sec-naming_objects}
 
 Often we will run into circumstances where other people are required to read, run, and modify the code we write.  Still other times, we may need to look at, and make sense of, code we have written in the past and largely forgotten. These considerations make it of the utmost importance that all of the code we write is intelligible to other people and our future selves. Among the best way to achieve this is by naming objects appropriately. Ideally, the name of an object should be concise and descriptive. Generally, you can name objects almost anything you like, as long as the name begins with a letter, contains no spaces, avoids special characters (except underscores `_`), and does not use any of R's **reserved words** such as `TRUE`, `Inf`, `NaN`, `function`, etc.
 
@@ -889,3 +889,256 @@ mean(x[!is.na(x)])
 ```
 
 ...in lieu of using or not having a `na.rm` style argument to remove missing values.  To novice users of R, techniques like this may seem cumbersome initially.  This is especially the case when you are dealing with so few values and can immediately see what is and is not missing within the data. For instance, noting that the fourth value is missing from `x`, you could simply create a new vector of the form `y <- c(710, 633, 786, 642)` and insert that into your functions. However, many (if not most) data sets are too large to "eyeball" and manually rebuild in this way. Automated solutions like those shown with the negation operator are not only necessary to save time, but are also less prone to error.
+
+## Data Frames
+
+While there are situations where a single vector constitutes the only data that needs to be analyzed, it is more often the case that you are working with "sets" of data.  That is to say, typically your data consists of observations across a range of different variables.  Consequently, for the purposes of organization, it is helpful to keep all of this data stored as a single object.  In R, there are a number of ways you could do this.  You could store data as a *table*, a *list*, or a *matrix* which are all unique *classes* of objects R recognizes. However, for most uses cases, a **data frame** is going to be the preferred method of data storage in R.
+
+In its simplest terms a data frame is simply a spreadsheet, where rows represent observations and columns represent variables. Consider a hypothetical experiment with two groups, a control and experimental group, and 10 observations, one of which is missing for some reason. Visually, the data might look like @tbl-ex_df
+
+| subject | group | value |
+|---------|-------|-------|
+| 1       | Exp   | -0.36 |
+| 2       | Cont  | 0.28  |
+| 3       | Exp   | 1.54  |
+| 4       | Cont  | 0.51  |
+| 5       | Exp   | -1.28 |
+| 6       | Exp   | 1.15  |
+| 7       | Cont  | -2.22 |
+| 8       | Exp   | -0.51 |
+| 9       | Cont  | NA    |
+| 10      | Cont  | -1.04 |
+
+: Useful Keyboard Shortcuts {#tbl-ex_df}
+
+We can easily recreate this in R using the `data.frame()` function. Inside the function, we specify our desired columns as *arguments*.
+
+```{r}
+df <- data.frame(
+  subject = 1:10,
+  group = c("Exp", "Cont", "Exp", "Cont", "Exp", "Exp", "Cont", "Exp", 
+            "Cont", "Cont"),
+  value = c(-0.36,  0.28,  1.54,  0.51, -1.28,  1.15, -2.22, -0.51,  
+            NA, -1.04)
+)
+df
+```
+
+Alternatively, if you have the variables *subject*, *group*, and *value* already stored as individual vectors, you could build your data frame in the following way:
+
+```r
+df <- data.frame(subject, group, value)
+df
+```
+
+Now, strictly speaking, you would almost never input your data into R in the manner we have done here (i.e., by manually typing in the values). However, the basics of constructing a data frame is an essential, and frequently appealed to, piece of knowledge when working with R.
+
+### Critical Features of Data Frames
+
+There are two critical features of data frames that separates them from traditional spreadsheets.  The first is that each column needs to consist of a single object mode (e.g., *numeric*, *character*, or *logical*; see @sec-modes). For instance, in the data frame above, the `subject` column consists only of *numeric* objects, the `group` column only consists of *character* objects and the `value` column, again, only consists of *numeric* objects. We can see this by running the following code:
+
+```{r}
+sapply(df, FUN = mode) 
+```
+
+In this example, the `sapply()` function has, quite literally, *applied* the function `mode()` to each of the columns of our data frame, thereby telling us what each column's mode is. The argument `FUN` is just short for "function" and is telling `sapply()` what function you want to *apply* to the columns. In this case we are applying the `mode()` function. 
+
+Knowing the mode of a column is very important because columns behave like vectors insofar as trying to mix and match different object types within a single column will potentially change that entire column.  As an example, if we had coded ... 
+
+```{r}
+value = c("-0.36", 0.28, 1.54, 0.51, -1.28, 1.15, -2.22, -0.51, NA, -1.04)
+value
+```
+
+you will find that every single number in that column automatically becomes a character object even though only the first of the nine elements was typed as a character object. This is going to be very irritating if you want to perform mathematical operations on that column and are unaware that all of its elements have been coerced into character objects (notice that printing the data frame does not show character objects with quotes like vectors do).
+
+The second critical feature of data frames is that each column *must* contain the same number of elements as every other column.  In our example, *subject*, *group*, and *value* all contain 10 elements (the missing value is counted as an element).  In most cases, if you try and build a data frame with columns of unequal lengths, R will produce an error message. 
+
+```{r}
+#| error: true
+df_2 <- data.frame(
+  a = 1:4,
+  b = 1:3
+)
+```
+
+In other cases, if you have an unequal amount of values in your columns and R determines that it can evenly repeat a sequence, R will automatically recycle that sequence.
+
+```{r}
+#| error: true
+df_3 <- data.frame(
+  a = 1:4,
+  b = 1:2
+)
+
+df_3
+```
+
+Notice in the above example that we assigned four values to the `a` column and two values to the `b` column and instead of producing an error, R simply recycled the values in `b` to fill the empty spots.
+
+### Indexing Data Frames
+
+Similar to how vectors can be indexed using square brackets, data frames can also be indexed.  Going back to our original data frame (`df`), suppose we wanted to look at the value found in the fifth row of the third column. This can be easily accomplished in the following way:
+
+```{r}
+df[5, 3]
+```
+
+Notice, the number on the left side of the comma (`5`) refers to the row, and the number on the right side (`3`) refers to the column. The easy way to remember this is that the numbers in the brackets represent a $x$ and $y$ coordinate system, with $x$'s being rows, and $y$'s being columns. 
+
+In the last example we selected a single element of our data frame, but we can select more than one value and more than one column if need be.  For instance, we could isolate rows $1$, $3$, and $5$, from columns $2$, and $3$ only.
+
+```{r}
+df[c(1, 3, 5), c(2:3)]
+```
+
+If you wanted to keep all the columns visible while only looking at rows $1$, $3$ and $5$, you need only to leave the left side of the comma blank.
+
+```{r}
+df[c(1, 3, 5), ]
+```
+
+A similar logic applies to rows:
+
+```{r}
+df[ , c(2:3)]
+```
+
+### Extracting Columns as Vectors
+
+There will also be many circumstances where you need to work with the values of a single column only.  For instance, if you want to calculate the mean of the third column `value`, you can use one of R's extraction operators, the `$`, to isolate that column. The following code will isolate the `value` column and output it as a vector:
+
+```{r}
+df$Value
+```
+
+You can, therefore, just insert this into the `mean()` function.
+
+```{r}
+mean(df$Value, na.rm = TRUE)
+```
+
+Alternatively, instead of using the `$` operator, you can use doubled square brackets to specify the column number you want:
+
+```{r}
+df[[3]]
+```
+
+Neither method of extracting a column is intrinsically better than the other.  It really boils down to whether you prefer to reference your columns by names or numbers. The former is often easier to read at the expense of writing more code, whereas the latter, while harder to discern at a quick glance, requires less writing and can produce, superficially, a tidier looking script.
+
+If you want to extract a column, but still preserve its classification as a data frame instead of *dropping* it to a vector you can include the argument `drop = FALSE` inside your indexing brackets. This is useful for situations where you want to preserve the name of the column you have indexed.
+
+```{r}
+df[ , 3, drop = FALSE]
+```
+
+### Adding and Removing Columns
+
+Adding new columns to a data frame is very simple. Suppose we wanted to create a column named `alpha` containing the first 10 letters of the English alphabet.
+
+```{r}
+df$alpha <- letters[1:10]
+df
+```
+
+If we wanted to create a column named `new_val` that multiplies all the numbers in the `value` column by $100$, we can easily do that.
+
+```{r}
+df$new_val <- df$value * 100
+df
+```
+
+To remove a column, there are a few common options. Assuming you want to remove the `alpha` (fourth) column, you can just set that column equal to a **null value**, which just means that something is undefined and therefore does not exist as an object in the R language.
+
+```{r}
+df$alpha <- NULL
+df
+```
+
+If you want to remove multiple columns, a quick way is to simply index the columns you do NOT want to keep, negate them using a minus sign (which means you are now technically indexing the ones you DO want to keep). You can then override your data frame object, which in our case is `df`. To illustrate, we will remove column's one and four.
+
+```{r}
+df <- df[ , -c(1, 4)]
+df
+```
+
+### Adding and Removing Rows
+
+To add a row to an existing data frame, the conventional strategy is to use the `rbind()` function. "rbind" is short for "row bind" and does more or less what it says on the box: it binds (i.e., combines) objects by rows. For instance, if we create a new dataframe that contains a row (or rows) we want to add, we can then use the `rbind()` function to append it to the original dataframe.
+
+```{r}
+new_row <- data.frame(
+  group = "SPAM",
+  value = 999
+)
+                      
+df <- rbind(df, new_row)
+df
+```
+
+To remove rows (e.g., 9 and 11), you can follow the same basic process that was outlined for removing columns.
+
+```{r}
+df <- df[-c(9, 11), ]
+df
+```
+
+### Row and Column Names
+
+Notice in the previous example that, by removing row $9$ (i.e., the row that contained the `NA` value), the index numbers on the leftmost side of the data frame's output become mislabelled. It counts from $1$ to $8$, skips $9$, and goes straight to $10$. The reason it does this is because those numbers on the left are not actually index values, as you might reasonably assume. They are actually *row names* and, when the data frame was initially created, the rows were literally named $1$ through $10$.  
+
+R users tend to be on the fence as to whether this is a useful feature or not. It does provide a nice visual confirmation that specific rows have been removed, but also makes future indexing potentially more confusing since the row named $10$ is actually the $9$^th^ row.  Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the `rownames()` function.
+
+[^rownames]:If you, like the *tidyverse* high council, see this as a mild heresy, fear not—the *tibble* (covered in the next chapter) was made with you in mind.
+
+```{r}
+rownames(df) <- 1:nrow(df)
+df
+```
+
+Note that we used the function `nrow()` to create the sequence of numbers. This function simply counts how many rows are in a data frame.
+
+```{r}
+nrow(df)
+```
+
+An alternative way of defining the row names would have been to type `rownames(df) <- 1:9`; however, this is STRONGLY discouraged.  The reasons being that, if you are working with a large data frame, you often do not know how many rows there are. Additionally, if some aspect about your data frame changes in the future (maybe because you have updated your data set or indexed different values), the `1:9` is no longer going to be accurate and will produce errors that you may or may not notice, unless you have remembered to change it. Using the code `1:nrow(df)` ensures that your row names will always be correct.
+
+Here we have named our rows using numbers, but you can technically name rows anything you want.
+
+```{r}
+rownames(df) <- month.name[1:nrow(df)]
+df
+```
+
+Generally speaking though, this is not something you should be doing.  If you wanted to label each row with a name of the month, you would be better off creating a new column called `month`, and keeping the row names as ascending integers.
+
+Column names can be renamed in a similar fashion using the `colnames()` function. Though, R's syntax does not permit you to name them solely with numeric values, nor are you allowed to include spaces or any type of special characters other than an underscore.
+
+```{r}
+colnames(df) <- c("1st_Col", "2nd_Col")
+df
+```
+
+If you do use a number, space, or special character to name your column, it becomes a **non-syntactic** name (see section @sec-naming_objects) and backticks become necessary to isolate it. 
+
+```{r}
+colnames(df) <- c(1, "Col 2")
+df
+```
+
+```{r}
+#| error: true
+df$1
+```
+
+```{r}
+#| error: true
+df$Col 2
+```
+
+```{r}
+df$`1`
+
+df$`Col 2`
+```

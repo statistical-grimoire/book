@@ -249,14 +249,23 @@ window.Quarto = {
   <li><a href="#commenting-out-lines" id="toc-commenting-out-lines" class="nav-link" data-scroll-target="#commenting-out-lines"><span class="header-section-number">3.7</span> Commenting Out Lines</a></li>
   <li><a href="#creating-objects" id="toc-creating-objects" class="nav-link" data-scroll-target="#creating-objects"><span class="header-section-number">3.8</span> Creating Objects</a></li>
   <li><a href="#creating-objects-again" id="toc-creating-objects-again" class="nav-link" data-scroll-target="#creating-objects-again"><span class="header-section-number">3.9</span> Creating Objects (again)</a></li>
-  <li><a href="#object-modes" id="toc-object-modes" class="nav-link" data-scroll-target="#object-modes"><span class="header-section-number">3.10</span> Object Modes</a></li>
-  <li><a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects"><span class="header-section-number">3.11</span> Naming Objects</a></li>
+  <li><a href="#sec-modes" id="toc-sec-modes" class="nav-link" data-scroll-target="#sec-modes"><span class="header-section-number">3.10</span> Object Modes</a></li>
+  <li><a href="#sec-naming_objects" id="toc-sec-naming_objects" class="nav-link" data-scroll-target="#sec-naming_objects"><span class="header-section-number">3.11</span> Naming Objects</a></li>
   <li><a href="#sec-vectors" id="toc-sec-vectors" class="nav-link" data-scroll-target="#sec-vectors"><span class="header-section-number">3.12</span> Vectors</a></li>
   <li><a href="#operators-and-comparison-statements" id="toc-operators-and-comparison-statements" class="nav-link" data-scroll-target="#operators-and-comparison-statements"><span class="header-section-number">3.13</span> Operators And Comparison Statements</a></li>
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions"><span class="header-section-number">3.14</span> Functions</a></li>
   <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments"><span class="header-section-number">3.15</span> Arguments</a></li>
   <li><a href="#r-help-documentation" id="toc-r-help-documentation" class="nav-link" data-scroll-target="#r-help-documentation"><span class="header-section-number">3.16</span> R (Help) Documentation</a></li>
   <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values"><span class="header-section-number">3.17</span> Missing Values</a></li>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="header-section-number">3.18</span> Data Frames</a>
+  <ul class="collapse">
+  <li><a href="#critical-features-of-data-frames" id="toc-critical-features-of-data-frames" class="nav-link" data-scroll-target="#critical-features-of-data-frames"><span class="header-section-number">3.18.1</span> Critical Features of Data Frames</a></li>
+  <li><a href="#indexing-data-frames" id="toc-indexing-data-frames" class="nav-link" data-scroll-target="#indexing-data-frames"><span class="header-section-number">3.18.2</span> Indexing Data Frames</a></li>
+  <li><a href="#extracting-columns-as-vectors" id="toc-extracting-columns-as-vectors" class="nav-link" data-scroll-target="#extracting-columns-as-vectors"><span class="header-section-number">3.18.3</span> Extracting Columns as Vectors</a></li>
+  <li><a href="#adding-and-removing-columns" id="toc-adding-and-removing-columns" class="nav-link" data-scroll-target="#adding-and-removing-columns"><span class="header-section-number">3.18.4</span> Adding and Removing Columns</a></li>
+  <li><a href="#adding-and-removing-rows" id="toc-adding-and-removing-rows" class="nav-link" data-scroll-target="#adding-and-removing-rows"><span class="header-section-number">3.18.5</span> Adding and Removing Rows</a></li>
+  <li><a href="#row-and-column-names" id="toc-row-and-column-names" class="nav-link" data-scroll-target="#row-and-column-names"><span class="header-section-number">3.18.6</span> Row and Column Names</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -728,8 +737,8 @@ Important
 </div>
 </div>
 </section>
-<section id="object-modes" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="object-modes"><span class="header-section-number">3.10</span> Object Modes</h2>
+<section id="sec-modes" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="sec-modes"><span class="header-section-number">3.10</span> Object Modes</h2>
 <p>Thus far all of the objects we have created have been <strong>numeric</strong> objects; though, we can avail ourselves of other types. For instance, another common object is the <strong>character</strong> object which gets defined using quotation marks on each end of the value.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"SPAM"</span></span>
@@ -771,8 +780,8 @@ Important
 <p>The values <code>TRUE</code> and <code>FALSE</code> must be typed completely in uppercase without quotations for R to recognize them as a logical object. Alternatively, R does permit a shorthand version of each. Instead of typing <code>TRUE</code> and <code>FALSE</code>, you can type <code>T</code> and <code>F</code> respectively. Though, for ease of reading, using this shorthand version is not advised.</p>
 <p>Thus far, we have demonstrated three basic categories of object: <em>numeric</em>, <em>character</em>, and <em>logical</em>. R refers to these various categories as <strong>modes</strong>,<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> and as you progress with R, both in this book and more generally, you will encounter other object modes.</p>
 </section>
-<section id="naming-objects" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="naming-objects"><span class="header-section-number">3.11</span> Naming Objects</h2>
+<section id="sec-naming_objects" class="level2" data-number="3.11">
+<h2 data-number="3.11" class="anchored" data-anchor-id="sec-naming_objects"><span class="header-section-number">3.11</span> Naming Objects</h2>
 <p>Often we will run into circumstances where other people are required to read, run, and modify the code we write. Still other times, we may need to look at, and make sense of, code we have written in the past and largely forgotten. These considerations make it of the utmost importance that all of the code we write is intelligible to other people and our future selves. Among the best way to achieve this is by naming objects appropriately. Ideally, the name of an object should be concise and descriptive. Generally, you can name objects almost anything you like, as long as the name begins with a letter, contains no spaces, avoids special characters (except underscores <code>_</code>), and does not use any of R’s <strong>reserved words</strong> such as <code>TRUE</code>, <code>Inf</code>, <code>NaN</code>, <code>function</code>, etc.</p>
 <p>Given that spaces are not permitted in the naming of objects, programmers have developed certain conventions to promote readability. One such convention is <em>snake case</em>, which separates lowercase lettered words with an underscore: <code>snake_case &lt;- 1</code>.</p>
 <p>Another, referred to as <em>camel case</em>, denotes separate words by capitalizing the first letter of each new word: <code>camelCase &lt;- 2</code></p>
@@ -1416,6 +1425,478 @@ Examples:
 </div>
 </div>
 <p>…in lieu of using or not having a <code>na.rm</code> style argument to remove missing values. To novice users of R, techniques like this may seem cumbersome initially. This is especially the case when you are dealing with so few values and can immediately see what is and is not missing within the data. For instance, noting that the fourth value is missing from <code>x</code>, you could simply create a new vector of the form <code>y &lt;- c(710, 633, 786, 642)</code> and insert that into your functions. However, many (if not most) data sets are too large to “eyeball” and manually rebuild in this way. Automated solutions like those shown with the negation operator are not only necessary to save time, but are also less prone to error.</p>
+</section>
+<section id="data-frames" class="level2" data-number="3.18">
+<h2 data-number="3.18" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">3.18</span> Data Frames</h2>
+<p>While there are situations where a single vector constitutes the only data that needs to be analyzed, it is more often the case that you are working with “sets” of data. That is to say, typically your data consists of observations across a range of different variables. Consequently, for the purposes of organization, it is helpful to keep all of this data stored as a single object. In R, there are a number of ways you could do this. You could store data as a <em>table</em>, a <em>list</em>, or a <em>matrix</em> which are all unique <em>classes</em> of objects R recognizes. However, for most uses cases, a <strong>data frame</strong> is going to be the preferred method of data storage in R.</p>
+<p>In its simplest terms a data frame is simply a spreadsheet, where rows represent observations and columns represent variables. Consider a hypothetical experiment with two groups, a control and experimental group, and 10 observations, one of which is missing for some reason. Visually, the data might look like <a href="#tbl-ex_df" class="quarto-xref">Table&nbsp;<span>3.3</span></a></p>
+<div id="tbl-ex_df" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-ex_df-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3.3: Useful Keyboard Shortcuts
+</figcaption>
+<div aria-describedby="tbl-ex_df-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>subject</th>
+<th>group</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Exp</td>
+<td>-0.36</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Cont</td>
+<td>0.28</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Exp</td>
+<td>1.54</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Cont</td>
+<td>0.51</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Exp</td>
+<td>-1.28</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Exp</td>
+<td>1.15</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Cont</td>
+<td>-2.22</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Exp</td>
+<td>-0.51</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Cont</td>
+<td>NA</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Cont</td>
+<td>-1.04</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>We can easily recreate this in R using the <code>data.frame()</code> function. Inside the function, we specify our desired columns as <em>arguments</em>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb170"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb170-2"><a href="#cb170-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">subject =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb170-3"><a href="#cb170-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="fu">c</span>(<span class="st">"Exp"</span>, <span class="st">"Cont"</span>, <span class="st">"Exp"</span>, <span class="st">"Cont"</span>, <span class="st">"Exp"</span>, <span class="st">"Exp"</span>, <span class="st">"Cont"</span>, <span class="st">"Exp"</span>, </span>
+<span id="cb170-4"><a href="#cb170-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Cont"</span>, <span class="st">"Cont"</span>),</span>
+<span id="cb170-5"><a href="#cb170-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.36</span>,  <span class="fl">0.28</span>,  <span class="fl">1.54</span>,  <span class="fl">0.51</span>, <span class="sc">-</span><span class="fl">1.28</span>,  <span class="fl">1.15</span>, <span class="sc">-</span><span class="fl">2.22</span>, <span class="sc">-</span><span class="fl">0.51</span>,  </span>
+<span id="cb170-6"><a href="#cb170-6" aria-hidden="true" tabindex="-1"></a>            <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">1.04</span>)</span>
+<span id="cb170-7"><a href="#cb170-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb170-8"><a href="#cb170-8" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   subject group value
+1        1   Exp -0.36
+2        2  Cont  0.28
+3        3   Exp  1.54
+4        4  Cont  0.51
+5        5   Exp -1.28
+6        6   Exp  1.15
+7        7  Cont -2.22
+8        8   Exp -0.51
+9        9  Cont    NA
+10      10  Cont -1.04</code></pre>
+</div>
+</div>
+<p>Alternatively, if you have the variables <em>subject</em>, <em>group</em>, and <em>value</em> already stored as individual vectors, you could build your data frame in the following way:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb172"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb172-1"><a href="#cb172-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(subject, group, value)</span>
+<span id="cb172-2"><a href="#cb172-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now, strictly speaking, you would almost never input your data into R in the manner we have done here (i.e., by manually typing in the values). However, the basics of constructing a data frame is an essential, and frequently appealed to, piece of knowledge when working with R.</p>
+<section id="critical-features-of-data-frames" class="level3" data-number="3.18.1">
+<h3 data-number="3.18.1" class="anchored" data-anchor-id="critical-features-of-data-frames"><span class="header-section-number">3.18.1</span> Critical Features of Data Frames</h3>
+<p>There are two critical features of data frames that separates them from traditional spreadsheets. The first is that each column needs to consist of a single object mode (e.g., <em>numeric</em>, <em>character</em>, or <em>logical</em>; see <a href="#sec-modes" class="quarto-xref"><span>Section 3.10</span></a>). For instance, in the data frame above, the <code>subject</code> column consists only of <em>numeric</em> objects, the <code>group</code> column only consists of <em>character</em> objects and the <code>value</code> column, again, only consists of <em>numeric</em> objects. We can see this by running the following code:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(df, <span class="at">FUN =</span> mode) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    subject       group       value 
+  "numeric" "character"   "numeric" </code></pre>
+</div>
+</div>
+<p>In this example, the <code>sapply()</code> function has, quite literally, <em>applied</em> the function <code>mode()</code> to each of the columns of our data frame, thereby telling us what each column’s mode is. The argument <code>FUN</code> is just short for “function” and is telling <code>sapply()</code> what function you want to <em>apply</em> to the columns. In this case we are applying the <code>mode()</code> function.</p>
+<p>Knowing the mode of a column is very important because columns behave like vectors insofar as trying to mix and match different object types within a single column will potentially change that entire column. As an example, if we had coded …</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"-0.36"</span>, <span class="fl">0.28</span>, <span class="fl">1.54</span>, <span class="fl">0.51</span>, <span class="sc">-</span><span class="fl">1.28</span>, <span class="fl">1.15</span>, <span class="sc">-</span><span class="fl">2.22</span>, <span class="sc">-</span><span class="fl">0.51</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">1.04</span>)</span>
+<span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a>value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "-0.36" "0.28"  "1.54"  "0.51"  "-1.28" "1.15"  "-2.22" "-0.51" NA     
+[10] "-1.04"</code></pre>
+</div>
+</div>
+<p>you will find that every single number in that column automatically becomes a character object even though only the first of the nine elements was typed as a character object. This is going to be very irritating if you want to perform mathematical operations on that column and are unaware that all of its elements have been coerced into character objects (notice that printing the data frame does not show character objects with quotes like vectors do).</p>
+<p>The second critical feature of data frames is that each column <em>must</em> contain the same number of elements as every other column. In our example, <em>subject</em>, <em>group</em>, and <em>value</em> all contain 10 elements (the missing value is counted as an element). In most cases, if you try and build a data frame with columns of unequal lengths, R will produce an error message.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb177"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a>df_2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb177-2"><a href="#cb177-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb177-3"><a href="#cb177-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">b =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb177-4"><a href="#cb177-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `data.frame()`:
+! arguments imply differing number of rows: 4, 3</code></pre>
+</div>
+</div>
+<p>In other cases, if you have an unequal amount of values in your columns and R determines that it can evenly repeat a sequence, R will automatically recycle that sequence.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a>df_3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb179-2"><a href="#cb179-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb179-3"><a href="#cb179-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">b =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span></span>
+<span id="cb179-4"><a href="#cb179-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb179-5"><a href="#cb179-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb179-6"><a href="#cb179-6" aria-hidden="true" tabindex="-1"></a>df_3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  a b
+1 1 1
+2 2 2
+3 3 1
+4 4 2</code></pre>
+</div>
+</div>
+<p>Notice in the above example that we assigned four values to the <code>a</code> column and two values to the <code>b</code> column and instead of producing an error, R simply recycled the values in <code>b</code> to fill the empty spots.</p>
+</section>
+<section id="indexing-data-frames" class="level3" data-number="3.18.2">
+<h3 data-number="3.18.2" class="anchored" data-anchor-id="indexing-data-frames"><span class="header-section-number">3.18.2</span> Indexing Data Frames</h3>
+<p>Similar to how vectors can be indexed using square brackets, data frames can also be indexed. Going back to our original data frame (<code>df</code>), suppose we wanted to look at the value found in the fifth row of the third column. This can be easily accomplished in the following way:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb181"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">5</span>, <span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1.28</code></pre>
+</div>
+</div>
+<p>Notice, the number on the left side of the comma (<code>5</code>) refers to the row, and the number on the right side (<code>3</code>) refers to the column. The easy way to remember this is that the numbers in the brackets represent a <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> coordinate system, with <span class="math inline">\(x\)</span>’s being rows, and <span class="math inline">\(y\)</span>’s being columns.</p>
+<p>In the last example we selected a single element of our data frame, but we can select more than one value and more than one column if need be. For instance, we could isolate rows <span class="math inline">\(1\)</span>, <span class="math inline">\(3\)</span>, and <span class="math inline">\(5\)</span>, from columns <span class="math inline">\(2\)</span>, and <span class="math inline">\(3\)</span> only.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>), <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  group value
+1   Exp -0.36
+3   Exp  1.54
+5   Exp -1.28</code></pre>
+</div>
+</div>
+<p>If you wanted to keep all the columns visible while only looking at rows <span class="math inline">\(1\)</span>, <span class="math inline">\(3\)</span> and <span class="math inline">\(5\)</span>, you need only to leave the left side of the comma blank.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb185"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>), ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  subject group value
+1       1   Exp -0.36
+3       3   Exp  1.54
+5       5   Exp -1.28</code></pre>
+</div>
+</div>
+<p>A similar logic applies to rows:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb187"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a>df[ , <span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   group value
+1    Exp -0.36
+2   Cont  0.28
+3    Exp  1.54
+4   Cont  0.51
+5    Exp -1.28
+6    Exp  1.15
+7   Cont -2.22
+8    Exp -0.51
+9   Cont    NA
+10  Cont -1.04</code></pre>
+</div>
+</div>
+</section>
+<section id="extracting-columns-as-vectors" class="level3" data-number="3.18.3">
+<h3 data-number="3.18.3" class="anchored" data-anchor-id="extracting-columns-as-vectors"><span class="header-section-number">3.18.3</span> Extracting Columns as Vectors</h3>
+<p>There will also be many circumstances where you need to work with the values of a single column only. For instance, if you want to calculate the mean of the third column <code>value</code>, you can use one of R’s extraction operators, the <code>$</code>, to isolate that column. The following code will isolate the <code>value</code> column and output it as a vector:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb189"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Value</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+</div>
+<p>You can, therefore, just insert this into the <code>mean()</code> function.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb191"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>Value, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(df$Value, na.rm = TRUE): argument is not numeric or
+logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<p>Alternatively, instead of using the <code>$</code> operator, you can use doubled square brackets to specify the column number you want:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb194"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb194-1"><a href="#cb194-1" aria-hidden="true" tabindex="-1"></a>df[[<span class="dv">3</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] -0.36  0.28  1.54  0.51 -1.28  1.15 -2.22 -0.51    NA -1.04</code></pre>
+</div>
+</div>
+<p>Neither method of extracting a column is intrinsically better than the other. It really boils down to whether you prefer to reference your columns by names or numbers. The former is often easier to read at the expense of writing more code, whereas the latter, while harder to discern at a quick glance, requires less writing and can produce, superficially, a tidier looking script.</p>
+<p>If you want to extract a column, but still preserve its classification as a data frame instead of <em>dropping</em> it to a vector you can include the argument <code>drop = FALSE</code> inside your indexing brackets. This is useful for situations where you want to preserve the name of the column you have indexed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb196"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb196-1"><a href="#cb196-1" aria-hidden="true" tabindex="-1"></a>df[ , <span class="dv">3</span>, drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   value
+1  -0.36
+2   0.28
+3   1.54
+4   0.51
+5  -1.28
+6   1.15
+7  -2.22
+8  -0.51
+9     NA
+10 -1.04</code></pre>
+</div>
+</div>
+</section>
+<section id="adding-and-removing-columns" class="level3" data-number="3.18.4">
+<h3 data-number="3.18.4" class="anchored" data-anchor-id="adding-and-removing-columns"><span class="header-section-number">3.18.4</span> Adding and Removing Columns</h3>
+<p>Adding new columns to a data frame is very simple. Suppose we wanted to create a column named <code>alpha</code> containing the first 10 letters of the English alphabet.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb198"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb198-1"><a href="#cb198-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>alpha <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span>
+<span id="cb198-2"><a href="#cb198-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   subject group value alpha
+1        1   Exp -0.36     a
+2        2  Cont  0.28     b
+3        3   Exp  1.54     c
+4        4  Cont  0.51     d
+5        5   Exp -1.28     e
+6        6   Exp  1.15     f
+7        7  Cont -2.22     g
+8        8   Exp -0.51     h
+9        9  Cont    NA     i
+10      10  Cont -1.04     j</code></pre>
+</div>
+</div>
+<p>If we wanted to create a column named <code>new_val</code> that multiplies all the numbers in the <code>value</code> column by <span class="math inline">\(100\)</span>, we can easily do that.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb200"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb200-1"><a href="#cb200-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>new_val <span class="ot">&lt;-</span> df<span class="sc">$</span>value <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb200-2"><a href="#cb200-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   subject group value alpha new_val
+1        1   Exp -0.36     a     -36
+2        2  Cont  0.28     b      28
+3        3   Exp  1.54     c     154
+4        4  Cont  0.51     d      51
+5        5   Exp -1.28     e    -128
+6        6   Exp  1.15     f     115
+7        7  Cont -2.22     g    -222
+8        8   Exp -0.51     h     -51
+9        9  Cont    NA     i      NA
+10      10  Cont -1.04     j    -104</code></pre>
+</div>
+</div>
+<p>To remove a column, there are a few common options. Assuming you want to remove the <code>alpha</code> (fourth) column, you can just set that column equal to a <strong>null value</strong>, which just means that something is undefined and therefore does not exist as an object in the R language.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb202"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb202-1"><a href="#cb202-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>alpha <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb202-2"><a href="#cb202-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   subject group value new_val
+1        1   Exp -0.36     -36
+2        2  Cont  0.28      28
+3        3   Exp  1.54     154
+4        4  Cont  0.51      51
+5        5   Exp -1.28    -128
+6        6   Exp  1.15     115
+7        7  Cont -2.22    -222
+8        8   Exp -0.51     -51
+9        9  Cont    NA      NA
+10      10  Cont -1.04    -104</code></pre>
+</div>
+</div>
+<p>If you want to remove multiple columns, a quick way is to simply index the columns you do NOT want to keep, negate them using a minus sign (which means you are now technically indexing the ones you DO want to keep). You can then override your data frame object, which in our case is <code>df</code>. To illustrate, we will remove column’s one and four.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb204"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb204-1"><a href="#cb204-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df[ , <span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)]</span>
+<span id="cb204-2"><a href="#cb204-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   group value
+1    Exp -0.36
+2   Cont  0.28
+3    Exp  1.54
+4   Cont  0.51
+5    Exp -1.28
+6    Exp  1.15
+7   Cont -2.22
+8    Exp -0.51
+9   Cont    NA
+10  Cont -1.04</code></pre>
+</div>
+</div>
+</section>
+<section id="adding-and-removing-rows" class="level3" data-number="3.18.5">
+<h3 data-number="3.18.5" class="anchored" data-anchor-id="adding-and-removing-rows"><span class="header-section-number">3.18.5</span> Adding and Removing Rows</h3>
+<p>To add a row to an existing data frame, the conventional strategy is to use the <code>rbind()</code> function. “rbind” is short for “row bind” and does more or less what it says on the box: it binds (i.e., combines) objects by rows. For instance, if we create a new dataframe that contains a row (or rows) we want to add, we can then use the <code>rbind()</code> function to append it to the original dataframe.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb206"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb206-1"><a href="#cb206-1" aria-hidden="true" tabindex="-1"></a>new_row <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb206-2"><a href="#cb206-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">group =</span> <span class="st">"SPAM"</span>,</span>
+<span id="cb206-3"><a href="#cb206-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">value =</span> <span class="dv">999</span></span>
+<span id="cb206-4"><a href="#cb206-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb206-5"><a href="#cb206-5" aria-hidden="true" tabindex="-1"></a>                      </span>
+<span id="cb206-6"><a href="#cb206-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df, new_row)</span>
+<span id="cb206-7"><a href="#cb206-7" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   group  value
+1    Exp  -0.36
+2   Cont   0.28
+3    Exp   1.54
+4   Cont   0.51
+5    Exp  -1.28
+6    Exp   1.15
+7   Cont  -2.22
+8    Exp  -0.51
+9   Cont     NA
+10  Cont  -1.04
+11  SPAM 999.00</code></pre>
+</div>
+</div>
+<p>To remove rows (e.g., 9 and 11), you can follow the same basic process that was outlined for removing columns.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb208"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb208-1"><a href="#cb208-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">11</span>), ]</span>
+<span id="cb208-2"><a href="#cb208-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   group value
+1    Exp -0.36
+2   Cont  0.28
+3    Exp  1.54
+4   Cont  0.51
+5    Exp -1.28
+6    Exp  1.15
+7   Cont -2.22
+8    Exp -0.51
+10  Cont -1.04</code></pre>
+</div>
+</div>
+</section>
+<section id="row-and-column-names" class="level3" data-number="3.18.6">
+<h3 data-number="3.18.6" class="anchored" data-anchor-id="row-and-column-names"><span class="header-section-number">3.18.6</span> Row and Column Names</h3>
+<p>Notice in the previous example that, by removing row <span class="math inline">\(9\)</span> (i.e., the row that contained the <code>NA</code> value), the index numbers on the leftmost side of the data frame’s output become mislabelled. It counts from <span class="math inline">\(1\)</span> to <span class="math inline">\(8\)</span>, skips <span class="math inline">\(9\)</span>, and goes straight to <span class="math inline">\(10\)</span>. The reason it does this is because those numbers on the left are not actually index values, as you might reasonably assume. They are actually <em>row names</em> and, when the data frame was initially created, the rows were literally named <span class="math inline">\(1\)</span> through <span class="math inline">\(10\)</span>.</p>
+<p>R users tend to be on the fence as to whether this is a useful feature or not. It does provide a nice visual confirmation that specific rows have been removed, but also makes future indexing potentially more confusing since the row named <span class="math inline">\(10\)</span> is actually the <span class="math inline">\(9\)</span><sup>th</sup> row. Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the <code>rownames()</code> function.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb210"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(df) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)</span>
+<span id="cb210-2"><a href="#cb210-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  group value
+1   Exp -0.36
+2  Cont  0.28
+3   Exp  1.54
+4  Cont  0.51
+5   Exp -1.28
+6   Exp  1.15
+7  Cont -2.22
+8   Exp -0.51
+9  Cont -1.04</code></pre>
+</div>
+</div>
+<p>Note that we used the function <code>nrow()</code> to create the sequence of numbers. This function simply counts how many rows are in a data frame.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb212"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb212-1"><a href="#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+</div>
+<p>An alternative way of defining the row names would have been to type <code>rownames(df) &lt;- 1:9</code>; however, this is STRONGLY discouraged. The reasons being that, if you are working with a large data frame, you often do not know how many rows there are. Additionally, if some aspect about your data frame changes in the future (maybe because you have updated your data set or indexed different values), the <code>1:9</code> is no longer going to be accurate and will produce errors that you may or may not notice, unless you have remembered to change it. Using the code <code>1:nrow(df)</code> ensures that your row names will always be correct.</p>
+<p>Here we have named our rows using numbers, but you can technically name rows anything you want.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb214"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb214-1"><a href="#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(df) <span class="ot">&lt;-</span> month.name[<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)]</span>
+<span id="cb214-2"><a href="#cb214-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          group value
+January     Exp -0.36
+February   Cont  0.28
+March       Exp  1.54
+April      Cont  0.51
+May         Exp -1.28
+June        Exp  1.15
+July       Cont -2.22
+August      Exp -0.51
+September  Cont -1.04</code></pre>
+</div>
+</div>
+<p>Generally speaking though, this is not something you should be doing. If you wanted to label each row with a name of the month, you would be better off creating a new column called <code>month</code>, and keeping the row names as ascending integers.</p>
+<p>Column names can be renamed in a similar fashion using the <code>colnames()</code> function. Though, R’s syntax does not permit you to name them solely with numeric values, nor are you allowed to include spaces or any type of special characters other than an underscore.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb216"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb216-1"><a href="#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"1st_Col"</span>, <span class="st">"2nd_Col"</span>)</span>
+<span id="cb216-2"><a href="#cb216-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          1st_Col 2nd_Col
+January       Exp   -0.36
+February     Cont    0.28
+March         Exp    1.54
+April        Cont    0.51
+May           Exp   -1.28
+June          Exp    1.15
+July         Cont   -2.22
+August        Exp   -0.51
+September    Cont   -1.04</code></pre>
+</div>
+</div>
+<p>If you do use a number, space, or special character to name your column, it becomes a <strong>non-syntactic</strong> name (see section <a href="#sec-naming_objects" class="quarto-xref"><span>Section 3.11</span></a>) and backticks become necessary to isolate it.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb218"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="st">"Col 2"</span>)</span>
+<span id="cb218-2"><a href="#cb218-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             1 Col 2
+January    Exp -0.36
+February  Cont  0.28
+March      Exp  1.54
+April     Cont  0.51
+May        Exp -1.28
+June       Exp  1.15
+July      Cont -2.22
+August     Exp -0.51
+September Cont -1.04</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb220"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb220-1"><a href="#cb220-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in parse(text = input): &lt;text&gt;:1:4: unexpected numeric constant
+1: df$1
+       ^</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb222"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb222-1"><a href="#cb222-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Col <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in parse(text = input): &lt;text&gt;:1:8: unexpected numeric constant
+1: df$Col 2
+           ^</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb224"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span><span class="st">`</span><span class="at">1</span><span class="st">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Exp"  "Cont" "Exp"  "Cont" "Exp"  "Exp"  "Cont" "Exp"  "Cont"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb226"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span><span class="st">`</span><span class="at">Col 2</span><span class="st">`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.36  0.28  1.54  0.51 -1.28  1.15 -2.22 -0.51 -1.04</code></pre>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1426,6 +1907,7 @@ Pierce, R. 2022. <span>“Math Is Fun: What Is a Function.”</span> <a href="ht
 Wickham, H., M. Çetinkaya-Rundel, and G. Grolemund. 2023. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. Second. O’Reilly Media. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
 </div>
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
