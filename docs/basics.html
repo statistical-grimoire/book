@@ -266,6 +266,15 @@ window.Quarto = {
   <li><a href="#adding-and-removing-rows" id="toc-adding-and-removing-rows" class="nav-link" data-scroll-target="#adding-and-removing-rows"><span class="header-section-number">3.18.5</span> Adding and Removing Rows</a></li>
   <li><a href="#row-and-column-names" id="toc-row-and-column-names" class="nav-link" data-scroll-target="#row-and-column-names"><span class="header-section-number">3.18.6</span> Row and Column Names</a></li>
   </ul></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages"><span class="header-section-number">3.19</span> Packages</a>
+  <ul class="collapse">
+  <li><a href="#loading-vs.-installing" id="toc-loading-vs.-installing" class="nav-link" data-scroll-target="#loading-vs.-installing"><span class="header-section-number">3.19.1</span> Loading vs.&nbsp;Installing</a></li>
+  <li><a href="#package-dependencies" id="toc-package-dependencies" class="nav-link" data-scroll-target="#package-dependencies"><span class="header-section-number">3.19.2</span> Package dependencies</a></li>
+  <li><a href="#the-operator" id="toc-the-operator" class="nav-link" data-scroll-target="#the-operator"><span class="header-section-number">3.19.3</span> The <code>::</code> operator</a></li>
+  <li><a href="#checking-installed-packages" id="toc-checking-installed-packages" class="nav-link" data-scroll-target="#checking-installed-packages"><span class="header-section-number">3.19.4</span> Checking Installed Packages</a></li>
+  <li><a href="#package-documentation" id="toc-package-documentation" class="nav-link" data-scroll-target="#package-documentation"><span class="header-section-number">3.19.5</span> Package Documentation</a></li>
+  <li><a href="#citing-packages" id="toc-citing-packages" class="nav-link" data-scroll-target="#citing-packages"><span class="header-section-number">3.19.6</span> Citing Packages</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -1794,7 +1803,7 @@ logical: returning NA</code></pre>
 <section id="row-and-column-names" class="level3" data-number="3.18.6">
 <h3 data-number="3.18.6" class="anchored" data-anchor-id="row-and-column-names"><span class="header-section-number">3.18.6</span> Row and Column Names</h3>
 <p>Notice in the previous example that, by removing row <span class="math inline">\(9\)</span> (i.e., the row that contained the <code>NA</code> value), the index numbers on the leftmost side of the data frame’s output become mislabelled. It counts from <span class="math inline">\(1\)</span> to <span class="math inline">\(8\)</span>, skips <span class="math inline">\(9\)</span>, and goes straight to <span class="math inline">\(10\)</span>. The reason it does this is because those numbers on the left are not actually index values, as you might reasonably assume. They are actually <em>row names</em> and, when the data frame was initially created, the rows were literally named <span class="math inline">\(1\)</span> through <span class="math inline">\(10\)</span>.</p>
-<p>R users tend to be on the fence as to whether this is a useful feature or not. It does provide a nice visual confirmation that specific rows have been removed, but also makes future indexing potentially more confusing since the row named <span class="math inline">\(10\)</span> is actually the <span class="math inline">\(9\)</span><sup>th</sup> row. Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the <code>rownames()</code> function.</p>
+<p>R users tend to be on the fence as to whether this is a useful feature or not.<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> It does provide a nice visual confirmation that specific rows have been removed, but also makes future indexing potentially more confusing since the row named <span class="math inline">\(10\)</span> is actually the <span class="math inline">\(9\)</span><sup>th</sup> row. Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the <code>rownames()</code> function.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb210"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb210-1"><a href="#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(df) <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(df)</span>
 <span id="cb210-2"><a href="#cb210-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1897,6 +1906,89 @@ September Cont -1.04</code></pre>
 <pre><code>[1] -0.36  0.28  1.54  0.51 -1.28  1.15 -2.22 -0.51 -1.04</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="packages" class="level2" data-number="3.19">
+<h2 data-number="3.19" class="anchored" data-anchor-id="packages"><span class="header-section-number">3.19</span> Packages</h2>
+<p>As a standalone piece of software, R provides an excellent toolbox of functions for most data analysis scenarios. However, R’s true power lies in its extensibility. R users can create custom sets of functions for specific purposes and <strong>package</strong> these functions with documentation and sample data for others to use. This system of user-contributed packages has made R one of the most versatile statistical computing environments available.</p>
+<p>The packages R users make publicly available are downloaded from online <em>repositories</em> (often called “repos”). The <strong>Comprehensive R Archive Network</strong> (CRAN), discussed in section <a href="run_R.html#sec-R_install" class="quarto-xref"><span>Section 2.1</span></a>, is one such repository, another well known one would be <em>GitHub</em>. The CRAN repository is easily the most frequented by R users and is likely to be the only R repository you will ever need. It is special in that the packages it provides are curated by the <em>The R Project for Statistical Computing</em>.</p>
+<p>To install a package from the CRAN repository you simply run the function <code>install.packages(" ")</code> with the package name inside the quotation marks. As an example, we shall install the “cowsay” package.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb228"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"cowsay"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you have never previously installed a package, R will likely prompt you to first create a “personal library.” You may see a message similar to this:</p>
+<pre><code>Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+Warning in install.packages("cowsay") :
+  'lib = "/usr/local/lib/R/site-library"' is not writable
+Would you like to use a personal library instead? (yes/No/cancel)</code></pre>
+<p>Type “yes” and press Enter. This message appears because R’s system-wide library location requires administrator privileges. A <strong>personal library</strong> is a folder in your user directory where you can install packages without special permissions. This is the standard and recommended approach.</p>
+<p>After responding “yes,” you will receive a second prompt asking to create this <em>personal library</em>:</p>
+<pre><code>Would you like to create a personal library
+‘/home/YourName/R/x86_64-pc-linux-gnu-library/4.5’
+to install packages into? (yes/No/cancel)</code></pre>
+<p>The exact path and format of these messages varies by operating system and R version. Windows users will see paths like <code>C:/Users/YourName/Documents/R/win-library/4.5</code>, while Mac users will see paths like <code>/Users/YourName/Library/R/x86_64/4.5/library</code>. If this seems confusing, don’t worry, just trust the defaults you see. Directories and file paths will be explained later for those who might be unfamiliar. The important takeaway here is that R is creating a dedicated folder for all your R packages.</p>
+<p>Again, type “yes” and press Enter. You should now begin to see a variety of interesting things to occur inside the console window. This is the package installing into the personal library (the collection of packages) stored on your computer. Upon successful completion of the install should be, among other things, a statement reading something to the effect of <code>package 'cowsay' successfully unpacked</code>. What this means is we can now access the various functions contained within the package, but before we do we should install another package called “praise”.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb231"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb231-1"><a href="#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"praise"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In order to access the functions contained in these packages we need only execute the line <code>library()</code> with the package name inside the parentheses (quotation marks are optional here, though commonly omitted).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb232"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb232-1"><a href="#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowsay)</span>
+<span id="cb232-2"><a href="#cb232-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(praise)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We can now run the functions <code>say()</code> and <code>praise()</code> in the following way:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb233"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb233-1"><a href="#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="fu">say</span>(<span class="fu">praise</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="loading-vs.-installing" class="level3" data-number="3.19.1">
+<h3 data-number="3.19.1" class="anchored" data-anchor-id="loading-vs.-installing"><span class="header-section-number">3.19.1</span> Loading vs.&nbsp;Installing</h3>
+<p>It should be noted that when you close your R environment, you will not have access to these two functions the next time you open R. However, you can easily regain access to them by re-running the <code>library()</code> functions above (meaning these lines should be saved in the scripts you write). You do NOT need to reinstall the packages unless you update to a new <em>major</em> version of R (e.g., from 4.5.x to 4.6.0). It is important to understand the difference: <em>install once, load every session</em>. You install a package once (or when updating), but must load it with <code>library()</code> each time you start a new R session and want to use it.</p>
+</section>
+<section id="package-dependencies" class="level3" data-number="3.19.2">
+<h3 data-number="3.19.2" class="anchored" data-anchor-id="package-dependencies"><span class="header-section-number">3.19.2</span> Package dependencies</h3>
+<p>When you install a package, R automatically installs any other packages it depends on. You may see multiple packages being downloaded, but don’t panic, this is normal behaviour.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>A Note for Linux Users
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Often, when using Linux, in order to install specific R packages, additional software needs to be installed through the Linux terminal. As an example, if you install the excellent “<a href="https://fs.r-lib.org/index.html" target="_blank">fs</a>” package for R: <code>install.packages("fs")</code></p>
+<p>The installation will likely fail and you will be prompted somewhere in the R console to install “libuv1-dev.” You would then need to open a terminal (or use the one RStudio or Positron provide) and type <code>sudo apt install libuv1-dev</code> to install (if you are on a Debian/Ubuntu-based distribution). Then retry the installation: <code>install.packages("fs")</code></p>
+<p>On Windows and Mac, R packages typically come with everything the system needs bundled together. On Linux, R packages are usually installed from source code, which must be compiled on your machine. Linux follows a philosophy of minimal, modular installations. That means (Linux) system libraries are not automatically included in base installations. While this seems inconvenient, it offers advantages:</p>
+<ul>
+<li>Smaller package sizes (shared libraries are not duplicated).</li>
+<li>Better system integration (uses your system’s optimized libraries).</li>
+<li>More control over dependency versions.</li>
+<li>Potentially better performance (compiled specifically for your system).</li>
+<li>You get to look like a genius hacker typing in the terminal.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="the-operator" class="level3" data-number="3.19.3">
+<h3 data-number="3.19.3" class="anchored" data-anchor-id="the-operator"><span class="header-section-number">3.19.3</span> The <code>::</code> operator</h3>
+<p>You can use functions from an installed package without loading the package by using the <code>::</code> operator: E.g., <code>cowsay::say(praise::praise())</code>. This is useful when you only need to load one specific function from a package or want to avoid naming conflicts between packages. In general, this is not something most beginners with R are going to require the use of and the simplest and most reliable way to access a function from a package is to use the <code>library()</code> function. However, you may encounter the use of <code>::</code> in a lot of of online examples and help documentation, so it is good to be aware of.</p>
+</section>
+<section id="checking-installed-packages" class="level3" data-number="3.19.4">
+<h3 data-number="3.19.4" class="anchored" data-anchor-id="checking-installed-packages"><span class="header-section-number">3.19.4</span> Checking Installed Packages</h3>
+<p>To see all packages you have installed, run <code>installed.packages()</code> or the more user-friendly <code>library()</code> with no arguments.</p>
+</section>
+<section id="package-documentation" class="level3" data-number="3.19.5">
+<h3 data-number="3.19.5" class="anchored" data-anchor-id="package-documentation"><span class="header-section-number">3.19.5</span> Package Documentation</h3>
+<p>Each package downloaded from the CRAN repository has documentation associated for both it and the functions it provides. This documentation can be accessed through the usual route of typing a <code>?</code> followed by the package name or function name.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb234"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb234-1"><a href="#cb234-1" aria-hidden="true" tabindex="-1"></a>?cowsay</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Since it is easy to miss, it should be noted that the top left corner of R documentation specifies what package a function belongs too. Insofar as learning about a package is concerned, R Documentation is quite useful, but often times a better option is to seek out its accompanying .pdf reference manual or, better still, associated website. A basic internet search is usually the simplest way to find these resources for any given package; however, the R project has links to the manuals and websites of all its packages in the package’s description page. The following web address will take you to a complete list of all the current CRAN packages available to download and provide you with a link to each package’s description page.</p>
+<center>
+<a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" target="_blank">https://cran.r-project.org/web/packages/available_packages_by_name.html</a>
+</center>
+<p><br></p>
+</section>
+<section id="citing-packages" class="level3" data-number="3.19.6">
+<h3 data-number="3.19.6" class="anchored" data-anchor-id="citing-packages"><span class="header-section-number">3.19.6</span> Citing Packages</h3>
+<p>When you use packages in research, proper attribution is important. Use <code>citation("packagename")</code> to get the appropriate citation format. For example, <code>citation("cowsay")</code> shows how to cite that package in publications.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -1926,6 +2018,7 @@ Wickham, H., M. Çetinkaya-Rundel, and G. Grolemund. 2023. <em>R for Data Scienc
 <li id="fn12"><p>You can also check the vector’s mode by running <code>mode(d)</code>.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn13"><p>It’s perhaps worth pointing out that the small <code>c</code> we use to combine values into a vector is also a function, which is why it is always followed with parentheses,<code>c()</code>.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn14"><p>Do not confuse this with the mathematical concept of a modal value; i.e., the number that appears most often.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn15"><p>If you, like the <em>tidyverse</em> high council, see this as a mild heresy, fear not—the <em>tibble</em> (covered in the next chapter) was made with you in mind.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

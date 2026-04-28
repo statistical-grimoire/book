@@ -1087,7 +1087,7 @@ df
 
 Notice in the previous example that, by removing row $9$ (i.e., the row that contained the `NA` value), the index numbers on the leftmost side of the data frame's output become mislabelled. It counts from $1$ to $8$, skips $9$, and goes straight to $10$. The reason it does this is because those numbers on the left are not actually index values, as you might reasonably assume. They are actually *row names* and, when the data frame was initially created, the rows were literally named $1$ through $10$.  
 
-R users tend to be on the fence as to whether this is a useful feature or not. It does provide a nice visual confirmation that specific rows have been removed, but also makes future indexing potentially more confusing since the row named $10$ is actually the $9$^th^ row.  Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the `rownames()` function.
+R users tend to be on the fence as to whether this is a useful feature or not.[^rownames] It does provide a nice visual confirmation that specific rows have been removed, but also makes future indexing potentially more confusing since the row named $10$ is actually the $9$^th^ row.  Thus, its often helpful to rename the rows after you have subset or removed certain values. You can do this using the `rownames()` function.
 
 [^rownames]:If you, like the *tidyverse* high council, see this as a mild heresy, fear not—the *tibble* (covered in the next chapter) was made with you in mind.
 
@@ -1142,3 +1142,107 @@ df$`1`
 
 df$`Col 2`
 ```
+
+## Packages
+
+As a standalone piece of software, R provides an excellent toolbox of functions for most data analysis scenarios. However, R's true power lies in its extensibility. R users can create custom sets of functions for specific purposes and **package** these functions with documentation and sample data for others to use. This system of user-contributed packages has made R one of the most versatile statistical computing environments available.
+
+The packages R users make publicly available are downloaded from online *repositories* (often called "repos").  The **Comprehensive R Archive Network** (CRAN), discussed in section @sec-R_install, is one such repository, another well known one would be *GitHub*. The CRAN repository is easily the most frequented by R users and is likely to be the only R repository you will ever need. It is special in that the packages it provides are curated by the *The R Project for Statistical Computing*.
+
+To install a package from the CRAN repository you simply run the function `install.packages(" ")` with the package name inside the quotation marks. As an example, we shall install the "cowsay" package.
+
+```R
+install.packages("cowsay")
+```
+
+If you have never previously installed a package, R will likely prompt you to first create a "personal library." You may see a message similar to this:
+
+```
+Installing package into ‘/usr/local/lib/R/site-library’
+(as ‘lib’ is unspecified)
+Warning in install.packages("cowsay") :
+  'lib = "/usr/local/lib/R/site-library"' is not writable
+Would you like to use a personal library instead? (yes/No/cancel)
+```
+
+Type "yes" and press Enter. This message appears because R's system-wide library location requires administrator privileges. A **personal library** is a folder in your user directory where you can install packages without special permissions. This is the standard and recommended approach.
+
+After responding "yes," you will receive a second prompt asking to create this *personal library*:
+
+```
+Would you like to create a personal library
+‘/home/YourName/R/x86_64-pc-linux-gnu-library/4.5’
+to install packages into? (yes/No/cancel)
+```
+
+The exact path and format of these messages varies by operating system and R version. Windows users will see paths like `C:/Users/YourName/Documents/R/win-library/4.5`, while Mac users will see paths like `/Users/YourName/Library/R/x86_64/4.5/library`. If this seems confusing, don't worry, just trust the defaults you see. Directories and file paths will be explained later for those who might be unfamiliar. The important takeaway here is that R is creating a dedicated folder for all your R packages.
+
+Again, type "yes" and press Enter. You should now begin to see a variety of interesting things to occur inside the console window. This is the package installing into the personal library (the collection of packages) stored on your computer. Upon successful completion of the install should be, among other things, a statement reading something to the effect of `package 'cowsay' successfully unpacked`.  What this means is we can now access the various functions contained within the package, but before we do we should install another package called "praise".
+
+```R
+install.packages("praise")
+```
+
+In order to access the functions contained in these packages we need only execute the line `library()` with the package name inside the parentheses (quotation marks are optional here, though commonly omitted).
+
+```{R}
+library(cowsay)
+library(praise)
+```
+
+We can now run the functions `say()` and `praise()` in the following way: 
+
+```R
+say(praise())
+```
+
+### Loading vs. Installing
+
+It should be noted that when you close your R environment, you will not have access to these two functions the next time you open R.  However, you can easily regain access to them by re-running the `library()` functions above (meaning these lines should be saved in the scripts you write). You do NOT need to reinstall the packages unless you update to a new *major* version of R (e.g., from 4.5.x to 4.6.0). It is important to understand the difference: *install once, load every session*. You install a package once (or when updating), but must load it with `library()` each time you start a new R session and want to use it.
+
+### Package dependencies
+
+When you install a package, R automatically installs any other packages it depends on. You may see multiple packages being downloaded, but don't panic, this is normal behaviour.
+
+::: {.callout-note collapse="true"}
+## A Note for Linux Users
+
+Often, when using Linux, in order to install specific R packages, additional software needs to be installed through the Linux terminal.  As an example, if you install the excellent "<a href = "https://fs.r-lib.org/index.html" target = "_blank">fs</a>" package for R: `install.packages("fs")`
+
+The installation will likely fail and you will be prompted somewhere in the R console to install "libuv1-dev."  You would then need to open a terminal (or use the one RStudio or Positron provide) and type `sudo apt install libuv1-dev` to install (if you are on a Debian/Ubuntu-based distribution). Then retry the installation: `install.packages("fs")`
+
+On Windows and Mac, R packages typically come with everything the system needs bundled together. On Linux, R packages are usually installed from source code, which must be compiled on your machine. Linux follows a philosophy of minimal, modular installations. That means (Linux) system libraries are not automatically included in base installations. While this seems inconvenient, it offers advantages:
+
+- Smaller package sizes (shared libraries are not duplicated).
+- Better system integration (uses your system's optimized libraries).
+- More control over dependency versions.
+- Potentially better performance (compiled specifically for your system).
+- You get to look like a genius hacker typing in the terminal.
+:::
+
+
+### The `::` operator
+You can use functions from an installed package without loading the package by using the `::` operator: E.g., `cowsay::say(praise::praise())`. This is useful when you only need to load one specific function from a package or want to avoid naming conflicts between packages. In general, this is not something most beginners with R are going to require the use of and the simplest and most reliable way to access a function from a package is to use the `library()` function. However, you may encounter the use of `::` in a lot of of online examples and help documentation, so it is good to be aware of. 
+
+### Checking Installed Packages
+
+To see all packages you have installed, run `installed.packages()` or the more user-friendly `library()` with no arguments.
+
+### Package Documentation
+
+Each package downloaded from the CRAN repository has documentation associated for both it and the functions it provides.  This documentation can be accessed through the usual route of typing a `?` followed by the package name or function name.
+
+```r
+?cowsay
+```
+
+Since it is easy to miss, it should be noted that the top left corner of R documentation specifies what package a function belongs too. Insofar as learning about a package is concerned, R Documentation is quite useful, but often times a better option is to seek out its accompanying .pdf reference manual or, better still, associated website. A basic internet search is usually the simplest way to find these resources for any given package; however, the R project has links to the manuals and websites of all its packages in the package's description page. The following web address will take you to a complete list of all the current CRAN packages available to download and provide you with a link to each package's description page.
+
+<center>
+<a href = "https://cran.r-project.org/web/packages/available_packages_by_name.html" target = "_blank">https://cran.r-project.org/web/packages/available_packages_by_name.html</a>
+</center>
+<br>
+
+### Citing Packages
+
+When you use packages in research, proper attribution is important. Use `citation("packagename")` to get the appropriate citation format. For example, `citation("cowsay")` shows how to cite that package in publications.

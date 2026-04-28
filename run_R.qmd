@@ -16,7 +16,7 @@ Relying on your operating system's terminal application as a primary interface i
 
 [^Linux_Me]:I say that as someone who worships at the throne of Tux, the Penguin Emperor.
 
-## Installing the R Programming Language
+## Installing the R Programming Language {#sec-R_install}
 
 The standard installation of R will come with an associated environment for the user - provided they are working with either a Microsoft (Windows) or Macintosh (MacOS) operating system. An example of the stock environment R ships with on Windows can be seen in [@fig-RGui]. Admittedly, as IDEs go, this will get the job done, but offers a pretty lackluster experiance. But don't worry, that's what RStudio and Positron are for.
 
