@@ -84,14 +84,9 @@ body {
   /* color: #000; */
 }
 
-/* a {
-  color: #000;
+.mono {
+  font-family: monospace;
+  font-size: 0.95em;
 }
-.quarto-title-block .subtitle,
-.quarto-title-block .description,
-p,
-li,
-dd {
-  color: #000;
-} */
+
 

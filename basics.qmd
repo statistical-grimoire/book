@@ -1206,8 +1206,8 @@ It should be noted that when you close your R environment, you will not have acc
 
 When you install a package, R automatically installs any other packages it depends on. You may see multiple packages being downloaded, but don't panic, this is normal behaviour.
 
-::: {.callout-note collapse="true"}
-## A Note for Linux Users
+::: {.callout-note collapse="true" icon = false}
+## <i class="bi bi-tux"></i> A Note for Linux Users
 
 Often, when using Linux, in order to install specific R packages, additional software needs to be installed through the Linux terminal.  As an example, if you install the excellent "<a href = "https://fs.r-lib.org/index.html" target = "_blank">fs</a>" package for R: `install.packages("fs")`
 
@@ -1238,7 +1238,7 @@ Each package downloaded from the CRAN repository has documentation associated fo
 ?cowsay
 ```
 
-Since it is easy to miss, it should be noted that the top left corner of R documentation specifies what package a function belongs too (see @sec-R_help_docs for an example). Insofar as learning about a package is concerned, R Documentation is quite useful, but often times a better option is to seek out its accompanying .pdf reference manual or, better still, associated website. A basic internet search is usually the simplest way to find these resources for any given package; however, the R project has links to the manuals and websites of all its packages in the package's description page. The following web address will take you to a complete list of all the current CRAN packages available to download and provide you with a link to each package's description page.
+Since it is easy to miss, it should be noted that the top left corner of R documentation specifies what package a function belongs too (see @sec-R_help_docs for an example). Insofar as learning about a package is concerned, R Documentation is quite useful, but often times a better option is to seek out its accompanying [.pdf]{.mono} reference manual or, better still, associated website. A basic internet search is usually the simplest way to find these resources for any given package; however, the R project has links to the manuals and websites of all its packages in the package's description page. The following web address will take you to a complete list of all the current CRAN packages available to download and provide you with a link to each package's description page.
 
 <center>
 <a href = "https://cran.r-project.org/web/packages/available_packages_by_name.html" target = "_blank">https://cran.r-project.org/web/packages/available_packages_by_name.html</a>
@@ -1248,3 +1248,36 @@ Since it is easy to miss, it should be noted that the top left corner of R docum
 ### Citing Packages
 
 When you use packages in research, proper attribution is important. Use `citation("packagename")` to get the appropriate citation format. For example, `citation("cowsay")` shows how to cite that package in publications.
+
+## File Extensions
+
+Most users are familiar with the fact that computers store a multitude of files, each serving different purposes. We encounter various types of files daily: image files, text files, audio files, and much more. Within these broad categories lie even more specific file types, each with unique characteristics and uses. For example, image files can be distinguished into formats such as [.gif]{.mono}, [.jpg]{.mono}, [.png]{.mono}, and [.tiff]{.mono}, each catering to different needs in terms of quality, compression, and usage.
+
+Historically, the way in which users could distinguish different file types was by looking at the **file extension** appended to the file's name. For instance, when looking at an image file, you might see a [.png]{.mono} at the end of the name (e.g., [grandma**.png**]{.mono}) indicating that it is a portable network graphics file. The file extension dictates which programs can read the file and how they read them.[^dir_apology] This is in contrast to *directories* which have no extension (directories will be discussed next in section).
+
+[^dir_apology]:I apologize if this is obvious to many of you reading this, but experience teaching has taught me that this is no longer common knowledge and needs to be explained to younger audiences.
+
+Unfortunately, most modern operating systems hide file extensions by default, requiring users to identify file types by their icons instead. Windows has hidden extensions by default since at least Windows 95, and macOS has followed a similar practice for decades. Linux file managers, by contrast, display full filenames including extensions by default, since Linux systems do not treat file extensions as special metadata. On Linux extensions are simply part of the filename. This transparency is particularly helpful for programming, data analysis, and cross-platform compatibility.
+
+The reasons for hiding extensions from users are not altogether clear. The main justification seems to be that there is an inherent danger in users accidentally deleting or altering an extension when renaming a file, thereby causing it not to run. At face value this makes a certain amount of sense, but not when you consider the problems that it creates. In particular, this compromises a computer's (and by extension a network's) security much more. Seeing an unfamiliar file extension and knowing not to click on it (because it is unfamiliar) is one of the most effective ways of preventing malicious software from attacking your computer. Seeing unfamiliar file extensions also means the user is less likely to move, delete, or open file types on their system they do not understand and are integral for the running of their system and its applications. However, with no file extension displayed there is no obvious way of distinguishing familiar file types from unfamiliar ones except via icon-based identification which is unreliable.
+
+Hiding extensions also creates the problem of a wolf in sheep's clothing. Seeing [grandma.png.exe]{.mono} on a system that is configured to hide extensions will display for the user as [grandma.png]{.mono}, leading someone (a child perhaps) to believe they are clicking an innocent image of their grandma, when in fact their computer is about to be devoured by grandma.[^grandma_the_wolf]
+
+[^grandma_the_wolf]:Once upon a time users were expected to be the "smart" ones, not their devices.
+
+![From the National Gallery of Victoria, Melbourne: Gustave Doré's illustration of the "*penultimate moment, just before the triumphant, and satiated, wolf bites off Little Red Riding Hood’s head*" in Charles Perrault's version of the classic fairy tale [@Dore1862].](imgs/basics/GustaveDOR%C3%89-LittleRedR-Fd106325.png){width=100% #fig-little_red fig-alt="Little Red Riding Hood"} 
+
+For both security and everyday use, it is important for users to understand that different types of files exist and that they can easily identify them. The relatively modern practice of hiding file extensions prevents new users from gaining the essential experience needed to learn this and tends to make programming a more cumbersome process than it needs to be. The reality is that file extensions are essential pieces of information for any programmer working with or creating files. Fortunately, operating systems still make it possible to display extensions and it is highly recommend that readers of this book enable that feature on their respective system:
+
+- **Windows 11:**
+  1. In the Windows search bar type "File Explorer Options."
+  2. Open the *File Explorer Options* menu.
+  3. Select the *View* tab.
+  4. In the *Advanced Settings* scroll area, uncheck the box labelled *Hide extensions for known file types*.
+
+- **Macintosh:**
+  1. In a Finder window on your Mac
+  2. Select *Finder* at the top of the screen.
+  3. Open *Settings* ("*Preferences*" on older Macs)
+  4. Select *Advanced*.
+  5. Select *Show all filename extensions*.
