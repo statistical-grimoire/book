@@ -75,9 +75,9 @@ Scroll to the *Security* section and press the *Open Anyway* button. Then choose
 
 
 ### <i class="bi bi-tux"></i> Linux Installation
-Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse. This may seem like a drawback, but it's actually a strength.
+Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse. <!-- This may seem like a drawback, but it's actually a strength. -->
 
-::: {.callout-tip icon = false collapse = true}
+<!-- ::: {.callout-tip icon = false collapse = true}
 ## <i class="bi bi-terminal"></i> The Terminal is Your Friend, Not Your Enemy
 If you are new to Linux, the frequent mentions of the terminal might seem like a step backward. For decades Windows and macOS has been trying to hide their terminals from everyday users. But this apparent inconvenience is actually one of Linux's greatest strengths.
 
@@ -98,7 +98,7 @@ If you are new to Linux, the frequent mentions of the terminal might seem like a
 - Don't worry, it gets easier quickly. You don't need to memorize hundreds of commands. In practice, you'll use the same dozen repeatedly: `ls`, `cd`, `mkdir`, `sudo apt install`. Within a few weeks, these become second nature, and you'll find yourself opening a terminal by choice even when GUI alternatives exist, they're often just faster and more direct and more advanced knowledge will come with time. You just need to be perpretually curious and ask what some line of code is doing.
 
 The terminal isn't a historical artifact Linux hasn't bothered to replace. It's a powerful, efficient interface that other operating systems have tried to paper over with layers of graphical abstraction. By learning to work with the terminal, you're not stepping backward in time, you're gaining direct access to how computers actually operate, a skill that will serve you throughout your career in statistics, research, and beyond.
-:::
+::: -->
 
 When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on [Debian](https://www.debian.org/), [Ubuntu](https://ubuntu.com/desktop), and Ubuntu's derivatives such as [Linux Mint](https://www.linuxmint.com/), [Kubuntu](https://kubuntu.org/), [Budgie](https://ubuntubudgie.org/), and others.
 

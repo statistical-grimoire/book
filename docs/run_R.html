@@ -373,34 +373,29 @@ Figure&nbsp;2.5: macOS download options
 </section>
 <section id="linux-installation" class="level3" data-number="2.1.3">
 <h3 data-number="2.1.3" class="anchored" data-anchor-id="linux-installation"><span class="header-section-number">2.1.3</span> <i class="bi bi-tux"></i> Linux Installation</h3>
-<p>Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse. This may seem like a drawback, but it’s actually a strength.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span><i class="bi bi-terminal"></i> The Terminal is Your Friend, Not Your Enemy
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>If you are new to Linux, the frequent mentions of the terminal might seem like a step backward. For decades Windows and macOS has been trying to hide their terminals from everyday users. But this apparent inconvenience is actually one of Linux’s greatest strengths.</p>
-<ul>
-<li><p>Once you learn basic commands, terminal operations are often faster than clicking through multiple menus. Installing a package becomes a single line instead of opening a software center, searching, scrolling, and clicking through dialogs.</p></li>
-<li><p>Windows and macOS prioritize making their systems appear simple by hiding complexity. This is helpful, until something goes wrong. The terminal shows you exactly what’s happening and gives you fine-grained control over every option. Error messages, while cryptic at first, tell you precisely what failed.</p></li>
-<li><p>Modern operating systems increasingly treat users as consumers rather than owners of their machines. Updates install automatically, telemetry data is collected by default, and background processes run without explanation. The terminal gives you direct control: you decide what runs, when it runs, and what permissions it has. You can inspect network traffic, review system logs, and block unwanted behaviour. Windows and macOS can (and do) send and sell usage data, diagnostic information, and behavioural telemetry to their corporate owners, and their GUI-focused design makes it difficult for average users to know this is happening and, more importantly, stop it.</p></li>
-<li><p>Terminal commands can be copied, pasted, shared, and scripted. When someone helps you solve a problem, they give you exact commands that work identically on your system. Compare this to GUI instructions across different Windows versions or macOS releases: “Open System Preferences (or is it System Settings now?) then click the icon that looks like a gear, or maybe a switch, depending on your version…”</p></li>
-<li><p>Virtually all technical documentation, Stack Overflow answers, and professional guides provide terminal commands because they’re unambiguous. They work the same whether you’re using GNOME, KDE, or any other desktop environment. Windows and macOS fragment their user base across constantly changing GUI designs, but Linux terminal commands written twenty years ago often still work today.</p></li>
-<li><p>Here’s the truth: professionals use terminals extensively on all operating systems. Windows added PowerShell because developers demanded terminal access. macOS ships with a Unix terminal that advanced users rely on constantly. The difference is that Linux doesn’t pretend these tools don’t exist or shouldn’t be learned. By making the terminal a first-class citizen, Linux is teaching you skills that are essential for computer literacy, scientific computing, and so much more.</p></li>
-<li><p>The argument goes that Windows and macOS limit what you can do through their GUIs to protect users from themselves and that this is a reasonable trade-off for the lack of freedom and control general consumers receive. Linux disagrees and trusts you with full system access. Need to batch-rename 10,000 files based on a pattern? Need to automate a complex workflow? These tasks range from tedious to impossible in GUI-only environments but are straightforward with terminal commands.</p></li>
-<li><p>Don’t worry, it gets easier quickly. You don’t need to memorize hundreds of commands. In practice, you’ll use the same dozen repeatedly: <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>sudo apt install</code>. Within a few weeks, these become second nature, and you’ll find yourself opening a terminal by choice even when GUI alternatives exist, they’re often just faster and more direct and more advanced knowledge will come with time. You just need to be perpretually curious and ask what some line of code is doing.</p></li>
-</ul>
-<p>The terminal isn’t a historical artifact Linux hasn’t bothered to replace. It’s a powerful, efficient interface that other operating systems have tried to paper over with layers of graphical abstraction. By learning to work with the terminal, you’re not stepping backward in time, you’re gaining direct access to how computers actually operate, a skill that will serve you throughout your career in statistics, research, and beyond.</p>
-</div>
-</div>
-</div>
+<p>Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse. <!-- This may seem like a drawback, but it's actually a strength. --></p>
+<!-- ::: {.callout-tip icon=false collapse=true}
+## <i class="bi bi-terminal"></i> The Terminal is Your Friend, Not Your Enemy
+If you are new to Linux, the frequent mentions of the terminal might seem like a step backward. For decades Windows and macOS has been trying to hide their terminals from everyday users. But this apparent inconvenience is actually one of Linux's greatest strengths.
+
+- Once you learn basic commands, terminal operations are often faster than clicking through multiple menus. Installing a package becomes a single line instead of opening a software center, searching, scrolling, and clicking through dialogs.
+
+- Windows and macOS prioritize making their systems appear simple by hiding complexity. This is helpful, until something goes wrong. The terminal shows you exactly what's happening and gives you fine-grained control over every option. Error messages, while cryptic at first, tell you precisely what failed.
+
+- Modern operating systems increasingly treat users as consumers rather than owners of their machines. Updates install automatically, telemetry data is collected by default, and background processes run without explanation. The terminal gives you direct control: you decide what runs, when it runs, and what permissions it has. You can inspect network traffic, review system logs, and block unwanted behaviour. Windows and macOS can (and do) send and sell usage data, diagnostic information, and behavioural telemetry to their corporate owners, and their GUI-focused design makes it difficult for average users to know this is happening and, more importantly, stop it.
+
+- Terminal commands can be copied, pasted, shared, and scripted. When someone helps you solve a problem, they give you exact commands that work identically on your system. Compare this to GUI instructions across different Windows versions or macOS releases: "Open System Preferences (or is it System Settings now?) then click the icon that looks like a gear, or maybe a switch, depending on your version..."
+
+- Virtually all technical documentation, Stack Overflow answers, and professional guides provide terminal commands because they're unambiguous. They work the same whether you're using GNOME, KDE, or any other desktop environment. Windows and macOS fragment their user base across constantly changing GUI designs, but Linux terminal commands written twenty years ago often still work today.
+
+- Here's the truth: professionals use terminals extensively on all operating systems. Windows added PowerShell because developers demanded terminal access. macOS ships with a Unix terminal that advanced users rely on constantly. The difference is that Linux doesn't pretend these tools don't exist or shouldn't be learned. By making the terminal a first-class citizen, Linux is teaching you skills that are essential for computer literacy, scientific computing, and so much more.
+
+- The argument goes that Windows and macOS limit what you can do through their GUIs to protect users from themselves and that this is a reasonable trade-off for the lack of freedom and control general consumers receive. Linux disagrees and trusts you with full system access. Need to batch-rename 10,000 files based on a pattern? Need to automate a complex workflow? These tasks range from tedious to impossible in GUI-only environments but are straightforward with terminal commands.
+
+- Don't worry, it gets easier quickly. You don't need to memorize hundreds of commands. In practice, you'll use the same dozen repeatedly: `ls`, `cd`, `mkdir`, `sudo apt install`. Within a few weeks, these become second nature, and you'll find yourself opening a terminal by choice even when GUI alternatives exist, they're often just faster and more direct and more advanced knowledge will come with time. You just need to be perpretually curious and ask what some line of code is doing.
+
+The terminal isn't a historical artifact Linux hasn't bothered to replace. It's a powerful, efficient interface that other operating systems have tried to paper over with layers of graphical abstraction. By learning to work with the terminal, you're not stepping backward in time, you're gaining direct access to how computers actually operate, a skill that will serve you throughout your career in statistics, research, and beyond.
+::: -->
 <p>When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on <a href="https://www.debian.org/">Debian</a>, <a href="https://ubuntu.com/desktop">Ubuntu</a>, and Ubuntu’s derivatives such as <a href="https://www.linuxmint.com/">Linux Mint</a>, <a href="https://kubuntu.org/">Kubuntu</a>, <a href="https://ubuntubudgie.org/">Budgie</a>, and others.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -417,7 +412,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <p>If you are using Debian or Linux Mint and are relatively new to Linux, I recommend first reading the installation instructions for Ubuntu below. This will familiarize you with how R installation works on Linux systems generally.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -426,7 +421,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Many Linux distros, like Ubuntu, have their own officially currated repositories that you can download R from. However, the version of R these store often lags quite a bit behind the offical files supplied by the R Project’s CRAN repository. The reason being, Ubuntu’s package maintainers need time to test software, ensure it integrates well with other software on Ubuntu, and verify it works across different Ubuntu versions. This deliberate process keeps things stable but, unfortunately, means you’re not getting the latest version of R immediately.</p>
 <p>By contrast, if you need the latest R version or specific recent features/bug fixes, you can add the R Project’s own repository to Ubuntu’s package manager configuration <code>apt</code> (Advanced Package Tool).</p>
@@ -486,7 +481,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -495,7 +490,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The installation process on other Ubuntu-based distributions—such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, Pop!_OS, and others—is identical to regular Ubuntu with one important exception.</p>
 <p>Some distributions, such as Linux Mint, have their own distinct codenames that differ from Ubuntu’s. For example, Linux Mint 21 “Vanessa” is based on Ubuntu 22.04 “Jammy,” but uses “Vanessa” as its own codename. This means that in the steps above where we replace <code>noble</code>, we need to make sure we use the Ubuntu codename that your distribution is built from, not the distribution’s own codename.</p>
@@ -508,7 +503,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -517,7 +512,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Debian is the upstream distribution that Ubuntu is based on, so the process is similar but with some important differences. Follow the steps below using the terminal.</p>
 <p><strong>Step 1: Add the CRAN repository</strong></p>
@@ -560,7 +555,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -569,7 +564,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The official R Project website contains detailed installation instructions for other major Linux distributions, including Fedora, Red Hat, openSUSE, Arch Linux, and more. Visit: <a href="https://cloud.r-project.org/bin/linux/">https://cloud.r-project.org/bin/linux/</a></p>
 <p>If you are using a distribution not explicitly covered, check the site for guidance or consult your distribution’s documentation. In many cases, R is available through your distribution’s package manager. Just be aware that, as with Ubuntu’s default repositories, the version may lag behind the latest CRAN release.</p>
@@ -593,7 +588,7 @@ Figure&nbsp;2.5: macOS download options
 <p><br></p>
 <p>Installing R studio is as simple as selecting the installation file relevant to your operating system (“OS” on the website’s table), downloading it, and launching it with a double-click of the mouse. The setup wizard will guide you through the process. Keep the default settings unless you have a specific reason to change them.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -602,10 +597,27 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Download the <code>.exe</code> file for Windows, double-click it, and follow the setup wizard. The installer will automatically detect where R is installed on your system. If for some reason it cannot find R, make sure you have installed R first (see the previous sections).</p>
 <p>Once installation is complete, you can launch RStudio from the Start menu or a desktop shortcut.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><i class="bi bi-apple"></i> MacOS Installation Notes
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Download the <code>.dmg</code> file for macOS and double-click it to open. For macOS users, there will probably be no installation wizard; rather, you will likely be prompted to drag the RStudio icon into your Applications folder. Once that is done, RStudio is installed. You can then eject the disk image and delete the <code>.dmg</code> file to free up space.</p>
+<p>To launch RStudio, open your Applications folder or use Spotlight (press Cmd + Space and type “RStudio”). The first time you launch RStudio, macOS may ask you to confirm that you want to open an application downloaded from the internet. Click “<em>Open</em>” to proceed.</p>
 </div>
 </div>
 </div>
@@ -615,28 +627,11 @@ Figure&nbsp;2.5: macOS download options
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span><i class="bi bi-apple"></i> MacOS Installation Notes
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Download the <code>.dmg</code> file for macOS and double-click it to open. For macOS users, there will probably be no installation wizard; rather, you will likely be prompted to drag the RStudio icon into your Applications folder. Once that is done, RStudio is installed. You can then eject the disk image and delete the <code>.dmg</code> file to free up space.</p>
-<p>To launch RStudio, open your Applications folder or use Spotlight (press Cmd + Space and type “RStudio”). The first time you launch RStudio, macOS may ask you to confirm that you want to open an application downloaded from the internet. Click “<em>Open</em>” to proceed.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Note</span><i class="bi bi-tux"></i> Linux Installation Notes
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Users of Debian, Ubuntu, Linux Mint, and other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, Pop!_OS, etc.) will need to select the install file that corresponds to the major version of Debian or Ubuntu they are running. In most cases, this will be Debian 13 or Ubuntu 24 (or Ubuntu 22 if your system is slightly older). If you are unsure which version you are running, type <code>lsb_release -a</code> in the terminal to check.</p>
 <p>The install file is a <code>.deb</code> file. Once downloaded to your computer, these can usually be run without issue using a simple double-click of the mouse (similar to the <code>.exe</code> files present on Windows systems). Your system’s software installer will open, and you can click “<em>Install</em>.” However, the more reliable method is to use the terminal to install the file, as it handles dependencies more gracefully. Should you want to take this approach, follow the three steps below.</p>
@@ -664,7 +659,7 @@ Figure&nbsp;2.5: macOS download options
 <a href="https://positron.posit.co/download.html" target="_blank">https://positron.posit.co/download.html</a>
 </center>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -673,7 +668,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The Windows install file for Positron comes in two forms: a “system level” install and a “user level” install.</p>
 <ul>
@@ -686,7 +681,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -695,7 +690,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Just as with the R language installation, the install file you choose depends on whether your device has an Apple Silicon processor or an Intel processor. Details on determining your processor type can be found in <a href="#sec-mac_install" class="quarto-xref"><span>Section 2.1.2</span></a>.</p>
 <p>Download the appropriate <code>.dmg</code> file:</p>
@@ -709,7 +704,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -718,7 +713,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For Debian, Ubuntu, Linux Mint, and other Debian/Ubuntu-based distributions, download the <code>.deb</code> file. Once downloaded, you can double-click it to install using your system’s software installer, or use the terminal method described below for a more reliable installation.</p>
 <p>If you prefer the terminal method (recommended), follow these steps:</p>
@@ -766,7 +761,7 @@ Figure&nbsp;2.5: macOS download options
 <h3 data-number="2.4.3" class="anchored" data-anchor-id="r-version-nicknames"><span class="header-section-number">2.4.3</span> R Version Nicknames</h3>
 <p>At the time of writing, R is on version 4.5.3, nicknamed the “Reassured Reassurer” version. New releases of R are given nicknames that, inexplicably, are all obscure references to Peanuts (a.k.a. Charlie Brown and Snoopy) comic strips. Past versions have included gems like “Great Pumpkin,” “Planting of a Tree,” and “Innocent and Trusting.” No one quite knows why this tradition exists, but it has become a charming quirk of the R software. If you ever need a conversation starter at a data science meetup, asking someone to explain the latest R version nickname is a solid bet.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -775,7 +770,7 @@ Figure&nbsp;2.5: macOS download options
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>R’s version numbering system, follows what is known as <strong>semantic versioning</strong>. This means version numbers are structured as Major.Minor.Patch (e.g., 4.5.3)</p>
 <ul>
