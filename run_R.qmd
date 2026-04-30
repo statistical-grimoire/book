@@ -38,7 +38,7 @@ Located on the front-page of this website should be a link labelled CRAN. This s
 Once you have chosen a suitable server, you will need select your operating system from the list the site provides (Chromebooks and Mobile devices are out of luck - though cloud-based alternatives do exist that can run R through a web-browser).
 
 
-### Windows Installation
+### <i class="bi bi-windows"></i> Windows Installation
 Click the "Download for Windows" link to access the R download page (see @fig-win_download_1). Select the **"base"** option (labeled "install R for the first time"), which will direct you to the installer for the latest version of R. You will see a download link for the current release—for example, **Download R-4.5.3 for Windows** - which is the newest version available at the time of writing.
 
 
@@ -52,7 +52,7 @@ Once you have downloaded the (`.exe`) installation file (check your *Downloads* 
 If you are installing R on a university or work computer, you may need administrator privileges. If you run into permission errors during installation, contact your IT department for assistance.
 :::
 
-### MacOS Installation {#sec-mac_install}
+### <i class="bi bi-apple"></i> MacOS Installation {#sec-mac_install}
 Click the "*Download R for macOS*" link to access the R download page and select the option relevant to your computer (see @fig-mac_download). At the time of writing this, Macintosh computers have recently begun being manufactured using their own in-house built processors (i.e., dubbed "Apple silicon"); however, many older Macintosh computers (pre-2023) still contain Intel-made processors.
 
 ![macOS download options](imgs/run_R/R_mac_download.png){width=100% #fig-mac_download fig-alt="macOS download options."}
@@ -74,8 +74,31 @@ Scroll to the *Security* section and press the *Open Anyway* button. Then choose
 :::
 
 
-### Linux Installation
-Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse.
+### <i class="bi bi-tux"></i> Linux Installation
+Experianced users of Linux are not likely to need any instructions on how to install R on to their system; however, inexperianced users may need a helping hand as the install process is done entirely via the terminal. There are no install files you can download from a website and launch with a couple clicks of the mouse. This may seem like a drawback, but it's actually a strength.
+
+::: {.callout-tip icon = false collapse = true}
+## <i class="bi bi-terminal"></i> The Terminal is Your Friend, Not Your Enemy
+If you are new to Linux, the frequent mentions of the terminal might seem like a step backward. For decades Windows and macOS has been trying to hide their terminals from everyday users. But this apparent inconvenience is actually one of Linux's greatest strengths.
+
+- Once you learn basic commands, terminal operations are often faster than clicking through multiple menus. Installing a package becomes a single line instead of opening a software center, searching, scrolling, and clicking through dialogs.
+
+- Windows and macOS prioritize making their systems appear simple by hiding complexity. This is helpful, until something goes wrong. The terminal shows you exactly what's happening and gives you fine-grained control over every option. Error messages, while cryptic at first, tell you precisely what failed.
+
+- Modern operating systems increasingly treat users as consumers rather than owners of their machines. Updates install automatically, telemetry data is collected by default, and background processes run without explanation. The terminal gives you direct control: you decide what runs, when it runs, and what permissions it has. You can inspect network traffic, review system logs, and block unwanted behaviour. Windows and macOS can (and do) send and sell usage data, diagnostic information, and behavioural telemetry to their corporate owners, and their GUI-focused design makes it difficult for average users to know this is happening and, more importantly, stop it.
+
+- Terminal commands can be copied, pasted, shared, and scripted. When someone helps you solve a problem, they give you exact commands that work identically on your system. Compare this to GUI instructions across different Windows versions or macOS releases: "Open System Preferences (or is it System Settings now?) then click the icon that looks like a gear, or maybe a switch, depending on your version..."
+
+- Virtually all technical documentation, Stack Overflow answers, and professional guides provide terminal commands because they're unambiguous. They work the same whether you're using GNOME, KDE, or any other desktop environment. Windows and macOS fragment their user base across constantly changing GUI designs, but Linux terminal commands written twenty years ago often still work today.
+
+- Here's the truth: professionals use terminals extensively on all operating systems. Windows added PowerShell because developers demanded terminal access. macOS ships with a Unix terminal that advanced users rely on constantly. The difference is that Linux doesn't pretend these tools don't exist or shouldn't be learned. By making the terminal a first-class citizen, Linux is teaching you skills that are essential for computer literacy, scientific computing, and so much more.
+
+- The argument goes that Windows and macOS limit what you can do through their GUIs to protect users from themselves and that this is a reasonable trade-off for the lack of freedom and control general consumers receive. Linux disagrees and trusts you with full system access. Need to batch-rename 10,000 files based on a pattern? Need to automate a complex workflow? These tasks range from tedious to impossible in GUI-only environments but are straightforward with terminal commands.
+
+- Don't worry, it gets easier quickly. You don't need to memorize hundreds of commands. In practice, you'll use the same dozen repeatedly: `ls`, `cd`, `mkdir`, `sudo apt install`. Within a few weeks, these become second nature, and you'll find yourself opening a terminal by choice even when GUI alternatives exist, they're often just faster and more direct and more advanced knowledge will come with time. You just need to be perpretually curious and ask what some line of code is doing.
+
+The terminal isn't a historical artifact Linux hasn't bothered to replace. It's a powerful, efficient interface that other operating systems have tried to paper over with layers of graphical abstraction. By learning to work with the terminal, you're not stepping backward in time, you're gaining direct access to how computers actually operate, a skill that will serve you throughout your career in statistics, research, and beyond.
+:::
 
 When it comes to Linux distributions (a.k.a. Linux operating systems), there are of course too many to even name. This makes it unrealisic to cover the install process for all of them. Consequently, this section will focus on [Debian](https://www.debian.org/), [Ubuntu](https://ubuntu.com/desktop), and Ubuntu's derivatives such as [Linux Mint](https://www.linuxmint.com/), [Kubuntu](https://kubuntu.org/), [Budgie](https://ubuntubudgie.org/), and others.
 
@@ -341,19 +364,24 @@ To install RStudio simply visit:
 
 Installing R studio is as simple as selecting the installation file relevant to your operating system ("OS" on the website's table), downloading it, and launching it with a double-click of the mouse. The setup wizard will guide you through the process. Keep the default settings unless you have a specific reason to change them.
 
-#### Windows Installation
+::: {.callout-note icon = false collapse = true}
+## <i class="bi bi-windows"></i> Windows Installation Notes
 
 Download the `.exe` file for Windows, double-click it, and follow the setup wizard. The installer will automatically detect where R is installed on your system. If for some reason it cannot find R, make sure you have installed R first (see the previous sections).
 
 Once installation is complete, you can launch RStudio from the Start menu or a desktop shortcut.
+:::
 
-#### MacOS Installation
+::: {.callout-note icon = false collapse = true}
+## <i class="bi bi-apple"></i> MacOS Installation Notes
 
 Download the `.dmg` file for macOS and double-click it to open. For macOS users, there will probably be no installation wizard; rather, you will likely be prompted to drag the RStudio icon into your Applications folder. Once that is done, RStudio is installed. You can then eject the disk image and delete the `.dmg` file to free up space.
 
 To launch RStudio, open your Applications folder or use Spotlight (press Cmd + Space and type "RStudio"). The first time you launch RStudio, macOS may ask you to confirm that you want to open an application downloaded from the internet. Click "*Open*" to proceed.
+:::
 
-#### Notes for Linux Users of Debian, Ubuntu, Mint, and other Debian or Ubuntu-based Distros {#sec-linux_RStudio}
+::: {.callout-note icon = false collapse = true}
+## <i class="bi bi-tux"></i> Linux Installation Notes
 
 Users of Debian, Ubuntu, Linux Mint, and other Ubuntu-based distributions (e.g., Kubuntu, Edubuntu, Ubuntu Budgie, Pop!_OS, etc.) will need to select the install file that corresponds to the major version of Debian or Ubuntu they are running. In most cases, this will be Debian 13 or Ubuntu 24 (or Ubuntu 22 if your system is slightly older). If you are unsure which version you are running, type `lsb_release -a` in the terminal to check.
 
@@ -385,11 +413,12 @@ The `./` before the filename tells apt to look in the current directory. You wil
 **Step 4: Launch RStudio**
 
 Once installed, you can launch RStudio from your application menu or by typing `rstudio` in the terminal.
+:::
 
 ### Installing Positron
 The installation process for Positron is relatively seamless across all platforms. In the case of Windows, macOS, and Linux, the process is as simple as downloading the appropriate install file and double-clicking it with your mouse.[^mouse_linux]
 
-[^mouse_linux]:While Linux users generally can double-click the `.deb` install file and have it run without issue, the reccommended course of action is to install the `.deb` file through the terminal like was described in the RStudio install instructions (see @sec-linux_RStudio).
+[^mouse_linux]:While Linux users generally can double-click the `.deb` install file and have it run without issue, the reccommended course of action is to install the `.deb` file through the terminal like was described in the RStudio install instructions.
 
 To install Positron visit: 
 
@@ -397,7 +426,8 @@ To install Positron visit:
 <a href = "https://positron.posit.co/download.html" target = "_blank">https://positron.posit.co/download.html</a>
 </center>
 
-#### Windows Installation
+::: {.callout-note icon = false collapse = true}
+## <i class="bi bi-windows"></i> Windows Installation Notes
 The Windows install file for Positron comes in two forms: a "system level" install and a "user level" install. 
 
 - **User-level install:** Installs Positron only for your user account. No administrator privileges required. This is the best choice if you are the primary (or only) user of the machine, or if you don't have admin rights.
@@ -406,8 +436,10 @@ The Windows install file for Positron comes in two forms: a "system level" insta
 For most users, user-level is the recommended choice. Simply download the relevant install file (it will be a `.exe` file) and double-click it to launch the setup wizard. Follow the prompts and keep the default settings unless you have a specific reason to change them.
 
 Once installation is complete, you can launch Positron from the Start menu or a desktop shortcut. When Positron opens, you should see a sleek, modern interface with a sidebar on the left, a main editor pane in the center, and panels for the console, variables, and plots on the right or bottom.
+:::
 
-#### MacOS Installation
+::: {.callout-note icon = false collapse = true}
+## <i class="bi bi-apple"></i> MacOS Installation Notes
 
 Just as with the R language installation, the install file you choose depends on whether your device has an Apple Silicon processor or an Intel processor. Details on determining your processor type can be found in @sec-mac_install.
 
@@ -419,10 +451,12 @@ Download the appropriate `.dmg` file:
 Once downloaded, double-click the `.dmg` file to open it. You will be prompted to drag the Positron icon into your Applications folder. Once that's done, Positron is installed. You can then eject the disk image and delete the `.dmg` file to free up space.
 
 To launch Positron, open your Applications folder or use Spotlight (press Cmd + Space and type "Positron"). The first time you launch Positron, macOS may ask you to confirm that you want to open an application downloaded from the internet. Click "Open" to proceed.
+:::
 
-#### Linux Installation
+::: {.callout-note icon = false collapse = true}
+## <i class="bi bi-tux"></i> Linux Installation Notes
 
-For Debian, Ubuntu, Linux Mint, and other Debian/Ubuntu-based distributions, download the `.deb` file. Once downloaded, you can double-click it to install using your system's software installer, or use the terminal method described in @sec-linux_RStudio for a more reliable installation.
+For Debian, Ubuntu, Linux Mint, and other Debian/Ubuntu-based distributions, download the `.deb` file. Once downloaded, you can double-click it to install using your system's software installer, or use the terminal method described below for a more reliable installation.
 
 If you prefer the terminal method (recommended), follow these steps:
 
@@ -445,6 +479,7 @@ sudo apt install ./positron-xxxx.deb
 Once installed, you can launch Positron from your application menu or by typing positron in the terminal.
 
 For other Linux distributions (Fedora, Arch, etc.), check the <a href = "https://positron.posit.co/download.html" target = "_blank">Positron download page</a> for options specific to your system.
+:::
 
 ## Cloud-Based Alternatives
 
@@ -462,9 +497,9 @@ Cloud-based platforms are convenient and require no installation, but they requi
 
 ## Upgrading R
 
-### Upgrading on Windows and MacOS
-
 R receives updates two to three times a year, and it is generally good practice to upgrade regularly. These updates include bug fixes, performance improvements, security patches, and occasionally new features or enhancements to existing functions. While you do not need to update immediately every time a new version is released, staying reasonably current (within a year or so of the latest release) helps ensure compatibility with modern packages and avoids running into bugs that have already been fixed.
+
+### Upgrading on Windows <i class="bi bi-windows"></i> and MacOS <i class="bi bi-apple"></i>
 
 There are various methods you can use to update R, but assuming you are on Windows or macOS, the most straightforward method is to simply download the latest version of R as though you were installing it for the first time (following the same steps outlined earlier in this chapter) and then reinstall your commonly used packages.[^packages]
 
@@ -472,8 +507,7 @@ There are various methods you can use to update R, but assuming you are on Windo
 
 If you follow the default setup during installation, you do not need to uninstall the previous version of R. In fact, it is usually preferable not to, as both RStudio and Positron allow you to easily switch between different versions of R installed on your computer. This can be useful if you need to reproduce old analyses or if a particular package has not yet been updated to work with the newest R version.
 
-### Upgrading on Linux
-
+### Upgrading on Linux <i class="bi bi-tux"></i>
 For Linux users, updating R depends on how you originally installed it. If you installed R from the CRAN repository (as recommended in the Linux installation instructions earlier), updating R is as simple as running the following commands in the terminal:
 
 ```bash
