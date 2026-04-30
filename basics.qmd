@@ -750,7 +750,7 @@ seq(0, 100, 2)
 
 To determine the correct ordering of arguments you will need to consult the function's **R documentation**.
 
-## R (Help) Documentation
+## R (Help) Documentation {#sec-R_help_docs}
 
 R includes a vast array of built-in functions, some of which perform highly complex tasks. Consequently, when reading R code, you will often encounter functions whose purpose and usage seem mysterious. To demystify these functions, it is often necessary to consult R's help documentation. Each function in R comes with corresponding documentation that outlines its purpose, explains its arguments, and provides references. While R's documentation can often be challenging to interpret for novice users, it should always be your first resource when you are unsure about how a function works or what it does. Only after consulting the help documentation should you turn to additional resources, such as internet searches or forums.
 
@@ -1165,7 +1165,7 @@ Warning in install.packages("cowsay") :
 Would you like to use a personal library instead? (yes/No/cancel)
 ```
 
-Type "yes" and press Enter. This message appears because R's system-wide library location requires administrator privileges. A **personal library** is a folder in your user directory where you can install packages without special permissions. This is the standard and recommended approach.
+This message appears because R's system-wide library location requires administrator privileges. A **personal library** is a folder in your user directory where you can install packages without special permissions. This is the standard and recommended approach, meaning you can type "yes" and press Enter.
 
 After responding "yes," you will receive a second prompt asking to create this *personal library*:
 
@@ -1183,7 +1183,7 @@ Again, type "yes" and press Enter. You should now begin to see a variety of inte
 install.packages("praise")
 ```
 
-In order to access the functions contained in these packages we need only execute the line `library()` with the package name inside the parentheses (quotation marks are optional here, though commonly omitted).
+In order to access the functions contained in these two packages we need only execute the line `library()` with the package name inside the parentheses (quotation marks are optional here, though commonly omitted).
 
 ```{R}
 library(cowsay)
@@ -1196,9 +1196,11 @@ We can now run the functions `say()` and `praise()` in the following way:
 say(praise())
 ```
 
+Try it yourself and see what happens.
+
 ### Loading vs. Installing
 
-It should be noted that when you close your R environment, you will not have access to these two functions the next time you open R.  However, you can easily regain access to them by re-running the `library()` functions above (meaning these lines should be saved in the scripts you write). You do NOT need to reinstall the packages unless you update to a new *major* version of R (e.g., from 4.5.x to 4.6.0). It is important to understand the difference: *install once, load every session*. You install a package once (or when updating), but must load it with `library()` each time you start a new R session and want to use it.
+It should be noted that when you close your R environment, you will not have access to these two functions the next time you open R.  However, you can easily regain access to them by re-running the `library()` functions above (meaning these lines should be saved in the scripts you write). You do NOT need to reinstall the packages unless you update to a new *major* version of R (e.g., from 4.5.x to 4.6.0). It is important to understand the difference between installing a package and loading it. You only need to install a package once (per major R release). However, you need to load it every session. You install a package once (or when updating), but must load it with `library()` each time you start a new R session and want to use it.
 
 ### Package dependencies
 
@@ -1222,7 +1224,7 @@ On Windows and Mac, R packages typically come with everything the system needs b
 
 
 ### The `::` operator
-You can use functions from an installed package without loading the package by using the `::` operator: E.g., `cowsay::say(praise::praise())`. This is useful when you only need to load one specific function from a package or want to avoid naming conflicts between packages. In general, this is not something most beginners with R are going to require the use of and the simplest and most reliable way to access a function from a package is to use the `library()` function. However, you may encounter the use of `::` in a lot of of online examples and help documentation, so it is good to be aware of. 
+You can use functions from an installed package without loading the package (i.e., without using `library()`) by instead using the `::` operator: E.g., `cowsay::say(praise::praise())`. This is useful when you only need to load one specific function from a package or want to avoid naming conflicts between packages. In general, this is not something most beginners with R are going to require the use of and the simplest and most reliable way to access a function from a package is to use the `library()` function. However, you may encounter the use of `::` in a lot of of online examples and help documentation, so it is good to be aware of. 
 
 ### Checking Installed Packages
 
@@ -1236,7 +1238,7 @@ Each package downloaded from the CRAN repository has documentation associated fo
 ?cowsay
 ```
 
-Since it is easy to miss, it should be noted that the top left corner of R documentation specifies what package a function belongs too. Insofar as learning about a package is concerned, R Documentation is quite useful, but often times a better option is to seek out its accompanying .pdf reference manual or, better still, associated website. A basic internet search is usually the simplest way to find these resources for any given package; however, the R project has links to the manuals and websites of all its packages in the package's description page. The following web address will take you to a complete list of all the current CRAN packages available to download and provide you with a link to each package's description page.
+Since it is easy to miss, it should be noted that the top left corner of R documentation specifies what package a function belongs too (see @sec-R_help_docs for an example). Insofar as learning about a package is concerned, R Documentation is quite useful, but often times a better option is to seek out its accompanying .pdf reference manual or, better still, associated website. A basic internet search is usually the simplest way to find these resources for any given package; however, the R project has links to the manuals and websites of all its packages in the package's description page. The following web address will take you to a complete list of all the current CRAN packages available to download and provide you with a link to each package's description page.
 
 <center>
 <a href = "https://cran.r-project.org/web/packages/available_packages_by_name.html" target = "_blank">https://cran.r-project.org/web/packages/available_packages_by_name.html</a>
