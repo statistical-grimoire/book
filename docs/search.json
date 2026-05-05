@@ -378,5 +378,15 @@
     "crumbs": [
       "References"
     ]
+  },
+  {
+    "objectID": "changelog.html",
+    "href": "changelog.html",
+    "title": "Changelog",
+    "section": "",
+    "text": "Last Updated: Sys.Date()\nAll notable changes to this statistics textbook will be documented here.",
+    "crumbs": [
+      "Changelog"
+    ]
   }
 ]
