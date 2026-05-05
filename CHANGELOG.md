@@ -10,4 +10,6 @@ All notable changes to this statistics textbook will be documented here.
 
 - added automated changelog
 
+- Began work on 'directories' section
+
 

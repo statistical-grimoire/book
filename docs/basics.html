@@ -282,8 +282,10 @@ window.Quarto = {
   <li><a href="#citing-packages" id="toc-citing-packages" class="nav-link" data-scroll-target="#citing-packages"><span class="header-section-number">3.19.6</span> Citing Packages</a></li>
   </ul></li>
   <li><a href="#file-extensions" id="toc-file-extensions" class="nav-link" data-scroll-target="#file-extensions"><span class="header-section-number">3.20</span> File Extensions</a></li>
-  <li><a href="#directories" id="toc-directories" class="nav-link" data-scroll-target="#directories"><span class="header-section-number">3.21</span> Directories</a></li>
-  <li><a href="#the-working-directory" id="toc-the-working-directory" class="nav-link" data-scroll-target="#the-working-directory"><span class="header-section-number">3.22</span> The Working Directory</a></li>
+  <li><a href="#directories" id="toc-directories" class="nav-link" data-scroll-target="#directories"><span class="header-section-number">3.21</span> Directories</a>
+  <ul class="collapse">
+  <li><a href="#the-working-directory" id="toc-the-working-directory" class="nav-link" data-scroll-target="#the-working-directory"><span class="header-section-number">3.21.1</span> The Working Directory</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -2047,9 +2049,8 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <li><em>Where:</em> <code>Macintosh HD &gt; Users &gt; Your Name &gt; Desktop</code></li>
 </ul>
 <p>This indicates that the file is located within the <code>Desktop</code> directory; which itself is located within the <code>Your Name</code> directory, which is located within the <code>Users</code> directory; which is located on the hard drive named <code>C</code> or <code>Macintosh HD</code>.</p>
-</section>
-<section id="the-working-directory" class="level2" data-number="3.22">
-<h2 data-number="3.22" class="anchored" data-anchor-id="the-working-directory"><span class="header-section-number">3.22</span> The Working Directory</h2>
+<section id="the-working-directory" class="level3" data-number="3.21.1">
+<h3 data-number="3.21.1" class="anchored" data-anchor-id="the-working-directory"><span class="header-section-number">3.21.1</span> The Working Directory</h3>
 <p>Any time R needs to access or create a file, it needs to access or create that file somewhere and if you do not tell R where that somewhere is, it will default to what is known as the <strong>working directory</strong>. To see where your current working directory is set to you can just run the function <code>getwd()</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb235"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb235-1"><a href="#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Windows style output:</p>
@@ -2067,6 +2068,7 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb239"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb239-1"><a href="#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/YourName/Desktop"</span>)</span>
 <span id="cb239-2"><a href="#cb239-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># Run to confirm wd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>[1] "C:/Users/YourName/Desktop"</code></pre>
+<!-- - Explain default behaviour of Positron and RStudio -->
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -2080,6 +2082,7 @@ Pierce, R. 2022. <span>“Math Is Fun: What Is a Function.”</span> <a href="ht
 Wickham, H., M. Çetinkaya-Rundel, and G. Grolemund. 2023. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. Second. O’Reilly Media. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
 </div>
 </div>
+</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
