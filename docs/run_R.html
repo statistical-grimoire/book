@@ -453,9 +453,10 @@ The terminal isn't a historical artifact Linux hasn't bothered to replace. It's 
 <li>focal = 20.04</li>
 <li>jammy = 22.04</li>
 <li>noble = 24.04</li>
+<li>resolute = 26.04</li>
 </ul>
-<p>To determine the code name just run <code>lsb_release -cs</code> in the terminal. This will print your Ubuntu version’s codename. Now, in the code below, replace <code>noble</code> with the codename of your version of Ubuntu:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/"</span> <span class="dt">\</span></span>
+<p>To determine the code name just run <code>lsb_release -cs</code> in the terminal. This will print your Ubuntu version’s codename. Now, in the code below, replace <code>resolute</code> with the codename of your version of Ubuntu:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"deb https://cloud.r-project.org/bin/linux/ubuntu resolute-cran40/"</span> <span class="dt">\</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a> <span class="kw">|</span> <span class="fu">sudo</span> tee /etc/apt/sources.list.d/cran-r.list</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This command adds a new repository configuration file to your system, telling <code>apt</code> to check CRAN’s servers for R packages.</p>
 <p><strong>Step 5: Install R</strong></p>
@@ -493,7 +494,7 @@ The terminal isn't a historical artifact Linux hasn't bothered to replace. It's 
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The installation process on other Ubuntu-based distributions—such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, Pop!_OS, and others—is identical to regular Ubuntu with one important exception.</p>
-<p>Some distributions, such as Linux Mint, have their own distinct codenames that differ from Ubuntu’s. For example, Linux Mint 21 “Vanessa” is based on Ubuntu 22.04 “Jammy,” but uses “Vanessa” as its own codename. This means that in the steps above where we replace <code>noble</code>, we need to make sure we use the Ubuntu codename that your distribution is built from, not the distribution’s own codename.</p>
+<p>Some distributions, such as Linux Mint, have their own distinct codenames that differ from Ubuntu’s. For example, Linux Mint 21 “Vanessa” is based on Ubuntu 22.04 “Jammy,” but uses “Vanessa” as its own codename. This means that in the steps above where we replace <code>resolute</code>, we need to make sure we use the Ubuntu codename that your distribution is built from, not the distribution’s own codename.</p>
 <p>To find the underlying Ubuntu codename, run the following in the terminal:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span> /etc/os-release</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"</span><span class="va">$UBUNTU_CODENAME</span><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

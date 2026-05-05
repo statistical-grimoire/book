@@ -168,11 +168,12 @@ Next we add the R Project's repository to your system's package sources so `apt`
 - focal = 20.04
 - jammy = 22.04
 - noble = 24.04
+- resolute = 26.04
 
-To determine the code name just run `lsb_release -cs` in the terminal. This will print your Ubuntu version's codename. Now, in the code below, replace `noble` with the codename of your version of Ubuntu:
+To determine the code name just run `lsb_release -cs` in the terminal. This will print your Ubuntu version's codename. Now, in the code below, replace `resolute` with the codename of your version of Ubuntu:
 
 ```bash
-echo "deb https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/" \
+echo "deb https://cloud.r-project.org/bin/linux/ubuntu resolute-cran40/" \
  | sudo tee /etc/apt/sources.list.d/cran-r.list
 ```
 
@@ -230,7 +231,7 @@ R will ask if you want to save your workspace. For now, you can type `n` (no) an
 
 The installation process on other Ubuntu-based distributions—such as Linux Mint, Edubuntu, Kubuntu, Lubuntu, Ubuntu Budgie, Ubuntu Cinnamon, Ubuntu MATE, Pop!_OS, and others—is identical to regular Ubuntu with one important exception.
 
-Some distributions, such as Linux Mint, have their own distinct codenames that differ from Ubuntu's. For example, Linux Mint 21 "Vanessa" is based on Ubuntu 22.04 "Jammy," but uses "Vanessa" as its own codename. This means that in the steps above where we replace `noble`, we need to make sure we use the Ubuntu codename that your distribution is built from, not the distribution's own codename.
+Some distributions, such as Linux Mint, have their own distinct codenames that differ from Ubuntu's. For example, Linux Mint 21 "Vanessa" is based on Ubuntu 22.04 "Jammy," but uses "Vanessa" as its own codename. This means that in the steps above where we replace `resolute`, we need to make sure we use the Ubuntu codename that your distribution is built from, not the distribution's own codename.
 
 To find the underlying Ubuntu codename, run the following in the terminal:
 
