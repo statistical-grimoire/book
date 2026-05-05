@@ -384,7 +384,17 @@
     "href": "changelog.html",
     "title": "Changelog",
     "section": "",
-    "text": "Last Updated: Sys.Date()\nAll notable changes to this statistics textbook will be documented here.",
+    "text": "New Content\nLast Updated: Sys.Date()\nAll notable changes to this statistics textbook will be documented here.",
+    "crumbs": [
+      "Changelog"
+    ]
+  },
+  {
+    "objectID": "changelog.html#new-content",
+    "href": "changelog.html#new-content",
+    "title": "Changelog",
+    "section": "",
+    "text": "added automated changelog",
     "crumbs": [
       "Changelog"
     ]
