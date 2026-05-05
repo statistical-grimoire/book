@@ -384,7 +384,17 @@
     "href": "changelog.html",
     "title": "Changelog",
     "section": "",
-    "text": "New Content\nLast Updated: Sys.Date()\nAll notable changes to this statistics textbook will be documented here.",
+    "text": "Corrections\nLast Updated: r Sys.Date()\nAll notable changes to this statistics textbook will be documented here.",
+    "crumbs": [
+      "Changelog"
+    ]
+  },
+  {
+    "objectID": "changelog.html#corrections",
+    "href": "changelog.html#corrections",
+    "title": "Changelog",
+    "section": "",
+    "text": "Changelog’s last updated log",
     "crumbs": [
       "Changelog"
     ]
@@ -393,8 +403,8 @@
     "objectID": "changelog.html#new-content",
     "href": "changelog.html#new-content",
     "title": "Changelog",
-    "section": "",
-    "text": "added automated changelog",
+    "section": "New Content",
+    "text": "New Content\n\nadded automated changelog",
     "crumbs": [
       "Changelog"
     ]
