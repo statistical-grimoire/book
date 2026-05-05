@@ -1,5 +1,10 @@
 # Changelog {.unnumbered}
 
-Last Updated: `r Sys.Date()`
+```{r}
+#| echo: false
+sys_date <- Sys.Date()
+```
+
+*Last Updated:* `r sys_date`
 
 {{< include CHANGELOG.md >}}
