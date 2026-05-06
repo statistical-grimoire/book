@@ -5,6 +5,8 @@ All notable changes to this statistics textbook will be documented here.
 
 - Changelog's last updated log
 
+- Fixed typo on line 1525
+
 
 ## New Content
 
