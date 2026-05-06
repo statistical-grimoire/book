@@ -1315,7 +1315,7 @@ MacOS style output:
 
 Linux style output:
 ```
-/home/yourname/documents
+/home/yourname/Documents
 ```
 
 The R output in this case will vary between different computers, so you should not expect to see the exact same output on your computer, but it should be relatively similar to one of the three options above. It's perhaps worth noting that Linux file systems are case-sensitive, while Windows is case-insensitive. macOS is case-insensitive by default but can be configured as case-sensitive.
@@ -1339,4 +1339,210 @@ getwd() # Run to confirm wd
 [1] "C:/Users/YourName/Desktop"
 ```
 
-<!-- - Explain default behaviour of Positron and RStudio -->
+
+To illustrate how directories work and how you can easily navigate them, we are going to create a simple data frame and save it as a spreadsheet file that we can open on our computer.
+
+```{r}
+#| echo: false
+library(knitr)
+dir.create("~/Desktop/tmp/Desktop/", recursive = TRUE)
+opts_knit$set(root.dir = "~/Desktop/tmp/Desktop")
+```
+
+```{r}
+# Create the data frame
+df <- data.frame(Alphabet = letters)
+```
+
+To save this as a spreadsheet file, we can use the function `write.csv`. This function will save our data frame as something called a `.csv` file, which is just a universal type of spreadsheet file that any spreadsheet software can open. To use this function, we just need to give it our data frame and tell it what we want our file name to be.
+
+```{r}
+write.csv(df, file = "file_1.csv")
+```
+
+Running this function will save a file on our computer called `file_1.csv`, but where has it saved it? As you have hopefully realized, it has saved it to our working directory. Thus, if your working directory is set to your desktop, you should see the file `file_1.csv` located there. You can have R list the files (and subdirectories) in your working directory by running:
+
+```r
+list.files(path = ".")
+```
+```{r}
+#| echo: false
+list.files(path = "~/Desktop/tmp/Desktop")
+```
+
+A word of warning: If your working directory contains many files, this command may produce a long list of them, with `file_1.csv` being just one among many.
+
+Alternatively, we could have saved the file by specifying the complete file path followed by the file name we want our spreadsheet to have.
+
+```r
+# Windows Example
+write.csv(df, file = "C:/Users/YourName/Desktop/file_1.csv")
+
+# macOS Example
+write.csv(df, file = "/Users/YourName/Desktop/file_1.csv")
+
+# Linux Example
+write.csv(df, file = "/home/yourname/Desktop/file_1.csv")
+```
+
+This method, while much more annoying to type, is valuable because it allows us to save the file in any location we want on our computer.  For instance, we could have saved the file the Documents folder, even though the working directory is set to the Desktop.
+
+```r
+# Windows example
+write.csv(df, file = "C:/Users/YourName/Documents/file_2.csv")
+```
+
+::: {.callout-note collapse="true"}
+## The Tilde Shortcut (~)
+On macOS and Linux, the tilde (`~`) is a convenient shorthand for your home directory:
+
+- macOS: `~` = `/Users/YourName`
+- Linux: `~` = `/home/yourname/`
+
+So on these systems, `~/Desktop/file_1.csv` is equivalent to `/Users/YourName/Desktop/file_1.csv` (macOS) or `/home/yourname/Desktop/file_1.csv` (Linux).
+
+```r
+# macOS and Linux Example
+write.csv(df, file = "~/Desktop/file_1.csv")
+```
+:::
+
+
+### Navigating Directories
+
+When it comes to navigating directories, it is quite cumbersome to type the full address of a location on your computer. Additionally, writing a fixed address into your code makes it difficult for other people run that same code on their computers since directories vary from computer to computer. Consequently, it is usually beneficial to specify a path relative to the working directory. To illustrate we are going to use the function `dir.create()`.
+
+```{r}
+dir.create(path = "./directory_A")
+```
+
+This will create a directory (i.e., visually you will see a folder) called `directory_A` inside your working directory. The period (`.`) in front of the forward slash (`/`) is a shorthand way of referring to the current working directory. Thus, you can view the path here as equivalent to typing `"C:/Users/YourName/Desktop/directory_A"` on a Windows computer for example. Moreover, we can visualize this structure using a what is known as a directory tree:
+
+```{r}
+#| echo: false
+library(fs)
+dir_tree()
+```
+
+The `.` represents our working directory and within that are two items: the subdirectory `directory_A` and the file `file_1.csv`.[^dir_tree]
+
+[^dir_tree]: If you want to make your own directory tree, the `dir_tree()` function from the *fs* package is what was used here.
+
+Next we will nest another new directory, B, inside A, and then nest a C directory, inside B, such that the path structure ends up like this:
+
+```{r}
+#| echo: false
+dir.create(path = "./directory_A/directory_B/directory_C", recursive = TRUE)
+dir_tree()
+```
+
+```r
+dir.create(path = "./directory_A/directory_B/directory_C", recursive = TRUE)
+```
+
+When a directory is nested within another directory, we refer to that as a **subdirectory**. We set the argument `recursive = TRUE` so that when directory B is created, directories within it (i.e., C) are also created.
+
+Now suppose we wanted to save our spreadsheet inside `directory_A`. One way of doing this would be to specify the full path, but an easier way is to specify the path *relative* to our working directory using the period (`.`) notation.
+
+```{r}
+write.csv(df, file = "./directory_A/file_2.csv")
+```
+
+```{r}
+#| echo: false
+dir_tree()
+```
+
+Moving further *down* a directory is a straightforward matter, but what if you wanted to move *up* the file path? For instance, suppose the working directory is located in `directory_C`.
+
+```r
+setwd("./directory_A/directory_B/directory_C")
+```
+
+Now suppose we wanted to save the spreadsheet in `directory_B`.  To do this we would just represent moving "up" one directory with two periods (`".."`).
+
+```{r}
+#| echo: false
+setwd("./directory_A/directory_B/directory_C")
+write.csv(df, file = "../file_3.csv")
+```
+
+```r
+write.csv(df, file = "../file_3.csv")
+```
+
+```{r}
+#| echo: false
+dir_tree()
+```
+
+If you wanted to save the file two directories up, you just carry forward the logic.
+
+```{r}
+#| echo: false
+setwd("./directory_A/directory_B/directory_C")
+write.csv(df, file = "../../file_4.csv")
+```
+
+```r
+write.csv(df, file = "../../file_4.csv")
+```
+
+```{r}
+#| echo: false
+dir_tree()
+```
+
+And you can use the same logic reset the working directory back to the `Desktop`.
+
+```r
+setwd("../../..")
+```
+
+We end up back at the Desktop because ...
+
+- `".."` moves us from `Directory C` up to `Directory B`.
+- `"../.."` moves us from `Directory C` up to `Directory A`.
+- `"../../.."` moves us from `Directory C` up to the `Desktop`, which is where `Directory A` is located in this case.
+
+It has to be said that, even if you are specifying a locations relative to the working directory, path addresses can still get quite long, for this reason it is often helpful to store directories as character strings that are easier to type and combine as needed. If we run ...
+
+```{r}
+#| echo: false
+wd <- "/home/yourname/Desktop"
+dir_A <- "directory_A"
+dir_B <- "directory_B"
+dir_C <- "directory_C"
+```
+
+```r
+wd <- getwd()
+dir_A <- "directory_A"
+dir_B <- "directory_B"
+dir_C <- "directory_C"
+```
+
+We can then use the `file.path()` function to, for instance, to produce a complete path directly to directory A, B, or C with minimal code that is easier to read.
+
+```{r}
+file.path(wd, dir_A, dir_B, dir_C)
+```
+
+So if we wanted to save our spreadsheet in `directory_C` using the full file path we could run ...
+
+```{r}
+#| echo: false
+wd <- getwd()
+name <- file.path(wd, dir_A, dir_B, dir_C, "file_5.csv")
+write.csv(df, file = name)
+```
+
+```r
+name <- file.path(wd, dir_A, dir_B, dir_C, "file_5.csv")
+write.csv(df, file = name)
+```
+
+```{r}
+#| echo: false
+dir_tree()
+```
