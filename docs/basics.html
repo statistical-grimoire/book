@@ -2071,39 +2071,33 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <pre><code>[1] "C:/Users/YourName/Desktop"</code></pre>
 <p>To illustrate how directories work and how you can easily navigate them, we are going to create a simple data frame and save it as a spreadsheet file that we can open on our computer.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in dir.create("~/Desktop/tmp/Desktop/", recursive = TRUE):
-'/home/lilith/Desktop/tmp/Desktop' already exists</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb242"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb242-1"><a href="#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data frame</span></span>
-<span id="cb242-2"><a href="#cb242-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Alphabet =</span> letters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb241"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb241-1"><a href="#cb241-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data frame</span></span>
+<span id="cb241-2"><a href="#cb241-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Alphabet =</span> letters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To save this as a spreadsheet file, we can use the function <code>write.csv</code>. This function will save our data frame as something called a <code>.csv</code> file, which is just a universal type of spreadsheet file that any spreadsheet software can open. To use this function, we just need to give it our data frame and tell it what we want our file name to be.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb243"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb243-1"><a href="#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb242"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb242-1"><a href="#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Running this function will save a file on our computer called <code>file_1.csv</code>, but where has it saved it? As you have hopefully realized, it has saved it to our working directory. Thus, if your working directory is set to your desktop, you should see the file <code>file_1.csv</code> located there. You can have R list the files (and subdirectories) in your working directory by running:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb244"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a href="#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb243"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb243-1"><a href="#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "directory_A" "file_1.csv" </code></pre>
+<pre><code>[1] "file_1.csv"</code></pre>
 </div>
 </div>
 <p>A word of warning: If your working directory contains many files, this command may produce a long list of them, with <code>file_1.csv</code> being just one among many.</p>
 <p>Alternatively, we could have saved the file by specifying the complete file path followed by the file name we want our spreadsheet to have.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb246"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows Example</span></span>
-<span id="cb246-2"><a href="#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Desktop/file_1.csv"</span>)</span>
-<span id="cb246-3"><a href="#cb246-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb246-4"><a href="#cb246-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS Example</span></span>
-<span id="cb246-5"><a href="#cb246-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/Users/YourName/Desktop/file_1.csv"</span>)</span>
-<span id="cb246-6"><a href="#cb246-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb246-7"><a href="#cb246-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Linux Example</span></span>
-<span id="cb246-8"><a href="#cb246-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/home/yourname/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb245"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows Example</span></span>
+<span id="cb245-2"><a href="#cb245-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Desktop/file_1.csv"</span>)</span>
+<span id="cb245-3"><a href="#cb245-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb245-4"><a href="#cb245-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS Example</span></span>
+<span id="cb245-5"><a href="#cb245-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/Users/YourName/Desktop/file_1.csv"</span>)</span>
+<span id="cb245-6"><a href="#cb245-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb245-7"><a href="#cb245-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Linux Example</span></span>
+<span id="cb245-8"><a href="#cb245-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/home/yourname/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This method, while much more annoying to type, is valuable because it allows us to save the file in any location we want on our computer. For instance, we could have saved the file the Documents folder, even though the working directory is set to the Desktop.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb247"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows example</span></span>
-<span id="cb247-2"><a href="#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Documents/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb246"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows example</span></span>
+<span id="cb246-2"><a href="#cb246-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Documents/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -2122,8 +2116,8 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <li>Linux: <code>~</code> = <code>/home/yourname/</code></li>
 </ul>
 <p>So on these systems, <code>~/Desktop/file_1.csv</code> is equivalent to <code>/Users/YourName/Desktop/file_1.csv</code> (macOS) or <code>/home/yourname/Desktop/file_1.csv</code> (Linux).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb248"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS and Linux Example</span></span>
-<span id="cb248-2"><a href="#cb248-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"~/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb247"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS and Linux Example</span></span>
+<span id="cb247-2"><a href="#cb247-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"~/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -2132,89 +2126,66 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <h3 data-number="3.21.2" class="anchored" data-anchor-id="navigating-directories"><span class="header-section-number">3.21.2</span> Navigating Directories</h3>
 <p>When it comes to navigating directories, it is quite cumbersome to type the full address of a location on your computer. Additionally, writing a fixed address into your code makes it difficult for other people run that same code on their computers since directories vary from computer to computer. Consequently, it is usually beneficial to specify a path relative to the working directory. To illustrate we are going to use the function <code>dir.create()</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb249"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in dir.create(path = "./directory_A"): './directory_A' already exists</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb248"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb248-1"><a href="#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This will create a directory (i.e., visually you will see a folder) called <code>directory_A</code> inside your working directory. The period (<code>.</code>) in front of the forward slash (<code>/</code>) is a shorthand way of referring to the current working directory. Thus, you can view the path here as equivalent to typing <code>"C:/Users/YourName/Desktop/directory_A"</code> on a Windows computer for example. Moreover, we can visualize this structure using a what is known as a directory tree:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
 ├── directory_A
-│   ├── directory_B
-│   │   ├── directory_C
-│   │   │   └── file_5.csv
-│   │   └── file_3.csv
-│   ├── file_2.csv
-│   └── file_4.csv
 └── file_1.csv</code></pre>
 </div>
 </div>
 <p>The <code>.</code> represents our working directory and within that are two items: the subdirectory <code>directory_A</code> and the file <code>file_1.csv</code>.<a href="#fn18" class="footnote-ref" id="fnref18" role="doc-noteref"><sup>18</sup></a></p>
 <p>Next we will nest another new directory, B, inside A, and then nest a C directory, inside B, such that the path structure ends up like this:</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in dir.create(path = "./directory_A/directory_B/directory_C", recursive
-= TRUE): './directory_A/directory_B/directory_C' already exists</code></pre>
-</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>.
 ├── directory_A
-│   ├── directory_B
-│   │   ├── directory_C
-│   │   │   └── file_5.csv
-│   │   └── file_3.csv
-│   ├── file_2.csv
-│   └── file_4.csv
+│   └── directory_B
+│       └── directory_C
 └── file_1.csv</code></pre>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb254"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb254-1"><a href="#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A/directory_B/directory_C"</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb251"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A/directory_B/directory_C"</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When a directory is nested within another directory, we refer to that as a <strong>subdirectory</strong>. We set the argument <code>recursive = TRUE</code> so that when directory B is created, directories within it (i.e., C) are also created.</p>
 <p>Now suppose we wanted to save our spreadsheet inside <code>directory_A</code>. One way of doing this would be to specify the full path, but an easier way is to specify the path <em>relative</em> to our working directory using the period (<code>.</code>) notation.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb255"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"./directory_A/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb252"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb252-1"><a href="#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"./directory_A/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
 ├── directory_A
 │   ├── directory_B
-│   │   ├── directory_C
-│   │   │   └── file_5.csv
-│   │   └── file_3.csv
-│   ├── file_2.csv
-│   └── file_4.csv
+│   │   └── directory_C
+│   └── file_2.csv
 └── file_1.csv</code></pre>
 </div>
 </div>
 <p>Moving further <em>down</em> a directory is a straightforward matter, but what if you wanted to move <em>up</em> the file path? For instance, suppose the working directory is located in <code>directory_C</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb257"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"./directory_A/directory_B/directory_C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb254"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb254-1"><a href="#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"./directory_A/directory_B/directory_C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now suppose we wanted to save the spreadsheet in <code>directory_B</code>. To do this we would just represent moving “up” one directory with two periods (<code>".."</code>).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb258"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb258-1"><a href="#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../file_3.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb255"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../file_3.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
 ├── directory_A
 │   ├── directory_B
 │   │   ├── directory_C
-│   │   │   └── file_5.csv
 │   │   └── file_3.csv
-│   ├── file_2.csv
-│   └── file_4.csv
+│   └── file_2.csv
 └── file_1.csv</code></pre>
 </div>
 </div>
 <p>If you wanted to save the file two directories up, you just carry forward the logic.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb260"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb260-1"><a href="#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../../file_4.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb257"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../../file_4.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
 ├── directory_A
 │   ├── directory_B
 │   │   ├── directory_C
-│   │   │   └── file_5.csv
 │   │   └── file_3.csv
 │   ├── file_2.csv
 │   └── file_4.csv
@@ -2222,7 +2193,7 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 </div>
 </div>
 <p>And you can use the same logic reset the working directory back to the <code>Desktop</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb262"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb262-1"><a href="#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"../../.."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb259"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb259-1"><a href="#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"../../.."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We end up back at the Desktop because …</p>
 <ul>
 <li><code>".."</code> moves us from <code>Directory C</code> up to <code>Directory B</code>.</li>
@@ -2230,20 +2201,20 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <li><code>"../../.."</code> moves us from <code>Directory C</code> up to the <code>Desktop</code>, which is where <code>Directory A</code> is located in this case.</li>
 </ul>
 <p>It has to be said that, even if you are specifying a locations relative to the working directory, path addresses can still get quite long, for this reason it is often helpful to store directories as character strings that are easier to type and combine as needed. If we run …</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb263"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb263-1"><a href="#cb263-1" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
-<span id="cb263-2"><a href="#cb263-2" aria-hidden="true" tabindex="-1"></a>dir_A <span class="ot">&lt;-</span> <span class="st">"directory_A"</span></span>
-<span id="cb263-3"><a href="#cb263-3" aria-hidden="true" tabindex="-1"></a>dir_B <span class="ot">&lt;-</span> <span class="st">"directory_B"</span></span>
-<span id="cb263-4"><a href="#cb263-4" aria-hidden="true" tabindex="-1"></a>dir_C <span class="ot">&lt;-</span> <span class="st">"directory_C"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb260"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb260-1"><a href="#cb260-1" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb260-2"><a href="#cb260-2" aria-hidden="true" tabindex="-1"></a>dir_A <span class="ot">&lt;-</span> <span class="st">"directory_A"</span></span>
+<span id="cb260-3"><a href="#cb260-3" aria-hidden="true" tabindex="-1"></a>dir_B <span class="ot">&lt;-</span> <span class="st">"directory_B"</span></span>
+<span id="cb260-4"><a href="#cb260-4" aria-hidden="true" tabindex="-1"></a>dir_C <span class="ot">&lt;-</span> <span class="st">"directory_C"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can then use the <code>file.path()</code> function to, for instance, to produce a complete path directly to directory A, B, or C with minimal code that is easier to read.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb264"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb261"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb261-1"><a href="#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/home/yourname/Desktop/directory_A/directory_B/directory_C"</code></pre>
 </div>
 </div>
 <p>So if we wanted to save our spreadsheet in <code>directory_C</code> using the full file path we could run …</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb266"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb266-1"><a href="#cb266-1" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C, <span class="st">"file_5.csv"</span>)</span>
-<span id="cb266-2"><a href="#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb263"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb263-1"><a href="#cb263-1" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C, <span class="st">"file_5.csv"</span>)</span>
+<span id="cb263-2"><a href="#cb263-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
