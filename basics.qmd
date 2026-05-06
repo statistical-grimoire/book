@@ -1209,9 +1209,7 @@ When you install a package, R automatically installs any other packages it depen
 ::: {.callout-note collapse="true" icon = false}
 ## <i class="bi bi-tux"></i> A Note for Linux Users
 
-Often, when using Linux, in order to install specific R packages, additional software needs to be installed through the Linux terminal.  As an example, if you install the excellent "<a href = "https://fs.r-lib.org/index.html" target = "_blank">fs</a>" package for R: `install.packages("fs")`
-
-The installation will likely fail and you will be prompted somewhere in the R console to install "libuv1-dev."  You would then need to open a terminal (or use the one RStudio or Positron provide) and type `sudo apt install libuv1-dev` to install (if you are on a Debian/Ubuntu-based distribution). Then retry the installation: `install.packages("fs")`
+Often, when using Linux, in order to install specific R packages, additional software needs to be installed through the Linux terminal.  As an example, if you install the excellent "<a href = "https://fs.r-lib.org/index.html" target = "_blank">fs</a>" package for R, the installation will likely fail and you will be prompted somewhere in the R console to install "libuv1-dev."  You would then need to open a terminal (or use the one RStudio or Positron provide) and type `sudo apt install libuv1-dev` to install (if you are on a Debian/Ubuntu-based distribution). Then retry the R installation: `install.packages("fs")`
 
 On Windows and Mac, R packages typically come with everything the system needs bundled together. On Linux, R packages are usually installed from source code, which must be compiled on your machine. Linux follows a philosophy of minimal, modular installations. That means (Linux) system libraries are not automatically included in base installations. While this seems inconvenient, it offers advantages:
 
