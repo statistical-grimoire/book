@@ -1522,7 +1522,7 @@ dir_B <- "directory_B"
 dir_C <- "directory_C"
 ```
 
-We can then use the `file.path()` function to, for instance, to produce a complete path directly to directory A, B, or C with minimal code that is easier to read.
+We can then use the `file.path()` function to, for instance, produce a complete path directly to directory A, B, or C with minimal code that is easier to read.
 
 ```{r}
 file.path(wd, dir_A, dir_B, dir_C)
