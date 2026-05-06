@@ -1392,7 +1392,7 @@ This method, while much more annoying to type, is valuable because it allows us 
 write.csv(df, file = "C:/Users/YourName/Documents/file_2.csv")
 ```
 
-::: {.callout-note collapse="true"}
+::: {.callout-tip}
 ## The Tilde Shortcut (~)
 On macOS and Linux, the tilde (`~`) is a convenient shorthand for your home directory:
 
