@@ -1,6 +1,5 @@
 project:
   type: book
-  pre-render: ./generate-changelog.sh
   output-dir: docs
   resources:
     - .nojekyll
@@ -23,7 +22,6 @@ book:
     - run_R.qmd
     - basics.qmd
     - references.qmd
-    - changelog.qmd
 
 bibliography: references.bib
 

@@ -1303,17 +1303,17 @@ Any time R needs to access or create a file, it needs to access or create that f
 getwd()
 ```
 
-Windows style output:
+<i class="bi bi-windows"></i> Windows style output:
 ```
 C:/Users/YourName/Documents
 ```
 
-MacOS style output:
+<i class="bi bi-apple"></i> MacOS style output:
 ```
 /Users/YourName/Documents
 ```
 
-Linux style output:
+<i class="bi bi-tux"></i> Linux style output:
 ```
 /home/yourname/Documents
 ```
