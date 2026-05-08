@@ -4,6 +4,12 @@
 ### Under Construction
 :::
 
+```{r}
+#| echo: false
+#| output: "false"
+library("exams2forms")
+```
+
 What follows assumes you have installed either RStudio or Positron, though almost everything discussed also applies to the base R environment that comes with the language on Windows and Macintosh computers.
 
 ## The Console Pane
@@ -48,6 +54,16 @@ Output:
 ```
 
 If you close RStudio or Positron, you will find that any history of this calculation is gone when you re-open the environment.  Consequently, typing commands into the console offers us a quick way to perform simple tasks that we are not necessarily concerned with preserving.  However, in most cases we will be typing R code that we do want to preserve, run, edit, and add to at later date.  This is where the concept of a *script* becomes important.
+
+::: {.callout-note collapse = "true" icon = "false"}
+## <i class="bi bi-question-octagon-fill"></i> Self-Test
+
+```{r echo = FALSE, message = FALSE}
+#| output: "asis"
+qs <- list(list.files("rexams/console_pane"))
+exams2forms(qs, n = 3, edir = "rexams/console_pane")
+```
+:::
 
 ## The Scripting Pane
 
