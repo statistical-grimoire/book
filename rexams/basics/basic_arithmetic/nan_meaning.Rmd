@@ -1,0 +1,30 @@
+Question
+========
+What does the abbreviation `NaN` stand for in R?
+
+Answerlist
+----------
+* Not a number
+* Null and null
+* Negative and negative
+* No available number
+* Not a numeric
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. NaN stands for "not a number."
+* False. This is not the correct meaning.
+* False. This is not the correct meaning.
+* False. This is not the correct meaning.
+* False. This is not the correct meaning.
+
+Meta-information
+================
+exname: nan-meaning
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

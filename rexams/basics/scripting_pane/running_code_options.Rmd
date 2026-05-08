@@ -1,0 +1,30 @@
+Question
+========
+Which of the following statements about running code from an R script are correct?
+
+Answerlist
+----------
+* You can run a single line of code by placing your cursor on that line
+* You can run multiple lines by highlighting them
+* You must always run all code in the script at once
+* Scripts automatically run code as you type it
+* The Control + Enter shortcut works for both individual lines and highlighted sections
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. The text states "you can now place your cursor at a line of your choosing and run that line individually."
+* True. The text says "If you highlight all the lines of code, or just a subset of them, you can then run that highlighted section."
+* False. The text explicitly mentions running lines "selectively or all together."
+* False. Scripts do not automatically run code as you type.
+* True. The same keyboard shortcut works for both scenarios as described in the text.
+
+Meta-information
+================
+exname: running-code-options
+extype: mchoice
+exsolution: 11001
+exshuffle: TRUE

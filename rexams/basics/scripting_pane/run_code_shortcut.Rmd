@@ -1,0 +1,30 @@
+Question
+========
+What keyboard shortcut is used to run a line of code from the script pane in RStudio or Positron?
+
+Answerlist
+----------
+* Control + Enter/Return
+* Alt + Enter/Return
+* Shift + Enter/Return
+* Control + R
+* Command + Run
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. Control + Enter/Return is the correct keyboard shortcut.
+* False. Alt is not the correct modifier key.
+* False. Shift is not the correct modifier key.
+* False. This is not the correct shortcut.
+* False. This is not the correct shortcut.
+
+Meta-information
+================
+exname: run_code_shortcut
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

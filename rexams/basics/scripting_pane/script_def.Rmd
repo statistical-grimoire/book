@@ -1,0 +1,30 @@
+Question
+========
+What is an R script?
+
+Answerlist
+----------
+* A text document where you can type, run, edit, and save R code
+* A graphical interface for creating plots
+* A file that only stores output from R calculations
+* A read-only document that displays pre-written code
+* A temporary workspace that cannot be saved
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. This is the correct definition provided in the text.
+* False. Scripts are text documents for code, not graphical interfaces.
+* False. Scripts store code, not just output.
+* False. Scripts are editable, not read-only.
+* False. Scripts can be saved permanently.
+
+Meta-information
+================
+exname: script_def
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

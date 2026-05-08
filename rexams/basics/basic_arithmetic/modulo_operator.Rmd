@@ -1,0 +1,30 @@
+Question
+========
+What does the operator `%%` represent in R?
+
+Answerlist
+----------
+* The modulo operator that returns the remainder of division
+* The integer division operator that returns the quotient
+* The percentage operator
+* The double modulus operator
+* The comment symbol
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. The %% operator is the modulo operator that returns the remainder.
+* False. The %/% operator returns the quotient, not %%.
+* False. This is not a percentage operator.
+* False. There is no "double modulus operator."
+* False. The comment symbol in R is #, not %%.
+
+Meta-information
+================
+exname: modulo_operator
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

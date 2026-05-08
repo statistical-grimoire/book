@@ -1,0 +1,14 @@
+Question
+========
+If you execute `7 %/% 3` in R, what will be the output?
+
+Solution
+========
+
+
+Meta-information
+================
+exname: int_div
+extype: num
+exsolution: 2
+extol: 0

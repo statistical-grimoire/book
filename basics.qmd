@@ -31,7 +31,6 @@ RStudio (a) and Positron (b) integrated development environments. Each pane serv
 
 ![Positron](imgs/basics/positron_default_panes.pdf){#fig-positron_panes_pdf}
 
-Test
 :::
 
 The console pane functions as a terminal for the R language specifically.[^console_py] Though, to distinguish it from your operating system's main terminal it is labelled "console." 
@@ -58,10 +57,11 @@ If you close RStudio or Positron, you will find that any history of this calcula
 ::: {.callout-note collapse = "true" icon = "false"}
 ## <i class="bi bi-question-octagon-fill"></i> Self-Test
 
-```{r echo = FALSE, message = FALSE}
+```{r message = FALSE}
 #| output: "asis"
-qs <- list(list.files("rexams/console_pane"))
-exams2forms(qs, n = 3, edir = "rexams/console_pane")
+#| echo: false
+qs <- as.list(list.files("rexams/basics/console_pane"))
+exams2forms(qs, n = length(qs), edir = "rexams/basics/console_pane", solution = FALSE)
 ```
 :::
 
@@ -78,6 +78,17 @@ Once opened, you can type R code into this new pane and save it in the conventio
 ```
 
 You can now place your cursor at a line of your choosing and run that line individually.  To do this in RStudio or Positron simply hold down the Control key on your keyboard and press *Enter/Return*. If you highlight all the lines of code, or just a subset of them, you can then run that highlighted section in a similar manner.
+
+::: {.callout-note collapse = "true" icon = "false"}
+## <i class="bi bi-question-octagon-fill"></i> Self-Test
+
+```{r message = FALSE}
+#| output: "asis"
+#| echo: false
+qs <- as.list(list.files("rexams/basics/scripting_pane"))
+exams2forms(qs, n = length(qs), edir = "rexams/basics/scripting_pane", solution = FALSE)
+```
+:::
 
 ## Keyboard Shortcuts {#sec-key_shorts}
 It is at this juncture that a noteworthy feature of programming environments be mentioned; specifically, keyboard shortcuts (also called "hotkeys"). All robust programming environments equip users with the ability to perform virtually any non-typing task directly from the keyboard, increasing efficiency and comfort. 
@@ -207,6 +218,23 @@ Finally, since its use crops up from time to time, it can be handy to know that 
 ```{r}
 pi
 ```
+
+::: {.callout-note collapse = "true" icon = "false"}
+## <i class="bi bi-question-octagon-fill"></i> Self-Test
+
+```{r}
+#| echo: false
+qs <- as.list(list.files("rexams/basics/basic_arithmetic"))
+```
+
+```{r message = FALSE}
+#| output: "asis"
+#| echo: false
+qs <- as.list(list.files("rexams/basics/basic_arithmetic"))
+exams2forms(qs, n = length(qs), edir = "rexams/basics/basic_arithmetic", solution = FALSE)
+```
+:::
+
 
 ## Scientific Notation
 

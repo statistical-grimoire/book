@@ -1,0 +1,30 @@
+Question
+========
+What does the symbol $>$ represent in the R console?
+
+Answerlist
+----------
+* The command line's prompt where you type commands
+* An error message indicator
+* The output display marker
+* A continuation symbol for incomplete code
+* The R version number
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. The $>$ symbol denotes the command line's prompt.
+* False. This is not an error indicator.
+* False. This does not mark output display.
+* False. This is not a continuation symbol.
+* False. This does not indicate the R version.
+
+Meta-information
+================
+exname: prompt_symbol
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

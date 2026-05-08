@@ -1,0 +1,30 @@
+Question
+========
+Which of the following statements about R arithmetic are correct?
+
+Answerlist
+----------
+* R follows the order of operations when evaluating expressions
+* When choosing between multiplication and division, you must calculate from left to right
+* The expression `(-4)^(1/2)` produces NaN because the square root of a negative number is not a real number
+* The constant π (pi) is built into R and can be accessed by typing `pi`
+* The operator `%/%` returns the remainder of Euclidean division
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. The text states "R will also follow the ritualistic *order of operations*."
+* True. The text explains "You must always calculate from left to right when making a choice between multiplication and division."
+* True. The text shows this example and explains that NaN means "not a number" and is appropriate since "the square root of a negative number does not exist as a real number."
+* True. The text states "R comes with the number $\pi$ stored as a constant. To use it, you need only type `pi`."
+* False. The %/% operator returns the quotient; the %% operator returns the remainder.
+
+Meta-information
+================
+exname: arithmetic_properties
+extype: mchoice
+exsolution: 11110
+exshuffle: TRUE

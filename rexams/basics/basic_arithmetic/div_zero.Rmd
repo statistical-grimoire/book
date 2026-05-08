@@ -1,0 +1,30 @@
+Question
+========
+What does R output when you divide a positive number by zero (e.g., `1/0`)?
+
+Answerlist
+----------
+* `Inf`
+* `NaN`
+* `Error`
+* `0`
+* `NULL`
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. R produces Inf (infinity) when dividing a positive number by zero.
+* False. NaN appears for undefined operations like square root of negative numbers.
+* False. R does not throw an error for division by zero.
+* False. Division by zero does not produce 0.
+* False. Division by zero does not produce NULL.
+
+Meta-information
+================
+exname: div_zero
+extype: schoice
+exsolution: 10000
+exshuffle: TRUE

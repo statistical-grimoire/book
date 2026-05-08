@@ -1,0 +1,30 @@
+Question
+========
+Which of the following statements about the R console are correct?
+
+Answerlist
+----------
+* The console functions as a terminal for the R language
+* The presence of $>$ indicates the computer is awaiting your command
+* Console history is preserved when you close and re-open RStudio
+* Typing commands into the console is useful for quick tasks you don't need to preserve
+* Scripts are unnecessary if you use the console regularly
+
+Solution
+========
+
+
+Answerlist
+----------
+* True. The text states "The console pane functions as a terminal for the R language specifically."
+* True. The text says "The presence of $>$ indicates that the computer is awaiting your command."
+* False. The text states "you will find that any history of this calculation is gone when you re-open the environment."
+* True. The text mentions the console "offers us a quick way to perform simple tasks that we are not necessarily concerned with preserving."
+* False. The text emphasizes that scripts become important for code "we do want to preserve, run, edit, and add to at later date."
+
+Meta-information
+================
+exname: console_properties
+extype: mchoice
+exsolution: 11010
+exshuffle: TRUE
