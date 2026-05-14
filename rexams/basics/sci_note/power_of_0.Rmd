@@ -12,7 +12,7 @@ Answerlist
 
 Solution
 ========
-Since 7.2 is already in this range (between 1 and 10), we do not need to shift the decimal point at all. This means the exponent must be 0:
+Since 7.2 is already in the correct range (between 1 and 10), we do not need to shift the decimal point at all. This means the exponent must be 0:
 $$7.2 = 7.2 \times 10^{0}$$
 
 Remember that $10^{0} = 1$, so $7.2 \times 10^{0} = 7.2 \times 1 = 7.2$.
