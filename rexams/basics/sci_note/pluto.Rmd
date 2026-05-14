@@ -1,0 +1,33 @@
+Question
+========
+The mass of Pluto (the planet, not ruler of the underworld) is $13,030,000,000,000,000,000,000$ kg
+
+What is this written in R's scientific notation?
+
+
+Answerlist
+----------
+* `1.303e+21`
+* `1.303e+22`
+* `0.1303e+23`
+* `13.03e+21`
+* `1303e+19`
+
+
+
+Solution
+========
+
+A number is in scientific notation when it is written as a decimal from $1$ up to (but not including) $10$, multiplied by a power of $10$.
+
+$13,030,000,000,000,000,000,000$ has $23$ digits.
+
+That is equal to $1.303 \times 10^{22}$ kg or `1.303e+22`
+
+
+Meta-information
+================
+exname: sci_note_1
+extype: schoice
+exsolution: 01000
+exshuffle: TRUE

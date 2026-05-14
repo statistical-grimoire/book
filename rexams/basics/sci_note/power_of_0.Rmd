@@ -1,0 +1,25 @@
+Question
+========
+Which of the following correctly expresses $7.2$ in scientific notation?
+
+Answerlist
+----------
+* $7.2 \times 10^{0}$
+* $7.2 \times 10^{1}$
+* $0.72 \times 10^{1}$
+* $72 \times 10^{-1}$
+* $7.2 \times 10^{-1}$
+
+Solution
+========
+Since 7.2 is already in this range (between 1 and 10), we do not need to shift the decimal point at all. This means the exponent must be 0:
+$$7.2 = 7.2 \times 10^{0}$$
+
+Remember that $10^{0} = 1$, so $7.2 \times 10^{0} = 7.2 \times 1 = 7.2$.
+
+Meta-information
+================
+extype: schoice
+exsolution: 10000
+exname: sci_note_zero_power
+exshuffle: TRUE

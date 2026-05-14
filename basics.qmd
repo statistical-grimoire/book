@@ -222,11 +222,6 @@ pi
 ::: {.callout-note collapse = "true" icon = "false"}
 ## <i class="bi bi-question-octagon-fill"></i> Self-Test
 
-```{r}
-#| echo: false
-qs <- as.list(list.files("rexams/basics/basic_arithmetic"))
-```
-
 ```{r message = FALSE}
 #| output: "asis"
 #| echo: false
@@ -244,11 +239,22 @@ On occasion values will be either excessively large or excessively small. In suc
 2 / 100000
 ```
 
-Notice the `e-05` in the output. This is how you know R is presenting a number using scientific notation. To interpret this in a conventional manner, imagine there is a decimal point after the $2$, like so: `2.0e-05`. Then just move that decimal point five digits to the left. In other words, `2e-05` is the same as writing `0.00002`. Mathematically, `2e-05` translates to $2 \times 10^{-5}$.
+Notice the `e-05` in the output. This is how you know R is presenting a number using scientific notation. To interpret this in a conventional manner, imagine there is a decimal point after the $2$, like so: `2.0e-05`. Then just move that decimal point five digits to the left. In other words, `2e-05` is the same as writing `0.00002`. More formally, numbers written in scientific notation are always expressed as decimal value from 1 up to (but not including) $10$, multiplied by a power of $10$.  Thus, when R outputs `2e-05`, we interpret that as $2 \times 10^{-5}$.
 
-If the output were showing `e+5`, then you would move the decimal five digits to the right. For example, `2e+5` is the same as writing `200000`. Notice there are five 0s; this is because, mathematically, `2e+5` means $2 \times 10^5$
+If, by contrast, the output were showing `e+05`, then you would move the decimal five digits to the right. For example, `2e+5` is the same as writing `200000`. Notice there are five $0$s; this is because, mathematically, `2e+5` means $2 \times 10^5$
 
 Remember that positive powers move the decimal right (in the positive direction), and negative powers move the decimal left (in the negative direction).
+
+::: {.callout-note collapse = "true" icon = "false"}
+## <i class="bi bi-question-octagon-fill"></i> Self-Test
+
+```{r message = FALSE}
+#| output: "asis"
+#| echo: false
+qs <- as.list(list.files("rexams/basics/sci_note"))
+exams2forms(qs, n = length(qs), edir = "rexams/basics/sci_note", solution = TRUE)
+```
+:::
 
 ## Commenting Out Lines
 
