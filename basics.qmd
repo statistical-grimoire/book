@@ -1594,3 +1594,30 @@ write.csv(df, file = name)
 #| echo: false
 dir_tree()
 ```
+
+## RStudio Projects
+
+With respect to R studio a core tool users should be aware of are what are called "R projects."  An R project is, in essence, a folder stored on your computer (in a location of your choosing) that contains a [.Rproj]{.mono} file that stores settings specific to that project. Moreover, Rstudio can be directly launched using the [.Rproj]{.mono} file. This will automatically set the working directory to the project folder, allowing you to use relative file paths (like `"homework_1/myfile.csv"`) instead of absolute paths (like `"C:/Users/YourName/Documents/stats_class/homework_1/myfile.csv"`). Using projects will also help keep your work organized since all scripts, data files, and outputs stay together in one place. Taken together, all these features make your code work much more seamlessly when you need to share it with others or move it to a different computer.
+
+### Creating a Project
+
+To create a new R Project, you simply need to select *File*, from the global menu at the top of RStudio, and then choose *New Project*. From there you will be prompted to select one of three options:
+
+- **New Directory:** Creates a new (empty) folder/directory for your project.
+- **Existing Directory:** If you already have a folder/directory you have begun working in, you can choose this option to make it a R project without starting from scratch or transferring files.
+- **Version Control:** This is a more advanced usage that takes advantage of tools like Git. For beginners, one of the first two options is typically sufficient until they have learned how to effectively utilize Git and online services such as GitLab or GitHub.
+
+Upon selecting "New Directory" you will be prompted to choose a "Project Type", and there are a variety of options to choose from; however, assuming you want to write an R script to analyze your data, the first option, simply labelled "New Project" is what should be selected. Then you simply need to name your project and choose where to save it (this sets the location where the project folder will be created).
+
+Once complete RStudio will have created a directory with the name and location you specified.  Within this directory will be a [.Rproj]{.mono} file and a hidden directory called [.Rproj.user]{.mono} for temporary files. It will also launch a new session in RStudio with the working directory set to your project folder.
+
+### Opening a Project
+
+An RStudio project can be opened in a couple of different ways:
+
+1. Double-click the [.Rproj]{.mono} file.
+2. Use *File* > *Open Project* in RStudio and browse to the [.Rproj]{.mono} file.
+
+Each time you open a project, RStudio will start a new R session, set your working directory to the project directory, and load your command history from that project (which is stored as a hidden file called [.Rhistory]{.mono}). This means you can immediately start working with relative file paths without needing to use setwd() or remember where your files are located.
+
+  <!-- Add info about .Rhistory and workspaces and Positron's equivalent of R projects-->
