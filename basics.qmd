@@ -1620,4 +1620,4 @@ An RStudio project can be opened in a couple of different ways:
 
 Each time you open a project, RStudio will start a new R session, set your working directory to the project directory, and load your command history from that project (which is stored as a hidden file called [.Rhistory]{.mono}). This means you can immediately start working with relative file paths without needing to use setwd() or remember where your files are located.
 
-  <!-- Add info about .Rhistory and workspaces and Positron's equivalent of R projects-->
+  <!-- Improve R project intro. Add info about .Rhistory and workspaces and Positron's equivalent of R projects-->
