@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  post-render: 
+    - post_render/cleanup.R
   resources:
     - .nojekyll
 

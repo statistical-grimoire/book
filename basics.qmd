@@ -6,7 +6,7 @@
 
 ```{r}
 #| echo: false
-#| output: "false"
+#| output: false
 library("exams2forms")
 ```
 
@@ -1368,11 +1368,19 @@ C:/Users/YourName/Documents
 
 The R output in this case will vary between different computers, so you should not expect to see the exact same output on your computer, but it should be relatively similar to one of the three options above. It's perhaps worth noting that Linux file systems are case-sensitive, while Windows is case-insensitive. macOS is case-insensitive by default but can be configured as case-sensitive.
 
-The way to interpret what we are seeing is as as a *path*, or route to get to the directory called *Documents*. In the case of Windows, `C:/` represents the computer's hard drive and many computers will have more than one of these, so it is vital to know which one you are working in. By convention, Windows uses drive letters (`C:`, `D:`, etc.) to denote different hard drives on the system.
+The way to interpret what we are seeing is as as a *path*, or route to get to the directory called *Documents*. 
 
-Within the hard drive is the directory called `Users` for both Windows and MacOS. We can tell that `Users` is a directory here and not a file because it is bounded by forward slashes, `/`, and has no file extension. When it comes to directory paths, it is not uncommon to also see them written using backslashes (`\`), particularly on Windows. The reasons for this difference in convention boil down to the development history of various types of software. All you need to know is that R will always use a forward slash `/` when listing paths.
+::: {.callout-important icon = false collapse = false}
+## <i class="bi bi-windows"></i> Storage Drives in Windows
 
-Continuing down the path, next we have a subdirectory of `Users` that is called `YourName`. When you set up a user account `YourName` will be typically populated with whatever user name you chose for your account.
+In the case of Windows, `C:/` represents the computer's storage drive and many computers will have more than one of these and it is vital to know which one you are working in to navigate effectively. By convention, Windows uses drive letters (`C:`, `D:`, etc.) to denote different storage drives on the system.
+
+macOS and Linux users do not have to concern themselves with this because their systems employ a unified directory tree. In other words, the system transparently handles which physical drive needs accessing. This means that the user does not typically need to think about the drive being accessed unless they are doing disk management, checking free space, or troubleshooting performance.
+:::
+
+Within the storage drive is the directory called `Users` for both Windows and MacOS. We can tell that `Users` is a directory here and not a file because it is bounded by forward slashes, `/`, and has no file extension. When it comes to directory paths, it is not uncommon to also see them written using backslashes (`\`), particularly on Windows. The reasons for this difference in convention boil down to the development history of various types of software. All you need to know is that R will always use a forward slash `/` when listing paths.
+
+Continuing down the path, next we have a subdirectory of `Users` (or `home` on Linux) that is called `YourName`. When you set up a user account `YourName` will be typically populated with whatever user name you chose for your account.
 
 From that subdirectory, we have another subdirectory, which is called `Documents`.
 
@@ -1393,8 +1401,8 @@ To illustrate how directories work and how you can easily navigate them, we are 
 ```{r}
 #| echo: false
 library(knitr)
-dir.create("~/Desktop/tmp/Desktop/", recursive = TRUE)
-opts_knit$set(root.dir = "~/Desktop/tmp/Desktop")
+dir.create("temp_dir/Desktop", recursive = TRUE)
+opts_knit$set(root.dir = "temp_dir/Desktop")
 ```
 
 ```{r}
@@ -1415,7 +1423,7 @@ list.files(path = ".")
 ```
 ```{r}
 #| echo: false
-list.files(path = "~/Desktop/tmp/Desktop")
+list.files(path = ".")
 ```
 
 A word of warning: If your working directory contains many files, this command may produce a long list of them, with `file_1.csv` being just one among many.
