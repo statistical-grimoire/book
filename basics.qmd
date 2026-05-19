@@ -1605,13 +1605,13 @@ dir_tree()
 
 ## R Projects vs. Workspaces
 
-Both RStudio and Positron offer convient features for handling your working directory;[^dir_help] though, they differ somewhat in their approach. RStudio employs what are referred to as "R Projects" and Positron makes use of "Workspaces."
+Both RStudio and Positron offer convient features for handling your working directory;[^dir_help] though, they differ somewhat in their approach. RStudio employs what are referred to as "R Projects" and Positron makes use of "Workspaces". Both are core features that users should be aware of.
 
 [^dir_help]: If the concept of a "working directory" or even just "directory" is new to you, it is recommended that you read the @sec-directories first.
 
 ### RStudio Projects {#sec-R_proj}
 
-With respect to Rstudio a core tool users should be aware of are what are called **R projects.**  An R project is a specific directory (a.k.a. folder) stored on your computer, in a location of your choosing, that contains a **[.Rproj]{.mono}** file. This [.Rproj]{.mono} file stores settings specific to the project and can be used to launch RStudio directly. Launching via the [.Rproj]{.mono} fill will automatically set the working directory to the project folder, allowing you to use relative file paths (like `"homework_1/myfile.csv"`) instead of absolute paths (like `"C:/Users/YourName/Documents/stats_class/homework_1/myfile.csv"`). In principle, R projects are intended to help keep your work organized since all scripts, data files, and outputs stay together in one place. This makes your code work much more seamlessly when you need to share it with others or move it to a different computer.
+An **R project** is a specific directory (a.k.a. folder) stored on your computer (in a location of your choosing) that contains a **[.Rproj]{.mono}** file. This [.Rproj]{.mono} file stores settings specific to the project and can also be used to launch RStudio directly by double-clicking it. Launching via the [.Rproj]{.mono} fill will automatically set the working directory to the project folder, allowing you to use relative file paths (like `"homework_1/myfile.csv"`) instead of absolute paths (like `"C:/Users/YourName/Documents/stats_class/homework_1/myfile.csv"`). In principle, R projects are intended to help keep your work organized since all scripts, data files, and outputs stay together in one place. This makes your code work much more seamlessly when you need to share it with others or move it to a different computer.
 
 #### Creating a Project
 
@@ -1640,9 +1640,9 @@ In contrast to RStudio, Positron does not generate [.Rproj]{.mono} files. It use
 
 #### Opening a Workspace
 
-Assuming you have a folder on your computer that contains your project files and subdirectories all you need to do is select *File* from the global menu at the top of Positron and choose *Open Folder*. Then navigate to your project folder using the navigation window that appears. 
+Assuming you have a folder on your computer that contains your project files and subdirectories, all you need to do to open a workspace is select *File* from the global menu at the top of Positron and choose *Open Folder*. Then navigate to your project folder using the navigation window that appears. 
 
-Once the workspace has been opened the "Explorer" sidebar in Positron should show the contents of the project direcotry. If you do not see the Explorer sidebar to you may need to enable it (*View* > *Explorer*).
+Once the workspace has been opened, the "Explorer" sidebar in Positron should show the contents of the project direcotry. If you do not see the Explorer sidebar to you may need to enable it (*View* > *Explorer*).
 
 ::: {.callout-tip icon = false}
 ## <i class="bi bi-tux"></i> For Terminal Users
