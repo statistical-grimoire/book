@@ -1297,7 +1297,7 @@ Since it is easy to miss, it should be noted that the top left corner of R docum
 
 When you use packages in research, proper attribution is important. Use `citation("packagename")` to get the appropriate citation format. For example, `citation("cowsay")` shows how to cite that package in publications.
 
-## File Extensions
+## File Extensions {#sec-file_ext}
 
 Most users are familiar with the fact that computers store a multitude of files, each serving different purposes. We encounter various types of files daily: image files, text files, audio files, and much more. Within these broad categories lie even more specific file types, each with unique characteristics and uses. For example, image files can be distinguished into formats such as [.gif]{.mono}, [.jpg]{.mono}, [.png]{.mono}, and [.tiff]{.mono}, each catering to different needs in terms of quality, compression, and usage.
 
@@ -1603,9 +1603,36 @@ write.csv(df, file = name)
 dir_tree()
 ```
 
+::: {.callout-important icon = false}
+## <i class="bi bi-incognito"></i> Hidden Files and Folders
+
+In addition to hiding file extensions (see @sec-file_ext), operating systems will also commonly hide certain files and folders entirely. Typically these are system and configuration files that are best left alone. That being said, when programming with R, or any language, it is important to be aware of them and know how to view them when necessary.
+
+On macOS and Linux, hidden files and folders are prefixed with a period. For example, if you create a plain-text file called "[notes.txt]{.mono}" and rename it to "[.notes.txt]{.mono}", the file will promptly vanish. The file is still intact and in the same location it was prior to the renaming, except that now there is just no visual indication of it.
+
+Windows handles hiding differently. The dot prefix has no special meaning to the operating system; instead, you must right-click the file, select *Properties*, and check the *Hidden* attribute box. However, some cross-platform applications on Windows respect the dot convention and treat dot-prefixed files as hidden, even though Windows Explorer does not.
+
+To view hidden items, you can access them through a terminal application or enable their display in your graphical file manager. The latter requires manual activation:
+
+<i class="bi bi-windows"></i> **Windows 11**
+
+1. Open File Explorer
+2. Click the *View* button from the toolbar, select *Show*, then choose *Hidden items*.
+
+<i class="bi bi-apple"></i> **macOS**
+
+- Press [**Cmd + Shift + .**]{.mono} (period) in any Finder window to toggle hidden file visibility.
+
+<i class="bi bi-tux"></i> **Linux**
+
+- In most distributions, pressing [**Ctrl + H**]{.mono} will toggle the display of hidden files inside a graphical file manager.
+
+:::
+
+
 ## R Projects vs. Workspaces
 
-Both RStudio and Positron offer convient features for handling your working directory;[^dir_help] though, they differ somewhat in their approach. RStudio employs what are referred to as "R Projects" and Positron makes use of "Workspaces". Both are core features that users should be aware of.
+Both RStudio and Positron offer convenient features for handling your working directory;[^dir_help] though, they differ somewhat in their approach. RStudio employs what are referred to as "R Projects" and Positron makes use of "Workspaces". Both are core features that users should be aware of.
 
 [^dir_help]: If the concept of a "working directory" or even just "directory" is new to you, it is recommended that you read the @sec-directories first.
 
