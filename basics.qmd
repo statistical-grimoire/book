@@ -576,7 +576,7 @@ g <- c(TRUE, TRUE, FALSE, FALSE, TRUE)
 x + g
 ```
 
-Similar to how R comes with $\pi$ stored as a constant, it also has constants for a few commonly used character vectors. For more info about these 
+Similar to how R comes with $\pi$ stored as a constant, it also has constants for a few commonly used character vectors:
 
 ```{r}
 LETTERS
