@@ -403,6 +403,55 @@ rat_pi         # Returns 3 (global value)
 The `<-` operator offers two other minor advantages: reversibility (you can write `->` and `->>`  to assign rightward) and consistency with R's documentation, where most code examples use`<-`. For many R users, this familiarity makes code easier to parse at a glance.
 :::
 
+## Workspaces
+
+If you are using RStudio or the base R GUI that comes with Windows and macOS, you may notice a prompt when closing the program: "`Save workspace image?`" To understand what this means, it is helpful to first know that as you create different objects in R, those objects are stored in your computer's memory in what is called the "global environment". You can see a list of these objects in RStudio's "Environment" pane, Positron's "Variables" pane, or by running `ls()`.
+
+For example, if you create and run a R script with the following variables:
+
+```{r}
+#| echo: false
+rm(list = ls())
+```
+
+```{r}
+x <- 1
+y <- 2
+z <- 3
+```
+
+You can see all of these in your global environment by running:
+
+```{r}
+ls()
+```
+
+A **workspace** is a file (with the extension [.RData]{.mono}) that preserves everything in your current global environment. The reason you might want to save a workspace file is because, if you close RStudio without saving the workspace (give it a try), the next time you launch RStudio and try to use one of these variables you will just get an error saying:
+
+```{r}
+#| echo: false
+rm(list = ls())
+```
+
+```{r}
+#| error: true
+x
+```
+
+To get the variable back, you need to re-run your R script so the objects are rebuilt in memory.
+
+If, by contrast, you had saved the workspace when you closed RStudio, and loaded it when you re-launched RStudio (RStudio usually does this automatically), you can run these variables without having to re-run your R script.
+
+Admittedly, this sounds really convienient at face value, but most R users agree that the best practice is to NOT save a workspace image, despite it being the default behaviour of RStudio and there are a few reasons why:
+
+- You might accidentally create objects in the console or delete code from your script while the object remains in your workspace. Consequently, if you or someone else tries to run your script with a fresh environment, it may fail or produce incorrect results because of this.
+- Workspace files can become quite large depending on your data, making them slow to load and difficult to store or transfer. By contrast, an R script ([.R]{.mono} file) is just a plain-text document and remains small.
+- Unless you are doing extremely intensive computations, re-running scripts is fast enough that workspaces are not necessary with modern computers.
+
+With all that in mind, it is reccommended that RStudio users disable the workspace saving prompt. To do this, select *Tools* from the global menu at the top of RStudio, then choose *Global Options*. This will cause a window to appear with various settings you can adjust. In the  *R General* section under *Workspace*, deselect the box "*Restore .RData into workspace at startup:*" and also (right beneath that) change the drop down menu for "*save workspace to .RData on exit:*" to say "*Never*".
+
+If you use Positron, it's already configured not to save workspaces, so no changes are needed.
+
 ## Object Modes {#sec-modes}
 
 Thus far all of the objects we have created have been **numeric** objects; though, we can avail ourselves of other types.  For instance, another common object is the **character** object which gets defined using quotation marks on each end of the value.
