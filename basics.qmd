@@ -1115,13 +1115,13 @@ df[ , c(2:3)]
 There will also be many circumstances where you need to work with the values of a single column only.  For instance, if you want to calculate the mean of the third column `value`, you can use one of R's extraction operators, the `$`, to isolate that column. The following code will isolate the `value` column and output it as a vector:
 
 ```{r}
-df$Value
+df$value
 ```
 
 You can, therefore, just insert this into the `mean()` function.
 
 ```{r}
-mean(df$Value, na.rm = TRUE)
+mean(df$value, na.rm = TRUE)
 ```
 
 Alternatively, instead of using the `$` operator, you can use doubled square brackets to specify the column number you want:
