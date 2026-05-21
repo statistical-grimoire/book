@@ -405,7 +405,7 @@ The `<-` operator offers two other minor advantages: reversibility (you can writ
 
 ## Workspaces
 
-If you are using RStudio or the base R GUI that comes with Windows and macOS, you may notice a prompt when closing the program: "`Save workspace image?`" To understand what this means, it is helpful to first know that as you create different objects in R, those objects are stored in your computer's memory in what is called the "global environment". You can see a list of these objects in RStudio's "Environment" pane, Positron's "Variables" pane, or by running `ls()`.
+If you are using RStudio or the base R GUI that comes with Windows and macOS, you may notice a prompt when closing the program: "`Save workspace image?`" To understand what this means, it is helpful to first know that as you create different objects in R, those objects are stored in your computer's memory in what is called the "global environment". You can see a list of these objects in RStudio's *Environment* pane, Positron's *Variables* pane, or by running `ls()`.
 
 For example, if you create and run a R script with the following variables:
 
