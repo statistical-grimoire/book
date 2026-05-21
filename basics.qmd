@@ -403,7 +403,7 @@ rat_pi         # Returns 3 (global value)
 The `<-` operator offers two other minor advantages: reversibility (you can write `->` and `->>`  to assign rightward) and consistency with R's documentation, where most code examples use`<-`. For many R users, this familiarity makes code easier to parse at a glance.
 :::
 
-## Workspaces
+## R Workspaces {#sec-R_workspaces}
 
 If you are using RStudio or the base R GUI that comes with Windows and macOS, you may notice a prompt when closing the program: "`Save workspace image?`" To understand what this means, it is helpful to first know that as you create different objects in R, those objects are stored in your computer's memory in what is called the "global environment". You can see a list of these objects in RStudio's *Environment* pane, Positron's *Variables* pane, or by running `ls()`.
 
@@ -451,6 +451,13 @@ Admittedly, this sounds really convienient at face value, but most R users agree
 With all that in mind, it is reccommended that RStudio users disable the workspace saving prompt. To do this, select *Tools* from the global menu at the top of RStudio, then choose *Global Options*. This will cause a window to appear with various settings you can adjust. In the  *R General* section under *Workspace*, deselect the box "*Restore .RData into workspace at startup:*" and also (right beneath that) change the drop down menu for "*save workspace to .RData on exit:*" to say "*Never*".
 
 If you use Positron, it's already configured not to save workspaces, so no changes are needed.
+
+::: {.callout-warning}
+## Two versions of the term "Workspace"
+
+Rather annoyingly, the term "workspace" also has a second meaning in Positron. This meaning will be covered in detail later (see @sec-R_proj_posit_workspace). Just know that, to easily distinguish between them, this book will use the phrase "R Workspace" and "Positron Workspace" respectively.
+
+:::
 
 ## Object Modes {#sec-modes}
 
@@ -1679,7 +1686,7 @@ To view hidden items, you can access them through a terminal application or enab
 :::
 
 
-## R Projects vs. Workspaces
+## R Projects vs. Positron Workspaces {#sec-R_proj_posit_workspace}
 
 Both RStudio and Positron offer convenient features for handling your working directory;[^dir_help] though, they differ somewhat in their approach. RStudio employs what are referred to as "R Projects" and Positron makes use of "Workspaces". Both are core features that users should be aware of.
 
@@ -1710,9 +1717,16 @@ An RStudio project can be opened in a couple of different ways:
 
 Each time you open a project, RStudio will start a new R session, set your working directory to the project directory, and load your command history from that project (which is stored as a hidden file called [.Rhistory]{.mono}). This means you can immediately start working with relative file paths without needing to use `setwd()` or remember where your files are located.
 
-### Positron Workspaces {#sec-workspace}
+### Positron Workspaces {#sec-posit_workspace}
 
 In contrast to RStudio, Positron does not generate [.Rproj]{.mono} files. It uses **Workspaces** instead, which is a concept inherited from its parent IDE, Visual Studio Code. A workspace is simply a folder that you open in Positron and will set the working directory automatically to that folder, but without any [.Rproj]{.mono} being generated or required. That being said, if you already have [.Rproj]{.mono} files in your folders, you can safely leave them there. Positron will ignore them and they will not cause you any problems. Thus, you can use the same project folder in both RStudio and Positron.
+
+::: {.callout-warning}
+## R's Workspace vs. Positron's Workspace
+
+In @sec-R_workspaces we talked about "workspaces" in the context of [.Rdata]{.mono} files. That usage of the term "workspace" is distinct from Positron's use of the term here. In the former case, we are refererring to a specific file that gets saved; whereas, in the case of Positron we are referring to a folder/directory on your computer.
+:::
+
 
 #### Opening a Workspace
 
