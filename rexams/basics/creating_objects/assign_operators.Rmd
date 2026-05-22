@@ -1,0 +1,22 @@
+Question
+========
+Which of the following statements about assignment operators in R are TRUE?
+
+Answerlist
+----------
+* Both `<-` and `=` can be used as assignment operators
+* The arrow `<-` can be reversed to assign values (e.g., `10 -> z`)
+* There is absolutely no difference between `<-` and `=` in all contexts
+* RStudio and Positron have a keyboard shortcut (Alt + minus) for typing `<-`
+* Using `=` requires fewer keystrokes than using `<-`
+
+Solution
+========
+
+
+Meta-information
+================
+exname: assignment_operators
+extype: mchoice
+exsolution: 11011
+exshuffle: TRUE

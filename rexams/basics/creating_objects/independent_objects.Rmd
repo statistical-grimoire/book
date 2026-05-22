@@ -1,0 +1,22 @@
+Question
+========
+What is the value of `y` when the following code is run?
+(Try to determine the answer without actually running it)
+
+```r
+x <- 3
+y <- x
+x <- x + 2
+y
+```
+
+Solution
+========
+The value of y is 3. When `y <- x` is executed, y is assigned the value 3 (the value x represented at that time). When x is later modified to 5, this does not affect y because altering x creates a new object in memory; it doesn't change the object that y points to.
+
+Meta-information
+================
+exname: independent_objects
+extype: num
+exsolution: 3
+extol: 0

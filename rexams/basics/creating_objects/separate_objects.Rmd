@@ -1,0 +1,27 @@
+Question
+========
+After running the following code, what can we say about `x` and `y`?
+
+```r
+x <- 1
+y <- 1
+```
+
+Answerlist
+----------
+* `x` and `y` represent the same object in memory
+* `x` and `y` are technically different objects in memory
+* `x` and `y` will always have the same value going forward
+* Changing `x` will automatically change `y`
+
+Solution
+========
+When you run `x <- 1` and `y <- 1` separately, x and y are technically different objects in memory. Each assignment creates a separate binding. This is different from `y <- x`, which would make y point to the same object as x (at that moment). However, even in that case, modifying one does not affect the other.
+
+Meta-information
+================
+exname: separate_objects
+extype: schoice
+exsolution: 0100
+exshuffle: TRUE
+

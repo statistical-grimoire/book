@@ -128,7 +128,7 @@ As an example, to type capital letters you should always depress the shift key o
 
 With the formalities of installation, console, and scripting window behind us, we can now start learning to write (i.e., code) in R. But before we dive in, some advice for novice programmers is in order.
 
-You don't need to memorize anything in this section or any section of this text. R is a language, and like any language, consistent use will lead to natural, effortless memorization over time. To help accelerate this process, here are some basic recommendations:
+You do not need to memorize anything in this section or any section of this text. R is a language, and like any language, consistent use will lead to natural, effortless memorization over time. To help accelerate this process, here are some basic recommendations:
 
 - Type all code yourself. Resist the urge to copy and paste. The physical act of typing reinforces learning.
 - Run every example in the textbook and try to reproduce the same results.
@@ -306,7 +306,7 @@ y
 
 To see a complete list of objects presently loaded in memory have a look at the *Environment* window pane in R studio and the *Variables* pane in Positron.
 
-## Creating Objects (again)
+### Creating Objects (again)
 
 To assign the names `x` and `y` we typed an arrow `<-`. However, we could have assigned the names using an equal sign `=` instead.
 
@@ -324,10 +324,21 @@ z
 
 The existence of both `=` and `<-` as assignment operators raises an obvious question: which is better to use?  This is a question for which there are strong opinions. While code written using `=` tends to have an intuitive appeal and requires one less key to press, the `<-` has greater functionality and is generally preferred by R's anointed high council (the overseers of Tidyverse) for that reason. If you opt to use `<-`, it is worth noting that RStudio and Positron contain a keyboard shortcut that offers a more ergonomic means of typing `<-` by pressing the alt key followed by a minus (-) sign.
 
+::: {.callout-note collapse = "true" icon = "false"}
+## <i class="bi bi-question-octagon-fill"></i> Self-Test
+
+```{r message = FALSE}
+#| output: "asis"
+#| echo: false
+qs <- as.list(list.files("rexams/basics/creating_objects"))
+exams2forms(qs, n = length(qs), edir = "rexams/basics/creating_objects", solution = TRUE)
+```
+:::
+
 ::: {.callout-note collapse="true"}
 ## Comparing Assignment Operators: `<-` vs. `=`
 
-⚡ **Advanced note:** New programmers can safely skip this section.
+<i class="bi bi-exclamation-octagon-fill"></i> **Advanced Topic** - New programmers should skip this section.
 
 The original assignment operator of the S programming language was `<-`. The use of `=` to assign names to objects was a more recent development in S's history. This was doubtlessly motivated by 1) the intuitive appeal of `=` (you are setting something `equal` to something else), 2) its cleaner look, 3) its correspondence with other modern programming languages, and 4) the basic fact that it requires one less keystroke. It also has the added benefit of not resulting in confusion when dealing with inequalities. For instance, something like `x<-1` could be read as either assigning the name `x` to the object $1$, or it could be evaluating whether $x$ is *less* than $-1$.  As written here, the statement will result in the former unless appropriate spacing is applied; i.e., `x < -1`.  
 
