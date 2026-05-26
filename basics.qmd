@@ -10,7 +10,9 @@
 library("exams2forms")
 ```
 
-What follows assumes you have installed either RStudio or Positron, though almost everything discussed also applies to the base R environment that comes with the language on Windows and Macintosh computers.
+What lies ahead in this and the next two chapters is, to be blunt, nothing short of a trial by fire. These chapters contain a wealth of information that, at a quick glance, will probably feel overwhelming to novice programmers who are fond of skimming through the text (as opposed to reading it properly). Be forewarned, if you approach these chapters from the perspective that you need to memorize all their content, you will surely be consumed by the flames you are stepping in to. The goal here is not to turn you into an expert in R, programming, or statistics overnight. Instead, this and the subsequent two chapters are designed to immerse you, the reader, in the R language (and a small amount of statistics), so you can get some hands-on experience while building a strong foundational understanding. Your focus at this point should be on replicating the examples, experimenting, and trying to grasp the underlying logic of the code, not committing anything to memory (that will happen effortlessly overtime). 
+
+These chapters also assume you have installed RStudio or Positron, although nearly everything we do will also work in the base-R environment that gets installed on Windows and macOS with the R language.
 
 ## The Console Pane
 
