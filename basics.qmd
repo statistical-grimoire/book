@@ -10,9 +10,11 @@
 library("exams2forms")
 ```
 
-What lies ahead in this and the next two chapters is, to be blunt, nothing short of a trial by fire. These chapters contain a wealth of information that, at a quick glance, will probably feel overwhelming to novice programmers who are fond of skimming through the text (as opposed to reading it properly). Be forewarned, if you approach these chapters from the perspective that you need to memorize all their content, you will surely be consumed by the flames you are stepping in to. The goal here is not to turn you into an expert in R, programming, or statistics overnight. Instead, this and the subsequent two chapters are designed to immerse you, the reader, in the R language (and a small amount of statistics), so you can get some hands-on experience while building a strong foundational understanding. Your focus at this point should be on replicating the examples, experimenting, and trying to grasp the underlying logic of the code, not committing anything to memory (that will happen effortlessly overtime). 
+These next few chapters cover a lot of ground. Flipping through them, you might feel a flicker of panic and that is completely normal. What you are looking at is not a wall you need to climb in a single day; it is more like a neighbourhood you are about to move into. You do not need to memorize every street on day one. You just need to start walking around.
 
-These chapters also assume you have installed RStudio or Positron, although nearly everything we do will also work in the base-R environment that gets installed on Windows and macOS with the R language.
+The goal here is not to turn you into an expert with R, programming, or statistics overnight. These chapters are designed to immerse you in the R language so you can get real, hands-on experience while building a solid foundation underneath your feet. The most productive thing you can do at this stage is to replicate the examples, experiment freely, and try to understand the logic behind the code. Memorization will follow on its own, naturally, as patterns start to feel familiar.
+
+One practical note before you begin: these chapters assume you have RStudio or Positron installed on your computer. If you have not done that yet, now is a great time to pause and set that up (see @sec-ide_install). Nearly everything covered here will also run in the base R environment that installs alongside R on Windows and macOS, so you have flexibility regardless of which you choose.
 
 ## The Console Pane
 
@@ -1262,7 +1264,7 @@ df$`1`
 df$`Col 2`
 ```
 
-## Packages
+## Packages {#sec-R_packages}
 
 As a standalone piece of software, R provides an excellent toolbox of functions for most data analysis scenarios. However, R's true power lies in its extensibility. R users can create custom sets of functions for specific purposes and **package** these functions with documentation and sample data for others to use. This system of user-contributed packages has made R one of the most versatile statistical computing environments available.
 

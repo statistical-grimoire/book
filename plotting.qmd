@@ -1,0 +1,31 @@
+# Plotting Basics with the Tidyverse
+
+The history of R can be split into two epochs.
+
+First, there was the age before the *tidyverse*. This was a time of considerable friction, where data analysts wrestled with inconsistent syntax and workflows that seemed to resist them at every turn. It was a formative era, and the frustrations it produced planted the seeds for everything that would follow.
+
+::: {style="float: right; margin: 0 0 1em 1em; max-width: 40%;"}
+![An engraving depicting acolytes of the tidyverse burning live sacrifices, captive within a large wicker effigy, to appease their deities [@Pennant1784].](imgs/plotting/t_pennant.png){#fig-wicker fig-alt="tidyverse's wickerman"}
+:::
+
+Then came the *tidyverse*. A genuine turning point in the R world. The *tidyverse* is an (opinionated) collection of cohesive R packages (see @sec-R_packages), brought to life by Hadley Wickham and a dedicated community of contributors [@Wickham2019]. Where once working with data in R demanded patience and hard-won expertise, the tidyverse made everything much more accessible and efficient. This meant that anyone willing to learn, could develop the skills to wrangle, transform, and visualise data with clarity and confidence. Not everyone welcomed it with open arms, and some in the R community viewed the new approach with scepticism [@Muenchen], but the tidyverse has since become a cornerstone of modern R practice and transformed an already elegant language into something genuinely magical. 
+
+Each package within the tidyverse can be installed individually, though most people find it simplest to install them all at once with a single command, which is exactly where we will begin. From there, this chapter will introduce you to *ggplot2*, the tidyverse's powerful and elegant system for visualizing data. By the end, you will be producing real plots from real data, and you will have a framework for how *ggplot2* functions that will serve you well throughout the rest of this book.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
