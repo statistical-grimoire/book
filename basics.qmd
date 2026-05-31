@@ -1323,22 +1323,34 @@ Try it yourself and see what happens.
 
 It should be noted that when you close your R environment, you will not have access to these two functions the next time you open R.  However, you can easily regain access to them by re-running the `library()` functions above (meaning these lines should be saved in the scripts you write). You do NOT need to reinstall the packages unless you update to a new *major* version of R (e.g., from 4.5.x to 4.6.0). It is important to understand the difference between installing a package and loading it. You only need to install a package once (per major R release). However, you need to load it every session. You install a package once (or when updating), but must load it with `library()` each time you start a new R session and want to use it.
 
-### Package dependencies
+### Package dependencies {#sec-pkg_depend}
 
 When you install a package, R automatically installs any other packages it depends on. You may see multiple packages being downloaded, but don't panic, this is normal behaviour.
 
 ::: {.callout-note collapse="true" icon = false}
 ## <i class="bi bi-tux"></i> A Note for Linux Users
 
-Often, when using Linux, in order to install specific R packages, additional software needs to be installed through the Linux terminal.  As an example, if you install the excellent "<a href = "https://fs.r-lib.org/index.html" target = "_blank">fs</a>" package for R, the installation will likely fail and you will be prompted somewhere in the R console to install "libuv1-dev."  You would then need to open a terminal (or use the one RStudio or Positron provide) and type `sudo apt install libuv1-dev` to install (if you are on a Debian/Ubuntu-based distribution). Then retry the R installation: `install.packages("fs")`
+On Windows and macOS, R packages typically come with everything they need bundled together. On Linux, R packages are usually compiled from source code directly on your machine, and the system packages they depend on are not bundled — they are expected to already be present on your system. This is core to Linux's philosophy of minimal, modular installations. i.e. system libraries are shared across software rather than duplicated inside each one.
 
-On Windows and Mac, R packages typically come with everything the system needs bundled together. On Linux, R packages are usually installed from source code, which must be compiled on your machine. Linux follows a philosophy of minimal, modular installations. That means (Linux) system libraries are not automatically included in base installations. While this seems inconvenient, it offers advantages:
+In practice, this means that installing an R package will occasionally fail because a required system package is missing. For example, installing the excellent "<a href = "https://fs.r-lib.org/index.html" target = "_blank">fs</a>" package will likely fail on a fresh Linux system, with R printing a message in the console indicating that `libuv1-dev` is missing. The fix is straightforward: open a terminal (the one built into RStudio or Positron works fine) and install the missing package. On Debian/Ubuntu-based distributions:
 
-- Smaller package sizes (shared libraries are not duplicated).
-- Better system integration (uses your system's optimized libraries).
-- More control over dependency versions.
-- Potentially better performance (compiled specifically for your system).
-- You get to look like a genius hacker typing in the terminal.
+```bash
+sudo apt install libuv1-dev
+```
+
+Then simply retry the installation in R:
+
+```r
+install.packages("fs")
+```
+
+While this can feel like an extra hurdle at first, Linux's approach does have real advantages:
+
+- Smaller package sizes (shared libraries are not duplicated across software).
+- Better system integration (R uses your system's optimised libraries).
+- More control over which version of a dependency your system uses.
+- Potentially better performance (code compiled specifically for your hardware).
+- You get to look like a genius hacker typing commands into a terminal.
 :::
 
 

@@ -1,20 +1,62 @@
-# Plotting Basics with the Tidyverse
+# Plotting Basics with the Tidyverse {#sec-plotting}
 
 The history of R can be split into two epochs.
 
 First, there was the age before the *tidyverse*. This was a time of considerable friction, where data analysts wrestled with inconsistent syntax and workflows that seemed to resist them at every turn. It was a formative era, and the frustrations it produced planted the seeds for everything that would follow.
 
-::: {style="float: right; margin: 0 0 1em 1em; max-width: 40%;"}
+::: {style="float: right; margin: 0 0 1em 1em; max-width: 35%;"}
 ![An engraving depicting acolytes of the tidyverse burning live sacrifices, captive within a large wicker effigy, to appease their deities [@Pennant1784].](imgs/plotting/t_pennant.png){#fig-wicker fig-alt="tidyverse's wickerman"}
 :::
 
-Then came the *tidyverse*. A genuine turning point in the R world. The *tidyverse* is an (opinionated) collection of cohesive R packages (see @sec-R_packages), brought to life by Hadley Wickham and a dedicated community of contributors [@Wickham2019]. Where once working with data in R demanded patience and hard-won expertise, the tidyverse made everything much more accessible and efficient. This meant that anyone willing to learn, could develop the skills to wrangle, transform, and visualise data with clarity and confidence. Not everyone welcomed it with open arms, and some in the R community viewed the new approach with scepticism [@Muenchen], but the tidyverse has since become a cornerstone of modern R practice and transformed an already elegant language into something genuinely magical. 
+Then came the *tidyverse*. A genuine turning point in the R world. As described by its website (<a href = "https://www.tidyverse.org/" target = "_blank">https://www.tidyverse.org/</a>), the *tidyverse* is an (opinionated) collection of cohesive R packages (see @sec-R_packages), brought to life by Hadley Wickham and a dedicated community of contributors [@Wickham2019]. Where once working with data in R demanded patience and hard-won expertise, the tidyverse made everything much more accessible and efficient. This meant that anyone willing to learn, could develop the skills to wrangle, transform, and visualise data with clarity and confidence. However, not everyone welcomed it with open arms, and some in the R community viewed the new approach with scepticism [@Muenchen], but the tidyverse has since become a cornerstone of modern R practice and transformed an already elegant language into something genuinely magical. 
 
 Each package within the tidyverse can be installed individually, though most people find it simplest to install them all at once with a single command, which is exactly where we will begin. From there, this chapter will introduce you to *ggplot2*, the tidyverse's powerful and elegant system for visualizing data. By the end, you will be producing real plots from real data, and you will have a framework for how *ggplot2* functions that will serve you well throughout the rest of this book.
 
+## Installing the tidyverse
 
+Each package within the tidyverse can be installed individually, though most find it easiest to install every package within the scope of the tidyverse all at once.
 
+```r
+install.packages("tidyverse")
+```
 
+```{r}
+# Load the packages
+library(tidyverse)
+```
+
+While the above code installs all the packages, running `library(tidyverse)` only loads the the nine "core" packages:  *dplyr*, *readr*, *forcats*, *stringr*, **ggplot2**, *tibble*, *lubridate*, *tidyr*, and *purr*. Other tidyverse packages, such as *readxl*, will need to be loaded separately using the `library()` function.
+
+::: {.callout-note collapse="true" icon = false}
+## <i class="bi bi-tux"></i> A Note for Linux Users
+As mentioned in @sec-pkg_depend, Linux tends to follow a philosophy of minimal, modular installations. That means system libraries are not bundled with the base OS, and installing the *tidyverse* will likely fail unless the libraries it depends on are already present on your system.
+
+Before running `install.packages("tidyverse")`, open a terminal and run the appropriate commands for your distribution to install the required system packages. 
+
+**Debian, Ubuntu, and Ubuntu-based distributions (Kubuntu, Mint, etc.):**
+
+```bash
+sudo apt update
+sudo apt install -y \
+  libcurl4-openssl-dev \
+  libssl-dev \
+  libxml2-dev \
+  libfontconfig1-dev \
+  libfreetype6-dev \
+  libharfbuzz-dev \
+  libfribidi-dev \
+  libcairo2-dev \
+  libpng-dev \
+  libjpeg-dev \
+  libtiff5-dev \
+  libwebp-dev \
+  zlib1g-dev
+```
+
+At the time of writing, these lists should be sufficient for a successful *tidyverse* installation on Debian/Ubuntu-based systems. However, dependencies can change over time, so do not panic if something is missing. R's console output is usually quite informative about what is needed if the *tidyverse* install fails. In most cases it is as simple as running `sudo apt install <package-name>` (or the equivalent for your distribution). 
+
+Users on other distributions (Fedora, Arch, openSUSE, etc.) will need the equivalent packages for their package manager. If the installation fails, R's console output will usually identify exactly what's missing.
+:::
 
 
 

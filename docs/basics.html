@@ -273,7 +273,7 @@ window.Quarto = {
   <li><a href="#sec-R_packages" id="toc-sec-R_packages" class="nav-link" data-scroll-target="#sec-R_packages"><span class="header-section-number">3.19</span> Packages</a>
   <ul class="collapse">
   <li><a href="#loading-vs.-installing" id="toc-loading-vs.-installing" class="nav-link" data-scroll-target="#loading-vs.-installing"><span class="header-section-number">3.19.1</span> Loading vs.&nbsp;Installing</a></li>
-  <li><a href="#package-dependencies" id="toc-package-dependencies" class="nav-link" data-scroll-target="#package-dependencies"><span class="header-section-number">3.19.2</span> Package dependencies</a></li>
+  <li><a href="#sec-pkg_depend" id="toc-sec-pkg_depend" class="nav-link" data-scroll-target="#sec-pkg_depend"><span class="header-section-number">3.19.2</span> Package dependencies</a></li>
   <li><a href="#the-operator" id="toc-the-operator" class="nav-link" data-scroll-target="#the-operator"><span class="header-section-number">3.19.3</span> The <code>::</code> operator</a></li>
   <li><a href="#checking-installed-packages" id="toc-checking-installed-packages" class="nav-link" data-scroll-target="#checking-installed-packages"><span class="header-section-number">3.19.4</span> Checking Installed Packages</a></li>
   <li><a href="#package-documentation" id="toc-package-documentation" class="nav-link" data-scroll-target="#package-documentation"><span class="header-section-number">3.19.5</span> Package Documentation</a></li>
@@ -397,16 +397,16 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about the R console are correct?</p>
-<div id="webex-5dc660974a48fbc9ea0c0533d00ef49b" class="webex-checkboxgroup" data-answer="blVPBhoAFQYYUGk=">
-<label><input type="checkbox" autocomplete="off" name="5dc660974a48fbc9ea0c0533d00ef49b"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="5dc660974a48fbc9ea0c0533d00ef49b"><span>Scripts are unnecessary if you use the console regularly</span></label><label><input type="checkbox" autocomplete="off" name="5dc660974a48fbc9ea0c0533d00ef49b"><span>Console history is preserved when you close and re-open RStudio</span></label><label><input type="checkbox" autocomplete="off" name="5dc660974a48fbc9ea0c0533d00ef49b"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label><label><input type="checkbox" autocomplete="off" name="5dc660974a48fbc9ea0c0533d00ef49b"><span>The console functions as a terminal for the R language</span></label>
+<div id="webex-1ec25d1183824ac9082cdcace0a99a6f" class="webex-checkboxgroup" data-answer="alRPAxlUHQEUAmU=">
+<label><input type="checkbox" autocomplete="off" name="1ec25d1183824ac9082cdcace0a99a6f"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label><label><input type="checkbox" autocomplete="off" name="1ec25d1183824ac9082cdcace0a99a6f"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="1ec25d1183824ac9082cdcace0a99a6f"><span>Scripts are unnecessary if you use the console regularly</span></label><label><input type="checkbox" autocomplete="off" name="1ec25d1183824ac9082cdcace0a99a6f"><span>Console history is preserved when you close and re-open RStudio</span></label><label><input type="checkbox" autocomplete="off" name="1ec25d1183824ac9082cdcace0a99a6f"><span>The console functions as a terminal for the R language</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about the R console are correct?</p>
-<div id="webex-c5a605464cca3825f7e7db8ce14c398e" class="webex-checkboxgroup" data-answer="OARNBhwEGAcYUz4=">
-<label><input type="checkbox" autocomplete="off" name="c5a605464cca3825f7e7db8ce14c398e"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label><label><input type="checkbox" autocomplete="off" name="c5a605464cca3825f7e7db8ce14c398e"><span>Scripts are unnecessary if you use the console regularly</span></label><label><input type="checkbox" autocomplete="off" name="c5a605464cca3825f7e7db8ce14c398e"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="c5a605464cca3825f7e7db8ce14c398e"><span>The console functions as a terminal for the R language</span></label><label><input type="checkbox" autocomplete="off" name="c5a605464cca3825f7e7db8ce14c398e"><span>Console history is preserved when you close and re-open RStudio</span></label>
+<div id="webex-0ee288342a3de6a06fb432b4f2721b02" class="webex-checkboxgroup" data-answer="a1RJAhQJHwQeUG4=">
+<label><input type="checkbox" autocomplete="off" name="0ee288342a3de6a06fb432b4f2721b02"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="0ee288342a3de6a06fb432b4f2721b02"><span>Console history is preserved when you close and re-open RStudio</span></label><label><input type="checkbox" autocomplete="off" name="0ee288342a3de6a06fb432b4f2721b02"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label><label><input type="checkbox" autocomplete="off" name="0ee288342a3de6a06fb432b4f2721b02"><span>Scripts are unnecessary if you use the console regularly</span></label><label><input type="checkbox" autocomplete="off" name="0ee288342a3de6a06fb432b4f2721b02"><span>The console functions as a terminal for the R language</span></label>
 </div>
 </div>
 </div>
@@ -415,16 +415,16 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the symbol <span class="math inline">\(&gt;\)</span> represent in the R console?</p>
-<div id="webex-c0008bc79f4505d42143a24991e0149b" class="webex-radiogroup" data-answer="OAAcABRSTwcVV2k=">
-<label><input type="radio" autocomplete="off" name="c0008bc79f4505d42143a24991e0149b"><span>The output display marker</span></label><label><input type="radio" autocomplete="off" name="c0008bc79f4505d42143a24991e0149b"><span>The R version number</span></label><label><input type="radio" autocomplete="off" name="c0008bc79f4505d42143a24991e0149b"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="c0008bc79f4505d42143a24991e0149b"><span>A continuation symbol for incomplete code</span></label><label><input type="radio" autocomplete="off" name="c0008bc79f4505d42143a24991e0149b"><span>The command line’s prompt where you type commands</span></label>
+<div id="webex-504c2b1c2776ea146673e8b51d0fd3a6" class="webex-radiogroup" data-answer="bgAYUx5SHVIeB2o=">
+<label><input type="radio" autocomplete="off" name="504c2b1c2776ea146673e8b51d0fd3a6"><span>The R version number</span></label><label><input type="radio" autocomplete="off" name="504c2b1c2776ea146673e8b51d0fd3a6"><span>The output display marker</span></label><label><input type="radio" autocomplete="off" name="504c2b1c2776ea146673e8b51d0fd3a6"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="504c2b1c2776ea146673e8b51d0fd3a6"><span>The command line’s prompt where you type commands</span></label><label><input type="radio" autocomplete="off" name="504c2b1c2776ea146673e8b51d0fd3a6"><span>A continuation symbol for incomplete code</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the symbol <span class="math inline">\(&gt;\)</span> represent in the R console?</p>
-<div id="webex-b4cbae0b318d54700cb5f5d2d9eabe41" class="webex-radiogroup" data-answer="OQRPU01VHFIfAWU=">
-<label><input type="radio" autocomplete="off" name="b4cbae0b318d54700cb5f5d2d9eabe41"><span>The R version number</span></label><label><input type="radio" autocomplete="off" name="b4cbae0b318d54700cb5f5d2d9eabe41"><span>The command line’s prompt where you type commands</span></label><label><input type="radio" autocomplete="off" name="b4cbae0b318d54700cb5f5d2d9eabe41"><span>A continuation symbol for incomplete code</span></label><label><input type="radio" autocomplete="off" name="b4cbae0b318d54700cb5f5d2d9eabe41"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="b4cbae0b318d54700cb5f5d2d9eabe41"><span>The output display marker</span></label>
+<div id="webex-42c21a39ef037dd1dc468fb68e6306c9" class="webex-radiogroup" data-answer="bwJPAh1QHwlJVm0=">
+<label><input type="radio" autocomplete="off" name="42c21a39ef037dd1dc468fb68e6306c9"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="42c21a39ef037dd1dc468fb68e6306c9"><span>The output display marker</span></label><label><input type="radio" autocomplete="off" name="42c21a39ef037dd1dc468fb68e6306c9"><span>The command line’s prompt where you type commands</span></label><label><input type="radio" autocomplete="off" name="42c21a39ef037dd1dc468fb68e6306c9"><span>A continuation symbol for incomplete code</span></label><label><input type="radio" autocomplete="off" name="42c21a39ef037dd1dc468fb68e6306c9"><span>The R version number</span></label>
 </div>
 </div>
 </div>
@@ -457,24 +457,24 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What keyboard shortcut is used to run a line of code from the script pane in RStudio or Positron?</p>
-<div id="webex-97095be3e1520348d82c5e81efde57d9" class="webex-radiogroup" data-answer="YgYcCRlSSQNJAWg=">
-<label><input type="radio" autocomplete="off" name="97095be3e1520348d82c5e81efde57d9"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="97095be3e1520348d82c5e81efde57d9"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="97095be3e1520348d82c5e81efde57d9"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="97095be3e1520348d82c5e81efde57d9"><span>Command + Run</span></label><label><input type="radio" autocomplete="off" name="97095be3e1520348d82c5e81efde57d9"><span>Alt + Enter/Return</span></label>
+<div id="webex-288a0e6529ad37875123a9af0b33526c" class="webex-radiogroup" data-answer="aQgUUBxVGgUeCTw=">
+<label><input type="radio" autocomplete="off" name="288a0e6529ad37875123a9af0b33526c"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="288a0e6529ad37875123a9af0b33526c"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="288a0e6529ad37875123a9af0b33526c"><span>Command + Run</span></label><label><input type="radio" autocomplete="off" name="288a0e6529ad37875123a9af0b33526c"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="288a0e6529ad37875123a9af0b33526c"><span>Alt + Enter/Return</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What keyboard shortcut is used to run a line of code from the script pane in RStudio or Positron?</p>
-<div id="webex-e6eaadd9cfaff7801c6ab52aad307a7e" class="webex-radiogroup" data-answer="PgZJUE1USAlPVjw=">
-<label><input type="radio" autocomplete="off" name="e6eaadd9cfaff7801c6ab52aad307a7e"><span>Command + Run</span></label><label><input type="radio" autocomplete="off" name="e6eaadd9cfaff7801c6ab52aad307a7e"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="e6eaadd9cfaff7801c6ab52aad307a7e"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="e6eaadd9cfaff7801c6ab52aad307a7e"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="e6eaadd9cfaff7801c6ab52aad307a7e"><span>Shift + Enter/Return</span></label>
+<div id="webex-7e1f09122dafd6f8f605ae1c8aa42390" class="webex-radiogroup" data-answer="bFUdVhwIHQIeVDw=">
+<label><input type="radio" autocomplete="off" name="7e1f09122dafd6f8f605ae1c8aa42390"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="7e1f09122dafd6f8f605ae1c8aa42390"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="7e1f09122dafd6f8f605ae1c8aa42390"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="7e1f09122dafd6f8f605ae1c8aa42390"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="7e1f09122dafd6f8f605ae1c8aa42390"><span>Command + Run</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What keyboard shortcut is used to run a line of code from the script pane in RStudio or Positron?</p>
-<div id="webex-3b059ef4b43f423ad467baffc86c9340" class="webex-radiogroup" data-answer="aFIcBRVVSgVOBG4=">
-<label><input type="radio" autocomplete="off" name="3b059ef4b43f423ad467baffc86c9340"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="3b059ef4b43f423ad467baffc86c9340"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="3b059ef4b43f423ad467baffc86c9340"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="3b059ef4b43f423ad467baffc86c9340"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="3b059ef4b43f423ad467baffc86c9340"><span>Command + Run</span></label>
+<div id="webex-2203a4f2792b23ab8930ee9623295f6b" class="webex-radiogroup" data-answer="aQMcA00ESgIbCW8=">
+<label><input type="radio" autocomplete="off" name="2203a4f2792b23ab8930ee9623295f6b"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="2203a4f2792b23ab8930ee9623295f6b"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="2203a4f2792b23ab8930ee9623295f6b"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="2203a4f2792b23ab8930ee9623295f6b"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="2203a4f2792b23ab8930ee9623295f6b"><span>Command + Run</span></label>
 </div>
 </div>
 </div>
@@ -483,24 +483,24 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about running code from an R script are correct?</p>
-<div id="webex-a4b420673dca21678db6dca020f08d5d" class="webex-checkboxgroup" data-answer="OgVOBR4AGgYfVD4=">
-<label><input type="checkbox" autocomplete="off" name="a4b420673dca21678db6dca020f08d5d"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="a4b420673dca21678db6dca020f08d5d"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="a4b420673dca21678db6dca020f08d5d"><span>You must always run all code in the script at once</span></label><label><input type="checkbox" autocomplete="off" name="a4b420673dca21678db6dca020f08d5d"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="a4b420673dca21678db6dca020f08d5d"><span>Scripts automatically run code as you type it</span></label>
+<div id="webex-9c9a67586ff93c2476c2dd4e549f3df3" class="webex-checkboxgroup" data-answer="YlMVUBoGGQkaVjs=">
+<label><input type="checkbox" autocomplete="off" name="9c9a67586ff93c2476c2dd4e549f3df3"><span>You must always run all code in the script at once</span></label><label><input type="checkbox" autocomplete="off" name="9c9a67586ff93c2476c2dd4e549f3df3"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="9c9a67586ff93c2476c2dd4e549f3df3"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="9c9a67586ff93c2476c2dd4e549f3df3"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="9c9a67586ff93c2476c2dd4e549f3df3"><span>Scripts automatically run code as you type it</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about running code from an R script are correct?</p>
-<div id="webex-5c6ca9230e827792b6c998276a94f40a" class="webex-checkboxgroup" data-answer="blIaUk0JHgIcVWU=">
-<label><input type="checkbox" autocomplete="off" name="5c6ca9230e827792b6c998276a94f40a"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="5c6ca9230e827792b6c998276a94f40a"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="5c6ca9230e827792b6c998276a94f40a"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="5c6ca9230e827792b6c998276a94f40a"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="5c6ca9230e827792b6c998276a94f40a"><span>You must always run all code in the script at once</span></label>
+<div id="webex-cc3678b5aa1c5d4901f19171ae3c1491" class="webex-checkboxgroup" data-answer="OFIfBhsJTgRNUWw=">
+<label><input type="checkbox" autocomplete="off" name="cc3678b5aa1c5d4901f19171ae3c1491"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="cc3678b5aa1c5d4901f19171ae3c1491"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="cc3678b5aa1c5d4901f19171ae3c1491"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="cc3678b5aa1c5d4901f19171ae3c1491"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="cc3678b5aa1c5d4901f19171ae3c1491"><span>You must always run all code in the script at once</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about running code from an R script are correct?</p>
-<div id="webex-f6e4d73b01bba8e3fc47213a65feda20" class="webex-checkboxgroup" data-answer="PQdJBEgGH1McAT8=">
-<label><input type="checkbox" autocomplete="off" name="f6e4d73b01bba8e3fc47213a65feda20"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="f6e4d73b01bba8e3fc47213a65feda20"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="f6e4d73b01bba8e3fc47213a65feda20"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="f6e4d73b01bba8e3fc47213a65feda20"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="f6e4d73b01bba8e3fc47213a65feda20"><span>You must always run all code in the script at once</span></label>
+<div id="webex-87a7c61f255b34db385f578ae394f3c7" class="webex-checkboxgroup" data-answer="YwZNB08HHVceBWg=">
+<label><input type="checkbox" autocomplete="off" name="87a7c61f255b34db385f578ae394f3c7"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="87a7c61f255b34db385f578ae394f3c7"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="87a7c61f255b34db385f578ae394f3c7"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="87a7c61f255b34db385f578ae394f3c7"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="87a7c61f255b34db385f578ae394f3c7"><span>You must always run all code in the script at once</span></label>
 </div>
 </div>
 </div>
@@ -509,24 +509,24 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What is an R script?</p>
-<div id="webex-fc64be195d3a80e1a72f28c5696499bf" class="webex-radiogroup" data-answer="PVMaBU5VHQkZVG4=">
-<label><input type="radio" autocomplete="off" name="fc64be195d3a80e1a72f28c5696499bf"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="fc64be195d3a80e1a72f28c5696499bf"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="fc64be195d3a80e1a72f28c5696499bf"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="fc64be195d3a80e1a72f28c5696499bf"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="fc64be195d3a80e1a72f28c5696499bf"><span>A graphical interface for creating plots</span></label>
+<div id="webex-f6248c934667f80d4c64bf7a7791d5fe" class="webex-radiogroup" data-answer="PQceBBRTFQMYBms=">
+<label><input type="radio" autocomplete="off" name="f6248c934667f80d4c64bf7a7791d5fe"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="f6248c934667f80d4c64bf7a7791d5fe"><span>A graphical interface for creating plots</span></label><label><input type="radio" autocomplete="off" name="f6248c934667f80d4c64bf7a7791d5fe"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="f6248c934667f80d4c64bf7a7791d5fe"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="f6248c934667f80d4c64bf7a7791d5fe"><span>A read-only document that displays pre-written code</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What is an R script?</p>
-<div id="webex-77f8fb76291329c96cc7915498fb362e" class="webex-radiogroup" data-answer="bAdKCEpSGwceCWw=">
-<label><input type="radio" autocomplete="off" name="77f8fb76291329c96cc7915498fb362e"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="77f8fb76291329c96cc7915498fb362e"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="77f8fb76291329c96cc7915498fb362e"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="77f8fb76291329c96cc7915498fb362e"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="77f8fb76291329c96cc7915498fb362e"><span>A graphical interface for creating plots</span></label>
+<div id="webex-dc76bc723a07b00b160f708ef9dbd8b1" class="webex-radiogroup" data-answer="P1MbB05TGwIfUW0=">
+<label><input type="radio" autocomplete="off" name="dc76bc723a07b00b160f708ef9dbd8b1"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="dc76bc723a07b00b160f708ef9dbd8b1"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="dc76bc723a07b00b160f708ef9dbd8b1"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="dc76bc723a07b00b160f708ef9dbd8b1"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="dc76bc723a07b00b160f708ef9dbd8b1"><span>A graphical interface for creating plots</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What is an R script?</p>
-<div id="webex-64644110e04ebf88db744c1327a9928a" class="webex-radiogroup" data-answer="bQQaBBgBHQFJAGk=">
-<label><input type="radio" autocomplete="off" name="64644110e04ebf88db744c1327a9928a"><span>A graphical interface for creating plots</span></label><label><input type="radio" autocomplete="off" name="64644110e04ebf88db744c1327a9928a"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="64644110e04ebf88db744c1327a9928a"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="64644110e04ebf88db744c1327a9928a"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="64644110e04ebf88db744c1327a9928a"><span>A file that only stores output from R calculations</span></label>
+<div id="webex-1c221322cb9bfa62c87bde7450cd7d71" class="webex-radiogroup" data-answer="alMeAx0DHgJPUmQ=">
+<label><input type="radio" autocomplete="off" name="1c221322cb9bfa62c87bde7450cd7d71"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="1c221322cb9bfa62c87bde7450cd7d71"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="1c221322cb9bfa62c87bde7450cd7d71"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="1c221322cb9bfa62c87bde7450cd7d71"><span>A graphical interface for creating plots</span></label><label><input type="radio" autocomplete="off" name="1c221322cb9bfa62c87bde7450cd7d71"><span>A temporary workspace that cannot be saved</span></label>
 </div>
 </div>
 </div>
@@ -746,32 +746,32 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-7ce8e0a27784e1be73be26d3cfcfbd6b" class="webex-radiogroup" data-answer="bFJJCEkATQIbB2U=">
-<label><input type="radio" autocomplete="off" name="7ce8e0a27784e1be73be26d3cfcfbd6b"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="7ce8e0a27784e1be73be26d3cfcfbd6b"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="7ce8e0a27784e1be73be26d3cfcfbd6b"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="7ce8e0a27784e1be73be26d3cfcfbd6b"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="7ce8e0a27784e1be73be26d3cfcfbd6b"><span><code>Error</code></span></label>
+<div id="webex-c897b3dfe4c4c3b8360b84fca9b1fc59" class="webex-radiogroup" data-answer="OAgVB04DSFdJBD4=">
+<label><input type="radio" autocomplete="off" name="c897b3dfe4c4c3b8360b84fca9b1fc59"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="c897b3dfe4c4c3b8360b84fca9b1fc59"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="c897b3dfe4c4c3b8360b84fca9b1fc59"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="c897b3dfe4c4c3b8360b84fca9b1fc59"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="c897b3dfe4c4c3b8360b84fca9b1fc59"><span><code>Error</code></span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-5efbdfbd102216d2016fcd4e9433f6c4" class="webex-radiogroup" data-answer="blVKUkhWTlQdAW8=">
-<label><input type="radio" autocomplete="off" name="5efbdfbd102216d2016fcd4e9433f6c4"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="5efbdfbd102216d2016fcd4e9433f6c4"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="5efbdfbd102216d2016fcd4e9433f6c4"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="5efbdfbd102216d2016fcd4e9433f6c4"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="5efbdfbd102216d2016fcd4e9433f6c4"><span><code>Inf</code></span></label>
+<div id="webex-93bc686f182b533a94f982b2341f39ae" class="webex-radiogroup" data-answer="YgNOUxoIGlYdCW8=">
+<label><input type="radio" autocomplete="off" name="93bc686f182b533a94f982b2341f39ae"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="93bc686f182b533a94f982b2341f39ae"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="93bc686f182b533a94f982b2341f39ae"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="93bc686f182b533a94f982b2341f39ae"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="93bc686f182b533a94f982b2341f39ae"><span><code>Inf</code></span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-7a7aa09c55c10a3eb80cc734ab168448" class="webex-radiogroup" data-answer="bFAbUU0AFVMZBT4=">
-<label><input type="radio" autocomplete="off" name="7a7aa09c55c10a3eb80cc734ab168448"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="7a7aa09c55c10a3eb80cc734ab168448"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="7a7aa09c55c10a3eb80cc734ab168448"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="7a7aa09c55c10a3eb80cc734ab168448"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="7a7aa09c55c10a3eb80cc734ab168448"><span><code>Error</code></span></label>
+<div id="webex-783fb1c7e619eaf5568d55824ece9156" class="webex-radiogroup" data-answer="bAgfVk4BTwdJB2w=">
+<label><input type="radio" autocomplete="off" name="783fb1c7e619eaf5568d55824ece9156"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="783fb1c7e619eaf5568d55824ece9156"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="783fb1c7e619eaf5568d55824ece9156"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="783fb1c7e619eaf5568d55824ece9156"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="783fb1c7e619eaf5568d55824ece9156"><span><code>Inf</code></span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-aedbf22db96fb5731ef56f86c1382b77" class="webex-radiogroup" data-answer="OlVIUkoDHlROCWs=">
-<label><input type="radio" autocomplete="off" name="aedbf22db96fb5731ef56f86c1382b77"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="aedbf22db96fb5731ef56f86c1382b77"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="aedbf22db96fb5731ef56f86c1382b77"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="aedbf22db96fb5731ef56f86c1382b77"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="aedbf22db96fb5731ef56f86c1382b77"><span><code>Error</code></span></label>
+<div id="webex-13e6f536280fca1f1333a87763e036fe" class="webex-radiogroup" data-answer="agNJB0oFHwYeCG0=">
+<label><input type="radio" autocomplete="off" name="13e6f536280fca1f1333a87763e036fe"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="13e6f536280fca1f1333a87763e036fe"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="13e6f536280fca1f1333a87763e036fe"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="13e6f536280fca1f1333a87763e036fe"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="13e6f536280fca1f1333a87763e036fe"><span><code>NaN</code></span></label>
 </div>
 </div>
 </div>
@@ -780,25 +780,25 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-55302cb0eda2470554b715ab650cbbee" data-tol="0" size="20" data-answer="bhcBEm8="></p>
+<p><input class="webex-solveme nospaces" id="webex-f6d5fb5e9a0607cfb3758963f4fb8383" data-tol="0" size="20" data-answer="PRRWFzs="></p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-39f45635d05b612202f50e25c733e812" data-tol="0" size="20" data-answer="aBtUFmg="></p>
+<p><input class="webex-solveme nospaces" id="webex-60ffa0a2ec7345b3e05b18b52ee8605e" data-tol="0" size="20" data-answer="bRJURDw="></p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-3d0877dde1af173145b0448bca0ee1fe" data-tol="0" size="20" data-answer="aEYCGmo="></p>
+<p><input class="webex-solveme nospaces" id="webex-061604e7cc35890b1f0f841a4fd13869" data-tol="0" size="20" data-answer="axQDFG0="></p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-e6971b4dbca4c01141265d4996b11f61" data-tol="0" size="20" data-answer="PhQLFWw="></p>
+<p><input class="webex-solveme nospaces" id="webex-6ae4cba9de0b92b36837a79f81480fc7" data-tol="0" size="20" data-answer="bUNXFj4="></p>
 </div>
 </div>
 </div>
@@ -806,32 +806,32 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-bfd54cb0002004a4a5fc9fd8d891eb10" class="webex-radiogroup" data-answer="OVZIBRhSTgAcAG8=">
-<label><input type="radio" autocomplete="off" name="bfd54cb0002004a4a5fc9fd8d891eb10"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="bfd54cb0002004a4a5fc9fd8d891eb10"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="bfd54cb0002004a4a5fc9fd8d891eb10"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="bfd54cb0002004a4a5fc9fd8d891eb10"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="bfd54cb0002004a4a5fc9fd8d891eb10"><span>The integer division operator that returns the quotient</span></label>
+<div id="webex-99a1f749507e8be31a89ec4a967084dc" class="webex-radiogroup" data-answer="YglNAEoHGAkZAGo=">
+<label><input type="radio" autocomplete="off" name="99a1f749507e8be31a89ec4a967084dc"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="99a1f749507e8be31a89ec4a967084dc"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="99a1f749507e8be31a89ec4a967084dc"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="99a1f749507e8be31a89ec4a967084dc"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="99a1f749507e8be31a89ec4a967084dc"><span>The integer division operator that returns the quotient</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-6635933255e20f5ca7e723151df09939" class="webex-radiogroup" data-answer="bQcfBRUDHwIZBTg=">
-<label><input type="radio" autocomplete="off" name="6635933255e20f5ca7e723151df09939"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="6635933255e20f5ca7e723151df09939"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="6635933255e20f5ca7e723151df09939"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="6635933255e20f5ca7e723151df09939"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="6635933255e20f5ca7e723151df09939"><span>The comment symbol</span></label>
+<div id="webex-951cf013b7c95e1f6ea1ff1a30c0123f" class="webex-radiogroup" data-answer="YgUdU0oAHQJOBz4=">
+<label><input type="radio" autocomplete="off" name="951cf013b7c95e1f6ea1ff1a30c0123f"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="951cf013b7c95e1f6ea1ff1a30c0123f"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="951cf013b7c95e1f6ea1ff1a30c0123f"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="951cf013b7c95e1f6ea1ff1a30c0123f"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="951cf013b7c95e1f6ea1ff1a30c0123f"><span>The integer division operator that returns the quotient</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-a2f56ecee56016cd278815fd8cda74d8" class="webex-radiogroup" data-answer="OgJKBRpUT1VJBWs=">
-<label><input type="radio" autocomplete="off" name="a2f56ecee56016cd278815fd8cda74d8"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="a2f56ecee56016cd278815fd8cda74d8"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="a2f56ecee56016cd278815fd8cda74d8"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="a2f56ecee56016cd278815fd8cda74d8"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="a2f56ecee56016cd278815fd8cda74d8"><span>The double modulus operator</span></label>
+<div id="webex-2482ab55ac133a5e5975d6c34d32155b" class="webex-radiogroup" data-answer="aQQUA01SGQVNU2w=">
+<label><input type="radio" autocomplete="off" name="2482ab55ac133a5e5975d6c34d32155b"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="2482ab55ac133a5e5975d6c34d32155b"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="2482ab55ac133a5e5975d6c34d32155b"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="2482ab55ac133a5e5975d6c34d32155b"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="2482ab55ac133a5e5975d6c34d32155b"><span>The double modulus operator</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-f09c2b0fcd51c66bf918d99b7515eecd" class="webex-radiogroup" data-answer="PQEVUx5SHFZPVGg=">
-<label><input type="radio" autocomplete="off" name="f09c2b0fcd51c66bf918d99b7515eecd"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="f09c2b0fcd51c66bf918d99b7515eecd"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="f09c2b0fcd51c66bf918d99b7515eecd"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="f09c2b0fcd51c66bf918d99b7515eecd"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="f09c2b0fcd51c66bf918d99b7515eecd"><span>The integer division operator that returns the quotient</span></label>
+<div id="webex-dee3631b1f1ad58589d15edd630620f3" class="webex-radiogroup" data-answer="P1VJAxoCHVIdVmw=">
+<label><input type="radio" autocomplete="off" name="dee3631b1f1ad58589d15edd630620f3"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="dee3631b1f1ad58589d15edd630620f3"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="dee3631b1f1ad58589d15edd630620f3"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="dee3631b1f1ad58589d15edd630620f3"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="dee3631b1f1ad58589d15edd630620f3"><span>The double modulus operator</span></label>
 </div>
 </div>
 </div>
@@ -840,32 +840,32 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-06bb94879e35a273e69769392166e4f0" class="webex-radiogroup" data-answer="awZOUhUEFAcVVG4=">
-<label><input type="radio" autocomplete="off" name="06bb94879e35a273e69769392166e4f0"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="06bb94879e35a273e69769392166e4f0"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="06bb94879e35a273e69769392166e4f0"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="06bb94879e35a273e69769392166e4f0"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="06bb94879e35a273e69769392166e4f0"><span>Not a number</span></label>
+<div id="webex-50abc8d472404b55f979b160dcd8d32c" class="webex-radiogroup" data-answer="bgBNU08ISAQbAmk=">
+<label><input type="radio" autocomplete="off" name="50abc8d472404b55f979b160dcd8d32c"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="50abc8d472404b55f979b160dcd8d32c"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="50abc8d472404b55f979b160dcd8d32c"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="50abc8d472404b55f979b160dcd8d32c"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="50abc8d472404b55f979b160dcd8d32c"><span>Null and null</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-6d5d016cd51d170ffc51cd4f7f57df64" class="webex-radiogroup" data-answer="bVQZVBwBGlNIBGw=">
-<label><input type="radio" autocomplete="off" name="6d5d016cd51d170ffc51cd4f7f57df64"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="6d5d016cd51d170ffc51cd4f7f57df64"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="6d5d016cd51d170ffc51cd4f7f57df64"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="6d5d016cd51d170ffc51cd4f7f57df64"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="6d5d016cd51d170ffc51cd4f7f57df64"><span>Not a number</span></label>
+<div id="webex-b2db9c3c586e7b31f1f3c9daa022c604" class="webex-radiogroup" data-answer="OQJIUhVTH1MZCWs=">
+<label><input type="radio" autocomplete="off" name="b2db9c3c586e7b31f1f3c9daa022c604"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="b2db9c3c586e7b31f1f3c9daa022c604"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="b2db9c3c586e7b31f1f3c9daa022c604"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="b2db9c3c586e7b31f1f3c9daa022c604"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="b2db9c3c586e7b31f1f3c9daa022c604"><span>Not a number</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-6102c4923bb37748ef243b12bf281f70" class="webex-radiogroup" data-answer="bQEcAk8EFQIfUz8=">
-<label><input type="radio" autocomplete="off" name="6102c4923bb37748ef243b12bf281f70"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="6102c4923bb37748ef243b12bf281f70"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="6102c4923bb37748ef243b12bf281f70"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="6102c4923bb37748ef243b12bf281f70"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="6102c4923bb37748ef243b12bf281f70"><span>Not a number</span></label>
+<div id="webex-31e7ff1adc5ba1e976df9273e46e187c" class="webex-radiogroup" data-answer="aAFJB0pWHVBIU2g=">
+<label><input type="radio" autocomplete="off" name="31e7ff1adc5ba1e976df9273e46e187c"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="31e7ff1adc5ba1e976df9273e46e187c"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="31e7ff1adc5ba1e976df9273e46e187c"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="31e7ff1adc5ba1e976df9273e46e187c"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="31e7ff1adc5ba1e976df9273e46e187c"><span>Negative and negative</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-de2056765b2aef1becaa7f7628a0a63b" class="webex-radiogroup" data-answer="P1UeARkGGwYZUm8=">
-<label><input type="radio" autocomplete="off" name="de2056765b2aef1becaa7f7628a0a63b"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="de2056765b2aef1becaa7f7628a0a63b"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="de2056765b2aef1becaa7f7628a0a63b"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="de2056765b2aef1becaa7f7628a0a63b"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="de2056765b2aef1becaa7f7628a0a63b"><span>Not a numeric</span></label>
+<div id="webex-6cc5133a93375b912249b26025d9c1aa" class="webex-radiogroup" data-answer="bVNPBR0CH1EVA24=">
+<label><input type="radio" autocomplete="off" name="6cc5133a93375b912249b26025d9c1aa"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="6cc5133a93375b912249b26025d9c1aa"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="6cc5133a93375b912249b26025d9c1aa"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="6cc5133a93375b912249b26025d9c1aa"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="6cc5133a93375b912249b26025d9c1aa"><span>Negative and negative</span></label>
 </div>
 </div>
 </div>
@@ -903,8 +903,8 @@ Important
 <div class="webex-check webex-box">
 <p>The mass of Pluto (the planet, not ruler of the underworld) is <span class="math inline">\(13,030,000,000,000,000,000,000\)</span> kg</p>
 <p>What is this written in R’s scientific notation?</p>
-<div id="webex-a58152233d438b83c1dffce3e83542a4" class="webex-radiogroup" data-answer="OgUUARkCHgMfVWk=">
-<label><input type="radio" autocomplete="off" name="a58152233d438b83c1dffce3e83542a4"><span><code>13.03e+21</code></span></label><label><input type="radio" autocomplete="off" name="a58152233d438b83c1dffce3e83542a4"><span><code>0.1303e+23</code></span></label><label><input type="radio" autocomplete="off" name="a58152233d438b83c1dffce3e83542a4"><span><code>1.303e+21</code></span></label><label><input type="radio" autocomplete="off" name="a58152233d438b83c1dffce3e83542a4"><span><code>1303e+19</code></span></label><label><input type="radio" autocomplete="off" name="a58152233d438b83c1dffce3e83542a4"><span><code>1.303e+22</code></span></label>
+<div id="webex-371502b08e01c59b0032f0706952d0a8" class="webex-radiogroup" data-answer="aAYdBRwCTgAUVW0=">
+<label><input type="radio" autocomplete="off" name="371502b08e01c59b0032f0706952d0a8"><span><code>1.303e+22</code></span></label><label><input type="radio" autocomplete="off" name="371502b08e01c59b0032f0706952d0a8"><span><code>13.03e+21</code></span></label><label><input type="radio" autocomplete="off" name="371502b08e01c59b0032f0706952d0a8"><span><code>1.303e+21</code></span></label><label><input type="radio" autocomplete="off" name="371502b08e01c59b0032f0706952d0a8"><span><code>1303e+19</code></span></label><label><input type="radio" autocomplete="off" name="371502b08e01c59b0032f0706952d0a8"><span><code>0.1303e+23</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -917,8 +917,8 @@ Important
 <div class="webex-check webex-box">
 <p>The mass of Pluto (the planet, not ruler of the underworld) is <span class="math inline">\(13,030,000,000,000,000,000,000\)</span> kg</p>
 <p>What is this written in R’s scientific notation?</p>
-<div id="webex-b33fe673a8b864cdf125ff280fcda245" class="webex-radiogroup" data-answer="OQMfVkkHGwNNCD8=">
-<label><input type="radio" autocomplete="off" name="b33fe673a8b864cdf125ff280fcda245"><span><code>13.03e+21</code></span></label><label><input type="radio" autocomplete="off" name="b33fe673a8b864cdf125ff280fcda245"><span><code>1.303e+21</code></span></label><label><input type="radio" autocomplete="off" name="b33fe673a8b864cdf125ff280fcda245"><span><code>1.303e+22</code></span></label><label><input type="radio" autocomplete="off" name="b33fe673a8b864cdf125ff280fcda245"><span><code>0.1303e+23</code></span></label><label><input type="radio" autocomplete="off" name="b33fe673a8b864cdf125ff280fcda245"><span><code>1303e+19</code></span></label>
+<div id="webex-ebd6a27ceea91eece7137ebd72ec2a6e" class="webex-radiogroup" data-answer="PlJIBk0CG1JJVTw=">
+<label><input type="radio" autocomplete="off" name="ebd6a27ceea91eece7137ebd72ec2a6e"><span><code>0.1303e+23</code></span></label><label><input type="radio" autocomplete="off" name="ebd6a27ceea91eece7137ebd72ec2a6e"><span><code>1.303e+21</code></span></label><label><input type="radio" autocomplete="off" name="ebd6a27ceea91eece7137ebd72ec2a6e"><span><code>13.03e+21</code></span></label><label><input type="radio" autocomplete="off" name="ebd6a27ceea91eece7137ebd72ec2a6e"><span><code>1.303e+22</code></span></label><label><input type="radio" autocomplete="off" name="ebd6a27ceea91eece7137ebd72ec2a6e"><span><code>1303e+19</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -932,8 +932,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following correctly expresses <span class="math inline">\(7.2\)</span> in scientific notation?</p>
-<div id="webex-70ebdb2f338ca4e09a7c9aa83eff6610" class="webex-radiogroup" data-answer="bABJUkhSHlcfA2U=">
-<label><input type="radio" autocomplete="off" name="70ebdb2f338ca4e09a7c9aa83eff6610"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="70ebdb2f338ca4e09a7c9aa83eff6610"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="70ebdb2f338ca4e09a7c9aa83eff6610"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="70ebdb2f338ca4e09a7c9aa83eff6610"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label><label><input type="radio" autocomplete="off" name="70ebdb2f338ca4e09a7c9aa83eff6610"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label>
+<div id="webex-ba4be10dc02ad2d6980d9b9f7ef9e069" class="webex-radiogroup" data-answer="OVEYUkkBHFVPAG8=">
+<label><input type="radio" autocomplete="off" name="ba4be10dc02ad2d6980d9b9f7ef9e069"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="ba4be10dc02ad2d6980d9b9f7ef9e069"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="ba4be10dc02ad2d6980d9b9f7ef9e069"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="ba4be10dc02ad2d6980d9b9f7ef9e069"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label><label><input type="radio" autocomplete="off" name="ba4be10dc02ad2d6980d9b9f7ef9e069"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -944,8 +944,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following correctly expresses <span class="math inline">\(7.2\)</span> in scientific notation?</p>
-<div id="webex-ca5360b374d406a09868375c37718bba" class="webex-radiogroup" data-answer="OFEZAxoBTgMbBDk=">
-<label><input type="radio" autocomplete="off" name="ca5360b374d406a09868375c37718bba"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="ca5360b374d406a09868375c37718bba"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="ca5360b374d406a09868375c37718bba"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label><label><input type="radio" autocomplete="off" name="ca5360b374d406a09868375c37718bba"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="ca5360b374d406a09868375c37718bba"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label>
+<div id="webex-9c6b78b89a5089219f69508baedab221" class="webex-radiogroup" data-answer="YlMaUhsITggVUGg=">
+<label><input type="radio" autocomplete="off" name="9c6b78b89a5089219f69508baedab221"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="9c6b78b89a5089219f69508baedab221"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="9c6b78b89a5089219f69508baedab221"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="9c6b78b89a5089219f69508baedab221"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="9c6b78b89a5089219f69508baedab221"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1042,8 +1042,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about assignment operators in R are TRUE?</p>
-<div id="webex-8026693683359f93acfeacb616dc28a7" class="webex-checkboxgroup" data-answer="YwAeBxoIHwcUAm4=">
-<label><input type="checkbox" autocomplete="off" name="8026693683359f93acfeacb616dc28a7"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="8026693683359f93acfeacb616dc28a7"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="8026693683359f93acfeacb616dc28a7"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="8026693683359f93acfeacb616dc28a7"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="8026693683359f93acfeacb616dc28a7"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label>
+<div id="webex-53c83a303b70a75365ea1f6b142ebb38" class="webex-checkboxgroup" data-answer="bgNPCR9QHwEfU2o=">
+<label><input type="checkbox" autocomplete="off" name="53c83a303b70a75365ea1f6b142ebb38"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="53c83a303b70a75365ea1f6b142ebb38"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="53c83a303b70a75365ea1f6b142ebb38"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="53c83a303b70a75365ea1f6b142ebb38"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="53c83a303b70a75365ea1f6b142ebb38"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1053,8 +1053,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about assignment operators in R are TRUE?</p>
-<div id="webex-0b6f7fdf4c3e82be6a72f61ed14ac62b" class="webex-checkboxgroup" data-answer="a1MaVxtWSFcYUm4=">
-<label><input type="checkbox" autocomplete="off" name="0b6f7fdf4c3e82be6a72f61ed14ac62b"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="0b6f7fdf4c3e82be6a72f61ed14ac62b"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="0b6f7fdf4c3e82be6a72f61ed14ac62b"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="0b6f7fdf4c3e82be6a72f61ed14ac62b"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="0b6f7fdf4c3e82be6a72f61ed14ac62b"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label>
+<div id="webex-7ef8c748eebab2286441c9c6f56cf221" class="webex-checkboxgroup" data-answer="bFRKCE8GGAlJVD8=">
+<label><input type="checkbox" autocomplete="off" name="7ef8c748eebab2286441c9c6f56cf221"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="7ef8c748eebab2286441c9c6f56cf221"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="7ef8c748eebab2286441c9c6f56cf221"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="7ef8c748eebab2286441c9c6f56cf221"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="7ef8c748eebab2286441c9c6f56cf221"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1064,8 +1064,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about assignment operators in R are TRUE?</p>
-<div id="webex-9ea26df8b797775236a1823eba476473" class="webex-checkboxgroup" data-answer="YlRNAhpVSglOBmQ=">
-<label><input type="checkbox" autocomplete="off" name="9ea26df8b797775236a1823eba476473"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="9ea26df8b797775236a1823eba476473"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="9ea26df8b797775236a1823eba476473"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="9ea26df8b797775236a1823eba476473"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="9ea26df8b797775236a1823eba476473"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label>
+<div id="webex-bf6d7b1397d0e41453148f1dbf29bc59" class="webex-checkboxgroup" data-answer="OVcaVRtSHQIVBjk=">
+<label><input type="checkbox" autocomplete="off" name="bf6d7b1397d0e41453148f1dbf29bc59"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="bf6d7b1397d0e41453148f1dbf29bc59"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="bf6d7b1397d0e41453148f1dbf29bc59"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="bf6d7b1397d0e41453148f1dbf29bc59"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="bf6d7b1397d0e41453148f1dbf29bc59"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1081,7 +1081,7 @@ Important
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><input class="webex-solveme nospaces" id="webex-fc2037b40d36a44b53d410b392e36af9" data-tol="0" size="20" data-answer="PUEBEm4="></p>
+<p><input class="webex-solveme nospaces" id="webex-f0bc211dff2176add06bad04bcdf239e" data-tol="0" size="20" data-answer="PRJRQW8="></p>
 </div>
 <div class="webex-solution">
 <p>The value of y is 3. When <code>y &lt;- x</code> is executed, y is assigned the value 3 (the value x represented at that time). When x is later modified to 5, this does not affect y because altering x creates a new object in memory; it doesn’t change the object that y points to.</p>
@@ -1094,7 +1094,7 @@ Important
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><input class="webex-solveme nospaces" id="webex-02076130889427f1747156fa59f14df9" data-tol="0" size="20" data-answer="axADFWs="></p>
+<p><input class="webex-solveme nospaces" id="webex-82d474fee8e48dc30eacfcc84b32e9e5" data-tol="0" size="20" data-answer="YxBXFmo="></p>
 </div>
 <div class="webex-solution">
 <p>The value of y is 3. When <code>y &lt;- x</code> is executed, y is assigned the value 3 (the value x represented at that time). When x is later modified to 5, this does not affect y because altering x creates a new object in memory; it doesn’t change the object that y points to.</p>
@@ -1107,7 +1107,7 @@ Important
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><input class="webex-solveme nospaces" id="webex-63c209add5833837b41835303dd1beaa" data-tol="0" size="20" data-answer="bRFQEG0="></p>
+<p><input class="webex-solveme nospaces" id="webex-2774f8a052b3394ff0a957543f3f1dc4" data-tol="0" size="20" data-answer="aRUEFjs="></p>
 </div>
 <div class="webex-solution">
 <p>The value of y is 3. When <code>y &lt;- x</code> is executed, y is assigned the value 3 (the value x represented at that time). When x is later modified to 5, this does not affect y because altering x creates a new object in memory; it doesn’t change the object that y points to.</p>
@@ -1120,8 +1120,8 @@ Important
 <p>After running the following code, what can we say about <code>x</code> and <code>y</code>?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="webex-784e34a4404e74203ccbbd05789313d9" class="webex-radiogroup" data-answer="bAgYVR8FTQRp">
-<label><input type="radio" autocomplete="off" name="784e34a4404e74203ccbbd05789313d9"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="784e34a4404e74203ccbbd05789313d9"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="784e34a4404e74203ccbbd05789313d9"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="784e34a4404e74203ccbbd05789313d9"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label>
+<div id="webex-a73c115fe28a81bea8c6be102b833c90" class="webex-radiogroup" data-answer="OgcfUx0BGVc4">
+<label><input type="radio" autocomplete="off" name="a73c115fe28a81bea8c6be102b833c90"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="a73c115fe28a81bea8c6be102b833c90"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label><label><input type="radio" autocomplete="off" name="a73c115fe28a81bea8c6be102b833c90"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="a73c115fe28a81bea8c6be102b833c90"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1133,8 +1133,8 @@ Important
 <p>After running the following code, what can we say about <code>x</code> and <code>y</code>?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="webex-83869fa59ad101f7f7d2668db3d47969" class="webex-radiogroup" data-answer="YwMUBhVXTQVk">
-<label><input type="radio" autocomplete="off" name="83869fa59ad101f7f7d2668db3d47969"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="83869fa59ad101f7f7d2668db3d47969"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label><label><input type="radio" autocomplete="off" name="83869fa59ad101f7f7d2668db3d47969"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="83869fa59ad101f7f7d2668db3d47969"><span>Changing <code>x</code> will automatically change <code>y</code></span></label>
+<div id="webex-f1f0c10f96ea4dae626e3e757ceb9351" class="webex-radiogroup" data-answer="PQBKAE8BHFZk">
+<label><input type="radio" autocomplete="off" name="f1f0c10f96ea4dae626e3e757ceb9351"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="f1f0c10f96ea4dae626e3e757ceb9351"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="f1f0c10f96ea4dae626e3e757ceb9351"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="f1f0c10f96ea4dae626e3e757ceb9351"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1146,8 +1146,8 @@ Important
 <p>After running the following code, what can we say about <code>x</code> and <code>y</code>?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="webex-5208362315002ddb5f186cd8dea6f49d" class="webex-radiogroup" data-answer="bgMcCB8GHgNs">
-<label><input type="radio" autocomplete="off" name="5208362315002ddb5f186cd8dea6f49d"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="5208362315002ddb5f186cd8dea6f49d"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="5208362315002ddb5f186cd8dea6f49d"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label><label><input type="radio" autocomplete="off" name="5208362315002ddb5f186cd8dea6f49d"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label>
+<div id="webex-b3dabfeef40e177b0fd3327cae354025" class="webex-radiogroup" data-answer="OQNIUE5WSVU7">
+<label><input type="radio" autocomplete="off" name="b3dabfeef40e177b0fd3327cae354025"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="b3dabfeef40e177b0fd3327cae354025"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="b3dabfeef40e177b0fd3327cae354025"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="b3dabfeef40e177b0fd3327cae354025"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -2491,8 +2491,8 @@ to install packages into? (yes/No/cancel)</code></pre>
 <h3 data-number="3.19.1" class="anchored" data-anchor-id="loading-vs.-installing"><span class="header-section-number">3.19.1</span> Loading vs.&nbsp;Installing</h3>
 <p>It should be noted that when you close your R environment, you will not have access to these two functions the next time you open R. However, you can easily regain access to them by re-running the <code>library()</code> functions above (meaning these lines should be saved in the scripts you write). You do NOT need to reinstall the packages unless you update to a new <em>major</em> version of R (e.g., from 4.5.x to 4.6.0). It is important to understand the difference between installing a package and loading it. You only need to install a package once (per major R release). However, you need to load it every session. You install a package once (or when updating), but must load it with <code>library()</code> each time you start a new R session and want to use it.</p>
 </section>
-<section id="package-dependencies" class="level3" data-number="3.19.2">
-<h3 data-number="3.19.2" class="anchored" data-anchor-id="package-dependencies"><span class="header-section-number">3.19.2</span> Package dependencies</h3>
+<section id="sec-pkg_depend" class="level3" data-number="3.19.2">
+<h3 data-number="3.19.2" class="anchored" data-anchor-id="sec-pkg_depend"><span class="header-section-number">3.19.2</span> Package dependencies</h3>
 <p>When you install a package, R automatically installs any other packages it depends on. You may see multiple packages being downloaded, but don’t panic, this is normal behaviour.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
@@ -2506,14 +2506,18 @@ to install packages into? (yes/No/cancel)</code></pre>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Often, when using Linux, in order to install specific R packages, additional software needs to be installed through the Linux terminal. As an example, if you install the excellent “<a href="https://fs.r-lib.org/index.html" target="_blank">fs</a>” package for R, the installation will likely fail and you will be prompted somewhere in the R console to install “libuv1-dev.” You would then need to open a terminal (or use the one RStudio or Positron provide) and type <code>sudo apt install libuv1-dev</code> to install (if you are on a Debian/Ubuntu-based distribution). Then retry the R installation: <code>install.packages("fs")</code></p>
-<p>On Windows and Mac, R packages typically come with everything the system needs bundled together. On Linux, R packages are usually installed from source code, which must be compiled on your machine. Linux follows a philosophy of minimal, modular installations. That means (Linux) system libraries are not automatically included in base installations. While this seems inconvenient, it offers advantages:</p>
+<p>On Windows and macOS, R packages typically come with everything they need bundled together. On Linux, R packages are usually compiled from source code directly on your machine, and the system packages they depend on are not bundled — they are expected to already be present on your system. This is core to Linux’s philosophy of minimal, modular installations. i.e.&nbsp;system libraries are shared across software rather than duplicated inside each one.</p>
+<p>In practice, this means that installing an R package will occasionally fail because a required system package is missing. For example, installing the excellent “<a href="https://fs.r-lib.org/index.html" target="_blank">fs</a>” package will likely fail on a fresh Linux system, with R printing a message in the console indicating that <code>libuv1-dev</code> is missing. The fix is straightforward: open a terminal (the one built into RStudio or Positron works fine) and install the missing package. On Debian/Ubuntu-based distributions:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb244"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb244-1"><a href="#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install libuv1-dev</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then simply retry the installation in R:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb245"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"fs"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>While this can feel like an extra hurdle at first, Linux’s approach does have real advantages:</p>
 <ul>
-<li>Smaller package sizes (shared libraries are not duplicated).</li>
-<li>Better system integration (uses your system’s optimized libraries).</li>
-<li>More control over dependency versions.</li>
-<li>Potentially better performance (compiled specifically for your system).</li>
-<li>You get to look like a genius hacker typing in the terminal.</li>
+<li>Smaller package sizes (shared libraries are not duplicated across software).</li>
+<li>Better system integration (R uses your system’s optimised libraries).</li>
+<li>More control over which version of a dependency your system uses.</li>
+<li>Potentially better performance (code compiled specifically for your hardware).</li>
+<li>You get to look like a genius hacker typing commands into a terminal.</li>
 </ul>
 </div>
 </div>
@@ -2530,7 +2534,7 @@ to install packages into? (yes/No/cancel)</code></pre>
 <section id="package-documentation" class="level3" data-number="3.19.5">
 <h3 data-number="3.19.5" class="anchored" data-anchor-id="package-documentation"><span class="header-section-number">3.19.5</span> Package Documentation</h3>
 <p>Each package downloaded from the CRAN repository has documentation associated for both it and the functions it provides. This documentation can be accessed through the usual route of typing a <code>?</code> followed by the package name or function name.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb244"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb244-1"><a href="#cb244-1" aria-hidden="true" tabindex="-1"></a>?cowsay</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb246"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb246-1"><a href="#cb246-1" aria-hidden="true" tabindex="-1"></a>?cowsay</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Since it is easy to miss, it should be noted that the top left corner of R documentation specifies what package a function belongs too (see <a href="#sec-R_help_docs" class="quarto-xref"><span>Section 3.16</span></a> for an example). Insofar as learning about a package is concerned, R Documentation is quite useful, but often times a better option is to seek out its accompanying <span class="mono">.pdf</span> reference manual or, better still, associated website. A basic internet search is usually the simplest way to find these resources for any given package; however, the R project has links to the manuals and websites of all its packages in the package’s description page. The following web address will take you to a complete list of all the current CRAN packages available to download and provide you with a link to each package’s description page.</p>
 <center>
 <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" target="_blank">https://cran.r-project.org/web/packages/available_packages_by_name.html</a>
@@ -2591,7 +2595,7 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <section id="the-working-directory" class="level3" data-number="3.21.1">
 <h3 data-number="3.21.1" class="anchored" data-anchor-id="the-working-directory"><span class="header-section-number">3.21.1</span> The Working Directory</h3>
 <p>Any time R needs to access or create a file, it needs to access or create that file somewhere and if you do not tell R where that somewhere is, it will default to what is known as the <strong>working directory</strong>. To see where your current working directory is set to you can just run the function <code>getwd()</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb245"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb245-1"><a href="#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb247"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb247-1"><a href="#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><i class="bi bi-windows"></i> Windows style output:</p>
 <pre><code>C:/Users/YourName/Documents</code></pre>
 <p><i class="bi bi-apple"></i> MacOS style output:</p>
@@ -2621,20 +2625,20 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <p>Continuing down the path, next we have a subdirectory of <code>Users</code> (or <code>home</code> on Linux) that is called <code>YourName</code>. When you set up a user account <code>YourName</code> will be typically populated with whatever user name you chose for your account.</p>
 <p>From that subdirectory, we have another subdirectory, which is called <code>Documents</code>.</p>
 <p>To change working directory you can simply use the function <code>setwd()</code> and specify the full address. As an example, to change the working directory to the desktop you would type something akin to …</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb249"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/YourName/Desktop"</span>)</span>
-<span id="cb249-2"><a href="#cb249-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># Run to confirm wd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb251"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"C:/Users/YourName/Desktop"</span>)</span>
+<span id="cb251-2"><a href="#cb251-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>() <span class="co"># Run to confirm wd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>[1] "C:/Users/YourName/Desktop"</code></pre>
 <p>To illustrate how directories work and how you can easily navigate them, we are going to create a simple data frame and save it as a spreadsheet file that we can open on our computer.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb251"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data frame</span></span>
-<span id="cb251-2"><a href="#cb251-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Alphabet =</span> letters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb253"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the data frame</span></span>
+<span id="cb253-2"><a href="#cb253-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Alphabet =</span> letters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To save this as a spreadsheet file, we can use the function <code>write.csv</code>. This function will save our data frame as something called a <code>.csv</code> file, which is just a universal type of spreadsheet file that any spreadsheet software can open. To use this function, we just need to give it our data frame and tell it what we want our file name to be.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb252"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb252-1"><a href="#cb252-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb254"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb254-1"><a href="#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Running this function will save a file on our computer called <code>file_1.csv</code>, but where has it saved it? As you have hopefully realized, it has saved it to our working directory. Thus, if your working directory is set to your desktop, you should see the file <code>file_1.csv</code> located there. You can have R list the files (and subdirectories) in your working directory by running:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb253"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb253-1"><a href="#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb255"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="st">"."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "file_1.csv"</code></pre>
@@ -2642,17 +2646,17 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 </div>
 <p>A word of warning: If your working directory contains many files, this command may produce a long list of them, with <code>file_1.csv</code> being just one among many.</p>
 <p>Alternatively, we could have saved the file by specifying the complete file path followed by the file name we want our spreadsheet to have.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb255"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb255-1"><a href="#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows Example</span></span>
-<span id="cb255-2"><a href="#cb255-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Desktop/file_1.csv"</span>)</span>
-<span id="cb255-3"><a href="#cb255-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-4"><a href="#cb255-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS Example</span></span>
-<span id="cb255-5"><a href="#cb255-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/Users/YourName/Desktop/file_1.csv"</span>)</span>
-<span id="cb255-6"><a href="#cb255-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb255-7"><a href="#cb255-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Linux Example</span></span>
-<span id="cb255-8"><a href="#cb255-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/home/yourname/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb257"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows Example</span></span>
+<span id="cb257-2"><a href="#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Desktop/file_1.csv"</span>)</span>
+<span id="cb257-3"><a href="#cb257-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb257-4"><a href="#cb257-4" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS Example</span></span>
+<span id="cb257-5"><a href="#cb257-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/Users/YourName/Desktop/file_1.csv"</span>)</span>
+<span id="cb257-6"><a href="#cb257-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb257-7"><a href="#cb257-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Linux Example</span></span>
+<span id="cb257-8"><a href="#cb257-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"/home/yourname/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This method, while much more annoying to type, is valuable because it allows us to save the file in any location we want on our computer. For instance, we could have saved the file the Documents folder, even though the working directory is set to the Desktop.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb256"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb256-1"><a href="#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows example</span></span>
-<span id="cb256-2"><a href="#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Documents/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb258"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb258-1"><a href="#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Windows example</span></span>
+<span id="cb258-2"><a href="#cb258-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"C:/Users/YourName/Documents/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2669,8 +2673,8 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <li>Linux: <code>~</code> = <code>/home/yourname/</code></li>
 </ul>
 <p>So on these systems, <code>~/Desktop/file_1.csv</code> is equivalent to <code>/Users/YourName/Desktop/file_1.csv</code> (macOS) or <code>/home/yourname/Desktop/file_1.csv</code> (Linux).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb257"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb257-1"><a href="#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS and Linux Example</span></span>
-<span id="cb257-2"><a href="#cb257-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"~/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb259"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb259-1"><a href="#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="co"># macOS and Linux Example</span></span>
+<span id="cb259-2"><a href="#cb259-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"~/Desktop/file_1.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </section>
@@ -2678,7 +2682,7 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <h3 data-number="3.21.2" class="anchored" data-anchor-id="navigating-directories"><span class="header-section-number">3.21.2</span> Navigating Directories</h3>
 <p>When it comes to navigating directories, it is quite cumbersome to type the full address of a location on your computer. Additionally, writing a fixed address into your code makes it difficult for other people run that same code on their computers since directories vary from computer to computer. Consequently, it is usually beneficial to specify a path relative to the working directory. To illustrate we are going to use the function <code>dir.create()</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb258"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb258-1"><a href="#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb260"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb260-1"><a href="#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This will create a directory (i.e., visually you will see a folder) called <code>directory_A</code> inside your working directory. The period (<code>.</code>) in front of the forward slash (<code>/</code>) is a shorthand way of referring to the current working directory. Thus, you can view the path here as equivalent to typing <code>"C:/Users/YourName/Desktop/directory_A"</code> on a Windows computer for example. Moreover, we can visualize this structure using a what is known as a directory tree:</p>
 <div class="cell">
@@ -2699,11 +2703,11 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 └── file_1.csv</code></pre>
 </div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb261"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb261-1"><a href="#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A/directory_B/directory_C"</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb263"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb263-1"><a href="#cb263-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="at">path =</span> <span class="st">"./directory_A/directory_B/directory_C"</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When a directory is nested within another directory, we refer to that as a <strong>subdirectory</strong>. We set the argument <code>recursive = TRUE</code> so that when directory B is created, directories within it (i.e., C) are also created.</p>
 <p>Now suppose we wanted to save our spreadsheet inside <code>directory_A</code>. One way of doing this would be to specify the full path, but an easier way is to specify the path <em>relative</em> to our working directory using the period (<code>.</code>) notation.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb262"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb262-1"><a href="#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"./directory_A/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb264"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"./directory_A/file_2.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -2716,9 +2720,9 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 </div>
 </div>
 <p>Moving further <em>down</em> a directory is a straightforward matter, but what if you wanted to move <em>up</em> the file path? For instance, suppose the working directory is located in <code>directory_C</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb264"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"./directory_A/directory_B/directory_C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb266"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb266-1"><a href="#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"./directory_A/directory_B/directory_C"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Now suppose we wanted to save the spreadsheet in <code>directory_B</code>. To do this we would just represent moving “up” one directory with two periods (<code>".."</code>).</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb265"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../file_3.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb267"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../file_3.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
@@ -2731,7 +2735,7 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 </div>
 </div>
 <p>If you wanted to save the file two directories up, you just carry forward the logic.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb267"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../../file_4.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb269"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> <span class="st">"../../file_4.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
@@ -2745,7 +2749,7 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 </div>
 </div>
 <p>And you can use the same logic reset the working directory back to the <code>Desktop</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb269"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"../../.."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb271"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb271-1"><a href="#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"../../.."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We end up back at the Desktop because …</p>
 <ul>
 <li><code>".."</code> moves us from <code>Directory C</code> up to <code>Directory B</code>.</li>
@@ -2753,20 +2757,20 @@ Figure&nbsp;3.2: From the National Gallery of Victoria, Melbourne: Gustave Doré
 <li><code>"../../.."</code> moves us from <code>Directory C</code> up to the <code>Desktop</code>, which is where <code>Directory A</code> is located in this case.</li>
 </ul>
 <p>It has to be said that, even if you are specifying a locations relative to the working directory, path addresses can still get quite long, for this reason it is often helpful to store directories as character strings that are easier to type and combine as needed. If we run …</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb270"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb270-1"><a href="#cb270-1" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
-<span id="cb270-2"><a href="#cb270-2" aria-hidden="true" tabindex="-1"></a>dir_A <span class="ot">&lt;-</span> <span class="st">"directory_A"</span></span>
-<span id="cb270-3"><a href="#cb270-3" aria-hidden="true" tabindex="-1"></a>dir_B <span class="ot">&lt;-</span> <span class="st">"directory_B"</span></span>
-<span id="cb270-4"><a href="#cb270-4" aria-hidden="true" tabindex="-1"></a>dir_C <span class="ot">&lt;-</span> <span class="st">"directory_C"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb272"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb272-1"><a href="#cb272-1" aria-hidden="true" tabindex="-1"></a>wd <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb272-2"><a href="#cb272-2" aria-hidden="true" tabindex="-1"></a>dir_A <span class="ot">&lt;-</span> <span class="st">"directory_A"</span></span>
+<span id="cb272-3"><a href="#cb272-3" aria-hidden="true" tabindex="-1"></a>dir_B <span class="ot">&lt;-</span> <span class="st">"directory_B"</span></span>
+<span id="cb272-4"><a href="#cb272-4" aria-hidden="true" tabindex="-1"></a>dir_C <span class="ot">&lt;-</span> <span class="st">"directory_C"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>We can then use the <code>file.path()</code> function to, for instance, produce a complete path directly to directory A, B, or C with minimal code that is easier to read.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb271"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb271-1"><a href="#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb273"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb273-1"><a href="#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "/home/yourname/Desktop/directory_A/directory_B/directory_C"</code></pre>
 </div>
 </div>
 <p>So if we wanted to save our spreadsheet in <code>directory_C</code> using the full file path we could run …</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb273"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb273-1"><a href="#cb273-1" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C, <span class="st">"file_5.csv"</span>)</span>
-<span id="cb273-2"><a href="#cb273-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb275"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb275-1"><a href="#cb275-1" aria-hidden="true" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">file.path</span>(wd, dir_A, dir_B, dir_C, <span class="st">"file_5.csv"</span>)</span>
+<span id="cb275-2"><a href="#cb275-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(df, <span class="at">file =</span> name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>.
