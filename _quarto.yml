@@ -42,8 +42,6 @@ format:
       body-width: 900px
       margin-width: 300px
       gutter-width: 1rem
-  pdf:
-    documentclass: scrreprt
 knitr:
   opts_chunk:
     dev: svglite

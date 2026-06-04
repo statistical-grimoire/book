@@ -1,10 +1,16 @@
 ---
-execute:
-  fig-width: 6
-  fig-height: 5
+knitr:
+  opts_chunk:
+    fig.width: 3
+    fig.height: 2
+    out-width: "60%"
 ---
 
 # Plotting Basics with the Tidyverse {#sec-plotting}
+
+::: callout-caution
+### Under Construction
+:::
 
 The history of R can be split into two epochs. First, there was the age before the *tidyverse*. This was a time of considerable friction, where data analysts wrestled with inconsistent syntax and workflows that seemed to resist them at every turn. It was a formative era, and the frustrations it produced planted the seeds for everything that would follow.
 
@@ -77,6 +83,9 @@ A core component of any GOOD DATA ANALYSIS obviously involves visualizing your d
 By itself, base R comes with a stock set of functions for plotting data. To illustrate we can run the following code to produce a nice looking histogram ...
 
 ```{r}
+#| fig-width: 5
+#| fig-height: 4
+#| out-width: "80%"
 x <- rnorm(10000)
 hist(x)
 ```
@@ -100,4 +109,115 @@ The first thing to do will be to ensure that *ggplot2* has been installed into o
 
 [^shame]:Shame on you.
 
+## An example data set: msleep
+
+Before we can plot anything, we need something to plot. In addition to its large set of plotting functions, the *ggplot2* package also provides a few illustrative data sets.[^data_sets] We will work with the `msleep` data set, which provides a variety of measurements relevant to the sleep behaviour of a wide range of mammals. To access the data you need only run the code `msleep` after the tidyverse has been loaded, which will output a $83 \times 11$ data frame.[^tibble_technically] Given the limited space available in the console window, the data frame is going to be truncated substantially. Thus, if you would like to view the entire data set, you can utilize R's `View()` function, which will display the data in a separate spreadsheet style window.
+
+[^data_sets]:Base R comes with a nice collection of data sets as well. To obtain a list you need only run the function `data()`. To obtain the list of data sets for *ggplot2* you need only include the package name as an argument in this function: `data(package = "ggplot2")`
+
+[^tibble_technically]:Technically we are looking at a *tibble*, which is the *tidyverse's* own take on a data frame. For our present purposes though, this is a distinction without a difference.
+
+```r
+msleep # print data to console
+View(msleep) # view the data in a spreadsheet-style window
+```
+```{r}
+#| echo: false
+library(DT)
+datatable(msleep, options = list(
+  scrollY = "500px",
+  scrollX = TRUE,
+  paging = FALSE
+))
+```
+
+Looking closely at the data, we can see a variety of variables (the column names) that are, for the most part, self explanatory. In this case, the column names represent distinct variables that have been measured and, particularly with larger data frames that cannot be adequately printed to the console, it is often useful to have R list out the name of each column. We can do this quite easily using the `names()` function.
+
+```{r}
+names(msleep)
+```
+
+Now, while the names of each column are self-explanatory, the elements of each column are perhaps less so.  For instance, in the `$sleep_total` column, are we looking at values in minutes, hours, or days? In the `$conservation` column we can see a number of abbreviations such as `lc`, `nt`, `vu`, and so on. What do we make of those? A good starting point for answering these questions is to check the documentation associated with the data set, which all CRAN packages are required to include. This can be accessed in the usual way with a `?`
+
+```r
+?msleep
+```
+
+Inspecting the documentation, we can see that `$sleep_total` is given in hours and that the column `$conservation` indicates "the conservation status of the animal".  Admittedly, concerning this latter column, that does not tell us too much, but it does at least give us a starting point for understanding what those values might represent.  In all likelihood, we are seeing abbreviations for the IUCN's (International Union for Conservation of Nature) species ranking. 
+
+- lc = Least Concern
+- nt = Near Threatened
+- vu = Vulnerable
+- en = Endangered
+- cd = Conservation Dependent
+
+Using a **scatter plot** as a basic starting point, we will graph the relationship between the variables body weight (kg) and sleep total (hours).  These are represented by the columns `$bodywt` and `$sleep_total` respectively. 
+
+## Adding layers
+
+*ggplot2* constructs plots by adding visual layers on top of one another. The first layer is the grid upon which our scatter plot's points will appear.  To generate this first layer we can simply type:
+
+```{r}
+ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
+```
+
+Looking at the `ggplot()` function we typed, we can see that the argument `data` tells *ggplot2* where the data is coming from - in this case it is coming from the `msleep` data frame.  The `x` and `y` arguments are telling *ggplot2* what variables/columns should be mapped to the $x$ and $y$ axis respectively.  Notice that, not only has *ggplot2* labelled the axis accordingly, but it has also given them scales that correspond to size of the values found in both columns.
+
+Next we will, quite literally, add (`+`) a layer of points on top of this by typing `+ geom_point()`. The term "geom" here is just an abbreviation of "geometric object", and points are one of many different types of geometric object *ggplot2* recognizes.
+
+```{r}
+ggplot(data = msleep, aes(x = bodywt, y = sleep_total)) +
+  geom_point()
+```
+
+At this juncture, it is worth taking a moment to talk about how this code we have written has been organized. Here we placed `geom_point()` on a new line and indented it. This was not something we strictly had to do.  We could have put everything on a single line like so ...
+
+```r
+ggplot(data = msleep, aes(x = bodywt, y = sleep_total)) + geom_point()
+```
+
+But, particularly as we add more customization to the plot, this style of writing becomes hard to read. The *tidyverse's* <a href = "https://style.tidyverse.org/syntax.html#long-lines" target = "_blank">R style guide</a> recommends that no line of code exceed 80 characters, which is the advice most of the R community adheres to. 
+
+::: {.callout-tip collapse = "true"}
+## Displaying the 80-character margin
+
+RStudio and Positron can both be configured to display a vertical margin line at the 80-character limit.
+
+**RStudio:**
+
+1. Select *Tools* from the global menu.
+2. Choose *Global Options*.
+3. Select *Code* in the sidebar.
+4. Choose *Display* and tick the box labelled "Show margin".
+
+**Positron:**
+
+1. Select *File* > *Preferences* > *Settings* from the global menu.
+2. In the settings search bar, search for `ruler`.
+3. Under *Editor: Rulers*, click the link labelled *Edit in settings.json*.
+4. In the file that opens, edit the relevant line to read:
+   ```json
+   "editor.rulers": [80]
+   ```
+5. Save the file.
+:::
+
+To ensure that you do not exceed limit with larger blocks of code, it is worth remembering that you can always move portions of code to a new line after a comma, operator, or unclosed parentheses. The indentation we used is purely to guide the eye in recognizing that `geom_point()` belongs to a larger block of code.[^indent]
+
+
+[^indent]:While the R programming language allows users to indent code with reckless abandon, some programming languages, such as *Python*, make it part of their syntax and thus require it to be used in very specific ways.
+
+### Inspecting potential outliers
+
+At present, the plot does not look like much. There are numerous points scattered between 0 and 1000, and a couple of very extreme points beyond which are skewing the $x$-axis scale and making the majority of the data difficult to visualize. Given how rare and extreme these two values appear, we should inspect them to ensure that they are not errors within the data set (i.e., ensure that there is not a 2500 kg mouse, bird, or other such abomination in our data set). To accomplish this, most people will instinctively try to scan the data frame's 83 rows one by one with their eyes. Obviously, that strategy will be slow, inefficient, and highly prone to error. A better strategy is to have R isolate these values using the `filter()` function which is part of the *tidyverse's* *dplyr* package.[^subset_func] We simply give the function our data frame, and then specify a logical rule to subset by. In this case we will tell the function to show us all the rows that have a body weight greater than 2000.
+
+[^subset_func]:Base R has a (more or less) equivalent function `subset()` that we could use as well. There are reasons for preferring `filter()`, but in this context there is no advantage to using either.
+
+```{r}
+filter(msleep, bodywt > 2000)
+```
+
+A quick glance at the output reveals that these two points represent the Asian and African elephant respectively. Thus, while these values are quite extreme and do not seem to be terribly representative of the data as a whole, they are not mistakes and therefore should remain in the data set.  However, this begs the question, how do we visualize this data adequately with such odd scaling?
+
 <img src = "imgs/misc/under_construction.gif">
+
