@@ -210,7 +210,7 @@ To ensure that you do not exceed limit with larger blocks of code, it is worth r
 
 [^indent]:While the R programming language allows users to indent code with reckless abandon, some programming languages, such as *Python*, make it part of their syntax and thus require it to be used in very specific ways.
 
-### Inspecting potential outliers
+## Inspecting potential outliers
 
 At present, the plot does not look like much. There are numerous points scattered between 0 and 1000, and a couple of very extreme points beyond which are skewing the $x$-axis scale and making the majority of the data difficult to visualize. Given how rare and extreme these two values appear, we should inspect them to ensure that they are not errors within the data set (i.e., ensure that there is not a 2500 kg mouse, bird, or other such abomination in our data set). To accomplish this, most people will instinctively try to scan the data frame's 83 rows one by one with their eyes. Obviously, that strategy will be slow, inefficient, and highly prone to error. A better strategy is to have R isolate these values using the `filter()` function which is part of the *tidyverse's* *dplyr* package.[^subset_func] We simply give the function our data frame, and then specify a logical rule to subset by. In this case we will tell the function to show us all the rows that have a body weight greater than 2000.
 
@@ -222,7 +222,7 @@ filter(msleep, bodywt > 2000)
 
 A quick glance at the output reveals that these two points represent the Asian and African elephant respectively. Thus, while these values are quite extreme and do not seem to be terribly representative of the data as a whole, they are not mistakes and therefore should remain in the data set.  However, this begs the question, how do we visualize this data adequately with such odd scaling?
 
-### Logarithms
+## Logarithms
 
 A common strategy in cases like this where larger values tend to become more and more extreme (i.e., exhibit some kind of exponential growth) is to plot the logarithm of the values. As a refresher of high school mathematics, logarithms are essentially exponents in reverse. For example:
 
