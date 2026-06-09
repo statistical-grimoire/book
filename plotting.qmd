@@ -2,8 +2,11 @@
 knitr:
   opts_chunk:
     fig.width: 3
-    fig.height: 2
+    fig.height: 2.25
     out-width: "60%"
+    fig.align: "center"
+filters:
+  - line-highlight
 ---
 
 # Plotting Basics with the Tidyverse {#sec-plotting}
@@ -219,5 +222,69 @@ filter(msleep, bodywt > 2000)
 
 A quick glance at the output reveals that these two points represent the Asian and African elephant respectively. Thus, while these values are quite extreme and do not seem to be terribly representative of the data as a whole, they are not mistakes and therefore should remain in the data set.  However, this begs the question, how do we visualize this data adequately with such odd scaling?
 
+### Logarithms
+
+A common strategy in cases like this where larger values tend to become more and more extreme (i.e., exhibit some kind of exponential growth) is to plot the logarithm of the values. As a refresher of high school mathematics, logarithms are essentially exponents in reverse. For example:
+
+$$10^3 = 10 \times 10 \times 10 = 1000$$
+
+A "base-10" logarithm, for instance, simply undoes this process by stating how many $10$s it takes to create $1000$.
+
+$$\log_{10}(1000) = 3$$
+
+A "base-2" logarithm asks: how many $2$s are required to create $1000$?
+
+$$\log_{2}(1000) \approx 9.966$$
+
+Thus, $2^{9.966} \approx 1000$.  
+
+A "natural" logarithm uses a base denoted as $e$ (Euler's Number), which is approximately $2.71828$.[^euler_num]
+
+[^euler_num]:In R you can obtain this by running `exp(1)`.
+
+Base-10, base-2, and natural logarithms represent the most widely used types of logarithms,[^nat_log] but you can technically use any base you desire.  As seen below, the use of logarithms in R is very straightforward.
+
+[^nat_log]:For clarity and consistency the natural logarithm of $1000$ has been written $\log_e(1000)$, but it is common practice to identify natural logarithms using "$\ln$". E.g., $\ln{(1000) \approx 6.908}$.
+
+```{r results = "hold"}
+log10(1000) # Base-10 function
+log2(1000) # Base-2 function
+log(1000) # Natural log
+log(1000, base = 666) # Pick your own base
+```
+
+A base-10 logarithm is generally considered the most intuitive, so we will use that. There are various ways to incorporate a logarithmic scale on our plot's axis, but perhaps the safest way is to simply add a new column of $\log_{10}$ values to our dataframe and plot that instead of the standard `$bodywt` column (however, see the callout below for a alternative method of scaling the axis).
+
+```{r}
+#| source-line-numbers: "1,3-4"
+msleep$bodywt_log10 <- log10(msleep$bodywt)
+
+# Re-plot the data
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point()
+```
+
+::: {.callout-tip collapse = "false"}
+## Transforming the axis, not the data
+In the previous example, the logarithm was applied by creating a new column of $x$-axis values and plotting that. However, this means that, if you want to interpret the numbers in their original units, you need to calculate $10^x$, which can be annoying.
+
+An alternative strategy would be to keep the `$bodywt` column as is and just scale the plot's axis itself to increment logarithmically, which *ggplot2* will do straightforwardly.
+
+```{r}
+#| source-line-numbers: "3"
+ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
+  geom_point() +
+  scale_x_continuous(trans = "log10")
+```
+
+The advantage of this method is you can look at a point's value on the $x$-axis and know immediately that it corresponds to a weight of $x$ kg. The drawback is you may end up with excessively small or large values on the axis, hence the scientific notation you see in the plot.
+:::
+
+
+
+
+
+
+<br><br><br><br><br><hr><br>
 <img src = "imgs/misc/under_construction.gif">
 
