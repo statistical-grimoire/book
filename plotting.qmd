@@ -280,8 +280,77 @@ ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
 The advantage of this method is you can look at a point's value on the $x$-axis and know immediately that it corresponds to a weight of $x$ kg. The drawback is you may end up with excessively small or large values on the axis, hence the scientific notation you see in the plot.
 :::
 
+## Aesthetics
 
+Geometric objects in *ggplot2*, like the point geom, all have various traits, like their size, shape, and colour that can be customized.  In the language of *ggplot2*, these are referred to as **aesthetics**.  For example, we can customize the points in the following way ...
 
+```{r}
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 3, 
+             shape = 4, 
+             colour = "blue", 
+             stroke = 1.5)
+```
+
+With a bit of experimentation, it should be apparent how the arguments `size` and `stroke` work in the above example; however, the `shape` and `colour` arguments are slightly less intuitive.[^u_colour] R comes with a variety of point shapes (technically called "plotting characters" or "**pch**" symbols for short) that are denoted by numbers. The various possibilities are depicted in @fig-pch-symbols. In this case, number $4$ is an $\times$.  Notably, the last five plotting characters ($21$ through $25$) incorporate both a `colour` aesthetic for their edges and a `fill` aesthetic. All the other symbols only require a `colour` aesthetic to be specified.
+
+[^u_colour]:If you accidentally omit the "u" when typing "colour", *ggplot2* will still understand what you mean, even though it isn't correct English.
+
+```{r}
+#| out-width: "100%"
+#| fig.height: 1.35
+#| echo: false
+#| label: fig-pch-symbols
+#| fig-cap: "R Plotting Characters"
+pch_df <- tibble(points = as.character(0:25),
+       x = rep(1:13, 2),
+       y = c(rep(1, 13), rep(2, 13)))
+
+pch_df$points <- fct(pch_df$points)
+
+ggplot(pch_df, aes(x = x, y = y, shape = points, label = points)) +
+  geom_point(size = 4, stroke = 1, fill = "#2369bd") +
+  geom_text(vjust = -2, size = 3) +
+  scale_shape_manual(values = 0:25) +
+  # scale_y_continuous(limits = c(0, 3)) +
+  scale_y_reverse(limits = c(2.5, 0.5)) +
+  theme_void() +
+  theme(legend.position = "none")
+```
+
+```{r}
+#| source-line-numbers: "4-5,7"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3,
+    shape = 25,
+    colour = "black",
+    stroke = 1.5,
+    fill = "red"
+  )
+```
+
+The plotting characters shown in @fig-pch-symbols are just a few of the options available. For instance, by using values ranging between 32 and 127, you can display a variety of ASCII characters. Additionally, you can specify a particular character instead of providing a numeric value, e.g., `shape = "\&"`.
+
+In the above examples we specified a desired colour by typing the name of a primary colour, but we are not limited to just primary colours. R comes with a built in set of 657 differently named colours. You can obtain the full list of colour names by running `colors()`.  R also has a built-in demo of these colours you can run to get a visual representation of each.  Simply run the command `demo("colors")`.[^color_wrong]
+
+[^color_wrong]:For some reason R spells "colour" incorrectly in these functions. This error has persisted for years, and the R Core Team developers show no signs of correcting it.
+
+Alternatively, instead of typing a colour name, you can use a hexadecimal value (also referred to as a "hex code" or "hex value") that represents a specific colour. For example, the hex value `"#FFC0CB"` represents the colour pink. Hexadecimal values offer the user a lot of nuance when it comes to colour selection and, in most cases, the simplest way of finding an appropriate hex value is to consult one of the many websites devoted to colour codes and colour theory (i.e., do an internet search). However, if you would like to understand the theory behind hex codes and why they are used, see the callout below.
+
+::: {.callout-note collapse="true"}
+## Hexadecimal Notation for Colours
+
+Hexadecimal values are simply numbers that use a base-16 counting method. In other words, in the world of hexadecimals, there are $16$ different numbers that are used to count with, instead of the typical $10$ numbers $(0:9)$, you were probably raised to use. These are 
+
+| **Decimal** | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Hexadecimal** | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
+
+Because of their larger base, a single hexadecimal digit can store more information than a conventional base-10 digit can. For instance, if a computer stores various gradations of the colour red using just two digits, that only allows for $100$ ($10 \times 10$) different reds. Using hexadecimals you can have $256$ ($16 \times 16$) reds, with just two digits.  Thus, if a colour is some combination of red, green, and blue, and each is stored using two hexadecimal digits that gives you $256^3 = 16,777,216$ colours as opposed to the meagre $100^3 = 1,000,000$ you would have using the inferior base-10 counting method.
+
+To use hexadecimals to represent colour, two digits are assigned to red (RR), green (GG) and blue (BB), in that order like so `"#RRGGBB"`.  Smaller values are darker, and larger values are brighter.  Consequently, black is represented as `"#000000"` and white is represented as `"#FFFFFF"`. Thus, if you want the "purest" red, you would input `"#FF0000"`, the purest green would be `"#00FF00"`, and the purest blue would be `"#0000FF"`.
+:::
 
 
 
