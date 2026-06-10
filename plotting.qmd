@@ -297,7 +297,7 @@ With a bit of experimentation, it should be apparent how the arguments `size` an
 [^u_colour]:If you accidentally omit the "u" when typing "colour", *ggplot2* will still understand what you mean, even though it isn't correct English.
 
 ```{r}
-#| out-width: "100%"
+#| out-width: "75%"
 #| fig.height: 1.35
 #| echo: false
 #| label: fig-pch-symbols
