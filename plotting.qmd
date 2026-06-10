@@ -274,7 +274,7 @@ An alternative strategy would be to keep the `$bodywt` column as is and just sca
 #| source-line-numbers: "3"
 ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
   geom_point() +
-  scale_x_continuous(trans = "log10")
+  scale_x_continuous(transform = "log10")
 ```
 
 The advantage of this method is you can look at a point's value on the $x$-axis and know immediately that it corresponds to a weight of $x$ kg. The drawback is you may end up with excessively small or large values on the axis, hence the scientific notation you see in the plot.
