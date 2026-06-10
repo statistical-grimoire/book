@@ -224,7 +224,7 @@ A quick glance at the output reveals that these two points represent the Asian a
 
 ## Logarithms
 
-A common strategy in cases like this where larger values tend to become more and more extreme (i.e., exhibit some kind of exponential growth) is to plot the logarithm of the values. As a refresher of high school mathematics, logarithms are essentially exponents in reverse. For example:
+A common strategy in cases like this where larger values tend to become more and more extreme (i.e., exhibit some kind of exponential growth) is to plot the logarithm of the values, and there are different kinds of logarithms you choose from. A "base-10", "base-2", and "natural" logarithm, represent the most widely used types of logarithms, but you can technically use any base you desire. As a refresher of some high school mathematics, logarithms are essentially exponents in reverse. For example:
 
 $$10^3 = 10 \times 10 \times 10 = 1000$$
 
@@ -240,11 +240,11 @@ Thus, $2^{9.966} \approx 1000$.
 
 A "natural" logarithm uses a base denoted as $e$ (Euler's Number), which is approximately $2.71828$.[^euler_num]
 
-[^euler_num]:In R you can obtain this by running `exp(1)`.
+[^euler_num]:In R you can obtain this by running `exp(1)`. For clarity and consistency the natural logarithm of $1000$ has been written $\log_e(1000)$, but it is common practice to identify natural logarithms using "$\ln$". E.g., $\ln{(1000) \approx 6.908}$.
 
-Base-10, base-2, and natural logarithms represent the most widely used types of logarithms,[^nat_log] but you can technically use any base you desire.  As seen below, the use of logarithms in R is very straightforward.
+$$\log_e(1000) \approx 6.908$$
 
-[^nat_log]:For clarity and consistency the natural logarithm of $1000$ has been written $\log_e(1000)$, but it is common practice to identify natural logarithms using "$\ln$". E.g., $\ln{(1000) \approx 6.908}$.
+As seen below, the use of logarithms in R is very straightforward.
 
 ```{r results = "hold"}
 log10(1000) # Base-10 function
@@ -279,6 +279,10 @@ ggplot(msleep, aes(x = bodywt, y = sleep_total)) +
 
 The advantage of this method is you can look at a point's value on the $x$-axis and know immediately that it corresponds to a weight of $x$ kg. The drawback is you may end up with excessively small or large values on the axis, hence the scientific notation you see in the plot.
 :::
+
+
+
+
 
 
 
