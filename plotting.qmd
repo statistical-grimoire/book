@@ -352,6 +352,66 @@ Because of their larger base, a single hexadecimal digit can store more informat
 To use hexadecimals to represent colour, two digits are assigned to red (RR), green (GG) and blue (BB), in that order like so `"#RRGGBB"`.  Smaller values are darker, and larger values are brighter.  Consequently, black is represented as `"#000000"` and white is represented as `"#FFFFFF"`. Thus, if you want the "purest" red, you would input `"#FF0000"`, the purest green would be `"#00FF00"`, and the purest blue would be `"#0000FF"`.
 :::
 
+## Mapping Aesthetics to a Variable
+
+In the above examples, the aesthetic changes we made to the plots affected all of the points. In the language of *ggplot2*, we would say that the aesthetics were "mapped" to *all* the points. However, it is often necessary to visually break up the points according to one of the other variables in your data.  For instance, we could colour the points in our plot according to the categories in the data's `$vore` column.
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+    geom_point(size = 3, aes(colour = vore))
+```
+
+Notice that the plot's legend shows an "NA" category. This is because there are `NA` values found within the `$vore` column (run `msleep$vore` to see them). Thus, the legend's "NA" category represents values that we have body weight and sleep total information for, but we do not know what those animals diet consists of and therefore cannot categorize them properly.[^filter_na] So instead of referring to this category as "NA", we could refer to these as "unknown". All we need to do is change the `NA` values in the data frame's `$vore` column to character values that read `"unknown"`. This can be done simply by using the `ifelse()` function, which tests a statement you write. If that statement is true, it produces a value you have specified, if it is false, then it produces an alternative value you have specified.  In other words, it works like this:
+
+[^filter_na]:To see the full list of animals who have a missing `$vore` value, you can run `filter(msleep, is.na(vore))`. This will show all the rows for which `is.na(vore)` evaluates to `TRUE`.
+
+```r
+ifelse(test, true_result, false_result)
+```
+
+In this case, we want to test *if* the value in each row *is* an `NA` value or not. Recall that the function `is.na()` tells us whether the value of a vector is an `NA` value or not.
+
+```{r}
+is.na(msleep$vore)
+```
+
+Thus, we can use that as the "test" inside the `ifelse()` function.
+
+```{r}
+ifelse(is.na(msleep$vore), "unknown", msleep$vore)
+```
+
+When you run the above code, the `ifelse()` function scans each row of the `$vore` column and evaluates whether `is.na(msleep$vore)` is `TRUE`. If it is true, it replaces the existing `NA` value with `"unknown"`. However, if it is `FALSE`, it leaves it as the original value (this is why we wrote `msleep$vore` after the second comma). The end result is a vector of values that we can use to replace the existing `$vore` column with.
+
+```{r}
+msleep$vore <- ifelse(is.na(msleep$vore), "unknown", msleep$vore)
+```
+
+Now, when we re-plot the graph, we get something much more sensible ....
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+    geom_point(size = 3, aes(colour = vore))
+```
+
+When plotting, it is usually inadvisable to *only* adjust the colour of your points because a sizeable portion of the population has some form of colour vision deficiency (a.k.a., colour blindness). And while there are "colourblind friendly" palettes we can use, there is no universal palette that works optimally for all cases of colour deficiency. Consequently, the best practice is to have each category be represented by a distinct shape.
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+    geom_point(size = 3, aes(colour = vore, shape = vore))
+```
+
+
+
 
 
 
