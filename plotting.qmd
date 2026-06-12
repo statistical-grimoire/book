@@ -164,7 +164,9 @@ Using a **scatter plot** as a basic starting point, we will graph the relationsh
 ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
 ```
 
-Looking at the `ggplot()` function we typed, we can see that the argument `data` tells *ggplot2* where the data is coming from - in this case it is coming from the `msleep` data frame.  The `x` and `y` arguments are telling *ggplot2* what variables/columns should be mapped to the $x$ and $y$ axis respectively.  Notice that, not only has *ggplot2* labelled the axis accordingly, but it has also given them scales that correspond to size of the values found in both columns.
+Looking at the `ggplot()` function we typed, we can see that the argument `data` tells *ggplot2* where the data is coming from - in this case it is coming from the `msleep` data frame.  The `x` and `y` arguments are telling *ggplot2* what variables/columns should be mapped to the $x$ and $y$ axis respectively.  Notice that, not only has *ggplot2* labelled the axis accordingly, but it has also given them scales that correspond to size of the values found in both columns.[^aes_function]
+
+[^aes_function]: If you are curious, the `aes()` function will be explained at a later point in this chapter, but it will suffice to say that the function's name is an abbreviated form of the word "aesthetic".
 
 Next we will, quite literally, add (`+`) a layer of points on top of this by typing `+ geom_point()`. The term "geom" here is just an abbreviation of "geometric object", and points are one of many different types of geometric object *ggplot2* recognizes.
 
@@ -410,13 +412,166 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     geom_point(size = 3, aes(colour = vore, shape = vore))
 ```
 
+## Displaying Trends
 
+Notice that the data points appear to trend downward as you move from left to right on the $x$-axis. In other words, as body weight increases, you tend to see decreases in sleep total. By simply adding a second geom, called `geom_smooth()`, we can use a line of best fit to represent (i.e., model) this trend.
 
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "3"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+    geom_point(size = 3, aes(colour = vore, shape = vore)) +
+    geom_smooth()
+```
 
+The shaded grey area represents a statistic called the *standard error* and the line was drawn using a fancy smoothing method called "local polynomial regression fitting", but we can use a more common regression line as well and modify various aspects of it just like we had done earlier using `geom_point()`.
 
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "3-10"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 3, aes(colour = vore, shape = vore)) +
+  geom_smooth(
+    method = "lm",
+    formula = 'y ~ x', # this line is optional
+    se = FALSE,
+    linetype = 2,
+    linewidth = 0.5,
+    colour = "black"
+  )
+```
 
+By setting `method = "lm"` on line $4$, we are instructing *ggplot2* to draw a linear model. While the concepts of standard error, polynomial regression, and linear models are more advanced topics, their value in displaying trends should be clear enough, even if the underlying mathematics is not yet fully understood.
 
+The line reading `formula = 'y ~ x'` is not strictly necessary to produce the line we did; however, in more advanced use cases specifying the trend line's formula is necessary, so it is a good habit to get it into (plus it removes the annoying message in our output telling us what formula was applied).
 
+It is at this point where the versatility of the *ggplot2* really begins to shine.  For instance, if we wanted to create a separate regression line for each category of `$vore` we can accomplish that by once again making use of the `aes()` function and "grouping" by `$vore`.
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "9"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 3, aes(colour = vore, shape = vore)) +
+  geom_smooth(
+    method = "lm",
+    formula = 'y ~ x',
+    se = FALSE,
+    colour = "black",
+    linewidth = 0.5,
+    aes(group = vore)
+  )
+```
+
+At present it is not clear which line applies to which category, but we could also have each regression line correspond to the colour mapped to `$vore`, and (in consideration of colour blindness) give each line a separate `linetype`.
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "8"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 3, aes(colour = vore, shape = vore)) +
+  geom_smooth(
+    method = "lm",
+    formula = 'y ~ x',
+    se = FALSE,
+    linewidth = 0.5,
+    aes(colour = vore, linetype = vore)
+    )
+```
+
+## Facets
+
+As interesting as our plot currently looks, it is becoming rather cluttered and difficult to visually parse. In situations like this, it is often helpful to split the plot up into separate "facets" (i.e., give each category its own graph). *ggplot2* makes this very easy with its `facet_wrap()` function.
+
+```{r}
+#| out-width: "100%"
+#| fig.width: 5
+#| fig.height: 3
+#| source-line-numbers: "9-10"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 3, aes(colour = vore, shape = vore)) +
+  geom_smooth(
+    method = "lm",
+    formula = 'y ~ x', # this line is optional
+    se = FALSE,
+    linewidth = 0.5,
+    aes(colour = vore)
+  ) +
+  facet_wrap(~vore)
+```
+
+You can interpret the small formula we wrote (`~vore`) as meaning "plot as a function of vore".
+
+Notice that now, the colour and shape aesthetics are providing redundant information with the facet labels. As a general rule, you want to avoid redundancy in your plots because additional visual elements might bias the viewer's eye in unpredictable ways. We can easily fix this by removing some of the aesthetics we added earlier, and we can also adjust the facets so that they are all on a single row by adding the argument, `nrow = 1` to our `facet\_wrap()` function.
+
+```{r}
+#| out-width: "100%"
+#| fig.width: 6
+#| fig.height: 2
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = 'y ~ x', se = FALSE, linewidth = 0.5) +
+  facet_wrap(~vore, nrow = 1)
+```
+
+The default behaviour of `facet_wrap()` preserves the $x$ and $y$ axis scales across the facets, making them easy to compare. In most cases, this is a feature you do *not* want to override but it can be done (see the R documentation: `?facet_wrap`).
+
+To finish up the plot, we should adjust some of the labelling, save it, and then take a look at some other more advanced features of *ggplot2*.
+
+## Axis Labels
+
+To adjust the $x$ and $y$ axis titles we can simply use the function `labs()`.
+
+```{r}
+#| out-width: "100%"
+#| fig.width: 6
+#| fig.height: 2
+#| source-line-numbers: "5"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = 'y ~ x', se = FALSE, linewidth = 0.5) +
+  facet_wrap(~vore, nrow = 1) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)")
+```
+
+## Saving The Plot
+
+Users of R studio will notice that in the "Plots" pane there is a button that can be used to "export" your plot and Positron has similar functionality. However, it is usually more efficient and useful to save the plot via written code, and there are different methods you could use to go about this. Since we are using *ggplot2* to create our graphs, the optimal strategy is to use the `ggsave()` function, which will save the last generated plot unless you tell it otherwise.
+
+```r
+ggsave("msleep_plot.png", dpi = 300, units = "cm", width = 20, height = 7)
+```
+
+Running this code as is will save the plot to your *working directory* (see @sec-directories for more info about directories and saving files). Within the function, we have chosen to name our image file `"msleep_plot.png"`. The file extension you specify at the end of the file name here will dictate what type of image the plot is saved as. In this case, it will save as a [.PNG]{.mono} (Portable Network Graphics) image file, which is a very standard type of image that most people and software are used to handling, though you could save it as other common formats as well (e.g., [.JPG]{.mono}, [.GIF]{.mono}, [.TIFF]{.mono}, etc.). The argument `dpi` stands for "dots per inch" and specifies the resolution of the image. For publication quality plots it is generally recommended that you have a minimum resolution of $300$ dpi.  Anything less than that will likely produce very noticeable artifacting or fuzziness, particularly if the image has been resized or magnified. The last three arguments `units`, `width` and `height` allow you to specify the dimensions of your plot and should be relatively self-explanatory. If you wanted to, for instance, give the dimensions of your plot in millimeters you would specify `"mm"`, inches would be `"in"`, and so on.
+
+### Vector Graphics vs. Raster Graphics
+
+The above code saved the plot as a [.PNG]{.mono} which is a type of "raster" image, meaning it is an image composed of tiny coloured squares called pixels. The more pixels an image has, the more detail it can provide (i.e., the higher its resolution). However, the problem with using raster images is that resizing, stretching, and magnification have deleterious effects on their quality. For instance, the image below shows a small section of our 300 dpi graph magnified substantially.
+
+![Artificating present on our 300 dpi raster image when magnified.](imgs/plotting/artifacting_1.png){width=100% fig-alt="Artifacts in a raster graphic." #fig-raster_graphic_ex} 
+
+A close inspection reveals jaggedness on the blue line and general blurriness around the rest of the image's elements. In academic publications, manuscripts, and presentations, this is something you want to avoid because, while these problems may not be immediately noticeable at first glance, they can impact a person's implicit sensation of the image and, by extension, their opinion of its creator. Moreover, imperfections like these can be exacerbated in the printing and publishing process.
+
+Now you might think that a simple remedy would be to increase the dpi to a much higher value, but this is generally a strategy you want to avoid.  There tends to be diminishing returns with resolution increases and anything beyond 300 dpi is not going to do much for you apart from ballooning the image's file size. The optimal strategy is to make use of something called a vector graphic.
+
+Vector graphics are not really images in the traditional sense; rather, they are more akin to a set of instructions your computer uses to draw the image. Consequently, a vector-based image can be resized and magnified as much as you would like and it will never lose its quality. The drawback to vector graphics is that they do not work too well for highly detailed photographs (e.g., a forested landscape) and they are not always recognized by software. For instance, the most common types of vector you will encounter are [.PDF]{.mono}, [.SVG]{.mono}, and .[.EPS]{.mono}.  Recent versions of, for example, Microsoft Word and PowerPoint will happily accommodate [.SVG]{.mono} files, but if you are wanting to use a [.PDF]{.mono} or [.EPS]{.mono} file, you will be out of luck. Correspondingly, Google Docs and Google Slides will not accept any type of vector graphic, which is doubly frustrating because these apps will also downscale the resolution of raster graphics you import. Libre Office's Writer and Impress applications will accept a [.PDF]{.mono} image, but it converts it to a lower resolution raster graphic when it is imported. Despite these types of compatibility limitations, if you are able to use vector graphics then you should, because they will give your work a level polish other people are not likely to have.
+
+To save a file as a vector graphic, the process is the same as before, we just need to modify the file extension and remove the `dpi` argument (because dpi has no meaning for vector graphics).
+
+```r
+ggsave("msleep_plot.svg", units = "cm", width = 20, height = 7)
+```
+
+The above code saved the image as a [.SVG]{.mono} (Scalable Vector Graphic) file. This is a commonly used image file in web design, meaning it will, by default, be most likely displayed within a web-browser when you open it.
+
+![Magnification of a vector graphic.](imgs/plotting/artifacting_2.png){width=100% fig-alt="Magnification of a vector graphic." #fig-vector_graphic_ex} 
 
 <br><br><br><br><br><hr><br>
 <img src = "imgs/misc/under_construction.gif">
