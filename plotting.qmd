@@ -127,11 +127,14 @@ View(msleep) # view the data in a spreadsheet-style window
 ```{r}
 #| echo: false
 library(DT)
-datatable(msleep, options = list(
-  scrollY = "500px",
-  scrollX = TRUE,
-  paging = FALSE
-))
+datatable(
+  msleep,
+  options = list(
+    scrollY = "500px",
+    scrollX = TRUE,
+    paging = FALSE
+  )
+)
 ```
 
 Looking closely at the data, we can see a variety of variables (the column names) that are, for the most part, self explanatory. In this case, the column names represent distinct variables that have been measured and, particularly with larger data frames that cannot be adequately printed to the console, it is often useful to have R list out the name of each column. We can do this quite easily using the `names()` function.
@@ -288,10 +291,7 @@ Geometric objects in *ggplot2*, like the point geom, all have various traits, li
 
 ```{r}
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
-  geom_point(size = 3, 
-             shape = 4, 
-             colour = "blue", 
-             stroke = 1.5)
+  geom_point(size = 3, shape = 4, colour = "blue", stroke = 1.5)
 ```
 
 With a bit of experimentation, it should be apparent how the arguments `size` and `stroke` work in the above example; however, the `shape` and `colour` arguments are slightly less intuitive.[^u_colour] R comes with a variety of point shapes (technically called "plotting characters" or "**pch**" symbols for short) that are denoted by numbers. The various possibilities are depicted in @fig-pch-symbols. In this case, number $4$ is an $\times$.  Notably, the last five plotting characters ($21$ through $25$) incorporate both a `colour` aesthetic for their edges and a `fill` aesthetic. All the other symbols only require a `colour` aesthetic to be specified.
@@ -304,9 +304,11 @@ With a bit of experimentation, it should be apparent how the arguments `size` an
 #| echo: false
 #| label: fig-pch-symbols
 #| fig-cap: "R Plotting Characters"
-pch_df <- tibble(points = as.character(0:25),
-       x = rep(1:13, 2),
-       y = c(rep(1, 13), rep(2, 13)))
+pch_df <- tibble(
+  points = as.character(0:25),
+  x = rep(1:13, 2),
+  y = c(rep(1, 13), rep(2, 13))
+)
 
 pch_df$points <- fct(pch_df$points)
 
@@ -363,7 +365,7 @@ In the above examples, the aesthetic changes we made to the plots affected all o
 #| fig.width: 4.25
 #| fig.height: 2.5
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
-    geom_point(size = 3, aes(colour = vore))
+  geom_point(size = 3, aes(colour = vore))
 ```
 
 Notice that the plot's legend shows an "NA" category. This is because there are `NA` values found within the `$vore` column (run `msleep$vore` to see them). Thus, the legend's "NA" category represents values that we have body weight and sleep total information for, but we do not know what those animals diet consists of and therefore cannot categorize them properly.[^filter_na] So instead of referring to this category as "NA", we could refer to these as "unknown". All we need to do is change the `NA` values in the data frame's `$vore` column to character values that read `"unknown"`. This can be done simply by using the `ifelse()` function, which tests a statement you write. If that statement is true, it produces a value you have specified, if it is false, then it produces an alternative value you have specified.  In other words, it works like this:
@@ -399,7 +401,7 @@ Now, when we re-plot the graph, we get something much more sensible ....
 #| fig.width: 4.25
 #| fig.height: 2.5
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
-    geom_point(size = 3, aes(colour = vore))
+  geom_point(size = 3, aes(colour = vore))
 ```
 
 When plotting, it is usually inadvisable to *only* adjust the colour of your points because a sizeable portion of the population has some form of colour vision deficiency (a.k.a., colour blindness). And while there are "colourblind friendly" palettes we can use, there is no universal palette that works optimally for all cases of colour deficiency. Consequently, the best practice is to have each category be represented by a distinct shape.
@@ -409,7 +411,7 @@ When plotting, it is usually inadvisable to *only* adjust the colour of your poi
 #| fig.width: 4.25
 #| fig.height: 2.5
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
-    geom_point(size = 3, aes(colour = vore, shape = vore))
+  geom_point(size = 3, aes(colour = vore, shape = vore))
 ```
 
 ## Displaying Trends
@@ -422,8 +424,8 @@ Notice that the data points appear to trend downward as you move from left to ri
 #| fig.height: 2.5
 #| source-line-numbers: "3"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
-    geom_point(size = 3, aes(colour = vore, shape = vore)) +
-    geom_smooth()
+  geom_point(size = 3, aes(colour = vore, shape = vore)) +
+  geom_smooth()
 ```
 
 The shaded grey area represents a statistic called the *standard error* and the line was drawn using a fancy smoothing method called "local polynomial regression fitting", but we can use a more common regression line as well and modify various aspects of it just like we had done earlier using `geom_point()`.
@@ -483,7 +485,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
     se = FALSE,
     linewidth = 0.5,
     aes(colour = vore, linetype = vore)
-    )
+  )
 ```
 
 ## Facets
@@ -573,18 +575,86 @@ The above code saved the image as a [.SVG]{.mono} (Scalable Vector Graphic) file
 
 ![Magnification of a vector graphic.](imgs/plotting/artifacting_2.png){width=75% fig-alt="Magnification of a vector graphic." #fig-vector_graphic_ex}
 
+## Scales
 
+A core concept in the "grammar" of *ggplot2* is that of scales. Scales control how data is mapped to different aesthetics. For instance, there are scales for position, colour, size, shape, linetype, and so on. When we mapped an aesthetic to a variable—like we did above where we had mapped both colour and shape to the `$vore` column:
 
+```r
+...
+geom_point(aes(colour = vore, shape = vore))
+...
+```
 
+*ggplot2* automatically chose which colours and shapes got applied to each category, but you can use functions to override these automatic mappings. 
 
+The function you use to make these overrides is going to be dictated by the aesthetic you want to modify. For instance, to adjust the colour (or edge colour) of a point you could use the `scale_colour_discrete()` function or the `scale_colour_continuous()` function. If you wanted to adjust the shapes of the points, you could use `scale_shape_discrete()` function.  If you wanted to adjust the fill colour of something (e.g., the fill colour of points or the fill colour of bars on a graph), you could use `scale_fill_discrete()` function or the `scale_fill_continuous()` function.
 
+There are a large amount of functions like these and, at this point, you do not need to concern yourself with all their varieties and how they work. What is important to recognize here is that each scale function specifies, inside its name, what aesthetic (e.g., colour, shape, fill, etc.) it is modifying:
 
+<center>
+`scale_<aesthetic name>_<transformation>()`
+</center>
 
+The "transformation" part of the function's name is intended to describe how the function modifies the specific aesthetic which will hopefully become more apparent as we move through some examples.
 
+### Position Scales: Modifying the Axis Breaks
 
+When we first created the grid on to which we drew our points, we had actually mapped some aesthetics to do this. Specifically, we mapped the $x$ and $y$ aesthetics to the `$bodywt` and `$sleep_total` columns respectively. In other words, we had written:
 
+```r
+ggplot(data = msleep, aes(x = bodywt, y = sleep_total))
+```
 
+When first mapping the $x$ and $y$ axes of a plot, *ggplot2* typically selects an appropriate sequence of values to display for each. These are what are referred to as axis *breaks* and, most of the time, *ggplot2's* default scaling for the breaks is excellent. However, there are occasions where more customized scaling is necessary. In these situations, the following four functions are useful:
 
+- `scale_x_continuous()`
+- `scale_y_continuous()`
+- `scale_x_discrete()`
+- `scale_y_discrete()`
+
+The above four functions allow you to easily modify what values appear on your axis; though, which one you use depends on whether your axis has a *continuous* or *discrete* **position scale**. Position scales control the location (i.e., $x$ and $y$) mappings of a plot's visual elements.
+
+In the case of the mammal sleep data we plotted, both the $x$-axis scale (body weight) and $y$-axis scale (sleep total) are *continuous* in nature. In other words, the axis values represent measured numeric values as opposed to categories. Another way of conceptualizing this *continuous* vs *discrete* distinction is to approach it from R's perspective. In this case, both axes represent *numeric* objects as opposed to *character* objects.
+
+```{r results = "hold"}
+mode(msleep$bodywt_log10) # x-axis
+mode(msleep$sleep_total) # y-axis
+```
+
+Thus, for the purpose of plotting, they are treated as a continuous scale and you would need to use `scale_x_continuous()` and `scale_y_continuous()` respectively. If we had, for instance, plotted a categorical variable on the $x$-axis (e.g., the conservation status of the animal) then the $x$-axis would be *discrete* while the $y$-axis remains *continuous* (we will see an example of this in Chapter 3 when we build a bar graph of skulls 🤘).
+
+To customize the breaks on our axis, we simply need to add one of the aforementioned functions to our plot's code and provide a vector of values we want to see displayed using the argument `breaks`. For instance, if we want the x-axis to only display the numbers $1$, $2$, and $3$, we would add `scale_x_continuous(breaks = c(1,2,3))` to our code.
+
+```{r}
+#| out-width: "100%"
+#| fig.width: 6
+#| fig.height: 2
+#| source-line-numbers: "6"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = 'y ~ x', se = FALSE, linewidth = 0.5) +
+  facet_wrap(~vore, nrow = 1) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_x_continuous(breaks = c(1, 2, 3))
+```
+
+In general, the best practice is not to specify values individually, but rather specify a sequence using the `seq()` function we learned about in @sec-arguments. For instance, we could have the $x$-axis increment by $1$s and the $y$-axis increment by $2$s.
+
+```{r}
+#| out-width: "100%"
+#| fig.width: 6
+#| fig.height: 2
+#| source-line-numbers: "6-7"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = 'y ~ x', se = FALSE, linewidth = 0.5) +
+  facet_wrap(~vore, nrow = 1) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_x_continuous(breaks = seq(-2, 4, 1)) +
+  scale_y_continuous(breaks = seq(0, 20, 2))
+```
+
+The four scale functions above can achieve a lot more than what is being shown here, but for most uses, this basic adjustment of the axis breaks will be their primary purpose.
 
 
 <br><br><br><br><br><hr><br>
