@@ -555,7 +555,7 @@ Running this code as is will save the plot to your *working directory* (see @sec
 
 The above code saved the plot as a [.PNG]{.mono} which is a type of "raster" image, meaning it is an image composed of tiny coloured squares called pixels. The more pixels an image has, the more detail it can provide (i.e., the higher its resolution). However, the problem with using raster images is that resizing, stretching, and magnification have deleterious effects on their quality. For instance, the image below shows a small section of our 300 dpi graph magnified substantially.
 
-![Artificating present on our 300 dpi raster image when magnified.](imgs/plotting/artifacting_1.png){width=100% fig-alt="Artifacts in a raster graphic." #fig-raster_graphic_ex} 
+![Artificating present on our 300 dpi raster image when magnified.](imgs/plotting/artifacting_1.png){width=75% fig-alt="Artifacts in a raster graphic." #fig-raster_graphic_ex} 
 
 A close inspection reveals jaggedness on the blue line and general blurriness around the rest of the image's elements. In academic publications, manuscripts, and presentations, this is something you want to avoid because, while these problems may not be immediately noticeable at first glance, they can impact a person's implicit sensation of the image and, by extension, their opinion of its creator. Moreover, imperfections like these can be exacerbated in the printing and publishing process.
 
@@ -571,7 +571,21 @@ ggsave("msleep_plot.svg", units = "cm", width = 20, height = 7)
 
 The above code saved the image as a [.SVG]{.mono} (Scalable Vector Graphic) file. This is a commonly used image file in web design, meaning it will, by default, be most likely displayed within a web-browser when you open it.
 
-![Magnification of a vector graphic.](imgs/plotting/artifacting_2.png){width=100% fig-alt="Magnification of a vector graphic." #fig-vector_graphic_ex} 
+![Magnification of a vector graphic.](imgs/plotting/artifacting_2.png){width=75% fig-alt="Magnification of a vector graphic." #fig-vector_graphic_ex}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br><br><br><br><br><hr><br>
 <img src = "imgs/misc/under_construction.gif">
