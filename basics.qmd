@@ -828,7 +828,7 @@ mode(x)
 
 [^mode_fun]:Do not confuse this with the mathematical concept of a modal value; i.e., the number that appears most often.
 
-## Arguments
+## Arguments {#sec-arguments}
 
 The utility of functions in R actually extends far beyond this basic usage because most functions are easily modified through the use of *arguments*. An "argument" is simply a parameter that allows you to customize how a function operates. A simple example of this is the `round()` function.  This is used to round numbers to a specified decimal place. For instance, if we have a vector that contains both the number $\pi$ and the $\sqrt{2}$
 
