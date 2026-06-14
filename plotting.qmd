@@ -692,6 +692,53 @@ This occurs because values in our data falling outside of $-2$ and $+1$ are not 
 
 [^limits]:Readers are probably wondering "*what use does removing data outside of the limits serve? It seems like it would only ever cause more problems than it solves (especially if you are unaware it is happening).*" And to that I say, yes; however, *ggplot2* has its reasons. Functions like `xlim()`, `ylim()`, and arguments like `limits = ` can be useful when you want to restrict the data used in calculations, not just what's shown. This can help speed things up or focus analyses on a particular range—especially when letting *ggplot2* handle things like smoothing or density estimation. Just be warned: this is a power best wielded carefully.
 
+### Colour Scales: Modifying Colour Mappings
+
+Similar to how *ggplot2* automatically selected a scaling for the breaks on the $x$ and $y$ axis, it also automatically selected various colours to use when we mapped colour to the `$vore` column. Moreover, the distinction between *continuous* and *discrete* scaling applies just as much to colour as it does position. As illustrated in @fig-colour_scales , continuous colour scales are usually represented with a colour gradient and discrete scales are represented by distinct colours (like in a box of crayons). While it is possible to do this, you usually do not want to use a gradient to represent distinct categories because it makes the categories difficult to discriminate visually. For instance, the `$vore` column we mapped to the colour aesthetic earlier contained distinct non-numeric categories (e.g., carni, herbi, insecti, and so on); thus, a colour palette such as that seen in @fig-colour_discrete would be much more appropriate than @fig-colour_gradient.
+
+```{r}
+#| echo: false
+#| output: false
+n_cols <- 10000
+png("./imgs/plotting/col_gradient.png", width = 1000, height = 150)
+par(mar = c(0, 0, 0, 0))
+image(
+  1:n_cols,
+  1,
+  as.matrix(1:n_cols),
+  col = hcl.colors(n = n_cols, palette = "Spectral"),
+  axes = FALSE,
+  xlab = "",
+  ylab = ""
+)
+dev.off()
+
+n_cols <- 8
+png("./imgs/plotting/col_discrete.png", width = 1000, height = 150)
+par(mar = c(0, 0, 0, 0))
+image(
+  1:n_cols,
+  1,
+  as.matrix(1:n_cols),
+  col = palette.colors(n = 8, "Set 1"),
+  axes = FALSE,
+  xlab = "",
+  ylab = ""
+)
+dev.off()
+```
+
+::: {#fig-colour_scales layout-nrow=2}
+
+![Example of a continuous colour scale (i.e., a colour gradient)](imgs/plotting/col_gradient.png){#fig-colour_gradient}
+
+![Example of a discrete colour scale (i.e., a qualitative palette)](imgs/plotting/col_discrete.png){#fig-colour_discrete}
+:::
+
+
+
+
+
 
 
 
