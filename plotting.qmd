@@ -656,6 +656,44 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 The four scale functions above can achieve a lot more than what is being shown here, but for most uses, this basic adjustment of the axis breaks will be their primary purpose.
 
+### Modifying the Axis Range
+
+In addition to axis break adjustment, the range of the axis will often require customization as well. To achieve this, the best practice is usually to use the function `coord_cartesian()`.  To illustrate with some absurd values, we could have the $x$-axis span between $-2$ and $+1$ and have the $y$-axis span between $-5$ and $+10$.
+
+```{r}
+#| out-width: "100%"
+#| fig.width: 6
+#| fig.height: 2
+#| source-line-numbers: "8"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", formula = 'y ~ x', se = FALSE, linewidth = 0.5) +
+  facet_wrap(~vore, nrow = 1) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_x_continuous(breaks = seq(-2, 4, 1)) +
+  scale_y_continuous(breaks = seq(0, 20, 2)) +
+  coord_cartesian(xlim = c(-2, 1), ylim = c(-5, 10))
+```
+
+Note that, while the $y$-axis goes as low as $-5$, it does not show breaks below 0 because of how the `breaks` argument in `scale_y_continuous()` were set.
+
+At this point it is worth offering a disclaimer. Within the position scale functions mentioned earlier (i.e., `scale_x_continuous()` and `scale_y_continuous()`), there is an argument called `limits` that will allow you to set the range of the axis in a manner similar to the `coord_cartesian()` function. Additionally, *ggplot2* also has two other functions, `xlim()` and `ylim()`, that will do the same. However, setting the limits of your plot with these arguments and functions is best avoided because they will remove data falling outside of those specified limits. This can result in problems if your plot's code is performing some type of statistical calculation that is dependent on those values. For instance, if you replace the last line in the above R script with `xlim(-2, 1)` you will be confronted with a very nasty error message, telling you (among other things) that ...
+
+```
+Warning messages:
+1: Removed 27 rows containing non-finite outside the scale range
+(`stat_smooth()`). 
+2: Removed 27 rows containing missing values or values outside the scale
+range (`geom_point()`). 
+```
+
+This occurs because values in our data falling outside of $-2$ and $+1$ are not recognized any more, which, by extension means they are not being used by `geom_smooth()` and `geom_point()`. Particularly in the case of `geom_smooth()`, that will impact how the trend line is calculated. Thus, the moral of the story is, if you need to "zoom-in" or "zoom-out" on a plot, use `coord_cartesian()`. Do not be tempted by those other options.[^limits]
+
+
+[^limits]:Readers are probably wondering "*what use does removing data outside of the limits serve? It seems like it would only ever cause more problems than it solves (especially if you are unaware it is happening).*" And to that I say, yes; however, *ggplot2* has its reasons. Functions like `xlim()`, `ylim()`, and arguments like `limits = ` can be useful when you want to restrict the data used in calculations, not just what's shown. This can help speed things up or focus analyses on a particular range—especially when letting *ggplot2* handle things like smoothing or density estimation. Just be warned: this is a power best wielded carefully.
+
+
+
 
 <br><br><br><br><br><hr><br>
 <img src = "imgs/misc/under_construction.gif">
