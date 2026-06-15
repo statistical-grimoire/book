@@ -694,7 +694,7 @@ This occurs because values in our data falling outside of $-2$ and $+1$ are not 
 
 ### Colour Scales: Modifying Colour Mappings
 
-Similar to how *ggplot2* automatically selected a scaling for the breaks on the $x$ and $y$ axis, it also automatically selected various colours to use when we mapped colour to the `$vore` column. Moreover, the distinction between *continuous* and *discrete* scaling applies just as much to colour as it does position. As illustrated in @fig-colour_scales , continuous colour scales are usually represented with a colour gradient and discrete scales are represented by distinct colours (like in a box of crayons). While it is possible to do this, you usually do not want to use a gradient to represent distinct categories because it makes the categories difficult to discriminate visually. For instance, the `$vore` column we mapped to the colour aesthetic earlier contained distinct non-numeric categories (e.g., carni, herbi, insecti, and so on); thus, a colour palette such as that seen in @fig-colour_discrete would be much more appropriate than @fig-colour_gradient.
+Similar to how *ggplot2* automatically selected a scaling for the breaks on the $x$ and $y$ axis, it also automatically selected various colours to use when we mapped colour to the `$vore` column. Moreover, the distinction between *continuous* and *discrete* scaling applies just as much to colour as it does position. As illustrated in @fig-colour_scales, discrete scales are represented by distinct colours (like in a box of crayons) and continuous colour scales are usually represented with a colour gradient. While it is possible to do this, you usually do not want to use a gradient to represent distinct categories because it makes the categories difficult to discriminate visually. For instance, the `$vore` column we mapped to the colour aesthetic earlier contained distinct *non-numeric* categories (e.g., carni, herbi, insecti, and so on); thus, a colour palette such as that seen in @fig-colour_discrete would be much more appropriate than @fig-colour_gradient.
 
 ```{r}
 #| echo: false
@@ -730,18 +730,168 @@ dev.off()
 
 ::: {#fig-colour_scales layout-nrow=2}
 
-![Example of a continuous colour scale (i.e., a colour gradient)](imgs/plotting/col_gradient.png){#fig-colour_gradient}
+![Example of a discrete colour scale (i.e., a qualitative palette)](imgs/plotting/col_discrete.png){#fig-colour_discrete width="60%"}
 
-![Example of a discrete colour scale (i.e., a qualitative palette)](imgs/plotting/col_discrete.png){#fig-colour_discrete}
+![Example of a continuous colour scale (i.e., a colour gradient)](imgs/plotting/col_gradient.png){#fig-colour_gradient width="60%"}
 :::
 
+#### Discrete Colour Scales
 
+To illustrate the use of discrete colour scales lets create a simple plot we can experiment with.
 
+```{r}
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)")
+```
 
+First we will map the edge colour to the column `$vore`.
 
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "4"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1,
+    aes(colour = vore)
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)")
+```
 
+To override these default colours we can simply use `scale_colour_discrete()` and input a vector of colours.
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "7"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1,
+    aes(colour = vore)
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_colour_discrete(type = c("red", "blue", "green", "purple", "orange"))
+```
+
+The same effect can be achieved by using scale_colour_manual() instead.
+
+```r
+...
+scale_colour_manual(values = c("red", "blue", "green", "purple", "orange"))
+```
+
+However, the advantage to using `scale_colour_discrete()` is you are not limited by the number of categories in your palette. This means you can create a bigger colour palette and *ggplot2* will only use as many colours as needed. By contrast, if you use *scale_colour_manual()*, you have to ensure that you specify the same amount of colours as there are categories. To illustrate, we can create a palette with eight colours, but *ggplot2* will only use the first six.
+
+```{r}
+# Create a colour palette
+palette <- c(
+  "#000000",
+  "#DF536B",
+  "#61D04F",
+  "#2297E6",
+  "#28E2E5",
+  "#CD0BBC",
+  "#F5C710",
+  "#9E9E9E"
+)
+```
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "7"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1,
+    aes(colour = vore)
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_colour_discrete(type = palette)
+```
+
+Notice that we are using pch 21 as our shape. Recall that this shape takes both an edge and fill colour (see @fig-pch-symbols). At present, we have not specified a fill colour, so the points are hollow. However, instead of modifying the edge colour like we have been doing, we could modify the fill colour of the points and just keep the edges black.
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "3-4,7"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1, colour = "black",
+    aes(fill = vore)
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_fill_discrete(type = palette)
+```
+
+Notice where the important changes have taken place in the code.  We have moved the `colour` aesthetic outside of the `aes()` function.  This means a single `colour` (black) will now be mapped to *all* the points. We have also mapped the `$vore` column to the `fill` aesthetic inside of `aes()` and, for that reason, now specify `scale_fill_discrete()` to modify the colour options. In other words, we are now adjusting the `fill` colour, not the point/edge colour.
+
+#### Discrete Colour Palettes
+
+Until now, we have been specifying our own custom colour palettes; however, base R contains a variety of pre-existing palettes we can make use of. To obtain the list you can simply run the following:
+
+```{r}
+palette.pals()
+```
+
+```{r}
+#| echo: false
+#| output: false 
+svg("./imgs/plotting/qual_palettes.svg", width = 4, height = 4)
+par(mar = c(0.3, 2, 2, 0), mfrow = c(8, 2), oma = c(0, 0, 0, 2))
+
+for (i in 1:length(palette.pals())) {
+  pal_name <- palette.pals()[i]
+  pal_hex <- palette.colors(n = 8, pal_name)
+  pal_length <- length(palette.colors(n = NULL, pal_name))
+
+  image(
+    1:8,
+    1,
+    as.matrix(1:8),
+    col = pal_hex,
+    main = paste(pal_name, " - ", pal_length, " colours", sep = ""),
+    xaxt = "n",
+    yaxt = "n",
+    bty = "n",
+    xlab = "",
+    ylab = "",
+    font.main = 1,
+    cex.main = 0.75,
+    adj = 0
+  )
+}
+
+dev.off()
+```
+
+Of note, palettes `"R4"`, `"Okabe-Ito"`, `"Dark 2"`, `"Paired"`, and `"Set 2"`, are all decently robust under conditions of colour vision deficiency. To obtain a vector of the hex codes used for a specific palette, you can just run, for example, `palette.colors(n = NULL, "Dark 2")`. However, it is usually more convenient to insert this function directly into *ggplot2*. @fig-qual_palettes illustrates the colours employed in each palette - only eight colours are shown but some do contain more.
+
+![Examples of the various discrete (i.e., qualitative) colour palettes in base R](./imgs/plotting/qual_palettes.svg){width=100% #fig-qual_palettes fig-alt="Qualitative Colour Palettes"}
+
+<br>
+
+```{r}
+#| out-width: "70%"
+#| fig.width: 4.25
+#| fig.height: 2.5
+#| source-line-numbers: "7"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1, colour = "black",
+    aes(fill = vore)
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_fill_discrete(type = palette.colors(n = NULL, "Dark 2"))
+```
 
 
 <br><br><br><br><br><hr><br>
 <img src = "imgs/misc/under_construction.gif">
-
