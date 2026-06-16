@@ -361,8 +361,8 @@ To use hexadecimals to represent colour, two digits are assigned to red (RR), gr
 In the above examples, the aesthetic changes we made to the plots affected all of the points. In the language of *ggplot2*, we would say that the aesthetics were "mapped" to *all* the points. However, it is often necessary to visually break up the points according to one of the other variables in your data.  For instance, we could colour the points in our plot according to the categories in the data's `$vore` column.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore))
@@ -397,8 +397,8 @@ msleep$vore <- ifelse(is.na(msleep$vore), "unknown", msleep$vore)
 Now, when we re-plot the graph, we get something much more sensible ....
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore))
@@ -407,8 +407,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 When plotting, it is usually inadvisable to *only* adjust the colour of your points because a sizeable portion of the population has some form of colour vision deficiency (a.k.a., colour blindness). And while there are "colourblind friendly" palettes we can use, there is no universal palette that works optimally for all cases of colour deficiency. Consequently, the best practice is to have each category be represented by a distinct shape.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   geom_point(size = 3, aes(colour = vore, shape = vore))
@@ -419,8 +419,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 Notice that the data points appear to trend downward as you move from left to right on the $x$-axis. In other words, as body weight increases, you tend to see decreases in sleep total. By simply adding a second geom, called `geom_smooth()`, we can use a line of best fit to represent (i.e., model) this trend.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "3"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -431,8 +431,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 The shaded grey area represents a statistic called the *standard error* and the line was drawn using a fancy smoothing method called "local polynomial regression fitting", but we can use a more common regression line as well and modify various aspects of it just like we had done earlier using `geom_point()`.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "3-10"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -454,8 +454,8 @@ The line reading `formula = 'y ~ x'` is not strictly necessary to produce the li
 It is at this point where the versatility of the *ggplot2* really begins to shine.  For instance, if we wanted to create a separate regression line for each category of `$vore` we can accomplish that by once again making use of the `aes()` function and "grouping" by `$vore`.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "9"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -473,8 +473,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 At present it is not clear which line applies to which category, but we could also have each regression line correspond to the colour mapped to `$vore`, and (in consideration of colour blindness) give each line a separate `linetype`.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "8"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -750,8 +750,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 First we will map the edge colour to the column `$vore`.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "4"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -765,8 +765,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 To override these default colours we can simply use `scale_colour_discrete()` and input a vector of colours.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "7"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -802,8 +802,8 @@ palette <- c(
 ```
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "7"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -818,8 +818,8 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 Notice that we are using pch 21 as our shape. Recall that this shape takes both an edge and fill colour (see @fig-pch-symbols). At present, we have not specified a fill colour, so the points are hollow. However, instead of modifying the edge colour like we have been doing, we could modify the fill colour of the points and just keep the edges black.
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "3-4,7"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -833,7 +833,7 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
 
 Notice where the important changes have taken place in the code.  We have moved the `colour` aesthetic outside of the `aes()` function.  This means a single `colour` (black) will now be mapped to *all* the points. We have also mapped the `$vore` column to the `fill` aesthetic inside of `aes()` and, for that reason, now specify `scale_fill_discrete()` to modify the colour options. In other words, we are now adjusting the `fill` colour, not the point/edge colour.
 
-#### Discrete Colour Palettes
+#### Discrete Colour Scales and Palettes
 
 Until now, we have been specifying our own custom colour palettes; however, base R contains a variety of pre-existing palettes we can make use of. To obtain the list you can simply run the following:
 
@@ -879,8 +879,8 @@ Of note, palettes `"R4"`, `"Okabe-Ito"`, `"Dark 2"`, `"Paired"`, and `"Set 2"`, 
 <br>
 
 ```{r}
-#| out-width: "70%"
-#| fig.width: 4.25
+#| out-width: "75%"
+#| fig.width: 4.5
 #| fig.height: 2.5
 #| source-line-numbers: "7"
 ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
@@ -890,6 +890,201 @@ ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
   ) +
   labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
   scale_fill_discrete(type = palette.colors(n = NULL, "Dark 2"))
+```
+
+#### Continuous Colour Scales
+
+Applying continuous colour scales to your plots works in the same manner as discrete colour scales; however, to illustrate them, we dp need a continuous variable to map colour to. In the `msleep` data, there is a column called `$brainwt` which, similar to `$bodywt`, is a continuous measure. To visualize it adequately we will need to log transform it as well. For simplicity we will do this directly in the plot's code:
+
+```{r}
+#| out-width: "75%"
+#| fig.width: 4.5
+#| fig.height: 2.5
+#| source-line-numbers: "4"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1, colour = "black",
+    aes(fill = log10(brainwt))
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)")
+```
+
+Immediately you can see we are now presented with a *colourbar* instead of a set of fixed colours. This is because the nature of the variable `$brainwt` is that it is continuous. Thus, it does not fall neatly into distinct categories.  Between any two brain weights there is a theoretically infinite amount of values and the colourbar's gradient offers a means of visually representing that. As you move from black to blue, lighter shades of blue are indicative of a heavier brain weight. Looking at the graph, increases in body weight also seem to correspond to increases in brain weight, but notice the grey points in the graph.  Those are indicative of missing values in the `$brainwt` column and with a bit of R code, we can filter the data to see what values these are specifically.
+
+```r
+filter(msleep, is.na(brainwt))
+```
+
+In case it is not obvious, this code works by using the `is.na()` function to check whether each row in the `msleep` data frame's  `$brainwt` column contains an `NA` value. Rows which result as `TRUE` are displayed and everything else is ignored. This leaves us with a data frame of $27$ different animals, all of which have a `NA` value in the `$brainwt` column.
+
+If you are left unsatisfied by the default black to blue gradient, *ggplot2* makes it easy to produce custom colour gradients using the `scale_fill_gradient()` and `scale_fill_gradient2()` functions, and of course there are colour aesthetic variants of this for situations where you want to modify the edge and point colours.[^custom_gradients] Both functions simply require you to specify a `low` colour argument that represents the bottom of the colourbar and a `high` colour argument that represents the top of the colour bar. However, `scale_colour_gradient2()` also requires you to specify the argument `mid`, which indicates a third midpoint colour. You can even specify the location of this midpoint with the argument `midpoint`. More succinctly `scale_colour_gradient()` creates *sequential* colour palettes, and `scale_colour_gradient2()` creates *diverging* colour palettes.
+
+[^custom_gradients]:These are `scale_colour_gradient()` and `scale_colour_gradient()`. 
+
+In addition to those main arguments, you can also specify what colour you would like `NA` values to be represented by and set the the breaks that appear on the colourbar. These are given by the arguments `na.value` and `breaks` respectively.
+
+```{r}
+#| out-width: "75%"
+#| fig.width: 4.5
+#| fig.height: 2.5
+#| source-line-numbers: "7-10"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1, colour = "black",
+    aes(fill = log10(brainwt))
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_fill_gradient(
+    low = "blue", high = "red", na.value = "green",
+    breaks = seq(-4, 1, 1)
+  )
+```
+
+With the mammal sleep data, there is no logical reason to plot a midpoint colour using `scale_colour_gradient2()` but to illustrate its use we will depict a midpoint using the colour `"grey"` and we will place it at a $\text{log}_{10}(\text{brain weight}) = -1.5$.
+
+```{r}
+#| out-width: "75%"
+#| fig.width: 4.5
+#| fig.height: 2.5
+#| source-line-numbers: "7-11"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1, colour = "black",
+    aes(fill = log10(brainwt))
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_fill_gradient2(
+    low = "blue", mid = "grey", high = "red", na.value = "green",
+    breaks = seq(-4, 1, 1),
+    midpoint = -1.5
+  )
+```
+
+#### HCL Colour Palettes
+
+```{r}
+#| echo: false
+#| output: false 
+# Sequential Palettes
+svg("./imgs/plotting/hcl_pals_seq.svg", width = 8.5, height = 11)
+par(mar = c(0, 2, 2, 0), mfrow = c(24, 3), oma = c(0, 0, 0, 2))
+
+for(i in 1:length(hcl.pals(type = "sequential"))){
+  
+  pal_name <- hcl.pals(type = "sequential")[i]
+  pal_hex <- hcl.colors(n = 8, palette = pal_name)
+  pal_length <- length(pal_hex)
+  
+  image(1:8,1, as.matrix(1:8), 
+        col = pal_hex,
+        main = pal_name,
+        xaxt = "n", yaxt = "n", bty = "n", xlab = "", ylab = "",
+        font.main = 1, cex.main = 1, adj = 0)
+}
+
+dev.off()
+```
+
+```{r}
+#| echo: false
+#| output: false 
+# Diverging Palettes
+svg("./imgs/plotting/hcl_pals_div.svg", width = 8.5, height = 2.75)
+par(mar = c(0, 2, 2, 0), mfrow = c(6, 3), oma = c(0, 0, 0, 2))
+
+for(i in 1:length(hcl.pals(type = "diverging"))){
+  
+  pal_name <- hcl.pals(type = "diverging")[i]
+  pal_hex <- hcl.colors(n = 11, palette = pal_name)
+  pal_length <- length(pal_hex)
+  
+  image(1:11,1, as.matrix(1:11), 
+        col = pal_hex,
+        main = pal_name,
+        xaxt = "n", yaxt = "n", bty = "n", xlab = "", ylab = "",
+        font.main = 1, cex.main = 1, adj = 0)
+}
+
+dev.off()
+```
+
+```{r}
+#| echo: false
+#| output: false 
+# Qualitative Palettes
+
+svg("./imgs/plotting/hcl_pals_qual.svg", width = 8.5, height = 1.375)
+par(mar = c(0, 2, 2, 0), mfrow = c(3, 3), oma = c(0, 0, 0, 2))
+
+for(i in 1:length(hcl.pals(type = "qualitative"))){
+  
+  pal_name <- hcl.pals(type = "qualitative")[i]
+  pal_hex <- hcl.colors(n = 6, palette = pal_name)
+  pal_length <- length(pal_hex)
+  
+  image(1:6,1, as.matrix(1:6), 
+        col = pal_hex,
+        main = pal_name,
+        xaxt = "n", yaxt = "n", bty = "n", xlab = "", ylab = "",
+        font.main = 1, cex.main = 1, adj = 0)
+}
+
+dev.off()
+```
+
+Similar to what we saw with discrete colour scales, R comes with a set of continuous colour palettes we can use, some of which are sequential and some of which are diverging. For those interested, these palettes are based around an HCL (hue-chroma-luminance) colour space model which confers some advantages over the HSV (hue-saturation-value) colour space model computers have traditionally employed [@Zeileis2019].
+
+To obtain a list of these HCL palettes you can simply run any of the following lines for sequential, diverging, and qualitative palettes respectively.
+
+```r
+hcl.pals(type = "sequential")
+hcl.pals(type = "diverging")
+hcl.pals(type = "qualitative")
+```
+
+The qualitative palettes work best for discrete scales (i.e., identifying distinct categories) where you want each category to have equal perceptual weight. These are not much use for our present purposes but are notable because they are based on a HCL colour space model. That means we are not limited by the amount of colours in the palette like we were with R's standard discrete colour palettes. Though, anecdotally, when you go beyond 6 categories the HCL qualitative palettes' colours start to become more and more difficult to discriminate between (even with standard colour vision). Interestingly, *ggplot2's* default discrete colour selection relies on a similar underlying theory. 
+
+To retrieve the hex codes for a given palette (e.g., `"Inferno"`), you will need to specify not only the palette name but also the number of colours you want using the `n` argument. 
+
+```{r}
+hcl.colors(n = 8, palette = "Inferno")
+```
+
+`n` determines the granularity of the palette, where higher values yield a more finely graded colour spectrum. That said, for most practical purposes, distinctions beyond $4$ or $5$ colours tend to become visually negligible with the sequential and diverging palettes. Visual examples of all three HCL palette types can be found below:
+
+::: {.callout-note collapse = "true"}
+## Sequential HCL Palettes
+<img src = "./imgs/plotting/hcl_pals_seq.svg">
+:::
+
+::: {.callout-note collapse = "true"}
+## Diverging HCL Palettes
+<img src = "./imgs/plotting/hcl_pals_div.svg">
+:::
+
+::: {.callout-note collapse = "true"}
+## Qualitative HCL Palettes
+<img src = "./imgs/plotting/hcl_pals_qual.svg">
+:::
+
+To use one of base R's HCL colour palettes in our plot we can use the function `scale_fill_gradientn()` to set our palette (notice the "n" at the end of "gradient" in the function name). The function just takes a vector of colours and extrapolates a gradient from that.
+
+```{r}
+#| out-width: "75%"
+#| fig.width: 4.5
+#| fig.height: 2.5
+#| source-line-numbers: "7-11"
+ggplot(msleep, aes(x = bodywt_log10, y = sleep_total)) +
+  geom_point(
+    size = 3, shape = 21, stroke = 1, colour = "black",
+    aes(fill = log10(brainwt))
+  ) +
+  labs(x = "Log10(Body Weight kg)", y = "Sleep Total (hrs)") +
+  scale_fill_gradientn(
+    colours = hcl.colors(n = 50, palette = "Inferno"),
+    na.value = "grey", 
+    breaks = seq(-4, 1, 1)
+  )
 ```
 
 
