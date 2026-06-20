@@ -1,0 +1,12 @@
+<script>
+(function() {
+  var gitlabPagesBaseUrl = "https://statistical-grimoire.gitlab.io/book/";
+  var currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+  
+  if (currentPage && currentPage !== 'index') {
+    window.location.href = gitlabPagesBaseUrl + currentPage + '.html';
+  } else {
+    window.location.href = gitlabPagesBaseUrl;
+  }
+})();
+</script>

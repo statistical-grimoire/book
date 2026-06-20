@@ -33,6 +33,7 @@ format:
     css:
       - styles.css
       - webex.css
+    include-in-header: _redirect.html
     include-after-body: webex.js
     theme:
       - cosmo

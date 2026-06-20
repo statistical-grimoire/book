@@ -126,6 +126,18 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script>
+(function() {
+  var gitlabPagesBaseUrl = "https://statistical-grimoire.gitlab.io/book/";
+  var currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+  
+  if (currentPage && currentPage !== 'index') {
+    window.location.href = gitlabPagesBaseUrl + currentPage + '.html';
+  } else {
+    window.location.href = gitlabPagesBaseUrl;
+  }
+})();
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -403,16 +415,16 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about the R console are correct?</p>
-<div id="webex-48106c884b7593ecd91c56224f4e9db1" class="webex-checkboxgroup" data-answer="bwkdABpSFAkYUmo=">
-<label><input type="checkbox" autocomplete="off" name="48106c884b7593ecd91c56224f4e9db1"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="48106c884b7593ecd91c56224f4e9db1"><span>Console history is preserved when you close and re-open RStudio</span></label><label><input type="checkbox" autocomplete="off" name="48106c884b7593ecd91c56224f4e9db1"><span>The console functions as a terminal for the R language</span></label><label><input type="checkbox" autocomplete="off" name="48106c884b7593ecd91c56224f4e9db1"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label><label><input type="checkbox" autocomplete="off" name="48106c884b7593ecd91c56224f4e9db1"><span>Scripts are unnecessary if you use the console regularly</span></label>
+<div id="webex-7ab1438ef444032fcbd3881fe5a88d3f" class="webex-checkboxgroup" data-answer="bFFOARgCFFRKBWk=">
+<label><input type="checkbox" autocomplete="off" name="7ab1438ef444032fcbd3881fe5a88d3f"><span>Console history is preserved when you close and re-open RStudio</span></label><label><input type="checkbox" autocomplete="off" name="7ab1438ef444032fcbd3881fe5a88d3f"><span>Scripts are unnecessary if you use the console regularly</span></label><label><input type="checkbox" autocomplete="off" name="7ab1438ef444032fcbd3881fe5a88d3f"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="7ab1438ef444032fcbd3881fe5a88d3f"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label><label><input type="checkbox" autocomplete="off" name="7ab1438ef444032fcbd3881fe5a88d3f"><span>The console functions as a terminal for the R language</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about the R console are correct?</p>
-<div id="webex-c0ba71ad6749daff8cebef7ae2bb80a2" class="webex-checkboxgroup" data-answer="OABOUBsBTVUaBmk=">
-<label><input type="checkbox" autocomplete="off" name="c0ba71ad6749daff8cebef7ae2bb80a2"><span>Scripts are unnecessary if you use the console regularly</span></label><label><input type="checkbox" autocomplete="off" name="c0ba71ad6749daff8cebef7ae2bb80a2"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="c0ba71ad6749daff8cebef7ae2bb80a2"><span>Console history is preserved when you close and re-open RStudio</span></label><label><input type="checkbox" autocomplete="off" name="c0ba71ad6749daff8cebef7ae2bb80a2"><span>The console functions as a terminal for the R language</span></label><label><input type="checkbox" autocomplete="off" name="c0ba71ad6749daff8cebef7ae2bb80a2"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label>
+<div id="webex-535832b43088ef823941cad39aeaeb51" class="webex-checkboxgroup" data-answer="bgMZCR8DTgQfAWU=">
+<label><input type="checkbox" autocomplete="off" name="535832b43088ef823941cad39aeaeb51"><span>Scripts are unnecessary if you use the console regularly</span></label><label><input type="checkbox" autocomplete="off" name="535832b43088ef823941cad39aeaeb51"><span>The presence of <span class="math inline">\(&gt;\)</span> indicates the computer is awaiting your command</span></label><label><input type="checkbox" autocomplete="off" name="535832b43088ef823941cad39aeaeb51"><span>Typing commands into the console is useful for quick tasks you don’t need to preserve</span></label><label><input type="checkbox" autocomplete="off" name="535832b43088ef823941cad39aeaeb51"><span>Console history is preserved when you close and re-open RStudio</span></label><label><input type="checkbox" autocomplete="off" name="535832b43088ef823941cad39aeaeb51"><span>The console functions as a terminal for the R language</span></label>
 </div>
 </div>
 </div>
@@ -421,16 +433,16 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the symbol <span class="math inline">\(&gt;\)</span> represent in the R console?</p>
-<div id="webex-6282a7a453c5be6cb6c69128b6c70193" class="webex-radiogroup" data-answer="bQIUA00HTQQZAz4=">
-<label><input type="radio" autocomplete="off" name="6282a7a453c5be6cb6c69128b6c70193"><span>The R version number</span></label><label><input type="radio" autocomplete="off" name="6282a7a453c5be6cb6c69128b6c70193"><span>The command line’s prompt where you type commands</span></label><label><input type="radio" autocomplete="off" name="6282a7a453c5be6cb6c69128b6c70193"><span>A continuation symbol for incomplete code</span></label><label><input type="radio" autocomplete="off" name="6282a7a453c5be6cb6c69128b6c70193"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="6282a7a453c5be6cb6c69128b6c70193"><span>The output display marker</span></label>
+<div id="webex-a55b2537f3e256d467796ad245296fa6" class="webex-radiogroup" data-answer="OgUZUh4FHwdKAjg=">
+<label><input type="radio" autocomplete="off" name="a55b2537f3e256d467796ad245296fa6"><span>The R version number</span></label><label><input type="radio" autocomplete="off" name="a55b2537f3e256d467796ad245296fa6"><span>The output display marker</span></label><label><input type="radio" autocomplete="off" name="a55b2537f3e256d467796ad245296fa6"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="a55b2537f3e256d467796ad245296fa6"><span>A continuation symbol for incomplete code</span></label><label><input type="radio" autocomplete="off" name="a55b2537f3e256d467796ad245296fa6"><span>The command line’s prompt where you type commands</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the symbol <span class="math inline">\(&gt;\)</span> represent in the R console?</p>
-<div id="webex-e0bf77cabf5733a40408f7be0769a217" class="webex-radiogroup" data-answer="PgBOVhsHT1FOV2g=">
-<label><input type="radio" autocomplete="off" name="e0bf77cabf5733a40408f7be0769a217"><span>The R version number</span></label><label><input type="radio" autocomplete="off" name="e0bf77cabf5733a40408f7be0769a217"><span>A continuation symbol for incomplete code</span></label><label><input type="radio" autocomplete="off" name="e0bf77cabf5733a40408f7be0769a217"><span>The output display marker</span></label><label><input type="radio" autocomplete="off" name="e0bf77cabf5733a40408f7be0769a217"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="e0bf77cabf5733a40408f7be0769a217"><span>The command line’s prompt where you type commands</span></label>
+<div id="webex-d1e1977fc4bbba46a54637d4721903b6" class="webex-radiogroup" data-answer="PwFJARUHG1ZPBT8=">
+<label><input type="radio" autocomplete="off" name="d1e1977fc4bbba46a54637d4721903b6"><span>An error message indicator</span></label><label><input type="radio" autocomplete="off" name="d1e1977fc4bbba46a54637d4721903b6"><span>The output display marker</span></label><label><input type="radio" autocomplete="off" name="d1e1977fc4bbba46a54637d4721903b6"><span>The R version number</span></label><label><input type="radio" autocomplete="off" name="d1e1977fc4bbba46a54637d4721903b6"><span>A continuation symbol for incomplete code</span></label><label><input type="radio" autocomplete="off" name="d1e1977fc4bbba46a54637d4721903b6"><span>The command line’s prompt where you type commands</span></label>
 </div>
 </div>
 </div>
@@ -463,24 +475,24 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What keyboard shortcut is used to run a line of code from the script pane in RStudio or Positron?</p>
-<div id="webex-17ff9f67597e339a2a80a3a0154e8e70" class="webex-radiogroup" data-answer="agZKVhVWGgcZCWo=">
-<label><input type="radio" autocomplete="off" name="17ff9f67597e339a2a80a3a0154e8e70"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="17ff9f67597e339a2a80a3a0154e8e70"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="17ff9f67597e339a2a80a3a0154e8e70"><span>Command + Run</span></label><label><input type="radio" autocomplete="off" name="17ff9f67597e339a2a80a3a0154e8e70"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="17ff9f67597e339a2a80a3a0154e8e70"><span>Shift + Enter/Return</span></label>
+<div id="webex-619a1ae57ddfbb07f90505951712e1ad" class="webex-radiogroup" data-answer="bQEVUR1RSQUbVTk=">
+<label><input type="radio" autocomplete="off" name="619a1ae57ddfbb07f90505951712e1ad"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="619a1ae57ddfbb07f90505951712e1ad"><span>Command + Run</span></label><label><input type="radio" autocomplete="off" name="619a1ae57ddfbb07f90505951712e1ad"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="619a1ae57ddfbb07f90505951712e1ad"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="619a1ae57ddfbb07f90505951712e1ad"><span>Control + Enter/Return</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What keyboard shortcut is used to run a line of code from the script pane in RStudio or Positron?</p>
-<div id="webex-f86a3b95151465e84ec64f4ee625d267" class="webex-radiogroup" data-answer="PQgaUR9SFQQdBWw=">
-<label><input type="radio" autocomplete="off" name="f86a3b95151465e84ec64f4ee625d267"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="f86a3b95151465e84ec64f4ee625d267"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="f86a3b95151465e84ec64f4ee625d267"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="f86a3b95151465e84ec64f4ee625d267"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="f86a3b95151465e84ec64f4ee625d267"><span>Command + Run</span></label>
+<div id="webex-b509641153a697eb711b99d0e410f175" class="webex-radiogroup" data-answer="OQUcCBoEHQEZAzw=">
+<label><input type="radio" autocomplete="off" name="b509641153a697eb711b99d0e410f175"><span>Command + Run</span></label><label><input type="radio" autocomplete="off" name="b509641153a697eb711b99d0e410f175"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="b509641153a697eb711b99d0e410f175"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="b509641153a697eb711b99d0e410f175"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="b509641153a697eb711b99d0e410f175"><span>Control + R</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What keyboard shortcut is used to run a line of code from the script pane in RStudio or Positron?</p>
-<div id="webex-6f12a20f306120e8aedd2f5376f10f45" class="webex-radiogroup" data-answer="bVYdAk0DHFYfAGs=">
-<label><input type="radio" autocomplete="off" name="6f12a20f306120e8aedd2f5376f10f45"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="6f12a20f306120e8aedd2f5376f10f45"><span>Command + Run</span></label><label><input type="radio" autocomplete="off" name="6f12a20f306120e8aedd2f5376f10f45"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="6f12a20f306120e8aedd2f5376f10f45"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="6f12a20f306120e8aedd2f5376f10f45"><span>Control + R</span></label>
+<div id="webex-4ef78e8092db6cb8ec1ba53ed3ce702c" class="webex-radiogroup" data-answer="b1VKBxRVFAEVAjk=">
+<label><input type="radio" autocomplete="off" name="4ef78e8092db6cb8ec1ba53ed3ce702c"><span>Alt + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="4ef78e8092db6cb8ec1ba53ed3ce702c"><span>Control + R</span></label><label><input type="radio" autocomplete="off" name="4ef78e8092db6cb8ec1ba53ed3ce702c"><span>Shift + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="4ef78e8092db6cb8ec1ba53ed3ce702c"><span>Control + Enter/Return</span></label><label><input type="radio" autocomplete="off" name="4ef78e8092db6cb8ec1ba53ed3ce702c"><span>Command + Run</span></label>
 </div>
 </div>
 </div>
@@ -489,24 +501,24 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about running code from an R script are correct?</p>
-<div id="webex-a0ac5d30227b43cbef3c00d988d25982" class="webex-checkboxgroup" data-answer="OgBNUhlUHwEeA2o=">
-<label><input type="checkbox" autocomplete="off" name="a0ac5d30227b43cbef3c00d988d25982"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="a0ac5d30227b43cbef3c00d988d25982"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="a0ac5d30227b43cbef3c00d988d25982"><span>You must always run all code in the script at once</span></label><label><input type="checkbox" autocomplete="off" name="a0ac5d30227b43cbef3c00d988d25982"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="a0ac5d30227b43cbef3c00d988d25982"><span>You can run multiple lines by highlighting them</span></label>
+<div id="webex-45bbe3015c12843344526e94af792ca1" class="webex-checkboxgroup" data-answer="bwROUkkCHAAZU2w=">
+<label><input type="checkbox" autocomplete="off" name="45bbe3015c12843344526e94af792ca1"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="45bbe3015c12843344526e94af792ca1"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="45bbe3015c12843344526e94af792ca1"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="45bbe3015c12843344526e94af792ca1"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="45bbe3015c12843344526e94af792ca1"><span>You must always run all code in the script at once</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about running code from an R script are correct?</p>
-<div id="webex-2c258cd8e29c89276a71ad889070f32f" class="webex-checkboxgroup" data-answer="aVIeBRRSSAlJAmQ=">
-<label><input type="checkbox" autocomplete="off" name="2c258cd8e29c89276a71ad889070f32f"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="2c258cd8e29c89276a71ad889070f32f"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="2c258cd8e29c89276a71ad889070f32f"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="2c258cd8e29c89276a71ad889070f32f"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="2c258cd8e29c89276a71ad889070f32f"><span>You must always run all code in the script at once</span></label>
+<div id="webex-a4a113b38d9a50eaee653e6e5131532b" class="webex-checkboxgroup" data-answer="OgVNAB0CTgMUVGQ=">
+<label><input type="checkbox" autocomplete="off" name="a4a113b38d9a50eaee653e6e5131532b"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="a4a113b38d9a50eaee653e6e5131532b"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="a4a113b38d9a50eaee653e6e5131532b"><span>You can run multiple lines by highlighting them</span></label><label><input type="checkbox" autocomplete="off" name="a4a113b38d9a50eaee653e6e5131532b"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="a4a113b38d9a50eaee653e6e5131532b"><span>You must always run all code in the script at once</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about running code from an R script are correct?</p>
-<div id="webex-0d3af7e8fb46b646d904fef788d68de6" class="webex-checkboxgroup" data-answer="a1UfUUoHSQlKU2k=">
-<label><input type="checkbox" autocomplete="off" name="0d3af7e8fb46b646d904fef788d68de6"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="0d3af7e8fb46b646d904fef788d68de6"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="0d3af7e8fb46b646d904fef788d68de6"><span>You must always run all code in the script at once</span></label><label><input type="checkbox" autocomplete="off" name="0d3af7e8fb46b646d904fef788d68de6"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="0d3af7e8fb46b646d904fef788d68de6"><span>You can run multiple lines by highlighting them</span></label>
+<div id="webex-cfb72ae77a41793aef02dbeddf620635" class="webex-checkboxgroup" data-answer="OFdOBx5RSQYbUGk=">
+<label><input type="checkbox" autocomplete="off" name="cfb72ae77a41793aef02dbeddf620635"><span>You can run a single line of code by placing your cursor on that line</span></label><label><input type="checkbox" autocomplete="off" name="cfb72ae77a41793aef02dbeddf620635"><span>You must always run all code in the script at once</span></label><label><input type="checkbox" autocomplete="off" name="cfb72ae77a41793aef02dbeddf620635"><span>Scripts automatically run code as you type it</span></label><label><input type="checkbox" autocomplete="off" name="cfb72ae77a41793aef02dbeddf620635"><span>The Control + Enter shortcut works for both individual lines and highlighted sections</span></label><label><input type="checkbox" autocomplete="off" name="cfb72ae77a41793aef02dbeddf620635"><span>You can run multiple lines by highlighting them</span></label>
 </div>
 </div>
 </div>
@@ -515,24 +527,24 @@ Figure&nbsp;3.1: RStudio (a) and Positron (b) integrated development environment
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What is an R script?</p>
-<div id="webex-7551f93e975e9544899db2a0ec3e4eac" class="webex-radiogroup" data-answer="bAQZAUoJH1UVB2g=">
-<label><input type="radio" autocomplete="off" name="7551f93e975e9544899db2a0ec3e4eac"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="7551f93e975e9544899db2a0ec3e4eac"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="7551f93e975e9544899db2a0ec3e4eac"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="7551f93e975e9544899db2a0ec3e4eac"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="7551f93e975e9544899db2a0ec3e4eac"><span>A graphical interface for creating plots</span></label>
+<div id="webex-fbf69037ade0b38dd990ee27740821ce" class="webex-radiogroup" data-answer="PVJKBxUAHwdNVDg=">
+<label><input type="radio" autocomplete="off" name="fbf69037ade0b38dd990ee27740821ce"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="fbf69037ade0b38dd990ee27740821ce"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="fbf69037ade0b38dd990ee27740821ce"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="fbf69037ade0b38dd990ee27740821ce"><span>A graphical interface for creating plots</span></label><label><input type="radio" autocomplete="off" name="fbf69037ade0b38dd990ee27740821ce"><span>A read-only document that displays pre-written code</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What is an R script?</p>
-<div id="webex-0eb6f903231ee1980cba1d2a28fd9009" class="webex-radiogroup" data-answer="a1ROBkoJHAMeA2w=">
-<label><input type="radio" autocomplete="off" name="0eb6f903231ee1980cba1d2a28fd9009"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="0eb6f903231ee1980cba1d2a28fd9009"><span>A graphical interface for creating plots</span></label><label><input type="radio" autocomplete="off" name="0eb6f903231ee1980cba1d2a28fd9009"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="0eb6f903231ee1980cba1d2a28fd9009"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="0eb6f903231ee1980cba1d2a28fd9009"><span>A file that only stores output from R calculations</span></label>
+<div id="webex-1f649e8a12f644427017825f3b6158fb" class="webex-radiogroup" data-answer="alYaBBVVFFEdAzs=">
+<label><input type="radio" autocomplete="off" name="1f649e8a12f644427017825f3b6158fb"><span>A graphical interface for creating plots</span></label><label><input type="radio" autocomplete="off" name="1f649e8a12f644427017825f3b6158fb"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="1f649e8a12f644427017825f3b6158fb"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="1f649e8a12f644427017825f3b6158fb"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="1f649e8a12f644427017825f3b6158fb"><span>A text document where you can type, run, edit, and save R code</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What is an R script?</p>
-<div id="webex-6781227802fc199f6800ef4e2e50dc84" class="webex-radiogroup" data-answer="bQcUAR4CGwkcAjs=">
-<label><input type="radio" autocomplete="off" name="6781227802fc199f6800ef4e2e50dc84"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="6781227802fc199f6800ef4e2e50dc84"><span>A read-only document that displays pre-written code</span></label><label><input type="radio" autocomplete="off" name="6781227802fc199f6800ef4e2e50dc84"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="6781227802fc199f6800ef4e2e50dc84"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="6781227802fc199f6800ef4e2e50dc84"><span>A graphical interface for creating plots</span></label>
+<div id="webex-167be3f89aafc4d5205ed3bdc60a705a" class="webex-radiogroup" data-answer="agYbUkkDSgkVUTw=">
+<label><input type="radio" autocomplete="off" name="167be3f89aafc4d5205ed3bdc60a705a"><span>A graphical interface for creating plots</span></label><label><input type="radio" autocomplete="off" name="167be3f89aafc4d5205ed3bdc60a705a"><span>A file that only stores output from R calculations</span></label><label><input type="radio" autocomplete="off" name="167be3f89aafc4d5205ed3bdc60a705a"><span>A temporary workspace that cannot be saved</span></label><label><input type="radio" autocomplete="off" name="167be3f89aafc4d5205ed3bdc60a705a"><span>A text document where you can type, run, edit, and save R code</span></label><label><input type="radio" autocomplete="off" name="167be3f89aafc4d5205ed3bdc60a705a"><span>A read-only document that displays pre-written code</span></label>
 </div>
 </div>
 </div>
@@ -752,32 +764,32 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-162cbdb968e20bf871b0c4f8b66fbfd6" class="webex-radiogroup" data-answer="agceU05UTgkaCDg=">
-<label><input type="radio" autocomplete="off" name="162cbdb968e20bf871b0c4f8b66fbfd6"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="162cbdb968e20bf871b0c4f8b66fbfd6"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="162cbdb968e20bf871b0c4f8b66fbfd6"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="162cbdb968e20bf871b0c4f8b66fbfd6"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="162cbdb968e20bf871b0c4f8b66fbfd6"><span><code>0</code></span></label>
+<div id="webex-f7f0980ff6af22defe9f2322b28b715f" class="webex-radiogroup" data-answer="PQdKARUIHFZKBjw=">
+<label><input type="radio" autocomplete="off" name="f7f0980ff6af22defe9f2322b28b715f"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="f7f0980ff6af22defe9f2322b28b715f"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="f7f0980ff6af22defe9f2322b28b715f"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="f7f0980ff6af22defe9f2322b28b715f"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="f7f0980ff6af22defe9f2322b28b715f"><span><code>NULL</code></span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-08626e28684d3d87ac8f8022ca18ccdd" class="webex-radiogroup" data-answer="awgaAhpUHggaCGk=">
-<label><input type="radio" autocomplete="off" name="08626e28684d3d87ac8f8022ca18ccdd"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="08626e28684d3d87ac8f8022ca18ccdd"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="08626e28684d3d87ac8f8022ca18ccdd"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="08626e28684d3d87ac8f8022ca18ccdd"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="08626e28684d3d87ac8f8022ca18ccdd"><span><code>Error</code></span></label>
+<div id="webex-bcb89a7f4f82bffedf010e8434a54cd0" class="webex-radiogroup" data-answer="OVJOCBVRG1YYVmU=">
+<label><input type="radio" autocomplete="off" name="bcb89a7f4f82bffedf010e8434a54cd0"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="bcb89a7f4f82bffedf010e8434a54cd0"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="bcb89a7f4f82bffedf010e8434a54cd0"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="bcb89a7f4f82bffedf010e8434a54cd0"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="bcb89a7f4f82bffedf010e8434a54cd0"><span><code>NULL</code></span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-b37a4e772fef0272cda85670741391c3" class="webex-radiogroup" data-answer="OQMbUBhVGwceVjg=">
-<label><input type="radio" autocomplete="off" name="b37a4e772fef0272cda85670741391c3"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="b37a4e772fef0272cda85670741391c3"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="b37a4e772fef0272cda85670741391c3"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="b37a4e772fef0272cda85670741391c3"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="b37a4e772fef0272cda85670741391c3"><span><code>Error</code></span></label>
+<div id="webex-88493a110f9cba5546940e17bd24aa05" class="webex-radiogroup" data-answer="YwgYCB9RHQEcVmQ=">
+<label><input type="radio" autocomplete="off" name="88493a110f9cba5546940e17bd24aa05"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="88493a110f9cba5546940e17bd24aa05"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="88493a110f9cba5546940e17bd24aa05"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="88493a110f9cba5546940e17bd24aa05"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="88493a110f9cba5546940e17bd24aa05"><span><code>Error</code></span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does R output when you divide a positive number by zero (e.g., <code>1/0</code>)?</p>
-<div id="webex-00780c83282aac29c480158962d52ad1" class="webex-radiogroup" data-answer="awAbCBxTFAMeCW8=">
-<label><input type="radio" autocomplete="off" name="00780c83282aac29c480158962d52ad1"><span><code>NaN</code></span></label><label><input type="radio" autocomplete="off" name="00780c83282aac29c480158962d52ad1"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="00780c83282aac29c480158962d52ad1"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="00780c83282aac29c480158962d52ad1"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="00780c83282aac29c480158962d52ad1"><span><code>Inf</code></span></label>
+<div id="webex-e17d7ce7984f8987865e17f185f2aef8" class="webex-radiogroup" data-answer="PgEbVRtTSQcVCGk=">
+<label><input type="radio" autocomplete="off" name="e17d7ce7984f8987865e17f185f2aef8"><span><code>NULL</code></span></label><label><input type="radio" autocomplete="off" name="e17d7ce7984f8987865e17f185f2aef8"><span><code>Inf</code></span></label><label><input type="radio" autocomplete="off" name="e17d7ce7984f8987865e17f185f2aef8"><span><code>Error</code></span></label><label><input type="radio" autocomplete="off" name="e17d7ce7984f8987865e17f185f2aef8"><span><code>0</code></span></label><label><input type="radio" autocomplete="off" name="e17d7ce7984f8987865e17f185f2aef8"><span><code>NaN</code></span></label>
 </div>
 </div>
 </div>
@@ -786,25 +798,25 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-6f4c395a28b9b923f3651ee13c155349" data-tol="0" size="20" data-answer="bUQGQW4="></p>
+<p><input class="webex-solveme nospaces" id="webex-829e98913c288bf2a4dd27a5ac80ca4e" data-tol="0" size="20" data-answer="YxALR2Q="></p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-1c084823ac82df200e9195d08b92252b" data-tol="0" size="20" data-answer="akECGmk="></p>
+<p><input class="webex-solveme nospaces" id="webex-04cbe7ee5cd42652b8184504e9ff2a34" data-tol="0" size="20" data-answer="axZRQDg="></p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-a0debf75a95289527ef548ce8268746d" data-tol="0" size="20" data-answer="OhJWRz8="></p>
+<p><input class="webex-solveme nospaces" id="webex-1f1f58edccb1e57c6cbde73e7674089f" data-tol="0" size="20" data-answer="akQDRGg="></p>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>If you execute <code>7 %/% 3</code> in R, what will be the output?</p>
-<p><input class="webex-solveme nospaces" id="webex-a2c95ca9313d393f8dbd80c38ca86295" data-tol="0" size="20" data-answer="OhBRG2g="></p>
+<p><input class="webex-solveme nospaces" id="webex-e200f37da7502103b02b5938196161fb" data-tol="0" size="20" data-answer="PhACEjs="></p>
 </div>
 </div>
 </div>
@@ -812,32 +824,32 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-5685b3cce6c0c583c79ca6e2897bf911" class="webex-radiogroup" data-answer="bgYUBU4DT1JJBj4=">
-<label><input type="radio" autocomplete="off" name="5685b3cce6c0c583c79ca6e2897bf911"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="5685b3cce6c0c583c79ca6e2897bf911"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="5685b3cce6c0c583c79ca6e2897bf911"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="5685b3cce6c0c583c79ca6e2897bf911"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="5685b3cce6c0c583c79ca6e2897bf911"><span>The double modulus operator</span></label>
+<div id="webex-609682392756854990cfee7fea10b6cb" class="webex-radiogroup" data-answer="bQEVBhQCHwkeB2g=">
+<label><input type="radio" autocomplete="off" name="609682392756854990cfee7fea10b6cb"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="609682392756854990cfee7fea10b6cb"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="609682392756854990cfee7fea10b6cb"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="609682392756854990cfee7fea10b6cb"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="609682392756854990cfee7fea10b6cb"><span>The percentage operator</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-fb11066cd210ba9bd879a851688494ab" class="webex-radiogroup" data-answer="PVIdARwGGlNIA2w=">
-<label><input type="radio" autocomplete="off" name="fb11066cd210ba9bd879a851688494ab"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="fb11066cd210ba9bd879a851688494ab"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="fb11066cd210ba9bd879a851688494ab"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="fb11066cd210ba9bd879a851688494ab"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="fb11066cd210ba9bd879a851688494ab"><span>The modulo operator that returns the remainder of division</span></label>
+<div id="webex-00ee093f3c00ae0a3e6a3ed459dc8538" class="webex-radiogroup" data-answer="awBJVBwJH1YfU20=">
+<label><input type="radio" autocomplete="off" name="00ee093f3c00ae0a3e6a3ed459dc8538"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="00ee093f3c00ae0a3e6a3ed459dc8538"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="00ee093f3c00ae0a3e6a3ed459dc8538"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="00ee093f3c00ae0a3e6a3ed459dc8538"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="00ee093f3c00ae0a3e6a3ed459dc8538"><span>The percentage operator</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-4e7cdd4dea46933be5d8ca6d9ce83467" class="webex-radiogroup" data-answer="b1UbU0hUGFVJUWk=">
-<label><input type="radio" autocomplete="off" name="4e7cdd4dea46933be5d8ca6d9ce83467"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="4e7cdd4dea46933be5d8ca6d9ce83467"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="4e7cdd4dea46933be5d8ca6d9ce83467"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="4e7cdd4dea46933be5d8ca6d9ce83467"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="4e7cdd4dea46933be5d8ca6d9ce83467"><span>The percentage operator</span></label>
+<div id="webex-b82ba04c0dc0f71481a2a19ff739c9ec" class="webex-radiogroup" data-answer="OQgeUk0AGFMcVT4=">
+<label><input type="radio" autocomplete="off" name="b82ba04c0dc0f71481a2a19ff739c9ec"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="b82ba04c0dc0f71481a2a19ff739c9ec"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="b82ba04c0dc0f71481a2a19ff739c9ec"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="b82ba04c0dc0f71481a2a19ff739c9ec"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="b82ba04c0dc0f71481a2a19ff739c9ec"><span>The modulo operator that returns the remainder of division</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the operator <code>%%</code> represent in R?</p>
-<div id="webex-a3e02fa01dd30ec97ee0922fc13acc09" class="webex-radiogroup" data-answer="OgNJAB5WTQEdVDk=">
-<label><input type="radio" autocomplete="off" name="a3e02fa01dd30ec97ee0922fc13acc09"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="a3e02fa01dd30ec97ee0922fc13acc09"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="a3e02fa01dd30ec97ee0922fc13acc09"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="a3e02fa01dd30ec97ee0922fc13acc09"><span>The modulo operator that returns the remainder of division</span></label><label><input type="radio" autocomplete="off" name="a3e02fa01dd30ec97ee0922fc13acc09"><span>The comment symbol</span></label>
+<div id="webex-56a4ddceb0dba33af8ae5d309a995d87" class="webex-radiogroup" data-answer="bgZNBEhUT1VOATk=">
+<label><input type="radio" autocomplete="off" name="56a4ddceb0dba33af8ae5d309a995d87"><span>The percentage operator</span></label><label><input type="radio" autocomplete="off" name="56a4ddceb0dba33af8ae5d309a995d87"><span>The double modulus operator</span></label><label><input type="radio" autocomplete="off" name="56a4ddceb0dba33af8ae5d309a995d87"><span>The integer division operator that returns the quotient</span></label><label><input type="radio" autocomplete="off" name="56a4ddceb0dba33af8ae5d309a995d87"><span>The comment symbol</span></label><label><input type="radio" autocomplete="off" name="56a4ddceb0dba33af8ae5d309a995d87"><span>The modulo operator that returns the remainder of division</span></label>
 </div>
 </div>
 </div>
@@ -846,32 +858,32 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-e493116c0888d90b147a5a24ec596808" class="webex-radiogroup" data-answer="PgUVAx0BGlMcCGU=">
-<label><input type="radio" autocomplete="off" name="e493116c0888d90b147a5a24ec596808"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="e493116c0888d90b147a5a24ec596808"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="e493116c0888d90b147a5a24ec596808"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="e493116c0888d90b147a5a24ec596808"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="e493116c0888d90b147a5a24ec596808"><span>Negative and negative</span></label>
+<div id="webex-cc56772cc28eabe81a52330ae308222a" class="webex-radiogroup" data-answer="OFIZBhsHHlNPAmU=">
+<label><input type="radio" autocomplete="off" name="cc56772cc28eabe81a52330ae308222a"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="cc56772cc28eabe81a52330ae308222a"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="cc56772cc28eabe81a52330ae308222a"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="cc56772cc28eabe81a52330ae308222a"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="cc56772cc28eabe81a52330ae308222a"><span>Not a numeric</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-e85095cb1421f38b7a6fb25fff64ee4f" class="webex-radiogroup" data-answer="PggZABUET1IdBG8=">
-<label><input type="radio" autocomplete="off" name="e85095cb1421f38b7a6fb25fff64ee4f"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="e85095cb1421f38b7a6fb25fff64ee4f"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="e85095cb1421f38b7a6fb25fff64ee4f"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="e85095cb1421f38b7a6fb25fff64ee4f"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="e85095cb1421f38b7a6fb25fff64ee4f"><span>No available number</span></label>
+<div id="webex-06e9b6bcc5fb4cd87b84e02f1dce9b29" class="webex-radiogroup" data-answer="awZJCU4GTlJPBTs=">
+<label><input type="radio" autocomplete="off" name="06e9b6bcc5fb4cd87b84e02f1dce9b29"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="06e9b6bcc5fb4cd87b84e02f1dce9b29"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="06e9b6bcc5fb4cd87b84e02f1dce9b29"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="06e9b6bcc5fb4cd87b84e02f1dce9b29"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="06e9b6bcc5fb4cd87b84e02f1dce9b29"><span>Negative and negative</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-28e9e119a444dc29714bf6fe930da960" class="webex-radiogroup" data-answer="aQhJCUkBHQlNBWk=">
-<label><input type="radio" autocomplete="off" name="28e9e119a444dc29714bf6fe930da960"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="28e9e119a444dc29714bf6fe930da960"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="28e9e119a444dc29714bf6fe930da960"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="28e9e119a444dc29714bf6fe930da960"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="28e9e119a444dc29714bf6fe930da960"><span>Not a number</span></label>
+<div id="webex-b67b47fb5789a4ef155edc583e9faf96" class="webex-radiogroup" data-answer="OQYbUhgHSlMZB2U=">
+<label><input type="radio" autocomplete="off" name="b67b47fb5789a4ef155edc583e9faf96"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="b67b47fb5789a4ef155edc583e9faf96"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="b67b47fb5789a4ef155edc583e9faf96"><span>No available number</span></label><label><input type="radio" autocomplete="off" name="b67b47fb5789a4ef155edc583e9faf96"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="b67b47fb5789a4ef155edc583e9faf96"><span>Negative and negative</span></label>
 </div>
 </div>
 </div>
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>What does the abbreviation <code>NaN</code> stand for in R?</p>
-<div id="webex-8e6df4c553c21d21e6f5327cf35fdb9f" class="webex-radiogroup" data-answer="Y1UaVUoETwUZAz4=">
-<label><input type="radio" autocomplete="off" name="8e6df4c553c21d21e6f5327cf35fdb9f"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="8e6df4c553c21d21e6f5327cf35fdb9f"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="8e6df4c553c21d21e6f5327cf35fdb9f"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="8e6df4c553c21d21e6f5327cf35fdb9f"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="8e6df4c553c21d21e6f5327cf35fdb9f"><span>No available number</span></label>
+<div id="webex-3ef8ba8a0b9c6a1de193fad784bcd671" class="webex-radiogroup" data-answer="aFRKCE5RFFEcUmQ=">
+<label><input type="radio" autocomplete="off" name="3ef8ba8a0b9c6a1de193fad784bcd671"><span>Not a number</span></label><label><input type="radio" autocomplete="off" name="3ef8ba8a0b9c6a1de193fad784bcd671"><span>Not a numeric</span></label><label><input type="radio" autocomplete="off" name="3ef8ba8a0b9c6a1de193fad784bcd671"><span>Negative and negative</span></label><label><input type="radio" autocomplete="off" name="3ef8ba8a0b9c6a1de193fad784bcd671"><span>Null and null</span></label><label><input type="radio" autocomplete="off" name="3ef8ba8a0b9c6a1de193fad784bcd671"><span>No available number</span></label>
 </div>
 </div>
 </div>
@@ -909,8 +921,8 @@ Important
 <div class="webex-check webex-box">
 <p>The mass of Pluto (the planet, not ruler of the underworld) is <span class="math inline">\(13,030,000,000,000,000,000,000\)</span> kg</p>
 <p>What is this written in R’s scientific notation?</p>
-<div id="webex-5bf4d48afe2e741ea4ed2f4527b649ad" class="webex-radiogroup" data-answer="blNKBEgEFFFKVW8=">
-<label><input type="radio" autocomplete="off" name="5bf4d48afe2e741ea4ed2f4527b649ad"><span><code>1.303e+22</code></span></label><label><input type="radio" autocomplete="off" name="5bf4d48afe2e741ea4ed2f4527b649ad"><span><code>1.303e+21</code></span></label><label><input type="radio" autocomplete="off" name="5bf4d48afe2e741ea4ed2f4527b649ad"><span><code>1303e+19</code></span></label><label><input type="radio" autocomplete="off" name="5bf4d48afe2e741ea4ed2f4527b649ad"><span><code>0.1303e+23</code></span></label><label><input type="radio" autocomplete="off" name="5bf4d48afe2e741ea4ed2f4527b649ad"><span><code>13.03e+21</code></span></label>
+<div id="webex-a6d0ecbe4415c59c768fef9b7142b2f3" class="webex-radiogroup" data-answer="OgZIAUlTTlUYBGw=">
+<label><input type="radio" autocomplete="off" name="a6d0ecbe4415c59c768fef9b7142b2f3"><span><code>0.1303e+23</code></span></label><label><input type="radio" autocomplete="off" name="a6d0ecbe4415c59c768fef9b7142b2f3"><span><code>1.303e+22</code></span></label><label><input type="radio" autocomplete="off" name="a6d0ecbe4415c59c768fef9b7142b2f3"><span><code>1303e+19</code></span></label><label><input type="radio" autocomplete="off" name="a6d0ecbe4415c59c768fef9b7142b2f3"><span><code>1.303e+21</code></span></label><label><input type="radio" autocomplete="off" name="a6d0ecbe4415c59c768fef9b7142b2f3"><span><code>13.03e+21</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -923,8 +935,8 @@ Important
 <div class="webex-check webex-box">
 <p>The mass of Pluto (the planet, not ruler of the underworld) is <span class="math inline">\(13,030,000,000,000,000,000,000\)</span> kg</p>
 <p>What is this written in R’s scientific notation?</p>
-<div id="webex-417a8a4a15f8ba2409abec60231e808b" class="webex-radiogroup" data-answer="bwEbURRRGFAdBTs=">
-<label><input type="radio" autocomplete="off" name="417a8a4a15f8ba2409abec60231e808b"><span><code>13.03e+21</code></span></label><label><input type="radio" autocomplete="off" name="417a8a4a15f8ba2409abec60231e808b"><span><code>1303e+19</code></span></label><label><input type="radio" autocomplete="off" name="417a8a4a15f8ba2409abec60231e808b"><span><code>0.1303e+23</code></span></label><label><input type="radio" autocomplete="off" name="417a8a4a15f8ba2409abec60231e808b"><span><code>1.303e+22</code></span></label><label><input type="radio" autocomplete="off" name="417a8a4a15f8ba2409abec60231e808b"><span><code>1.303e+21</code></span></label>
+<div id="webex-9d3fa08b30d23ee5f464ed493e02cfc2" class="webex-radiogroup" data-answer="YlQfV00AFFIfADk=">
+<label><input type="radio" autocomplete="off" name="9d3fa08b30d23ee5f464ed493e02cfc2"><span><code>1.303e+21</code></span></label><label><input type="radio" autocomplete="off" name="9d3fa08b30d23ee5f464ed493e02cfc2"><span><code>1.303e+22</code></span></label><label><input type="radio" autocomplete="off" name="9d3fa08b30d23ee5f464ed493e02cfc2"><span><code>13.03e+21</code></span></label><label><input type="radio" autocomplete="off" name="9d3fa08b30d23ee5f464ed493e02cfc2"><span><code>1303e+19</code></span></label><label><input type="radio" autocomplete="off" name="9d3fa08b30d23ee5f464ed493e02cfc2"><span><code>0.1303e+23</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -938,8 +950,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following correctly expresses <span class="math inline">\(7.2\)</span> in scientific notation?</p>
-<div id="webex-a6cde548863d88cbaba1be11e8cac9ff" class="webex-radiogroup" data-answer="OgdPVEkFGAgUBm4=">
-<label><input type="radio" autocomplete="off" name="a6cde548863d88cbaba1be11e8cac9ff"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label><label><input type="radio" autocomplete="off" name="a6cde548863d88cbaba1be11e8cac9ff"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="a6cde548863d88cbaba1be11e8cac9ff"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="a6cde548863d88cbaba1be11e8cac9ff"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="a6cde548863d88cbaba1be11e8cac9ff"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label>
+<div id="webex-d7f0d3cb9f44e782f694e862f0e952e2" class="webex-radiogroup" data-answer="PwdKAUgDT1IVVmk=">
+<label><input type="radio" autocomplete="off" name="d7f0d3cb9f44e782f694e862f0e952e2"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="d7f0d3cb9f44e782f694e862f0e952e2"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label><label><input type="radio" autocomplete="off" name="d7f0d3cb9f44e782f694e862f0e952e2"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="d7f0d3cb9f44e782f694e862f0e952e2"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="d7f0d3cb9f44e782f694e862f0e952e2"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -950,8 +962,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following correctly expresses <span class="math inline">\(7.2\)</span> in scientific notation?</p>
-<div id="webex-a98a8136704e57b3b0e8ec45547d4e66" class="webex-radiogroup" data-answer="OgkUURQBHwcbAGk=">
-<label><input type="radio" autocomplete="off" name="a98a8136704e57b3b0e8ec45547d4e66"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="a98a8136704e57b3b0e8ec45547d4e66"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="a98a8136704e57b3b0e8ec45547d4e66"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="a98a8136704e57b3b0e8ec45547d4e66"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label><label><input type="radio" autocomplete="off" name="a98a8136704e57b3b0e8ec45547d4e66"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label>
+<div id="webex-162f76c570cf8faf61c6d95c8a41c751" class="webex-radiogroup" data-answer="agYeVhsHTwUbAD4=">
+<label><input type="radio" autocomplete="off" name="162f76c570cf8faf61c6d95c8a41c751"><span><span class="math inline">\(7.2 \times 10^{-1}\)</span></span></label><label><input type="radio" autocomplete="off" name="162f76c570cf8faf61c6d95c8a41c751"><span><span class="math inline">\(0.72 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="162f76c570cf8faf61c6d95c8a41c751"><span><span class="math inline">\(7.2 \times 10^{0}\)</span></span></label><label><input type="radio" autocomplete="off" name="162f76c570cf8faf61c6d95c8a41c751"><span><span class="math inline">\(7.2 \times 10^{1}\)</span></span></label><label><input type="radio" autocomplete="off" name="162f76c570cf8faf61c6d95c8a41c751"><span><span class="math inline">\(72 \times 10^{-1}\)</span></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1048,8 +1060,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about assignment operators in R are TRUE?</p>
-<div id="webex-30d18e00ae2b6b59bfd5d3af70faf3fb" class="webex-checkboxgroup" data-answer="aAFIABRUHAFNVW8=">
-<label><input type="checkbox" autocomplete="off" name="30d18e00ae2b6b59bfd5d3af70faf3fb"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="30d18e00ae2b6b59bfd5d3af70faf3fb"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="30d18e00ae2b6b59bfd5d3af70faf3fb"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="30d18e00ae2b6b59bfd5d3af70faf3fb"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="30d18e00ae2b6b59bfd5d3af70faf3fb"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label>
+<div id="webex-9e55256b2026c112b0a76cd7469605fb" class="webex-checkboxgroup" data-answer="YlQZBR4EGlMeAW8=">
+<label><input type="checkbox" autocomplete="off" name="9e55256b2026c112b0a76cd7469605fb"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="9e55256b2026c112b0a76cd7469605fb"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="9e55256b2026c112b0a76cd7469605fb"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="9e55256b2026c112b0a76cd7469605fb"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="9e55256b2026c112b0a76cd7469605fb"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1059,8 +1071,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about assignment operators in R are TRUE?</p>
-<div id="webex-16317ffcdef6cdd26c65d60232b93095" class="webex-checkboxgroup" data-answer="agYfABtXSlJIVDs=">
-<label><input type="checkbox" autocomplete="off" name="16317ffcdef6cdd26c65d60232b93095"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="16317ffcdef6cdd26c65d60232b93095"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="16317ffcdef6cdd26c65d60232b93095"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="16317ffcdef6cdd26c65d60232b93095"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="16317ffcdef6cdd26c65d60232b93095"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label>
+<div id="webex-3cb296f08082dbd22adc5aca0abaa640" class="webex-checkboxgroup" data-answer="aFJOAxUGSgEUAWU=">
+<label><input type="checkbox" autocomplete="off" name="3cb296f08082dbd22adc5aca0abaa640"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="3cb296f08082dbd22adc5aca0abaa640"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="3cb296f08082dbd22adc5aca0abaa640"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label><label><input type="checkbox" autocomplete="off" name="3cb296f08082dbd22adc5aca0abaa640"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="3cb296f08082dbd22adc5aca0abaa640"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1070,8 +1082,8 @@ Important
 <div class="webex-question">
 <div class="webex-check webex-box">
 <p>Which of the following statements about assignment operators in R are TRUE?</p>
-<div id="webex-929966f0230e6659535ea6d07554335b" class="webex-checkboxgroup" data-answer="YgMVCBoHSgEeA20=">
-<label><input type="checkbox" autocomplete="off" name="929966f0230e6659535ea6d07554335b"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="929966f0230e6659535ea6d07554335b"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="929966f0230e6659535ea6d07554335b"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="929966f0230e6659535ea6d07554335b"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="929966f0230e6659535ea6d07554335b"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label>
+<div id="webex-094346d5a1c7c29703023e0e07532841" class="webex-checkboxgroup" data-answer="awgYAhgHSARNAT4=">
+<label><input type="checkbox" autocomplete="off" name="094346d5a1c7c29703023e0e07532841"><span>The arrow <code>&lt;-</code> can be reversed to assign values (e.g., <code>10 -&gt; z</code>)</span></label><label><input type="checkbox" autocomplete="off" name="094346d5a1c7c29703023e0e07532841"><span>Using <code>=</code> requires fewer keystrokes than using <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="094346d5a1c7c29703023e0e07532841"><span>RStudio and Positron have a keyboard shortcut (Alt + minus) for typing <code>&lt;-</code></span></label><label><input type="checkbox" autocomplete="off" name="094346d5a1c7c29703023e0e07532841"><span>Both <code>&lt;-</code> and <code>=</code> can be used as assignment operators</span></label><label><input type="checkbox" autocomplete="off" name="094346d5a1c7c29703023e0e07532841"><span>There is absolutely no difference between <code>&lt;-</code> and <code>=</code> in all contexts</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1087,7 +1099,7 @@ Important
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><input class="webex-solveme nospaces" id="webex-15b1c23bda81a9dc3003062f445831cd" data-tol="0" size="20" data-answer="ahdREz4="></p>
+<p><input class="webex-solveme nospaces" id="webex-5b992b59d16ddddb7e5a1274f0a364db" data-tol="0" size="20" data-answer="bkAKG28="></p>
 </div>
 <div class="webex-solution">
 <p>The value of y is 3. When <code>y &lt;- x</code> is executed, y is assigned the value 3 (the value x represented at that time). When x is later modified to 5, this does not affect y because altering x creates a new object in memory; it doesn’t change the object that y points to.</p>
@@ -1100,7 +1112,7 @@ Important
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><input class="webex-solveme nospaces" id="webex-9eb7f5c00c9a32d68bc1dc75248d0421" data-tol="0" size="20" data-answer="YkdRFTs="></p>
+<p><input class="webex-solveme nospaces" id="webex-d3e019da076d78586c97ebe1ee5f7ec3" data-tol="0" size="20" data-answer="PxFWEmw="></p>
 </div>
 <div class="webex-solution">
 <p>The value of y is 3. When <code>y &lt;- x</code> is executed, y is assigned the value 3 (the value x represented at that time). When x is later modified to 5, this does not affect y because altering x creates a new object in memory; it doesn’t change the object that y points to.</p>
@@ -1113,7 +1125,7 @@ Important
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x</span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">2</span></span>
 <span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><input class="webex-solveme nospaces" id="webex-b40158e8b06cecd2affc50e3beff99e2" data-tol="0" size="20" data-answer="ORYDE2g="></p>
+<p><input class="webex-solveme nospaces" id="webex-861a8c6ee0131092ce89c7a1165e17dc" data-tol="0" size="20" data-answer="YxQCQ2U="></p>
 </div>
 <div class="webex-solution">
 <p>The value of y is 3. When <code>y &lt;- x</code> is executed, y is assigned the value 3 (the value x represented at that time). When x is later modified to 5, this does not affect y because altering x creates a new object in memory; it doesn’t change the object that y points to.</p>
@@ -1126,8 +1138,8 @@ Important
 <p>After running the following code, what can we say about <code>x</code> and <code>y</code>?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="webex-861b3ee9fe659c67d9e15b4c06eddf5e" class="webex-radiogroup" data-answer="YwYdUx9VSQk7">
-<label><input type="radio" autocomplete="off" name="861b3ee9fe659c67d9e15b4c06eddf5e"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="861b3ee9fe659c67d9e15b4c06eddf5e"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="861b3ee9fe659c67d9e15b4c06eddf5e"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="861b3ee9fe659c67d9e15b4c06eddf5e"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label>
+<div id="webex-78e00668fe325d1278d9aae7faa01330" class="webex-radiogroup" data-answer="bAlJABwGGgg7">
+<label><input type="radio" autocomplete="off" name="78e00668fe325d1278d9aae7faa01330"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="78e00668fe325d1278d9aae7faa01330"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="78e00668fe325d1278d9aae7faa01330"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="78e00668fe325d1278d9aae7faa01330"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1139,8 +1151,8 @@ Important
 <p>After running the following code, what can we say about <code>x</code> and <code>y</code>?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="webex-cf56aac489d6435ab617f3102fbdaf1b" class="webex-radiogroup" data-answer="OFYZBk1RTwVl">
-<label><input type="radio" autocomplete="off" name="cf56aac489d6435ab617f3102fbdaf1b"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="cf56aac489d6435ab617f3102fbdaf1b"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="cf56aac489d6435ab617f3102fbdaf1b"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label><label><input type="radio" autocomplete="off" name="cf56aac489d6435ab617f3102fbdaf1b"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label>
+<div id="webex-ab3a2d2277388dd13983f1264432d131" class="webex-radiogroup" data-answer="OlIfUR5UHgNq">
+<label><input type="radio" autocomplete="off" name="ab3a2d2277388dd13983f1264432d131"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="ab3a2d2277388dd13983f1264432d131"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label><label><input type="radio" autocomplete="off" name="ab3a2d2277388dd13983f1264432d131"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="ab3a2d2277388dd13983f1264432d131"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label>
 </div>
 </div>
 <div class="webex-solution">
@@ -1152,8 +1164,8 @@ Important
 <p>After running the following code, what can we say about <code>x</code> and <code>y</code>?</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="webex-05641e788dd4dd91718293f2688bf392" class="webex-radiogroup" data-answer="awUaBB1VGwll">
-<label><input type="radio" autocomplete="off" name="05641e788dd4dd91718293f2688bf392"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="05641e788dd4dd91718293f2688bf392"><span>Changing <code>x</code> will automatically change <code>y</code></span></label><label><input type="radio" autocomplete="off" name="05641e788dd4dd91718293f2688bf392"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label><label><input type="radio" autocomplete="off" name="05641e788dd4dd91718293f2688bf392"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label>
+<div id="webex-f6a744a23548af32b56b653c67f8970c" class="webex-radiogroup" data-answer="PQdNBxgETQJu">
+<label><input type="radio" autocomplete="off" name="f6a744a23548af32b56b653c67f8970c"><span><code>x</code> and <code>y</code> are technically different objects in memory</span></label><label><input type="radio" autocomplete="off" name="f6a744a23548af32b56b653c67f8970c"><span><code>x</code> and <code>y</code> represent the same object in memory</span></label><label><input type="radio" autocomplete="off" name="f6a744a23548af32b56b653c67f8970c"><span><code>x</code> and <code>y</code> will always have the same value going forward</span></label><label><input type="radio" autocomplete="off" name="f6a744a23548af32b56b653c67f8970c"><span>Changing <code>x</code> will automatically change <code>y</code></span></label>
 </div>
 </div>
 <div class="webex-solution">
